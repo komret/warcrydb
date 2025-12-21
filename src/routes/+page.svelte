@@ -1,5 +1,17 @@
 <script lang="ts">
-	import { cards, factions, cardTypes, rarities, keywords, type Keyword } from '$lib/data/cards';
+	import {
+		cards,
+		factions,
+		cardTypes,
+		rarities,
+		keywords,
+		dieValues,
+		costValues,
+		tacticPointsValues,
+		strengthValues,
+		leadershipValues,
+		type Keyword
+	} from '$lib/data/cards';
 	import Card from '$lib/components/Card.svelte';
 
 	let searchQuery = $state('');
@@ -57,16 +69,32 @@
 	function compareNumbers(
 		cardValue: number | 'X' | undefined,
 		operator: string,
-		filterValue: string
+		filterValue: string | number
 	): boolean {
-		if (!filterValue) return true;
-		const normalized = normalizeValue(cardValue);
-		const filter = parseInt(filterValue);
+		// Check for empty string specifically, not just falsy values (0 is valid!)
+		if (filterValue === '' || filterValue === null || filterValue === undefined) return true;
+
+		// Convert to string for consistent handling
+		const filterStr = String(filterValue);
+
+		// Handle exact match for 'X'
+		if (operator === 'exact' && filterStr === 'X') {
+			return cardValue === 'X';
+		}
+
+		const filter = parseInt(filterStr);
 		if (isNaN(filter)) return true;
 
+		// For exact comparisons, check actual value (don't normalize undefined/X)
+		if (operator === 'exact') {
+			// Only match if the card has an actual numeric value that equals the filter
+			return typeof cardValue === 'number' && cardValue === filter;
+		}
+
+		// For higher/lower comparisons, normalize 'X' and undefined to 0
+		const normalized = normalizeValue(cardValue);
+
 		switch (operator) {
-			case 'exact':
-				return normalized === filter;
 			case 'higher':
 				return normalized > filter;
 			case 'lower':
@@ -411,6 +439,30 @@
 			<div class="mb-6">
 				<h3 class="mb-3 text-sm font-medium">Numerical Filters</h3>
 				<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
+					<!-- Die Filter -->
+					<div>
+						<label class="mb-2 block text-xs font-medium text-gray-400">Die</label>
+						<div class="flex space-x-2">
+							<select
+								bind:value={dieOperator}
+								class="w-20 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+							>
+								<option value="exact">=</option>
+								<option value="higher">&gt;</option>
+								<option value="lower">&lt;</option>
+							</select>
+							<select
+								bind:value={dieValue}
+								class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+							>
+								<option value="">All</option>
+								{#each dieValues as value}
+									<option {value}>{value}</option>
+								{/each}
+							</select>
+						</div>
+					</div>
+
 					<!-- Cost Filter -->
 					<div>
 						<label class="mb-2 block text-xs font-medium text-gray-400">Cost</label>
@@ -423,33 +475,15 @@
 								<option value="higher">&gt;</option>
 								<option value="lower">&lt;</option>
 							</select>
-							<input
-								type="number"
-								bind:value={costValue}
-								placeholder="Value"
-								class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-							/>
-						</div>
-					</div>
-
-					<!-- Strength Filter -->
-					<div>
-						<label class="mb-2 block text-xs font-medium text-gray-400">Strength</label>
-						<div class="flex space-x-2">
 							<select
-								bind:value={strengthOperator}
-								class="w-20 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-							>
-								<option value="exact">=</option>
-								<option value="higher">&gt;</option>
-								<option value="lower">&lt;</option>
-							</select>
-							<input
-								type="number"
-								bind:value={strengthValue}
-								placeholder="Value"
+								bind:value={costValue}
 								class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-							/>
+							>
+								<option value="">All</option>
+								{#each costValues as value}
+									<option {value}>{value}</option>
+								{/each}
+							</select>
 						</div>
 					</div>
 
@@ -465,12 +499,15 @@
 								<option value="higher">&gt;</option>
 								<option value="lower">&lt;</option>
 							</select>
-							<input
-								type="number"
+							<select
 								bind:value={tacticPointsValue}
-								placeholder="Value"
 								class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-							/>
+							>
+								<option value="">All</option>
+								{#each tacticPointsValues as value}
+									<option {value}>{value}</option>
+								{/each}
+							</select>
 						</div>
 					</div>
 
@@ -486,33 +523,39 @@
 								<option value="higher">&gt;</option>
 								<option value="lower">&lt;</option>
 							</select>
-							<input
-								type="number"
+							<select
 								bind:value={leadershipValue}
-								placeholder="Value"
 								class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-							/>
+							>
+								<option value="">All</option>
+								{#each leadershipValues as value}
+									<option {value}>{value}</option>
+								{/each}
+							</select>
 						</div>
 					</div>
 
-					<!-- Die Filter -->
+					<!-- Strength Filter -->
 					<div>
-						<label class="mb-2 block text-xs font-medium text-gray-400">Die</label>
+						<label class="mb-2 block text-xs font-medium text-gray-400">Strength</label>
 						<div class="flex space-x-2">
 							<select
-								bind:value={dieOperator}
+								bind:value={strengthOperator}
 								class="w-20 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							>
 								<option value="exact">=</option>
 								<option value="higher">&gt;</option>
 								<option value="lower">&lt;</option>
 							</select>
-							<input
-								type="number"
-								bind:value={dieValue}
-								placeholder="Value"
+							<select
+								bind:value={strengthValue}
 								class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-							/>
+							>
+								<option value="">All</option>
+								{#each strengthValues as value}
+									<option {value}>{value}</option>
+								{/each}
+							</select>
 						</div>
 					</div>
 				</div>

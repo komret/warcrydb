@@ -1,44 +1,4 @@
-export type Keyword =
-	| 'Armor'
-	| 'Beastmen'
-	| 'Blade'
-	| 'Bretonnian'
-	| 'Cavalry'
-	| 'Chaos'
-	| 'Chaos Dwarf'
-	| 'Character'
-	| 'Daemon'
-	| 'Dark Elf'
-	| 'Dogs of War'
-	| 'Dwarf'
-	| 'Empire'
-	| 'Event'
-	| 'Flyer'
-	| 'Fortification'
-	| 'Halfling'
-	| 'Harbinger'
-	| 'High Elf'
-	| 'Hilt'
-	| 'Infantry'
-	| 'Item'
-	| 'Khemri'
-	| 'Kislev'
-	| 'Lizard Men'
-	| 'Lizardmen'
-	| 'Monster'
-	| 'Ogre Kingdoms'
-	| 'Orc'
-	| 'Shard'
-	| 'Skaven'
-	| 'Standard'
-	| 'Strategy'
-	| 'Terrain'
-	| 'Vampire Counts'
-	| 'War Machine'
-	| 'Weapon'
-	| 'Wood Elf';
-
-export const keywords: Keyword[] = [
+export const keywords = [
 	'Armor',
 	'Beastmen',
 	'Blade',
@@ -63,7 +23,6 @@ export const keywords: Keyword[] = [
 	'Item',
 	'Khemri',
 	'Kislev',
-	'Lizard Men',
 	'Lizardmen',
 	'Monster',
 	'Ogre Kingdoms',
@@ -77,7 +36,8 @@ export const keywords: Keyword[] = [
 	'War Machine',
 	'Weapon',
 	'Wood Elf'
-];
+] as const;
+export type Keyword = (typeof keywords)[number];
 
 export const factions = ['Grand Alliance', 'Hordes of Darkness', 'Neutral'] as const;
 export type Faction = (typeof factions)[number];
@@ -87,6 +47,21 @@ export type CardType = (typeof cardTypes)[number];
 
 export const rarities = ['Common', 'Uncommon', 'Rare', 'Super rare'] as const;
 export type Rarity = (typeof rarities)[number];
+
+export const dieValues = [1, 2, 3, 4, 5, 6] as const;
+export type Die = (typeof dieValues)[number];
+
+export const costValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'X'] as const;
+export type Cost = (typeof costValues)[number];
+
+export const tacticPointsValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1, 'X'] as const;
+export type TacticPoints = (typeof tacticPointsValues)[number];
+
+export const strengthValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -1, 'X'] as const;
+export type Strength = (typeof strengthValues)[number];
+
+export const leadershipValues = [1, 2, 3, 4, 5, 6] as const;
+export type Leadership = (typeof leadershipValues)[number];
 
 export type Set =
 	| '2'
@@ -114,12 +89,12 @@ export type Set =
 
 export type Card = {
 	name: string;
-	cost?: number | 'X';
-	strength?: number | 'X';
-	tacticPoints?: number | 'X';
-	leadership?: number;
+	cost?: Cost;
+	strength?: Strength;
+	tacticPoints?: TacticPoints;
+	leadership?: Leadership;
 	unique: boolean;
-	die?: number;
+	die?: Die;
 	keywords: Keyword[];
 	maxCopies?: number;
 	faction: Faction;
@@ -32203,7 +32178,7 @@ export const cards: Card[] = [
 		tacticPoints: 3,
 		leadership: 3,
 		unique: false,
-		keywords: ['Lizard Men', 'Infantry'],
+		keywords: ['Lizardmen', 'Infantry'],
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		cardType: 'Unit',
