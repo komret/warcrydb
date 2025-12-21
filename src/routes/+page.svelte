@@ -4,6 +4,7 @@
 		factions,
 		cardTypes,
 		rarities,
+		sets,
 		keywords,
 		dieValues,
 		costValues,
@@ -18,8 +19,14 @@
 	let selectedFactions = $state(new Set<string>());
 	let selectedCardTypes = $state(new Set<string>());
 	let selectedRarities = $state(new Set<string>());
+	let selectedSets = $state(new Set<string>());
+	let selectedFormat = $state('all');
 	let showBannedCards = $state(true);
 	let showUniqueOnly = $state(false);
+	let showSetFilter = $state(false);
+	let showFactionFilter = $state(false);
+	let showCardTypeFilter = $state(false);
+	let showRarityFilter = $state(false);
 
 	// Keyword filter state
 	let keywordInput = $state('');
@@ -170,6 +177,8 @@
 		selectedFactions = new Set<string>();
 		selectedCardTypes = new Set<string>();
 		selectedRarities = new Set<string>();
+		selectedSets = new Set<string>();
+		selectedFormat = 'all';
 		selectedKeywords = [];
 		keywordOperators = [];
 		keywordInput = '';
@@ -212,6 +221,67 @@
 			// Multi-select rarity filter
 			if (selectedRarities.size > 0 && (!card.rarity || !selectedRarities.has(card.rarity))) {
 				return false;
+			}
+
+			// Set filter - card must be released in at least one of the selected sets
+			if (selectedSets.size > 0) {
+				const cardSets = Object.keys(card.releases);
+				const hasMatchingSet = cardSets.some((set) => selectedSets.has(set));
+				if (!hasMatchingSet) {
+					return false;
+				}
+			}
+
+			// Format filter
+			if (selectedFormat !== 'all') {
+				const cardReleases = card.releases;
+				const warcryFormatSets = [
+					'WarCry',
+					'Winds of Magic',
+					'Siege of Darkness',
+					'Dogs of War',
+					'Path of Glory',
+					'Chivalry and Deceit',
+					'Legions of Chaos',
+					'Champions',
+					'Siege of Middenheim',
+					'Harbingers of War',
+					'Death and Honour',
+					'Bringers of Darkness',
+					'Legends',
+					'Promo (WC)'
+				];
+				const attritionFormatSets = [
+					'Bearers of Redemption',
+					'Valor and Treachery',
+					'Swords of Retribution',
+					'War of Attrition',
+					'Hand of Fate',
+					'Marks of Power',
+					'Veterans of Battle',
+					'Promo (WA)'
+				];
+				const oldSchoolBaseSets = ['WarCry', 'Winds of Magic', 'Siege of Darkness'];
+
+				if (selectedFormat === 'warcry') {
+					const hasWarcrySet = Object.keys(cardReleases).some((set) =>
+						warcryFormatSets.includes(set)
+					);
+					if (!hasWarcrySet) return false;
+				} else if (selectedFormat === 'attrition') {
+					const hasAttritionSet = Object.keys(cardReleases).some((set) =>
+						attritionFormatSets.includes(set)
+					);
+					if (!hasAttritionSet) return false;
+				} else if (selectedFormat === 'oldschool') {
+					// Old School: Base sets OR Promo (WC) with card number <= 40
+					const hasBaseSet = Object.keys(cardReleases).some((set) =>
+						oldSchoolBaseSets.includes(set)
+					);
+					const hasPromoWCWithLowNumber =
+						cardReleases['Promo (WC)'] !== undefined && cardReleases['Promo (WC)']! <= 40;
+					if (!hasBaseSet && !hasPromoWCWithLowNumber) return false;
+				}
 			}
 
 			// Keyword filter with OR precedence (OR evaluates before AND)
@@ -287,7 +357,7 @@
 
 		<!-- Filters Section -->
 		<div class="mb-6 rounded-lg bg-gray-800 p-4 shadow-xl">
-			<!-- Search -->
+			<!-- Search and Format -->
 			<div class="mb-4 flex gap-4">
 				<div class="flex-1">
 					<label for="search" class="mb-2 block text-sm font-medium">Search</label>
@@ -298,6 +368,19 @@
 						placeholder="Search by name or card text..."
 						class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-2 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 					/>
+				</div>
+				<div class="w-48">
+					<label for="format" class="mb-2 block text-sm font-medium">Format</label>
+					<select
+						id="format"
+						bind:value={selectedFormat}
+						class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-2 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+					>
+						<option value="all">All Formats</option>
+						<option value="warcry">WarCry</option>
+						<option value="attrition">Attrition</option>
+						<option value="oldschool">Old School</option>
+					</select>
 				</div>
 				<div class="flex items-end">
 					<button
@@ -381,63 +464,135 @@
 				<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 					<!-- Faction Filter -->
 					<div>
-						<label class="mb-2 block text-sm font-medium">Faction</label>
-						<div class="space-y-2">
-							{#each factions as faction}
-								<label class="flex items-center space-x-2">
-									<input
-										type="checkbox"
-										checked={selectedFactions.has(faction)}
-										onchange={() => (selectedFactions = toggleSelection(selectedFactions, faction))}
-										class="h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-2 focus:ring-blue-500"
-									/>
-									<span class="text-sm">{faction}</span>
-								</label>
-							{/each}
-						</div>
+						<button
+							onclick={() => (showFactionFilter = !showFactionFilter)}
+							class="mb-2 flex w-full items-center gap-2 text-left text-sm font-medium hover:text-blue-400 focus:outline-none"
+						>
+							<span class="transition-transform {showFactionFilter ? 'rotate-90' : ''}"> ▶ </span>
+							<span>Faction</span>
+						{#if !showFactionFilter && selectedFactions.size > 0}
+							<span class="text-xs text-gray-400">
+								({Array.from(selectedFactions).join(', ')})
+							</span>
+						{/if}
+						</button>
+						{#if showFactionFilter}
+							<div class="space-y-2">
+								{#each factions as faction}
+									<label class="flex items-center space-x-2">
+										<input
+											type="checkbox"
+											checked={selectedFactions.has(faction)}
+											onchange={() =>
+												(selectedFactions = toggleSelection(selectedFactions, faction))}
+											class="h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-2 focus:ring-blue-500"
+										/>
+										<span class="text-sm">{faction}</span>
+									</label>
+								{/each}
+							</div>
+						{/if}
 					</div>
 
 					<!-- Card Type Filter -->
 					<div>
-						<label class="mb-2 block text-sm font-medium">Card Type</label>
-						<div class="space-y-2">
-							{#each cardTypes as type}
-								<label class="flex items-center space-x-2">
-									<input
-										type="checkbox"
-										checked={selectedCardTypes.has(type)}
-										onchange={() => (selectedCardTypes = toggleSelection(selectedCardTypes, type))}
-										class="h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-2 focus:ring-blue-500"
-									/>
-									<span class="text-sm">{type}</span>
-								</label>
-							{/each}
-						</div>
+						<button
+							onclick={() => (showCardTypeFilter = !showCardTypeFilter)}
+							class="mb-2 flex w-full items-center gap-2 text-left text-sm font-medium hover:text-blue-400 focus:outline-none"
+						>
+							<span class="transition-transform {showCardTypeFilter ? 'rotate-90' : ''}"> ▶ </span>
+							<span>Card Type</span>
+							{#if !showCardTypeFilter && selectedCardTypes.size > 0}
+								<span class="text-xs text-gray-400">
+									({Array.from(selectedCardTypes).join(', ')})
+								</span>
+							{/if}
+						</button>
+						{#if showCardTypeFilter}
+							<div class="space-y-2">
+								{#each cardTypes as type}
+									<label class="flex items-center space-x-2">
+										<input
+											type="checkbox"
+											checked={selectedCardTypes.has(type)}
+											onchange={() =>
+												(selectedCardTypes = toggleSelection(selectedCardTypes, type))}
+											class="h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-2 focus:ring-blue-500"
+										/>
+										<span class="text-sm">{type}</span>
+									</label>
+								{/each}
+							</div>
+						{/if}
 					</div>
 
 					<!-- Rarity Filter -->
 					<div>
-						<label class="mb-2 block text-sm font-medium">Rarity</label>
-						<div class="space-y-2">
-							{#each rarities as rarity}
-								<label class="flex items-center space-x-2">
-									<input
-										type="checkbox"
-										checked={selectedRarities.has(rarity)}
-										onchange={() => (selectedRarities = toggleSelection(selectedRarities, rarity))}
-										class="h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-2 focus:ring-blue-500"
-									/>
-									<span class="text-sm">{rarity}</span>
-								</label>
-							{/each}
-						</div>
+						<button
+							onclick={() => (showRarityFilter = !showRarityFilter)}
+							class="mb-2 flex w-full items-center gap-2 text-left text-sm font-medium hover:text-blue-400 focus:outline-none"
+						>
+							<span class="transition-transform {showRarityFilter ? 'rotate-90' : ''}"> ▶ </span>
+							<span>Rarity</span>
+							{#if !showRarityFilter && selectedRarities.size > 0}
+								<span class="text-xs text-gray-400">
+									({Array.from(selectedRarities).join(', ')})
+								</span>
+							{/if}
+						</button>
+						{#if showRarityFilter}
+							<div class="space-y-2">
+								{#each rarities as rarity}
+									<label class="flex items-center space-x-2">
+										<input
+											type="checkbox"
+											checked={selectedRarities.has(rarity)}
+											onchange={() =>
+												(selectedRarities = toggleSelection(selectedRarities, rarity))}
+											class="h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-2 focus:ring-blue-500"
+										/>
+										<span class="text-sm">{rarity}</span>
+									</label>
+								{/each}
+							</div>
+						{/if}
 					</div>
 				</div>
 			</div>
 
+			<!-- Set Filter -->
+			<div class="mb-6">
+				<button
+					onclick={() => (showSetFilter = !showSetFilter)}
+					class="mb-2 flex w-full items-center gap-2 text-left text-sm font-medium hover:text-blue-400 focus:outline-none"
+				>
+					<span class="transition-transform {showSetFilter ? 'rotate-90' : ''}"> ▶ </span>
+					<span>Set</span>
+					{#if !showSetFilter && selectedSets.size > 0}
+						<span class="text-xs text-gray-400">
+							({Array.from(selectedSets).join(', ')})
+						</span>
+					{/if}
+				</button>
+				{#if showSetFilter}
+					<div class="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+						{#each sets as set}
+							<label class="flex items-center space-x-2">
+								<input
+									type="checkbox"
+									checked={selectedSets.has(set)}
+									onchange={() => (selectedSets = toggleSelection(selectedSets, set))}
+									class="h-4 w-4 rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-2 focus:ring-blue-500"
+								/>
+								<span class="text-sm">{set}</span>
+							</label>
+						{/each}
+					</div>
+				{/if}
+			</div>
+
 			<!-- Numerical Filters -->
 			<div class="mb-6">
-				<h3 class="mb-3 text-sm font-medium">Numerical Filters</h3>
 				<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
 					<!-- Die Filter -->
 					<div>
