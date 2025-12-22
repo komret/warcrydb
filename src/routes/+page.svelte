@@ -472,7 +472,9 @@
 						>
 							{#each selectedKeywords as keyword, index}
 								<button
-									onclick={() => removeKeyword(keyword)}								title="Remove keyword"									class="text-xs font-medium text-gray-300 hover:text-white focus:outline-none"
+									onclick={() => removeKeyword(keyword)}
+									title="Remove keyword"
+									class="text-xs font-medium text-gray-300 hover:text-white focus:outline-none"
 									aria-label="Remove {keyword}"
 								>
 									{keyword}
