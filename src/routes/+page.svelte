@@ -465,7 +465,7 @@
 			<!-- Keyword Filter and Dropdowns Row -->
 			<div class="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-[1fr_auto_auto_auto_auto]">
 				<div class="col-span-2 lg:col-span-1">
-					<label class="mb-2 block text-sm font-medium">Keywords</label>
+					<label for="keyword-input" class="mb-2 block text-sm font-medium">Keywords</label>
 					<div class="relative">
 						<div
 							class="flex min-h-[42px] flex-wrap items-center gap-2 rounded-lg border border-gray-600 bg-gray-700 px-3"
@@ -489,6 +489,7 @@
 								{/if}
 							{/each}
 							<input
+								id="keyword-input"
 								type="text"
 								bind:value={keywordInput}
 								onkeydown={handleKeywordInput}
@@ -677,9 +678,10 @@
 				<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
 					<!-- Cost Filter -->
 					<div>
-						<label class="mb-2 block text-sm font-medium">Cost</label>
+						<label for="cost-operator" class="mb-2 block text-sm font-medium">Cost</label>
 						<div class="flex space-x-2">
 							<select
+								id="cost-operator"
 								bind:value={costOperator}
 								class="w-20 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							>
@@ -701,9 +703,10 @@
 
 					<!-- Strength Filter -->
 					<div>
-						<label class="mb-2 block text-sm font-medium">Strength</label>
+						<label for="strength-operator" class="mb-2 block text-sm font-medium">Strength</label>
 						<div class="flex space-x-2">
 							<select
+								id="strength-operator"
 								bind:value={strengthOperator}
 								class="w-20 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							>
@@ -725,9 +728,12 @@
 
 					<!-- Tactic Points Filter -->
 					<div>
-						<label class="mb-2 block text-sm font-medium">Tactic Points</label>
+						<label for="tactic-points-operator" class="mb-2 block text-sm font-medium"
+							>Tactic Points</label
+						>
 						<div class="flex space-x-2">
 							<select
+								id="tactic-points-operator"
 								bind:value={tacticPointsOperator}
 								class="w-20 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							>
@@ -749,9 +755,12 @@
 
 					<!-- Leadership Filter -->
 					<div>
-						<label class="mb-2 block text-sm font-medium">Leadership</label>
+						<label for="leadership-operator" class="mb-2 block text-sm font-medium"
+							>Leadership</label
+						>
 						<div class="flex space-x-2">
 							<select
+								id="leadership-operator"
 								bind:value={leadershipOperator}
 								class="w-20 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							>
@@ -773,9 +782,10 @@
 
 					<!-- Die Filter -->
 					<div>
-						<label class="mb-2 block text-sm font-medium">Die</label>
+						<label for="die-operator" class="mb-2 block text-sm font-medium">Die</label>
 						<div class="flex space-x-2">
 							<select
+								id="die-operator"
 								bind:value={dieOperator}
 								class="w-20 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							>
