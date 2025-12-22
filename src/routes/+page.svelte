@@ -778,7 +778,7 @@
 		<!-- Cards List -->
 		<div class="space-y-4">
 			{#each filteredCards as card, index (card.name + '-' + index)}
-				<Card {card} />
+				<Card {card} {searchQuery} />
 			{/each}
 		</div>
 

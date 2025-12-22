@@ -3,9 +3,51 @@
 
 	type Props = {
 		card: Card;
+		searchQuery?: string;
 	};
 
-	let { card }: Props = $props();
+	let { card, searchQuery = '' }: Props = $props();
+
+	// Highlight search terms in card text
+	const highlightSearchTerms = (html: string, query: string): string => {
+		if (!query.trim()) return html;
+
+		// Parse search query for operators
+		const hasOperators = query.includes('&') || query.includes('|');
+
+		if (hasOperators) {
+			// Split by | first (OR has lower precedence)
+			const orGroups = query.split('|').map((orTerm) => orTerm.trim());
+
+			// Collect all unique search terms
+			const allTerms = new Set<string>();
+			orGroups.forEach((orGroup) => {
+				const andTerms = orGroup
+					.split('&')
+					.map((term) => term.trim())
+					.filter((t) => t);
+				andTerms.forEach((term) => allTerms.add(term));
+			});
+
+			// Highlight all terms
+			let result = html;
+			allTerms.forEach((term) => {
+				const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+				const regex = new RegExp(`(${escapedTerm})`, 'gi');
+				result = result.replace(regex, '<mark class="bg-yellow-300 text-gray-900">$1</mark>');
+			});
+			return result;
+		} else {
+			// Simple search - highlight the query
+			const escapedQuery = query.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+			const regex = new RegExp(`(${escapedQuery})`, 'gi');
+			return html.replace(regex, '<mark class="bg-yellow-300 text-gray-900">$1</mark>');
+		}
+	};
+
+	const highlightedCardText = $derived(
+		card.cardText ? highlightSearchTerms(card.cardText, searchQuery) : ''
+	);
 
 	// Determine cost circle color based on card type
 	const getCostCircleColor = (cardType: string): string => {
@@ -45,8 +87,8 @@
 <div
 	class="rounded-lg border border-gray-700 bg-gray-800 p-4 shadow-lg transition-all hover:border-blue-500 hover:shadow-xl"
 >
-	<!-- Two column layout -->
-	<div class="grid grid-cols-[minmax(auto,375px)_1fr] gap-4">
+	<!-- Two column layout on larger screens, single column on mobile -->
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-[minmax(auto,380px)_1fr]">
 		<!-- First column: Stats and metadata (3x3 grid) -->
 		<div class="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 gap-y-2">
 			<!-- Row 1 -->
@@ -57,7 +99,7 @@
 					{card.cost ?? ''}
 				</div>
 			</div>
-			<div class="text-center font-bold text-white">{card.name}</div>
+			<div class="text-center font-bold text-balance text-white">{card.name}</div>
 			<div class="flex items-center justify-center">
 				<div
 					class="flex h-10 w-10 items-center justify-center rounded-full {strengthCircleColor} text-lg font-bold {card.faction ===
@@ -156,11 +198,7 @@
 		<!-- Second column: Card text -->
 		<div class="space-y-2 text-sm text-gray-300">
 			{#if card.cardText}
-				{#each card.cardText.split('\n') as paragraph}
-					{#if paragraph.trim()}
-						<p>{paragraph}</p>
-					{/if}
-				{/each}
+				{@html highlightedCardText}
 			{/if}
 		</div>
 	</div>
