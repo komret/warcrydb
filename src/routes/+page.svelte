@@ -89,7 +89,8 @@
 			return cardValue === 'X';
 		}
 
-		const filter = parseInt(filterStr);
+		// For comparison operators, treat 'X' as 0
+		const filter = filterStr === 'X' ? 0 : parseInt(filterStr);
 		if (isNaN(filter)) return true;
 
 		// For exact comparisons, check actual value (don't normalize undefined/X)
