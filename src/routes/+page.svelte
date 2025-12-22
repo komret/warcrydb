@@ -455,8 +455,9 @@
 				<div>
 					<button
 						onclick={resetFilters}
-						class="h-[42px] rounded-lg bg-blue-600 px-6 text-sm font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-none"
-						>Reset</button
+						title="Reset filters"
+						class="flex h-[42px] w-[42px] items-center justify-center rounded-lg bg-blue-600 text-sm font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-none"
+						>↻</button
 					>
 				</div>
 			</div>
@@ -471,8 +472,7 @@
 						>
 							{#each selectedKeywords as keyword, index}
 								<button
-									onclick={() => removeKeyword(keyword)}
-									class="text-xs font-medium text-gray-300 hover:text-white focus:outline-none"
+									onclick={() => removeKeyword(keyword)}								title="Remove keyword"									class="text-xs font-medium text-gray-300 hover:text-white focus:outline-none"
 									aria-label="Remove {keyword}"
 								>
 									{keyword}
