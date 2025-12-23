@@ -4,9 +4,10 @@
 	type Props = {
 		card: Card;
 		searchQuery?: string;
+		showErrataHighlight?: boolean;
 	};
 
-	let { card, searchQuery = '' }: Props = $props();
+	let { card, searchQuery = '', showErrataHighlight = false }: Props = $props();
 
 	// Highlight search terms in card text
 	const highlightSearchTerms = (html: string, query: string): string => {
@@ -45,7 +46,19 @@
 		}
 	};
 
-	const highlightedText = $derived(card.text ? highlightSearchTerms(card.text, searchQuery) : '');
+	// Replace errata class with text-blue-500 if showing errata highlights
+	const processCardText = (html: string): string => {
+		if (showErrataHighlight && card.errata) {
+			// Replace class="errata" with class="text-blue-500"
+			return html.replace(/class="errata"/g, 'class="text-blue-500"');
+		}
+		// Return as-is if not showing errata highlights
+		return html;
+	};
+
+	const highlightedText = $derived(
+		card.text ? highlightSearchTerms(processCardText(card.text), searchQuery) : ''
+	);
 
 	// Determine cost circle color based on card type
 	const getCostCircleColor = (cardType: string): string => {
@@ -115,14 +128,19 @@
 
 			<!-- Row 2 -->
 			<div></div>
-			<div class="flex flex-wrap justify-center gap-1 text-xs text-gray-300">
-				{#if card.keywords.length > 0}
-					{#each card.keywords as keyword, index}
-						<span>{keyword}</span>
-						{#if index < card.keywords.length - 1}
-							<span class="flex items-center">•</span>
-						{/if}
-					{/each}
+			<div class="flex flex-col gap-1">
+				<div class="flex flex-wrap justify-center gap-1 text-xs text-gray-300">
+					{#if card.keywords.length > 0}
+						{#each card.keywords as keyword, index}
+							<span>{keyword}</span>
+							{#if index < card.keywords.length - 1}
+								<span class="flex items-center">•</span>
+							{/if}
+						{/each}
+					{/if}
+				</div>
+				{#if showErrataHighlight && typeof card.errata === 'string'}
+					<div class="text-center text-xs text-blue-500 line-through">{card.errata}</div>
 				{/if}
 			</div>
 			<div class="text-center text-sm font-bold text-gray-300">

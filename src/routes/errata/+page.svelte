@@ -3,8 +3,8 @@
 	import Card from '$lib/components/Card.svelte';
 	import Header from '$lib/components/Header.svelte';
 
-	// Filter cards with "Errata" in text
-	const errataCards = cards.filter((card) => card.text.toLowerCase().includes('errata'));
+	// Filter cards with errata property set (truthy)
+	const errataCards = cards.filter((card) => !!card.errata);
 
 	// Filter banned cards
 	const bannedCards = cards.filter((card) => card.banned);
@@ -16,29 +16,25 @@
 
 		<!-- Errata Cards Section -->
 		<section class="mb-8">
-			<h2 class="mb-4 text-2xl font-bold">Cards with Errata</h2>
+			<h2 class="mb-4 text-2xl font-bold">Errata</h2>
 			{#if errataCards.length > 0}
 				<div class="space-y-4">
 					{#each errataCards as card}
-						<Card {card} />
+						<Card {card} showErrataHighlight={true} />
 					{/each}
 				</div>
-			{:else}
-				<p class="text-gray-400">No cards with errata found.</p>
 			{/if}
 		</section>
 
 		<!-- Banned Cards Section -->
 		<section>
-			<h2 class="mb-4 text-2xl font-bold">Banned Cards</h2>
+			<h2 class="mb-4 text-2xl font-bold">Banned</h2>
 			{#if bannedCards.length > 0}
 				<div class="space-y-4">
 					{#each bannedCards as card}
 						<Card {card} />
 					{/each}
 				</div>
-			{:else}
-				<p class="text-gray-400">No banned cards found.</p>
 			{/if}
 		</section>
 	</div>
