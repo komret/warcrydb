@@ -16,6 +16,31 @@
 	import Card from '$lib/components/Card.svelte';
 	import logo from '$lib/assets/warcry-logo.png';
 
+	// Format definitions
+	const formats = [
+		{
+			value: 'any',
+			label: 'Open',
+			description: 'all cards, including banned, are eligible'
+		},
+		{
+			value: 'warcry',
+			label: 'WarCry',
+			description: 'only cards from the initial block are eligible (BD or older)'
+		},
+		{
+			value: 'attrition',
+			label: 'Attrition',
+			description:
+				'only cards from the Attrition block are eligible (cards marked by the axe symbol - BR or newer)'
+		},
+		{
+			value: 'oldschool',
+			label: 'Old School',
+			description: 'only cards from the first three sets and promos from that era are eligible'
+		}
+	];
+
 	let searchQuery = $state('');
 
 	let selectedFactions = $state(new Set<string>());
@@ -32,6 +57,9 @@
 	let showFactionFilter = $state(isDesktop);
 	let showCardTypeFilter = $state(isDesktop);
 	let showRarityFilter = $state(isDesktop);
+
+	// Format tooltip state
+	let showFormatTooltip = $state(false);
 
 	// Keyword filter state
 	let keywordInput = $state('');
@@ -524,16 +552,37 @@
 					</div>
 				</div>
 				<div class="col-span-2 w-full lg:col-span-1 lg:w-40">
-					<label for="format" class="mb-2 block text-sm font-medium">Format</label>
+					<label for="format" class="mb-2 flex items-center gap-1 text-sm font-medium">
+						<span>Format</span>
+						<button
+							type="button"
+							onclick={() => (showFormatTooltip = !showFormatTooltip)}
+							class="group relative cursor-help text-gray-400 hover:text-gray-300 focus:outline-none"
+							aria-label="Format information"
+						>
+							ⓘ
+							<span
+								class="pointer-events-none absolute top-full left-0 z-10 mt-2 w-64 max-w-[calc(100vw-2rem)] rounded-lg bg-gray-900 p-3 text-left text-xs text-gray-300 shadow-xl lg:left-1/2 lg:-translate-x-1/2 {showFormatTooltip
+									? 'block'
+									: 'hidden'} group-hover:block"
+							>
+								{#each formats as format, index}
+									<div class:mb-2={index < formats.length - 1}>
+										<strong>{format.label}:</strong>
+										{format.description}
+									</div>
+								{/each}
+							</span>
+						</button>
+					</label>
 					<select
 						id="format"
 						bind:value={selectedFormat}
 						class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-2 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 					>
-						<option value="any">Open</option>
-						<option value="warcry">WarCry</option>
-						<option value="attrition">Attrition</option>
-						<option value="oldschool">Old School</option>
+						{#each formats as format}
+							<option value={format.value}>{format.label}</option>
+						{/each}
 					</select>
 				</div>
 				<div class="col-span-2 w-full lg:col-span-1 lg:w-56">
