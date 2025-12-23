@@ -11748,8 +11748,9 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Each player chooses one unit in their discard pile with a gold cost of 5 or less and places the chosen unit in their reserves.</p>',
-		releases: { 'Siege of Middenheim': 68 }
+		text: '<p><b>Command</b>: Each player chooses one unit in their discard pile with a gold cost of 5 or less and places the chosen unit in their reserves.</p><p><span class="errata">You can only include one copy of this card in your deck.</span></p>',
+		releases: { 'Siege of Middenheim': 68 },
+		errata: true
 	},
 	{
 		name: 'Ready and Willing',
