@@ -4199,7 +4199,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Runesmith</b>: 2 <i>(Counts as Wizard)</i>.</p><p>[Spell] Support [Tactic] (1): Your enemy loses 1 spell point.</p><p><b>Reaction</b>: After 1 of your other units wins a combat, you get 1 spell point.</p><p>[Errata]</p>',
+		text: '<p><b>Runesmith</b>: 2 <i>(Counts as Wizard)</i></p><p>[Spell] Support [Tactic] (1): Your enemy loses 1 spell point.</p><p><b>Reaction</b>: After 1 of your other units wins a combat, you get 1 spell point.</p><p>[Errata]</p>',
 		releases: { 'Winds of Magic': 94 },
 		banned: false
 	},
@@ -4295,7 +4295,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i>.</p><p><b>Spell Reaction</b> (1): After you destroy an enemy attachment, draw 1 card.</p>',
+		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p><b>Spell Reaction</b> (1): After you destroy an enemy attachment, draw 1 card.</p>',
 		releases: { 'Winds of Magic': 100 },
 		banned: false
 	},
@@ -4311,7 +4311,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: "<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i>.</p><p>While this unit is in combat all you enemy's spells cost 1 additional spell point.</p>",
+		text: "<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p>While this unit is in combat all you enemy's spells cost 1 additional spell point.</p>",
 		releases: { 'Winds of Magic': 101, 'War of Attrition': 314 },
 		banned: false
 	},
