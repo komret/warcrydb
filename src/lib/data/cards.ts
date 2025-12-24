@@ -113,6 +113,7 @@ export const setNames: Record<Set, string> = {
 };
 
 export type Card = {
+	id: string;
 	name: string;
 	cost?: Cost;
 	strength?: Strength;
@@ -133,6 +134,7 @@ export type Card = {
 
 export const cards: Card[] = [
 	{
+		id: 'WA1',
 		name: 'Archaon',
 		cost: 8,
 		strength: 6,
@@ -148,6 +150,7 @@ export const cards: Card[] = [
 		releases: { WC: 1, WA: 1 }
 	},
 	{
+		id: 'WC2',
 		name: "Azyrneth's Bloodpack",
 		cost: 3,
 		strength: 4,
@@ -162,6 +165,7 @@ export const cards: Card[] = [
 		releases: { WC: 2 }
 	},
 	{
+		id: 'WC3',
 		name: "Azyrneth's Deathbringers",
 		cost: 4,
 		strength: 4,
@@ -176,6 +180,7 @@ export const cards: Card[] = [
 		releases: { WC: 3 }
 	},
 	{
+		id: 'WA3',
 		name: "Azyrneth's Skullreavers",
 		cost: 3,
 		strength: 3,
@@ -190,6 +195,7 @@ export const cards: Card[] = [
 		releases: { WC: 4, WA: 3 }
 	},
 	{
+		id: 'WC5',
 		name: 'Bloodwolf Axemen',
 		cost: 4,
 		strength: 4,
@@ -204,6 +210,7 @@ export const cards: Card[] = [
 		releases: { WC: 5 }
 	},
 	{
+		id: 'WC6',
 		name: 'Bonerotters',
 		cost: 4,
 		strength: 4,
@@ -218,6 +225,7 @@ export const cards: Card[] = [
 		releases: { WC: 6 }
 	},
 	{
+		id: 'WC7',
 		name: "Charon Helgor's Deathreapers",
 		cost: 5,
 		strength: 5,
@@ -228,10 +236,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Victory</b>: -5</p><p> <b>WarCry</b>: This unit gets +5 strength. Only usable while attacking.</p>',
+		text: '<p><b>Victory</b>: -5</p><p><b>WarCry</b>: This unit gets +5 strength. Only usable while attacking.</p>',
 		releases: { WC: 7 }
 	},
 	{
+		id: 'WC8',
 		name: "D'aggorn the Exalted",
 		cost: 5,
 		strength: 3,
@@ -247,6 +256,7 @@ export const cards: Card[] = [
 		releases: { WC: 8 }
 	},
 	{
+		id: 'WC9',
 		name: "D'aggorn's Husk Guard",
 		cost: 5,
 		strength: 5,
@@ -261,6 +271,7 @@ export const cards: Card[] = [
 		releases: { WC: 9 }
 	},
 	{
+		id: 'WA11',
 		name: 'Daemonettes of Slaanesh',
 		cost: 4,
 		strength: 4,
@@ -275,6 +286,7 @@ export const cards: Card[] = [
 		releases: { WC: 10, WA: 11 }
 	},
 	{
+		id: 'WC11',
 		name: "Dargothal's Fleshrippers",
 		cost: 5,
 		strength: 5,
@@ -289,6 +301,7 @@ export const cards: Card[] = [
 		releases: { WC: 11 }
 	},
 	{
+		id: 'WC12',
 		name: 'Deathclaw Brethren',
 		cost: 4,
 		strength: 5,
@@ -303,6 +316,7 @@ export const cards: Card[] = [
 		releases: { WC: 12 }
 	},
 	{
+		id: 'WC13',
 		name: "Ga'choran's Doomswords",
 		cost: 5,
 		strength: 5,
@@ -317,6 +331,7 @@ export const cards: Card[] = [
 		releases: { WC: 13 }
 	},
 	{
+		id: 'WC14',
 		name: "Melkior's Bloodwolf Horde",
 		cost: 5,
 		strength: 4,
@@ -331,6 +346,7 @@ export const cards: Card[] = [
 		releases: { WC: 14 }
 	},
 	{
+		id: 'WC15',
 		name: "Tal'gatha's Harbinger",
 		cost: 3,
 		strength: 1,
@@ -341,10 +357,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Destroy this unit: Discard the top 3 cards of your army deck. Your enemy chooses one unit discarded this way. That unit replaces this unit in combat. If no unit is discarded, this unit remains in the combat.</p>',
+		text: '<p><b>WarCry</b> Destroy this unit: Discard the top 3 cards of your army deck. Your enemy chooses one unit discarded this way. That unit replaces this unit in combat. If no unit is discarded, this unit remains in the combat.</p>',
 		releases: { WC: 15 }
 	},
 	{
+		id: 'WC16',
 		name: 'The Bringers of Terror',
 		cost: 4,
 		strength: 4,
@@ -359,6 +376,7 @@ export const cards: Card[] = [
 		releases: { WC: 16 }
 	},
 	{
+		id: 'WC17',
 		name: 'The Destroyer',
 		cost: 5,
 		strength: 5,
@@ -373,6 +391,7 @@ export const cards: Card[] = [
 		releases: { WC: 17 }
 	},
 	{
+		id: 'WC18',
 		name: 'Vargharn Melkior',
 		cost: 2,
 		unique: true,
@@ -381,10 +400,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Destroy the enemy unit unless it passes an unmodified leadership test.</p><p>This card may only be attached to a Chaos Unit.</p>',
+		text: '<p><b>WarCry</b>: Destroy the enemy unit unless it passes an unmodified leadership test.</p><p>This card may only be attached to a Chaos Unit.</p>',
 		releases: { WC: 18 }
 	},
 	{
+		id: 'WC19',
 		name: "Deragheth's Spirit Knives",
 		cost: 3,
 		strength: 3,
@@ -399,6 +419,7 @@ export const cards: Card[] = [
 		releases: { WC: 19 }
 	},
 	{
+		id: 'WA33',
 		name: "Dhargethen's Duskreavers",
 		cost: 4,
 		strength: 4,
@@ -409,10 +430,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If you win this combat, rout the enemy unit (no rout check needed). Only usable once per command.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat, rout the enemy unit (no rout check needed). Only usable once per command.</p>',
 		releases: { WC: 20, WA: 33 }
 	},
 	{
+		id: 'WC21',
 		name: 'Ebon Deathblades',
 		cost: 4,
 		strength: 4,
@@ -427,6 +449,7 @@ export const cards: Card[] = [
 		releases: { WC: 21 }
 	},
 	{
+		id: 'WA34',
 		name: 'Fell Sisters of Clar Karond',
 		cost: 5,
 		strength: 5,
@@ -437,10 +460,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If this combat ends as a slaughter, this unit wins instead.</p>',
+		text: '<p><b>WarCry</b>: If this combat ends as a slaughter, this unit wins instead.</p>',
 		releases: { WC: 22, WA: 34 }
 	},
 	{
+		id: 'WC23',
 		name: "Ha'asek's Twilight Ghosts",
 		cost: 3,
 		strength: 3,
@@ -455,6 +479,7 @@ export const cards: Card[] = [
 		releases: { WC: 23 }
 	},
 	{
+		id: 'WC24',
 		name: "Ha'asek's Wraithriders",
 		cost: 4,
 		strength: 3,
@@ -465,10 +490,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +3 strength. Only usable while you have a ready unit that costs 6 or more gold.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +3 strength. Only usable while you have a ready unit that costs 6 or more gold.</p>',
 		releases: { WC: 24 }
 	},
 	{
+		id: 'WA44',
 		name: "Korhadril's Nighthaunters",
 		cost: 4,
 		strength: 4,
@@ -483,6 +509,7 @@ export const cards: Card[] = [
 		releases: { WC: 25, WA: 44 }
 	},
 	{
+		id: 'WC26',
 		name: 'Malus Darkblade',
 		cost: 5,
 		strength: 3,
@@ -498,6 +525,7 @@ export const cards: Card[] = [
 		releases: { WC: 26 }
 	},
 	{
+		id: 'WC27',
 		name: 'Nightbearers',
 		cost: 6,
 		strength: 6,
@@ -512,6 +540,7 @@ export const cards: Card[] = [
 		releases: { WC: 27 }
 	},
 	{
+		id: 'WA49',
 		name: "Raven's Scythe",
 		cost: 2,
 		strength: 0,
@@ -526,6 +555,7 @@ export const cards: Card[] = [
 		releases: { WC: 28, WA: 49 }
 	},
 	{
+		id: 'WC29',
 		name: "Serakhar's Ebon Reavers",
 		cost: 2,
 		strength: 1,
@@ -540,6 +570,7 @@ export const cards: Card[] = [
 		releases: { WC: 29 }
 	},
 	{
+		id: 'WA53',
 		name: 'Spirithaunters of Hag Graef',
 		cost: 3,
 		strength: 2,
@@ -554,6 +585,7 @@ export const cards: Card[] = [
 		releases: { WC: 30, WA: 53 }
 	},
 	{
+		id: 'WC31',
 		name: 'The Archon of Twilight',
 		cost: 6,
 		strength: 4,
@@ -569,6 +601,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'WA56',
 		name: 'The Twilight Company',
 		cost: 3,
 		strength: 2,
@@ -579,10 +612,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Use a combat tactic printed on any enemy unit.</p>',
+		text: '<p><b>WarCry</b>: Use a combat tactic printed on any enemy unit.</p>',
 		releases: { WC: 32, WA: 56 }
 	},
 	{
+		id: 'WC33',
 		name: 'Twilight Fellstalkers',
 		cost: 3,
 		strength: 3,
@@ -597,6 +631,7 @@ export const cards: Card[] = [
 		releases: { WC: 33 }
 	},
 	{
+		id: 'WC34',
 		name: 'Twilight Painwraiths',
 		cost: 5,
 		strength: 5,
@@ -611,6 +646,7 @@ export const cards: Card[] = [
 		releases: { WC: 34 }
 	},
 	{
+		id: 'WC35',
 		name: 'Naetharion Dhargethen',
 		cost: 2,
 		unique: true,
@@ -623,6 +659,7 @@ export const cards: Card[] = [
 		releases: { WC: 35 }
 	},
 	{
+		id: 'WC36',
 		name: 'Gurt Bigfist',
 		cost: 7,
 		strength: 10,
@@ -637,6 +674,7 @@ export const cards: Card[] = [
 		releases: { WC: 36 }
 	},
 	{
+		id: 'WC37',
 		name: 'Soulfang Blacktalon',
 		cost: 5,
 		strength: 5,
@@ -647,10 +685,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
+		text: '<p><b>Terror</b>: 1</p><p><b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
 		releases: { WC: 37 }
 	},
 	{
+		id: 'WC38',
 		name: 'Stone Trolls',
 		cost: 4,
 		strength: 4,
@@ -665,6 +704,7 @@ export const cards: Card[] = [
 		releases: { WC: 38 }
 	},
 	{
+		id: 'WC39',
 		name: "Azfang's Boyz",
 		cost: 4,
 		strength: 4,
@@ -679,6 +719,7 @@ export const cards: Card[] = [
 		releases: { WC: 39 }
 	},
 	{
+		id: 'WC40',
 		name: "Big Gulgog's Maulers",
 		cost: 6,
 		strength: 5,
@@ -693,6 +734,7 @@ export const cards: Card[] = [
 		releases: { WC: 40 }
 	},
 	{
+		id: 'WC41',
 		name: "Bogbref's Bow Gitz",
 		cost: 2,
 		strength: 1,
@@ -703,10 +745,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Short Ranged Attack</b>: 5</p><p> <b>WarCry</b>: This unit gets +d6 <b>Ranged Attack</b>. If you roll 4 or higher, destroy this unit at the end of this command.</p>',
+		text: '<p><b>Short Ranged Attack</b>: 5</p><p><b>WarCry</b>: This unit gets +d6 <b>Ranged Attack</b>. If you roll 4 or higher, destroy this unit at the end of this command.</p>',
 		releases: { WC: 41 }
 	},
 	{
+		id: 'WC42',
 		name: "Ghulbag's Big 'Uns",
 		cost: 3,
 		strength: 5,
@@ -721,6 +764,7 @@ export const cards: Card[] = [
 		releases: { WC: 42 }
 	},
 	{
+		id: 'WA63',
 		name: "Gitnob's Gitz",
 		cost: 2,
 		strength: 2,
@@ -735,6 +779,7 @@ export const cards: Card[] = [
 		releases: { WC: 43, WA: 63 }
 	},
 	{
+		id: 'WC44',
 		name: "Grubbi's Dogkart",
 		cost: 3,
 		strength: 2,
@@ -745,10 +790,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Commit: Exchange this unit with one of your ready units. That unit gets +2 strength.</p>',
+		text: '<p><b>WarCry</b> Commit: Exchange this unit with one of your ready units. That unit gets +2 strength.</p>',
 		releases: { WC: 44 }
 	},
 	{
+		id: 'WC45',
 		name: "Morzog's Madmob",
 		cost: 4,
 		strength: 5,
@@ -763,6 +809,7 @@ export const cards: Card[] = [
 		releases: { WC: 45 }
 	},
 	{
+		id: 'WC46',
 		name: "Mulguk's Smashas",
 		cost: 4,
 		strength: 4,
@@ -777,6 +824,7 @@ export const cards: Card[] = [
 		releases: { WC: 46 }
 	},
 	{
+		id: 'WA75',
 		name: "Nhaga's Ladz",
 		cost: 2,
 		strength: 1,
@@ -791,6 +839,7 @@ export const cards: Card[] = [
 		releases: { WC: 47, WA: 75 }
 	},
 	{
+		id: 'WA76',
 		name: "Ogdrag's 'Arrer Boyz",
 		cost: 3,
 		strength: 3,
@@ -805,6 +854,7 @@ export const cards: Card[] = [
 		releases: { WC: 48, WA: 76 }
 	},
 	{
+		id: 'WA81',
 		name: "Roklog's Tuskas",
 		cost: 4,
 		strength: 4,
@@ -815,10 +865,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>: Discard the top card of your action deck. If that card was a playable WarCry or combat tactic, play that card without paying it's cost.</p>",
+		text: "<p><b>WarCry</b>: Discard the top card of your action deck. If that card was a playable WarCry or combat tactic, play that card without paying it's cost.</p>",
 		releases: { WC: 49, WA: 81 }
 	},
 	{
+		id: 'WC50',
 		name: "Snotfink's Dogmob",
 		cost: 3,
 		strength: 3,
@@ -833,6 +884,7 @@ export const cards: Card[] = [
 		releases: { WC: 50 }
 	},
 	{
+		id: 'WC51',
 		name: "Ugbog's Big Rumbler",
 		cost: 3,
 		strength: 2,
@@ -847,6 +899,7 @@ export const cards: Card[] = [
 		releases: { WC: 51 }
 	},
 	{
+		id: 'WC52',
 		name: "Urguck's Manglers",
 		cost: 5,
 		strength: 5,
@@ -861,6 +914,7 @@ export const cards: Card[] = [
 		releases: { WC: 52 }
 	},
 	{
+		id: 'WC53',
 		name: 'Warboss Grimgore Ironhide',
 		cost: 6,
 		strength: 5,
@@ -876,6 +930,7 @@ export const cards: Card[] = [
 		releases: { WC: 53 }
 	},
 	{
+		id: 'WA85',
 		name: 'Warboss Urguck Man-Mangler',
 		cost: 5,
 		strength: 4,
@@ -890,6 +945,7 @@ export const cards: Card[] = [
 		releases: { WC: 54, WA: 85 }
 	},
 	{
+		id: 'WC55',
 		name: 'Big Boss Ghulgar Headsplitter',
 		cost: 2,
 		tacticPoints: 2,
@@ -903,6 +959,7 @@ export const cards: Card[] = [
 		releases: { WC: 55 }
 	},
 	{
+		id: 'WC56',
 		name: 'A Question of Honor',
 		die: 5,
 		keywords: [],
@@ -914,6 +971,7 @@ export const cards: Card[] = [
 		releases: { WC: 56 }
 	},
 	{
+		id: 'WC57',
 		name: 'Armor Break',
 		cost: 1,
 		die: 4,
@@ -926,6 +984,7 @@ export const cards: Card[] = [
 		releases: { WC: 57 }
 	},
 	{
+		id: 'WA110',
 		name: 'Battle Omens',
 		die: 4,
 		keywords: ['Strategy'],
@@ -937,6 +996,7 @@ export const cards: Card[] = [
 		releases: { WC: 58, WA: 110 }
 	},
 	{
+		id: 'WA111',
 		name: 'Battlefield Instinct',
 		cost: 1,
 		die: 3,
@@ -949,6 +1009,7 @@ export const cards: Card[] = [
 		releases: { WC: 59, WA: 111 }
 	},
 	{
+		id: 'WC60',
 		name: 'Battlefield Options',
 		die: 3,
 		keywords: ['Strategy'],
@@ -960,6 +1021,7 @@ export const cards: Card[] = [
 		releases: { WC: 60 }
 	},
 	{
+		id: 'WC61',
 		name: 'Blood of the Martyr',
 		die: 2,
 		keywords: ['Strategy'],
@@ -971,6 +1033,7 @@ export const cards: Card[] = [
 		releases: { WC: 61 }
 	},
 	{
+		id: 'WC62',
 		name: 'Breakthrough',
 		die: 3,
 		keywords: [],
@@ -982,6 +1045,7 @@ export const cards: Card[] = [
 		releases: { WC: 62 }
 	},
 	{
+		id: 'WA122',
 		name: 'Change of Plan',
 		die: 5,
 		keywords: [],
@@ -989,10 +1053,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b>: Destroy 1 strategy card.</p>',
+		text: '<p><b>Command</b>: Destroy 1 strategy card.</p>',
 		releases: { WC: 63, WA: 122 }
 	},
 	{
+		id: 'WC64',
 		name: 'Charge!',
 		cost: 2,
 		die: 3,
@@ -1001,10 +1066,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for every unspent tactic point the enemy unit has.</p>',
+		text: '<p><b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for every unspent tactic point the enemy unit has.</p>',
 		releases: { WC: 64 }
 	},
 	{
+		id: 'WC65',
 		name: 'Confusing Maneuver',
 		cost: 1,
 		die: 3,
@@ -1017,6 +1083,7 @@ export const cards: Card[] = [
 		releases: { WC: 65 }
 	},
 	{
+		id: 'WC66',
 		name: 'Countercharge',
 		cost: 2,
 		die: 3,
@@ -1029,6 +1096,7 @@ export const cards: Card[] = [
 		releases: { WC: 66 }
 	},
 	{
+		id: 'WC67',
 		name: 'Crushing Blow',
 		cost: 4,
 		die: 2,
@@ -1041,6 +1109,7 @@ export const cards: Card[] = [
 		releases: { WC: 67 }
 	},
 	{
+		id: 'WA131',
 		name: 'Cunning Raid',
 		die: 5,
 		keywords: [],
@@ -1052,6 +1121,7 @@ export const cards: Card[] = [
 		releases: { WC: 68, CD: 15, WA: 131 }
 	},
 	{
+		id: 'WA134',
 		name: 'Death from Afar',
 		cost: 1,
 		die: 4,
@@ -1064,6 +1134,7 @@ export const cards: Card[] = [
 		releases: { WC: 69, WA: 134 }
 	},
 	{
+		id: 'WC70',
 		name: 'Dissention in the Ranks',
 		cost: 1,
 		die: 4,
@@ -1076,6 +1147,7 @@ export const cards: Card[] = [
 		releases: { WC: 70 }
 	},
 	{
+		id: 'WA140',
 		name: 'Diversion',
 		die: 4,
 		keywords: [],
@@ -1087,6 +1159,7 @@ export const cards: Card[] = [
 		releases: { WC: 71, WA: 140 }
 	},
 	{
+		id: 'WC72',
 		name: 'Dodge',
 		cost: 2,
 		die: 2,
@@ -1099,6 +1172,7 @@ export const cards: Card[] = [
 		releases: { WC: 72 }
 	},
 	{
+		id: 'WC73',
 		name: 'Effective Planning',
 		cost: 2,
 		die: 4,
@@ -1111,6 +1185,7 @@ export const cards: Card[] = [
 		releases: { WC: 73 }
 	},
 	{
+		id: 'WA150',
 		name: 'Fast March',
 		die: 3,
 		keywords: [],
@@ -1122,6 +1197,7 @@ export const cards: Card[] = [
 		releases: { WC: 74, WA: 150 }
 	},
 	{
+		id: 'WA161',
 		name: 'Furious Charge',
 		cost: 2,
 		die: 3,
@@ -1134,6 +1210,7 @@ export const cards: Card[] = [
 		releases: { WC: 75, CD: 20, WA: 161 }
 	},
 	{
+		id: 'WA165',
 		name: 'Grim Resolution',
 		cost: 3,
 		die: 3,
@@ -1146,6 +1223,7 @@ export const cards: Card[] = [
 		releases: { WC: 76, CD: 21, WA: 165 }
 	},
 	{
+		id: 'WA167',
 		name: 'Hail of Doom',
 		cost: 2,
 		die: 2,
@@ -1154,10 +1232,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: After you win a ranged attack combat by a difference of 3 or more, your unit may make 1 additional ranged attack before committing.</p>',
+		text: '<p><b>WarCry</b>: After you win a ranged attack combat by a difference of 3 or more, your unit may make 1 additional ranged attack before committing.</p>',
 		releases: { WC: 77, WA: 167 }
 	},
 	{
+		id: 'WC78',
 		name: 'Hasty Maneuever',
 		cost: 3,
 		die: 1,
@@ -1170,6 +1249,7 @@ export const cards: Card[] = [
 		releases: { WC: 78 }
 	},
 	{
+		id: 'WC79',
 		name: 'Heroic Sacrifice',
 		cost: 2,
 		die: 2,
@@ -1178,10 +1258,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Destroy one of your other ready units: Commit the enemy unit.</p>',
+		text: '<p><b>WarCry</b> Destroy one of your other ready units: Commit the enemy unit.</p>',
 		releases: { WC: 79 }
 	},
 	{
+		id: 'WC80',
 		name: 'Hold the Line!',
 		die: 4,
 		keywords: ['Strategy'],
@@ -1193,6 +1274,7 @@ export const cards: Card[] = [
 		releases: { WC: 80 }
 	},
 	{
+		id: 'WC81',
 		name: 'Hurry Up!',
 		die: 4,
 		keywords: ['Strategy'],
@@ -1204,6 +1286,7 @@ export const cards: Card[] = [
 		releases: { WC: 81 }
 	},
 	{
+		id: 'WC82',
 		name: "It's Not Over...",
 		cost: 2,
 		die: 3,
@@ -1216,6 +1299,7 @@ export const cards: Card[] = [
 		releases: { WC: 82 }
 	},
 	{
+		id: 'WA181',
 		name: 'Lay of the Land',
 		cost: 2,
 		die: 3,
@@ -1228,6 +1312,7 @@ export const cards: Card[] = [
 		releases: { WC: 83, WA: 181 }
 	},
 	{
+		id: 'WA185',
 		name: 'Look Out, Sir!',
 		die: 5,
 		keywords: [],
@@ -1239,6 +1324,7 @@ export const cards: Card[] = [
 		releases: { WC: 84, CD: 26, WA: 185 }
 	},
 	{
+		id: 'WA188',
 		name: 'Low Morale',
 		die: 4,
 		keywords: [],
@@ -1250,6 +1336,7 @@ export const cards: Card[] = [
 		releases: { WC: 85, WA: 188 }
 	},
 	{
+		id: 'WC86',
 		name: 'Luck Smiles Upon the Foolish',
 		cost: 1,
 		die: 4,
@@ -1262,6 +1349,7 @@ export const cards: Card[] = [
 		releases: { WC: 86 }
 	},
 	{
+		id: 'WC87',
 		name: 'Mass March',
 		cost: 2,
 		die: 3,
@@ -1274,6 +1362,7 @@ export const cards: Card[] = [
 		releases: { WC: 87 }
 	},
 	{
+		id: 'WA198',
 		name: 'Mettle',
 		cost: 1,
 		die: 2,
@@ -1286,6 +1375,7 @@ export const cards: Card[] = [
 		releases: { WC: 88, WA: 198 }
 	},
 	{
+		id: 'WA200',
 		name: 'No Quarter!',
 		cost: 2,
 		die: 2,
@@ -1294,10 +1384,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If your unit wins the combat, your enemy destroys 1 of their committed units.</p>',
+		text: '<p><b>WarCry</b>: If your unit wins the combat, your enemy destroys 1 of their committed units.</p>',
 		releases: { WC: 89, WA: 200 }
 	},
 	{
+		id: 'WA201',
 		name: 'Nobody Lives Forever!',
 		cost: 2,
 		die: 1,
@@ -1306,10 +1397,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Your enemy may destroy one of their units. If they do not, when this combat ends, the result is a slaughter.</p>',
+		text: '<p><b>WarCry</b>: Your enemy may destroy one of their units. If they do not, when this combat ends, the result is a slaughter.</p>',
 		releases: { WC: 90, DH: 36, WA: 201 }
 	},
 	{
+		id: 'WA202',
 		name: 'Not Without a Plan',
 		cost: 1,
 		die: 4,
@@ -1322,6 +1414,7 @@ export const cards: Card[] = [
 		releases: { WC: 91, WA: 202 }
 	},
 	{
+		id: 'WA207',
 		name: 'Onward!',
 		cost: 2,
 		die: 1,
@@ -1330,10 +1423,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If your unit wins the combat, rout the enemy unit (no rout check needed). Not usable during a ranged attack.</p>',
+		text: '<p><b>WarCry</b>: If your unit wins the combat, rout the enemy unit (no rout check needed). Not usable during a ranged attack.</p>',
 		releases: { WC: 92, WA: 207 }
 	},
 	{
+		id: 'WA210',
 		name: 'Outflank',
 		cost: 1,
 		die: 2,
@@ -1346,6 +1440,7 @@ export const cards: Card[] = [
 		releases: { WC: 93, WA: 210 }
 	},
 	{
+		id: 'WC94',
 		name: 'Perfect Counter',
 		die: 2,
 		keywords: [],
@@ -1353,10 +1448,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Your enemy discards 2 random cards.</p>',
+		text: '<p><b>Command</b>: Your enemy discards 2 random cards.</p>',
 		releases: { WC: 94 }
 	},
 	{
+		id: 'WA213',
 		name: 'Plotting Revenge',
 		die: 5,
 		keywords: [],
@@ -1368,6 +1464,7 @@ export const cards: Card[] = [
 		releases: { WC: 95, WA: 213 }
 	},
 	{
+		id: 'WA217',
 		name: 'Prepare Yourselves!',
 		cost: 1,
 		die: 4,
@@ -1380,6 +1477,7 @@ export const cards: Card[] = [
 		releases: { WC: 96, WA: 217 }
 	},
 	{
+		id: 'WA218',
 		name: 'Press the Advantage',
 		cost: 4,
 		die: 2,
@@ -1392,6 +1490,7 @@ export const cards: Card[] = [
 		releases: { WC: 97, WA: 218 }
 	},
 	{
+		id: 'WC98',
 		name: 'Prevailing Wind',
 		die: 5,
 		keywords: [],
@@ -1403,6 +1502,7 @@ export const cards: Card[] = [
 		releases: { WC: 98 }
 	},
 	{
+		id: 'WC99',
 		name: 'Reform!',
 		cost: 1,
 		die: 4,
@@ -1415,6 +1515,7 @@ export const cards: Card[] = [
 		releases: { WC: 99 }
 	},
 	{
+		id: 'WA225',
 		name: 'Relentless Advance',
 		cost: 2,
 		die: 4,
@@ -1423,10 +1524,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If your unit wins the combat, destroy the enemy unit.</p>',
+		text: '<p><b>WarCry</b>: If your unit wins the combat, destroy the enemy unit.</p>',
 		releases: { WC: 100, WA: 225 }
 	},
 	{
+		id: 'WA238',
 		name: 'Shield Wall',
 		cost: 3,
 		die: 2,
@@ -1439,6 +1541,7 @@ export const cards: Card[] = [
 		releases: { WC: 101, WA: 238 }
 	},
 	{
+		id: 'WC102',
 		name: 'Smashing Attack',
 		cost: 3,
 		die: 4,
@@ -1451,6 +1554,7 @@ export const cards: Card[] = [
 		releases: { WC: 102 }
 	},
 	{
+		id: 'WA246',
 		name: 'Strategic Withdrawal',
 		die: 4,
 		keywords: [],
@@ -1463,6 +1567,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'WC104',
 		name: 'Strength in Numbers',
 		cost: 2,
 		die: 3,
@@ -1471,10 +1576,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b> Commit any number of your units: This unit gets +2 strength for each unit committed this way.</p>',
+		text: '<p><b>WarCry</b> Commit any number of your units: This unit gets +2 strength for each unit committed this way.</p>',
 		releases: { WC: 104 }
 	},
 	{
+		id: 'WA247',
 		name: 'Strength of Forethought',
 		cost: 1,
 		die: 2,
@@ -1483,10 +1589,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>: At the end of the tactic phase, this unit gets +1 strength for each of it's unspent tactic points.</p>",
+		text: "<p><b>WarCry</b>: At the end of the tactic phase, this unit gets +1 strength for each of it's unspent tactic points.</p>",
 		releases: { WC: 105, DH: 13, WA: 247 }
 	},
 	{
+		id: 'CD32',
 		name: 'Strength of Honor',
 		cost: 2,
 		die: 2,
@@ -1499,6 +1606,7 @@ export const cards: Card[] = [
 		releases: { WC: 106, CD: 32 }
 	},
 	{
+		id: 'WC107',
 		name: 'Study the Maps',
 		die: 2,
 		keywords: [],
@@ -1506,10 +1614,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: "<p> <b>Command</b>: Choose a number, then look at your enemy's hand. Your enemy discards all cards with a die equal that number.</p>",
+		text: "<p><b>Command</b>: Choose a number, then look at your enemy's hand. Your enemy discards all cards with a die equal that number.</p>",
 		releases: { WC: 107 }
 	},
 	{
+		id: 'WA251',
 		name: 'Sudden Attack',
 		cost: 1,
 		die: 4,
@@ -1522,6 +1631,7 @@ export const cards: Card[] = [
 		releases: { WC: 108, WA: 251 }
 	},
 	{
+		id: 'WC109',
 		name: 'Surprise Attack',
 		die: 3,
 		keywords: [],
@@ -1533,6 +1643,7 @@ export const cards: Card[] = [
 		releases: { WC: 109 }
 	},
 	{
+		id: 'WC110',
 		name: 'Surround Them',
 		cost: 1,
 		die: 4,
@@ -1545,6 +1656,7 @@ export const cards: Card[] = [
 		releases: { WC: 110 }
 	},
 	{
+		id: 'WC111',
 		name: 'Test of Steel',
 		cost: 1,
 		die: 4,
@@ -1557,6 +1669,7 @@ export const cards: Card[] = [
 		releases: { WC: 111 }
 	},
 	{
+		id: 'WA258',
 		name: 'The Conscripts Arrive',
 		cost: 1,
 		die: 3,
@@ -1569,6 +1682,7 @@ export const cards: Card[] = [
 		releases: { WC: 112, WA: 258 }
 	},
 	{
+		id: 'WC113',
 		name: 'Thundering Hooves',
 		cost: 4,
 		die: 3,
@@ -1577,10 +1691,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: This cavalry unit gets a strength bonus equal to it's printed strength. Only usable while attacking.</p>",
+		text: "<p><b>WarCry</b>: This cavalry unit gets a strength bonus equal to it's printed strength. Only usable while attacking.</p>",
 		releases: { WC: 113 }
 	},
 	{
+		id: 'WA267',
 		name: 'To the Last Man',
 		die: 5,
 		keywords: ['Strategy'],
@@ -1592,6 +1707,7 @@ export const cards: Card[] = [
 		releases: { WC: 114, WA: 267 }
 	},
 	{
+		id: 'WA269',
 		name: 'Underhanded Tricks',
 		die: 2,
 		keywords: [],
@@ -1599,10 +1715,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b>: Commit any enemy unit unless it passes a leadership test.</p>',
+		text: '<p><b>Command</b>: Commit any enemy unit unless it passes a leadership test.</p>',
 		releases: { WC: 115, WA: 269 }
 	},
 	{
+		id: 'WC116',
 		name: 'Valorous Assault',
 		die: 3,
 		keywords: [],
@@ -1614,6 +1731,7 @@ export const cards: Card[] = [
 		releases: { WC: 116 }
 	},
 	{
+		id: 'WC117',
 		name: 'Armor of the Dragon',
 		cost: 2,
 		strength: 1,
@@ -1627,6 +1745,7 @@ export const cards: Card[] = [
 		releases: { WC: 117 }
 	},
 	{
+		id: 'WC118',
 		name: 'Bane Banner',
 		cost: 1,
 		keywords: ['Standard'],
@@ -1638,6 +1757,7 @@ export const cards: Card[] = [
 		releases: { WC: 118 }
 	},
 	{
+		id: 'WA281',
 		name: 'Banner of Terror',
 		cost: 1,
 		keywords: ['Standard'],
@@ -1654,6 +1774,7 @@ export const cards: Card[] = [
 		}
 	},
 	{
+		id: 'WA283',
 		name: 'Enchanted Armor',
 		cost: 1,
 		keywords: ['Armor'],
@@ -1665,6 +1786,7 @@ export const cards: Card[] = [
 		releases: { WC: 120, CD: 36, WA: 283 }
 	},
 	{
+		id: 'WA284',
 		name: 'Enchanted Shield',
 		cost: 1,
 		keywords: ['Armor'],
@@ -1676,6 +1798,7 @@ export const cards: Card[] = [
 		releases: { WC: 121, WA: 284 }
 	},
 	{
+		id: 'WC122',
 		name: 'Hammer of Thunder',
 		cost: 1,
 		keywords: ['Weapon'],
@@ -1687,6 +1810,7 @@ export const cards: Card[] = [
 		releases: { WC: 122 }
 	},
 	{
+		id: 'WA288',
 		name: 'Mighty Warhorn',
 		cost: 1,
 		keywords: ['Item'],
@@ -1698,6 +1822,7 @@ export const cards: Card[] = [
 		releases: { WC: 123, PW: 42, WA: 288 }
 	},
 	{
+		id: 'WC124',
 		name: 'Mounts',
 		cost: 1,
 		keywords: ['Item'],
@@ -1709,6 +1834,7 @@ export const cards: Card[] = [
 		releases: { WC: 124 }
 	},
 	{
+		id: 'WA289',
 		name: 'Musician',
 		cost: 1,
 		tacticPoints: 1,
@@ -1721,6 +1847,7 @@ export const cards: Card[] = [
 		releases: { WC: 125, WA: 289 }
 	},
 	{
+		id: 'WC126',
 		name: 'Standard Bearer',
 		cost: 1,
 		keywords: ['Character'],
@@ -1732,6 +1859,7 @@ export const cards: Card[] = [
 		releases: { WC: 126 }
 	},
 	{
+		id: 'WC127',
 		name: 'Sword of Destiny',
 		cost: 1,
 		keywords: ['Weapon'],
@@ -1743,6 +1871,7 @@ export const cards: Card[] = [
 		releases: { WC: 127 }
 	},
 	{
+		id: 'DH39',
 		name: 'Sword of Striking',
 		cost: 1,
 		strength: 1,
@@ -1755,6 +1884,7 @@ export const cards: Card[] = [
 		releases: { WC: 128, CD: 38, DH: 39 }
 	},
 	{
+		id: 'WA292',
 		name: 'Talisman of Strength',
 		cost: 1,
 		keywords: ['Item'],
@@ -1766,6 +1896,7 @@ export const cards: Card[] = [
 		releases: { WC: 129, WA: 292 }
 	},
 	{
+		id: 'WC130',
 		name: "Alrik's Throneguard",
 		cost: 5,
 		strength: 5,
@@ -1780,6 +1911,7 @@ export const cards: Card[] = [
 		releases: { WC: 130 }
 	},
 	{
+		id: 'WC131',
 		name: "Barak's Brawlers",
 		cost: 3,
 		strength: 2,
@@ -1794,6 +1926,7 @@ export const cards: Card[] = [
 		releases: { WC: 131 }
 	},
 	{
+		id: 'WC132',
 		name: "Barak's Strongbolts",
 		cost: 3,
 		strength: 3,
@@ -1808,6 +1941,7 @@ export const cards: Card[] = [
 		releases: { WC: 132 }
 	},
 	{
+		id: 'WC133',
 		name: 'Brotherhood of Karak Azul',
 		cost: 5,
 		strength: 6,
@@ -1822,6 +1956,7 @@ export const cards: Card[] = [
 		releases: { WC: 133 }
 	},
 	{
+		id: 'WC134',
 		name: "Bugman's Rangers",
 		cost: 4,
 		strength: 4,
@@ -1836,6 +1971,7 @@ export const cards: Card[] = [
 		releases: { WC: 134 }
 	},
 	{
+		id: 'WA296',
 		name: "Dorgan's Ironshields",
 		cost: 3,
 		strength: 3,
@@ -1850,6 +1986,7 @@ export const cards: Card[] = [
 		releases: { WC: 135, WA: 296 }
 	},
 	{
+		id: 'WC136',
 		name: "Drakk's Breath",
 		cost: 2,
 		strength: 1,
@@ -1864,6 +2001,7 @@ export const cards: Card[] = [
 		releases: { WC: 136 }
 	},
 	{
+		id: 'WA301',
 		name: "Ganulf's Youngbeards",
 		cost: 2,
 		strength: 2,
@@ -1878,6 +2016,7 @@ export const cards: Card[] = [
 		releases: { WC: 137, WA: 301 }
 	},
 	{
+		id: 'WA302',
 		name: 'Greyfathers of Karak-Hirn',
 		cost: 5,
 		strength: 4,
@@ -1892,6 +2031,7 @@ export const cards: Card[] = [
 		releases: { WC: 138, WA: 302 }
 	},
 	{
+		id: 'WC139',
 		name: "Gripnir's Stormguard",
 		cost: 5,
 		strength: 5,
@@ -1906,6 +2046,7 @@ export const cards: Card[] = [
 		releases: { WC: 139 }
 	},
 	{
+		id: 'WC140',
 		name: 'Iron Brotherhood',
 		cost: 4,
 		strength: 4,
@@ -1920,6 +2061,7 @@ export const cards: Card[] = [
 		releases: { WC: 140 }
 	},
 	{
+		id: 'WC141',
 		name: 'King Alrik Ranulfsson',
 		cost: 7,
 		strength: 6,
@@ -1935,6 +2077,7 @@ export const cards: Card[] = [
 		releases: { WC: 141 }
 	},
 	{
+		id: 'WC142',
 		name: "King Alrik's Shieldbearers",
 		cost: 4,
 		strength: 4,
@@ -1949,6 +2092,7 @@ export const cards: Card[] = [
 		releases: { WC: 142 }
 	},
 	{
+		id: 'WC143',
 		name: 'Orcbane',
 		cost: 3,
 		strength: 1,
@@ -1963,6 +2107,7 @@ export const cards: Card[] = [
 		releases: { WC: 143 }
 	},
 	{
+		id: 'WA313',
 		name: 'Rockgrinder',
 		cost: 3,
 		strength: 1,
@@ -1977,6 +2122,7 @@ export const cards: Card[] = [
 		releases: { WC: 144, WA: 313 }
 	},
 	{
+		id: 'WC145',
 		name: "Thori's Tunnelers",
 		cost: 3,
 		strength: 3,
@@ -1987,10 +2133,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b> Commit: Play any number of strategy cards. Draw 1 card for each strategy card played this way.</p>',
+		text: '<p><b>Command</b> Commit: Play any number of strategy cards. Draw 1 card for each strategy card played this way.</p>',
 		releases: { WC: 145 }
 	},
 	{
+		id: 'WA319',
 		name: "Ulfrik's Axe-Bearers",
 		cost: 4,
 		strength: 3,
@@ -2001,10 +2148,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Discard the top 4 cards of your action deck. Add 1 combat tactic discarded this way to your hand.</p>',
+		text: '<p><b>WarCry</b>: Discard the top 4 cards of your action deck. Add 1 combat tactic discarded this way to your hand.</p>',
 		releases: { WC: 146, WA: 319 }
 	},
 	{
+		id: 'WC147',
 		name: 'Barak Grimjaw',
 		cost: 2,
 		strength: 1,
@@ -2019,6 +2167,7 @@ export const cards: Card[] = [
 		releases: { WC: 147 }
 	},
 	{
+		id: 'WC148',
 		name: 'Altdorf Halberdiers',
 		cost: 3,
 		strength: 4,
@@ -2033,6 +2182,7 @@ export const cards: Card[] = [
 		releases: { WC: 148 }
 	},
 	{
+		id: 'WC149',
 		name: 'Altdorf Swordsmen',
 		cost: 3,
 		strength: 3,
@@ -2047,6 +2197,7 @@ export const cards: Card[] = [
 		releases: { WC: 149 }
 	},
 	{
+		id: 'WC150',
 		name: 'Carroburg Greatswords',
 		cost: 5,
 		strength: 4,
@@ -2061,6 +2212,7 @@ export const cards: Card[] = [
 		releases: { WC: 150 }
 	},
 	{
+		id: 'WC151',
 		name: 'Elector Count Theodric Gausser',
 		cost: 5,
 		strength: 4,
@@ -2076,6 +2228,7 @@ export const cards: Card[] = [
 		releases: { WC: 151 }
 	},
 	{
+		id: 'WC152',
 		name: "Fandelhoch's Yeomen",
 		cost: 2,
 		strength: 1,
@@ -2090,6 +2243,7 @@ export const cards: Card[] = [
 		releases: { WC: 152 }
 	},
 	{
+		id: 'WC153',
 		name: "Gausser's Guard",
 		cost: 5,
 		strength: 5,
@@ -2105,6 +2259,7 @@ export const cards: Card[] = [
 		releases: { WC: 153 }
 	},
 	{
+		id: 'WA330',
 		name: 'Grand Master Hans Leitdorf',
 		cost: 4,
 		strength: 3,
@@ -2120,6 +2275,7 @@ export const cards: Card[] = [
 		releases: { WC: 154, WA: 330 }
 	},
 	{
+		id: 'WC155',
 		name: "Knights of Sigmar's Blood",
 		cost: 5,
 		strength: 4,
@@ -2134,6 +2290,7 @@ export const cards: Card[] = [
 		releases: { WC: 155 }
 	},
 	{
+		id: 'WC156',
 		name: 'Knights of the North Star',
 		cost: 4,
 		strength: 4,
@@ -2144,10 +2301,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit gets +1 strength for each of your committed war machines.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +1 strength for each of your committed war machines.</p>',
 		releases: { WC: 156 }
 	},
 	{
+		id: 'WC157',
 		name: 'Middenheim Halberdiers',
 		cost: 2,
 		strength: 1,
@@ -2162,6 +2320,7 @@ export const cards: Card[] = [
 		releases: { WC: 157 }
 	},
 	{
+		id: 'WA340',
 		name: 'Middenland Swordsmen',
 		cost: 3,
 		strength: 3,
@@ -2176,6 +2335,7 @@ export const cards: Card[] = [
 		releases: { WC: 158, WA: 340 }
 	},
 	{
+		id: 'WA342',
 		name: "Pfanelholt's Swordsmen",
 		cost: 2,
 		strength: 1,
@@ -2190,6 +2350,7 @@ export const cards: Card[] = [
 		releases: { WC: 159, WA: 342 }
 	},
 	{
+		id: 'WC160',
 		name: 'Reik River Patrol',
 		cost: 4,
 		strength: 3,
@@ -2204,6 +2365,7 @@ export const cards: Card[] = [
 		releases: { WC: 160 }
 	},
 	{
+		id: 'WC161',
 		name: 'Reikland Militia',
 		cost: 2,
 		strength: 2,
@@ -2218,6 +2380,7 @@ export const cards: Card[] = [
 		releases: { WC: 161 }
 	},
 	{
+		id: 'WC162',
 		name: "Riemann's Archers",
 		cost: 3,
 		strength: 3,
@@ -2232,6 +2395,7 @@ export const cards: Card[] = [
 		releases: { WC: 162 }
 	},
 	{
+		id: 'WC163',
 		name: "Riemann's Halberdiers",
 		cost: 3,
 		strength: 3,
@@ -2246,6 +2410,7 @@ export const cards: Card[] = [
 		releases: { WC: 163 }
 	},
 	{
+		id: 'WA346',
 		name: 'The Penitents of Altdorf',
 		cost: 3,
 		strength: 0,
@@ -2256,10 +2421,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for each card in your enemy's hand.</p>",
+		text: "<p><b>Terror</b>: 1</p><p><b>WarCry</b>: This unit gets +1 strength for each card in your enemy's hand.</p>",
 		releases: { WC: 164, WA: 346 }
 	},
 	{
+		id: 'WC165',
 		name: 'Captain Karl Riemann',
 		cost: 2,
 		strength: 1,
@@ -2274,6 +2440,7 @@ export const cards: Card[] = [
 		releases: { WC: 165 }
 	},
 	{
+		id: 'WC166',
 		name: "Aelleron's Everwatch",
 		cost: 4,
 		strength: 4,
@@ -2288,6 +2455,7 @@ export const cards: Card[] = [
 		releases: { WC: 166 }
 	},
 	{
+		id: 'WA361',
 		name: "Calath's Sentinels",
 		cost: 4,
 		strength: 4,
@@ -2302,6 +2470,7 @@ export const cards: Card[] = [
 		releases: { WC: 167, WA: 361 }
 	},
 	{
+		id: 'WC168',
 		name: "Caradril's Seekers",
 		cost: 3,
 		strength: 3,
@@ -2316,6 +2485,7 @@ export const cards: Card[] = [
 		releases: { WC: 168 }
 	},
 	{
+		id: 'WC169',
 		name: "Caradril's Silver Arrows",
 		cost: 3,
 		strength: 2,
@@ -2330,6 +2500,7 @@ export const cards: Card[] = [
 		releases: { WC: 169 }
 	},
 	{
+		id: 'WC170',
 		name: 'Cothique Sapphire Company',
 		cost: 5,
 		strength: 5,
@@ -2344,6 +2515,7 @@ export const cards: Card[] = [
 		releases: { WC: 170 }
 	},
 	{
+		id: 'WC171',
 		name: "Eagle's Claw",
 		cost: 3,
 		strength: 1,
@@ -2358,6 +2530,7 @@ export const cards: Card[] = [
 		releases: { WC: 171 }
 	},
 	{
+		id: 'WC172',
 		name: "Elrohyr's Brighthelms",
 		cost: 5,
 		strength: 4,
@@ -2372,6 +2545,7 @@ export const cards: Card[] = [
 		releases: { WC: 172 }
 	},
 	{
+		id: 'WC173',
 		name: "Fuviel's Shining Lances",
 		cost: 4,
 		strength: 4,
@@ -2386,6 +2560,7 @@ export const cards: Card[] = [
 		releases: { WC: 173 }
 	},
 	{
+		id: 'WA363',
 		name: "Galathel's Greycloaks",
 		cost: 4,
 		strength: 4,
@@ -2400,6 +2575,7 @@ export const cards: Card[] = [
 		releases: { WC: 174, WA: 363 }
 	},
 	{
+		id: 'WC175',
 		name: "Gelthion's Brightblades",
 		cost: 5,
 		strength: 5,
@@ -2410,10 +2586,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: "<p> <b>WarCry</b>: Your enemy may not play any tactic or reaction abilities printed on the enemy unit or any of it's attachments.</p>",
+		text: "<p><b>WarCry</b>: Your enemy may not play any tactic or reaction abilities printed on the enemy unit or any of it's attachments.</p>",
 		releases: { WC: 175 }
 	},
 	{
+		id: 'WC176',
 		name: "Ilthorial's Riders",
 		cost: 3,
 		strength: 3,
@@ -2428,6 +2605,7 @@ export const cards: Card[] = [
 		releases: { WC: 176 }
 	},
 	{
+		id: 'WA365',
 		name: 'Imrik, Dragon Prince of Caledor',
 		cost: 6,
 		strength: 5,
@@ -2443,6 +2621,7 @@ export const cards: Card[] = [
 		releases: { WC: 177, WA: 365 }
 	},
 	{
+		id: 'WC178',
 		name: "Imrik's Knights",
 		cost: 6,
 		strength: 4,
@@ -2454,10 +2633,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets +3 strength. Only usable while attacking from the battle line.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +3 strength. Only usable while attacking from the battle line.</p>',
 		releases: { WC: 178 }
 	},
 	{
+		id: 'WC179',
 		name: "Lathain's Patrol",
 		cost: 3,
 		strength: 2,
@@ -2472,6 +2652,7 @@ export const cards: Card[] = [
 		releases: { WC: 179 }
 	},
 	{
+		id: 'WC180',
 		name: 'Phoenix Guard of Asuryan',
 		cost: 6,
 		strength: 5,
@@ -2486,6 +2667,7 @@ export const cards: Card[] = [
 		releases: { WC: 180 }
 	},
 	{
+		id: 'WC181',
 		name: 'Prince Boranhyr Geddesil',
 		cost: 5,
 		strength: 5,
@@ -2496,10 +2678,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Play up to 2 strategy cards.</p>',
+		text: '<p><b>Command</b>: Play up to 2 strategy cards.</p>',
 		releases: { WC: 181 }
 	},
 	{
+		id: 'WC182',
 		name: "Silanthir's Defenders",
 		cost: 4,
 		strength: 4,
@@ -2514,6 +2697,7 @@ export const cards: Card[] = [
 		releases: { WC: 182 }
 	},
 	{
+		id: 'WC183',
 		name: 'Swiftwing',
 		cost: 4,
 		strength: 4,
@@ -2524,10 +2708,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets +2 strength for each of your committed ranged attack units.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 strength for each of your committed ranged attack units.</p>',
 		releases: { WC: 183 }
 	},
 	{
+		id: 'WC184',
 		name: 'Rylanus Evaenarion',
 		cost: 2,
 		tacticPoints: 2,
@@ -2541,6 +2726,7 @@ export const cards: Card[] = [
 		releases: { WC: 184 }
 	},
 	{
+		id: 'WA10',
 		name: "D'aggorn's Deathblades",
 		cost: 5,
 		strength: 4,
@@ -2555,6 +2741,7 @@ export const cards: Card[] = [
 		releases: { WM: 1, WA: 10 }
 	},
 	{
+		id: 'WM2',
 		name: "D'aggorn's Hellrazers",
 		cost: 4,
 		strength: 4,
@@ -2569,6 +2756,7 @@ export const cards: Card[] = [
 		releases: { WM: 2 }
 	},
 	{
+		id: 'WA18',
 		name: 'Melekh the Changer',
 		cost: 4,
 		strength: 3,
@@ -2585,6 +2773,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'WA19',
 		name: "Melekh's Horrors",
 		cost: 4,
 		strength: 3,
@@ -2599,6 +2788,7 @@ export const cards: Card[] = [
 		releases: { WM: 4, WA: 19 }
 	},
 	{
+		id: 'WM5',
 		name: "Melekh's Wyrdswords",
 		cost: 5,
 		strength: 5,
@@ -2613,6 +2803,7 @@ export const cards: Card[] = [
 		releases: { WM: 5 }
 	},
 	{
+		id: 'WM6',
 		name: "Quel'hi'liak",
 		cost: 6,
 		strength: 4,
@@ -2628,6 +2819,7 @@ export const cards: Card[] = [
 		releases: { WM: 6 }
 	},
 	{
+		id: 'WM7',
 		name: "Tal'gatha the Fallen",
 		cost: 4,
 		strength: 3,
@@ -2642,6 +2834,7 @@ export const cards: Card[] = [
 		releases: { WM: 7 }
 	},
 	{
+		id: 'WA26',
 		name: 'Tzeentch Screamers',
 		cost: 4,
 		strength: 3,
@@ -2656,6 +2849,7 @@ export const cards: Card[] = [
 		releases: { WM: 8, WA: 26 }
 	},
 	{
+		id: 'WM9',
 		name: 'Vendhal Skullwarper',
 		cost: 1,
 		unique: true,
@@ -2668,6 +2862,7 @@ export const cards: Card[] = [
 		releases: { WM: 9 }
 	},
 	{
+		id: 'WM10',
 		name: 'Black Ark Hunters',
 		cost: 4,
 		strength: 4,
@@ -2682,6 +2877,7 @@ export const cards: Card[] = [
 		releases: { WM: 10 }
 	},
 	{
+		id: 'WA35',
 		name: 'Ganethia Blacksoul',
 		cost: 4,
 		strength: 4,
@@ -2696,6 +2892,7 @@ export const cards: Card[] = [
 		releases: { WM: 11, WA: 35 }
 	},
 	{
+		id: 'WM12',
 		name: 'Har Ganeth Executioners',
 		cost: 5,
 		strength: 5,
@@ -2710,6 +2907,7 @@ export const cards: Card[] = [
 		releases: { WM: 12 }
 	},
 	{
+		id: 'WM13',
 		name: "Kae'bhirnek's Twilight Grievers",
 		cost: 4,
 		strength: 4,
@@ -2720,10 +2918,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: The enemy unit gets -2 tactic points unless your enemy discards 2 cards.</p>',
+		text: '<p><b>WarCry</b>: The enemy unit gets -2 tactic points unless your enemy discards 2 cards.</p>',
 		releases: { WM: 13 }
 	},
 	{
+		id: 'WA46',
 		name: "Menghil's Mankillers",
 		cost: 4,
 		strength: 3,
@@ -2738,6 +2937,7 @@ export const cards: Card[] = [
 		releases: { WM: 14, WA: 46 }
 	},
 	{
+		id: 'WA47',
 		name: 'Morathi, the Hag Sorceress',
 		cost: 6,
 		strength: 4,
@@ -2749,10 +2949,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Wizard</b>: 2</p><p> <b>WarCry</b>: Choose a number. Your enemy reveals their hand. This unit gets +1 strength for each card in their hand with a die equal to the chosen number.</p>',
+		text: '<p><b>Wizard</b>: 2</p><p><b>WarCry</b>: Choose a number. Your enemy reveals their hand. This unit gets +1 strength for each card in their hand with a die equal to the chosen number.</p>',
 		releases: { WM: 15, WA: 47 }
 	},
 	{
+		id: 'WA52',
 		name: 'Saerith the Bladed',
 		cost: 4,
 		strength: 4,
@@ -2767,6 +2968,7 @@ export const cards: Card[] = [
 		releases: { WM: 16, WA: 52 }
 	},
 	{
+		id: 'WM17',
 		name: 'The Scarlet Coven',
 		cost: 4,
 		strength: 4,
@@ -2781,6 +2983,7 @@ export const cards: Card[] = [
 		releases: { WM: 17 }
 	},
 	{
+		id: 'WM18',
 		name: "Ellekiel, Bride of Ha'asek",
 		cost: 1,
 		unique: true,
@@ -2793,6 +2996,7 @@ export const cards: Card[] = [
 		releases: { WM: 18 }
 	},
 	{
+		id: 'WM19',
 		name: 'Baz Thunderbelly',
 		cost: 6,
 		strength: 5,
@@ -2807,6 +3011,7 @@ export const cards: Card[] = [
 		releases: { WM: 19 }
 	},
 	{
+		id: 'WA65',
 		name: 'Grubbi Hookblade',
 		cost: 3,
 		strength: 2,
@@ -2822,6 +3027,7 @@ export const cards: Card[] = [
 		releases: { WM: 20, WA: 65 }
 	},
 	{
+		id: 'WA67',
 		name: "Grubbi's Skullcracker",
 		cost: 3,
 		strength: 1,
@@ -2836,6 +3042,7 @@ export const cards: Card[] = [
 		releases: { WM: 21, WA: 67 }
 	},
 	{
+		id: 'WM22',
 		name: "Grubbi's Wolfboyz",
 		cost: 4,
 		strength: 3,
@@ -2850,6 +3057,7 @@ export const cards: Card[] = [
 		releases: { WM: 22 }
 	},
 	{
+		id: 'WM23',
 		name: "Moonscowler's Jabbers",
 		cost: 2,
 		strength: 2,
@@ -2864,6 +3072,7 @@ export const cards: Card[] = [
 		releases: { WM: 23 }
 	},
 	{
+		id: 'WM24',
 		name: 'Uzzag Gharkhul Skullburster',
 		cost: 3,
 		strength: 3,
@@ -2878,6 +3087,7 @@ export const cards: Card[] = [
 		releases: { WM: 24 }
 	},
 	{
+		id: 'WA86',
 		name: 'Wazzi Moonscowler',
 		cost: 2,
 		strength: 1,
@@ -2892,6 +3102,7 @@ export const cards: Card[] = [
 		releases: { WM: 25, WA: 86 }
 	},
 	{
+		id: 'WM26',
 		name: 'Wurrzag Ud Ura Zahabu',
 		cost: 5,
 		strength: 4,
@@ -2907,6 +3118,7 @@ export const cards: Card[] = [
 		releases: { WM: 26 }
 	},
 	{
+		id: 'WA88',
 		name: 'Borgokk Bonecaster',
 		cost: 1,
 		keywords: ['Orc', 'Character'],
@@ -2918,6 +3130,7 @@ export const cards: Card[] = [
 		releases: { WM: 27, WA: 88 }
 	},
 	{
+		id: 'WM28',
 		name: 'All or Nothing',
 		cost: 4,
 		die: 4,
@@ -2926,10 +3139,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: All your other combat tactics cost 0 tactic points.</p>',
+		text: '<p><b>WarCry</b>: All your other combat tactics cost 0 tactic points.</p>',
 		releases: { WM: 28 }
 	},
 	{
+		id: 'WM29',
 		name: 'Bane of Forged Steel',
 		cost: 1,
 		die: 3,
@@ -2942,6 +3156,7 @@ export const cards: Card[] = [
 		releases: { WM: 29 }
 	},
 	{
+		id: 'WM30',
 		name: 'Battle Cry',
 		cost: 1,
 		die: 3,
@@ -2950,10 +3165,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b> Discard any number of cards: This unit gets +1 strength or each card discarded.</p>',
+		text: '<p><b>WarCry</b> Discard any number of cards: This unit gets +1 strength or each card discarded.</p>',
 		releases: { WM: 30 }
 	},
 	{
+		id: 'WA109',
 		name: 'Battle Hardened',
 		cost: 1,
 		die: 3,
@@ -2967,6 +3183,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'WA115',
 		name: "Borgokk's Fog of War",
 		die: 4,
 		keywords: [],
@@ -2978,6 +3195,7 @@ export const cards: Card[] = [
 		releases: { WM: 32, WA: 115 }
 	},
 	{
+		id: 'WA116',
 		name: 'Borrowed Power',
 		cost: 2,
 		die: 1,
@@ -2990,6 +3208,7 @@ export const cards: Card[] = [
 		releases: { WM: 33, WA: 116 }
 	},
 	{
+		id: 'WM34',
 		name: 'Borrowed Steel',
 		cost: 1,
 		die: 4,
@@ -3002,6 +3221,7 @@ export const cards: Card[] = [
 		releases: { WM: 34 }
 	},
 	{
+		id: 'VT22',
 		name: 'Buy Me Some Time',
 		cost: 2,
 		die: 4,
@@ -3010,10 +3230,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Commit this unit: This combat ends. Return the enemy unit to the battle line ready.</p>',
+		text: '<p><b>WarCry</b> Commit this unit: This combat ends. Return the enemy unit to the battle line ready.</p>',
 		releases: { WM: 35, VT: 22 }
 	},
 	{
+		id: 'WM36',
 		name: 'Chain Casting',
 		cost: 2,
 		die: 2,
@@ -3026,6 +3247,7 @@ export const cards: Card[] = [
 		releases: { WM: 36 }
 	},
 	{
+		id: 'WM37',
 		name: 'Choices of War',
 		cost: 1,
 		die: 4,
@@ -3038,6 +3260,7 @@ export const cards: Card[] = [
 		releases: { WM: 37 }
 	},
 	{
+		id: 'WA125',
 		name: 'Command the Heights',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -3049,6 +3272,7 @@ export const cards: Card[] = [
 		releases: { WM: 38, VT: 23, WA: 125 }
 	},
 	{
+		id: 'WA138',
 		name: "Devil's Bargain",
 		cost: 1,
 		die: 3,
@@ -3061,6 +3285,7 @@ export const cards: Card[] = [
 		releases: { WM: 39, WA: 138 }
 	},
 	{
+		id: 'WM40',
 		name: 'Disruption of Support',
 		die: 5,
 		keywords: ['Strategy'],
@@ -3072,6 +3297,7 @@ export const cards: Card[] = [
 		releases: { WM: 40 }
 	},
 	{
+		id: 'WA139',
 		name: 'Dissipate Magic',
 		die: 2,
 		keywords: [],
@@ -3083,6 +3309,7 @@ export const cards: Card[] = [
 		releases: { WM: 41, WA: 139 }
 	},
 	{
+		id: 'WM42',
 		name: 'Dual Casting',
 		cost: 3,
 		die: 3,
@@ -3095,6 +3322,7 @@ export const cards: Card[] = [
 		releases: { WM: 42 }
 	},
 	{
+		id: 'WA142',
 		name: 'Duplicate',
 		cost: 0,
 		die: 2,
@@ -3107,6 +3335,7 @@ export const cards: Card[] = [
 		releases: { WM: 43, WA: 142 }
 	},
 	{
+		id: 'WM44',
 		name: 'Elite Support',
 		die: 4,
 		keywords: ['Strategy'],
@@ -3118,6 +3347,7 @@ export const cards: Card[] = [
 		releases: { WM: 44 }
 	},
 	{
+		id: 'WM45',
 		name: 'Fearsome Opponent',
 		cost: 3,
 		die: 2,
@@ -3130,6 +3360,7 @@ export const cards: Card[] = [
 		releases: { WM: 45 }
 	},
 	{
+		id: 'WA152',
 		name: 'Fiery Blast',
 		cost: 1,
 		die: 3,
@@ -3142,6 +3373,7 @@ export const cards: Card[] = [
 		releases: { WM: 46, WA: 152 }
 	},
 	{
+		id: 'WM47',
 		name: 'Final Assault',
 		cost: 3,
 		die: 2,
@@ -3154,6 +3386,7 @@ export const cards: Card[] = [
 		releases: { WM: 47 }
 	},
 	{
+		id: 'WM48',
 		name: 'Final Challenge',
 		cost: 2,
 		die: 2,
@@ -3166,6 +3399,7 @@ export const cards: Card[] = [
 		releases: { WM: 48 }
 	},
 	{
+		id: 'WM49',
 		name: 'Flank Charge',
 		cost: 2,
 		die: 5,
@@ -3178,6 +3412,7 @@ export const cards: Card[] = [
 		releases: { WM: 49 }
 	},
 	{
+		id: 'WM50',
 		name: 'Flash of Insight',
 		cost: 0,
 		die: 3,
@@ -3190,6 +3425,7 @@ export const cards: Card[] = [
 		releases: { WM: 50 }
 	},
 	{
+		id: 'WM51',
 		name: 'Foresight',
 		die: 4,
 		keywords: [],
@@ -3201,6 +3437,7 @@ export const cards: Card[] = [
 		releases: { WM: 51 }
 	},
 	{
+		id: 'WM52',
 		name: 'Fury from Above',
 		cost: 3,
 		die: 3,
@@ -3213,6 +3450,7 @@ export const cards: Card[] = [
 		releases: { WM: 52 }
 	},
 	{
+		id: 'WM53',
 		name: 'Guardian Light',
 		cost: 1,
 		die: 5,
@@ -3225,6 +3463,7 @@ export const cards: Card[] = [
 		releases: { WM: 53 }
 	},
 	{
+		id: 'WM54',
 		name: 'Heroic Presence',
 		cost: 1,
 		die: 3,
@@ -3237,6 +3476,7 @@ export const cards: Card[] = [
 		releases: { WM: 54 }
 	},
 	{
+		id: 'WA173',
 		name: 'Hex',
 		die: 2,
 		keywords: [],
@@ -3248,6 +3488,7 @@ export const cards: Card[] = [
 		releases: { WM: 55, WA: 173 }
 	},
 	{
+		id: 'DH12',
 		name: 'Ire of the Magus',
 		die: 1,
 		keywords: [],
@@ -3259,6 +3500,7 @@ export const cards: Card[] = [
 		releases: { WM: 56, DH: 12 }
 	},
 	{
+		id: 'WM57',
 		name: "Let 'Em Run",
 		die: 4,
 		keywords: [],
@@ -3270,6 +3512,7 @@ export const cards: Card[] = [
 		releases: { WM: 57 }
 	},
 	{
+		id: 'WA189',
 		name: 'Luck',
 		die: 2,
 		keywords: [],
@@ -3281,6 +3524,7 @@ export const cards: Card[] = [
 		releases: { WM: 58, WA: 189 }
 	},
 	{
+		id: 'WM59',
 		name: 'Magical Aptitude',
 		cost: 1,
 		die: 5,
@@ -3289,10 +3533,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: All spell combat tactics you play this combat cost 0 spell points.</p>',
+		text: '<p><b>WarCry</b>: All spell combat tactics you play this combat cost 0 spell points.</p>',
 		releases: { WM: 59 }
 	},
 	{
+		id: 'WA190',
 		name: 'Magnify Terror',
 		cost: 1,
 		die: 2,
@@ -3305,6 +3550,7 @@ export const cards: Card[] = [
 		releases: { WM: 60, WA: 190 }
 	},
 	{
+		id: 'WA194',
 		name: 'Mass Confusion',
 		cost: 2,
 		die: 3,
@@ -3313,10 +3559,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Discard 1 card: Exchange this unit with 1 of your other ready units.</p>',
+		text: '<p><b>WarCry</b> Discard 1 card: Exchange this unit with 1 of your other ready units.</p>',
 		releases: { WM: 61, WA: 194 }
 	},
 	{
+		id: 'WM62',
 		name: 'Meet Me in the Middle',
 		cost: 2,
 		die: 4,
@@ -3329,6 +3576,7 @@ export const cards: Card[] = [
 		releases: { WM: 62 }
 	},
 	{
+		id: 'WA197',
 		name: "Melkior's Gambit",
 		die: 3,
 		keywords: [],
@@ -3340,6 +3588,7 @@ export const cards: Card[] = [
 		releases: { WM: 63, WA: 197 }
 	},
 	{
+		id: 'WA208',
 		name: 'Open Field',
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -3351,6 +3600,7 @@ export const cards: Card[] = [
 		releases: { WM: 64, VT: 24, WA: 208 }
 	},
 	{
+		id: 'WA211',
 		name: 'Overload',
 		die: 3,
 		keywords: [],
@@ -3362,6 +3612,7 @@ export const cards: Card[] = [
 		releases: { WM: 65, WA: 211 }
 	},
 	{
+		id: 'WM66',
 		name: 'Ready the Shields',
 		die: 5,
 		keywords: [],
@@ -3373,6 +3624,7 @@ export const cards: Card[] = [
 		releases: { WM: 66 }
 	},
 	{
+		id: 'WM67',
 		name: 'Rune of Holding',
 		die: 2,
 		keywords: ['Strategy'],
@@ -3384,6 +3636,7 @@ export const cards: Card[] = [
 		releases: { WM: 67 }
 	},
 	{
+		id: 'WA232',
 		name: 'Sacrifice',
 		die: 4,
 		keywords: [],
@@ -3391,10 +3644,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Destroy 1 of your units: Your enemy discards 3 cards.</p>',
+		text: '<p><b>Command</b> Destroy 1 of your units: Your enemy discards 3 cards.</p>',
 		releases: { WM: 68, WA: 232 }
 	},
 	{
+		id: 'WM69',
 		name: 'Simple Plan',
 		cost: 2,
 		die: 2,
@@ -3407,6 +3661,7 @@ export const cards: Card[] = [
 		releases: { WM: 69 }
 	},
 	{
+		id: 'WM70',
 		name: 'Spell of Shielding',
 		cost: 3,
 		die: 1,
@@ -3419,6 +3674,7 @@ export const cards: Card[] = [
 		releases: { WM: 70 }
 	},
 	{
+		id: 'WM71',
 		name: 'Steed of Shadows',
 		die: 3,
 		keywords: [],
@@ -3431,6 +3687,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'WA245',
 		name: 'Strategems',
 		die: 2,
 		keywords: [],
@@ -3442,6 +3699,7 @@ export const cards: Card[] = [
 		releases: { WM: 72, WA: 245 }
 	},
 	{
+		id: 'WM73',
 		name: 'Strategic Maneuver',
 		cost: 2,
 		die: 3,
@@ -3450,10 +3708,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card in your hand in excess of the cards in your enemy's hand.</p>",
+		text: "<p><b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card in your hand in excess of the cards in your enemy's hand.</p>",
 		releases: { WM: 73 }
 	},
 	{
+		id: 'WM74',
 		name: 'Overmaster',
 		cost: 2,
 		die: 2,
@@ -3466,6 +3725,7 @@ export const cards: Card[] = [
 		releases: { WM: 74 }
 	},
 	{
+		id: 'WM75',
 		name: 'Strength of Focus',
 		die: 1,
 		keywords: ['Strategy'],
@@ -3477,6 +3737,7 @@ export const cards: Card[] = [
 		releases: { WM: 75 }
 	},
 	{
+		id: 'WM76',
 		name: 'Superior Intellect',
 		cost: 2,
 		die: 3,
@@ -3489,6 +3750,7 @@ export const cards: Card[] = [
 		releases: { WM: 76 }
 	},
 	{
+		id: 'WM77',
 		name: 'Surprise Arms',
 		cost: 1,
 		die: 4,
@@ -3501,6 +3763,7 @@ export const cards: Card[] = [
 		releases: { WM: 77 }
 	},
 	{
+		id: 'WM78',
 		name: "The Crow's Feast",
 		cost: 2,
 		die: 3,
@@ -3513,6 +3776,7 @@ export const cards: Card[] = [
 		releases: { WM: 78 }
 	},
 	{
+		id: 'WM79',
 		name: 'The Fog of War',
 		die: 3,
 		keywords: ['Strategy'],
@@ -3524,6 +3788,7 @@ export const cards: Card[] = [
 		releases: { WM: 79 }
 	},
 	{
+		id: 'WM80',
 		name: 'The Howler Wind',
 		die: 1,
 		keywords: [],
@@ -3535,6 +3800,7 @@ export const cards: Card[] = [
 		releases: { WM: 80 }
 	},
 	{
+		id: 'WA263',
 		name: 'Threaten',
 		cost: 2,
 		die: 2,
@@ -3543,10 +3809,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
+		text: '<p><b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
 		releases: { WM: 81, WA: 263 }
 	},
 	{
+		id: 'WM82',
 		name: 'The Strength of One',
 		cost: 2,
 		die: 2,
@@ -3559,6 +3826,7 @@ export const cards: Card[] = [
 		releases: { WM: 82 }
 	},
 	{
+		id: 'WM83',
 		name: 'Turn of Events',
 		cost: 1,
 		die: 4,
@@ -3567,10 +3835,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +1 strength and may play cards as if it were attacking.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +1 strength and may play cards as if it were attacking.</p>',
 		releases: { WM: 83 }
 	},
 	{
+		id: 'WM84',
 		name: 'Unleashed Fury',
 		cost: 3,
 		die: 1,
@@ -3583,6 +3852,7 @@ export const cards: Card[] = [
 		releases: { WM: 84 }
 	},
 	{
+		id: 'WM85',
 		name: "Warrior's Sight",
 		die: 4,
 		keywords: [],
@@ -3594,6 +3864,7 @@ export const cards: Card[] = [
 		releases: { WM: 85 }
 	},
 	{
+		id: 'WA275',
 		name: 'Weapons Master',
 		cost: 1,
 		die: 5,
@@ -3606,6 +3877,7 @@ export const cards: Card[] = [
 		releases: { WM: 86, WA: 275 }
 	},
 	{
+		id: 'WA277',
 		name: 'Wind of Death',
 		cost: 'X',
 		die: 1,
@@ -3618,6 +3890,7 @@ export const cards: Card[] = [
 		releases: { WM: 87, WA: 277 }
 	},
 	{
+		id: 'WA278',
 		name: 'Winds of Fate',
 		cost: 1,
 		die: 2,
@@ -3630,6 +3903,7 @@ export const cards: Card[] = [
 		releases: { WM: 88, WA: 278 }
 	},
 	{
+		id: 'WM89',
 		name: 'You Shall Not Pass',
 		die: 4,
 		keywords: [],
@@ -3641,6 +3915,7 @@ export const cards: Card[] = [
 		releases: { WM: 89 }
 	},
 	{
+		id: 'WM90',
 		name: 'Crystal of Seeing',
 		cost: 1,
 		tacticPoints: 1,
@@ -3653,6 +3928,7 @@ export const cards: Card[] = [
 		releases: { WM: 90 }
 	},
 	{
+		id: 'WM91',
 		name: 'Griffon War Banner',
 		cost: 2,
 		unique: true,
@@ -3665,6 +3941,7 @@ export const cards: Card[] = [
 		releases: { WM: 91 }
 	},
 	{
+		id: 'WA285',
 		name: 'Lance of Piercing',
 		cost: 1,
 		keywords: ['Weapon'],
@@ -3676,6 +3953,7 @@ export const cards: Card[] = [
 		releases: { WM: 92, CD: 37, WA: 285 }
 	},
 	{
+		id: 'WM93',
 		name: "Sword of Forest's Might",
 		cost: 1,
 		unique: true,
@@ -3688,6 +3966,7 @@ export const cards: Card[] = [
 		releases: { WM: 93 }
 	},
 	{
+		id: 'WM94',
 		name: 'Anvil of Doom',
 		cost: 3,
 		strength: 2,
@@ -3704,6 +3983,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'WM95',
 		name: "Barak's Forest Rangers",
 		cost: 4,
 		strength: 4,
@@ -3718,6 +3998,7 @@ export const cards: Card[] = [
 		releases: { WM: 95 }
 	},
 	{
+		id: 'WM96',
 		name: "Barak's Slayers",
 		cost: 4,
 		strength: 3,
@@ -3728,10 +4009,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for each enemy unit with a support tactic.</p>',
+		text: '<p><b>Terror</b>: 1</p><p><b>WarCry</b>: This unit gets +1 strength for each enemy unit with a support tactic.</p>',
 		releases: { WM: 96 }
 	},
 	{
+		id: 'WM97',
 		name: "Borri Durinsson's Stoutbeards",
 		cost: 4,
 		strength: 4,
@@ -3746,6 +4028,7 @@ export const cards: Card[] = [
 		releases: { WM: 97 }
 	},
 	{
+		id: 'WM98',
 		name: 'Dwarf Gunners',
 		cost: 2,
 		strength: 1,
@@ -3760,6 +4043,7 @@ export const cards: Card[] = [
 		releases: { WM: 98 }
 	},
 	{
+		id: 'WM99',
 		name: 'Pride of Karak-Hirn',
 		cost: 4,
 		strength: 1,
@@ -3774,6 +4058,7 @@ export const cards: Card[] = [
 		releases: { WM: 99 }
 	},
 	{
+		id: 'WM100',
 		name: 'Runelord Thurin Stormhammer',
 		cost: 3,
 		strength: 3,
@@ -3788,6 +4073,7 @@ export const cards: Card[] = [
 		releases: { WM: 100 }
 	},
 	{
+		id: 'WA314',
 		name: 'Runesmith Gottri Grimsson',
 		cost: 5,
 		strength: 5,
@@ -3802,6 +4088,7 @@ export const cards: Card[] = [
 		releases: { WM: 101, WA: 314 }
 	},
 	{
+		id: 'WA320',
 		name: 'Boldur Runestriker',
 		cost: 1,
 		unique: true,
@@ -3814,6 +4101,7 @@ export const cards: Card[] = [
 		releases: { WM: 102, WA: 320 }
 	},
 	{
+		id: 'WM103',
 		name: 'Balthasar Gelt',
 		cost: 5,
 		strength: 4,
@@ -3829,6 +4117,7 @@ export const cards: Card[] = [
 		releases: { WM: 103 }
 	},
 	{
+		id: 'WM104',
 		name: 'Carroburg City Garrison',
 		cost: 2,
 		strength: 2,
@@ -3843,6 +4132,7 @@ export const cards: Card[] = [
 		releases: { WM: 104 }
 	},
 	{
+		id: 'WA326',
 		name: 'Dieter Menschaff',
 		cost: 4,
 		strength: 3,
@@ -3857,6 +4147,7 @@ export const cards: Card[] = [
 		releases: { WM: 105, WA: 326 }
 	},
 	{
+		id: 'WA331',
 		name: "Gunther's Carroburgers",
 		cost: 4,
 		strength: 4,
@@ -3871,6 +4162,7 @@ export const cards: Card[] = [
 		releases: { WM: 106, WA: 331 }
 	},
 	{
+		id: 'WA335',
 		name: 'Knight General Mikael Kobernecht',
 		cost: 5,
 		strength: 4,
@@ -3886,6 +4178,7 @@ export const cards: Card[] = [
 		releases: { WM: 107, WA: 335 }
 	},
 	{
+		id: 'WA336',
 		name: 'Lector Wilhelm Faustus',
 		cost: 5,
 		strength: 4,
@@ -3901,6 +4194,7 @@ export const cards: Card[] = [
 		releases: { WM: 108, WA: 336 }
 	},
 	{
+		id: 'WM109',
 		name: 'Reiksguard Knights',
 		cost: 5,
 		strength: 5,
@@ -3915,6 +4209,7 @@ export const cards: Card[] = [
 		releases: { WM: 109 }
 	},
 	{
+		id: 'WM110',
 		name: 'Wissen Highway Patrol',
 		cost: 2,
 		strength: 1,
@@ -3929,6 +4224,7 @@ export const cards: Card[] = [
 		releases: { WM: 110 }
 	},
 	{
+		id: 'WA352',
 		name: 'Gerhart Brennend, Bright Wizard',
 		cost: 1,
 		unique: true,
@@ -3941,6 +4237,7 @@ export const cards: Card[] = [
 		releases: { WM: 111, WA: 352 }
 	},
 	{
+		id: 'WM112',
 		name: 'Eagles of the Dawn Eyrie',
 		cost: 4,
 		strength: 3,
@@ -3955,6 +4252,7 @@ export const cards: Card[] = [
 		releases: { WM: 112 }
 	},
 	{
+		id: 'WA353',
 		name: 'Alarielle, the Everqueen',
 		cost: 5,
 		strength: 4,
@@ -3970,6 +4268,7 @@ export const cards: Card[] = [
 		releases: { WM: 113, WA: 353 }
 	},
 	{
+		id: 'WM114',
 		name: "Celethil's Swordmasters",
 		cost: 5,
 		strength: 5,
@@ -3984,6 +4283,7 @@ export const cards: Card[] = [
 		releases: { WM: 114 }
 	},
 	{
+		id: 'WM115',
 		name: 'Mage Bilgarim Whitestar',
 		cost: 4,
 		strength: 4,
@@ -3998,6 +4298,7 @@ export const cards: Card[] = [
 		releases: { WM: 115 }
 	},
 	{
+		id: 'WM116',
 		name: "Quenarion's Brightspears",
 		cost: 4,
 		strength: 4,
@@ -4012,6 +4313,7 @@ export const cards: Card[] = [
 		releases: { WM: 116 }
 	},
 	{
+		id: 'WM117',
 		name: 'Teclis, High Loremaster',
 		cost: 6,
 		strength: 4,
@@ -4027,6 +4329,7 @@ export const cards: Card[] = [
 		releases: { WM: 117 }
 	},
 	{
+		id: 'WM118',
 		name: 'White Lions of Chrace',
 		cost: 4,
 		strength: 4,
@@ -4041,6 +4344,7 @@ export const cards: Card[] = [
 		releases: { WM: 118 }
 	},
 	{
+		id: 'WM119',
 		name: 'Yvresse White Company',
 		cost: 3,
 		strength: 2,
@@ -4055,6 +4359,7 @@ export const cards: Card[] = [
 		releases: { WM: 119 }
 	},
 	{
+		id: 'WA381',
 		name: 'Lady Ellaneil the Dawnbringer',
 		cost: 1,
 		unique: true,
@@ -4063,10 +4368,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		rarity: 'Rare',
-		text: '<p><b>Wizard</b>: 1</p><p> <b>WarCry</b>: Play a spell combat tactic card, paying no costs.</p>',
+		text: '<p><b>Wizard</b>: 1</p><p><b>WarCry</b>: Play a spell combat tactic card, paying no costs.</p>',
 		releases: { WM: 120, WA: 381 }
 	},
 	{
+		id: 'SD1',
 		name: 'Angkor, Father of Mammoths',
 		cost: 7,
 		strength: 6,
@@ -4078,10 +4384,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Terror</b>: 2</p><p>While this unit is ready in the battle line, your enemy may not make follow-up attacks.</p><p> <b>WarCry</b>: If you win this combat, destroy all enemy units with the same name as the losing unit.</p>',
+		text: '<p><b>Terror</b>: 2</p><p>While this unit is ready in the battle line, your enemy may not make follow-up attacks.</p><p><b>WarCry</b>: If you win this combat, destroy all enemy units with the same name as the losing unit.</p>',
 		releases: { SD: 1 }
 	},
 	{
+		id: 'SD2',
 		name: "Mal'angor",
 		cost: 7,
 		strength: 5,
@@ -4093,10 +4400,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Terror</b>: 4</p><p>While this unit is in combat, you may not play spell cards or abilities.</p><p> <b>WarCry</b> Discard any number of cards: This unit gets +1 strength for each card discarded.</p>',
+		text: '<p><b>Terror</b>: 4</p><p>While this unit is in combat, you may not play spell cards or abilities.</p><p><b>WarCry</b> Discard any number of cards: This unit gets +1 strength for each card discarded.</p>',
 		releases: { SD: 2 }
 	},
 	{
+		id: 'SD3',
 		name: 'Bloodaxe Horde',
 		cost: 3,
 		strength: 3,
@@ -4111,6 +4419,7 @@ export const cards: Card[] = [
 		releases: { SD: 3 }
 	},
 	{
+		id: 'SD4',
 		name: 'Haargoth',
 		cost: 6,
 		strength: 5,
@@ -4122,10 +4431,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p><b>Reaction</b>: After your enemy plays a spell card or ability, they discard 1 card.</p><p> <b>WarCry</b>: Your enemy's tactic cards cost 2 additional tactic points.</p>",
+		text: "<p><b>Reaction</b>: After your enemy plays a spell card or ability, they discard 1 card.</p><p><b>WarCry</b>: Your enemy's tactic cards cost 2 additional tactic points.</p>",
 		releases: { SD: 4 }
 	},
 	{
+		id: 'WA14',
 		name: "Haargoth's Bloodletters",
 		cost: 4,
 		strength: 4,
@@ -4140,6 +4450,7 @@ export const cards: Card[] = [
 		releases: { SD: 5, WA: 14 }
 	},
 	{
+		id: 'SD6',
 		name: "Haargoth's Blooddrinkers",
 		cost: 4,
 		strength: 3,
@@ -4154,6 +4465,7 @@ export const cards: Card[] = [
 		releases: { SD: 6 }
 	},
 	{
+		id: 'SD7',
 		name: "Haargoth's Scourge-Scythe",
 		cost: 4,
 		strength: 4,
@@ -4164,10 +4476,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: If you rout the enemy unit, choose the target of your follow-up attack. Only playable while this unit has a character attachment.</p>',
+		text: '<p><b>WarCry</b>: If you rout the enemy unit, choose the target of your follow-up attack. Only playable while this unit has a character attachment.</p>',
 		releases: { SD: 7 }
 	},
 	{
+		id: 'SD8',
 		name: 'Korvin the Sentinel',
 		cost: 5,
 		strength: 4,
@@ -4183,6 +4496,7 @@ export const cards: Card[] = [
 		releases: { SD: 8 }
 	},
 	{
+		id: 'WA25',
 		name: 'The Skull Pack',
 		cost: 3,
 		strength: 3,
@@ -4197,6 +4511,7 @@ export const cards: Card[] = [
 		releases: { SD: 9, WA: 25 }
 	},
 	{
+		id: 'SD10',
 		name: "Minotaur's Bane",
 		cost: 2,
 		unique: true,
@@ -4205,10 +4520,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>: Choose 1 of your units. This unit gets a strength bonus equal to the chosen unit's printed strength. If you lose this combat, destroy the chosen unit.</p><p>This card may only be attached to a Chaos unit.</p>",
+		text: "<p><b>WarCry</b>: Choose 1 of your units. This unit gets a strength bonus equal to the chosen unit's printed strength. If you lose this combat, destroy the chosen unit.</p><p>This card may only be attached to a Chaos unit.</p>",
 		releases: { SD: 10 }
 	},
 	{
+		id: 'WA32',
 		name: 'Cauldron of Blood',
 		cost: 4,
 		strength: 3,
@@ -4224,6 +4540,7 @@ export const cards: Card[] = [
 		releases: { SD: 11, WA: 32 }
 	},
 	{
+		id: 'SD12',
 		name: 'Malekith, the Witch King',
 		cost: 6,
 		strength: 4,
@@ -4235,10 +4552,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Wizard</b>: 3</p><p> <b>WarCry</b>: Destroy all enemy attachments in this combat. This unit gets +1 strength for each attachment destroyed this way.</p>',
+		text: '<p><b>Wizard</b>: 3</p><p><b>WarCry</b>: Destroy all enemy attachments in this combat. This unit gets +1 strength for each attachment destroyed this way.</p>',
 		releases: { SD: 12 }
 	},
 	{
+		id: 'SD13',
 		name: 'Blades of Twilight',
 		cost: 3,
 		strength: 3,
@@ -4253,6 +4571,7 @@ export const cards: Card[] = [
 		releases: { SD: 13 }
 	},
 	{
+		id: 'SD14',
 		name: 'Harpies',
 		cost: 4,
 		strength: 3,
@@ -4263,10 +4582,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +2 strength unless your enemy discards 2 cards.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 strength unless your enemy discards 2 cards.</p>',
 		releases: { SD: 14 }
 	},
 	{
+		id: 'WA43',
 		name: 'Keth Zarene',
 		cost: 4,
 		strength: 3,
@@ -4282,6 +4602,7 @@ export const cards: Card[] = [
 		releases: { SD: 15, WA: 43 }
 	},
 	{
+		id: 'SD16',
 		name: "Malekith's Black Host",
 		cost: 6,
 		strength: 5,
@@ -4296,6 +4617,7 @@ export const cards: Card[] = [
 		releases: { SD: 16 }
 	},
 	{
+		id: 'SD17',
 		name: "Malekith's Executioners",
 		cost: 5,
 		strength: 5,
@@ -4310,6 +4632,7 @@ export const cards: Card[] = [
 		releases: { SD: 17 }
 	},
 	{
+		id: 'SD18',
 		name: "Sa'har the Ashen Lord",
 		cost: 5,
 		strength: 4,
@@ -4325,6 +4648,7 @@ export const cards: Card[] = [
 		releases: { SD: 18 }
 	},
 	{
+		id: 'SD19',
 		name: 'The Hydra Blade',
 		cost: 2,
 		unique: true,
@@ -4337,6 +4661,7 @@ export const cards: Card[] = [
 		releases: { SD: 19 }
 	},
 	{
+		id: 'SD20',
 		name: 'Da Big Lobba',
 		cost: 3,
 		strength: 2,
@@ -4347,10 +4672,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: "<p> <b>Command</b> Commit: Discard the top card of your enemy's army deck. If that card was a unit, destroy all copies of that card in play.</p>",
+		text: "<p><b>Command</b> Commit: Discard the top card of your enemy's army deck. If that card was a unit, destroy all copies of that card in play.</p>",
 		releases: { SD: 20 }
 	},
 	{
+		id: 'SD21',
 		name: "Oglok the 'Orrible",
 		cost: 5,
 		strength: 4,
@@ -4366,6 +4692,7 @@ export const cards: Card[] = [
 		releases: { SD: 21 }
 	},
 	{
+		id: 'SD22',
 		name: "Ghulgar's Tuska Boyz",
 		cost: 5,
 		strength: 5,
@@ -4380,6 +4707,7 @@ export const cards: Card[] = [
 		releases: { SD: 22 }
 	},
 	{
+		id: 'WA70',
 		name: "Kurgrot's Doom Divers",
 		cost: 2,
 		strength: 1,
@@ -4394,6 +4722,7 @@ export const cards: Card[] = [
 		releases: { SD: 23, WA: 70 }
 	},
 	{
+		id: 'SD24',
 		name: "Urguck's Chainas",
 		cost: 5,
 		strength: 6,
@@ -4408,6 +4737,7 @@ export const cards: Card[] = [
 		releases: { SD: 24 }
 	},
 	{
+		id: 'SD25',
 		name: "Urguck's Chukka Boyz",
 		cost: 4,
 		strength: 3,
@@ -4422,6 +4752,7 @@ export const cards: Card[] = [
 		releases: { SD: 25 }
 	},
 	{
+		id: 'WA87',
 		name: "Wazzi's Lunatic Gitz",
 		cost: 3,
 		strength: 1,
@@ -4432,10 +4763,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets +2d6 strength. If the die numbers on the 2 cards rolled are equal, destroy this unit and commit 1 of your other ready units.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2d6 strength. If the die numbers on the 2 cards rolled are equal, destroy this unit and commit 1 of your other ready units.</p>',
 		releases: { SD: 26, WA: 87 }
 	},
 	{
+		id: 'SD27',
 		name: "Wazzi's Netter Ladz",
 		cost: 2,
 		strength: 2,
@@ -4450,6 +4782,7 @@ export const cards: Card[] = [
 		releases: { SD: 27 }
 	},
 	{
+		id: 'SD28',
 		name: "Kleeva's Cleaver",
 		cost: 2,
 		unique: true,
@@ -4462,6 +4795,7 @@ export const cards: Card[] = [
 		releases: { SD: 28 }
 	},
 	{
+		id: 'SD29',
 		name: "Skcub's Gutter Runners",
 		cost: 3,
 		strength: 2,
@@ -4476,6 +4810,7 @@ export const cards: Card[] = [
 		releases: { SD: 29 }
 	},
 	{
+		id: 'SD30',
 		name: 'Trolls of Blackbile Marsh',
 		cost: 4,
 		strength: 4,
@@ -4490,6 +4825,7 @@ export const cards: Card[] = [
 		releases: { SD: 30 }
 	},
 	{
+		id: 'WA95',
 		name: 'Vial of Unicorn Blood',
 		cost: 1,
 		keywords: ['Item'],
@@ -4501,6 +4837,7 @@ export const cards: Card[] = [
 		releases: { SD: 31, DH: 15, WA: 95 }
 	},
 	{
+		id: 'SD32',
 		name: 'Champion',
 		cost: 1,
 		tacticPoints: 1,
@@ -4513,6 +4850,7 @@ export const cards: Card[] = [
 		releases: { SD: 32 }
 	},
 	{
+		id: 'SD33',
 		name: 'Doom Axe',
 		cost: 1,
 		keywords: ['Weapon'],
@@ -4524,6 +4862,7 @@ export const cards: Card[] = [
 		releases: { SD: 33 }
 	},
 	{
+		id: 'WA101',
 		name: "Black Raven's Lurkers",
 		cost: 3,
 		strength: 3,
@@ -4539,6 +4878,7 @@ export const cards: Card[] = [
 		releases: { SD: 34, WA: 101 }
 	},
 	{
+		id: 'SD35',
 		name: "Golgfag's Mercenary Ogres",
 		cost: 4,
 		strength: 4,
@@ -4550,10 +4890,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Your enemy may not play combat tactic cards.</p>',
+		text: '<p><b>WarCry</b>: Your enemy may not play combat tactic cards.</p>',
 		releases: { SD: 35 }
 	},
 	{
+		id: 'WA105',
 		name: 'Accurate and Precise',
 		cost: 2,
 		die: 2,
@@ -4562,10 +4903,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: "<p> <b>WarCry</b>: This unit gets a ranged attack bonus equal to it's printed tactic points.</p>",
+		text: "<p><b>WarCry</b>: This unit gets a ranged attack bonus equal to it's printed tactic points.</p>",
 		releases: { SD: 36, WA: 105 }
 	},
 	{
+		id: 'SD37',
 		name: 'Against the Tide',
 		cost: 4,
 		die: 1,
@@ -4574,10 +4916,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each ready enemy unit.</p>',
+		text: '<p><b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each ready enemy unit.</p>',
 		releases: { SD: 37 }
 	},
 	{
+		id: 'SD38',
 		name: 'Aura of Futility',
 		cost: 1,
 		die: 2,
@@ -4590,6 +4933,7 @@ export const cards: Card[] = [
 		releases: { SD: 38 }
 	},
 	{
+		id: 'SD39',
 		name: "Azyrneth's Battle Cry",
 		cost: 4,
 		die: 2,
@@ -4602,6 +4946,7 @@ export const cards: Card[] = [
 		releases: { SD: 39 }
 	},
 	{
+		id: 'SD40',
 		name: 'Blood Pact',
 		cost: 1,
 		die: 4,
@@ -4610,10 +4955,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: When combat rolls are made for this combat, you roll from your enemy's deck and your enemy rolls from yours.</p>",
+		text: "<p><b>WarCry</b>: When combat rolls are made for this combat, you roll from your enemy's deck and your enemy rolls from yours.</p>",
 		releases: { SD: 40 }
 	},
 	{
+		id: 'WA114',
 		name: 'Bogged Down',
 		die: 1,
 		keywords: ['Strategy', 'Terrain'],
@@ -4625,6 +4971,7 @@ export const cards: Card[] = [
 		releases: { SD: 41, WA: 114 }
 	},
 	{
+		id: 'WA117',
 		name: 'Break for Winter',
 		die: 2,
 		keywords: [],
@@ -4636,6 +4983,7 @@ export const cards: Card[] = [
 		releases: { SD: 42, WA: 117 }
 	},
 	{
+		id: 'SD43',
 		name: 'Chaos Vortex',
 		die: 3,
 		keywords: [],
@@ -4647,6 +4995,7 @@ export const cards: Card[] = [
 		releases: { SD: 43 }
 	},
 	{
+		id: 'SD44',
 		name: 'Courageous Mounts',
 		cost: 2,
 		die: 4,
@@ -4659,6 +5008,7 @@ export const cards: Card[] = [
 		releases: { SD: 44 }
 	},
 	{
+		id: 'SD45',
 		name: 'Crude Measures',
 		die: 2,
 		keywords: ['Strategy'],
@@ -4670,6 +5020,7 @@ export const cards: Card[] = [
 		releases: { SD: 45 }
 	},
 	{
+		id: 'SD46',
 		name: 'Crush the Flank',
 		cost: 2,
 		die: 3,
@@ -4682,6 +5033,7 @@ export const cards: Card[] = [
 		releases: { SD: 46 }
 	},
 	{
+		id: 'SD47',
 		name: 'Dark Horizon',
 		die: 2,
 		keywords: ['Strategy'],
@@ -4693,6 +5045,7 @@ export const cards: Card[] = [
 		releases: { SD: 47 }
 	},
 	{
+		id: 'SD48',
 		name: 'Dazzling Display',
 		cost: 1,
 		die: 3,
@@ -4705,6 +5058,7 @@ export const cards: Card[] = [
 		releases: { SD: 48 }
 	},
 	{
+		id: 'WA143',
 		name: 'Earthquake',
 		cost: 2,
 		die: 3,
@@ -4717,6 +5071,7 @@ export const cards: Card[] = [
 		releases: { SD: 49, WA: 143 }
 	},
 	{
+		id: 'SD50',
 		name: 'Enlightened Counsel',
 		die: 5,
 		keywords: [],
@@ -4724,10 +5079,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Move any number of your units from the reserves to the battle line. Move any number of your units from the battle line to the reserves.</p>',
+		text: '<p><b>Command</b>: Move any number of your units from the reserves to the battle line. Move any number of your units from the battle line to the reserves.</p>',
 		releases: { SD: 50 }
 	},
 	{
+		id: 'WA149',
 		name: "Fandelhoch's Folly",
 		cost: 2,
 		die: 3,
@@ -4736,10 +5092,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: The enemy unit gets -2 strength.</p>',
+		text: '<p><b>WarCry</b>: The enemy unit gets -2 strength.</p>',
 		releases: { SD: 51, DH: 11, WA: 149 }
 	},
 	{
+		id: 'SD52',
 		name: 'Gallant Death',
 		cost: 2,
 		die: 4,
@@ -4748,10 +5105,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If you lose this combat, your enemy discards 2 random cards.</p>',
+		text: '<p><b>WarCry</b>: If you lose this combat, your enemy discards 2 random cards.</p>',
 		releases: { SD: 52 }
 	},
 	{
+		id: 'WA162',
 		name: 'Get Back Here!',
 		die: 6,
 		keywords: [],
@@ -4763,6 +5121,7 @@ export const cards: Card[] = [
 		releases: { SD: 53, VT: 25, WA: 162 }
 	},
 	{
+		id: 'WA166',
 		name: "Ha'asek's Grief",
 		die: 3,
 		keywords: [],
@@ -4774,6 +5133,7 @@ export const cards: Card[] = [
 		releases: { SD: 54, WA: 166 }
 	},
 	{
+		id: 'SD55',
 		name: 'Haunted Fen',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -4785,6 +5145,7 @@ export const cards: Card[] = [
 		releases: { SD: 55 }
 	},
 	{
+		id: 'WA170',
 		name: 'Heavy Cavalry Charge',
 		cost: 2,
 		die: 2,
@@ -4797,6 +5158,7 @@ export const cards: Card[] = [
 		releases: { SD: 56, WA: 170 }
 	},
 	{
+		id: 'SD57',
 		name: 'Heroic Intervention',
 		cost: 3,
 		die: 2,
@@ -4809,6 +5171,7 @@ export const cards: Card[] = [
 		releases: { SD: 57 }
 	},
 	{
+		id: 'WA172',
 		name: 'Heroic Resolve',
 		cost: 1,
 		die: 2,
@@ -4821,6 +5184,7 @@ export const cards: Card[] = [
 		releases: { SD: 58, WA: 172 }
 	},
 	{
+		id: 'WA176',
 		name: 'Increased Supplies',
 		die: 5,
 		keywords: [],
@@ -4832,6 +5196,7 @@ export const cards: Card[] = [
 		releases: { SD: 59, WA: 176 }
 	},
 	{
+		id: 'WA178',
 		name: 'Inspirational Victory',
 		cost: 1,
 		die: 4,
@@ -4844,6 +5209,7 @@ export const cards: Card[] = [
 		releases: { SD: 60, WA: 178 }
 	},
 	{
+		id: 'SD61',
 		name: 'Know Your Enemy',
 		cost: 1,
 		die: 3,
@@ -4856,6 +5222,7 @@ export const cards: Card[] = [
 		releases: { SD: 61 }
 	},
 	{
+		id: 'SD62',
 		name: 'Lucky Blow',
 		cost: 1,
 		die: 3,
@@ -4868,6 +5235,7 @@ export const cards: Card[] = [
 		releases: { SD: 62 }
 	},
 	{
+		id: 'WA193',
 		name: 'Marsh of Morr',
 		die: 4,
 		keywords: [],
@@ -4875,10 +5243,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b> Destroy 1 of your units: You get spell points equal to the destroyed units gold cost.</p>',
+		text: '<p><b>Command</b> Destroy 1 of your units: You get spell points equal to the destroyed units gold cost.</p>',
 		releases: { SD: 63, WA: 193 }
 	},
 	{
+		id: 'WA195',
 		name: 'Master of the Field',
 		cost: 3,
 		die: 3,
@@ -4891,6 +5260,7 @@ export const cards: Card[] = [
 		releases: { SD: 64, WA: 195 }
 	},
 	{
+		id: 'WA199',
 		name: 'Might of Heroes',
 		cost: 4,
 		die: 2,
@@ -4899,10 +5269,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: "<p> <b>WarCry</b>: This unit gets a strength bonus equal to it's leadership.</p>",
+		text: "<p><b>WarCry</b>: This unit gets a strength bonus equal to it's leadership.</p>",
 		releases: { SD: 65, WA: 199 }
 	},
 	{
+		id: 'SD66',
 		name: 'Misdirection',
 		cost: 3,
 		die: 2,
@@ -4911,10 +5282,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Exchange the enemy unit with 1 other enemy unit in the battle line. Not playable during a ranged attack.</p>',
+		text: '<p><b>WarCry</b>: Exchange the enemy unit with 1 other enemy unit in the battle line. Not playable during a ranged attack.</p>',
 		releases: { SD: 66 }
 	},
 	{
+		id: 'SD67',
 		name: 'Moral Victory',
 		cost: 1,
 		die: 2,
@@ -4923,10 +5295,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: If you win this combat, move 1 card from your action discard pile into your hand.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat, move 1 card from your action discard pile into your hand.</p>',
 		releases: { SD: 67 }
 	},
 	{
+		id: 'SD68',
 		name: 'Natural Leader',
 		cost: 0,
 		die: 5,
@@ -4939,6 +5312,7 @@ export const cards: Card[] = [
 		releases: { SD: 68 }
 	},
 	{
+		id: 'SD69',
 		name: 'Numerical Advantage',
 		cost: 1,
 		die: 2,
@@ -4947,10 +5321,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Choose a number. Your enemy reveals their hand. This unit gets +1 strength for each card in their hand with a die equal to the chosen number.</p>',
+		text: '<p><b>WarCry</b>: Choose a number. Your enemy reveals their hand. This unit gets +1 strength for each card in their hand with a die equal to the chosen number.</p>',
 		releases: { SD: 69 }
 	},
 	{
+		id: 'WA209',
 		name: 'Out Think',
 		cost: 1,
 		die: 3,
@@ -4964,6 +5339,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'SD71',
 		name: 'Overwhelming Strength',
 		cost: 2,
 		die: 3,
@@ -4972,10 +5348,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: "<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card in your enemy's hand in excess of the cards in your hand.</p>",
+		text: "<p><b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card in your enemy's hand in excess of the cards in your hand.</p>",
 		releases: { SD: 71 }
 	},
 	{
+		id: 'WA219',
 		name: 'Proven Tactics',
 		cost: 1,
 		die: 3,
@@ -4988,6 +5365,7 @@ export const cards: Card[] = [
 		releases: { SD: 72, WA: 219 }
 	},
 	{
+		id: 'SD73',
 		name: 'Rain of Fire',
 		cost: 2,
 		die: 2,
@@ -5000,6 +5378,7 @@ export const cards: Card[] = [
 		releases: { SD: 73 }
 	},
 	{
+		id: 'SD74',
 		name: 'Reap the Whirlwind',
 		cost: 1,
 		die: 3,
@@ -5008,10 +5387,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit and the enemy unit each get +d6 strength.</p>',
+		text: '<p><b>WarCry</b>: This unit and the enemy unit each get +d6 strength.</p>',
 		releases: { SD: 74 }
 	},
 	{
+		id: 'WA223',
 		name: 'Reckless Assault',
 		cost: 2,
 		die: 3,
@@ -5020,10 +5400,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit gets +3 strength. If you lose this combat, discard your hand.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +3 strength. If you lose this combat, discard your hand.</p>',
 		releases: { SD: 75, WA: 223 }
 	},
 	{
+		id: 'SD76',
 		name: 'Ruined Keep',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -5035,6 +5416,7 @@ export const cards: Card[] = [
 		releases: { SD: 76 }
 	},
 	{
+		id: 'WA233',
 		name: 'Scatter the Ranks',
 		cost: 1,
 		die: 3,
@@ -5047,6 +5429,7 @@ export const cards: Card[] = [
 		releases: { SD: 77, WA: 233 }
 	},
 	{
+		id: 'SD78',
 		name: 'Sorcerous Guidance',
 		cost: 3,
 		die: 3,
@@ -5059,6 +5442,7 @@ export const cards: Card[] = [
 		releases: { SD: 78 }
 	},
 	{
+		id: 'WA244',
 		name: 'Stout of Heart',
 		die: 5,
 		keywords: [],
@@ -5070,6 +5454,7 @@ export const cards: Card[] = [
 		releases: { SD: 79, WA: 244 }
 	},
 	{
+		id: 'SD80',
 		name: 'Strength of Arms',
 		cost: 3,
 		die: 3,
@@ -5082,6 +5467,7 @@ export const cards: Card[] = [
 		releases: { SD: 80 }
 	},
 	{
+		id: 'WA248',
 		name: 'Strength of Iron',
 		cost: 2,
 		die: 3,
@@ -5094,6 +5480,7 @@ export const cards: Card[] = [
 		releases: { SD: 81, WA: 248 }
 	},
 	{
+		id: 'SD82',
 		name: 'Strength of Will',
 		cost: 2,
 		die: 3,
@@ -5102,10 +5489,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: If you win this combat by 4 or more, rout the enemy unit. Not playable during a follow-up attack.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat by 4 or more, rout the enemy unit. Not playable during a follow-up attack.</p>',
 		releases: { SD: 82 }
 	},
 	{
+		id: 'SD83',
 		name: 'Surge of Faith',
 		cost: 2,
 		die: 2,
@@ -5118,6 +5506,7 @@ export const cards: Card[] = [
 		releases: { SD: 83 }
 	},
 	{
+		id: 'SD84',
 		name: 'Tactical Flexibility',
 		die: 4,
 		keywords: [],
@@ -5125,10 +5514,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Choose 1 enemy unit. Draw 1 card for each copy of that unit your enemy has.</p>',
+		text: '<p><b>Command</b>: Choose 1 enemy unit. Draw 1 card for each copy of that unit your enemy has.</p>',
 		releases: { SD: 84 }
 	},
 	{
+		id: 'WA264',
 		name: 'Tighten the Noose',
 		cost: 1,
 		die: 3,
@@ -5141,6 +5531,7 @@ export const cards: Card[] = [
 		releases: { SD: 85, WA: 264 }
 	},
 	{
+		id: 'SD86',
 		name: 'Trapping Maneuver',
 		cost: 2,
 		die: 3,
@@ -5153,6 +5544,7 @@ export const cards: Card[] = [
 		releases: { SD: 86 }
 	},
 	{
+		id: 'SD87',
 		name: 'Unrevealed Arts',
 		cost: 1,
 		die: 4,
@@ -5165,6 +5557,7 @@ export const cards: Card[] = [
 		releases: { SD: 87 }
 	},
 	{
+		id: 'WA276',
 		name: 'When You Need It the Most',
 		cost: 0,
 		die: 4,
@@ -5177,6 +5570,7 @@ export const cards: Card[] = [
 		releases: { SD: 88, WA: 276 }
 	},
 	{
+		id: 'WA279',
 		name: 'Wings of the Harpy',
 		cost: 2,
 		die: 2,
@@ -5189,6 +5583,7 @@ export const cards: Card[] = [
 		releases: { SD: 89, WA: 279 }
 	},
 	{
+		id: 'SD90',
 		name: 'Lyonesse Questing Knights',
 		cost: 5,
 		strength: 4,
@@ -5203,6 +5598,7 @@ export const cards: Card[] = [
 		releases: { SD: 90 }
 	},
 	{
+		id: 'SD91',
 		name: "Elli's Cannon",
 		cost: 3,
 		strength: 2,
@@ -5213,10 +5609,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>Command</b> Commit: Choose 1 enemy unit. Commit that unit unless it passes a leadership test.</p>',
+		text: '<p><b>Command</b> Commit: Choose 1 enemy unit. Commit that unit unless it passes a leadership test.</p>',
 		releases: { SD: 91 }
 	},
 	{
+		id: 'SD92',
 		name: 'Iron Thunder',
 		cost: 3,
 		strength: 1,
@@ -5231,6 +5628,7 @@ export const cards: Card[] = [
 		releases: { SD: 92 }
 	},
 	{
+		id: 'SD93',
 		name: 'Ungrim Ironfist, the Slayer King',
 		cost: 6,
 		strength: 5,
@@ -5242,10 +5640,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Terror</b>: 1</p><p><b>Victory</b>: +2</p><p> <b>WarCry</b>: If this unit wins this combat, commit one enemy unit unless it passes a leadership test.</p>',
+		text: '<p><b>Terror</b>: 1</p><p><b>Victory</b>: +2</p><p><b>WarCry</b>: If this unit wins this combat, commit one enemy unit unless it passes a leadership test.</p>',
 		releases: { SD: 93 }
 	},
 	{
+		id: 'WA309',
 		name: "Izzumbard's Old Growlers",
 		cost: 2,
 		strength: 0,
@@ -5260,6 +5659,7 @@ export const cards: Card[] = [
 		releases: { SD: 94, WA: 309 }
 	},
 	{
+		id: 'WA310',
 		name: 'Izzumbard Endrinkuli',
 		cost: 6,
 		strength: 4,
@@ -5275,6 +5675,7 @@ export const cards: Card[] = [
 		releases: { SD: 95, WA: 310 }
 	},
 	{
+		id: 'SD96',
 		name: "Izzumbard's Warriors",
 		cost: 4,
 		strength: 3,
@@ -5285,10 +5686,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Victory</b>: +1</p><p> <b>WarCry</b> Commit 1 of your war machine units: This unit gets a strength bonus equal to the committed units gold cost.</p>',
+		text: '<p><b>Victory</b>: +1</p><p><b>WarCry</b> Commit 1 of your war machine units: This unit gets a strength bonus equal to the committed units gold cost.</p>',
 		releases: { SD: 96 }
 	},
 	{
+		id: 'SD97',
 		name: "Miners of Thorag's Deep",
 		cost: 5,
 		strength: 5,
@@ -5303,6 +5705,7 @@ export const cards: Card[] = [
 		releases: { SD: 97 }
 	},
 	{
+		id: 'SD98',
 		name: "Morglan's Shieldwall",
 		cost: 4,
 		strength: 4,
@@ -5317,6 +5720,7 @@ export const cards: Card[] = [
 		releases: { SD: 98 }
 	},
 	{
+		id: 'SD99',
 		name: "Ulfson's Sharpshooters",
 		cost: 4,
 		strength: 3,
@@ -5331,6 +5735,7 @@ export const cards: Card[] = [
 		releases: { SD: 99 }
 	},
 	{
+		id: 'WA321',
 		name: 'Malakai Makaisson',
 		cost: 1,
 		unique: true,
@@ -5343,6 +5748,7 @@ export const cards: Card[] = [
 		releases: { SD: 100, WA: 321 }
 	},
 	{
+		id: 'SD101',
 		name: 'The Hammer of Fate',
 		cost: 2,
 		unique: true,
@@ -5355,6 +5761,7 @@ export const cards: Card[] = [
 		releases: { SD: 101 }
 	},
 	{
+		id: 'SD102',
 		name: 'Reiksmarshall Kurt Helborg',
 		cost: 5,
 		strength: 4,
@@ -5370,6 +5777,7 @@ export const cards: Card[] = [
 		releases: { SD: 102 }
 	},
 	{
+		id: 'SD103',
 		name: "Von Boen's Steel Dragon",
 		cost: 5,
 		strength: 4,
@@ -5385,6 +5793,7 @@ export const cards: Card[] = [
 		releases: { SD: 103 }
 	},
 	{
+		id: 'SD104',
 		name: "Fandelhoch's Crossbowmen",
 		cost: 4,
 		strength: 3,
@@ -5399,6 +5808,7 @@ export const cards: Card[] = [
 		releases: { SD: 104 }
 	},
 	{
+		id: 'HF99',
 		name: "Fandelhoch's Halberdiers",
 		cost: 3,
 		strength: 3,
@@ -5413,6 +5823,7 @@ export const cards: Card[] = [
 		releases: { SD: 105, HF: 99 }
 	},
 	{
+		id: 'SD106',
 		name: "Fandelhoch's Hellblaster",
 		cost: 3,
 		strength: 1,
@@ -5427,6 +5838,7 @@ export const cards: Card[] = [
 		releases: { SD: 106 }
 	},
 	{
+		id: 'SD107',
 		name: "Helborg's Knights",
 		cost: 6,
 		strength: 5,
@@ -5437,10 +5849,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Discard 1 card: Choose 1 enemy unit with strength equal to or less than the die on the discarded card. If you win this combat, commit the chosen unit.</p>',
+		text: '<p><b>WarCry</b> Discard 1 card: Choose 1 enemy unit with strength equal to or less than the die on the discarded card. If you win this combat, commit the chosen unit.</p>',
 		releases: { SD: 107 }
 	},
 	{
+		id: 'SD108',
 		name: "Kobernecht's Crossbowmen",
 		cost: 2,
 		strength: 1,
@@ -5455,6 +5868,7 @@ export const cards: Card[] = [
 		releases: { SD: 108 }
 	},
 	{
+		id: 'SD109',
 		name: "Kobernecht's Pistoliers",
 		cost: 3,
 		strength: 2,
@@ -5469,6 +5883,7 @@ export const cards: Card[] = [
 		releases: { SD: 109 }
 	},
 	{
+		id: 'SD110',
 		name: "Von Trapp's Mortars",
 		cost: 4,
 		strength: 3,
@@ -5483,6 +5898,7 @@ export const cards: Card[] = [
 		releases: { SD: 110 }
 	},
 	{
+		id: 'SD111',
 		name: 'The Sollen Runefang',
 		cost: 2,
 		unique: true,
@@ -5495,6 +5911,7 @@ export const cards: Card[] = [
 		releases: { SD: 111 }
 	},
 	{
+		id: 'SD112',
 		name: 'Evanshol, Prince of Tiranoc',
 		cost: 6,
 		strength: 4,
@@ -5510,6 +5927,7 @@ export const cards: Card[] = [
 		releases: { SD: 112 }
 	},
 	{
+		id: 'SD113',
 		name: 'Tyrion, Defender of Ulthuan',
 		cost: 7,
 		strength: 6,
@@ -5525,6 +5943,7 @@ export const cards: Card[] = [
 		releases: { SD: 113 }
 	},
 	{
+		id: 'SD114',
 		name: 'Archers of the Shining Sun',
 		cost: 4,
 		strength: 3,
@@ -5539,6 +5958,7 @@ export const cards: Card[] = [
 		releases: { SD: 114 }
 	},
 	{
+		id: 'SD115',
 		name: 'Dragon Princes',
 		cost: 5,
 		strength: 5,
@@ -5554,6 +5974,7 @@ export const cards: Card[] = [
 		releases: { SD: 115 }
 	},
 	{
+		id: 'SD116',
 		name: 'Phoenix Guard of Ulthuan',
 		cost: 5,
 		strength: 5,
@@ -5568,6 +5989,7 @@ export const cards: Card[] = [
 		releases: { SD: 116 }
 	},
 	{
+		id: 'WA370',
 		name: 'Rhyian Dawnrider',
 		cost: 4,
 		strength: 3,
@@ -5583,6 +6005,7 @@ export const cards: Card[] = [
 		releases: { SD: 117, WA: 370 }
 	},
 	{
+		id: 'WA373',
 		name: "Tyrion's Silver Riders",
 		cost: 5,
 		strength: 4,
@@ -5597,6 +6020,7 @@ export const cards: Card[] = [
 		releases: { SD: 118, WA: 373 }
 	},
 	{
+		id: 'SD119',
 		name: "Tyrion's Ulthuan Defenders",
 		cost: 3,
 		strength: 3,
@@ -5611,6 +6035,7 @@ export const cards: Card[] = [
 		releases: { SD: 119 }
 	},
 	{
+		id: 'SD120',
 		name: 'The Bow of the Seafarer',
 		cost: 2,
 		unique: true,
@@ -5623,6 +6048,7 @@ export const cards: Card[] = [
 		releases: { SD: 120 }
 	},
 	{
+		id: 'WA15',
 		name: 'Herd of Skulkkoth',
 		cost: 3,
 		strength: 3,
@@ -5637,6 +6063,7 @@ export const cards: Card[] = [
 		releases: { DW: 1, WA: 15 }
 	},
 	{
+		id: 'DW2',
 		name: 'Khazrak the One-Eye',
 		cost: 6,
 		strength: 4,
@@ -5648,10 +6075,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p> <b>WarCry</b>: Exchange this unit with one of your other ready Beastmen units. That unit gets +2 strength.</p>',
+		text: '<p><b>WarCry</b>: Exchange this unit with one of your other ready Beastmen units. That unit gets +2 strength.</p>',
 		releases: { DW: 2 }
 	},
 	{
+		id: 'DW3',
 		name: "Raaghra's Bestigors",
 		cost: 5,
 		strength: 4,
@@ -5663,10 +6091,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p>While this unit is ready, tactic cards cost your Beastmen units 1 less tactic point to play.</p><p> <b>WarCry</b>: This unit gets +3 strength. Only usable if you have more committed units in your battle line than your enemy.</p>',
+		text: '<p>While this unit is ready, tactic cards cost your Beastmen units 1 less tactic point to play.</p><p><b>WarCry</b>: This unit gets +3 strength. Only usable if you have more committed units in your battle line than your enemy.</p>',
 		releases: { DW: 3 }
 	},
 	{
+		id: 'DW4',
 		name: "Raaghra's Tuskgor Chariot",
 		cost: 3,
 		strength: 2,
@@ -5681,6 +6110,7 @@ export const cards: Card[] = [
 		releases: { DW: 4 }
 	},
 	{
+		id: 'WA22',
 		name: 'Skulkkoth the Defiler',
 		cost: 4,
 		strength: 3,
@@ -5695,6 +6125,7 @@ export const cards: Card[] = [
 		releases: { DW: 5, WA: 22 }
 	},
 	{
+		id: 'WA29',
 		name: 'Raaghra the Culler',
 		cost: 1,
 		unique: true,
@@ -5707,6 +6138,7 @@ export const cards: Card[] = [
 		releases: { DW: 6, WA: 29 }
 	},
 	{
+		id: 'WA31',
 		name: 'Black Rose Coven',
 		cost: 4,
 		strength: 4,
@@ -5721,6 +6153,7 @@ export const cards: Card[] = [
 		releases: { DW: 7, WA: 31 }
 	},
 	{
+		id: 'DW8',
 		name: 'Eldire',
 		cost: 5,
 		strength: 3,
@@ -5736,6 +6169,7 @@ export const cards: Card[] = [
 		releases: { DW: 8 }
 	},
 	{
+		id: 'WA51',
 		name: "Sa'har's Ashen Wraiths",
 		cost: 3,
 		strength: 2,
@@ -5750,6 +6184,7 @@ export const cards: Card[] = [
 		releases: { DW: 9, WA: 51 }
 	},
 	{
+		id: 'DW10',
 		name: 'Shadowblade',
 		cost: 5,
 		strength: 4,
@@ -5765,6 +6200,7 @@ export const cards: Card[] = [
 		releases: { DW: 10 }
 	},
 	{
+		id: 'WA58',
 		name: 'Zelekendel, Blade of Khaine',
 		cost: 3,
 		strength: 3,
@@ -5779,6 +6215,7 @@ export const cards: Card[] = [
 		releases: { DW: 11, WA: 58 }
 	},
 	{
+		id: 'WA59',
 		name: "Zelekendel's Blackblades",
 		cost: 4,
 		strength: 2,
@@ -5793,6 +6230,7 @@ export const cards: Card[] = [
 		releases: { DW: 12, WA: 59 }
 	},
 	{
+		id: 'WA69',
 		name: 'Jezzi Poisonbite',
 		cost: 4,
 		strength: 3,
@@ -5807,6 +6245,7 @@ export const cards: Card[] = [
 		releases: { DW: 13, WA: 69 }
 	},
 	{
+		id: 'DW14',
 		name: "Jezzi's Ambush Gang",
 		cost: 3,
 		strength: 3,
@@ -5821,6 +6260,7 @@ export const cards: Card[] = [
 		releases: { DW: 14 }
 	},
 	{
+		id: 'DW15',
 		name: "Jezzi's Git Mob",
 		cost: 5,
 		strength: 6,
@@ -5835,6 +6275,7 @@ export const cards: Card[] = [
 		releases: { DW: 15 }
 	},
 	{
+		id: 'DW16',
 		name: "Jezzi's Poison Herders",
 		cost: 3,
 		strength: 3,
@@ -5849,6 +6290,7 @@ export const cards: Card[] = [
 		releases: { DW: 16 }
 	},
 	{
+		id: 'DW17',
 		name: "Jezzi's Poison Riders",
 		cost: 3,
 		strength: 2,
@@ -5863,6 +6305,7 @@ export const cards: Card[] = [
 		releases: { DW: 17 }
 	},
 	{
+		id: 'DW18',
 		name: "Jezzi's Stingers",
 		cost: 4,
 		strength: 3,
@@ -5877,6 +6320,7 @@ export const cards: Card[] = [
 		releases: { DW: 18 }
 	},
 	{
+		id: 'DW19',
 		name: "Skcub's Tempest Vermin",
 		cost: 3,
 		strength: 2,
@@ -5887,10 +6331,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Discard 1 card: This unit gets a strength bonus equal to the tactic points cost of the discarded card.</p>',
+		text: '<p><b>WarCry</b> Discard 1 card: This unit gets a strength bonus equal to the tactic points cost of the discarded card.</p>',
 		releases: { DW: 19 }
 	},
 	{
+		id: 'DW20',
 		name: 'Ogres of the Chaos Wastes',
 		cost: 6,
 		strength: 5,
@@ -5905,6 +6350,7 @@ export const cards: Card[] = [
 		releases: { DW: 20 }
 	},
 	{
+		id: 'WA93',
 		name: 'The Hordes of Darkness',
 		cost: 2,
 		die: 3,
@@ -5917,6 +6363,7 @@ export const cards: Card[] = [
 		releases: { DW: 21, WA: 93 }
 	},
 	{
+		id: 'DW22',
 		name: "Al'Muktar's Desert Dogs",
 		cost: 4,
 		strength: 4,
@@ -5932,6 +6379,7 @@ export const cards: Card[] = [
 		releases: { DW: 22 }
 	},
 	{
+		id: 'DW23',
 		name: "Badenov's Mercenaries",
 		cost: 5,
 		strength: 'X',
@@ -5947,6 +6395,7 @@ export const cards: Card[] = [
 		releases: { DW: 23 }
 	},
 	{
+		id: 'DW24',
 		name: "Beorg's Bearmen",
 		cost: 4,
 		strength: 4,
@@ -5962,6 +6411,7 @@ export const cards: Card[] = [
 		releases: { DW: 24 }
 	},
 	{
+		id: 'WA96',
 		name: 'Black Fire Bandits',
 		cost: 5,
 		strength: 5,
@@ -5976,6 +6426,7 @@ export const cards: Card[] = [
 		releases: { DW: 25, WA: 96 }
 	},
 	{
+		id: 'DW26',
 		name: "Braganza's Besiegers",
 		cost: 4,
 		strength: 3,
@@ -5987,10 +6438,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Ranged Attack</b>: 6</p><p> <b>Command</b>: Destroy 1 enemy strategy card.</p>',
+		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Command</b>: Destroy 1 enemy strategy card.</p>',
 		releases: { DW: 26 }
 	},
 	{
+		id: 'WA97',
 		name: "Carmen's Maiden Knights",
 		cost: 5,
 		strength: 4,
@@ -6006,6 +6458,7 @@ export const cards: Card[] = [
 		releases: { DW: 27, WA: 97 }
 	},
 	{
+		id: 'WA98',
 		name: "Karkov's Winged Lancers",
 		cost: 3,
 		strength: 3,
@@ -6020,6 +6473,7 @@ export const cards: Card[] = [
 		releases: { DW: 28, WA: 98 }
 	},
 	{
+		id: 'DW29',
 		name: 'Leonus the Beastmaster',
 		cost: 4,
 		strength: 4,
@@ -6035,6 +6489,7 @@ export const cards: Card[] = [
 		releases: { DW: 29 }
 	},
 	{
+		id: 'DW30',
 		name: "Leopold's Leopard Company",
 		cost: 3,
 		strength: 3,
@@ -6050,6 +6505,7 @@ export const cards: Card[] = [
 		releases: { DW: 30 }
 	},
 	{
+		id: 'DW31',
 		name: "Pasha's Caravan Guards",
 		cost: 5,
 		strength: 5,
@@ -6064,6 +6520,7 @@ export const cards: Card[] = [
 		releases: { DW: 31 }
 	},
 	{
+		id: 'WA99',
 		name: "Sengupta's Cobra Cult",
 		cost: 4,
 		strength: 3,
@@ -6078,6 +6535,7 @@ export const cards: Card[] = [
 		releases: { DW: 32, WA: 99 }
 	},
 	{
+		id: 'WA100',
 		name: 'The Crowmaster',
 		cost: 4,
 		strength: 4,
@@ -6093,6 +6551,7 @@ export const cards: Card[] = [
 		releases: { DW: 33, WA: 100 }
 	},
 	{
+		id: 'DW34',
 		name: "Ugugh's Mountain Men",
 		cost: 4,
 		strength: 5,
@@ -6107,6 +6566,7 @@ export const cards: Card[] = [
 		releases: { DW: 34 }
 	},
 	{
+		id: 'DW35',
 		name: "Vespero's Vendetta",
 		cost: 5,
 		strength: 4,
@@ -6122,6 +6582,7 @@ export const cards: Card[] = [
 		releases: { DW: 35 }
 	},
 	{
+		id: 'DW36',
 		name: 'A Better Offer',
 		die: 2,
 		keywords: [],
@@ -6129,10 +6590,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Discard X cards: Rally 1 Dogs of War unit with a gold cost equal to or less than X.</p>',
+		text: '<p><b>Command</b> Discard X cards: Rally 1 Dogs of War unit with a gold cost equal to or less than X.</p>',
 		releases: { DW: 36 }
 	},
 	{
+		id: 'DW37',
 		name: 'A Good Offer',
 		die: 3,
 		keywords: [],
@@ -6140,10 +6602,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b>: Commit 1 Dogs of War unit unless your enemy discards 3 cards.</p>',
+		text: '<p><b>Command</b>: Commit 1 Dogs of War unit unless your enemy discards 3 cards.</p>',
 		releases: { DW: 37 }
 	},
 	{
+		id: 'DW38',
 		name: 'Ambush',
 		die: 3,
 		keywords: [],
@@ -6151,10 +6614,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b>: Remove up to 2 action cards in any discard pile from the game.</p>',
+		text: '<p><b>Command</b>: Remove up to 2 action cards in any discard pile from the game.</p>',
 		releases: { DW: 38 }
 	},
 	{
+		id: 'DW39',
 		name: 'Armed to the Teeth',
 		die: 5,
 		keywords: [],
@@ -6166,6 +6630,7 @@ export const cards: Card[] = [
 		releases: { DW: 39 }
 	},
 	{
+		id: 'DW40',
 		name: 'Ashes to Ashes',
 		die: 5,
 		keywords: [],
@@ -6177,6 +6642,7 @@ export const cards: Card[] = [
 		releases: { DW: 40 }
 	},
 	{
+		id: 'WA126',
 		name: 'Contingency Plan',
 		die: 4,
 		keywords: [],
@@ -6188,6 +6654,7 @@ export const cards: Card[] = [
 		releases: { DW: 41, WA: 126 }
 	},
 	{
+		id: 'DW42',
 		name: 'Crush the Line',
 		cost: 2,
 		die: 1,
@@ -6200,6 +6667,7 @@ export const cards: Card[] = [
 		releases: { DW: 42 }
 	},
 	{
+		id: 'DW43',
 		name: 'Cry Havoc',
 		cost: 1,
 		die: 3,
@@ -6212,6 +6680,7 @@ export const cards: Card[] = [
 		releases: { DW: 43 }
 	},
 	{
+		id: 'WA144',
 		name: 'Enervation',
 		die: 4,
 		keywords: ['Strategy'],
@@ -6223,6 +6692,7 @@ export const cards: Card[] = [
 		releases: { DW: 44, WA: 144 }
 	},
 	{
+		id: 'DW45',
 		name: 'Exploited Weakness',
 		cost: 2,
 		die: 3,
@@ -6235,6 +6705,7 @@ export const cards: Card[] = [
 		releases: { DW: 45 }
 	},
 	{
+		id: 'WA147',
 		name: 'Fading Winds',
 		die: 3,
 		keywords: [],
@@ -6246,6 +6717,7 @@ export const cards: Card[] = [
 		releases: { DW: 46, WA: 147 }
 	},
 	{
+		id: 'DW47',
 		name: 'False Orders',
 		cost: 1,
 		die: 4,
@@ -6258,6 +6730,7 @@ export const cards: Card[] = [
 		releases: { DW: 47 }
 	},
 	{
+		id: 'WA151',
 		name: 'Feint',
 		cost: 1,
 		die: 2,
@@ -6270,6 +6743,7 @@ export const cards: Card[] = [
 		releases: { DW: 48, WA: 151 }
 	},
 	{
+		id: 'DW49',
 		name: 'Final Blow',
 		cost: 3,
 		die: 2,
@@ -6278,10 +6752,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets +4 strength. You may not play any more combat tactics this combat.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +4 strength. You may not play any more combat tactics this combat.</p>',
 		releases: { DW: 49 }
 	},
 	{
+		id: 'DW50',
 		name: 'Good Timing',
 		cost: 1,
 		die: 2,
@@ -6294,6 +6769,7 @@ export const cards: Card[] = [
 		releases: { DW: 50 }
 	},
 	{
+		id: 'DW51',
 		name: 'Hamstring',
 		cost: 2,
 		die: 3,
@@ -6306,6 +6782,7 @@ export const cards: Card[] = [
 		releases: { DW: 51 }
 	},
 	{
+		id: 'DW52',
 		name: 'Hatred',
 		cost: 2,
 		die: 2,
@@ -6318,6 +6795,7 @@ export const cards: Card[] = [
 		releases: { DW: 52 }
 	},
 	{
+		id: 'DW53',
 		name: 'Hidden Support',
 		cost: 2,
 		die: 3,
@@ -6330,6 +6808,7 @@ export const cards: Card[] = [
 		releases: { DW: 53 }
 	},
 	{
+		id: 'WA177',
 		name: 'Inner Strength',
 		cost: 1,
 		die: 1,
@@ -6342,6 +6821,7 @@ export const cards: Card[] = [
 		releases: { DW: 54, WA: 177 }
 	},
 	{
+		id: 'DW55',
 		name: 'Leitdorf Maneuver',
 		cost: 1,
 		die: 3,
@@ -6354,6 +6834,7 @@ export const cards: Card[] = [
 		releases: { DW: 55 }
 	},
 	{
+		id: 'WA183',
 		name: "Leitdorf's Plan",
 		die: 4,
 		keywords: [],
@@ -6365,6 +6846,7 @@ export const cards: Card[] = [
 		releases: { DW: 56, WA: 183 }
 	},
 	{
+		id: 'DW57',
 		name: 'Lure of Iron',
 		die: 3,
 		keywords: [],
@@ -6376,6 +6858,7 @@ export const cards: Card[] = [
 		releases: { DW: 57 }
 	},
 	{
+		id: 'DW58',
 		name: 'Martyrs',
 		cost: 1,
 		die: 4,
@@ -6384,10 +6867,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If you lose this combat, commit the enemy unit unless it passes a leadership test.</p>',
+		text: '<p><b>WarCry</b>: If you lose this combat, commit the enemy unit unless it passes a leadership test.</p>',
 		releases: { DW: 58 }
 	},
 	{
+		id: 'DW59',
 		name: 'Overrun',
 		cost: 2,
 		die: 2,
@@ -6396,10 +6880,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Discard X cards: If you win this combat, rout the enemy unit if it has printed gold cost of X or less.</p>',
+		text: '<p><b>WarCry</b> Discard X cards: If you win this combat, rout the enemy unit if it has printed gold cost of X or less.</p>',
 		releases: { DW: 59 }
 	},
 	{
+		id: 'DW60',
 		name: 'Passing the Torch',
 		cost: 1,
 		die: 3,
@@ -6412,6 +6897,7 @@ export const cards: Card[] = [
 		releases: { DW: 60 }
 	},
 	{
+		id: 'DW61',
 		name: 'Pillage',
 		cost: 1,
 		die: 5,
@@ -6420,10 +6906,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: If you win this combat, remove the top 3 cards of your enemy's action deck from the game.</p>",
+		text: "<p><b>WarCry</b>: If you win this combat, remove the top 3 cards of your enemy's action deck from the game.</p>",
 		releases: { DW: 61 }
 	},
 	{
+		id: 'DW62',
 		name: 'Practiced Maneuver',
 		cost: 1,
 		die: 3,
@@ -6436,6 +6923,7 @@ export const cards: Card[] = [
 		releases: { DW: 62 }
 	},
 	{
+		id: 'DW63',
 		name: 'Probing Attack',
 		cost: 1,
 		die: 3,
@@ -6448,6 +6936,7 @@ export const cards: Card[] = [
 		releases: { DW: 63 }
 	},
 	{
+		id: 'WA220',
 		name: 'Raise the Dead',
 		cost: 2,
 		die: 1,
@@ -6460,6 +6949,7 @@ export const cards: Card[] = [
 		releases: { DW: 64, WA: 220 }
 	},
 	{
+		id: 'WA221',
 		name: 'Rallying Cry',
 		cost: 3,
 		die: 1,
@@ -6468,10 +6958,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If you win this combat by 4 or more strength, return this unit to the battle line ready. You may not make a follow-up attack.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat by 4 or more strength, return this unit to the battle line ready. You may not make a follow-up attack.</p>',
 		releases: { DW: 65, WA: 221 }
 	},
 	{
+		id: 'WA222',
 		name: 'Reap the Rewards',
 		die: 2,
 		keywords: ['Strategy'],
@@ -6483,6 +6974,7 @@ export const cards: Card[] = [
 		releases: { DW: 66, WA: 222 }
 	},
 	{
+		id: 'DW67',
 		name: 'Reap What You Sow',
 		cost: 1,
 		die: 3,
@@ -6495,6 +6987,7 @@ export const cards: Card[] = [
 		releases: { DW: 67 }
 	},
 	{
+		id: 'DW68',
 		name: 'Recruiting Drive',
 		die: 2,
 		keywords: [],
@@ -6502,10 +6995,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Place 1 unit from your army discard pile on top of your deck.</p>',
+		text: '<p><b>Command</b>: Place 1 unit from your army discard pile on top of your deck.</p>',
 		releases: { DW: 68 }
 	},
 	{
+		id: 'WA228',
 		name: 'Renewal of Power',
 		die: 4,
 		keywords: [],
@@ -6513,10 +7007,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Remove all tokens in play from the game.</p>',
+		text: '<p><b>Command</b>: Remove all tokens in play from the game.</p>',
 		releases: { DW: 69, WA: 228 }
 	},
 	{
+		id: 'DW70',
 		name: 'Returned Power',
 		die: 4,
 		keywords: [],
@@ -6528,6 +7023,7 @@ export const cards: Card[] = [
 		releases: { DW: 70 }
 	},
 	{
+		id: 'DW71',
 		name: "Saerith's Gambit",
 		cost: 2,
 		die: 3,
@@ -6540,6 +7036,7 @@ export const cards: Card[] = [
 		releases: { DW: 71 }
 	},
 	{
+		id: 'DW72',
 		name: 'Salt the Earth',
 		cost: 1,
 		die: 4,
@@ -6548,10 +7045,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: At the end of the tactics phase, remove all tactics played this combat from the game.</p>',
+		text: '<p><b>WarCry</b>: At the end of the tactics phase, remove all tactics played this combat from the game.</p>',
 		releases: { DW: 72 }
 	},
 	{
+		id: 'WA239',
 		name: 'Show of Force',
 		cost: 2,
 		die: 3,
@@ -6564,6 +7062,7 @@ export const cards: Card[] = [
 		releases: { DW: 73, WA: 239 }
 	},
 	{
+		id: 'DW74',
 		name: 'Skirmish Combat',
 		cost: 1,
 		die: 2,
@@ -6576,6 +7075,7 @@ export const cards: Card[] = [
 		releases: { DW: 74 }
 	},
 	{
+		id: 'DW75',
 		name: 'Stand and Shoot',
 		cost: 2,
 		die: 3,
@@ -6588,6 +7088,7 @@ export const cards: Card[] = [
 		releases: { DW: 75 }
 	},
 	{
+		id: 'DW76',
 		name: 'Steady Advance',
 		cost: 2,
 		die: 2,
@@ -6600,6 +7101,7 @@ export const cards: Card[] = [
 		releases: { DW: 76 }
 	},
 	{
+		id: 'DW77',
 		name: 'Stockpile',
 		die: 4,
 		keywords: ['Strategy'],
@@ -6611,6 +7113,7 @@ export const cards: Card[] = [
 		releases: { DW: 77 }
 	},
 	{
+		id: 'DW78',
 		name: 'Strategic Planning',
 		die: 2,
 		keywords: [],
@@ -6618,10 +7121,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Move 1 action card from your discard pile to the top of your deck.</p>',
+		text: '<p><b>Command</b>: Move 1 action card from your discard pile to the top of your deck.</p>',
 		releases: { DW: 78 }
 	},
 	{
+		id: 'DW79',
 		name: 'Strength of Conservation',
 		cost: 3,
 		die: 1,
@@ -6634,6 +7138,7 @@ export const cards: Card[] = [
 		releases: { DW: 79 }
 	},
 	{
+		id: 'DW80',
 		name: 'Strength of Leadership',
 		die: 3,
 		keywords: [],
@@ -6645,6 +7150,7 @@ export const cards: Card[] = [
 		releases: { DW: 80 }
 	},
 	{
+		id: 'DW81',
 		name: 'Strength of Opposition',
 		cost: 3,
 		die: 1,
@@ -6657,6 +7163,7 @@ export const cards: Card[] = [
 		releases: { DW: 81 }
 	},
 	{
+		id: 'DW82',
 		name: 'Suicidal Charge',
 		cost: 3,
 		die: 2,
@@ -6669,6 +7176,7 @@ export const cards: Card[] = [
 		releases: { DW: 82 }
 	},
 	{
+		id: 'DW83',
 		name: 'Summon the Storm',
 		die: 4,
 		keywords: ['Strategy'],
@@ -6676,10 +7184,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p>Units may not declare ranged attacks.</p><p> <b>Command</b> Commit 1 of your units: Destroy this card. Any player may play this ability.</p>',
+		text: '<p>Units may not declare ranged attacks.</p><p><b>Command</b> Commit 1 of your units: Destroy this card. Any player may play this ability.</p>',
 		releases: { DW: 83 }
 	},
 	{
+		id: 'DW84',
 		name: 'Taking the Initiative',
 		die: 1,
 		keywords: [],
@@ -6691,6 +7200,7 @@ export const cards: Card[] = [
 		releases: { DW: 84 }
 	},
 	{
+		id: 'DW85',
 		name: 'Thunderous Charge',
 		cost: 2,
 		die: 2,
@@ -6703,6 +7213,7 @@ export const cards: Card[] = [
 		releases: { DW: 85 }
 	},
 	{
+		id: 'DW86',
 		name: 'Trample',
 		cost: 2,
 		die: 2,
@@ -6715,6 +7226,7 @@ export const cards: Card[] = [
 		releases: { DW: 86 }
 	},
 	{
+		id: 'WA268',
 		name: 'Triumphant Celebration',
 		cost: 1,
 		die: 3,
@@ -6723,10 +7235,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: If you win this combat this unit gets 2 "<b>Victory</b>: +1" tokens.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat this unit gets 2 "<b>Victory</b>: +1" tokens.</p>',
 		releases: { DW: 87, WA: 268 }
 	},
 	{
+		id: 'DW88',
 		name: 'Underestimated Strength',
 		cost: 2,
 		die: 3,
@@ -6739,6 +7252,7 @@ export const cards: Card[] = [
 		releases: { DW: 88 }
 	},
 	{
+		id: 'DW89',
 		name: 'Unexpected Quarter',
 		die: 4,
 		keywords: [],
@@ -6750,6 +7264,7 @@ export const cards: Card[] = [
 		releases: { DW: 89 }
 	},
 	{
+		id: 'DW90',
 		name: 'Unfinished Business',
 		cost: 1,
 		die: 3,
@@ -6762,6 +7277,7 @@ export const cards: Card[] = [
 		releases: { DW: 90 }
 	},
 	{
+		id: 'DW91',
 		name: 'Upset Balance',
 		cost: 1,
 		die: 3,
@@ -6774,6 +7290,7 @@ export const cards: Card[] = [
 		releases: { DW: 91 }
 	},
 	{
+		id: 'DW92',
 		name: 'Weakening Clouds',
 		cost: 1,
 		die: 3,
@@ -6786,6 +7303,7 @@ export const cards: Card[] = [
 		releases: { DW: 92 }
 	},
 	{
+		id: 'DW93',
 		name: 'Wisdom of the Ages',
 		cost: 2,
 		die: 3,
@@ -6798,6 +7316,7 @@ export const cards: Card[] = [
 		releases: { DW: 93 }
 	},
 	{
+		id: 'DW94',
 		name: 'Bloodfire Scythe',
 		cost: 1,
 		unique: true,
@@ -6806,10 +7325,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>: Reduce the enemy unit's strength to half of it's current strength, rounding down.</p>",
+		text: "<p><b>WarCry</b>: Reduce the enemy unit's strength to half of it's current strength, rounding down.</p>",
 		releases: { DW: 94 }
 	},
 	{
+		id: 'DW95',
 		name: 'Glorious Standard',
 		cost: 2,
 		unique: true,
@@ -6822,6 +7342,7 @@ export const cards: Card[] = [
 		releases: { DW: 95 }
 	},
 	{
+		id: 'DW96',
 		name: 'Hellbrandt Grimm',
 		cost: 1,
 		unique: true,
@@ -6830,10 +7351,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Commit 1 of your units: This unit gets a strength bonus equal to the committed units gold cost.</p>',
+		text: '<p><b>WarCry</b> Commit 1 of your units: This unit gets a strength bonus equal to the committed units gold cost.</p>',
 		releases: { DW: 96 }
 	},
 	{
+		id: 'DW97',
 		name: 'Master Kwoh',
 		cost: 1,
 		unique: true,
@@ -6846,6 +7368,7 @@ export const cards: Card[] = [
 		releases: { DW: 97 }
 	},
 	{
+		id: 'WA291',
 		name: 'Steelheart Shield',
 		cost: 1,
 		keywords: ['Armor'],
@@ -6857,6 +7380,7 @@ export const cards: Card[] = [
 		releases: { DW: 98, WA: 291 }
 	},
 	{
+		id: 'DW99',
 		name: 'The Jewels of Vaerkylla',
 		cost: 1,
 		keywords: ['Item'],
@@ -6868,6 +7392,7 @@ export const cards: Card[] = [
 		releases: { DW: 99 }
 	},
 	{
+		id: 'DW100',
 		name: "Taber's Harlequins",
 		cost: 3,
 		strength: 3,
@@ -6883,6 +7408,7 @@ export const cards: Card[] = [
 		releases: { DW: 100 }
 	},
 	{
+		id: 'DW101',
 		name: 'High King Thorgrim',
 		cost: 6,
 		strength: 4,
@@ -6894,10 +7420,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p> <b>WarCry</b> Discard your hand: This unit gets +4 strength.</p><p><b>Support WarCry</b>: Your Dwarf unit gets +2 strength. Only usable while your unit is losing the combat.</p>',
+		text: '<p><b>WarCry</b> Discard your hand: This unit gets +4 strength.</p><p><b>Support WarCry</b>: Your Dwarf unit gets +2 strength. Only usable while your unit is losing the combat.</p>',
 		releases: { DW: 101 }
 	},
 	{
+		id: 'DW102',
 		name: "Karfin's Hammer Lords",
 		cost: 5,
 		strength: 4,
@@ -6909,10 +7436,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Destroy the enemy unit unless your enemy discards 2 cards.</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. infantry units.</p>',
+		text: '<p><b>WarCry</b>: Destroy the enemy unit unless your enemy discards 2 cards.</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. infantry units.</p>',
 		releases: { DW: 102 }
 	},
 	{
+		id: 'DW103',
 		name: "Karfin's Ironguard",
 		cost: 5,
 		strength: 5,
@@ -6927,6 +7455,7 @@ export const cards: Card[] = [
 		releases: { DW: 103 }
 	},
 	{
+		id: 'DW104',
 		name: "Thorgrim's Grim-Axes",
 		cost: 4,
 		strength: 4,
@@ -6941,6 +7470,7 @@ export const cards: Card[] = [
 		releases: { DW: 104 }
 	},
 	{
+		id: 'WA317',
 		name: "Thorgrim's Steel Hammers",
 		cost: 5,
 		strength: 4,
@@ -6955,6 +7485,7 @@ export const cards: Card[] = [
 		releases: { DW: 105, WA: 317 }
 	},
 	{
+		id: 'DW106',
 		name: "Varamir's Forest Walkers",
 		cost: 3,
 		strength: 3,
@@ -6969,6 +7500,7 @@ export const cards: Card[] = [
 		releases: { DW: 106 }
 	},
 	{
+		id: 'WA322',
 		name: 'Snorri Nosebiter',
 		cost: 1,
 		unique: true,
@@ -6981,6 +7513,7 @@ export const cards: Card[] = [
 		releases: { DW: 107, WA: 322 }
 	},
 	{
+		id: 'DW108',
 		name: 'Blades of Ostland',
 		cost: 4,
 		strength: 3,
@@ -6991,10 +7524,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit gets +1 strength for each card in your hand. The enemy unit may commit to negate the effects of this ability.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +1 strength for each card in your hand. The enemy unit may commit to negate the effects of this ability.</p>',
 		releases: { DW: 108 }
 	},
 	{
+		id: 'DW109',
 		name: 'Halberdiers of Ostland',
 		cost: 4,
 		strength: 4,
@@ -7009,6 +7543,7 @@ export const cards: Card[] = [
 		releases: { DW: 109 }
 	},
 	{
+		id: 'DW110',
 		name: "Hearthfoot's Scouts",
 		cost: 3,
 		strength: 2,
@@ -7023,6 +7558,7 @@ export const cards: Card[] = [
 		releases: { DW: 110 }
 	},
 	{
+		id: 'DW111',
 		name: 'Spearmen of Ostland',
 		cost: 3,
 		strength: 3,
@@ -7037,6 +7573,7 @@ export const cards: Card[] = [
 		releases: { DW: 111 }
 	},
 	{
+		id: 'DW112',
 		name: 'Valmir von Raukov',
 		cost: 5,
 		strength: 4,
@@ -7052,6 +7589,7 @@ export const cards: Card[] = [
 		releases: { DW: 112 }
 	},
 	{
+		id: 'DW113',
 		name: 'Valten',
 		cost: 5,
 		strength: 3,
@@ -7067,6 +7605,7 @@ export const cards: Card[] = [
 		releases: { DW: 113 }
 	},
 	{
+		id: 'WA355',
 		name: "Alith's Ghost Bows",
 		cost: 3,
 		strength: 2,
@@ -7081,6 +7620,7 @@ export const cards: Card[] = [
 		releases: { DW: 114, WA: 355 }
 	},
 	{
+		id: 'DW115',
 		name: "Alith's Shadow Warriors",
 		cost: 4,
 		strength: 4,
@@ -7095,6 +7635,7 @@ export const cards: Card[] = [
 		releases: { DW: 115 }
 	},
 	{
+		id: 'DW116',
 		name: "Alith's Shadowed Steeds",
 		cost: 5,
 		strength: 5,
@@ -7109,6 +7650,7 @@ export const cards: Card[] = [
 		releases: { DW: 116 }
 	},
 	{
+		id: 'DW117',
 		name: "Belannaer's Swordbrethren",
 		cost: 5,
 		strength: 4,
@@ -7124,6 +7666,7 @@ export const cards: Card[] = [
 		releases: { DW: 117 }
 	},
 	{
+		id: 'DW118',
 		name: 'Eltharion',
 		cost: 5,
 		strength: 3,
@@ -7138,6 +7681,7 @@ export const cards: Card[] = [
 		releases: { DW: 118 }
 	},
 	{
+		id: 'DW119',
 		name: 'The Shadow King',
 		cost: 6,
 		strength: 5,
@@ -7153,6 +7697,7 @@ export const cards: Card[] = [
 		releases: { DW: 119 }
 	},
 	{
+		id: 'WA386',
 		name: 'The Grand Alliance',
 		cost: 2,
 		die: 3,
@@ -7165,6 +7710,7 @@ export const cards: Card[] = [
 		releases: { DW: 120, WA: 386 }
 	},
 	{
+		id: 'PG1',
 		name: "Ni'nnanuam the Afflicted",
 		cost: 6,
 		strength: 5,
@@ -7180,6 +7726,7 @@ export const cards: Card[] = [
 		releases: { PG: 1 }
 	},
 	{
+		id: 'WA4',
 		name: 'Bilerot Plagueflesh',
 		cost: 4,
 		strength: 3,
@@ -7194,6 +7741,7 @@ export const cards: Card[] = [
 		releases: { PG: 2, WA: 4 }
 	},
 	{
+		id: 'PG3',
 		name: "Bileth's Marauders",
 		cost: 4,
 		strength: 4,
@@ -7208,6 +7756,7 @@ export const cards: Card[] = [
 		releases: { PG: 3 }
 	},
 	{
+		id: 'PG4',
 		name: "Festerheart's Plagueswords",
 		cost: 4,
 		strength: 3,
@@ -7222,6 +7771,7 @@ export const cards: Card[] = [
 		releases: { PG: 4 }
 	},
 	{
+		id: 'WA12',
 		name: 'Feytor',
 		cost: 6,
 		strength: 4,
@@ -7233,10 +7783,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Terror</b>: 2</p><p> <b>WarCry</b>: Your enemy may discard 3 cards. If they do not the enemy gets -3 tactic points.</p>',
+		text: '<p><b>Terror</b>: 2</p><p><b>WarCry</b>: Your enemy may discard 3 cards. If they do not the enemy gets -3 tactic points.</p>',
 		releases: { PG: 5, WA: 12 }
 	},
 	{
+		id: 'WA13',
 		name: 'Gibbering Hordes',
 		cost: 3,
 		strength: 3,
@@ -7251,6 +7802,7 @@ export const cards: Card[] = [
 		releases: { PG: 6, WA: 13 }
 	},
 	{
+		id: 'PG7',
 		name: 'Maggotkin',
 		cost: 5,
 		strength: 5,
@@ -7261,10 +7813,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>:If you win this combat and the enemy's strength is 1 or less, that unit is routed.</p>",
+		text: "<p><b>WarCry</b>:If you win this combat and the enemy's strength is 1 or less, that unit is routed.</p>",
 		releases: { PG: 7 }
 	},
 	{
+		id: 'PG8',
 		name: 'Tallymen of Plagues',
 		cost: 4,
 		strength: 4,
@@ -7279,6 +7832,7 @@ export const cards: Card[] = [
 		releases: { PG: 8 }
 	},
 	{
+		id: 'PG9',
 		name: "Sa'har's Ashen Raiders",
 		cost: 4,
 		strength: 4,
@@ -7294,6 +7848,7 @@ export const cards: Card[] = [
 		releases: { PG: 9 }
 	},
 	{
+		id: 'PG10',
 		name: "Morbeth's Corsairs",
 		cost: 4,
 		strength: 4,
@@ -7308,6 +7863,7 @@ export const cards: Card[] = [
 		releases: { PG: 10 }
 	},
 	{
+		id: 'PG11',
 		name: "Morbeth's Dread Knights",
 		cost: 5,
 		strength: 4,
@@ -7322,6 +7878,7 @@ export const cards: Card[] = [
 		releases: { PG: 11 }
 	},
 	{
+		id: 'WA48',
 		name: "Morbeth's Hellblades",
 		cost: 4,
 		strength: 3,
@@ -7336,6 +7893,7 @@ export const cards: Card[] = [
 		releases: { PG: 12, WA: 48 }
 	},
 	{
+		id: 'WA50',
 		name: "Rikhaine's Black Legion",
 		cost: 3,
 		strength: 3,
@@ -7346,10 +7904,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: If the enemy unit's strength is equal to or less than this unit's strength when the combat ends, the result is a slaughter.</p>",
+		text: "<p><b>WarCry</b>: If the enemy unit's strength is equal to or less than this unit's strength when the combat ends, the result is a slaughter.</p>",
 		releases: { PG: 13, WA: 50 }
 	},
 	{
+		id: 'PG14',
 		name: "T'aelira Morbeth",
 		cost: 3,
 		strength: 3,
@@ -7364,6 +7923,7 @@ export const cards: Card[] = [
 		releases: { PG: 14 }
 	},
 	{
+		id: 'PG15',
 		name: "Gorgut's Ladz",
 		cost: 5,
 		strength: 5,
@@ -7378,6 +7938,7 @@ export const cards: Card[] = [
 		releases: { PG: 15 }
 	},
 	{
+		id: 'PG16',
 		name: "Moggit's Savage Wazboyz",
 		cost: 5,
 		strength: 6,
@@ -7392,6 +7953,7 @@ export const cards: Card[] = [
 		releases: { PG: 16 }
 	},
 	{
+		id: 'PG17',
 		name: 'Kaltorg Skinripper',
 		cost: 5,
 		strength: 4,
@@ -7407,6 +7969,7 @@ export const cards: Card[] = [
 		releases: { PG: 17 }
 	},
 	{
+		id: 'PG18',
 		name: 'Pigstikkas',
 		cost: 4,
 		strength: 3,
@@ -7421,6 +7984,7 @@ export const cards: Card[] = [
 		releases: { PG: 18 }
 	},
 	{
+		id: 'WA82',
 		name: "Rotfang's Brawlerz",
 		cost: 4,
 		strength: 5,
@@ -7435,6 +7999,7 @@ export const cards: Card[] = [
 		releases: { PG: 19, WA: 82 }
 	},
 	{
+		id: 'PG20',
 		name: "Skraggi's Wolf Riders",
 		cost: 4,
 		strength: 3,
@@ -7449,6 +8014,7 @@ export const cards: Card[] = [
 		releases: { PG: 20 }
 	},
 	{
+		id: 'PG21',
 		name: "Skullgrinder's Pigkart",
 		cost: 5,
 		strength: 4,
@@ -7464,6 +8030,7 @@ export const cards: Card[] = [
 		releases: { PG: 21 }
 	},
 	{
+		id: 'PG22',
 		name: "Wazzi's Night Raiderz",
 		cost: 2,
 		strength: 2,
@@ -7478,6 +8045,7 @@ export const cards: Card[] = [
 		releases: { PG: 22 }
 	},
 	{
+		id: 'PG23',
 		name: "Sniktnit's Warp Cannon",
 		cost: 5,
 		strength: 3,
@@ -7493,6 +8061,7 @@ export const cards: Card[] = [
 		releases: { PG: 23 }
 	},
 	{
+		id: 'PG24',
 		name: 'Screaming Bell of Clan Skryre',
 		cost: 5,
 		strength: 4,
@@ -7508,6 +8077,7 @@ export const cards: Card[] = [
 		releases: { PG: 24 }
 	},
 	{
+		id: 'PG25',
 		name: 'Snikluk Fellpest',
 		cost: 4,
 		strength: 4,
@@ -7522,6 +8092,7 @@ export const cards: Card[] = [
 		releases: { PG: 25 }
 	},
 	{
+		id: 'PG26',
 		name: 'Vermintide',
 		cost: 3,
 		strength: 3,
@@ -7536,6 +8107,7 @@ export const cards: Card[] = [
 		releases: { PG: 26 }
 	},
 	{
+		id: 'PG27',
 		name: 'Giants of Albion',
 		cost: 8,
 		strength: 11,
@@ -7550,6 +8122,7 @@ export const cards: Card[] = [
 		releases: { PG: 27 }
 	},
 	{
+		id: 'PG28',
 		name: "Kreuger's Cursed Company",
 		cost: 4,
 		strength: 4,
@@ -7564,6 +8137,7 @@ export const cards: Card[] = [
 		releases: { PG: 28 }
 	},
 	{
+		id: 'PG29',
 		name: 'A Taste of Their Own Tactics',
 		cost: 2,
 		die: 3,
@@ -7572,10 +8146,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If this unit passes a tactic point test, play one WarCry or combat tactic printed on the enemy unit, without cost.</p>',
+		text: '<p><b>WarCry</b>: If this unit passes a tactic point test, play one WarCry or combat tactic printed on the enemy unit, without cost.</p>',
 		releases: { PG: 29 }
 	},
 	{
+		id: 'PG30',
 		name: 'Arrows from the Hills',
 		die: 2,
 		keywords: ['Strategy'],
@@ -7587,6 +8162,7 @@ export const cards: Card[] = [
 		releases: { PG: 30 }
 	},
 	{
+		id: 'WA108',
 		name: 'Back Them Up',
 		cost: 0,
 		die: 4,
@@ -7599,6 +8175,7 @@ export const cards: Card[] = [
 		releases: { PG: 31, WA: 108 }
 	},
 	{
+		id: 'PG32',
 		name: 'Battlefield Spies',
 		cost: 1,
 		die: 3,
@@ -7611,6 +8188,7 @@ export const cards: Card[] = [
 		releases: { PG: 32 }
 	},
 	{
+		id: 'PG33',
 		name: 'Bring Them to Us',
 		cost: 2,
 		die: 3,
@@ -7619,10 +8197,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable during a follow-up attack by an enemy unit.</p><p> <b>WarCry</b> Commit your unit: This combat ends and both units are returned to their battle lines committed. Only playable during a follow-up attack by an enemy unit.</p>',
+		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable during a follow-up attack by an enemy unit.</p><p><b>WarCry</b> Commit your unit: This combat ends and both units are returned to their battle lines committed. Only playable during a follow-up attack by an enemy unit.</p>',
 		releases: { PG: 33 }
 	},
 	{
+		id: 'WA121',
 		name: 'Chain Lightning',
 		cost: 0,
 		die: 1,
@@ -7635,6 +8214,7 @@ export const cards: Card[] = [
 		releases: { PG: 34, WA: 121 }
 	},
 	{
+		id: 'PG35',
 		name: 'Cunning Plan',
 		cost: 1,
 		die: 3,
@@ -7647,6 +8227,7 @@ export const cards: Card[] = [
 		releases: { PG: 35 }
 	},
 	{
+		id: 'WA141',
 		name: 'Diversity of Arms',
 		cost: 2,
 		die: 3,
@@ -7655,10 +8236,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +3 strength.Only playable while you have at least one Grand Alliance or Hordes Of Darkness unit and at least one neutral unit.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +3 strength.Only playable while you have at least one Grand Alliance or Hordes Of Darkness unit and at least one neutral unit.</p>',
 		releases: { PG: 36, WA: 141 }
 	},
 	{
+		id: 'PG37',
 		name: 'Empowered Strike',
 		cost: 2,
 		die: 3,
@@ -7671,6 +8253,7 @@ export const cards: Card[] = [
 		releases: { PG: 37 }
 	},
 	{
+		id: 'PG38',
 		name: 'Everwatch Technique',
 		cost: 2,
 		die: 3,
@@ -7679,10 +8262,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: "<p> <b>WarCry</b>: Name a card, then look at your enemy's hand. If the named card is in their hand this unit gets +4 strength.</p>",
+		text: "<p><b>WarCry</b>: Name a card, then look at your enemy's hand. If the named card is in their hand this unit gets +4 strength.</p>",
 		releases: { PG: 38 }
 	},
 	{
+		id: 'PG39',
 		name: 'Feed the Earth',
 		die: 4,
 		keywords: ['Strategy'],
@@ -7695,6 +8279,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'PG40',
 		name: 'Feint East, Strike West',
 		cost: 1,
 		die: 3,
@@ -7707,6 +8292,7 @@ export const cards: Card[] = [
 		releases: { PG: 40 }
 	},
 	{
+		id: 'PG41',
 		name: 'Fire as They Come',
 		cost: 2,
 		die: 3,
@@ -7719,6 +8305,7 @@ export const cards: Card[] = [
 		releases: { PG: 41 }
 	},
 	{
+		id: 'WA157',
 		name: 'Flanking Charge',
 		cost: 1,
 		die: 4,
@@ -7731,6 +8318,7 @@ export const cards: Card[] = [
 		releases: { PG: 42, WA: 157 }
 	},
 	{
+		id: 'PG43',
 		name: 'For the Fallen!',
 		cost: 3,
 		die: 2,
@@ -7743,6 +8331,7 @@ export const cards: Card[] = [
 		releases: { PG: 43 }
 	},
 	{
+		id: 'PG44',
 		name: 'Force the Skirmish',
 		cost: 3,
 		die: 4,
@@ -7751,10 +8340,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: Play during a ranged attack. Replace the attacking unit's ranged attack with it's strength. The loser of this combat is destroyed.</p>",
+		text: "<p><b>WarCry</b>: Play during a ranged attack. Replace the attacking unit's ranged attack with it's strength. The loser of this combat is destroyed.</p>",
 		releases: { PG: 44 }
 	},
 	{
+		id: 'PG45',
 		name: 'Forest Cover',
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -7766,6 +8356,7 @@ export const cards: Card[] = [
 		releases: { PG: 45 }
 	},
 	{
+		id: 'PG46',
 		name: 'Frost Covered Hills',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -7777,6 +8368,7 @@ export const cards: Card[] = [
 		releases: { PG: 46 }
 	},
 	{
+		id: 'WA163',
 		name: 'Glory Favors the Brave',
 		die: 6,
 		keywords: [],
@@ -7788,6 +8380,7 @@ export const cards: Card[] = [
 		releases: { PG: 47, VT: 26, WA: 163 }
 	},
 	{
+		id: 'PG48',
 		name: "Gausser's Return",
 		die: 5,
 		keywords: [],
@@ -7799,6 +8392,7 @@ export const cards: Card[] = [
 		releases: { PG: 48 }
 	},
 	{
+		id: 'PG49',
 		name: "He's Mine",
 		cost: 2,
 		die: 3,
@@ -7807,10 +8401,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets +4 strength. Only playable vs. "Unique" units or units with a "Unique" character attachment.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +4 strength. Only playable vs. "Unique" units or units with a "Unique" character attachment.</p>',
 		releases: { PG: 49 }
 	},
 	{
+		id: 'WA174',
 		name: 'High Winds',
 		die: 2,
 		keywords: ['Strategy', 'Terrain'],
@@ -7822,6 +8417,7 @@ export const cards: Card[] = [
 		releases: { PG: 50, WA: 174 }
 	},
 	{
+		id: 'WA179',
 		name: 'Intervention',
 		cost: 2,
 		die: 2,
@@ -7834,6 +8430,7 @@ export const cards: Card[] = [
 		releases: { PG: 51, WA: 179 }
 	},
 	{
+		id: 'PG52',
 		name: 'Into the Heart of the Enemy',
 		cost: 2,
 		die: 2,
@@ -7842,10 +8439,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: If you win this combat, rout the enemy unit if this unit's current strength is at least double the enemy unit's printed strength.</p>",
+		text: "<p><b>WarCry</b>: If you win this combat, rout the enemy unit if this unit's current strength is at least double the enemy unit's printed strength.</p>",
 		releases: { PG: 52 }
 	},
 	{
+		id: 'PG53',
 		name: 'Know the Terrain',
 		die: 5,
 		keywords: [],
@@ -7853,10 +8451,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +2 tactic points and the enemy unit gets -2 tactic points. Only playable if you have a Terrain card in play.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 tactic points and the enemy unit gets -2 tactic points. Only playable if you have a Terrain card in play.</p>',
 		releases: { PG: 53 }
 	},
 	{
+		id: 'PG54',
 		name: 'Last Ditch Effort',
 		cost: 2,
 		die: 3,
@@ -7870,6 +8469,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'PG55',
 		name: 'Let Them Come',
 		cost: 2,
 		die: 3,
@@ -7882,6 +8482,7 @@ export const cards: Card[] = [
 		releases: { PG: 55 }
 	},
 	{
+		id: 'WA184',
 		name: 'Level the Field',
 		cost: 1,
 		die: 5,
@@ -7894,6 +8495,7 @@ export const cards: Card[] = [
 		releases: { PG: 56, WA: 184 }
 	},
 	{
+		id: 'WA186',
 		name: 'Look Them in the Eyes',
 		cost: 1,
 		die: 4,
@@ -7906,6 +8508,7 @@ export const cards: Card[] = [
 		releases: { PG: 57, WA: 186 }
 	},
 	{
+		id: 'WA191',
 		name: 'Make Something from Nothing',
 		cost: 2,
 		die: 2,
@@ -7918,6 +8521,7 @@ export const cards: Card[] = [
 		releases: { PG: 58, WA: 191 }
 	},
 	{
+		id: 'PG59',
 		name: 'Make Their Strengths Yours',
 		cost: 1,
 		die: 5,
@@ -7930,6 +8534,7 @@ export const cards: Card[] = [
 		releases: { PG: 59 }
 	},
 	{
+		id: 'PG60',
 		name: 'Marsh Land',
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -7941,6 +8546,7 @@ export const cards: Card[] = [
 		releases: { PG: 60 }
 	},
 	{
+		id: 'PG61',
 		name: 'Norse Tactics',
 		cost: 3,
 		die: 2,
@@ -7953,6 +8559,7 @@ export const cards: Card[] = [
 		releases: { PG: 61 }
 	},
 	{
+		id: 'PG62',
 		name: 'Not Without a Fight',
 		cost: 3,
 		die: 3,
@@ -7965,6 +8572,7 @@ export const cards: Card[] = [
 		releases: { PG: 62 }
 	},
 	{
+		id: 'PG63',
 		name: 'Planned Diversion',
 		die: 3,
 		keywords: [],
@@ -7976,6 +8584,7 @@ export const cards: Card[] = [
 		releases: { PG: 63 }
 	},
 	{
+		id: 'WA216',
 		name: 'Prepare for the Worst',
 		die: 4,
 		keywords: [],
@@ -7987,6 +8596,7 @@ export const cards: Card[] = [
 		releases: { PG: 64, WA: 216 }
 	},
 	{
+		id: 'PG65',
 		name: 'Rear Charge',
 		die: 2,
 		keywords: [],
@@ -7998,6 +8608,7 @@ export const cards: Card[] = [
 		releases: { PG: 65 }
 	},
 	{
+		id: 'PG66',
 		name: 'Reinforced Supply Lines',
 		cost: 2,
 		die: 3,
@@ -8006,10 +8617,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: Search your army deck for one attachment with a gold cost of 1 or less and attach it to this unit, if possible. Reshuffle your army deck.</p>',
+		text: '<p><b>WarCry</b>: Search your army deck for one attachment with a gold cost of 1 or less and attach it to this unit, if possible. Reshuffle your army deck.</p>',
 		releases: { PG: 66 }
 	},
 	{
+		id: 'PG67',
 		name: 'Research',
 		die: 4,
 		keywords: [],
@@ -8021,6 +8633,7 @@ export const cards: Card[] = [
 		releases: { PG: 67 }
 	},
 	{
+		id: 'PG68',
 		name: 'Scout the Terrain',
 		die: 4,
 		keywords: [],
@@ -8032,6 +8645,7 @@ export const cards: Card[] = [
 		releases: { PG: 68 }
 	},
 	{
+		id: 'PG69',
 		name: 'Scramble for a Solution',
 		cost: 1,
 		die: 2,
@@ -8044,6 +8658,7 @@ export const cards: Card[] = [
 		releases: { PG: 69 }
 	},
 	{
+		id: 'WA237',
 		name: 'See Through the Diversion',
 		die: 4,
 		keywords: [],
@@ -8055,6 +8670,7 @@ export const cards: Card[] = [
 		releases: { PG: 70, WA: 237 }
 	},
 	{
+		id: 'PG71',
 		name: 'Snow Burdened Hill',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -8066,6 +8682,7 @@ export const cards: Card[] = [
 		releases: { PG: 71 }
 	},
 	{
+		id: 'PG72',
 		name: 'Spectral Divination',
 		cost: 1,
 		die: 4,
@@ -8078,6 +8695,7 @@ export const cards: Card[] = [
 		releases: { PG: 72 }
 	},
 	{
+		id: 'PG73',
 		name: 'Strike as They Are Falling',
 		cost: 2,
 		die: 3,
@@ -8090,6 +8708,7 @@ export const cards: Card[] = [
 		releases: { PG: 73 }
 	},
 	{
+		id: 'PG74',
 		name: 'Suffer Not the Witch',
 		cost: 1,
 		die: 4,
@@ -8102,6 +8721,7 @@ export const cards: Card[] = [
 		releases: { PG: 74 }
 	},
 	{
+		id: 'PG75',
 		name: 'The Charge of 1000 Horses',
 		cost: 3,
 		die: 2,
@@ -8110,10 +8730,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This cavalry unit gets +1 strength for each of your other ready cavalry units.</p>',
+		text: '<p><b>WarCry</b>: This cavalry unit gets +1 strength for each of your other ready cavalry units.</p>',
 		releases: { PG: 75 }
 	},
 	{
+		id: 'PG76',
 		name: 'Tides of Battle',
 		cost: 1,
 		die: 4,
@@ -8126,6 +8747,7 @@ export const cards: Card[] = [
 		releases: { PG: 76 }
 	},
 	{
+		id: 'PG77',
 		name: 'To the Teeth',
 		cost: 1,
 		die: 4,
@@ -8138,6 +8760,7 @@ export const cards: Card[] = [
 		releases: { PG: 77 }
 	},
 	{
+		id: 'PG78',
 		name: 'Trapping Attack',
 		cost: 'X',
 		die: 2,
@@ -8146,10 +8769,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: "<p> <b>WarCry</b>: This unit gets +X strength if it passes a leadership test. X equals this unit's printed tactic points.</p>",
+		text: "<p><b>WarCry</b>: This unit gets +X strength if it passes a leadership test. X equals this unit's printed tactic points.</p>",
 		releases: { PG: 78 }
 	},
 	{
+		id: 'PG79',
 		name: 'Unexpected Strike',
 		cost: 2,
 		die: 2,
@@ -8162,6 +8786,7 @@ export const cards: Card[] = [
 		releases: { PG: 79 }
 	},
 	{
+		id: 'PG80',
 		name: 'Unity of Arms',
 		cost: 2,
 		die: 3,
@@ -8170,10 +8795,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +3 strength. Only playable if you have no neutral units in play.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +3 strength. Only playable if you have no neutral units in play.</p>',
 		releases: { PG: 80 }
 	},
 	{
+		id: 'PG81',
 		name: 'Until You Have Nothing Left',
 		cost: 2,
 		die: 2,
@@ -8186,6 +8812,7 @@ export const cards: Card[] = [
 		releases: { PG: 81 }
 	},
 	{
+		id: 'WA274',
 		name: "Warrior's Rage",
 		die: 3,
 		keywords: [],
@@ -8197,6 +8824,7 @@ export const cards: Card[] = [
 		releases: { PG: 82, WA: 274 }
 	},
 	{
+		id: 'PG83',
 		name: 'We Claim This Territory',
 		cost: 1,
 		die: 4,
@@ -8209,6 +8837,7 @@ export const cards: Card[] = [
 		releases: { PG: 83 }
 	},
 	{
+		id: 'PG84',
 		name: 'We Have Nothing to Fear',
 		cost: 2,
 		die: 3,
@@ -8221,6 +8850,7 @@ export const cards: Card[] = [
 		releases: { PG: 84 }
 	},
 	{
+		id: 'PG85',
 		name: "When It's All You've Got",
 		cost: 2,
 		die: 4,
@@ -8233,6 +8863,7 @@ export const cards: Card[] = [
 		releases: { PG: 85 }
 	},
 	{
+		id: 'PG86',
 		name: 'Wipe Them Out',
 		cost: 2,
 		die: 3,
@@ -8245,6 +8876,7 @@ export const cards: Card[] = [
 		releases: { PG: 86 }
 	},
 	{
+		id: 'PG87',
 		name: 'Word of Pain',
 		cost: 'X',
 		die: 3,
@@ -8257,6 +8889,7 @@ export const cards: Card[] = [
 		releases: { PG: 87 }
 	},
 	{
+		id: 'PG88',
 		name: "You'll Be Dead Before You Bleed",
 		cost: 1,
 		die: 4,
@@ -8269,6 +8902,7 @@ export const cards: Card[] = [
 		releases: { PG: 88 }
 	},
 	{
+		id: 'PG89',
 		name: 'Hilt of the Norn Sword',
 		cost: 1,
 		unique: true,
@@ -8281,6 +8915,7 @@ export const cards: Card[] = [
 		releases: { PG: 89 }
 	},
 	{
+		id: 'PG90',
 		name: 'Ring of Stealth',
 		cost: 2,
 		tacticPoints: 1,
@@ -8293,6 +8928,7 @@ export const cards: Card[] = [
 		releases: { PG: 90 }
 	},
 	{
+		id: 'PG91',
 		name: 'Scribe',
 		cost: 1,
 		keywords: ['Character'],
@@ -8304,6 +8940,7 @@ export const cards: Card[] = [
 		releases: { PG: 91 }
 	},
 	{
+		id: 'WA290',
 		name: 'Standard of Faith',
 		cost: 1,
 		keywords: ['Standard'],
@@ -8315,6 +8952,7 @@ export const cards: Card[] = [
 		releases: { PG: 92, DH: 38, WA: 290 }
 	},
 	{
+		id: 'PG93',
 		name: 'The Green Knight',
 		cost: 5,
 		strength: 4,
@@ -8326,10 +8964,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p>While this unit is in combat, any strength bonuses the enemy unit receives are reduced by 2, minimum 1.</p><p> <b>WarCry</b>: This unit gets +1 strength for each of your units with <b>Faith</b>.</p>',
+		text: '<p>While this unit is in combat, any strength bonuses the enemy unit receives are reduced by 2, minimum 1.</p><p><b>WarCry</b>: This unit gets +1 strength for each of your units with <b>Faith</b>.</p>',
 		releases: { PG: 93 }
 	},
 	{
+		id: 'PG94',
 		name: "The Damsel's Guard",
 		cost: 5,
 		strength: 2,
@@ -8340,10 +8979,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Victory</b>: +2</p><p> <b>WarCry</b>: All of your combat tactics have their tactic point cost reduced by 2, to a minimum of 1.</p>',
+		text: '<p><b>Victory</b>: +2</p><p><b>WarCry</b>: All of your combat tactics have their tactic point cost reduced by 2, to a minimum of 1.</p>',
 		releases: { PG: 94 }
 	},
 	{
+		id: 'PG95',
 		name: 'Theolind Adaltrud',
 		cost: 5,
 		strength: 4,
@@ -8358,6 +8998,7 @@ export const cards: Card[] = [
 		releases: { PG: 95 }
 	},
 	{
+		id: 'PG96',
 		name: 'Trebuchet',
 		cost: 4,
 		strength: 1,
@@ -8368,10 +9009,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Long Ranged Attack</b>: 8</p><p> <b>Command</b> Commit: Destroy one war machine unit.</p>',
+		text: '<p><b>Long Ranged Attack</b>: 8</p><p><b>Command</b> Commit: Destroy one war machine unit.</p>',
 		releases: { PG: 96 }
 	},
 	{
+		id: 'PG97',
 		name: "Thorgrim's Trollslayers",
 		cost: 5,
 		strength: 5,
@@ -8387,6 +9029,7 @@ export const cards: Card[] = [
 		releases: { PG: 97 }
 	},
 	{
+		id: 'PG98',
 		name: 'Forest Stalkers',
 		cost: 4,
 		strength: 4,
@@ -8401,6 +9044,7 @@ export const cards: Card[] = [
 		releases: { PG: 98 }
 	},
 	{
+		id: 'PG99',
 		name: 'Greybeard Thunderers',
 		cost: 4,
 		strength: 2,
@@ -8415,6 +9059,7 @@ export const cards: Card[] = [
 		releases: { PG: 99 }
 	},
 	{
+		id: 'PG100',
 		name: 'Thagrund the Greybeard',
 		cost: 4,
 		strength: 4,
@@ -8430,6 +9075,7 @@ export const cards: Card[] = [
 		releases: { PG: 100 }
 	},
 	{
+		id: 'PG101',
 		name: "Thagrund's Gold Miners",
 		cost: 4,
 		strength: 4,
@@ -8440,10 +9086,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: Destroy all enemy strategy cards. This unit gets +1 strength for each strategy card destroyed.</p>',
+		text: '<p><b>WarCry</b>: Destroy all enemy strategy cards. This unit gets +1 strength for each strategy card destroyed.</p>',
 		releases: { PG: 101 }
 	},
 	{
+		id: 'PG102',
 		name: "Thagrund's Longbeards",
 		cost: 5,
 		strength: 4,
@@ -8458,6 +9105,7 @@ export const cards: Card[] = [
 		releases: { PG: 102 }
 	},
 	{
+		id: 'PG103',
 		name: "Thagrund's Stone Thrower",
 		cost: 3,
 		strength: 1,
@@ -8472,6 +9120,7 @@ export const cards: Card[] = [
 		releases: { PG: 103 }
 	},
 	{
+		id: 'WA316',
 		name: "Thagrund's War Cannon",
 		cost: 3,
 		strength: 1,
@@ -8486,6 +9135,7 @@ export const cards: Card[] = [
 		releases: { PG: 104, WA: 316 }
 	},
 	{
+		id: 'PG105',
 		name: 'Valten, Champion of Sigmar',
 		cost: 6,
 		strength: 4,
@@ -8497,10 +9147,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Veteran</b>: Valten</p><p>While this unit is in your battle line ready, your other Grand Alliance units get +1 strength and +1 leadership.</p><p> <b>WarCry</b>: This unit gets +4 strength vs. Hordes Of Darkness units.</p>',
+		text: '<p><b>Veteran</b>: Valten</p><p>While this unit is in your battle line ready, your other Grand Alliance units get +1 strength and +1 leadership.</p><p><b>WarCry</b>: This unit gets +4 strength vs. Hordes Of Darkness units.</p>',
 		releases: { PG: 105 }
 	},
 	{
+		id: 'PG106',
 		name: 'Ophelia Grundheim',
 		cost: 4,
 		strength: 4,
@@ -8516,6 +9167,7 @@ export const cards: Card[] = [
 		releases: { PG: 106 }
 	},
 	{
+		id: 'PG107',
 		name: "Ratai's Frost Riders",
 		cost: 5,
 		strength: 4,
@@ -8526,10 +9178,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Play two WarCry cards or <b>Support WarCry</b> abilities, paying all costs.</p>',
+		text: '<p><b>WarCry</b>: Play two WarCry cards or <b>Support WarCry</b> abilities, paying all costs.</p>',
 		releases: { PG: 107 }
 	},
 	{
+		id: 'WA344',
 		name: "Ratai's Horse Archers",
 		cost: 4,
 		strength: 3,
@@ -8544,6 +9197,7 @@ export const cards: Card[] = [
 		releases: { PG: 108, WA: 344 }
 	},
 	{
+		id: 'PG109',
 		name: 'Tamisalv Ratai',
 		cost: 5,
 		strength: 4,
@@ -8559,6 +9213,7 @@ export const cards: Card[] = [
 		releases: { PG: 109 }
 	},
 	{
+		id: 'WA349',
 		name: 'Tzarina Katarin the Ice Queen',
 		cost: 6,
 		strength: 3,
@@ -8574,6 +9229,7 @@ export const cards: Card[] = [
 		releases: { PG: 110, WA: 349 }
 	},
 	{
+		id: 'WA350',
 		name: 'White Plain Kossars',
 		cost: 3,
 		strength: 3,
@@ -8588,6 +9244,7 @@ export const cards: Card[] = [
 		releases: { PG: 111, WA: 350 }
 	},
 	{
+		id: 'PG112',
 		name: 'Korhil, Captain of the White Lions',
 		cost: 5,
 		strength: 4,
@@ -8603,6 +9260,7 @@ export const cards: Card[] = [
 		releases: { PG: 112 }
 	},
 	{
+		id: 'WA354',
 		name: "Alarielle's Maidenguard",
 		cost: 5,
 		strength: 4,
@@ -8618,6 +9276,7 @@ export const cards: Card[] = [
 		releases: { PG: 113, WA: 354 }
 	},
 	{
+		id: 'PG114',
 		name: "Eataine's Coastal Protectors",
 		cost: 3,
 		strength: 2,
@@ -8632,6 +9291,7 @@ export const cards: Card[] = [
 		releases: { PG: 114 }
 	},
 	{
+		id: 'PG115',
 		name: "Ellerion's Ghost Blades",
 		cost: 3,
 		strength: 3,
@@ -8646,6 +9306,7 @@ export const cards: Card[] = [
 		releases: { PG: 115 }
 	},
 	{
+		id: 'WA366',
 		name: 'Keepers of the Flame',
 		cost: 5,
 		strength: 4,
@@ -8660,6 +9321,7 @@ export const cards: Card[] = [
 		releases: { PG: 116, WA: 366 }
 	},
 	{
+		id: 'PG117',
 		name: 'Luril Ellerion',
 		cost: 3,
 		strength: 3,
@@ -8674,6 +9336,7 @@ export const cards: Card[] = [
 		releases: { PG: 117 }
 	},
 	{
+		id: 'PG118',
 		name: "Luril's Guardians",
 		cost: 4,
 		strength: 3,
@@ -8688,6 +9351,7 @@ export const cards: Card[] = [
 		releases: { PG: 118 }
 	},
 	{
+		id: 'PG119',
 		name: "Rhyian's Emerald Company",
 		cost: 3,
 		strength: 2,
@@ -8702,6 +9366,7 @@ export const cards: Card[] = [
 		releases: { PG: 119 }
 	},
 	{
+		id: 'PG120',
 		name: 'Zarahadron, Hydra of War',
 		cost: 5,
 		strength: 5,
@@ -8716,6 +9381,7 @@ export const cards: Card[] = [
 		releases: { PG: 120 }
 	},
 	{
+		id: 'CD1',
 		name: 'Clanrats of the Warlord Clans',
 		cost: 2,
 		strength: 2,
@@ -8729,6 +9395,7 @@ export const cards: Card[] = [
 		releases: { CD: 1 }
 	},
 	{
+		id: 'CD2',
 		name: "Clawspeck's Night Runners",
 		cost: 3,
 		strength: 3,
@@ -8742,6 +9409,7 @@ export const cards: Card[] = [
 		releases: { CD: 2 }
 	},
 	{
+		id: 'CD3',
 		name: 'Grey Seer Thanquol Boneripper',
 		cost: 6,
 		strength: 3,
@@ -8751,10 +9419,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p><b>Wizard</b>: 2</p><p>This unit may play <b>Spell WarCry</b> cards as combat tactics.</p><p> <b>WarCry</b>: This unit gets +4 strength and "<b>Terror</b>: 2".</p>',
+		text: '<p><b>Wizard</b>: 2</p><p>This unit may play <b>Spell WarCry</b> cards as combat tactics.</p><p><b>WarCry</b>: This unit gets +4 strength and "<b>Terror</b>: 2".</p>',
 		releases: { CD: 3 }
 	},
 	{
+		id: 'CD4',
 		name: "Queekpest's Stenchmonks",
 		cost: 3,
 		strength: 2,
@@ -8764,10 +9433,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b>: This defending unit gets +3 strength. If this unit wins, rout the enemy unit.Only playable during a follow-up attack.</p>',
+		text: '<p><b>WarCry</b>: This defending unit gets +3 strength. If this unit wins, rout the enemy unit.Only playable during a follow-up attack.</p>',
 		releases: { CD: 4 }
 	},
 	{
+		id: 'CD5',
 		name: 'Stikstik Bloodbone',
 		cost: 5,
 		strength: 4,
@@ -8781,6 +9451,7 @@ export const cards: Card[] = [
 		releases: { CD: 5 }
 	},
 	{
+		id: 'CD6',
 		name: "Stikstik's Giant Rats",
 		cost: 3,
 		strength: 3,
@@ -8794,6 +9465,7 @@ export const cards: Card[] = [
 		releases: { CD: 6 }
 	},
 	{
+		id: 'CD7',
 		name: "Stikstik's Throat Rippers",
 		cost: 4,
 		strength: 6,
@@ -8807,6 +9479,7 @@ export const cards: Card[] = [
 		releases: { CD: 7 }
 	},
 	{
+		id: 'CD8',
 		name: 'Warlock Skriskrivet',
 		cost: 3,
 		strength: 2,
@@ -8821,16 +9494,18 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'CD9',
 		name: 'Sacred Standard of the Horned Rat',
 		cost: 2,
 		keywords: ['Skaven', 'Standard'],
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
-		text: '<p>This unit gets "<b>Terror</b>: 2".</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to it\'s <b>Terror</b> rating.</p><p>This card may only be attached to a Skaven unit.</p>',
+		text: '<p>This unit gets "<b>Terror</b>: 2".</p><p><b>WarCry</b>: This unit gets a strength bonus equal to it\'s <b>Terror</b> rating.</p><p>This card may only be attached to a Skaven unit.</p>',
 		releases: { CD: 9 }
 	},
 	{
+		id: 'CD10',
 		name: 'Battle Plan',
 		cost: 2,
 		die: 2,
@@ -8842,6 +9517,7 @@ export const cards: Card[] = [
 		releases: { CD: 10 }
 	},
 	{
+		id: 'CD11',
 		name: 'Battlefield Orders',
 		die: 4,
 		keywords: [],
@@ -8852,6 +9528,7 @@ export const cards: Card[] = [
 		releases: { CD: 11 }
 	},
 	{
+		id: 'CD12',
 		name: 'Blessings of the Lady',
 		cost: 2,
 		die: 2,
@@ -8859,10 +9536,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Tactic',
-		text: '<p><b>Combat Tactic</b>: This Bretonnian unit gets +3 strength.</p><p> <b>WarCry</b>: This Bretonnian unit gets +4 strength when attacking from the reserves.</p>',
+		text: '<p><b>Combat Tactic</b>: This Bretonnian unit gets +3 strength.</p><p><b>WarCry</b>: This Bretonnian unit gets +4 strength when attacking from the reserves.</p>',
 		releases: { CD: 12 }
 	},
 	{
+		id: 'CD13',
 		name: 'Boundless Faith',
 		cost: 1,
 		die: 3,
@@ -8870,10 +9548,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: If this unit passes a leadership test, play a combat tactic or WarCry card from your hand paying no costs.</p>',
+		text: '<p><b>WarCry</b>: If this unit passes a leadership test, play a combat tactic or WarCry card from your hand paying no costs.</p>',
 		releases: { CD: 13 }
 	},
 	{
+		id: 'WA128',
 		name: 'Critical Strike',
 		cost: 1,
 		die: 3,
@@ -8886,6 +9565,7 @@ export const cards: Card[] = [
 		releases: { CD: 14, WA: 128 }
 	},
 	{
+		id: 'CD16',
 		name: 'Empower Weapon',
 		cost: 1,
 		die: 3,
@@ -8897,6 +9577,7 @@ export const cards: Card[] = [
 		releases: { CD: 16 }
 	},
 	{
+		id: 'WA148',
 		name: 'Faithful Devotion',
 		cost: 2,
 		die: 3,
@@ -8909,6 +9590,7 @@ export const cards: Card[] = [
 		releases: { CD: 17, WA: 148 }
 	},
 	{
+		id: 'CD18',
 		name: 'Fireball',
 		cost: 0,
 		die: 4,
@@ -8920,6 +9602,7 @@ export const cards: Card[] = [
 		releases: { CD: 18 }
 	},
 	{
+		id: 'WA160',
 		name: 'Full Charge',
 		cost: 3,
 		die: 3,
@@ -8928,10 +9611,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This non-infantry unit gets +4 strength. Only playable while attacking from the battle line.</p><p><b>Combat Tactic</b>: This non-infantry unit gets +2 strength.</p>',
+		text: '<p><b>WarCry</b>: This non-infantry unit gets +4 strength. Only playable while attacking from the battle line.</p><p><b>Combat Tactic</b>: This non-infantry unit gets +2 strength.</p>',
 		releases: { CD: 19, WA: 160 }
 	},
 	{
+		id: 'CD22',
 		name: 'Hold Your Ground',
 		die: 3,
 		keywords: [],
@@ -8942,6 +9626,7 @@ export const cards: Card[] = [
 		releases: { CD: 22 }
 	},
 	{
+		id: 'CD23',
 		name: 'Immortal Charge',
 		cost: 1,
 		die: 3,
@@ -8953,6 +9638,7 @@ export const cards: Card[] = [
 		releases: { CD: 23 }
 	},
 	{
+		id: 'CD24',
 		name: 'Iron Fist',
 		cost: 2,
 		die: 3,
@@ -8964,6 +9650,7 @@ export const cards: Card[] = [
 		releases: { CD: 24 }
 	},
 	{
+		id: 'VT27',
 		name: 'Life Is Cheap',
 		cost: 2,
 		die: 2,
@@ -8971,10 +9658,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
-		text: '<p><b>Combat Tactic</b>: This Skaven unit gets +3 strength.</p><p> <b>WarCry</b>: This Skaven unit gets a leadership bonus equal to the number of Skaven in your battle line.</p>',
+		text: '<p><b>Combat Tactic</b>: This Skaven unit gets +3 strength.</p><p><b>WarCry</b>: This Skaven unit gets a leadership bonus equal to the number of Skaven in your battle line.</p>',
 		releases: { CD: 25, VT: 27 }
 	},
 	{
+		id: 'CD27',
 		name: 'One for One',
 		cost: 2,
 		die: 4,
@@ -8986,6 +9674,7 @@ export const cards: Card[] = [
 		releases: { CD: 27 }
 	},
 	{
+		id: 'WA204',
 		name: 'One Last Charge',
 		cost: 1,
 		die: 4,
@@ -8998,6 +9687,7 @@ export const cards: Card[] = [
 		releases: { CD: 28, WA: 204 }
 	},
 	{
+		id: 'CD29',
 		name: 'Overwhelming Numbers',
 		cost: 2,
 		die: 3,
@@ -9009,6 +9699,7 @@ export const cards: Card[] = [
 		releases: { CD: 29 }
 	},
 	{
+		id: 'CD30',
 		name: 'Sacrificial Unit',
 		cost: 0,
 		die: 2,
@@ -9020,6 +9711,7 @@ export const cards: Card[] = [
 		releases: { CD: 30 }
 	},
 	{
+		id: 'WA241',
 		name: 'Stare into the Face of Death',
 		cost: 1,
 		die: 6,
@@ -9032,6 +9724,7 @@ export const cards: Card[] = [
 		releases: { CD: 31, VT: 28, WA: 241 }
 	},
 	{
+		id: 'WA255',
 		name: 'Sweeping Flank Maneuver',
 		cost: 2,
 		die: 2,
@@ -9044,6 +9737,7 @@ export const cards: Card[] = [
 		releases: { CD: 33, WA: 255 }
 	},
 	{
+		id: 'CD34',
 		name: 'When They Least Expect It',
 		cost: 2,
 		die: 2,
@@ -9055,6 +9749,7 @@ export const cards: Card[] = [
 		releases: { CD: 34 }
 	},
 	{
+		id: 'CD39',
 		name: "Adaltrud's Scrappers",
 		cost: 3,
 		strength: 3,
@@ -9068,6 +9763,7 @@ export const cards: Card[] = [
 		releases: { CD: 39 }
 	},
 	{
+		id: 'CD40',
 		name: "Angelburg's Volunteers",
 		cost: 4,
 		strength: 4,
@@ -9081,6 +9777,7 @@ export const cards: Card[] = [
 		releases: { CD: 40 }
 	},
 	{
+		id: 'CD41',
 		name: 'King Louen Leoncouer',
 		cost: 6,
 		strength: 4,
@@ -9091,10 +9788,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p><b>Faith</b>: 3</p><p>While this unit is ready, your other Bretonnian units get "<b>Faith</b>: 1".</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to it\'s <b>Faith</b> rating.</p>',
+		text: '<p><b>Faith</b>: 3</p><p>While this unit is ready, your other Bretonnian units get "<b>Faith</b>: 1".</p><p><b>WarCry</b>: This unit gets a strength bonus equal to it\'s <b>Faith</b> rating.</p>',
 		releases: { CD: 41 }
 	},
 	{
+		id: 'CD42',
 		name: "Knights of the Lady's Banner",
 		cost: 4,
 		strength: 4,
@@ -9108,6 +9806,7 @@ export const cards: Card[] = [
 		releases: { CD: 42 }
 	},
 	{
+		id: 'CD43',
 		name: 'Knights of Winged Valor',
 		cost: 6,
 		strength: 4,
@@ -9121,6 +9820,7 @@ export const cards: Card[] = [
 		releases: { CD: 43 }
 	},
 	{
+		id: 'CD44',
 		name: "Leoncouer's Defenders of the Realm",
 		cost: 3,
 		strength: 3,
@@ -9134,6 +9834,7 @@ export const cards: Card[] = [
 		releases: { CD: 44 }
 	},
 	{
+		id: 'CD45',
 		name: "Leoncouer's Lancers",
 		cost: 4,
 		strength: 2,
@@ -9147,6 +9848,7 @@ export const cards: Card[] = [
 		releases: { CD: 45 }
 	},
 	{
+		id: 'CD46',
 		name: 'The Battle Pilgrims',
 		cost: 3,
 		strength: 3,
@@ -9160,6 +9862,7 @@ export const cards: Card[] = [
 		releases: { CD: 46 }
 	},
 	{
+		id: 'CD47',
 		name: 'The White Mistress',
 		cost: 3,
 		strength: 2,
@@ -9174,6 +9877,7 @@ export const cards: Card[] = [
 		releases: { CD: 47 }
 	},
 	{
+		id: 'CD48',
 		name: 'The Grail Shield',
 		cost: 2,
 		unique: true,
@@ -9181,10 +9885,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Attachment',
-		text: '<p>This unit gets "<b>Faith</b>: 1"."</p><p> <b>WarCry</b>: This unit gets +2 strength and "<b>Terror</b>: X". X equals this units <b>Faith</b> rating.</p><p>This card may only be attached to a Bretonnian unit.</p>',
+		text: '<p>This unit gets "<b>Faith</b>: 1"."</p><p><b>WarCry</b>: This unit gets +2 strength and "<b>Terror</b>: X". X equals this units <b>Faith</b> rating.</p><p>This card may only be attached to a Bretonnian unit.</p>',
 		releases: { CD: 48 }
 	},
 	{
+		id: 'LC1',
 		name: "Archaon's Blood Horde",
 		cost: 4,
 		strength: 4,
@@ -9199,6 +9904,7 @@ export const cards: Card[] = [
 		releases: { LC: 1 }
 	},
 	{
+		id: 'WA2',
 		name: "Archaon's Vanguard",
 		cost: 3,
 		strength: 3,
@@ -9213,6 +9919,7 @@ export const cards: Card[] = [
 		releases: { LC: 2, WA: 2 }
 	},
 	{
+		id: 'WA5',
 		name: "Bilith's Madmen",
 		cost: 3,
 		strength: 2,
@@ -9227,6 +9934,7 @@ export const cards: Card[] = [
 		releases: { LC: 3, WA: 5 }
 	},
 	{
+		id: 'WA8',
 		name: "Crom's Chosen",
 		cost: 4,
 		strength: 3,
@@ -9241,6 +9949,7 @@ export const cards: Card[] = [
 		releases: { LC: 4, WA: 8 }
 	},
 	{
+		id: 'LC5',
 		name: "D'aggorn's Chosen",
 		cost: 5,
 		strength: 4,
@@ -9255,6 +9964,7 @@ export const cards: Card[] = [
 		releases: { LC: 5 }
 	},
 	{
+		id: 'LC6',
 		name: 'Grunt Trollskinner',
 		cost: 8,
 		strength: 9,
@@ -9270,6 +9980,7 @@ export const cards: Card[] = [
 		releases: { LC: 6 }
 	},
 	{
+		id: 'WA20',
 		name: 'Rack of the Damned',
 		cost: 4,
 		strength: 0,
@@ -9284,6 +9995,7 @@ export const cards: Card[] = [
 		releases: { LC: 7, WA: 20 }
 	},
 	{
+		id: 'LC8',
 		name: 'Styrkaar of the Sortsvinaer',
 		cost: 5,
 		strength: 4,
@@ -9295,10 +10007,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: The enemy unit must make a leadership test. If they fail, the enemy unit may not play any cards or abilities this combat.</p><p><b>Reaction</b>: After your enemy fails a test, draw 1 card.</p>',
+		text: '<p><b>WarCry</b>: The enemy unit must make a leadership test. If they fail, the enemy unit may not play any cards or abilities this combat.</p><p><b>Reaction</b>: After your enemy fails a test, draw 1 card.</p>',
 		releases: { LC: 8 }
 	},
 	{
+		id: 'LC9',
 		name: 'Swords of Chaos',
 		cost: 4,
 		strength: 3,
@@ -9313,6 +10026,7 @@ export const cards: Card[] = [
 		releases: { LC: 9 }
 	},
 	{
+		id: 'LC10',
 		name: 'The Brides of Styrkaar',
 		cost: 4,
 		strength: 4,
@@ -9327,6 +10041,7 @@ export const cards: Card[] = [
 		releases: { LC: 10 }
 	},
 	{
+		id: 'LC11',
 		name: 'Zoekarl, Bringer of Darkness',
 		cost: 9,
 		strength: 6,
@@ -9338,10 +10053,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: "<p><b>Terror</b>: 3</p><p> <b>WarCry</b> Discard 2 cards: Once per battle, destroy an enemy unit in the battle line. This unit's strength is reduced by the destroyed unit's gold cost.</p>",
+		text: "<p><b>Terror</b>: 3</p><p><b>WarCry</b> Discard 2 cards: Once per battle, destroy an enemy unit in the battle line. This unit's strength is reduced by the destroyed unit's gold cost.</p>",
 		releases: { LC: 11 }
 	},
 	{
+		id: 'WA30',
 		name: 'Archers of Nightbreeze',
 		cost: 4,
 		strength: 2,
@@ -9356,6 +10072,7 @@ export const cards: Card[] = [
 		releases: { LC: 12, WA: 30 }
 	},
 	{
+		id: 'LC13',
 		name: 'Beastlord Rakarth of Karrond Kar',
 		cost: 2,
 		strength: 0,
@@ -9371,6 +10088,7 @@ export const cards: Card[] = [
 		releases: { LC: 13 }
 	},
 	{
+		id: 'LC14',
 		name: "Rikhaine's Black Maidens",
 		cost: 5,
 		strength: 3,
@@ -9385,6 +10103,7 @@ export const cards: Card[] = [
 		releases: { LC: 14 }
 	},
 	{
+		id: 'LC15',
 		name: "Rikhaine's Dark Sisters",
 		cost: 3,
 		strength: 3,
@@ -9395,10 +10114,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: Play a WarCry card from your hand, paying no costs.</p><p><b>Reaction</b>: After your enemy plays a combat tactic or support tactic while this unit is in combat, this unit gets +2 tactic points.</p>',
+		text: '<p><b>WarCry</b>: Play a WarCry card from your hand, paying no costs.</p><p><b>Reaction</b>: After your enemy plays a combat tactic or support tactic while this unit is in combat, this unit gets +2 tactic points.</p>',
 		releases: { LC: 15 }
 	},
 	{
+		id: 'LC16',
 		name: "Rikhaine's Foot",
 		cost: 4,
 		strength: 4,
@@ -9409,10 +10129,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: The enemy unit gets -2 tactic points.</p><p><b>Combat Tactic</b>: This unit gets +1 strength. Only playable while this unit is losing a combat.</p>',
+		text: '<p><b>WarCry</b>: The enemy unit gets -2 tactic points.</p><p><b>Combat Tactic</b>: This unit gets +1 strength. Only playable while this unit is losing a combat.</p>',
 		releases: { LC: 16 }
 	},
 	{
+		id: 'LC17',
 		name: "Rikhaine's Vengeance",
 		cost: 6,
 		strength: 4,
@@ -9427,6 +10148,7 @@ export const cards: Card[] = [
 		releases: { LC: 17 }
 	},
 	{
+		id: 'LC18',
 		name: "Rikhaine's Wrath",
 		cost: 4,
 		strength: 5,
@@ -9441,6 +10163,7 @@ export const cards: Card[] = [
 		releases: { LC: 18 }
 	},
 	{
+		id: 'LC19',
 		name: 'Saerith, Bride of Haasek',
 		cost: 3,
 		strength: 3,
@@ -9456,6 +10179,7 @@ export const cards: Card[] = [
 		releases: { LC: 19 }
 	},
 	{
+		id: 'LC20',
 		name: 'Da Pump Pump Truck',
 		cost: 3,
 		strength: 1,
@@ -9466,10 +10190,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Replace this unit\'s "Infantry" keyword with "Cavalry."</p><p><b>Reaction</b>: This attacking unit roll 3d6 for it\'s combat roll. Replace this units "Cavalry" keyword with "Infantry." Only playable while this unt has the "Cavalry" keyword.</p>',
+		text: '<p><b>Command</b>: Replace this unit\'s "Infantry" keyword with "Cavalry."</p><p><b>Reaction</b>: This attacking unit roll 3d6 for it\'s combat roll. Replace this units "Cavalry" keyword with "Infantry." Only playable while this unt has the "Cavalry" keyword.</p>',
 		releases: { LC: 20 }
 	},
 	{
+		id: 'LC21',
 		name: "Facebeater's Big Stick Smashaz",
 		cost: 4,
 		strength: 3,
@@ -9484,6 +10209,7 @@ export const cards: Card[] = [
 		releases: { LC: 21 }
 	},
 	{
+		id: 'WA64',
 		name: 'Gobbo Elfchasers',
 		cost: 3,
 		strength: 2,
@@ -9498,6 +10224,7 @@ export const cards: Card[] = [
 		releases: { LC: 22, WA: 64 }
 	},
 	{
+		id: 'LC23',
 		name: "Grimgor's Spikey Boyz",
 		cost: 5,
 		strength: 6,
@@ -9512,6 +10239,7 @@ export const cards: Card[] = [
 		releases: { LC: 23 }
 	},
 	{
+		id: 'WA77',
 		name: "Ozol's Netterboyz",
 		cost: 3,
 		strength: 3,
@@ -9526,6 +10254,7 @@ export const cards: Card[] = [
 		releases: { LC: 24, WA: 77 }
 	},
 	{
+		id: 'LC25',
 		name: "Ozol's Snotling Swarm",
 		cost: 3,
 		strength: 4,
@@ -9536,10 +10265,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit gets +3 tactic points. Only playable if you have another ready Orc unit.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +3 tactic points. Only playable if you have another ready Orc unit.</p>',
 		releases: { LC: 25 }
 	},
 	{
+		id: 'WA78',
 		name: "Ozol's Squig Chasers",
 		cost: 2,
 		strength: 3,
@@ -9554,6 +10284,7 @@ export const cards: Card[] = [
 		releases: { LC: 26, WA: 78 }
 	},
 	{
+		id: 'LC27',
 		name: 'Zahubu, Exalted of Gork',
 		cost: 5,
 		strength: 4,
@@ -9569,6 +10300,7 @@ export const cards: Card[] = [
 		releases: { LC: 27 }
 	},
 	{
+		id: 'LC28',
 		name: 'Throt the Unclean',
 		cost: 6,
 		strength: 5,
@@ -9584,6 +10316,7 @@ export const cards: Card[] = [
 		releases: { LC: 28 }
 	},
 	{
+		id: 'LC29',
 		name: 'Summon Daemon',
 		die: 3,
 		keywords: [],
@@ -9595,6 +10328,7 @@ export const cards: Card[] = [
 		releases: { LC: 29 }
 	},
 	{
+		id: 'LC30',
 		name: 'And Then Comes Darkness',
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -9606,6 +10340,7 @@ export const cards: Card[] = [
 		releases: { LC: 30 }
 	},
 	{
+		id: 'LC31',
 		name: 'Armed and Dangerous',
 		cost: 1,
 		die: 3,
@@ -9618,6 +10353,7 @@ export const cards: Card[] = [
 		releases: { LC: 31 }
 	},
 	{
+		id: 'LC32',
 		name: 'As Heroes Kill Flags Fall',
 		cost: 2,
 		die: 4,
@@ -9630,6 +10366,7 @@ export const cards: Card[] = [
 		releases: { LC: 32 }
 	},
 	{
+		id: 'LC33',
 		name: 'Attack the Scouts',
 		cost: 0,
 		die: 4,
@@ -9638,10 +10375,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Choose one enemy unit. This unit gets a strength bonus equal to the target unit\'s "<b>Scout</b>" level.</p>',
+		text: '<p><b>WarCry</b>: Choose one enemy unit. This unit gets a strength bonus equal to the target unit\'s "<b>Scout</b>" level.</p>',
 		releases: { LC: 33 }
 	},
 	{
+		id: 'LC34',
 		name: 'Battlefield Veteran',
 		cost: 1,
 		die: 4,
@@ -9654,6 +10392,7 @@ export const cards: Card[] = [
 		releases: { LC: 34 }
 	},
 	{
+		id: 'WA113',
 		name: 'Blessing',
 		die: 1,
 		keywords: [],
@@ -9665,6 +10404,7 @@ export const cards: Card[] = [
 		releases: { LC: 35, WA: 113 }
 	},
 	{
+		id: 'LC36',
 		name: 'Breaking Their Spirit',
 		die: 5,
 		keywords: ['Strategy'],
@@ -9676,6 +10416,7 @@ export const cards: Card[] = [
 		releases: { LC: 36 }
 	},
 	{
+		id: 'LC37',
 		name: 'Bretonnian Resolve',
 		cost: 0,
 		die: 4,
@@ -9688,6 +10429,7 @@ export const cards: Card[] = [
 		releases: { LC: 37 }
 	},
 	{
+		id: 'LC38',
 		name: 'Call in the Reserves',
 		die: 5,
 		keywords: [],
@@ -9695,10 +10437,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Super rare',
-		text: '<p> <b>Command</b>: Return all of your cards removed from the game to their discard piles.</p>',
+		text: '<p><b>Command</b>: Return all of your cards removed from the game to their discard piles.</p>',
 		releases: { LC: 38 }
 	},
 	{
+		id: 'WA123',
 		name: 'Channel Your Power',
 		cost: 1,
 		die: 3,
@@ -9711,6 +10454,7 @@ export const cards: Card[] = [
 		releases: { LC: 39, WA: 123 }
 	},
 	{
+		id: 'LC40',
 		name: 'Charge of the Knights Panther',
 		cost: 3,
 		die: 3,
@@ -9724,6 +10468,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'LC41',
 		name: 'Clean Up the Dead',
 		die: 4,
 		keywords: ['Strategy'],
@@ -9735,6 +10480,7 @@ export const cards: Card[] = [
 		releases: { LC: 41 }
 	},
 	{
+		id: 'LC42',
 		name: 'Coordinated Battle Plans',
 		cost: 2,
 		die: 3,
@@ -9747,6 +10493,7 @@ export const cards: Card[] = [
 		releases: { LC: 42 }
 	},
 	{
+		id: 'LC43',
 		name: 'Cunning Battle Plans',
 		die: 3,
 		keywords: [],
@@ -9759,6 +10506,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'LC44',
 		name: 'Cutting Through The Reserves',
 		cost: 1,
 		die: 3,
@@ -9771,6 +10519,7 @@ export const cards: Card[] = [
 		releases: { LC: 44 }
 	},
 	{
+		id: 'WA136',
 		name: 'Defence of the Empire',
 		cost: 2,
 		die: 3,
@@ -9783,6 +10532,7 @@ export const cards: Card[] = [
 		releases: { LC: 45, WA: 136 }
 	},
 	{
+		id: 'WA146',
 		name: 'Epic Duel',
 		die: 3,
 		keywords: [],
@@ -9790,10 +10540,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: "<p> <b>Command</b>: Both you and then your enemy choose one of the other player's units. Both players discard their hands, draw 5 cards and rally the chosen units. Only playable if there are no ready units in play.</p>",
+		text: "<p><b>Command</b>: Both you and then your enemy choose one of the other player's units. Both players discard their hands, draw 5 cards and rally the chosen units. Only playable if there are no ready units in play.</p>",
 		releases: { LC: 46, WA: 146 }
 	},
 	{
+		id: 'LC47',
 		name: 'Escape Through The Sewers',
 		cost: 4,
 		die: 2,
@@ -9802,10 +10553,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: If you lose this combat, instead of being destroyed, your unit is returned to your battle line committed.</p><p><b>Combat Tactic</b>: If this Skaven unit loses this combat, instead of being destroyed, your unit is returned to your battle line committed and the enemy unit may not make a follow-up attack.</p>',
+		text: '<p><b>WarCry</b>: If you lose this combat, instead of being destroyed, your unit is returned to your battle line committed.</p><p><b>Combat Tactic</b>: If this Skaven unit loses this combat, instead of being destroyed, your unit is returned to your battle line committed and the enemy unit may not make a follow-up attack.</p>',
 		releases: { LC: 47 }
 	},
 	{
+		id: 'WA154',
 		name: 'Fight Until Dawn',
 		die: 4,
 		keywords: [],
@@ -9813,10 +10565,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Rally one enemy unit: Your enemy chooses one of your committed units. Rally that unit.</p>',
+		text: '<p><b>Command</b> Rally one enemy unit: Your enemy chooses one of your committed units. Rally that unit.</p>',
 		releases: { LC: 48, WA: 154 }
 	},
 	{
+		id: 'LC49',
 		name: 'Fire On Them Both',
 		cost: 1,
 		die: 3,
@@ -9825,10 +10578,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Choose one enemy unit not in this combat. The enemy unit gets a strength and tactic point bonus equal to those of the chosen unit. If you win this combat, the chosen unit suffers the same result as the enemy unit.</p><p>Only playable during a ranged attack by the attacker.</p>',
+		text: '<p><b>WarCry</b>: Choose one enemy unit not in this combat. The enemy unit gets a strength and tactic point bonus equal to those of the chosen unit. If you win this combat, the chosen unit suffers the same result as the enemy unit.</p><p>Only playable during a ranged attack by the attacker.</p>',
 		releases: { LC: 49 }
 	},
 	{
+		id: 'LC50',
 		name: 'Follow My Lead',
 		cost: 1,
 		die: 5,
@@ -9841,6 +10595,7 @@ export const cards: Card[] = [
 		releases: { LC: 50 }
 	},
 	{
+		id: 'LC51',
 		name: "Franz's Charge",
 		die: 3,
 		keywords: [],
@@ -9852,6 +10607,7 @@ export const cards: Card[] = [
 		releases: { LC: 51 }
 	},
 	{
+		id: 'LC52',
 		name: "Franz's Regroup",
 		cost: 1,
 		die: 5,
@@ -9864,6 +10620,7 @@ export const cards: Card[] = [
 		releases: { LC: 52 }
 	},
 	{
+		id: 'LC53',
 		name: 'Glorious Melee',
 		cost: 0,
 		die: 4,
@@ -9876,6 +10633,7 @@ export const cards: Card[] = [
 		releases: { LC: 53 }
 	},
 	{
+		id: 'LC54',
 		name: 'Hordes of the North',
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -9887,6 +10645,7 @@ export const cards: Card[] = [
 		releases: { LC: 54 }
 	},
 	{
+		id: 'LC55',
 		name: "Huss' Arrival",
 		cost: 3,
 		die: 4,
@@ -9900,6 +10659,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'WA169',
 		name: 'Heart of Darkness',
 		cost: 1,
 		die: 3,
@@ -9912,6 +10672,7 @@ export const cards: Card[] = [
 		releases: { LC: 56, WA: 169 }
 	},
 	{
+		id: 'LC57',
 		name: 'Into The Fray',
 		cost: 1,
 		die: 4,
@@ -9920,10 +10681,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: "<p> <b>WarCry</b>: Choose one enemy unit not in this combat. The enemy unit gets a strength bonus equal to the chosen unit's strength and a tactic point bonus equal to the chosen unit's tactic points. If you win this combat, destroy the chosen unit.</p><p>Only playable by an attacking infantry unit during a non-ranged attack.</p>",
+		text: "<p><b>WarCry</b>: Choose one enemy unit not in this combat. The enemy unit gets a strength bonus equal to the chosen unit's strength and a tactic point bonus equal to the chosen unit's tactic points. If you win this combat, destroy the chosen unit.</p><p>Only playable by an attacking infantry unit during a non-ranged attack.</p>",
 		releases: { LC: 57 }
 	},
 	{
+		id: 'LC58',
 		name: "It's Not The Blade, But The Soldier",
 		cost: 2,
 		die: 3,
@@ -9936,6 +10698,7 @@ export const cards: Card[] = [
 		releases: { LC: 58 }
 	},
 	{
+		id: 'LC59',
 		name: "Jasenland's Rolling Charge",
 		cost: 2,
 		die: 4,
@@ -9948,6 +10711,7 @@ export const cards: Card[] = [
 		releases: { LC: 59 }
 	},
 	{
+		id: 'LC60',
 		name: 'Keep Them Pinned',
 		cost: 3,
 		die: 4,
@@ -9961,6 +10725,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'LC61',
 		name: 'Magic Currents',
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -9972,6 +10737,7 @@ export const cards: Card[] = [
 		releases: { LC: 61 }
 	},
 	{
+		id: 'WA192',
 		name: 'March of the Damned',
 		die: 4,
 		keywords: ['Strategy'],
@@ -9983,6 +10749,7 @@ export const cards: Card[] = [
 		releases: { LC: 62, WA: 192 }
 	},
 	{
+		id: 'LC63',
 		name: 'Overtake Them!',
 		die: 4,
 		keywords: [],
@@ -9994,6 +10761,7 @@ export const cards: Card[] = [
 		releases: { LC: 63 }
 	},
 	{
+		id: 'LC64',
 		name: 'Own The Battlefield',
 		cost: 2,
 		die: 3,
@@ -10006,6 +10774,7 @@ export const cards: Card[] = [
 		releases: { LC: 64 }
 	},
 	{
+		id: 'LC65',
 		name: 'Rain Hell Upon Them!',
 		die: 4,
 		keywords: [],
@@ -10017,6 +10786,7 @@ export const cards: Card[] = [
 		releases: { LC: 65 }
 	},
 	{
+		id: 'LC66',
 		name: 'Re-equip',
 		die: 4,
 		keywords: [],
@@ -10024,10 +10794,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Both you and then your enemy reveal the top 5 cards of your deck. Any attachments revealed in this way may be attached to a legal unit.</p>',
+		text: '<p><b>Command</b>: Both you and then your enemy reveal the top 5 cards of your deck. Any attachments revealed in this way may be attached to a legal unit.</p>',
 		releases: { LC: 66 }
 	},
 	{
+		id: 'WA226',
 		name: 'Relentless March',
 		die: 4,
 		keywords: [],
@@ -10035,10 +10806,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Declare a non-ranged attack with one of your committed units.</p>',
+		text: '<p><b>Command</b>: Declare a non-ranged attack with one of your committed units.</p>',
 		releases: { LC: 67, WA: 226 }
 	},
 	{
+		id: 'LC68',
 		name: 'Remember Your Training!',
 		cost: 2,
 		die: 2,
@@ -10047,10 +10819,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: "<p> <b>WarCry</b>: At the end of the tactics phase, this infantry unit gets a strength bonus equal to the number of bonuses it received in this combat to it's strength, leadership or tactic points.</p>",
+		text: "<p><b>WarCry</b>: At the end of the tactics phase, this infantry unit gets a strength bonus equal to the number of bonuses it received in this combat to it's strength, leadership or tactic points.</p>",
 		releases: { LC: 68 }
 	},
 	{
+		id: 'LC69',
 		name: 'Scouting Skirmish',
 		cost: 3,
 		die: 2,
@@ -10063,6 +10836,7 @@ export const cards: Card[] = [
 		releases: { LC: 69 }
 	},
 	{
+		id: 'LC70',
 		name: 'Siphoned Power',
 		die: 2,
 		keywords: [],
@@ -10074,6 +10848,7 @@ export const cards: Card[] = [
 		releases: { LC: 70 }
 	},
 	{
+		id: 'LC71',
 		name: 'Strike When They Are Weak',
 		cost: 2,
 		die: 2,
@@ -10086,6 +10861,7 @@ export const cards: Card[] = [
 		releases: { LC: 71 }
 	},
 	{
+		id: 'LC72',
 		name: 'Take Up The Charge',
 		die: 3,
 		keywords: [],
@@ -10097,6 +10873,7 @@ export const cards: Card[] = [
 		releases: { LC: 72 }
 	},
 	{
+		id: 'LC73',
 		name: 'Taunting Tactics',
 		cost: 1,
 		die: 4,
@@ -10109,6 +10886,7 @@ export const cards: Card[] = [
 		releases: { LC: 73 }
 	},
 	{
+		id: 'LC74',
 		name: 'The Bretonnian Fields of Battle',
 		die: 4,
 		keywords: [],
@@ -10120,6 +10898,7 @@ export const cards: Card[] = [
 		releases: { LC: 74 }
 	},
 	{
+		id: 'LC75',
 		name: 'The Faithful Fear Not',
 		cost: 0,
 		die: 4,
@@ -10128,10 +10907,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Choose one enemy unit. This unit gets a strength bonus equal to the target unit\'s "<b>Terror</b>" level.</p>',
+		text: '<p><b>WarCry</b>: Choose one enemy unit. This unit gets a strength bonus equal to the target unit\'s "<b>Terror</b>" level.</p>',
 		releases: { LC: 75 }
 	},
 	{
+		id: 'LC76',
 		name: 'The Fight Belongs To The Soldier',
 		cost: 3,
 		die: 3,
@@ -10144,6 +10924,7 @@ export const cards: Card[] = [
 		releases: { LC: 76 }
 	},
 	{
+		id: 'LC77',
 		name: 'The Hand of Chaos',
 		cost: 3,
 		die: 3,
@@ -10156,6 +10937,7 @@ export const cards: Card[] = [
 		releases: { LC: 77 }
 	},
 	{
+		id: 'LC78',
 		name: 'The Judgement of Sigmar',
 		die: 5,
 		keywords: [],
@@ -10167,6 +10949,7 @@ export const cards: Card[] = [
 		releases: { LC: 78 }
 	},
 	{
+		id: 'WA261',
 		name: 'The Triumph of Huss',
 		cost: 2,
 		die: 4,
@@ -10179,6 +10962,7 @@ export const cards: Card[] = [
 		releases: { LC: 79, WA: 261 }
 	},
 	{
+		id: 'WA265',
 		name: 'To Our Last Man',
 		die: 2,
 		keywords: ['Strategy'],
@@ -10190,6 +10974,7 @@ export const cards: Card[] = [
 		releases: { LC: 80, WA: 265 }
 	},
 	{
+		id: 'LC81',
 		name: 'Unexpected Assault',
 		cost: 3,
 		die: 2,
@@ -10202,6 +10987,7 @@ export const cards: Card[] = [
 		releases: { LC: 81 }
 	},
 	{
+		id: 'LC82',
 		name: 'Victory!',
 		die: 5,
 		keywords: [],
@@ -10213,6 +10999,7 @@ export const cards: Card[] = [
 		releases: { LC: 82 }
 	},
 	{
+		id: 'LC83',
 		name: 'Leave Nothing Alive',
 		cost: 3,
 		die: 3,
@@ -10226,6 +11013,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'LC84',
 		name: 'Banner of Fortitude',
 		cost: 1,
 		keywords: ['Standard'],
@@ -10237,6 +11025,7 @@ export const cards: Card[] = [
 		releases: { LC: 84 }
 	},
 	{
+		id: 'WA282',
 		name: 'Cache of Scrolls',
 		cost: 1,
 		keywords: ['Item'],
@@ -10248,6 +11037,7 @@ export const cards: Card[] = [
 		releases: { LC: 85, WA: 282 }
 	},
 	{
+		id: 'LC86',
 		name: 'Lucas Volkmann, Middenheim Spy',
 		cost: 2,
 		tacticPoints: 1,
@@ -10260,6 +11050,7 @@ export const cards: Card[] = [
 		releases: { LC: 86 }
 	},
 	{
+		id: 'WA287',
 		name: 'Maximillion Gluttonfist',
 		cost: 1,
 		tacticPoints: 1,
@@ -10268,10 +11059,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b>: This unit attacks a committed unit with a printed positive "<b>Victory</b>" bonus. The loser of this combat is destroyed. You may play this ability while this unit is committed.</p>',
+		text: '<p><b>Command</b>: This unit attacks a committed unit with a printed positive "<b>Victory</b>" bonus. The loser of this combat is destroyed. You may play this ability while this unit is committed.</p>',
 		releases: { LC: 87, WA: 287 }
 	},
 	{
+		id: 'WA293',
 		name: 'Ward of Wisdom',
 		cost: 1,
 		keywords: ['Item'],
@@ -10283,6 +11075,7 @@ export const cards: Card[] = [
 		releases: { LC: 88, WA: 293 }
 	},
 	{
+		id: 'LC89',
 		name: 'Brotherhood of Grimnir',
 		cost: 4,
 		strength: 0,
@@ -10297,6 +11090,7 @@ export const cards: Card[] = [
 		releases: { LC: 89 }
 	},
 	{
+		id: 'LC90',
 		name: "Grimjaw's Hammers",
 		cost: 2,
 		strength: 1,
@@ -10311,6 +11105,7 @@ export const cards: Card[] = [
 		releases: { LC: 90 }
 	},
 	{
+		id: 'LC91',
 		name: 'Guildmaster Burlock Damminson',
 		cost: 4,
 		strength: 3,
@@ -10326,6 +11121,7 @@ export const cards: Card[] = [
 		releases: { LC: 91 }
 	},
 	{
+		id: 'LC92',
 		name: "Ironbrow's Digger Company",
 		cost: 4,
 		strength: 3,
@@ -10340,6 +11136,7 @@ export const cards: Card[] = [
 		releases: { LC: 92 }
 	},
 	{
+		id: 'LC93',
 		name: "Ironfist's Disciples",
 		cost: 4,
 		strength: 2,
@@ -10354,6 +11151,7 @@ export const cards: Card[] = [
 		releases: { LC: 93 }
 	},
 	{
+		id: 'LC94',
 		name: "Ironfist's Doomseekers",
 		cost: 5,
 		strength: 3,
@@ -10368,6 +11166,7 @@ export const cards: Card[] = [
 		releases: { LC: 94 }
 	},
 	{
+		id: 'WA311',
 		name: "Makaisson's Belly of Fire",
 		cost: 3,
 		strength: 1,
@@ -10382,6 +11181,7 @@ export const cards: Card[] = [
 		releases: { LC: 95, WA: 311 }
 	},
 	{
+		id: 'WA312',
 		name: "Malakai Makaisson's Goblin-Hewer",
 		cost: 4,
 		strength: 1,
@@ -10397,6 +11197,7 @@ export const cards: Card[] = [
 		releases: { LC: 96, WA: 312 }
 	},
 	{
+		id: 'LC97',
 		name: 'Ambassador Kasper Von Velten',
 		cost: 4,
 		strength: 3,
@@ -10408,10 +11209,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Once per battle, discard the top 3 cards of your army deck. If one of those cards is a Kislev unit, you may immediately destroy one of your other ready units in your army and replace it with that Kislev unit.</p>',
+		text: '<p><b>Command</b>: Once per battle, discard the top 3 cards of your army deck. If one of those cards is a Kislev unit, you may immediately destroy one of your other ready units in your army and replace it with that Kislev unit.</p>',
 		releases: { LC: 97 }
 	},
 	{
+		id: 'LC98',
 		name: 'Boris Todbringer',
 		cost: 6,
 		strength: 5,
@@ -10423,10 +11225,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p> <b>Command</b>: If this unit passes a leadership test, rally this unit. Your next command may not be an attack. If your enemy passes as their next command, the battle ends immediately. This ability may be played while committed and only once per battle.</p>',
+		text: '<p><b>Command</b>: If this unit passes a leadership test, rally this unit. Your next command may not be an attack. If your enemy passes as their next command, the battle ends immediately. This ability may be played while committed and only once per battle.</p>',
 		releases: { LC: 98 }
 	},
 	{
+		id: 'LC99',
 		name: "Bremen's Knights Panther",
 		cost: 4,
 		strength: 2,
@@ -10441,6 +11244,7 @@ export const cards: Card[] = [
 		releases: { LC: 99 }
 	},
 	{
+		id: 'LC100',
 		name: 'Emperor Karl Franz',
 		cost: 6,
 		strength: 4,
@@ -10456,6 +11260,7 @@ export const cards: Card[] = [
 		releases: { LC: 100 }
 	},
 	{
+		id: 'WA332',
 		name: "Heralds of Sigmar's Blood",
 		cost: 3,
 		strength: 2,
@@ -10470,6 +11275,7 @@ export const cards: Card[] = [
 		releases: { LC: 101, WA: 332 }
 	},
 	{
+		id: 'WA334',
 		name: 'Kirenwulf Jasenland',
 		cost: 4,
 		strength: 3,
@@ -10486,6 +11292,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'WA337',
 		name: "Leitdorf's Blood-Oathed",
 		cost: 4,
 		strength: 4,
@@ -10500,6 +11307,7 @@ export const cards: Card[] = [
 		releases: { LC: 103, WA: 337 }
 	},
 	{
+		id: 'WA339',
 		name: 'Middenland Battalion',
 		cost: 4,
 		strength: 5,
@@ -10514,6 +11322,7 @@ export const cards: Card[] = [
 		releases: { LC: 104, WA: 339 }
 	},
 	{
+		id: 'LC105',
 		name: 'Rein Volkhard',
 		cost: 5,
 		strength: 4,
@@ -10529,6 +11338,7 @@ export const cards: Card[] = [
 		releases: { LC: 105 }
 	},
 	{
+		id: 'WA343',
 		name: "Piotr's Gryphon Legion",
 		cost: 4,
 		strength: 4,
@@ -10543,6 +11353,7 @@ export const cards: Card[] = [
 		releases: { LC: 106, WA: 343 }
 	},
 	{
+		id: 'LC107',
 		name: 'Swords of the Reiksguard',
 		cost: 5,
 		strength: 5,
@@ -10557,6 +11368,7 @@ export const cards: Card[] = [
 		releases: { LC: 107 }
 	},
 	{
+		id: 'WA345',
 		name: 'The Black Raiders of Middenland',
 		cost: 6,
 		strength: 5,
@@ -10571,6 +11383,7 @@ export const cards: Card[] = [
 		releases: { LC: 108, WA: 345 }
 	},
 	{
+		id: 'LC109',
 		name: 'Ambassador of the Empire',
 		cost: 2,
 		strength: 1,
@@ -10584,6 +11397,7 @@ export const cards: Card[] = [
 		releases: { LC: 109 }
 	},
 	{
+		id: 'LC110',
 		name: 'Ludwig Scharzelm',
 		cost: 2,
 		strength: 1,
@@ -10598,6 +11412,7 @@ export const cards: Card[] = [
 		releases: { LC: 110 }
 	},
 	{
+		id: 'WA357',
 		name: 'Archers of the Weeping Skies',
 		cost: 4,
 		strength: 2,
@@ -10608,10 +11423,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Ranged Attack</b>: 5</p><p> <b>Command</b> Discard 2 cards: This unit declares a ranged attack. You may play this ability while this unit is committed.</p>',
+		text: '<p><b>Ranged Attack</b>: 5</p><p><b>Command</b> Discard 2 cards: This unit declares a ranged attack. You may play this ability while this unit is committed.</p>',
 		releases: { LC: 111, WA: 357 }
 	},
 	{
+		id: 'WA358',
 		name: "Aveldan's Sea Rangers",
 		cost: 2,
 		strength: 1,
@@ -10626,6 +11442,7 @@ export const cards: Card[] = [
 		releases: { LC: 112, WA: 358 }
 	},
 	{
+		id: 'WA362',
 		name: "Elduranel's Brilliant Lancers",
 		cost: 5,
 		strength: 5,
@@ -10640,6 +11457,7 @@ export const cards: Card[] = [
 		releases: { LC: 113, WA: 362 }
 	},
 	{
+		id: 'WA364',
 		name: "Glory's Fading",
 		cost: 4,
 		strength: 3,
@@ -10654,6 +11472,7 @@ export const cards: Card[] = [
 		releases: { LC: 114, WA: 364 }
 	},
 	{
+		id: 'LC115',
 		name: "Indomril's Sea Rangers",
 		cost: 5,
 		strength: 3,
@@ -10668,6 +11487,7 @@ export const cards: Card[] = [
 		releases: { LC: 115 }
 	},
 	{
+		id: 'WA368',
 		name: "Lindanel's Seeking Blades",
 		cost: 4,
 		strength: 3,
@@ -10682,6 +11502,7 @@ export const cards: Card[] = [
 		releases: { LC: 116, WA: 368 }
 	},
 	{
+		id: 'LC117',
 		name: "Sorrow's Song",
 		cost: 3,
 		strength: 2,
@@ -10696,6 +11517,7 @@ export const cards: Card[] = [
 		releases: { LC: 117 }
 	},
 	{
+		id: 'LC118',
 		name: 'Yrlis Bluestorm',
 		cost: 6,
 		strength: 5,
@@ -10711,6 +11533,7 @@ export const cards: Card[] = [
 		releases: { LC: 118 }
 	},
 	{
+		id: 'LC119',
 		name: 'Anyone But Them!',
 		die: 3,
 		keywords: ['Strategy'],
@@ -10722,6 +11545,7 @@ export const cards: Card[] = [
 		releases: { LC: 119 }
 	},
 	{
+		id: 'LC120',
 		name: 'Helm of Dominion',
 		cost: 1,
 		unique: true,
@@ -10734,6 +11558,7 @@ export const cards: Card[] = [
 		releases: { LC: 120 }
 	},
 	{
+		id: 'CC1',
 		name: "Be'lakor the Darkmaster",
 		cost: 7,
 		strength: 5,
@@ -10748,6 +11573,7 @@ export const cards: Card[] = [
 		releases: { CC: 1 }
 	},
 	{
+		id: 'CE1',
 		name: 'Garagrim Ironfist',
 		cost: 6,
 		strength: 7,
@@ -10762,6 +11588,7 @@ export const cards: Card[] = [
 		releases: { CC: 1 }
 	},
 	{
+		id: 'CC2',
 		name: 'Vardek Crom, the Conqueror',
 		cost: 5,
 		strength: 5,
@@ -10775,6 +11602,7 @@ export const cards: Card[] = [
 		releases: { CC: 2 }
 	},
 	{
+		id: 'CE2',
 		name: 'Thorek Ironbrow',
 		cost: 5,
 		strength: 4,
@@ -10789,6 +11617,7 @@ export const cards: Card[] = [
 		releases: { CC: 2 }
 	},
 	{
+		id: 'CC3',
 		name: 'Rikhaine Blackblade',
 		cost: 5,
 		strength: 4,
@@ -10802,6 +11631,7 @@ export const cards: Card[] = [
 		releases: { CC: 3 }
 	},
 	{
+		id: 'CE3',
 		name: 'Luthor Huss',
 		cost: 6,
 		strength: 5,
@@ -10816,6 +11646,7 @@ export const cards: Card[] = [
 		releases: { CC: 3 }
 	},
 	{
+		id: 'CC4',
 		name: 'Tullaris of Har Geneth',
 		cost: 4,
 		strength: 4,
@@ -10825,10 +11656,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: "<p> <b>WarCry</b>: Choose a number and roll from your enemy's deck. If the roll matches the chosen number, destroy both units. If the roll does not match that number this unit gets -1 strength.</p>",
+		text: "<p><b>WarCry</b>: Choose a number and roll from your enemy's deck. If the roll matches the chosen number, destroy both units. If the roll does not match that number this unit gets -1 strength.</p>",
 		releases: { CC: 4 }
 	},
 	{
+		id: 'CE4',
 		name: 'Valten, Exalted of Sigmar',
 		cost: 8,
 		strength: 5,
@@ -10843,6 +11675,7 @@ export const cards: Card[] = [
 		releases: { CC: 4 }
 	},
 	{
+		id: 'WA60',
 		name: 'Borgut Facebeata',
 		cost: 6,
 		strength: 7,
@@ -10857,6 +11690,7 @@ export const cards: Card[] = [
 		releases: { CC: 5, WA: 60 }
 	},
 	{
+		id: 'CE5',
 		name: 'Elduranel Aellian',
 		cost: 5,
 		strength: 4,
@@ -10867,10 +11701,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p><b>Wizard</b>: 2</p><p> <b>Command</b> Discard 1 card: You get a number of spell points equal to the die number on the discarded card. Only playable once per battle.</p>',
+		text: '<p><b>Wizard</b>: 2</p><p><b>Command</b> Discard 1 card: You get a number of spell points equal to the die number on the discarded card. Only playable once per battle.</p>',
 		releases: { CC: 5 }
 	},
 	{
+		id: 'CC6',
 		name: 'Effigies of Gork and Mork',
 		cost: 4,
 		strength: 1,
@@ -10885,6 +11720,7 @@ export const cards: Card[] = [
 		releases: { CC: 6 }
 	},
 	{
+		id: 'CE6',
 		name: 'Brothers of the Fallen Tree',
 		cost: 4,
 		strength: 3,
@@ -10899,6 +11735,7 @@ export const cards: Card[] = [
 		releases: { CC: 6 }
 	},
 	{
+		id: 'SM1',
 		name: "Archaon's Judgement",
 		cost: 4,
 		strength: 1,
@@ -10914,6 +11751,7 @@ export const cards: Card[] = [
 		releases: { SM: 1 }
 	},
 	{
+		id: 'WA6',
 		name: 'Bloodcrushers',
 		cost: 5,
 		strength: 4,
@@ -10928,6 +11766,7 @@ export const cards: Card[] = [
 		releases: { SM: 2, WA: 6 }
 	},
 	{
+		id: 'SM3',
 		name: 'Changebringers',
 		cost: 4,
 		strength: 3,
@@ -10942,6 +11781,7 @@ export const cards: Card[] = [
 		releases: { SM: 3 }
 	},
 	{
+		id: 'SM4',
 		name: 'Chaos Furies',
 		cost: 3,
 		strength: 2,
@@ -10956,6 +11796,7 @@ export const cards: Card[] = [
 		releases: { SM: 4 }
 	},
 	{
+		id: 'WA9',
 		name: "D'aggorn the Exalted – Veteran of Chaos",
 		cost: 6,
 		strength: 4,
@@ -10971,6 +11812,7 @@ export const cards: Card[] = [
 		releases: { SM: 5, WA: 9 }
 	},
 	{
+		id: 'SM6',
 		name: 'Bile Rot, Daemonic Herald',
 		cost: 4,
 		strength: 4,
@@ -10986,6 +11828,7 @@ export const cards: Card[] = [
 		releases: { SM: 6 }
 	},
 	{
+		id: 'SM7',
 		name: 'Flayerkin',
 		cost: 3,
 		strength: 3,
@@ -10996,10 +11839,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Commit the enemy unit if it is a fortification.</p>',
+		text: '<p><b>WarCry</b>: Commit the enemy unit if it is a fortification.</p>',
 		releases: { SM: 7 }
 	},
 	{
+		id: 'WA16',
 		name: 'Kordel Shogaar, Standard Bearer',
 		cost: 4,
 		strength: 3,
@@ -11015,6 +11859,7 @@ export const cards: Card[] = [
 		releases: { SM: 8, WA: 16 }
 	},
 	{
+		id: 'SM9',
 		name: 'Sorrowbringers',
 		cost: 3,
 		strength: 3,
@@ -11029,6 +11874,7 @@ export const cards: Card[] = [
 		releases: { SM: 9 }
 	},
 	{
+		id: 'SM10',
 		name: 'Plagueriders',
 		cost: 5,
 		strength: 5,
@@ -11043,6 +11889,7 @@ export const cards: Card[] = [
 		releases: { SM: 10 }
 	},
 	{
+		id: 'SM11',
 		name: 'Pleasureseekers',
 		cost: 4,
 		strength: 4,
@@ -11053,10 +11900,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: The enemy unit gets -2 leadership.</p><p><b>Combat Tactic</b>: This unit gets +2 tactic points. Only playable if the enemy unit has leadership 1 or less.</p>',
+		text: '<p><b>WarCry</b>: The enemy unit gets -2 leadership.</p><p><b>Combat Tactic</b>: This unit gets +2 tactic points. Only playable if the enemy unit has leadership 1 or less.</p>',
 		releases: { SM: 11 }
 	},
 	{
+		id: 'WA21',
 		name: 'Regiment of Khorne',
 		cost: 4,
 		strength: 4,
@@ -11071,6 +11919,7 @@ export const cards: Card[] = [
 		releases: { SM: 12, WA: 21 }
 	},
 	{
+		id: 'SM13',
 		name: 'Siege Tower',
 		cost: 2,
 		strength: 3,
@@ -11081,10 +11930,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p>This unit may not attack.</p><p>While this unit is ready in your battle line, your infantry may attack from the reserves.</p><p> <b>Command</b> Commit one of your infantry units: Destroy a fortification unit.</p>',
+		text: '<p>This unit may not attack.</p><p>While this unit is ready in your battle line, your infantry may attack from the reserves.</p><p><b>Command</b> Commit one of your infantry units: Destroy a fortification unit.</p>',
 		releases: { SM: 13 }
 	},
 	{
+		id: 'SM14',
 		name: 'Siryk Silver Tongue',
 		cost: 6,
 		strength: 5,
@@ -11096,10 +11946,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: "<p><b>Terror</b>: 2</p><p><b>Wizard</b>: 2</p><p> <b>WarCry</b>: Reduce the enemy unit's strength to 0 unless it passes an unmodified leadership test.</p>",
+		text: "<p><b>Terror</b>: 2</p><p><b>Wizard</b>: 2</p><p><b>WarCry</b>: Reduce the enemy unit's strength to 0 unless it passes an unmodified leadership test.</p>",
 		releases: { SM: 14 }
 	},
 	{
+		id: 'SM15',
 		name: "Narsin's Black Guard",
 		cost: 5,
 		strength: 5,
@@ -11110,10 +11961,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +2 strength and +2 leadership. Only playable while you are losing a combat.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 strength and +2 leadership. Only playable while you are losing a combat.</p>',
 		releases: { SM: 15 }
 	},
 	{
+		id: 'SM16',
 		name: 'Death Dealer',
 		cost: 4,
 		strength: 3,
@@ -11128,6 +11980,7 @@ export const cards: Card[] = [
 		releases: { SM: 16 }
 	},
 	{
+		id: 'SM17',
 		name: "Blacktear's Brigands",
 		cost: 3,
 		strength: 3,
@@ -11142,6 +11995,7 @@ export const cards: Card[] = [
 		releases: { SM: 17 }
 	},
 	{
+		id: 'SM18',
 		name: 'The Serrated',
 		cost: 3,
 		strength: 3,
@@ -11156,6 +12010,7 @@ export const cards: Card[] = [
 		releases: { SM: 18 }
 	},
 	{
+		id: 'SM19',
 		name: 'Black Riders',
 		cost: 5,
 		strength: 3,
@@ -11170,6 +12025,7 @@ export const cards: Card[] = [
 		releases: { SM: 19 }
 	},
 	{
+		id: 'SM20',
 		name: 'The Gates of Karond Kar',
 		cost: 3,
 		strength: 4,
@@ -11185,6 +12041,7 @@ export const cards: Card[] = [
 		releases: { SM: 20 }
 	},
 	{
+		id: 'SM21',
 		name: 'Coven of Sorrows',
 		cost: 4,
 		strength: 3,
@@ -11199,6 +12056,7 @@ export const cards: Card[] = [
 		releases: { SM: 21 }
 	},
 	{
+		id: 'SM22',
 		name: 'Loukhane Nightblade',
 		cost: 2,
 		strength: 1,
@@ -11213,6 +12071,7 @@ export const cards: Card[] = [
 		releases: { SM: 22 }
 	},
 	{
+		id: 'SM23',
 		name: 'Ardug the Unbreakable',
 		cost: 5,
 		strength: 6,
@@ -11227,6 +12086,7 @@ export const cards: Card[] = [
 		releases: { SM: 23 }
 	},
 	{
+		id: 'WA61',
 		name: "Facebeata's Big 'Uns",
 		cost: 4,
 		strength: 5,
@@ -11241,6 +12101,7 @@ export const cards: Card[] = [
 		releases: { SM: 24, WA: 61 }
 	},
 	{
+		id: 'WA62',
 		name: "Facebeata's Dark Boyz",
 		cost: 4,
 		strength: 6,
@@ -11256,6 +12117,7 @@ export const cards: Card[] = [
 		releases: { SM: 25, WA: 62 }
 	},
 	{
+		id: 'WA84',
 		name: "Skinripper's Horde of Greenies",
 		cost: 2,
 		strength: 1,
@@ -11270,6 +12132,7 @@ export const cards: Card[] = [
 		releases: { SM: 26, WA: 84 }
 	},
 	{
+		id: 'SM27',
 		name: "Facebeata's 'Ard House",
 		cost: 2,
 		strength: 3,
@@ -11284,6 +12147,7 @@ export const cards: Card[] = [
 		releases: { SM: 27 }
 	},
 	{
+		id: 'SM28',
 		name: 'Farell Bloodfist',
 		cost: 4,
 		strength: 4,
@@ -11298,6 +12162,7 @@ export const cards: Card[] = [
 		releases: { SM: 28 }
 	},
 	{
+		id: 'WA83',
 		name: "Skinripper's Hoppin' Boyz",
 		cost: 3,
 		strength: 3,
@@ -11312,6 +12177,7 @@ export const cards: Card[] = [
 		releases: { SM: 29, WA: 83 }
 	},
 	{
+		id: 'SM30',
 		name: 'Taugrek the Throttler',
 		cost: 3,
 		strength: 3,
@@ -11327,6 +12193,7 @@ export const cards: Card[] = [
 		releases: { SM: 30 }
 	},
 	{
+		id: 'SM31',
 		name: 'Blood for the Blood God',
 		die: 2,
 		keywords: ['Strategy'],
@@ -11338,6 +12205,7 @@ export const cards: Card[] = [
 		releases: { SM: 31 }
 	},
 	{
+		id: 'SM32',
 		name: 'Last Waaagh!',
 		die: 3,
 		keywords: ['Strategy'],
@@ -11349,6 +12217,7 @@ export const cards: Card[] = [
 		releases: { SM: 32 }
 	},
 	{
+		id: 'SM33',
 		name: 'Standard of Darkness',
 		cost: 1,
 		keywords: ['Standard'],
@@ -11360,6 +12229,7 @@ export const cards: Card[] = [
 		releases: { SM: 33 }
 	},
 	{
+		id: 'WA104',
 		name: 'Watch Tower',
 		cost: 2,
 		strength: 2,
@@ -11374,6 +12244,7 @@ export const cards: Card[] = [
 		releases: { SM: 34, WA: 104 }
 	},
 	{
+		id: 'SM35',
 		name: 'Join the Fray',
 		cost: 3,
 		die: 2,
@@ -11382,10 +12253,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: Choose one of your ready units. This unit gets a strength bonus equal to the chosen unit's strength and a tactic point bonus equal to the chosen unit's tactic points. If you lose the combat, destroy the chosen unit.</p>",
+		text: "<p><b>WarCry</b>: Choose one of your ready units. This unit gets a strength bonus equal to the chosen unit's strength and a tactic point bonus equal to the chosen unit's tactic points. If you lose the combat, destroy the chosen unit.</p>",
 		releases: { SM: 35 }
 	},
 	{
+		id: 'WA227',
 		name: 'Reliable Support',
 		cost: 1,
 		die: 3,
@@ -11398,6 +12270,7 @@ export const cards: Card[] = [
 		releases: { SM: 36, WA: 227 }
 	},
 	{
+		id: 'SM37',
 		name: 'Deadly Attrition',
 		cost: 1,
 		die: 4,
@@ -11410,6 +12283,7 @@ export const cards: Card[] = [
 		releases: { SM: 37 }
 	},
 	{
+		id: 'SM38',
 		name: 'Awakening',
 		die: 2,
 		keywords: [],
@@ -11417,10 +12291,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Rally one of your units with strength X or less. X equals the number of ready enemy units. X may not equal 0.</p>',
+		text: '<p><b>Command</b>: Rally one of your units with strength X or less. X equals the number of ready enemy units. X may not equal 0.</p>',
 		releases: { SM: 38 }
 	},
 	{
+		id: 'SM39',
 		name: 'Blind Fury',
 		cost: 1,
 		die: 4,
@@ -11429,10 +12304,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Each player selects any number of cards from their hand and sets the rest aside. Only the selected cards may be played in this combat. Cards set aside may not be used until after this combat.</p><p>Any selected cards not played in this combat are discarded after the resolution. After this combat return the cards set aside to your hand.</p>',
+		text: '<p><b>WarCry</b>: Each player selects any number of cards from their hand and sets the rest aside. Only the selected cards may be played in this combat. Cards set aside may not be used until after this combat.</p><p>Any selected cards not played in this combat are discarded after the resolution. After this combat return the cards set aside to your hand.</p>',
 		releases: { SM: 39 }
 	},
 	{
+		id: 'SM40',
 		name: 'Clinch',
 		cost: 2,
 		die: 2,
@@ -11446,6 +12322,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'SM41',
 		name: 'Close Support',
 		cost: 1,
 		die: 4,
@@ -11458,6 +12335,7 @@ export const cards: Card[] = [
 		releases: { SM: 41 }
 	},
 	{
+		id: 'WA129',
 		name: 'Crush the Weak',
 		cost: 1,
 		die: 3,
@@ -11470,6 +12348,7 @@ export const cards: Card[] = [
 		releases: { SM: 42, WA: 129 }
 	},
 	{
+		id: 'SM43',
 		name: 'Twister',
 		cost: 2,
 		die: 3,
@@ -11482,6 +12361,7 @@ export const cards: Card[] = [
 		releases: { SM: 43 }
 	},
 	{
+		id: 'WA132',
 		name: 'Danger to the Wind',
 		cost: 1,
 		die: 2,
@@ -11494,6 +12374,7 @@ export const cards: Card[] = [
 		releases: { SM: 44, WA: 132 }
 	},
 	{
+		id: 'SM45',
 		name: 'Desperate Gamble',
 		cost: 1,
 		die: 3,
@@ -11506,6 +12387,7 @@ export const cards: Card[] = [
 		releases: { SM: 45 }
 	},
 	{
+		id: 'WA137',
 		name: 'Destiny Now',
 		cost: 3,
 		die: 2,
@@ -11518,6 +12400,7 @@ export const cards: Card[] = [
 		releases: { SM: 46, WA: 137 }
 	},
 	{
+		id: 'SM47',
 		name: 'Destruction',
 		die: 2,
 		keywords: [],
@@ -11529,6 +12412,7 @@ export const cards: Card[] = [
 		releases: { SM: 47 }
 	},
 	{
+		id: 'SM48',
 		name: 'Dirty Fighting',
 		cost: 1,
 		die: 2,
@@ -11541,6 +12425,7 @@ export const cards: Card[] = [
 		releases: { SM: 48 }
 	},
 	{
+		id: 'SM49',
 		name: 'Divine Guidance',
 		die: 5,
 		keywords: [],
@@ -11552,6 +12437,7 @@ export const cards: Card[] = [
 		releases: { SM: 49 }
 	},
 	{
+		id: 'SM50',
 		name: 'Equipment Master',
 		cost: 2,
 		die: 4,
@@ -11564,6 +12450,7 @@ export const cards: Card[] = [
 		releases: { SM: 50 }
 	},
 	{
+		id: 'WA120',
 		name: 'Calm Before the Storm',
 		cost: 1,
 		die: 2,
@@ -11576,6 +12463,7 @@ export const cards: Card[] = [
 		releases: { SM: 51, WA: 120 }
 	},
 	{
+		id: 'SM52',
 		name: 'Fast Strike',
 		cost: 0,
 		die: 3,
@@ -11588,6 +12476,7 @@ export const cards: Card[] = [
 		releases: { SM: 52 }
 	},
 	{
+		id: 'SM53',
 		name: "Fate's Hand",
 		die: 4,
 		keywords: ['Strategy'],
@@ -11599,6 +12488,7 @@ export const cards: Card[] = [
 		releases: { SM: 53 }
 	},
 	{
+		id: 'SM54',
 		name: 'Another Day',
 		cost: 1,
 		die: 2,
@@ -11607,10 +12497,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: At the end of the tactics phase return 1 card you played to your hand.</p>',
+		text: '<p><b>WarCry</b>: At the end of the tactics phase return 1 card you played to your hand.</p>',
 		releases: { SM: 54 }
 	},
 	{
+		id: 'WA158',
 		name: 'For the Greater Glory',
 		cost: 1,
 		die: 1,
@@ -11623,6 +12514,7 @@ export const cards: Card[] = [
 		releases: { SM: 55, WA: 158 }
 	},
 	{
+		id: 'WA168',
 		name: 'Hail of Fire',
 		cost: 2,
 		die: 3,
@@ -11635,6 +12527,7 @@ export const cards: Card[] = [
 		releases: { SM: 56, WA: 168 }
 	},
 	{
+		id: 'SM57',
 		name: 'Karma',
 		die: 4,
 		keywords: [],
@@ -11646,6 +12539,7 @@ export const cards: Card[] = [
 		releases: { SM: 57 }
 	},
 	{
+		id: 'SM58',
 		name: 'Last Chance',
 		die: 5,
 		keywords: ['Strategy'],
@@ -11657,6 +12551,7 @@ export const cards: Card[] = [
 		releases: { SM: 58 }
 	},
 	{
+		id: 'WA180',
 		name: 'Lasting Sting',
 		cost: 1,
 		die: 2,
@@ -11669,6 +12564,7 @@ export const cards: Card[] = [
 		releases: { SM: 59, WA: 180 }
 	},
 	{
+		id: 'WA164',
 		name: 'Great Leadership',
 		cost: 1,
 		die: 2,
@@ -11681,6 +12577,7 @@ export const cards: Card[] = [
 		releases: { SM: 60, WA: 164 }
 	},
 	{
+		id: 'WA187',
 		name: 'Look to the Sky',
 		cost: 2,
 		die: 3,
@@ -11693,6 +12590,7 @@ export const cards: Card[] = [
 		releases: { SM: 61, WA: 187 }
 	},
 	{
+		id: 'SM62',
 		name: 'Battlefield Presence',
 		die: 4,
 		keywords: ['Strategy'],
@@ -11704,6 +12602,7 @@ export const cards: Card[] = [
 		releases: { SM: 62 }
 	},
 	{
+		id: 'SM63',
 		name: 'Magnetism',
 		cost: 1,
 		die: 3,
@@ -11716,6 +12615,7 @@ export const cards: Card[] = [
 		releases: { SM: 63 }
 	},
 	{
+		id: 'SM64',
 		name: 'Measure Your Opponent',
 		cost: 2,
 		die: 4,
@@ -11728,6 +12628,7 @@ export const cards: Card[] = [
 		releases: { SM: 64 }
 	},
 	{
+		id: 'SM65',
 		name: 'Phalanx',
 		cost: 1,
 		die: 3,
@@ -11740,6 +12641,7 @@ export const cards: Card[] = [
 		releases: { SM: 65 }
 	},
 	{
+		id: 'SM66',
 		name: 'Purity of Arms',
 		cost: 3,
 		die: 2,
@@ -11752,6 +12654,7 @@ export const cards: Card[] = [
 		releases: { SM: 66 }
 	},
 	{
+		id: 'SM67',
 		name: 'Ration',
 		cost: 3,
 		die: 3,
@@ -11764,6 +12667,7 @@ export const cards: Card[] = [
 		releases: { SM: 67 }
 	},
 	{
+		id: 'SM68',
 		name: 'Reinforcements!',
 		die: 2,
 		keywords: [],
@@ -11776,6 +12680,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'SM69',
 		name: 'Ready and Willing',
 		cost: 1,
 		die: 2,
@@ -11788,6 +12693,7 @@ export const cards: Card[] = [
 		releases: { SM: 69 }
 	},
 	{
+		id: 'SM70',
 		name: 'Resistance',
 		die: 5,
 		keywords: ['Strategy'],
@@ -11799,6 +12705,7 @@ export const cards: Card[] = [
 		releases: { SM: 70 }
 	},
 	{
+		id: 'WA231',
 		name: 'Rush the Flank',
 		cost: 1,
 		die: 3,
@@ -11811,6 +12718,7 @@ export const cards: Card[] = [
 		releases: { SM: 71, WA: 231 }
 	},
 	{
+		id: 'SM72',
 		name: 'Rust',
 		die: 3,
 		keywords: [],
@@ -11822,6 +12730,7 @@ export const cards: Card[] = [
 		releases: { SM: 72 }
 	},
 	{
+		id: 'SM73',
 		name: 'Second Wind',
 		cost: 3,
 		die: 5,
@@ -11834,6 +12743,7 @@ export const cards: Card[] = [
 		releases: { SM: 73 }
 	},
 	{
+		id: 'SM74',
 		name: 'Sink Hole',
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -11845,6 +12755,7 @@ export const cards: Card[] = [
 		releases: { SM: 74 }
 	},
 	{
+		id: 'WA240',
 		name: 'Siphon Strength',
 		cost: 1,
 		die: 2,
@@ -11857,6 +12768,7 @@ export const cards: Card[] = [
 		releases: { SM: 75, WA: 240 }
 	},
 	{
+		id: 'SM76',
 		name: "Spy's Lament",
 		die: 3,
 		keywords: [],
@@ -11864,10 +12776,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: "<p> <b>Command</b>: Look at your enemy's hand. Your enemy discards a card of your choice.</p>",
+		text: "<p><b>Command</b>: Look at your enemy's hand. Your enemy discards a card of your choice.</p>",
 		releases: { SM: 76 }
 	},
 	{
+		id: 'SM77',
 		name: 'Steel Rain',
 		cost: 2,
 		die: 2,
@@ -11880,6 +12793,7 @@ export const cards: Card[] = [
 		releases: { SM: 77 }
 	},
 	{
+		id: 'WA250',
 		name: 'Stunning Blast',
 		cost: 1,
 		die: 3,
@@ -11892,6 +12806,7 @@ export const cards: Card[] = [
 		releases: { SM: 78, WA: 250 }
 	},
 	{
+		id: 'SM79',
 		name: 'Siege',
 		cost: 1,
 		die: 4,
@@ -11900,10 +12815,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: If you win this combat, destroy one enemy fortification.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat, destroy one enemy fortification.</p>',
 		releases: { SM: 79 }
 	},
 	{
+		id: 'WA253',
 		name: 'Supporting Fire',
 		cost: 2,
 		die: 4,
@@ -11916,6 +12832,7 @@ export const cards: Card[] = [
 		releases: { SM: 80, WA: 253 }
 	},
 	{
+		id: 'SM81',
 		name: 'The Time is Not Right',
 		die: 5,
 		keywords: [],
@@ -11923,10 +12840,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Discard 1 card: Draw 2 cards.</p><p><b>Spell Command</b> (1): All action cards attached to units are discarded.</p>',
+		text: '<p><b>Command</b> Discard 1 card: Draw 2 cards.</p><p><b>Spell Command</b> (1): All action cards attached to units are discarded.</p>',
 		releases: { SM: 81 }
 	},
 	{
+		id: 'WA271',
 		name: 'Unfortunate News',
 		cost: 4,
 		die: 1,
@@ -11939,6 +12857,7 @@ export const cards: Card[] = [
 		releases: { SM: 82, WA: 271 }
 	},
 	{
+		id: 'WA273',
 		name: 'Veteran',
 		cost: 1,
 		die: 3,
@@ -11947,10 +12866,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit gets +1 strength. If you win this combat, attach this card to your unit.</p><p>While attached, this unit gets the ability "<b>Combat Tactic</b>: This unit gets +1 strength and "<b>Terror</b>: 1"."</p>',
+		text: '<p><b>WarCry</b>: This unit gets +1 strength. If you win this combat, attach this card to your unit.</p><p>While attached, this unit gets the ability "<b>Combat Tactic</b>: This unit gets +1 strength and "<b>Terror</b>: 1"."</p>',
 		releases: { SM: 83, WA: 273 }
 	},
 	{
+		id: 'WA280',
 		name: "Winter's Chill",
 		die: 2,
 		keywords: [],
@@ -11958,10 +12878,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b>: Commit one enemy unit unless your enemy discards 2 cards.</p>',
+		text: '<p><b>Command</b>: Commit one enemy unit unless your enemy discards 2 cards.</p>',
 		releases: { SM: 84, WA: 280 }
 	},
 	{
+		id: 'WA286',
 		name: 'Maps',
 		cost: 1,
 		keywords: ['Item'],
@@ -11969,10 +12890,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		rarity: 'Rare',
-		text: "<p> <b>Command</b>: Place 1 card from your hand under this attachment face down. If this item is destroyed, all cards under it are discarded.</p><p><b>Combat Tactic</b>: Return all cards under this attachment to their owner's hands.</p>",
+		text: "<p><b>Command</b>: Place 1 card from your hand under this attachment face down. If this item is destroyed, all cards under it are discarded.</p><p><b>Combat Tactic</b>: Return all cards under this attachment to their owner's hands.</p>",
 		releases: { SM: 85, WA: 286 }
 	},
 	{
+		id: 'SM86',
 		name: 'The Fey Enchantress',
 		cost: 5,
 		strength: 4,
@@ -11988,6 +12910,7 @@ export const cards: Card[] = [
 		releases: { SM: 86 }
 	},
 	{
+		id: 'WA297',
 		name: "Drong's Slayer Pirates",
 		cost: 4,
 		strength: 3,
@@ -12003,6 +12926,7 @@ export const cards: Card[] = [
 		releases: { SM: 87, WA: 297 }
 	},
 	{
+		id: 'SM88',
 		name: 'Gates of Karaz-a-Karak',
 		cost: 4,
 		strength: 3,
@@ -12018,6 +12942,7 @@ export const cards: Card[] = [
 		releases: { SM: 88 }
 	},
 	{
+		id: 'WA305',
 		name: "Grimjaw's Grey Veterans",
 		cost: 5,
 		strength: 5,
@@ -12032,6 +12957,7 @@ export const cards: Card[] = [
 		releases: { SM: 89, WA: 305 }
 	},
 	{
+		id: 'WA318',
 		name: "Thunderhead's Air Cavalry",
 		cost: 3,
 		strength: 2,
@@ -12046,6 +12972,7 @@ export const cards: Card[] = [
 		releases: { SM: 90, WA: 318 }
 	},
 	{
+		id: 'SM91',
 		name: "Grimjaw's Personal Bodyguard",
 		cost: 4,
 		strength: 4,
@@ -12060,6 +12987,7 @@ export const cards: Card[] = [
 		releases: { SM: 91 }
 	},
 	{
+		id: 'SM92',
 		name: "Grimjaw's Excavators",
 		cost: 3,
 		strength: 3,
@@ -12074,6 +13002,7 @@ export const cards: Card[] = [
 		releases: { SM: 92 }
 	},
 	{
+		id: 'WA315',
 		name: 'Runesmith Morangrin',
 		cost: 3,
 		strength: 3,
@@ -12088,6 +13017,7 @@ export const cards: Card[] = [
 		releases: { SM: 93, WA: 315 }
 	},
 	{
+		id: 'SM94',
 		name: 'The Spirit of Grungni',
 		cost: 5,
 		strength: 3,
@@ -12103,6 +13033,7 @@ export const cards: Card[] = [
 		releases: { SM: 94 }
 	},
 	{
+		id: 'SM95',
 		name: 'Prophets of Doom',
 		cost: 3,
 		strength: 3,
@@ -12113,10 +13044,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p>If you lost the previous battle, this unit\'s gold cost is reduced by 1.</p><p> <b>Command</b>: This unit declares an attack and gets the ability "<b>Reaction</b>: If this unit wins the combat , the result is a slaughter". These abilities may only be played while this unit is committed.</p>',
+		text: '<p>If you lost the previous battle, this unit\'s gold cost is reduced by 1.</p><p><b>Command</b>: This unit declares an attack and gets the ability "<b>Reaction</b>: If this unit wins the combat , the result is a slaughter". These abilities may only be played while this unit is committed.</p>',
 		releases: { SM: 95 }
 	},
 	{
+		id: 'SM96',
 		name: 'The Great Cannon of Middenheim',
 		cost: 4,
 		strength: 3,
@@ -12127,10 +13059,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p>This unit may not attack.</p><p> <b>Command</b> Commit this unit and discard X cards: Destroy 1 enemy unit with strength X or less. Only playable while you have a ready infantry unit.</p>',
+		text: '<p>This unit may not attack.</p><p><b>Command</b> Commit this unit and discard X cards: Destroy 1 enemy unit with strength X or less. Only playable while you have a ready infantry unit.</p>',
 		releases: { SM: 96 }
 	},
 	{
+		id: 'SM97',
 		name: 'Grand Theogonist Volkmar',
 		cost: 4,
 		strength: 3,
@@ -12146,6 +13079,7 @@ export const cards: Card[] = [
 		releases: { SM: 97 }
 	},
 	{
+		id: 'WA325',
 		name: 'Black Hand Pistoliers',
 		cost: 3,
 		strength: 3,
@@ -12160,6 +13094,7 @@ export const cards: Card[] = [
 		releases: { SM: 98, WA: 325 }
 	},
 	{
+		id: 'WA323',
 		name: "Ar-Ulric's Teutogen Guard",
 		cost: 5,
 		strength: 4,
@@ -12175,6 +13110,7 @@ export const cards: Card[] = [
 		releases: { SM: 99, WA: 323 }
 	},
 	{
+		id: 'SM100',
 		name: 'Hunt Master Ethlich',
 		cost: 4,
 		strength: 4,
@@ -12189,6 +13125,7 @@ export const cards: Card[] = [
 		releases: { SM: 100 }
 	},
 	{
+		id: 'SM101',
 		name: 'Knights of Twin Tailed Comet',
 		cost: 4,
 		strength: 3,
@@ -12203,6 +13140,7 @@ export const cards: Card[] = [
 		releases: { SM: 101 }
 	},
 	{
+		id: 'SM102',
 		name: "Jasenland's Imperial Defenders",
 		cost: 2,
 		strength: 1,
@@ -12217,6 +13155,7 @@ export const cards: Card[] = [
 		releases: { SM: 102 }
 	},
 	{
+		id: 'WA333',
 		name: 'High Priest Udo Latnehr',
 		cost: 3,
 		strength: 3,
@@ -12231,6 +13170,7 @@ export const cards: Card[] = [
 		releases: { SM: 103, WA: 333 }
 	},
 	{
+		id: 'SM104',
 		name: 'Senechal Valdric Gathowe',
 		cost: 4,
 		strength: 4,
@@ -12246,6 +13186,7 @@ export const cards: Card[] = [
 		releases: { SM: 104 }
 	},
 	{
+		id: 'SM105',
 		name: 'Vorn Thugenheim, Standard Bearer',
 		cost: 3,
 		strength: 3,
@@ -12261,6 +13202,7 @@ export const cards: Card[] = [
 		releases: { SM: 105 }
 	},
 	{
+		id: 'SM106',
 		name: 'Warriors of Ulfric',
 		cost: 4,
 		strength: 4,
@@ -12275,6 +13217,7 @@ export const cards: Card[] = [
 		releases: { SM: 106 }
 	},
 	{
+		id: 'WA351',
 		name: 'Wolf Kin Skirmishers',
 		cost: 4,
 		strength: 4,
@@ -12289,6 +13232,7 @@ export const cards: Card[] = [
 		releases: { SM: 107, WA: 351 }
 	},
 	{
+		id: 'WA356',
 		name: 'Archers of Nightfall',
 		cost: 3,
 		strength: 2,
@@ -12303,6 +13247,7 @@ export const cards: Card[] = [
 		releases: { SM: 108, WA: 356 }
 	},
 	{
+		id: 'SM109',
 		name: 'Vanguard of the Silver Lord',
 		cost: 5,
 		strength: 2,
@@ -12318,6 +13263,7 @@ export const cards: Card[] = [
 		releases: { SM: 109 }
 	},
 	{
+		id: 'SM110',
 		name: 'Riders of the Golden Star',
 		cost: 3,
 		strength: 3,
@@ -12332,6 +13278,7 @@ export const cards: Card[] = [
 		releases: { SM: 110 }
 	},
 	{
+		id: 'WA372',
 		name: 'The Fair Maiden of Ulthuan',
 		cost: 4,
 		strength: 3,
@@ -12346,6 +13293,7 @@ export const cards: Card[] = [
 		releases: { SM: 111, WA: 372 }
 	},
 	{
+		id: 'SM112',
 		name: 'Sea Guard of the Northern Ports',
 		cost: 3,
 		strength: 3,
@@ -12360,6 +13308,7 @@ export const cards: Card[] = [
 		releases: { SM: 112 }
 	},
 	{
+		id: 'WA371',
 		name: 'Spearmen of the Golden Star',
 		cost: 4,
 		strength: 3,
@@ -12374,6 +13323,7 @@ export const cards: Card[] = [
 		releases: { SM: 113, WA: 371 }
 	},
 	{
+		id: 'SM114',
 		name: 'Sword Maidens of Hoeth',
 		cost: 4,
 		strength: 4,
@@ -12388,6 +13338,7 @@ export const cards: Card[] = [
 		releases: { SM: 114 }
 	},
 	{
+		id: 'SM115',
 		name: 'Ward Tower',
 		cost: 2,
 		strength: 3,
@@ -12402,6 +13353,7 @@ export const cards: Card[] = [
 		releases: { SM: 115 }
 	},
 	{
+		id: 'SM116',
 		name: 'Defend the Walls',
 		die: 2,
 		keywords: ['Strategy', 'Terrain'],
@@ -12413,6 +13365,7 @@ export const cards: Card[] = [
 		releases: { SM: 116 }
 	},
 	{
+		id: 'SM117',
 		name: 'Nerves of Steel',
 		die: 3,
 		keywords: ['Strategy'],
@@ -12424,6 +13377,7 @@ export const cards: Card[] = [
 		releases: { SM: 117 }
 	},
 	{
+		id: 'SM118',
 		name: 'For the Empire!',
 		cost: 1,
 		die: 4,
@@ -12436,6 +13390,7 @@ export const cards: Card[] = [
 		releases: { SM: 118 }
 	},
 	{
+		id: 'SM119',
 		name: 'Stand Your Ground',
 		cost: 2,
 		die: 3,
@@ -12448,6 +13403,7 @@ export const cards: Card[] = [
 		releases: { SM: 119 }
 	},
 	{
+		id: 'SM120',
 		name: 'Standard of Light',
 		cost: 1,
 		unique: true,
@@ -12460,6 +13416,7 @@ export const cards: Card[] = [
 		releases: { SM: 120 }
 	},
 	{
+		id: 'WA7',
 		name: 'Bull Lords of Pain',
 		cost: 4,
 		strength: 5,
@@ -12470,10 +13427,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Victory</b>: -2</p><p><b>Terror</b>: 3</p><p>This unit may not make follow-up attacks.</p><p> <b>WarCry</b>: This unit gets +3 strength and +3 tactic points. Only playable while attacking.</p>',
+		text: '<p><b>Victory</b>: -2</p><p><b>Terror</b>: 3</p><p>This unit may not make follow-up attacks.</p><p><b>WarCry</b>: This unit gets +3 strength and +3 tactic points. Only playable while attacking.</p>',
 		releases: { HW: 1, WA: 7 }
 	},
 	{
+		id: 'WA17',
 		name: 'Korvin, Champion of Khorne',
 		cost: 6,
 		strength: 5,
@@ -12489,6 +13447,7 @@ export const cards: Card[] = [
 		releases: { HW: 2, WA: 17 }
 	},
 	{
+		id: 'HW3',
 		name: "Korvin's Raging Centigors",
 		cost: 4,
 		strength: 3,
@@ -12503,6 +13462,7 @@ export const cards: Card[] = [
 		releases: { HW: 3 }
 	},
 	{
+		id: 'HW4',
 		name: 'Pahadiel, the Mammoth Drawn Fortress',
 		cost: 7,
 		strength: 6,
@@ -12517,6 +13477,7 @@ export const cards: Card[] = [
 		releases: { HW: 4 }
 	},
 	{
+		id: 'HW5',
 		name: 'Servants of Itmon',
 		cost: 6,
 		strength: 5,
@@ -12531,6 +13492,7 @@ export const cards: Card[] = [
 		releases: { HW: 5 }
 	},
 	{
+		id: 'HW6',
 		name: 'Urmas, Champion of the Khorngor',
 		cost: 4,
 		strength: 4,
@@ -12546,6 +13508,7 @@ export const cards: Card[] = [
 		releases: { HW: 6 }
 	},
 	{
+		id: 'WA36',
 		name: "Ha'asek, the Archon of Twilight",
 		cost: 8,
 		strength: 5,
@@ -12561,6 +13524,7 @@ export const cards: Card[] = [
 		releases: { HW: 7, WA: 36 }
 	},
 	{
+		id: 'HW8',
 		name: "Ha'asek's Black Arrows",
 		cost: 4,
 		strength: 3,
@@ -12575,6 +13539,7 @@ export const cards: Card[] = [
 		releases: { HW: 8 }
 	},
 	{
+		id: 'WA37',
 		name: "Ha'asek's Black Riders",
 		cost: 4,
 		strength: 3,
@@ -12589,6 +13554,7 @@ export const cards: Card[] = [
 		releases: { HW: 9, WA: 37 }
 	},
 	{
+		id: 'WA38',
 		name: "Ha'asek's Bolt Slinger",
 		cost: 3,
 		strength: 1,
@@ -12603,6 +13569,7 @@ export const cards: Card[] = [
 		releases: { HW: 10, WA: 38 }
 	},
 	{
+		id: 'HW11',
 		name: "Ha'asek's Devil Brides",
 		cost: 3,
 		strength: 2,
@@ -12613,10 +13580,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: "<p> <b>Command</b> Commit: Choose a flyer unit. While this unit remains in play and committed, after the chosen unit declares an attack, you may discard 1 card from your hand to prevent the attack and end the enemy's command.</p>",
+		text: "<p><b>Command</b> Commit: Choose a flyer unit. While this unit remains in play and committed, after the chosen unit declares an attack, you may discard 1 card from your hand to prevent the attack and end the enemy's command.</p>",
 		releases: { HW: 11 }
 	},
 	{
+		id: 'WA39',
 		name: "Ha'asek's Hands of Retribution",
 		cost: 3,
 		strength: 3,
@@ -12627,10 +13595,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>Command</b> Commit: If you win this battle, your enemy may only draw a hand of 4 cards to begin the next muster phase.</p>',
+		text: '<p><b>Command</b> Commit: If you win this battle, your enemy may only draw a hand of 4 cards to begin the next muster phase.</p>',
 		releases: { HW: 12, WA: 39 }
 	},
 	{
+		id: 'WA40',
 		name: "Ha'asek's Knights of Terror",
 		cost: 3,
 		strength: 3,
@@ -12645,6 +13614,7 @@ export const cards: Card[] = [
 		releases: { HW: 13, WA: 40 }
 	},
 	{
+		id: 'WA41',
 		name: "Ha'asek's Standing Guard",
 		cost: 4,
 		strength: 4,
@@ -12659,6 +13629,7 @@ export const cards: Card[] = [
 		releases: { HW: 14, WA: 41 }
 	},
 	{
+		id: 'WA42',
 		name: "Ha'asek's Personal Guard",
 		cost: 4,
 		strength: 3,
@@ -12673,6 +13644,7 @@ export const cards: Card[] = [
 		releases: { HW: 15, WA: 42 }
 	},
 	{
+		id: 'HW16',
 		name: "Ha'asek's Wild Ones",
 		cost: 2,
 		strength: 2,
@@ -12683,10 +13655,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Once per battle, rally an enemy unit.</p>',
+		text: '<p><b>Command</b>: Once per battle, rally an enemy unit.</p>',
 		releases: { HW: 16 }
 	},
 	{
+		id: 'HW17',
 		name: "Ha'asek's Witch Elves",
 		cost: 4,
 		strength: 5,
@@ -12701,6 +13674,7 @@ export const cards: Card[] = [
 		releases: { HW: 17 }
 	},
 	{
+		id: 'HW18',
 		name: "Grubbi's Fast Fast Kart",
 		cost: 3,
 		strength: 2,
@@ -12715,6 +13689,7 @@ export const cards: Card[] = [
 		releases: { HW: 18 }
 	},
 	{
+		id: 'WA71',
 		name: "Manmangler's Armoured Orcs",
 		cost: 4,
 		strength: 7,
@@ -12729,6 +13704,7 @@ export const cards: Card[] = [
 		releases: { HW: 19, WA: 71 }
 	},
 	{
+		id: 'HW20',
 		name: "Manmangler's Big Chukka",
 		cost: 4,
 		strength: 2,
@@ -12743,6 +13719,7 @@ export const cards: Card[] = [
 		releases: { HW: 20 }
 	},
 	{
+		id: 'HW21',
 		name: "Manmangler's Boarboyz",
 		cost: 4,
 		strength: 3,
@@ -12757,6 +13734,7 @@ export const cards: Card[] = [
 		releases: { HW: 21 }
 	},
 	{
+		id: 'WA72',
 		name: "Manmangler's Brute Boyz",
 		cost: 4,
 		strength: 3,
@@ -12771,6 +13749,7 @@ export const cards: Card[] = [
 		releases: { HW: 22, WA: 72 }
 	},
 	{
+		id: 'WA73',
 		name: "Manmangler's Flailing Gobbos",
 		cost: 3,
 		strength: 3,
@@ -12781,10 +13760,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: "<p> <b>Command</b>: If this unit passes a leadership test, it may immediately declare an attack against any unit in the enemy's reserves. This attack may not be blocked.</p><p><b>Combat Tactic</b>: Reveal the top card of your deck. Add that card's die to this unit's strength. If that card's die is 5 or more, destroy this unit after the combat.</p>",
+		text: "<p><b>Command</b>: If this unit passes a leadership test, it may immediately declare an attack against any unit in the enemy's reserves. This attack may not be blocked.</p><p><b>Combat Tactic</b>: Reveal the top card of your deck. Add that card's die to this unit's strength. If that card's die is 5 or more, destroy this unit after the combat.</p>",
 		releases: { HW: 23, WA: 73 }
 	},
 	{
+		id: 'HW24',
 		name: "Manmangler's Hench Boyz",
 		cost: 5,
 		strength: 5,
@@ -12800,6 +13780,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'WA74',
 		name: "Manmangler's River Trolls",
 		cost: 5,
 		strength: 5,
@@ -12814,6 +13795,7 @@ export const cards: Card[] = [
 		releases: { HW: 25, WA: 74 }
 	},
 	{
+		id: 'HW26',
 		name: "Manmangler's Savage Killaz",
 		cost: 4,
 		strength: 4,
@@ -12828,6 +13810,7 @@ export const cards: Card[] = [
 		releases: { HW: 26 }
 	},
 	{
+		id: 'HW27',
 		name: 'Nazall the Nasty',
 		cost: 2,
 		strength: 1,
@@ -12842,6 +13825,7 @@ export const cards: Card[] = [
 		releases: { HW: 27 }
 	},
 	{
+		id: 'HW28',
 		name: 'Urguck Manmangler, Orc Overlord',
 		cost: 6,
 		strength: 5,
@@ -12857,6 +13841,7 @@ export const cards: Card[] = [
 		releases: { HW: 28 }
 	},
 	{
+		id: 'WA28',
 		name: 'Anelia, Mistress of Slaanesh',
 		cost: 2,
 		strength: 1,
@@ -12869,6 +13854,7 @@ export const cards: Card[] = [
 		releases: { HW: 29, WA: 28 }
 	},
 	{
+		id: 'HW30',
 		name: 'A Dangerous Game',
 		cost: 2,
 		die: 2,
@@ -12881,6 +13867,7 @@ export const cards: Card[] = [
 		releases: { HW: 30 }
 	},
 	{
+		id: 'HW31',
 		name: 'A Deadly Game',
 		cost: 4,
 		die: 1,
@@ -12893,6 +13880,7 @@ export const cards: Card[] = [
 		releases: { HW: 31 }
 	},
 	{
+		id: 'HW32',
 		name: 'A Fortunate Wind',
 		die: 4,
 		keywords: ['Strategy'],
@@ -12904,6 +13892,7 @@ export const cards: Card[] = [
 		releases: { HW: 32 }
 	},
 	{
+		id: 'HW33',
 		name: 'A Shift in Morale',
 		die: 4,
 		keywords: [],
@@ -12915,6 +13904,7 @@ export const cards: Card[] = [
 		releases: { HW: 33 }
 	},
 	{
+		id: 'HW34',
 		name: 'Act Foolish, Be Smart',
 		die: 4,
 		keywords: [],
@@ -12926,6 +13916,7 @@ export const cards: Card[] = [
 		releases: { HW: 34 }
 	},
 	{
+		id: 'HW35',
 		name: 'Aerial Support',
 		cost: 3,
 		die: 3,
@@ -12938,6 +13929,7 @@ export const cards: Card[] = [
 		releases: { HW: 35 }
 	},
 	{
+		id: 'WA107',
 		name: 'Attack the Neighbor with Impunity',
 		die: 3,
 		keywords: ['Strategy'],
@@ -12949,6 +13941,7 @@ export const cards: Card[] = [
 		releases: { HW: 36, WA: 107 }
 	},
 	{
+		id: 'HW37',
 		name: 'Beat the Grass to Startle the Snakes',
 		cost: 2,
 		die: 3,
@@ -12961,6 +13954,7 @@ export const cards: Card[] = [
 		releases: { HW: 37 }
 	},
 	{
+		id: 'WA119',
 		name: 'Calculated Reserves',
 		cost: 0,
 		die: 1,
@@ -12973,6 +13967,7 @@ export const cards: Card[] = [
 		releases: { HW: 38, WA: 119 }
 	},
 	{
+		id: 'HW39',
 		name: 'Catch the Leader to Nab the Bandits',
 		die: 5,
 		keywords: ['Strategy'],
@@ -12984,6 +13979,7 @@ export const cards: Card[] = [
 		releases: { HW: 39 }
 	},
 	{
+		id: 'HW40',
 		name: 'Charge Under a Blackened Sky',
 		cost: 3,
 		die: 3,
@@ -12996,6 +13992,7 @@ export const cards: Card[] = [
 		releases: { HW: 40 }
 	},
 	{
+		id: 'HW41',
 		name: 'Costly Tactics',
 		cost: 1,
 		die: 3,
@@ -13008,6 +14005,7 @@ export const cards: Card[] = [
 		releases: { HW: 41 }
 	},
 	{
+		id: 'WA127',
 		name: 'Counter Spell',
 		die: 2,
 		keywords: [],
@@ -13019,6 +14017,7 @@ export const cards: Card[] = [
 		releases: { HW: 42, WA: 127 }
 	},
 	{
+		id: 'HW43',
 		name: 'Counter-Attack',
 		cost: 0,
 		die: 3,
@@ -13031,6 +14030,7 @@ export const cards: Card[] = [
 		releases: { HW: 43 }
 	},
 	{
+		id: 'HW44',
 		name: 'Dawn of a New Day',
 		die: 2,
 		keywords: [],
@@ -13038,11 +14038,12 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Remove this card and all copies of this card in your deck and discard pile from the game: Rally all units in play.</p>',
+		text: '<p><b>Command</b> Remove this card and all copies of this card in your deck and discard pile from the game: Rally all units in play.</p>',
 		releases: { HW: 44 },
 		banned: true
 	},
 	{
+		id: 'HW45',
 		name: 'Dawn Raid',
 		die: 3,
 		keywords: [],
@@ -13054,6 +14055,7 @@ export const cards: Card[] = [
 		releases: { HW: 45 }
 	},
 	{
+		id: 'HW46',
 		name: 'Drive Them to the Skies',
 		cost: 3,
 		die: 3,
@@ -13066,6 +14068,7 @@ export const cards: Card[] = [
 		releases: { HW: 46 }
 	},
 	{
+		id: 'HW47',
 		name: 'Dwarven Victory',
 		cost: 0,
 		die: 3,
@@ -13074,10 +14077,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: "<p>You may not play this card if you have another copy of this card attached to one of your units. If this card is played without using it's WarCry ability, destroy it.</p><p> <b>WarCry</b>: reduce this unit's printed strength to 0. If this unit wins the combat, attach this card to your unit. Not playable during a ranged attack.</p>",
+		text: "<p>You may not play this card if you have another copy of this card attached to one of your units. If this card is played without using it's WarCry ability, destroy it.</p><p><b>WarCry</b>: reduce this unit's printed strength to 0. If this unit wins the combat, attach this card to your unit. Not playable during a ranged attack.</p>",
 		releases: { HW: 47 }
 	},
 	{
+		id: 'HW48',
 		name: 'Elven Victory',
 		cost: 0,
 		die: 3,
@@ -13086,10 +14090,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: "<p>You may not play this card if you have another copy of this card attached to one of your units. If this card is played without using it's WarCry ability, destroy it.</p><p> <b>WarCry</b>: This unit's text box is considered blank for this combat. This unit retains all keywords. Your combat roll for this combat is a 2 (no roll necessary). If this unit wins this combat attach this card to your unit.</p><p>Not playable during a ranged attack.</p>",
+		text: "<p>You may not play this card if you have another copy of this card attached to one of your units. If this card is played without using it's WarCry ability, destroy it.</p><p><b>WarCry</b>: This unit's text box is considered blank for this combat. This unit retains all keywords. Your combat roll for this combat is a 2 (no roll necessary). If this unit wins this combat attach this card to your unit.</p><p>Not playable during a ranged attack.</p>",
 		releases: { HW: 48 }
 	},
 	{
+		id: 'HW49',
 		name: 'End Game Maneuvers',
 		cost: 2,
 		die: 3,
@@ -13102,6 +14107,7 @@ export const cards: Card[] = [
 		releases: { HW: 49 }
 	},
 	{
+		id: 'WA145',
 		name: 'Enough!',
 		die: 3,
 		keywords: [],
@@ -13113,6 +14119,7 @@ export const cards: Card[] = [
 		releases: { HW: 50, WA: 145 }
 	},
 	{
+		id: 'HW51',
 		name: 'Face the Weary in a Condition of Ease',
 		cost: 0,
 		die: 4,
@@ -13125,6 +14132,7 @@ export const cards: Card[] = [
 		releases: { HW: 51 }
 	},
 	{
+		id: 'HW52',
 		name: 'Feint One Way, Strike Another',
 		die: 4,
 		keywords: [],
@@ -13136,6 +14144,7 @@ export const cards: Card[] = [
 		releases: { HW: 52 }
 	},
 	{
+		id: 'HW53',
 		name: 'Final Wave',
 		die: 2,
 		keywords: [],
@@ -13143,11 +14152,12 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p>Only playable by either player once per battle.</p><p> <b>Command</b>: Both you and your enemy may muster 7 gold from your army deck. This command is played as a normal muster phase, although no units in play may be rallied during this muster phase.</p>',
+		text: '<p>Only playable by either player once per battle.</p><p><b>Command</b>: Both you and your enemy may muster 7 gold from your army deck. This command is played as a normal muster phase, although no units in play may be rallied during this muster phase.</p>',
 		releases: { HW: 53 },
 		banned: true
 	},
 	{
+		id: 'HW54',
 		name: 'Force a Change in Fate',
 		die: 3,
 		keywords: [],
@@ -13159,6 +14169,7 @@ export const cards: Card[] = [
 		releases: { HW: 54 }
 	},
 	{
+		id: 'WA159',
 		name: 'Fortune Favours the Brave',
 		cost: 0,
 		die: 2,
@@ -13171,6 +14182,7 @@ export const cards: Card[] = [
 		releases: { HW: 55, WA: 159 }
 	},
 	{
+		id: 'HW56',
 		name: 'Hide a Sword in a Smile',
 		die: 4,
 		keywords: [],
@@ -13178,11 +14190,12 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Place a +1 strength token on one of your units and a "<b>Victory</b>: +1" token on an enemy unit of your enemy\'s choosing.</p>',
+		text: '<p><b>Command</b>: Place a +1 strength token on one of your units and a "<b>Victory</b>: +1" token on an enemy unit of your enemy\'s choosing.</p>',
 		releases: { HW: 56 },
 		errata: 'Strategy'
 	},
 	{
+		id: 'HW57',
 		name: 'High and Low Charge',
 		cost: 3,
 		die: 3,
@@ -13195,6 +14208,7 @@ export const cards: Card[] = [
 		releases: { HW: 57 }
 	},
 	{
+		id: 'HW58',
 		name: 'High Pressure Tactics',
 		die: 2,
 		keywords: [],
@@ -13206,6 +14220,7 @@ export const cards: Card[] = [
 		releases: { HW: 58 }
 	},
 	{
+		id: 'WA175',
 		name: 'Hold Nothing Back',
 		cost: 2,
 		die: 3,
@@ -13218,6 +14233,7 @@ export const cards: Card[] = [
 		releases: { HW: 59, WA: 175 }
 	},
 	{
+		id: 'HW60',
 		name: 'Homeland Victories',
 		die: 3,
 		keywords: [],
@@ -13229,6 +14245,7 @@ export const cards: Card[] = [
 		releases: { HW: 60 }
 	},
 	{
+		id: 'HW61',
 		name: 'Imperial Victory',
 		cost: 0,
 		die: 3,
@@ -13237,10 +14254,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: "<p>You may not play this card if you have another copy of this card attached to one of your units. If this card is played without using it's WarCry ability, destroy it.</p><p> <b>WarCry</b>: Reduce this unit's printed tactic points to 0. If this unit wins the combat, attach this card to your unit. Not playable during a ranged attack.</p>",
+		text: "<p>You may not play this card if you have another copy of this card attached to one of your units. If this card is played without using it's WarCry ability, destroy it.</p><p><b>WarCry</b>: Reduce this unit's printed tactic points to 0. If this unit wins the combat, attach this card to your unit. Not playable during a ranged attack.</p>",
 		releases: { HW: 61 }
 	},
 	{
+		id: 'HW62',
 		name: 'Kill with a Borrowed Sword',
 		cost: 0,
 		die: 2,
@@ -13253,6 +14271,7 @@ export const cards: Card[] = [
 		releases: { HW: 62 }
 	},
 	{
+		id: 'HW63',
 		name: 'Lock the Gates to Catch the Bandits',
 		die: 4,
 		keywords: [],
@@ -13264,6 +14283,7 @@ export const cards: Card[] = [
 		releases: { HW: 63 }
 	},
 	{
+		id: 'HW64',
 		name: 'Magical Overload',
 		die: 5,
 		keywords: [],
@@ -13275,6 +14295,7 @@ export const cards: Card[] = [
 		releases: { HW: 64 }
 	},
 	{
+		id: 'HW65',
 		name: 'Make Allies at a Distance, Attack Nearby',
 		cost: 2,
 		die: 3,
@@ -13287,6 +14308,7 @@ export const cards: Card[] = [
 		releases: { HW: 65 }
 	},
 	{
+		id: 'HW66',
 		name: 'Dogged Determination',
 		cost: 2,
 		die: 4,
@@ -13299,6 +14321,7 @@ export const cards: Card[] = [
 		releases: { HW: 66 }
 	},
 	{
+		id: 'HW67',
 		name: 'Offer a Brick in Exchange for Gold',
 		cost: 2,
 		die: 2,
@@ -13311,6 +14334,7 @@ export const cards: Card[] = [
 		releases: { HW: 67 }
 	},
 	{
+		id: 'WA203',
 		name: 'One Defeat Follows Another',
 		die: 4,
 		keywords: [],
@@ -13322,6 +14346,7 @@ export const cards: Card[] = [
 		releases: { HW: 68, WA: 203 }
 	},
 	{
+		id: 'WA205',
 		name: 'One Tree Falls for Another',
 		cost: 1,
 		die: 3,
@@ -13334,6 +14359,7 @@ export const cards: Card[] = [
 		releases: { HW: 69, WA: 205 }
 	},
 	{
+		id: 'HW70',
 		name: 'Path of the Arrow',
 		cost: 3,
 		die: 3,
@@ -13346,6 +14372,7 @@ export const cards: Card[] = [
 		releases: { HW: 70 }
 	},
 	{
+		id: 'WA212',
 		name: "Pick a Fight in the Enemy's Home",
 		die: 3,
 		keywords: ['Strategy'],
@@ -13357,6 +14384,7 @@ export const cards: Card[] = [
 		releases: { HW: 71, WA: 212 }
 	},
 	{
+		id: 'HW72',
 		name: 'Point at One to Scold Another',
 		cost: 1,
 		die: 3,
@@ -13365,10 +14393,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: If this unit wins the combat, the enemy unit is routed. Only playable during a follow-up attack where the previous unit was routed without a card effect.</p>',
+		text: '<p><b>WarCry</b>: If this unit wins the combat, the enemy unit is routed. Only playable during a follow-up attack where the previous unit was routed without a card effect.</p>',
 		releases: { HW: 72 }
 	},
 	{
+		id: 'HW73',
 		name: 'Rally Up',
 		die: 1,
 		keywords: [],
@@ -13376,10 +14405,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Remove a card in your hand from the game: Choose 2 of your units. Make a leadership test for each of the chosen units with a -1 modifier to their leadership. If both units succeed, rally one of those units. Remove this card from the game.</p>',
+		text: '<p><b>Command</b> Remove a card in your hand from the game: Choose 2 of your units. Make a leadership test for each of the chosen units with a -1 modifier to their leadership. If both units succeed, rally one of those units. Remove this card from the game.</p>',
 		releases: { HW: 73 }
 	},
 	{
+		id: 'HW74',
 		name: 'Replace Beams with Pillars',
 		die: 4,
 		keywords: ['Strategy'],
@@ -13391,6 +14421,7 @@ export const cards: Card[] = [
 		releases: { HW: 74 }
 	},
 	{
+		id: 'WA230',
 		name: 'Rob a Burning House',
 		die: 3,
 		keywords: [],
@@ -13398,10 +14429,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: "<p> <b>Command</b> Commit one of your units: Remove any number of attachments from your enemy's discard pile from the game.</p>",
+		text: "<p><b>Command</b> Commit one of your units: Remove any number of attachments from your enemy's discard pile from the game.</p>",
 		releases: { HW: 75, WA: 230 }
 	},
 	{
+		id: 'HW76',
 		name: 'Run Far Away',
 		die: 2,
 		keywords: [],
@@ -13413,6 +14445,7 @@ export const cards: Card[] = [
 		releases: { HW: 76 }
 	},
 	{
+		id: 'HW77',
 		name: 'Save Something for Later',
 		cost: 1,
 		die: 2,
@@ -13421,10 +14454,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If this unit has a printed WarCry ability, this unit gets +X strength. X equals the number of your units in your army with a printed WarCry ability +2.</p>',
+		text: '<p><b>WarCry</b>: If this unit has a printed WarCry ability, this unit gets +X strength. X equals the number of your units in your army with a printed WarCry ability +2.</p>',
 		releases: { HW: 77 }
 	},
 	{
+		id: 'WA235',
 		name: 'Scheme with Beauties',
 		die: 2,
 		keywords: [],
@@ -13432,11 +14466,12 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Super rare',
-		text: '<p> <b>Command</b>: This card begins a combat between an enemy unit and this card. This card is considered an infantry unit with 2 strength, 4 tactic points, 1 leadership, and a gold cost of 0.</p><p>This unit may not rout enemy units, but may be routed and is discarded after the combat. If you lose this combat, the enemy unit returns to its reserves without committing, unless it chooses to follow-up.</p>',
+		text: '<p><b>Command</b>: This card begins a combat between an enemy unit and this card. This card is considered an infantry unit with 2 strength, 4 tactic points, 1 leadership, and a gold cost of 0.</p><p>This unit may not rout enemy units, but may be routed and is discarded after the combat. If you lose this combat, the enemy unit returns to its reserves without committing, unless it chooses to follow-up.</p>',
 		releases: { HW: 78, WA: 235 },
 		banned: true
 	},
 	{
+		id: 'HW79',
 		name: 'Scheme with Double Agents',
 		die: 4,
 		keywords: [],
@@ -13444,10 +14479,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Destroy any number of your attachments: Commit a unit with a gold cost of X or less. X equals the total gold cost of the destroyed attachments.</p>',
+		text: '<p><b>Command</b> Destroy any number of your attachments: Commit a unit with a gold cost of X or less. X equals the total gold cost of the destroyed attachments.</p>',
 		releases: { HW: 79 }
 	},
 	{
+		id: 'WA236',
 		name: 'Scheme with Self Inflicted Wounds',
 		cost: 1,
 		die: 3,
@@ -13460,6 +14496,7 @@ export const cards: Card[] = [
 		releases: { HW: 80, WA: 236 }
 	},
 	{
+		id: 'HW81',
 		name: 'Take and Hold',
 		die: 3,
 		keywords: [],
@@ -13471,6 +14508,7 @@ export const cards: Card[] = [
 		releases: { HW: 81 }
 	},
 	{
+		id: 'WA256',
 		name: 'Take the Firewood from under the Pot',
 		die: 4,
 		keywords: [],
@@ -13482,6 +14520,7 @@ export const cards: Card[] = [
 		releases: { HW: 82, WA: 256 }
 	},
 	{
+		id: 'HW83',
 		name: 'The Fall of the Mighty',
 		die: 3,
 		keywords: [],
@@ -13493,6 +14532,7 @@ export const cards: Card[] = [
 		releases: { HW: 83 }
 	},
 	{
+		id: 'WA259',
 		name: 'The Silver Serpent Sheds Its Skin',
 		die: 4,
 		keywords: [],
@@ -13504,6 +14544,7 @@ export const cards: Card[] = [
 		releases: { HW: 84, WA: 259 }
 	},
 	{
+		id: 'HW85',
 		name: 'The Weak Fall, the Strong Stand',
 		die: 4,
 		keywords: [],
@@ -13511,10 +14552,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Choose a unit with a strength of 0 (or less). That unit is destroyed.</p>',
+		text: '<p><b>Command</b>: Choose a unit with a strength of 0 (or less). That unit is destroyed.</p>',
 		releases: { HW: 85 }
 	},
 	{
+		id: 'WA266',
 		name: 'To the Bone',
 		cost: 1,
 		die: 2,
@@ -13523,10 +14565,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: The loser of this combat is automatically routed (no roll necessary).</p><p> <b>WarCry</b>: Both units in this combat get a strength bonus equal to their printed strength.</p>',
+		text: '<p><b>WarCry</b>: The loser of this combat is automatically routed (no roll necessary).</p><p><b>WarCry</b>: Both units in this combat get a strength bonus equal to their printed strength.</p>',
 		releases: { HW: 86, WA: 266 }
 	},
 	{
+		id: 'HW87',
 		name: 'Victory at Any Cost',
 		die: 1,
 		keywords: [],
@@ -13534,10 +14577,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Destroy one of your ready units with Elven <b>Victory</b> attached, one of your ready units with Dwarven <b>Victory</b> attached, one of your ready units with Imperial <b>Victory</b> attached, and remove this card from the game</p><p>(the cards must be attached using their own text): You win this battle.</p>',
+		text: '<p><b>Command</b> Destroy one of your ready units with Elven <b>Victory</b> attached, one of your ready units with Dwarven <b>Victory</b> attached, one of your ready units with Imperial <b>Victory</b> attached, and remove this card from the game</p><p>(the cards must be attached using their own text): You win this battle.</p>',
 		releases: { HW: 87 }
 	},
 	{
+		id: 'HW88',
 		name: 'Amulet of the Southern Hand',
 		cost: 2,
 		keywords: ['Item'],
@@ -13549,6 +14593,7 @@ export const cards: Card[] = [
 		releases: { HW: 88 }
 	},
 	{
+		id: 'HW89',
 		name: 'Banner of Warding',
 		cost: 1,
 		keywords: ['Standard'],
@@ -13560,6 +14605,7 @@ export const cards: Card[] = [
 		releases: { HW: 89 }
 	},
 	{
+		id: 'HW90',
 		name: 'Flying Mounts',
 		cost: 2,
 		keywords: ['Item'],
@@ -13571,6 +14617,7 @@ export const cards: Card[] = [
 		releases: { HW: 90 }
 	},
 	{
+		id: 'HW91',
 		name: 'Standard of the Harbinger',
 		cost: 1,
 		unique: true,
@@ -13579,10 +14626,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		rarity: 'Rare',
-		text: '<p>If attached to a Harbinger this card\'s gold cost is reduced by 1 (minimum 0).</p><p> <b>Command</b>: Put a "<b>Victory</b>: +1" token on this unit. If your enemy passes their next command, the battle ends.</p>',
+		text: '<p>If attached to a Harbinger this card\'s gold cost is reduced by 1 (minimum 0).</p><p><b>Command</b>: Put a "<b>Victory</b>: +1" token on this unit. If your enemy passes their next command, the battle ends.</p>',
 		releases: { HW: 91 }
 	},
 	{
+		id: 'WA295',
 		name: 'Barak Grimjaw, Hammer of the Dwarfs',
 		cost: 6,
 		strength: 6,
@@ -13598,6 +14646,7 @@ export const cards: Card[] = [
 		releases: { HW: 92, WA: 295 }
 	},
 	{
+		id: 'WA303',
 		name: "Grimjaw's Dwarfs of Vigilance",
 		cost: 3,
 		strength: 3,
@@ -13612,6 +14661,7 @@ export const cards: Card[] = [
 		releases: { HW: 93, WA: 303 }
 	},
 	{
+		id: 'HW94',
 		name: "Grimjaw's Enchanted Bolt Thrower",
 		cost: 2,
 		strength: 1,
@@ -13626,6 +14676,7 @@ export const cards: Card[] = [
 		releases: { HW: 94 }
 	},
 	{
+		id: 'HW95',
 		name: "Grimjaw's Honour Guard",
 		cost: 4,
 		strength: 4,
@@ -13640,6 +14691,7 @@ export const cards: Card[] = [
 		releases: { HW: 95 }
 	},
 	{
+		id: 'HW96',
 		name: "Grimjaw's Iron Lords",
 		cost: 5,
 		strength: 5,
@@ -13654,6 +14706,7 @@ export const cards: Card[] = [
 		releases: { HW: 96 }
 	},
 	{
+		id: 'HW97',
 		name: "Grimjaw's Loners",
 		cost: 4,
 		strength: 4,
@@ -13669,6 +14722,7 @@ export const cards: Card[] = [
 		releases: { HW: 97 }
 	},
 	{
+		id: 'WA306',
 		name: "Grimjaw's Stouthearts",
 		cost: 3,
 		strength: 'X',
@@ -13683,6 +14737,7 @@ export const cards: Card[] = [
 		releases: { HW: 98, WA: 306 }
 	},
 	{
+		id: 'WA307',
 		name: "Grimjaw's Undying Slayers",
 		cost: 4,
 		strength: 4,
@@ -13697,6 +14752,7 @@ export const cards: Card[] = [
 		releases: { HW: 99, WA: 307 }
 	},
 	{
+		id: 'HW100',
 		name: "Grimjaw's Valorous Veterans",
 		cost: 3,
 		strength: 3,
@@ -13713,6 +14769,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'WA308',
 		name: "Grimjaw's Woodland Rangers",
 		cost: 4,
 		strength: 4,
@@ -13727,6 +14784,7 @@ export const cards: Card[] = [
 		releases: { HW: 101, WA: 308 }
 	},
 	{
+		id: 'WA329',
 		name: "Gausser's Veterans",
 		cost: 5,
 		strength: 5,
@@ -13742,6 +14800,7 @@ export const cards: Card[] = [
 		releases: { HW: 102, WA: 329 }
 	},
 	{
+		id: 'HW103',
 		name: "Gausser's Hellblaster",
 		cost: 4,
 		strength: 1,
@@ -13756,6 +14815,7 @@ export const cards: Card[] = [
 		releases: { HW: 103 }
 	},
 	{
+		id: 'HW104',
 		name: "Gausser's Young Guns",
 		cost: 5,
 		strength: 4,
@@ -13770,6 +14830,7 @@ export const cards: Card[] = [
 		releases: { HW: 104 }
 	},
 	{
+		id: 'WA338',
 		name: 'Lifeguard of Frote',
 		cost: 3,
 		strength: 2,
@@ -13784,6 +14845,7 @@ export const cards: Card[] = [
 		releases: { HW: 105, WA: 338 }
 	},
 	{
+		id: 'WA347',
 		name: 'Theodric Gausser, Guardian of the Empire',
 		cost: 6,
 		strength: 5,
@@ -13799,6 +14861,7 @@ export const cards: Card[] = [
 		releases: { HW: 106, WA: 347 }
 	},
 	{
+		id: 'HW107',
 		name: 'Xavier, Transcriber of Wind',
 		cost: 2,
 		strength: 1,
@@ -13813,6 +14876,7 @@ export const cards: Card[] = [
 		releases: { HW: 107 }
 	},
 	{
+		id: 'WA360',
 		name: 'Bilgarim Whitestar, Elven Lord',
 		cost: 6,
 		strength: 5,
@@ -13828,6 +14892,7 @@ export const cards: Card[] = [
 		releases: { HW: 108, WA: 360 }
 	},
 	{
+		id: 'WA375',
 		name: "Whitestar's Archers of the White Pillar",
 		cost: 3,
 		strength: 0,
@@ -13842,6 +14907,7 @@ export const cards: Card[] = [
 		releases: { HW: 109, WA: 375 }
 	},
 	{
+		id: 'WA376',
 		name: "Whitestar's Coastal Guardians",
 		cost: 4,
 		strength: 3,
@@ -13852,10 +14918,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Place a +1 tactic point token on any unit or place a -1 tactic point token on any unit. If your enemy passes as their next command the battle ends.</p>',
+		text: '<p><b>Command</b>: Place a +1 tactic point token on any unit or place a -1 tactic point token on any unit. If your enemy passes as their next command the battle ends.</p>',
 		releases: { HW: 110, WA: 376 }
 	},
 	{
+		id: 'WA377',
 		name: "Whitestar's Guardians",
 		cost: 3,
 		strength: 1,
@@ -13866,10 +14933,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p>If you have a wizard in play when you start the battle you receive 1 extra spell point for the battle.</p><p><b>Combat Tactic</b>: You and your opponent each gain 2 spell points.</p><p> <b>WarCry</b>: Put a strategy card into play.</p>',
+		text: '<p>If you have a wizard in play when you start the battle you receive 1 extra spell point for the battle.</p><p><b>Combat Tactic</b>: You and your opponent each gain 2 spell points.</p><p><b>WarCry</b>: Put a strategy card into play.</p>',
 		releases: { HW: 111, WA: 377 }
 	},
 	{
+		id: 'WA378',
 		name: "Whitestar's Guardians of the Sky",
 		cost: 3,
 		strength: 0,
@@ -13885,6 +14953,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'HW113',
 		name: "Whitestar's Old Spears",
 		cost: 3,
 		strength: 3,
@@ -13899,6 +14968,7 @@ export const cards: Card[] = [
 		releases: { HW: 113 }
 	},
 	{
+		id: 'HW114',
 		name: "Whitestar's Order of the Black Rose",
 		cost: 3,
 		strength: 2,
@@ -13913,6 +14983,7 @@ export const cards: Card[] = [
 		releases: { HW: 114 }
 	},
 	{
+		id: 'WA379',
 		name: "Whitestar's Silverhelms",
 		cost: 4,
 		strength: 3,
@@ -13927,6 +14998,7 @@ export const cards: Card[] = [
 		releases: { HW: 115, WA: 379 }
 	},
 	{
+		id: 'WA380',
 		name: "Whitestar's White Lions",
 		cost: 3,
 		strength: 2,
@@ -13941,6 +15013,7 @@ export const cards: Card[] = [
 		releases: { HW: 116, WA: 380 }
 	},
 	{
+		id: 'HW117',
 		name: "Whitestar's White Reavers",
 		cost: 3,
 		strength: 2,
@@ -13955,6 +15028,7 @@ export const cards: Card[] = [
 		releases: { HW: 117 }
 	},
 	{
+		id: 'HW118',
 		name: "Whitestar's Youngheart Spearmen",
 		cost: 3,
 		strength: 2,
@@ -13969,6 +15043,7 @@ export const cards: Card[] = [
 		releases: { HW: 118 }
 	},
 	{
+		id: 'HW119',
 		name: 'Doramin Gimragson',
 		cost: 2,
 		unique: true,
@@ -13981,6 +15056,7 @@ export const cards: Card[] = [
 		releases: { HW: 119 }
 	},
 	{
+		id: 'HW120',
 		name: 'Otwin Salenholt',
 		cost: 2,
 		keywords: ['Empire', 'Character'],
@@ -13992,6 +15068,7 @@ export const cards: Card[] = [
 		releases: { HW: 120 }
 	},
 	{
+		id: 'DH1',
 		name: 'Black Hand of Death',
 		die: 5,
 		keywords: ['Strategy'],
@@ -14002,6 +15079,7 @@ export const cards: Card[] = [
 		releases: { DH: 1 }
 	},
 	{
+		id: 'DH2',
 		name: 'Curse of the Immortal',
 		cost: 2,
 		die: 3,
@@ -14013,6 +15091,7 @@ export const cards: Card[] = [
 		releases: { DH: 2 }
 	},
 	{
+		id: 'WA89',
 		name: 'Curse of Years',
 		cost: 1,
 		die: 3,
@@ -14025,6 +15104,7 @@ export const cards: Card[] = [
 		releases: { DH: 3, WA: 89 }
 	},
 	{
+		id: 'WA90',
 		name: "From Hell's Heart",
 		cost: 2,
 		die: 3,
@@ -14037,6 +15117,7 @@ export const cards: Card[] = [
 		releases: { DH: 4, WA: 90 }
 	},
 	{
+		id: 'WA91',
 		name: 'Gaze of Nagash',
 		die: 4,
 		keywords: [],
@@ -14048,6 +15129,7 @@ export const cards: Card[] = [
 		releases: { DH: 5, WA: 91 }
 	},
 	{
+		id: 'DH6',
 		name: 'Hand of Dust',
 		cost: 2,
 		die: 3,
@@ -14059,6 +15141,7 @@ export const cards: Card[] = [
 		releases: { DH: 6 }
 	},
 	{
+		id: 'WA92',
 		name: 'Hellish Vigor',
 		cost: 1,
 		die: 2,
@@ -14071,6 +15154,7 @@ export const cards: Card[] = [
 		releases: { DH: 7, WA: 92 }
 	},
 	{
+		id: 'DH8',
 		name: 'Invocation of Nehek',
 		cost: 2,
 		die: 4,
@@ -14082,6 +15166,7 @@ export const cards: Card[] = [
 		releases: { DH: 8 }
 	},
 	{
+		id: 'DH9',
 		name: 'That Which Does Not Die',
 		cost: 2,
 		die: 2,
@@ -14093,6 +15178,7 @@ export const cards: Card[] = [
 		releases: { DH: 9 }
 	},
 	{
+		id: 'WA94',
 		name: "Vanhel's Danse Macabre",
 		die: 4,
 		keywords: [],
@@ -14104,6 +15190,7 @@ export const cards: Card[] = [
 		releases: { DH: 10, WA: 94 }
 	},
 	{
+		id: 'DH14',
 		name: 'The Carstein Ring',
 		cost: 2,
 		unique: true,
@@ -14115,6 +15202,7 @@ export const cards: Card[] = [
 		releases: { DH: 14 }
 	},
 	{
+		id: 'DH17',
 		name: 'Adolphus Krieger',
 		cost: 5,
 		strength: 4,
@@ -14129,6 +15217,7 @@ export const cards: Card[] = [
 		releases: { DH: 17 }
 	},
 	{
+		id: 'DH18',
 		name: 'Banshees of Nightfall',
 		cost: 4,
 		strength: 2,
@@ -14138,10 +15227,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p><b>Terror</b>: 1</p><p> <b>Command</b> Commit: Once per battle, all non-Hordes of Darkness units in a battleline must make a leadership and strength test. Any units failing one or more of the tests are committed. Only playable from the battleline.</p>',
+		text: '<p><b>Terror</b>: 1</p><p><b>Command</b> Commit: Once per battle, all non-Hordes of Darkness units in a battleline must make a leadership and strength test. Any units failing one or more of the tests are committed. Only playable from the battleline.</p>',
 		releases: { DH: 18 }
 	},
 	{
+		id: 'DH19',
 		name: "Carstein's Black Hand",
 		cost: 3,
 		strength: 3,
@@ -14151,10 +15241,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p><b>Terror</b>: 2</p><p><b>Reaction</b>: After this unit routs an enemy unit, gain 2 spell points.</p><p> <b>WarCry</b>: If the enemy unit has "<b>Faith</b>", for the duration of this combat, that unit does not have "<b>Faith</b>".</p>',
+		text: '<p><b>Terror</b>: 2</p><p><b>Reaction</b>: After this unit routs an enemy unit, gain 2 spell points.</p><p><b>WarCry</b>: If the enemy unit has "<b>Faith</b>", for the duration of this combat, that unit does not have "<b>Faith</b>".</p>',
 		releases: { DH: 19 }
 	},
 	{
+		id: 'DH20',
 		name: "Carstein's Black Knights",
 		cost: 4,
 		strength: 4,
@@ -14168,6 +15259,7 @@ export const cards: Card[] = [
 		releases: { DH: 20 }
 	},
 	{
+		id: 'DH21',
 		name: "Carstein's Flesh Eaters",
 		cost: 3,
 		strength: 3,
@@ -14177,10 +15269,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: "<p><b>Reaction</b> Remove this unit from the game: After this unit is destroyed, you gain 3 spell points.</p><p> <b>WarCry</b> Discard a card from your hand: Your enemy must discard a card from their hand. This unit gets a strength bonus equal to the die of your enemy's discarded card.</p>",
+		text: "<p><b>Reaction</b> Remove this unit from the game: After this unit is destroyed, you gain 3 spell points.</p><p><b>WarCry</b> Discard a card from your hand: Your enemy must discard a card from their hand. This unit gets a strength bonus equal to the die of your enemy's discarded card.</p>",
 		releases: { DH: 21 }
 	},
 	{
+		id: 'DH22',
 		name: "Carstein's Grave Guard",
 		cost: 2,
 		strength: 3,
@@ -14194,6 +15287,7 @@ export const cards: Card[] = [
 		releases: { DH: 22 }
 	},
 	{
+		id: 'DH23',
 		name: "Carstein's Wights",
 		cost: 3,
 		strength: 2,
@@ -14203,10 +15297,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p>Weapons with a gold cost of 2 or less attached to this unit have their gold cost reduced to 0.</p><p> <b>WarCry</b>: this unit gets +2 strength vs. Grand Alliance units.</p>',
+		text: '<p>Weapons with a gold cost of 2 or less attached to this unit have their gold cost reduced to 0.</p><p><b>WarCry</b>: this unit gets +2 strength vs. Grand Alliance units.</p>',
 		releases: { DH: 23 }
 	},
 	{
+		id: 'DH24',
 		name: 'Gothard, the Undying Knight',
 		cost: 4,
 		strength: 4,
@@ -14220,6 +15315,7 @@ export const cards: Card[] = [
 		releases: { DH: 24 }
 	},
 	{
+		id: 'DH25',
 		name: 'Manfred von Carstein',
 		cost: 6,
 		strength: 5,
@@ -14234,6 +15330,7 @@ export const cards: Card[] = [
 		releases: { DH: 25 }
 	},
 	{
+		id: 'DH26',
 		name: 'A Good Death to Save Another',
 		die: 4,
 		keywords: [],
@@ -14244,6 +15341,7 @@ export const cards: Card[] = [
 		releases: { DH: 26 }
 	},
 	{
+		id: 'WA382',
 		name: 'Blood Precedes Glory',
 		die: 2,
 		keywords: ['Strategy'],
@@ -14255,6 +15353,7 @@ export const cards: Card[] = [
 		releases: { DH: 27, WA: 382 }
 	},
 	{
+		id: 'DH28',
 		name: 'Death Comes to All',
 		cost: 1,
 		die: 5,
@@ -14266,6 +15365,7 @@ export const cards: Card[] = [
 		releases: { DH: 28 }
 	},
 	{
+		id: 'WA383',
 		name: 'Devotion to a Cause',
 		cost: 1,
 		die: 3,
@@ -14278,6 +15378,7 @@ export const cards: Card[] = [
 		releases: { DH: 29, WA: 383 }
 	},
 	{
+		id: 'WA384',
 		name: 'Freedom Is Not Free',
 		cost: 3,
 		die: 3,
@@ -14290,6 +15391,7 @@ export const cards: Card[] = [
 		releases: { DH: 30, WA: 384 }
 	},
 	{
+		id: 'DH31',
 		name: 'That Which Does Not Kill Us...',
 		die: 3,
 		keywords: ['Strategy'],
@@ -14300,6 +15402,7 @@ export const cards: Card[] = [
 		releases: { DH: 31 }
 	},
 	{
+		id: 'DH32',
 		name: 'The Battle Goes to the Vigilant',
 		die: 2,
 		keywords: ['Strategy'],
@@ -14310,6 +15413,7 @@ export const cards: Card[] = [
 		releases: { DH: 32 }
 	},
 	{
+		id: 'WA385',
 		name: 'The Enemy Is Ours',
 		die: 3,
 		keywords: ['Strategy'],
@@ -14321,6 +15425,7 @@ export const cards: Card[] = [
 		releases: { DH: 33, WA: 385 }
 	},
 	{
+		id: 'WA387',
 		name: 'Valor and Vigilance',
 		cost: 2,
 		die: 2,
@@ -14329,10 +15434,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: If this unit loses the combat and this unit's combat roll is at least 2 more than the enemy unit's combat roll, this combat is a slaughter instead. Effects that would allow this unit to win the combat instead of being slaughtered have no effect.</p>",
+		text: "<p><b>WarCry</b>: If this unit loses the combat and this unit's combat roll is at least 2 more than the enemy unit's combat roll, this combat is a slaughter instead. Effects that would allow this unit to win the combat instead of being slaughtered have no effect.</p>",
 		releases: { DH: 34, WA: 387 }
 	},
 	{
+		id: 'WA388',
 		name: 'War Is Cruelty',
 		cost: 0,
 		die: 3,
@@ -14345,6 +15451,7 @@ export const cards: Card[] = [
 		releases: { DH: 35, WA: 388 }
 	},
 	{
+		id: 'DH37',
 		name: 'Grand Theogonist Kurt III',
 		cost: 2,
 		strength: 1,
@@ -14358,6 +15465,7 @@ export const cards: Card[] = [
 		releases: { DH: 37 }
 	},
 	{
+		id: 'DH40',
 		name: 'Axelbrand, Archelector of Taal',
 		cost: 4,
 		strength: 3,
@@ -14372,6 +15480,7 @@ export const cards: Card[] = [
 		releases: { DH: 40 }
 	},
 	{
+		id: 'DH41',
 		name: 'Knights of the Divine Sword',
 		cost: 4,
 		strength: 3,
@@ -14385,6 +15494,7 @@ export const cards: Card[] = [
 		releases: { DH: 41 }
 	},
 	{
+		id: 'DH42',
 		name: 'Martin, Elector of Stirland',
 		cost: 5,
 		strength: 4,
@@ -14399,6 +15509,7 @@ export const cards: Card[] = [
 		releases: { DH: 42 }
 	},
 	{
+		id: 'DH43',
 		name: "Martin's War Hounds",
 		cost: 3,
 		strength: 2,
@@ -14412,6 +15523,7 @@ export const cards: Card[] = [
 		releases: { DH: 43 }
 	},
 	{
+		id: 'DH44',
 		name: 'Ostermark Vampire Hunters',
 		cost: 4,
 		strength: 3,
@@ -14425,6 +15537,7 @@ export const cards: Card[] = [
 		releases: { DH: 44 }
 	},
 	{
+		id: 'DH45',
 		name: 'Priests of Taal',
 		cost: 3,
 		strength: 3,
@@ -14438,6 +15551,7 @@ export const cards: Card[] = [
 		releases: { DH: 45 }
 	},
 	{
+		id: 'DH46',
 		name: 'Stirland Crossbowmen of the Stake',
 		cost: 3,
 		strength: 2,
@@ -14451,6 +15565,7 @@ export const cards: Card[] = [
 		releases: { DH: 46 }
 	},
 	{
+		id: 'DH47',
 		name: 'Woeful Flagellants',
 		cost: 3,
 		strength: 3,
@@ -14464,6 +15579,7 @@ export const cards: Card[] = [
 		releases: { DH: 47 }
 	},
 	{
+		id: 'DH48',
 		name: 'Zealots of Taal',
 		cost: 4,
 		strength: 4,
@@ -14477,6 +15593,7 @@ export const cards: Card[] = [
 		releases: { DH: 48 }
 	},
 	{
+		id: 'LW1',
 		name: 'Anelia, Harridan of Slaanesh',
 		cost: 5,
 		strength: 5,
@@ -14492,6 +15609,7 @@ export const cards: Card[] = [
 		releases: { LW: 1 }
 	},
 	{
+		id: 'LW2',
 		name: 'Brotherhood of Carnage',
 		cost: 4,
 		strength: 4,
@@ -14506,6 +15624,7 @@ export const cards: Card[] = [
 		releases: { LW: 2 }
 	},
 	{
+		id: 'LW3',
 		name: 'Itmon, the Mountain That Breathes',
 		cost: 8,
 		strength: 7,
@@ -14521,6 +15640,7 @@ export const cards: Card[] = [
 		releases: { LW: 3 }
 	},
 	{
+		id: 'WA23',
 		name: "Styrkaar's Bearers of Enigma",
 		cost: 4,
 		strength: 3,
@@ -14535,6 +15655,7 @@ export const cards: Card[] = [
 		releases: { LW: 4, WA: 23 }
 	},
 	{
+		id: 'LW5',
 		name: "Styrkaar's Blissful Spawn",
 		cost: 2,
 		strength: 2,
@@ -14549,6 +15670,7 @@ export const cards: Card[] = [
 		releases: { LW: 5 }
 	},
 	{
+		id: 'LW6',
 		name: "Styrkaar's Blood Sisters",
 		cost: 4,
 		strength: 3,
@@ -14563,6 +15685,7 @@ export const cards: Card[] = [
 		releases: { LW: 6 }
 	},
 	{
+		id: 'WA24',
 		name: "Styrkaar's Chariot of Sisters",
 		cost: 4,
 		strength: 3,
@@ -14577,6 +15700,7 @@ export const cards: Card[] = [
 		releases: { LW: 7, WA: 24 }
 	},
 	{
+		id: 'LW8',
 		name: "Styrkaar's Daughters of Bloodlust",
 		cost: 4,
 		strength: 3,
@@ -14591,6 +15715,7 @@ export const cards: Card[] = [
 		releases: { LW: 8 }
 	},
 	{
+		id: 'WA27',
 		name: 'Xaphen Kell, Keeper of Secrets',
 		cost: 5,
 		strength: 5,
@@ -14606,6 +15731,7 @@ export const cards: Card[] = [
 		releases: { LW: 9, WA: 27 }
 	},
 	{
+		id: 'LW10',
 		name: "Ha'asek's Shadow Assassins",
 		cost: 4,
 		strength: 1,
@@ -14621,6 +15747,7 @@ export const cards: Card[] = [
 		releases: { LW: 10 }
 	},
 	{
+		id: 'WA45',
 		name: 'Lukhdror Fastdoom',
 		cost: 4,
 		strength: 3,
@@ -14635,6 +15762,7 @@ export const cards: Card[] = [
 		releases: { LW: 11, WA: 45 }
 	},
 	{
+		id: 'LW12',
 		name: 'Ryneys Sharpwing',
 		cost: 5,
 		strength: 3,
@@ -14649,6 +15777,7 @@ export const cards: Card[] = [
 		releases: { LW: 12 }
 	},
 	{
+		id: 'LW13',
 		name: 'The Black Hand of Twilight',
 		cost: 4,
 		strength: 4,
@@ -14663,6 +15792,7 @@ export const cards: Card[] = [
 		releases: { LW: 13 }
 	},
 	{
+		id: 'LW14',
 		name: 'The Black Sky of Twilight',
 		cost: 3,
 		strength: 0,
@@ -14677,6 +15807,7 @@ export const cards: Card[] = [
 		releases: { LW: 14 }
 	},
 	{
+		id: 'WA54',
 		name: 'The Dread Knights of Twilight',
 		cost: 4,
 		strength: 3,
@@ -14691,6 +15822,7 @@ export const cards: Card[] = [
 		releases: { LW: 15, WA: 54 }
 	},
 	{
+		id: 'WA55',
 		name: 'The Silent Brothers of Twilight',
 		cost: 3,
 		strength: 2,
@@ -14705,6 +15837,7 @@ export const cards: Card[] = [
 		releases: { LW: 16, WA: 55 }
 	},
 	{
+		id: 'LW17',
 		name: "Twilight's Mistresses of Murder",
 		cost: 4,
 		strength: 4,
@@ -14715,10 +15848,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Choose a number. Youre enemy may not play cards that have a printed tactic point cost of that number.</p>',
+		text: '<p><b>WarCry</b>: Choose a number. Youre enemy may not play cards that have a printed tactic point cost of that number.</p>',
 		releases: { LW: 17 }
 	},
 	{
+		id: 'WA57',
 		name: 'Yrleth Soaringvale',
 		cost: 5,
 		strength: 3,
@@ -14733,6 +15867,7 @@ export const cards: Card[] = [
 		releases: { LW: 18, WA: 57 }
 	},
 	{
+		id: 'LW19',
 		name: 'Gotti Skullcrusher',
 		cost: 3,
 		strength: 3,
@@ -14747,6 +15882,7 @@ export const cards: Card[] = [
 		releases: { LW: 19 }
 	},
 	{
+		id: 'WA66',
 		name: "Grubbi's High Boys",
 		cost: 3,
 		strength: 2,
@@ -14761,6 +15897,7 @@ export const cards: Card[] = [
 		releases: { LW: 20, WA: 66 }
 	},
 	{
+		id: 'LW21',
 		name: "Grubbi's Net Tossers",
 		cost: 2,
 		strength: 2,
@@ -14775,6 +15912,7 @@ export const cards: Card[] = [
 		releases: { LW: 21 }
 	},
 	{
+		id: 'LW22',
 		name: "Grubbi's Savage Riders",
 		cost: 3,
 		strength: 3,
@@ -14789,6 +15927,7 @@ export const cards: Card[] = [
 		releases: { LW: 22 }
 	},
 	{
+		id: 'WA68',
 		name: "Grubbi's Wolf Raiders",
 		cost: 4,
 		strength: 3,
@@ -14803,6 +15942,7 @@ export const cards: Card[] = [
 		releases: { LW: 23, WA: 68 }
 	},
 	{
+		id: 'LW24',
 		name: "Manmangler's Black Orcs",
 		cost: 3,
 		strength: 5,
@@ -14817,6 +15957,7 @@ export const cards: Card[] = [
 		releases: { LW: 24 }
 	},
 	{
+		id: 'WA79',
 		name: 'Ozzi Batchewer',
 		cost: 4,
 		strength: 3,
@@ -14827,10 +15968,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Scout</b>: 3</p><p> <b>Command</b>: Once per battle, attach a reaction card to this unit.</p><p><b>Reaction</b> Discard 1 card: When a <b>Reaction</b> attached to this unit could be played, play that <b>Reaction</b>, paying all costs. You may only use any one attached card once per trigger effect.</p>',
+		text: '<p><b>Scout</b>: 3</p><p><b>Command</b>: Once per battle, attach a reaction card to this unit.</p><p><b>Reaction</b> Discard 1 card: When a <b>Reaction</b> attached to this unit could be played, play that <b>Reaction</b>, paying all costs. You may only use any one attached card once per trigger effect.</p>',
 		releases: { LW: 25, WA: 79 }
 	},
 	{
+		id: 'WA80',
 		name: "Ozzi's Night Guard",
 		cost: 2,
 		strength: 2,
@@ -14841,10 +15983,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Scout</b>: 2</p><p> <b>WarCry</b>: The enemy unit may not play action cards with a die equal to or less than this unit\'s "<b>Scout</b>" level.</p>',
+		text: '<p><b>Scout</b>: 2</p><p><b>WarCry</b>: The enemy unit may not play action cards with a die equal to or less than this unit\'s "<b>Scout</b>" level.</p>',
 		releases: { LW: 26, WA: 80 }
 	},
 	{
+		id: 'LW27',
 		name: 'Rokki Blood Spitter',
 		cost: 3,
 		strength: 3,
@@ -14860,6 +16003,7 @@ export const cards: Card[] = [
 		releases: { LW: 27 }
 	},
 	{
+		id: 'WA102',
 		name: "Grunson's Marauders",
 		cost: 5,
 		strength: 5,
@@ -14875,6 +16019,7 @@ export const cards: Card[] = [
 		releases: { LW: 28, WA: 102 }
 	},
 	{
+		id: 'WA103',
 		name: "Voland's Venerators",
 		cost: 4,
 		strength: 4,
@@ -14889,6 +16034,7 @@ export const cards: Card[] = [
 		releases: { LW: 29, WA: 103 }
 	},
 	{
+		id: 'WA106',
 		name: 'Animosity',
 		cost: 0,
 		die: 3,
@@ -14901,6 +16047,7 @@ export const cards: Card[] = [
 		releases: { LW: 30, WA: 106 }
 	},
 	{
+		id: 'WA112',
 		name: 'Best Laid Plans',
 		cost: 5,
 		die: 3,
@@ -14913,6 +16060,7 @@ export const cards: Card[] = [
 		releases: { LW: 31, WA: 112 }
 	},
 	{
+		id: 'LW32',
 		name: 'Bitterness',
 		cost: 1,
 		die: 3,
@@ -14925,6 +16073,7 @@ export const cards: Card[] = [
 		releases: { LW: 32 }
 	},
 	{
+		id: 'LW33',
 		name: 'Blessings of Steel',
 		die: 2,
 		keywords: ['Event', 'Strategy'],
@@ -14936,6 +16085,7 @@ export const cards: Card[] = [
 		releases: { LW: 33 }
 	},
 	{
+		id: 'WA118',
 		name: 'Brilliant Intellect',
 		cost: 1,
 		die: 5,
@@ -14948,6 +16098,7 @@ export const cards: Card[] = [
 		releases: { LW: 34, WA: 118 }
 	},
 	{
+		id: 'LW35',
 		name: 'Cautious Advance',
 		cost: 2,
 		die: 3,
@@ -14960,6 +16111,7 @@ export const cards: Card[] = [
 		releases: { LW: 35 }
 	},
 	{
+		id: 'WA124',
 		name: 'Choosing a General',
 		die: 3,
 		keywords: [],
@@ -14967,10 +16119,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Commit one of your units: Attach this card to any one of your units. While attached this unit does not commit after attacking, but may not perform follow-up attacks.</p><p>Additionally, if your enemy passes after this unit completes an attack, the battle is over.You may not put this card into play if you have another copy of it in play.</p>',
+		text: '<p><b>Command</b> Commit one of your units: Attach this card to any one of your units. While attached this unit does not commit after attacking, but may not perform follow-up attacks.</p><p>Additionally, if your enemy passes after this unit completes an attack, the battle is over.You may not put this card into play if you have another copy of it in play.</p>',
 		releases: { LW: 36, WA: 124 }
 	},
 	{
+		id: 'LW37',
 		name: 'Command',
 		cost: 1,
 		die: 2,
@@ -14983,6 +16136,7 @@ export const cards: Card[] = [
 		releases: { LW: 37 }
 	},
 	{
+		id: 'LW38',
 		name: 'Confusion in Command',
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -14994,6 +16148,7 @@ export const cards: Card[] = [
 		releases: { LW: 38 }
 	},
 	{
+		id: 'LW39',
 		name: 'Countrymen Stand Together',
 		cost: 3,
 		die: 3,
@@ -15006,6 +16161,7 @@ export const cards: Card[] = [
 		releases: { LW: 39 }
 	},
 	{
+		id: 'WA130',
 		name: 'Crushing Tactics',
 		cost: 2,
 		die: 2,
@@ -15018,6 +16174,7 @@ export const cards: Card[] = [
 		releases: { LW: 40, WA: 130 }
 	},
 	{
+		id: 'LW41',
 		name: 'Cunning Tactics',
 		cost: 2,
 		die: 4,
@@ -15030,6 +16187,7 @@ export const cards: Card[] = [
 		releases: { LW: 41 }
 	},
 	{
+		id: 'LW42',
 		name: 'Darkness Falls',
 		die: 5,
 		keywords: [],
@@ -15037,10 +16195,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: If all of the enemy units are committed, the battle is over.</p>',
+		text: '<p><b>Command</b>: If all of the enemy units are committed, the battle is over.</p>',
 		releases: { LW: 42 }
 	},
 	{
+		id: 'WA133',
 		name: 'Deadly Games',
 		die: 3,
 		keywords: ['Event', 'Strategy'],
@@ -15052,6 +16211,7 @@ export const cards: Card[] = [
 		releases: { LW: 43, WA: 133 }
 	},
 	{
+		id: 'LW44',
 		name: 'Death Mark',
 		die: 3,
 		keywords: ['Event'],
@@ -15063,6 +16223,7 @@ export const cards: Card[] = [
 		releases: { LW: 44 }
 	},
 	{
+		id: 'WA135',
 		name: 'Death of a Hero',
 		die: 4,
 		keywords: ['Event'],
@@ -15074,6 +16235,7 @@ export const cards: Card[] = [
 		releases: { LW: 45, WA: 135 }
 	},
 	{
+		id: 'LW46',
 		name: 'Departing the Field of Battle',
 		die: 2,
 		keywords: [],
@@ -15081,10 +16243,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: "<p> <b>Command</b> Return all of an enemy player's cards removed from the game back to their deck: Only playable if all of your enemy's cards have been removed from the game.</p>",
+		text: "<p><b>Command</b> Return all of an enemy player's cards removed from the game back to their deck: Only playable if all of your enemy's cards have been removed from the game.</p>",
 		releases: { LW: 46 }
 	},
 	{
+		id: 'LW47',
 		name: 'Detestation',
 		cost: 3,
 		die: 3,
@@ -15097,6 +16260,7 @@ export const cards: Card[] = [
 		releases: { LW: 47 }
 	},
 	{
+		id: 'LW48',
 		name: 'Divine the Future',
 		die: 3,
 		keywords: ['Strategy'],
@@ -15108,6 +16272,7 @@ export const cards: Card[] = [
 		releases: { LW: 48 }
 	},
 	{
+		id: 'LW49',
 		name: 'Establishing Dominance',
 		cost: 1,
 		die: 2,
@@ -15120,6 +16285,7 @@ export const cards: Card[] = [
 		releases: { LW: 49 }
 	},
 	{
+		id: 'LW50',
 		name: 'Falsified Orders',
 		die: 4,
 		keywords: [],
@@ -15131,6 +16297,7 @@ export const cards: Card[] = [
 		releases: { LW: 50 }
 	},
 	{
+		id: 'WA153',
 		name: 'Fight as One',
 		cost: 2,
 		die: 4,
@@ -15143,6 +16310,7 @@ export const cards: Card[] = [
 		releases: { LW: 51, WA: 153 }
 	},
 	{
+		id: 'LW52',
 		name: 'Guarded Coffers',
 		die: 5,
 		keywords: ['Strategy'],
@@ -15154,6 +16322,7 @@ export const cards: Card[] = [
 		releases: { LW: 52 }
 	},
 	{
+		id: 'WA171',
 		name: 'Heavy Rains',
 		die: 4,
 		keywords: ['Event', 'Strategy'],
@@ -15165,6 +16334,7 @@ export const cards: Card[] = [
 		releases: { LW: 53, WA: 171 }
 	},
 	{
+		id: 'LW54',
 		name: 'Hide Your Strength',
 		cost: 1,
 		die: 2,
@@ -15173,10 +16343,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card your enemy played from their hand during this combat.</p>',
+		text: '<p><b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card your enemy played from their hand during this combat.</p>',
 		releases: { LW: 54 }
 	},
 	{
+		id: 'WA196',
 		name: 'Matter of Honor',
 		die: 4,
 		keywords: ['Strategy'],
@@ -15188,6 +16359,7 @@ export const cards: Card[] = [
 		releases: { LW: 55, WA: 196 }
 	},
 	{
+		id: 'LW56',
 		name: 'Might Wins the Skirmish',
 		die: 2,
 		keywords: ['Event'],
@@ -15199,6 +16371,7 @@ export const cards: Card[] = [
 		releases: { LW: 56 }
 	},
 	{
+		id: 'LW57',
 		name: 'Mirror Tactics',
 		die: 3,
 		keywords: ['Strategy'],
@@ -15210,6 +16383,7 @@ export const cards: Card[] = [
 		releases: { LW: 57 }
 	},
 	{
+		id: 'WA206',
 		name: 'Only One Shall Fall',
 		die: 3,
 		keywords: [],
@@ -15221,6 +16395,7 @@ export const cards: Card[] = [
 		releases: { LW: 58, WA: 206 }
 	},
 	{
+		id: 'LW59',
 		name: 'Overpower',
 		cost: 0,
 		die: 2,
@@ -15233,6 +16408,7 @@ export const cards: Card[] = [
 		releases: { LW: 59 }
 	},
 	{
+		id: 'WA214',
 		name: 'Point Blank Shot',
 		cost: 2,
 		die: 2,
@@ -15245,6 +16421,7 @@ export const cards: Card[] = [
 		releases: { LW: 60, WA: 214 }
 	},
 	{
+		id: 'WA215',
 		name: 'Possession',
 		die: 2,
 		keywords: ['Event'],
@@ -15256,6 +16433,7 @@ export const cards: Card[] = [
 		releases: { LW: 61, WA: 215 }
 	},
 	{
+		id: 'WA224',
 		name: 'Relent or We Both Die!',
 		die: 2,
 		keywords: ['Event'],
@@ -15267,6 +16445,7 @@ export const cards: Card[] = [
 		releases: { LW: 62, WA: 224 }
 	},
 	{
+		id: 'LW63',
 		name: 'Resourceful Management',
 		die: 4,
 		keywords: ['Strategy'],
@@ -15278,6 +16457,7 @@ export const cards: Card[] = [
 		releases: { LW: 63 }
 	},
 	{
+		id: 'LW64',
 		name: 'Restrained Power',
 		die: 4,
 		keywords: [],
@@ -15289,6 +16469,7 @@ export const cards: Card[] = [
 		releases: { LW: 64 }
 	},
 	{
+		id: 'WA229',
 		name: 'Rivalry',
 		cost: 2,
 		die: 3,
@@ -15301,6 +16482,7 @@ export const cards: Card[] = [
 		releases: { LW: 65, WA: 229 }
 	},
 	{
+		id: 'WA234',
 		name: 'Scheme with an Empty Castle',
 		die: 3,
 		keywords: [],
@@ -15312,6 +16494,7 @@ export const cards: Card[] = [
 		releases: { LW: 66, WA: 234 }
 	},
 	{
+		id: 'WA242',
 		name: 'Steal a Sheep in Passing',
 		die: 2,
 		keywords: [],
@@ -15323,6 +16506,7 @@ export const cards: Card[] = [
 		releases: { LW: 67, WA: 242 }
 	},
 	{
+		id: 'WA243',
 		name: 'Stomach for the Fight',
 		cost: 2,
 		die: 3,
@@ -15335,6 +16519,7 @@ export const cards: Card[] = [
 		releases: { LW: 68, WA: 243 }
 	},
 	{
+		id: 'WA252',
 		name: 'Sunrise',
 		die: 2,
 		keywords: ['Event'],
@@ -15346,6 +16531,7 @@ export const cards: Card[] = [
 		releases: { LW: 69, WA: 252 }
 	},
 	{
+		id: 'LW70',
 		name: 'Superior Strategies',
 		cost: 3,
 		die: 4,
@@ -15358,6 +16544,7 @@ export const cards: Card[] = [
 		releases: { LW: 70 }
 	},
 	{
+		id: 'WA254',
 		name: 'Surge of Power',
 		die: 2,
 		keywords: [],
@@ -15369,6 +16556,7 @@ export const cards: Card[] = [
 		releases: { LW: 71, WA: 254 }
 	},
 	{
+		id: 'LW72',
 		name: 'The Ties That Bind',
 		cost: 4,
 		die: 4,
@@ -15381,6 +16569,7 @@ export const cards: Card[] = [
 		releases: { LW: 72 }
 	},
 	{
+		id: 'LW73',
 		name: 'To the Last',
 		cost: 2,
 		die: 3,
@@ -15393,6 +16582,7 @@ export const cards: Card[] = [
 		releases: { LW: 73 }
 	},
 	{
+		id: 'WA270',
 		name: 'Unexpected Turn of Events',
 		cost: 1,
 		die: 3,
@@ -15405,6 +16595,7 @@ export const cards: Card[] = [
 		releases: { LW: 74, WA: 270 }
 	},
 	{
+		id: 'WA272',
 		name: 'Unity',
 		cost: 1,
 		die: 5,
@@ -15417,6 +16608,7 @@ export const cards: Card[] = [
 		releases: { LW: 75, WA: 272 }
 	},
 	{
+		id: 'LW76',
 		name: 'Victory Has a Price',
 		cost: 2,
 		die: 4,
@@ -15424,10 +16616,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p>You may have any number of this card in your deck.</p><p> <b>WarCry</b> Discard X copies of this card: This unit gets a strength bonus equal to X times X.</p>',
+		text: '<p>You may have any number of this card in your deck.</p><p><b>WarCry</b> Discard X copies of this card: This unit gets a strength bonus equal to X times X.</p>',
 		releases: { LW: 76 }
 	},
 	{
+		id: 'LW77',
 		name: "When It's All You Have",
 		cost: 1,
 		die: 2,
@@ -15436,10 +16629,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card you played during this combat.</p>',
+		text: '<p><b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card you played during this combat.</p>',
 		releases: { LW: 77 }
 	},
 	{
+		id: 'LW78',
 		name: 'When You Stand with Your Brother',
 		cost: 3,
 		die: 4,
@@ -15452,6 +16646,7 @@ export const cards: Card[] = [
 		releases: { LW: 78 }
 	},
 	{
+		id: 'LW79',
 		name: 'Winds of Attrition',
 		cost: 1,
 		die: 3,
@@ -15464,6 +16659,7 @@ export const cards: Card[] = [
 		releases: { LW: 79 }
 	},
 	{
+		id: 'LW80',
 		name: 'Winds of Destruction',
 		cost: 1,
 		die: 3,
@@ -15476,6 +16672,7 @@ export const cards: Card[] = [
 		releases: { LW: 80 }
 	},
 	{
+		id: 'LW81',
 		name: 'Winds of Destiny',
 		cost: 1,
 		die: 3,
@@ -15488,6 +16685,7 @@ export const cards: Card[] = [
 		releases: { LW: 81 }
 	},
 	{
+		id: 'LW82',
 		name: 'Winds of Domination',
 		cost: 1,
 		die: 3,
@@ -15500,6 +16698,7 @@ export const cards: Card[] = [
 		releases: { LW: 82 }
 	},
 	{
+		id: 'LW83',
 		name: 'Winds of Luck',
 		cost: 1,
 		die: 3,
@@ -15512,6 +16711,7 @@ export const cards: Card[] = [
 		releases: { LW: 83 }
 	},
 	{
+		id: 'LW84',
 		name: 'Winds of Power',
 		cost: 1,
 		die: 3,
@@ -15524,6 +16724,7 @@ export const cards: Card[] = [
 		releases: { LW: 84 }
 	},
 	{
+		id: 'LW85',
 		name: 'Winds of Salvation',
 		cost: 1,
 		die: 4,
@@ -15536,6 +16737,7 @@ export const cards: Card[] = [
 		releases: { LW: 85 }
 	},
 	{
+		id: 'LW86',
 		name: 'Winds of Suffering',
 		cost: 1,
 		die: 3,
@@ -15548,6 +16750,7 @@ export const cards: Card[] = [
 		releases: { LW: 86 }
 	},
 	{
+		id: 'LW87',
 		name: 'Winds of War',
 		cost: 2,
 		die: 4,
@@ -15560,6 +16763,7 @@ export const cards: Card[] = [
 		releases: { LW: 87 }
 	},
 	{
+		id: 'LW88',
 		name: 'Ancestral Tablet',
 		cost: 1,
 		tacticPoints: 1,
@@ -15572,6 +16776,7 @@ export const cards: Card[] = [
 		releases: { LW: 88 }
 	},
 	{
+		id: 'LW89',
 		name: 'Cavalry Banner',
 		cost: 2,
 		keywords: ['Standard'],
@@ -15583,6 +16788,7 @@ export const cards: Card[] = [
 		releases: { LW: 89 }
 	},
 	{
+		id: 'LW90',
 		name: 'Enchanted Halberd',
 		cost: 1,
 		keywords: ['Weapon'],
@@ -15594,6 +16800,7 @@ export const cards: Card[] = [
 		releases: { LW: 90 }
 	},
 	{
+		id: 'LW91',
 		name: "General's Standard",
 		cost: 2,
 		tacticPoints: 1,
@@ -15606,6 +16813,7 @@ export const cards: Card[] = [
 		releases: { LW: 91 }
 	},
 	{
+		id: 'LW92',
 		name: 'Shadow Guide',
 		cost: 3,
 		strength: 2,
@@ -15619,6 +16827,7 @@ export const cards: Card[] = [
 		releases: { LW: 92 }
 	},
 	{
+		id: 'LW93',
 		name: 'The Seventh Spear of the Fallen',
 		cost: 2,
 		unique: true,
@@ -15631,6 +16840,7 @@ export const cards: Card[] = [
 		releases: { LW: 93 }
 	},
 	{
+		id: 'WA294',
 		name: "Alrik's Hunting Rangers",
 		cost: 3,
 		strength: 3,
@@ -15641,10 +16851,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: "<p><b>Scout</b>: 2</p><p> <b>Command</b>: If all of your enemy's units are committed, the battle ends.</p>",
+		text: "<p><b>Scout</b>: 2</p><p><b>Command</b>: If all of your enemy's units are committed, the battle ends.</p>",
 		releases: { LW: 94, WA: 294 }
 	},
 	{
+		id: 'LW95',
 		name: "Barak's Iron Wall",
 		cost: 5,
 		strength: 4,
@@ -15659,6 +16870,7 @@ export const cards: Card[] = [
 		releases: { LW: 95 }
 	},
 	{
+		id: 'LW96',
 		name: "Barak's Pipers",
 		cost: 3,
 		strength: 1,
@@ -15669,10 +16881,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Ranged Attack</b>: 7</p><p> <b>Command</b> Discard 3 cards: Rally this unit. Only playable if this unit performed a ranged attack this battle. If your enemy passes as their next action, the battle is over.</p>',
+		text: '<p><b>Ranged Attack</b>: 7</p><p><b>Command</b> Discard 3 cards: Rally this unit. Only playable if this unit performed a ranged attack this battle. If your enemy passes as their next action, the battle is over.</p>',
 		releases: { LW: 96 }
 	},
 	{
+		id: 'WA298',
 		name: "Ganulf's Crack Shots",
 		cost: 4,
 		strength: 3,
@@ -15687,6 +16900,7 @@ export const cards: Card[] = [
 		releases: { LW: 97, WA: 298 }
 	},
 	{
+		id: 'WA299',
 		name: "Ganulf's Forest Walkers",
 		cost: 5,
 		strength: 4,
@@ -15701,6 +16915,7 @@ export const cards: Card[] = [
 		releases: { LW: 98, WA: 299 }
 	},
 	{
+		id: 'WA300',
 		name: "Ganulf's Ironworkers",
 		cost: 3,
 		strength: 2,
@@ -15715,6 +16930,7 @@ export const cards: Card[] = [
 		releases: { LW: 99, WA: 300 }
 	},
 	{
+		id: 'WA304',
 		name: "Grimjaw's Flying Hammers",
 		cost: 5,
 		strength: 3,
@@ -15729,6 +16945,7 @@ export const cards: Card[] = [
 		releases: { LW: 100, WA: 304 }
 	},
 	{
+		id: 'LW101',
 		name: 'Hargum Ganulf',
 		cost: 5,
 		strength: 5,
@@ -15744,6 +16961,7 @@ export const cards: Card[] = [
 		releases: { LW: 101 }
 	},
 	{
+		id: 'LW102',
 		name: 'Logtok Gimragson',
 		cost: 4,
 		strength: 4,
@@ -15759,6 +16977,7 @@ export const cards: Card[] = [
 		releases: { LW: 102 }
 	},
 	{
+		id: 'WA324',
 		name: "Barthelm's Harriers",
 		cost: 3,
 		strength: 3,
@@ -15773,6 +16992,7 @@ export const cards: Card[] = [
 		releases: { LW: 103, WA: 324 }
 	},
 	{
+		id: 'LW104',
 		name: 'Carroburg Swordguard',
 		cost: 4,
 		strength: 3,
@@ -15783,10 +17003,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Scout</b>: 2</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to its "<b>Scout</b>" level.</p>',
+		text: '<p><b>Scout</b>: 2</p><p><b>WarCry</b>: This unit gets a strength bonus equal to its "<b>Scout</b>" level.</p>',
 		releases: { LW: 104 }
 	},
 	{
+		id: 'WA327',
 		name: "Fandelhoch's Huntsmen",
 		cost: 3,
 		strength: 3,
@@ -15801,6 +17022,7 @@ export const cards: Card[] = [
 		releases: { LW: 105, WA: 327 }
 	},
 	{
+		id: 'LW106',
 		name: "Gausser's Foresters",
 		cost: 4,
 		strength: 4,
@@ -15811,10 +17033,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Scout</b>: 3</p><p><b>Ranged Attack</b>: 6</p><p> <b>WarCry</b>: This unit gets +1 strength or +1 ranged attack for each of your other "<b>Scout</b>" units.</p>',
+		text: '<p><b>Scout</b>: 3</p><p><b>Ranged Attack</b>: 6</p><p><b>WarCry</b>: This unit gets +1 strength or +1 ranged attack for each of your other "<b>Scout</b>" units.</p>',
 		releases: { LW: 106 }
 	},
 	{
+		id: 'WA328',
 		name: "Gausser's Lead Breather",
 		cost: 4,
 		strength: 0,
@@ -15825,10 +17048,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p><b>Ranged Attack</b>: 8</p><p> <b>Command</b> Commit: Target one enemy unit in the battle line and up to one enemy unit in the reserves. Roll for the unit in the battle line and then roll for the unit in the reserves.</p><p>If a target unit's strength plus the roll is less than this unit's <b>Ranged Attack</b>, the target unit is committed.</p>",
+		text: "<p><b>Ranged Attack</b>: 8</p><p><b>Command</b> Commit: Target one enemy unit in the battle line and up to one enemy unit in the reserves. Roll for the unit in the battle line and then roll for the unit in the reserves.</p><p>If a target unit's strength plus the roll is less than this unit's <b>Ranged Attack</b>, the target unit is committed.</p>",
 		releases: { LW: 107, WA: 328 }
 	},
 	{
+		id: 'LW108',
 		name: 'Gunter Braunschaft',
 		cost: 5,
 		strength: 4,
@@ -15843,6 +17067,7 @@ export const cards: Card[] = [
 		releases: { LW: 108 }
 	},
 	{
+		id: 'LW109',
 		name: 'Harman Barthelm',
 		cost: 5,
 		strength: 4,
@@ -15858,6 +17083,7 @@ export const cards: Card[] = [
 		releases: { LW: 109 }
 	},
 	{
+		id: 'WA341',
 		name: 'Old Reliable',
 		cost: 5,
 		strength: 5,
@@ -15873,6 +17099,7 @@ export const cards: Card[] = [
 		releases: { LW: 110, WA: 341 }
 	},
 	{
+		id: 'WA348',
 		name: "Theodric's Sharp Shooters",
 		cost: 3,
 		strength: 3,
@@ -15887,6 +17114,7 @@ export const cards: Card[] = [
 		releases: { LW: 111, WA: 348 }
 	},
 	{
+		id: 'WA359',
 		name: 'Bearers of the Sacred Flame',
 		cost: 4,
 		strength: 3,
@@ -15901,6 +17129,7 @@ export const cards: Card[] = [
 		releases: { LW: 112, WA: 359 }
 	},
 	{
+		id: 'WA367',
 		name: "Korrim's Grey Avengers",
 		cost: 4,
 		strength: 3,
@@ -15915,6 +17144,7 @@ export const cards: Card[] = [
 		releases: { LW: 113, WA: 367 }
 	},
 	{
+		id: 'WA369',
 		name: 'Lord Korrim Swifteagle',
 		cost: 5,
 		strength: 4,
@@ -15930,6 +17160,7 @@ export const cards: Card[] = [
 		releases: { LW: 114, WA: 369 }
 	},
 	{
+		id: 'LW115',
 		name: "Luril's Seafarers",
 		cost: 3,
 		strength: 0,
@@ -15944,6 +17175,7 @@ export const cards: Card[] = [
 		releases: { LW: 115 }
 	},
 	{
+		id: 'LW116',
 		name: 'Spears of the Fallen Tree',
 		cost: 4,
 		strength: 3,
@@ -15958,6 +17190,7 @@ export const cards: Card[] = [
 		releases: { LW: 116 }
 	},
 	{
+		id: 'LW117',
 		name: 'Talaefanil Peacebringer',
 		cost: 5,
 		strength: 4,
@@ -15972,6 +17205,7 @@ export const cards: Card[] = [
 		releases: { LW: 117 }
 	},
 	{
+		id: 'LW118',
 		name: 'Tormeclis Keensight',
 		cost: 3,
 		strength: 2,
@@ -15986,6 +17220,7 @@ export const cards: Card[] = [
 		releases: { LW: 118 }
 	},
 	{
+		id: 'WA374',
 		name: 'Warriors of the Fallen Tree',
 		cost: 4,
 		strength: 4,
@@ -15996,10 +17231,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Ranged Attack</b>: 4</p><p> <b>WarCry</b>: Your enemy discards their hand and draws the same number of cards.</p><p><b>Support WarCry</b>: Target unit\'s "<b>Scout</b>" level is reduced to 0.</p>',
+		text: '<p><b>Ranged Attack</b>: 4</p><p><b>WarCry</b>: Your enemy discards their hand and draws the same number of cards.</p><p><b>Support WarCry</b>: Target unit\'s "<b>Scout</b>" level is reduced to 0.</p>',
 		releases: { LW: 119, WA: 374 }
 	},
 	{
+		id: 'LW120',
 		name: "Whitestar's Guardians (BD)",
 		cost: 5,
 		strength: 5,
@@ -16014,6 +17250,7 @@ export const cards: Card[] = [
 		releases: { LW: 120 }
 	},
 	{
+		id: 'PW1',
 		name: 'Asavar Kul, the Anointed',
 		cost: 8,
 		strength: 6,
@@ -16028,6 +17265,7 @@ export const cards: Card[] = [
 		releases: { PW: 1 }
 	},
 	{
+		id: 'PW2',
 		name: 'Hotek, Weaponsmith of Vaul',
 		cost: 4,
 		strength: 4,
@@ -16042,6 +17280,7 @@ export const cards: Card[] = [
 		releases: { PW: 2 }
 	},
 	{
+		id: 'PW3',
 		name: 'Grom the Paunch of Misty Mountain',
 		cost: 7,
 		strength: 4,
@@ -16056,6 +17295,7 @@ export const cards: Card[] = [
 		releases: { PW: 3 }
 	},
 	{
+		id: 'PW4',
 		name: 'Snorri Whitebeard of Karaz-A-Karak',
 		cost: 7,
 		strength: 5,
@@ -16066,10 +17306,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p> <b>Command</b> Commit: One by one, attach the top card of your deck to each of your Dwarf units. Those units have "<b>Victory</b>: +X". X equals the die of the attached card. While this unit remains in play, your units may not declare attacks. Discard all cards attached this way if this unit leaves play or after battle resolution. Only playable as your first command.</p>',
+		text: '<p><b>Command</b> Commit: One by one, attach the top card of your deck to each of your Dwarf units. Those units have "<b>Victory</b>: +X". X equals the die of the attached card. While this unit remains in play, your units may not declare attacks. Discard all cards attached this way if this unit leaves play or after battle resolution. Only playable as your first command.</p>',
 		releases: { PW: 4 }
 	},
 	{
+		id: 'PW5',
 		name: 'Magnus the Pious, Bane of Chaos',
 		cost: 9,
 		strength: 6,
@@ -16084,6 +17325,7 @@ export const cards: Card[] = [
 		releases: { PW: 5 }
 	},
 	{
+		id: 'PW6',
 		name: 'Tethlis the Slayer',
 		cost: 6,
 		strength: 5,
@@ -16098,6 +17340,7 @@ export const cards: Card[] = [
 		releases: { PW: 6 }
 	},
 	{
+		id: 'PW1',
 		name: 'WarCry',
 		cost: 3,
 		die: 5,
@@ -16105,10 +17348,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: If you win this combat, draw 3 cards.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat, draw 3 cards.</p>',
 		releases: { PW: 1 }
 	},
 	{
+		id: 'PW2',
 		name: 'Gherin Azyrneth',
 		cost: 5,
 		strength: 4,
@@ -16118,10 +17362,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b> Destroy this unit: Destroy the enemy unit. Only usable while attacking.</p>',
+		text: '<p><b>WarCry</b> Destroy this unit: Destroy the enemy unit. Only usable while attacking.</p>',
 		releases: { PW: 2 }
 	},
 	{
+		id: 'PW3',
 		name: 'The Twilight Coven',
 		cost: 4,
 		strength: 4,
@@ -16131,10 +17376,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b> Discard your hand: When this combat ends, the result is a slaughter.</p>',
+		text: '<p><b>WarCry</b> Discard your hand: When this combat ends, the result is a slaughter.</p>',
 		releases: { PW: 3 }
 	},
 	{
+		id: 'PW4',
 		name: "Gribbit's Wildboyz",
 		cost: 3,
 		strength: 0,
@@ -16144,10 +17390,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b>: This unit gets +1 strength for each card in your hand.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +1 strength for each card in your hand.</p>',
 		releases: { PW: 4 }
 	},
 	{
+		id: 'PW5',
 		name: 'Survey the Battlefield',
 		die: 4,
 		keywords: [],
@@ -16158,6 +17405,7 @@ export const cards: Card[] = [
 		releases: { PW: 5 }
 	},
 	{
+		id: 'PW6',
 		name: 'Blade of Soul Stealing',
 		cost: 1,
 		keywords: ['Weapon'],
@@ -16169,6 +17417,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'PW7',
 		name: 'The Dragonhelm',
 		cost: 1,
 		unique: true,
@@ -16176,10 +17425,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
-		text: '<p> <b>WarCry</b>: Discard the top card of your action deck until you discard a playable combat tactic or run out of cards. Play that card for free.</p>',
+		text: '<p><b>WarCry</b>: Discard the top card of your action deck until you discard a playable combat tactic or run out of cards. Play that card for free.</p>',
 		releases: { PW: 7 }
 	},
 	{
+		id: 'PW8',
 		name: 'Aranauch the Fangheart',
 		cost: 6,
 		strength: 4,
@@ -16194,6 +17444,7 @@ export const cards: Card[] = [
 		releases: { PW: 8 }
 	},
 	{
+		id: 'PW9',
 		name: "Bel-Aenor's Grey Kindred",
 		cost: 3,
 		strength: 3,
@@ -16208,6 +17459,7 @@ export const cards: Card[] = [
 		releases: { PW: 9 }
 	},
 	{
+		id: 'PW10',
 		name: 'The White Dwarf',
 		cost: 1,
 		tacticPoints: 2,
@@ -16220,6 +17472,7 @@ export const cards: Card[] = [
 		releases: { PW: 10 }
 	},
 	{
+		id: 'PW11',
 		name: 'Gotrek and Felix',
 		cost: 5,
 		strength: 2,
@@ -16230,10 +17483,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p>This unit cannot be blocked.</p><p> <b>WarCry</b> this unit gets +4 strength. Only playable while this unit is in combat with the enemy unit with the highest strength.</p>',
+		text: '<p>This unit cannot be blocked.</p><p><b>WarCry</b> this unit gets +4 strength. Only playable while this unit is in combat with the enemy unit with the highest strength.</p>',
 		releases: { PW: 11 }
 	},
 	{
+		id: 'PW12',
 		name: "Snorri's Stormshooters",
 		cost: 4,
 		strength: 3,
@@ -16247,6 +17501,7 @@ export const cards: Card[] = [
 		releases: { PW: 12 }
 	},
 	{
+		id: 'PW13',
 		name: 'Knights of the White Wolf',
 		cost: 5,
 		strength: 5,
@@ -16260,6 +17515,7 @@ export const cards: Card[] = [
 		releases: { PW: 13 }
 	},
 	{
+		id: 'PW14',
 		name: "Evaenarion's Silver Company",
 		cost: 3,
 		strength: 3,
@@ -16273,6 +17529,7 @@ export const cards: Card[] = [
 		releases: { PW: 14 }
 	},
 	{
+		id: 'PW15',
 		name: 'WM',
 		cost: 1,
 		die: 5,
@@ -16280,10 +17537,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: You get 3 spell points.</p>',
+		text: '<p><b>WarCry</b>: You get 3 spell points.</p>',
 		releases: { PW: 15 }
 	},
 	{
+		id: 'PW16',
 		name: 'Fires of Change',
 		cost: 3,
 		die: 1,
@@ -16295,6 +17553,7 @@ export const cards: Card[] = [
 		releases: { PW: 16 }
 	},
 	{
+		id: 'PW17',
 		name: 'Doom Bolt',
 		cost: 2,
 		die: 2,
@@ -16306,6 +17565,7 @@ export const cards: Card[] = [
 		releases: { PW: 17 }
 	},
 	{
+		id: 'PW18',
 		name: 'Foot of Gork',
 		die: 3,
 		keywords: ['Orc'],
@@ -16316,6 +17576,7 @@ export const cards: Card[] = [
 		releases: { PW: 18 }
 	},
 	{
+		id: 'PW19',
 		name: 'Rune of Adamant',
 		cost: 2,
 		die: 3,
@@ -16327,6 +17588,7 @@ export const cards: Card[] = [
 		releases: { PW: 19 }
 	},
 	{
+		id: 'PW20',
 		name: "Gelt's Golden Glyph",
 		cost: 3,
 		die: 1,
@@ -16338,6 +17600,7 @@ export const cards: Card[] = [
 		releases: { PW: 20 }
 	},
 	{
+		id: 'PW21',
 		name: 'Flames of the Phoenix',
 		cost: 1,
 		die: 3,
@@ -16349,6 +17612,7 @@ export const cards: Card[] = [
 		releases: { PW: 21 }
 	},
 	{
+		id: 'PW22',
 		name: 'SD',
 		cost: 2,
 		die: 3,
@@ -16360,6 +17624,7 @@ export const cards: Card[] = [
 		releases: { PW: 22 }
 	},
 	{
+		id: 'PW23',
 		name: "Azyrneth's Chosen",
 		cost: 6,
 		strength: 4,
@@ -16369,10 +17634,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for each of your other daemon units.</p>',
+		text: '<p><b>Terror</b>: 1</p><p><b>WarCry</b>: This unit gets +1 strength for each of your other daemon units.</p>',
 		releases: { PW: 23 }
 	},
 	{
+		id: 'PW24',
 		name: 'Heralds of Twilight',
 		cost: 5,
 		strength: 4,
@@ -16382,10 +17648,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b>: Your enemy discards 2 cards.</p>',
+		text: '<p><b>WarCry</b>: Your enemy discards 2 cards.</p>',
 		releases: { PW: 24 }
 	},
 	{
+		id: 'PW25',
 		name: "Bogrot's Savage 'Uns",
 		cost: 5,
 		strength: 5,
@@ -16395,10 +17662,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b>: If the enemy unit has strength 3 or less, this unit gets +3 strength.</p>',
+		text: '<p><b>WarCry</b>: If the enemy unit has strength 3 or less, this unit gets +3 strength.</p>',
 		releases: { PW: 25 }
 	},
 	{
+		id: 'PW26',
 		name: 'Stone Lords of Karak-Norn',
 		cost: 5,
 		strength: 5,
@@ -16412,6 +17680,7 @@ export const cards: Card[] = [
 		releases: { PW: 26 }
 	},
 	{
+		id: 'PW27',
 		name: "Reinhold's Middenheimers",
 		cost: 4,
 		strength: 4,
@@ -16425,6 +17694,7 @@ export const cards: Card[] = [
 		releases: { PW: 27 }
 	},
 	{
+		id: 'PW28',
 		name: "Evaenarion's Silver Blades",
 		cost: 6,
 		strength: 6,
@@ -16434,10 +17704,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b>: Draw 1 card.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +2 tactic points.</p>',
+		text: '<p><b>WarCry</b>: Draw 1 card.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +2 tactic points.</p>',
 		releases: { PW: 28 }
 	},
 	{
+		id: 'PW29',
 		name: "Shagroth's Gors",
 		cost: 4,
 		strength: 5,
@@ -16451,6 +17722,7 @@ export const cards: Card[] = [
 		releases: { PW: 29 }
 	},
 	{
+		id: 'PW30',
 		name: "Houton Red's Mercenaries",
 		cost: 4,
 		strength: 5,
@@ -16464,6 +17736,7 @@ export const cards: Card[] = [
 		releases: { PW: 30 }
 	},
 	{
+		id: 'PW31',
 		name: 'Lord Xili-Quncani',
 		cost: 4,
 		strength: 3,
@@ -16478,6 +17751,7 @@ export const cards: Card[] = [
 		releases: { PW: 31 }
 	},
 	{
+		id: 'PW32',
 		name: 'Decisive Maneuver',
 		cost: 0,
 		die: 5,
@@ -16489,6 +17763,7 @@ export const cards: Card[] = [
 		releases: { PW: 32 }
 	},
 	{
+		id: 'PW33',
 		name: 'Defend Against the Siege',
 		die: 3,
 		keywords: [],
@@ -16499,6 +17774,7 @@ export const cards: Card[] = [
 		releases: { PW: 33 }
 	},
 	{
+		id: 'PW34',
 		name: 'From the Hands of Defeat...',
 		cost: 3,
 		die: 1,
@@ -16510,6 +17786,7 @@ export const cards: Card[] = [
 		releases: { PW: 34 }
 	},
 	{
+		id: 'PW35',
 		name: 'Blade of the Assassin',
 		cost: 3,
 		die: 3,
@@ -16521,6 +17798,7 @@ export const cards: Card[] = [
 		releases: { PW: 35 }
 	},
 	{
+		id: 'PW36',
 		name: 'Chaos Mutation',
 		cost: 3,
 		die: 1,
@@ -16528,10 +17806,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: This Chaos unit gets +4 strength and "<b>Terror</b>: 2".</p>',
+		text: '<p><b>WarCry</b>: This Chaos unit gets +4 strength and "<b>Terror</b>: 2".</p>',
 		releases: { PW: 36 }
 	},
 	{
+		id: 'PW37',
 		name: 'Might of the Orc Horde',
 		cost: 2,
 		die: 2,
@@ -16539,10 +17818,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: If you win this combat rout the enemy unit. Only playable by an Orc unit.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat rout the enemy unit. Only playable by an Orc unit.</p>',
 		releases: { PW: 37 }
 	},
 	{
+		id: 'PW38',
 		name: 'Rune of Fortitude',
 		cost: 1,
 		die: 3,
@@ -16554,6 +17834,7 @@ export const cards: Card[] = [
 		releases: { PW: 38 }
 	},
 	{
+		id: 'PW39',
 		name: "Gausser's Maneuver",
 		cost: 1,
 		die: 2,
@@ -16561,10 +17842,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Tactic',
-		text: "<p> <b>WarCry</b>: Your units' support tactics do not require them to commit. Only playable by an Empire unit.</p>",
+		text: "<p><b>WarCry</b>: Your units' support tactics do not require them to commit. Only playable by an Empire unit.</p>",
 		releases: { PW: 39 }
 	},
 	{
+		id: 'PW40',
 		name: 'Perfect Timing',
 		cost: 1,
 		die: 3,
@@ -16576,6 +17858,7 @@ export const cards: Card[] = [
 		releases: { PW: 40 }
 	},
 	{
+		id: 'PW41',
 		name: 'DW',
 		cost: 2,
 		die: 3,
@@ -16587,6 +17870,7 @@ export const cards: Card[] = [
 		releases: { PW: 41 }
 	},
 	{
+		id: 'PW43',
 		name: "Melkior's Warband",
 		cost: 4,
 		strength: 4,
@@ -16601,6 +17885,7 @@ export const cards: Card[] = [
 		releases: { PW: 43 }
 	},
 	{
+		id: 'PW44',
 		name: "Dhargethen's Bloodkith",
 		cost: 4,
 		strength: 4,
@@ -16611,10 +17896,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p>When you muster this unit, search your deck for Naetharion Dhargethen and add it to your hand.</p><p> <b>WarCry</b>: If this combat ends in a slaughter, this unit wins instead.</p>',
+		text: '<p>When you muster this unit, search your deck for Naetharion Dhargethen and add it to your hand.</p><p><b>WarCry</b>: If this combat ends in a slaughter, this unit wins instead.</p>',
 		releases: { PW: 44 }
 	},
 	{
+		id: 'PW45',
 		name: "Headsplitter's Big 'Uns",
 		cost: 4,
 		strength: 4,
@@ -16625,10 +17911,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p>When you muster this unit search your deck for Big Boss Ghulgar Headsplitter and ad it to your hand.</p><p> <b>WarCry</b>: This unit gets +2 strength. Not playable during a follow-up attack.</p>',
+		text: '<p>When you muster this unit search your deck for Big Boss Ghulgar Headsplitter and ad it to your hand.</p><p><b>WarCry</b>: This unit gets +2 strength. Not playable during a follow-up attack.</p>',
 		releases: { PW: 45 }
 	},
 	{
+		id: 'PW46',
 		name: "Skriskrivet's Jezzails",
 		cost: 4,
 		strength: 3,
@@ -16642,6 +17929,7 @@ export const cards: Card[] = [
 		releases: { PW: 46 }
 	},
 	{
+		id: 'PW47',
 		name: "Skriskrivet's Skyre Globethrowers",
 		cost: 3,
 		strength: 2,
@@ -16655,6 +17943,7 @@ export const cards: Card[] = [
 		releases: { PW: 47 }
 	},
 	{
+		id: 'PW48',
 		name: 'Gaston Balduhild',
 		cost: 4,
 		strength: 3,
@@ -16669,6 +17958,7 @@ export const cards: Card[] = [
 		releases: { PW: 48 }
 	},
 	{
+		id: 'PW49',
 		name: "Sigigard's Grail Knights",
 		cost: 6,
 		strength: 4,
@@ -16679,10 +17969,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: "<p><b>Faith</b>: 2</p><p> <b>WarCry</b>: This unit gets +1 strength for each of it's attachments if it passes a leadership test.</p>",
+		text: "<p><b>Faith</b>: 2</p><p><b>WarCry</b>: This unit gets +1 strength for each of it's attachments if it passes a leadership test.</p>",
 		releases: { PW: 49 }
 	},
 	{
+		id: 'PW50',
 		name: "Grimjaw's Clanbrothers",
 		cost: 4,
 		strength: 4,
@@ -16693,10 +17984,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p>When you muster this unit, search your deck for Barak Grimjaw and add it to your hand.</p><p> <b>WarCry</b>: This unit gets +1 strength for each attachment on the enemy unit.</p>',
+		text: '<p>When you muster this unit, search your deck for Barak Grimjaw and add it to your hand.</p><p><b>WarCry</b>: This unit gets +1 strength for each attachment on the enemy unit.</p>',
 		releases: { PW: 50 }
 	},
 	{
+		id: 'PW51',
 		name: "Riemann's Elites",
 		cost: 4,
 		strength: 4,
@@ -16707,10 +17999,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p>When you muster this unit, search your deck for Captain Karl Riemann and add it to your hand.</p><p> <b>WarCry</b>: Look at the top 4 cards of your action deck and replace them in any order.</p>',
+		text: '<p>When you muster this unit, search your deck for Captain Karl Riemann and add it to your hand.</p><p><b>WarCry</b>: Look at the top 4 cards of your action deck and replace them in any order.</p>',
 		releases: { PW: 51 }
 	},
 	{
+		id: 'PW52',
 		name: "Evaenarion's Companions",
 		cost: 4,
 		strength: 4,
@@ -16721,10 +18014,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p>When you muster this unit, search your deck for Rylanus Evaenarion and add it to your hand.</p><p> <b>WarCry</b>: This unit gets +1 strength for each of your strategy cards.</p>',
+		text: '<p>When you muster this unit, search your deck for Rylanus Evaenarion and add it to your hand.</p><p><b>WarCry</b>: This unit gets +1 strength for each of your strategy cards.</p>',
 		releases: { PW: 52 }
 	},
 	{
+		id: 'PW53',
 		name: 'Saauthrilast',
 		cost: 5,
 		strength: 4,
@@ -16735,10 +18029,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: The enemy unit must pass a leadership test. If they fail, they may not play combat tactic cards or abilities during this combat.</p>',
+		text: '<p><b>Terror</b>: 1</p><p><b>WarCry</b>: The enemy unit must pass a leadership test. If they fail, they may not play combat tactic cards or abilities during this combat.</p>',
 		releases: { PW: 53 }
 	},
 	{
+		id: 'PW54',
 		name: 'Dauntless Reckoning',
 		cost: 1,
 		die: 3,
@@ -16746,10 +18041,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: If you win this combat, destroy all units that played support tactics on the combat.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat, destroy all units that played support tactics on the combat.</p>',
 		releases: { PW: 54 }
 	},
 	{
+		id: 'PW55',
 		name: 'PG',
 		cost: 1,
 		die: 1,
@@ -16757,10 +18053,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: Double all bonuses this unit receives this combat.</p><p> <b>WarCry</b>: Halve all bonuses the enemy receives this combat, rounding down.</p>',
+		text: '<p><b>WarCry</b>: Double all bonuses this unit receives this combat.</p><p><b>WarCry</b>: Halve all bonuses the enemy receives this combat, rounding down.</p>',
 		releases: { PW: 55 }
 	},
 	{
+		id: 'PW56',
 		name: 'Baron Porthos the Outcast',
 		cost: 0,
 		tacticPoints: 1,
@@ -16773,6 +18070,7 @@ export const cards: Card[] = [
 		releases: { PW: 56 }
 	},
 	{
+		id: 'PW57',
 		name: 'Blade of the Norn Sword',
 		cost: 1,
 		leadership: 2,
@@ -16785,6 +18083,7 @@ export const cards: Card[] = [
 		releases: { PW: 57 }
 	},
 	{
+		id: 'PW58',
 		name: 'Kyral-Tor, the Norn Sword',
 		cost: 1,
 		strength: 1,
@@ -16797,6 +18096,7 @@ export const cards: Card[] = [
 		releases: { PW: 58 }
 	},
 	{
+		id: 'PW59',
 		name: 'Shard of the Norn Sword',
 		cost: 1,
 		unique: true,
@@ -16808,6 +18108,7 @@ export const cards: Card[] = [
 		releases: { PW: 59 }
 	},
 	{
+		id: 'PW60',
 		name: 'Mage Gerhart Brennend',
 		cost: 5,
 		strength: 4,
@@ -16822,6 +18123,7 @@ export const cards: Card[] = [
 		releases: { PW: 60 }
 	},
 	{
+		id: 'PW61',
 		name: "Alya's Thorn Patrol",
 		cost: 4,
 		strength: 2,
@@ -16836,6 +18138,7 @@ export const cards: Card[] = [
 		releases: { PW: 61 }
 	},
 	{
+		id: 'PW62',
 		name: 'Liche Priest Amuntahk',
 		cost: 4,
 		strength: 1,
@@ -16849,6 +18152,7 @@ export const cards: Card[] = [
 		releases: { PW: 62 }
 	},
 	{
+		id: 'PW63',
 		name: "Nekhesh's Eternity Guard",
 		cost: 4,
 		strength: 4,
@@ -16862,6 +18166,7 @@ export const cards: Card[] = [
 		releases: { PW: 63 }
 	},
 	{
+		id: 'PW64',
 		name: 'Deathmaster Snikch',
 		cost: 7,
 		strength: 0,
@@ -16872,10 +18177,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: "<p> <b>Command</b>: Discard any number of cards from your hand: Once per battle, destroy a committed unit with a gold cost less than the discarded card's total dice.</p>",
+		text: "<p><b>Command</b>: Discard any number of cards from your hand: Once per battle, destroy a committed unit with a gold cost less than the discarded card's total dice.</p>",
 		releases: { PW: 64 }
 	},
 	{
+		id: 'PW65',
 		name: 'Tomb Guard of Nekhesh',
 		cost: 4,
 		strength: 4,
@@ -16889,6 +18195,7 @@ export const cards: Card[] = [
 		releases: { PW: 65 }
 	},
 	{
+		id: 'PW66',
 		name: 'Plague Truck',
 		cost: 5,
 		strength: 4,
@@ -16899,10 +18206,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p><b>Veteran</b>: Sigismund, Steam Tank of the Empire</p><p><b>Terror</b>: 2</p><p><b>Ranged Attack</b>: 8</p><p> <b>WarCry</b>: At the end of the combat this unit gets +1 strength for each combat tactic played by the enemy.</p>',
+		text: '<p><b>Veteran</b>: Sigismund, Steam Tank of the Empire</p><p><b>Terror</b>: 2</p><p><b>Ranged Attack</b>: 8</p><p><b>WarCry</b>: At the end of the combat this unit gets +1 strength for each combat tactic played by the enemy.</p>',
 		releases: { PW: 66 }
 	},
 	{
+		id: 'PW67',
 		name: 'The Dark Axe of the North',
 		cost: 2,
 		strength: 1,
@@ -16916,6 +18224,7 @@ export const cards: Card[] = [
 		releases: { PW: 67 }
 	},
 	{
+		id: 'PW68',
 		name: 'Chariots of Alkhazzar',
 		cost: 4,
 		strength: 2,
@@ -16929,6 +18238,7 @@ export const cards: Card[] = [
 		releases: { PW: 68 }
 	},
 	{
+		id: 'PW69',
 		name: "Eternity's Sentinel",
 		cost: 6,
 		strength: 6,
@@ -16942,6 +18252,7 @@ export const cards: Card[] = [
 		releases: { PW: 69 }
 	},
 	{
+		id: 'PW70',
 		name: 'King Nekhesh of the First Dynasty',
 		cost: 7,
 		strength: 6,
@@ -16952,10 +18263,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p> <b>Command</b> Discard 1 card and destroy one of your units: Search your discard pile for another Khemri unit with a gold cost equal to or less than the destroyed units gold cost and put it in play. Only playable while the enemy has a ready unit.</p><p><b>Support Tactic</b> Remove X Khemri units in your army discard pile from the game: Your unit gets +X strength.</p>',
+		text: '<p><b>Command</b> Discard 1 card and destroy one of your units: Search your discard pile for another Khemri unit with a gold cost equal to or less than the destroyed units gold cost and put it in play. Only playable while the enemy has a ready unit.</p><p><b>Support Tactic</b> Remove X Khemri units in your army discard pile from the game: Your unit gets +X strength.</p>',
 		releases: { PW: 70 }
 	},
 	{
+		id: 'PW71',
 		name: 'Liche Priest Ahkaten',
 		cost: 5,
 		strength: 3,
@@ -16970,6 +18282,7 @@ export const cards: Card[] = [
 		releases: { PW: 71 }
 	},
 	{
+		id: 'PW72',
 		name: 'Riders of Nekhesh',
 		cost: 4,
 		strength: 3,
@@ -16983,6 +18296,7 @@ export const cards: Card[] = [
 		releases: { PW: 72 }
 	},
 	{
+		id: 'PW73',
 		name: 'Soldiers of Nekhesh',
 		cost: 3,
 		strength: 1,
@@ -16995,6 +18309,7 @@ export const cards: Card[] = [
 		releases: { PW: 73 }
 	},
 	{
+		id: 'PW74',
 		name: 'Sun Chariots of Ptaph',
 		cost: 3,
 		strength: 2,
@@ -17008,6 +18323,7 @@ export const cards: Card[] = [
 		releases: { PW: 74 }
 	},
 	{
+		id: 'PW75',
 		name: 'Valiant Dead of Ptaph',
 		cost: 2,
 		strength: 2,
@@ -17021,6 +18337,7 @@ export const cards: Card[] = [
 		releases: { PW: 75 }
 	},
 	{
+		id: 'PW76',
 		name: 'Daggers of the Dead',
 		cost: 1,
 		tacticPoints: 1,
@@ -17032,6 +18349,7 @@ export const cards: Card[] = [
 		releases: { PW: 76 }
 	},
 	{
+		id: 'PW77',
 		name: 'Destroyer of Eternities',
 		cost: 2,
 		strength: 1,
@@ -17040,10 +18358,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
-		text: "<p>May only be attached to a Khemri unit.</p><p> <b>WarCry</b>: If you win this non-ranged attack combat, remove the defeated unit from the game. Search your enemy's army discard pile for all copies of the defeated unit and remove those from the game.</p>",
+		text: "<p>May only be attached to a Khemri unit.</p><p><b>WarCry</b>: If you win this non-ranged attack combat, remove the defeated unit from the game. Search your enemy's army discard pile for all copies of the defeated unit and remove those from the game.</p>",
 		releases: { PW: 77 }
 	},
 	{
+		id: 'PW78',
 		name: 'Staff of Mastery',
 		cost: 2,
 		strength: 1,
@@ -17056,6 +18375,7 @@ export const cards: Card[] = [
 		releases: { PW: 78 }
 	},
 	{
+		id: 'PW79',
 		name: 'The Birdmen of Catrazza',
 		cost: 5,
 		strength: 3,
@@ -17069,6 +18389,7 @@ export const cards: Card[] = [
 		releases: { PW: 79 }
 	},
 	{
+		id: 'PW80',
 		name: 'Fires from Within',
 		cost: 0,
 		die: 4,
@@ -17080,16 +18401,18 @@ export const cards: Card[] = [
 		releases: { PW: 80 }
 	},
 	{
+		id: 'PW81',
 		name: 'Formulate a Plan',
 		die: 4,
 		keywords: [],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
-		text: '<p> <b>Command</b>: Name a card. Reveal your hand and shuffle all copies of that card in your hand and discard pile into your deck. Draw 1 card.</p>',
+		text: '<p><b>Command</b>: Name a card. Reveal your hand and shuffle all copies of that card in your hand and discard pile into your deck. Draw 1 card.</p>',
 		releases: { PW: 81 }
 	},
 	{
+		id: 'PW82',
 		name: 'Hold and Do Not Be Lured',
 		die: 2,
 		keywords: [],
@@ -17100,6 +18423,7 @@ export const cards: Card[] = [
 		releases: { PW: 82 }
 	},
 	{
+		id: 'PW83',
 		name: 'LC',
 		die: 2,
 		keywords: ['Strategy'],
@@ -17110,16 +18434,18 @@ export const cards: Card[] = [
 		releases: { PW: 83 }
 	},
 	{
+		id: 'PW84',
 		name: 'SM',
 		die: 3,
 		keywords: [],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
-		text: '<p> <b>Command</b>: Place up to 3 cards from your army discard pile on top of your deck.</p>',
+		text: '<p><b>Command</b>: Place up to 3 cards from your army discard pile on top of your deck.</p>',
 		releases: { PW: 84 }
 	},
 	{
+		id: 'PW85',
 		name: 'Unrelenting Horde',
 		die: 4,
 		keywords: [],
@@ -17130,6 +18456,7 @@ export const cards: Card[] = [
 		releases: { PW: 85 }
 	},
 	{
+		id: 'PW86',
 		name: 'Coffer of Gold',
 		cost: 0,
 		strength: -1,
@@ -17141,6 +18468,7 @@ export const cards: Card[] = [
 		releases: { PW: 86 }
 	},
 	{
+		id: 'PW87',
 		name: 'Crown of the Champion',
 		cost: 1,
 		keywords: ['Armor'],
@@ -17151,6 +18479,7 @@ export const cards: Card[] = [
 		releases: { PW: 87 }
 	},
 	{
+		id: 'PW88',
 		name: 'Sceptre of Sovereignty',
 		cost: 1,
 		unique: true,
@@ -17162,6 +18491,7 @@ export const cards: Card[] = [
 		releases: { PW: 88 }
 	},
 	{
+		id: 'PW89',
 		name: 'Coatlcol',
 		cost: 3,
 		strength: 2,
@@ -17175,6 +18505,7 @@ export const cards: Card[] = [
 		releases: { PW: 89 }
 	},
 	{
+		id: 'PW90',
 		name: 'Cupped Hands of the Old Ones',
 		cost: 1,
 		tacticPoints: 1,
@@ -17186,6 +18517,7 @@ export const cards: Card[] = [
 		releases: { PW: 90 }
 	},
 	{
+		id: 'PW91',
 		name: 'Dawn Spawn of Hexoatl',
 		cost: 5,
 		strength: 4,
@@ -17199,6 +18531,7 @@ export const cards: Card[] = [
 		releases: { PW: 91 }
 	},
 	{
+		id: 'PW92',
 		name: 'Guard of the Ziggurat',
 		cost: 3,
 		strength: 2,
@@ -17212,6 +18545,7 @@ export const cards: Card[] = [
 		releases: { PW: 92 }
 	},
 	{
+		id: 'PW93',
 		name: 'Zacharias the Everlasting',
 		cost: 6,
 		strength: 5,
@@ -17225,6 +18559,7 @@ export const cards: Card[] = [
 		releases: { PW: 93 }
 	},
 	{
+		id: 'PW94',
 		name: 'Barku',
 		cost: 6,
 		strength: 6,
@@ -17238,6 +18573,7 @@ export const cards: Card[] = [
 		releases: { PW: 94 }
 	},
 	{
+		id: 'PW95',
 		name: 'Lord Botl-Xlotac',
 		cost: 5,
 		strength: 3,
@@ -17251,6 +18587,7 @@ export const cards: Card[] = [
 		releases: { PW: 95 }
 	},
 	{
+		id: 'PW96',
 		name: 'Lord Mazdamundi',
 		cost: 6,
 		strength: 4,
@@ -17264,6 +18601,7 @@ export const cards: Card[] = [
 		releases: { PW: 96 }
 	},
 	{
+		id: 'PW97',
 		name: 'Gnoblars of the Black Hills',
 		cost: 3,
 		strength: 3,
@@ -17277,6 +18615,7 @@ export const cards: Card[] = [
 		releases: { PW: 97 }
 	},
 	{
+		id: 'PW98',
 		name: "Rokanquol's Terradon",
 		cost: 3,
 		strength: 2,
@@ -17291,6 +18630,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'PW99',
 		name: 'Nisroch, the Beast of the Hills',
 		cost: 4,
 		strength: 3,
@@ -17304,6 +18644,7 @@ export const cards: Card[] = [
 		releases: { PW: 99 }
 	},
 	{
+		id: 'PW100',
 		name: 'Spawning of Kolquetz',
 		cost: 3,
 		strength: 1,
@@ -17317,6 +18658,7 @@ export const cards: Card[] = [
 		releases: { PW: 100 }
 	},
 	{
+		id: 'PW101',
 		name: 'The Thunder that Walks',
 		cost: 6,
 		strength: 5,
@@ -17326,10 +18668,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p><b>Terror</b>: 2</p><p> <b>Command</b>: Once per battle, this unit may perform a "<b>Ranged Attack</b>: 6" attack without committing.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable during a follow-up attack.</p>',
+		text: '<p><b>Terror</b>: 2</p><p><b>Command</b>: Once per battle, this unit may perform a "<b>Ranged Attack</b>: 6" attack without committing.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable during a follow-up attack.</p>',
 		releases: { PW: 101 }
 	},
 	{
+		id: 'PW102',
 		name: "Tekoq-Koq's Spawn",
 		cost: 3,
 		strength: 1,
@@ -17343,6 +18686,7 @@ export const cards: Card[] = [
 		releases: { PW: 102 }
 	},
 	{
+		id: 'PW103',
 		name: 'Tzurel, Hunter for the Kingdoms',
 		cost: 5,
 		strength: 4,
@@ -17352,10 +18696,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
-		text: '<p><b>Terror</b>: 2</p><p> <b>Command</b>: Once per battle, take the top card of your army deck and put it into play face down adjacent to this unit as a monster cavalry unit with 2 strength, 2 tactic points, 2 leadership, "<b>Terror</b>: 1", and a gold cost of 0. The new unit must immediately declare an attack. Once this command is over, put the new unit into your army discard pile.</p>',
+		text: '<p><b>Terror</b>: 2</p><p><b>Command</b>: Once per battle, take the top card of your army deck and put it into play face down adjacent to this unit as a monster cavalry unit with 2 strength, 2 tactic points, 2 leadership, "<b>Terror</b>: 1", and a gold cost of 0. The new unit must immediately declare an attack. Once this command is over, put the new unit into your army discard pile.</p>',
 		releases: { PW: 103 }
 	},
 	{
+		id: 'PW104',
 		name: 'Tzahuan the Lurker',
 		cost: 2,
 		strength: 2,
@@ -17369,6 +18714,7 @@ export const cards: Card[] = [
 		releases: { PW: 104 }
 	},
 	{
+		id: 'PW105',
 		name: 'Lupus Halfwulf',
 		cost: 4,
 		strength: 3,
@@ -17382,6 +18728,7 @@ export const cards: Card[] = [
 		releases: { PW: 105 }
 	},
 	{
+		id: 'PW106',
 		name: 'The Hammer of the Southern Realm',
 		cost: 2,
 		strength: 1,
@@ -17394,6 +18741,7 @@ export const cards: Card[] = [
 		releases: { PW: 106 }
 	},
 	{
+		id: 'PW107',
 		name: 'LW',
 		cost: 3,
 		die: 3,
@@ -17405,6 +18753,7 @@ export const cards: Card[] = [
 		releases: { PW: 107 }
 	},
 	{
+		id: 'PW108',
 		name: 'HW',
 		cost: 4,
 		die: 2,
@@ -17416,16 +18765,18 @@ export const cards: Card[] = [
 		releases: { PW: 108 }
 	},
 	{
+		id: 'PW109',
 		name: 'Shift in Balance',
 		die: 4,
 		keywords: [],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
-		text: '<p> <b>Command</b>: Choose an enemy unit with at least one attached action card. Destroy all attached action cards on the target unit and rally one of your units with a gold cost of 3 or less.</p>',
+		text: '<p><b>Command</b>: Choose an enemy unit with at least one attached action card. Destroy all attached action cards on the target unit and rally one of your units with a gold cost of 3 or less.</p>',
 		releases: { PW: 109 }
 	},
 	{
+		id: 'PW110',
 		name: 'Take Away the Ladder',
 		die: 2,
 		keywords: [],
@@ -17436,6 +18787,7 @@ export const cards: Card[] = [
 		releases: { PW: 110 }
 	},
 	{
+		id: 'PW111',
 		name: 'Take One Path While Pretending to Take Another',
 		die: 4,
 		keywords: ['Strategy'],
@@ -17446,6 +18798,7 @@ export const cards: Card[] = [
 		releases: { PW: 111 }
 	},
 	{
+		id: 'PW112',
 		name: 'The Guest Becomes the Host',
 		cost: 2,
 		die: 3,
@@ -17457,6 +18810,7 @@ export const cards: Card[] = [
 		releases: { PW: 112 }
 	},
 	{
+		id: 'PW113',
 		name: 'Under Concealment of Broad Daylight',
 		cost: 1,
 		die: 4,
@@ -17468,6 +18822,7 @@ export const cards: Card[] = [
 		releases: { PW: 113 }
 	},
 	{
+		id: 'PW114',
 		name: 'Watch the Fire from Across the River',
 		cost: 3,
 		die: 1,
@@ -17475,10 +18830,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: "<p> <b>WarCry</b> Discard two cards from your hand: Rally one of your units with a gold cost less than this unit's gold cost.</p>",
+		text: "<p><b>WarCry</b> Discard two cards from your hand: Rally one of your units with a gold cost less than this unit's gold cost.</p>",
 		releases: { PW: 114 }
 	},
 	{
+		id: 'PW115',
 		name: 'Armour of the Harbinger',
 		cost: 1,
 		keywords: ['Armor'],
@@ -17489,6 +18845,7 @@ export const cards: Card[] = [
 		releases: { PW: 115 }
 	},
 	{
+		id: 'PW116',
 		name: 'Champion of the Harbinger',
 		cost: 2,
 		tacticPoints: 1,
@@ -17500,6 +18857,7 @@ export const cards: Card[] = [
 		releases: { PW: 116 }
 	},
 	{
+		id: 'PW117',
 		name: 'Horn of the Harbinger',
 		cost: 2,
 		tacticPoints: 1,
@@ -17512,6 +18870,7 @@ export const cards: Card[] = [
 		releases: { PW: 117 }
 	},
 	{
+		id: 'PW118',
 		name: 'Sword of the Harbinger',
 		cost: 2,
 		strength: 2,
@@ -17524,6 +18883,7 @@ export const cards: Card[] = [
 		releases: { PW: 118 }
 	},
 	{
+		id: 'PW119',
 		name: 'Mistress Chloee',
 		cost: 3,
 		strength: 2,
@@ -17537,6 +18897,7 @@ export const cards: Card[] = [
 		releases: { PW: 119 }
 	},
 	{
+		id: 'PW120',
 		name: 'Sigismund, Steam Tank of the Empire',
 		cost: 5,
 		strength: 4,
@@ -17546,10 +18907,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: "<p><b>Ranged Attack</b>: 8</p><p> <b>WarCry</b>: This unit gets +1 strength or +1 <b>Ranged Attack</b> for each card in your enemy's hand.</p><p><b>Reaction</b>: After you draw a card for this unit entering a combat, discard that card and draw another card.</p>",
+		text: "<p><b>Ranged Attack</b>: 8</p><p><b>WarCry</b>: This unit gets +1 strength or +1 <b>Ranged Attack</b> for each card in your enemy's hand.</p><p><b>Reaction</b>: After you draw a card for this unit entering a combat, discard that card and draw another card.</p>",
 		releases: { PW: 120 }
 	},
 	{
+		id: 'PW121',
 		name: 'Toq-Zat, Rage of the Earth',
 		cost: 6,
 		strength: 5,
@@ -17563,6 +18925,7 @@ export const cards: Card[] = [
 		releases: { PW: 121 }
 	},
 	{
+		id: 'PW122',
 		name: 'Tzar Boris',
 		cost: 6,
 		strength: 5,
@@ -17573,10 +18936,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p><b>Terror</b>: 2</p><p>If this unit routs the enemy unit it must make a follow-up attack.</p><p> <b>WarCry</b>: No more tactics may be played during this combat.</p>',
+		text: '<p><b>Terror</b>: 2</p><p>If this unit routs the enemy unit it must make a follow-up attack.</p><p><b>WarCry</b>: No more tactics may be played during this combat.</p>',
 		releases: { PW: 122 }
 	},
 	{
+		id: 'PW123',
 		name: 'Savour the Victory',
 		cost: 3,
 		die: 2,
@@ -17584,10 +18948,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: If this unit wins this combat, attach this card to this unit. While attached this unit gets the ability "Command Discard this card: Rally this unit. This may be played while the unit is committed."</p>',
+		text: '<p><b>WarCry</b>: If this unit wins this combat, attach this card to this unit. While attached this unit gets the ability "Command Discard this card: Rally this unit. This may be played while the unit is committed."</p>',
 		releases: { PW: 123 }
 	},
 	{
+		id: 'PW124',
 		name: 'Gar-Oax Oldblood',
 		cost: 2,
 		strength: 1,
@@ -17599,6 +18964,7 @@ export const cards: Card[] = [
 		releases: { PW: 124 }
 	},
 	{
+		id: 'PW125',
 		name: 'Horde of Hexoatl',
 		cost: 4,
 		strength: 3,
@@ -17612,6 +18978,7 @@ export const cards: Card[] = [
 		releases: { PW: 125 }
 	},
 	{
+		id: 'PW126',
 		name: 'Hexoatl Temple Guard',
 		cost: 3,
 		strength: 2,
@@ -17625,6 +18992,7 @@ export const cards: Card[] = [
 		releases: { PW: 126 }
 	},
 	{
+		id: 'PW127',
 		name: 'Tepoc-Kroq',
 		cost: 3,
 		strength: 3,
@@ -17638,6 +19006,7 @@ export const cards: Card[] = [
 		releases: { PW: 127 }
 	},
 	{
+		id: 'PW128',
 		name: 'Moon Spawn of Hexoatl',
 		cost: 3,
 		strength: 3,
@@ -17647,10 +19016,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p> <b>Command</b> Discard 3 cards: Rally this unit and declare an attack on a committed Hordes of Darkness unit. You may only use this ability while committed. Only playable once per battle.</p>',
+		text: '<p><b>Command</b> Discard 3 cards: Rally this unit and declare an attack on a committed Hordes of Darkness unit. You may only use this ability while committed. Only playable once per battle.</p>',
 		releases: { PW: 128 }
 	},
 	{
+		id: 'PW129',
 		name: 'Scar-veteran Raq-goq',
 		cost: 3,
 		strength: 3,
@@ -17660,10 +19030,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p> <b>Command</b> Commit this unit: While this unit remains committed, all of your Lizardmen have the keyword "Infantry" replaced with the keyword "Cavalry".</p>',
+		text: '<p><b>Command</b> Commit this unit: While this unit remains committed, all of your Lizardmen have the keyword "Infantry" replaced with the keyword "Cavalry".</p>',
 		releases: { PW: 129 }
 	},
 	{
+		id: 'PW130',
 		name: "Ptaph's Tomb Scorpion",
 		cost: 5,
 		strength: 6,
@@ -17677,6 +19048,7 @@ export const cards: Card[] = [
 		releases: { PW: 130 }
 	},
 	{
+		id: 'PW131',
 		name: 'Razutt the Angry',
 		cost: 3,
 		strength: 4,
@@ -17686,10 +19058,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
-		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +1 strength unless the enemy unit passes a leadership test.</p><p> <b>Command</b>: Once per battle, exchange an enemy unit in the battle line with an enemy unit in the reserves. You may immediately declare an attack with this unit.</p>',
+		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +1 strength unless the enemy unit passes a leadership test.</p><p><b>Command</b>: Once per battle, exchange an enemy unit in the battle line with an enemy unit in the reserves. You may immediately declare an attack with this unit.</p>',
 		releases: { PW: 131 }
 	},
 	{
+		id: 'PW132',
 		name: 'Dugurth the Rowdy',
 		cost: 4,
 		strength: 5,
@@ -17703,6 +19076,7 @@ export const cards: Card[] = [
 		releases: { PW: 132 }
 	},
 	{
+		id: 'PW133',
 		name: 'Face the Danger',
 		die: 3,
 		keywords: ['Strategy'],
@@ -17713,6 +19087,7 @@ export const cards: Card[] = [
 		releases: { PW: 133 }
 	},
 	{
+		id: 'PW134',
 		name: 'A Question of Morale',
 		cost: 2,
 		die: 2,
@@ -17720,10 +19095,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: "<p> <b>WarCry</b>: The enemy unit's leadership is reduced by your unit's printed tactic points.</p>",
+		text: "<p><b>WarCry</b>: The enemy unit's leadership is reduced by your unit's printed tactic points.</p>",
 		releases: { PW: 134 }
 	},
 	{
+		id: 'PW135',
 		name: 'Battle Yell',
 		cost: 2,
 		die: 3,
@@ -17731,20 +19107,22 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: "<p> <b>WarCry</b>: The enemy unit's tactic points are reduced by your unit's printed leadership.</p>",
+		text: "<p><b>WarCry</b>: The enemy unit's tactic points are reduced by your unit's printed leadership.</p>",
 		releases: { PW: 135 }
 	},
 	{
+		id: 'PW136',
 		name: "Jasenland's Entrenchment",
 		cost: 3,
 		keywords: [],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: This ready unit gets +7 strength. If this unit wins the combat, return both units to the battle line ready instead of any units being destroyed; you may not make a follow-up attack. You may not play any other cards in this combat.</p>',
+		text: '<p><b>WarCry</b>: This ready unit gets +7 strength. If this unit wins the combat, return both units to the battle line ready instead of any units being destroyed; you may not make a follow-up attack. You may not play any other cards in this combat.</p>',
 		releases: { PW: 136 }
 	},
 	{
+		id: 'PW137',
 		name: 'The Strong Survive',
 		cost: 6,
 		die: 3,
@@ -17756,6 +19134,7 @@ export const cards: Card[] = [
 		releases: { PW: 137 }
 	},
 	{
+		id: 'PW138',
 		name: 'Stalemate',
 		cost: 3,
 		die: 1,
@@ -17763,10 +19142,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: Neither unit may be destroyed nor committed as a result of this combat (card effects in the combat may still destroy or commit units). Units may still be routed and follow-up attacks may be made as normal, as if the loser had been destroyed.</p>',
+		text: '<p><b>WarCry</b>: Neither unit may be destroyed nor committed as a result of this combat (card effects in the combat may still destroy or commit units). Units may still be routed and follow-up attacks may be made as normal, as if the loser had been destroyed.</p>',
 		releases: { PW: 138 }
 	},
 	{
+		id: 'PW139',
 		name: 'Narrow Pass',
 		die: 2,
 		keywords: ['Strategy', 'Terrain'],
@@ -17777,6 +19157,7 @@ export const cards: Card[] = [
 		releases: { PW: 139 }
 	},
 	{
+		id: 'PW140',
 		name: 'Two Hands, Two Swords',
 		cost: 4,
 		die: 2,
@@ -17784,10 +19165,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: Attach this card to your unit. While attached this unit may have 2 weapons attached. Get up to 2 weapons from your discard pile and attach them to this unit without cost. Only playable by a unique unit or a unit with a character attachment.</p>',
+		text: '<p><b>WarCry</b>: Attach this card to your unit. While attached this unit may have 2 weapons attached. Get up to 2 weapons from your discard pile and attach them to this unit without cost. Only playable by a unique unit or a unit with a character attachment.</p>',
 		releases: { PW: 140 }
 	},
 	{
+		id: 'PW141',
 		name: 'BR',
 		die: 3,
 		keywords: ['Strategy'],
@@ -17798,6 +19180,7 @@ export const cards: Card[] = [
 		releases: { PW: 141 }
 	},
 	{
+		id: 'PW142',
 		name: 'SR',
 		cost: 2,
 		die: 3,
@@ -17809,6 +19192,7 @@ export const cards: Card[] = [
 		releases: { PW: 142 }
 	},
 	{
+		id: 'PW143',
 		name: 'Dragonhide Armor',
 		cost: 2,
 		unique: true,
@@ -17820,6 +19204,7 @@ export const cards: Card[] = [
 		releases: { PW: 143 }
 	},
 	{
+		id: 'PW144',
 		name: 'Golden Kite Shield',
 		cost: 1,
 		keywords: ['Armor'],
@@ -17830,6 +19215,7 @@ export const cards: Card[] = [
 		releases: { PW: 144 }
 	},
 	{
+		id: 'PW145',
 		name: 'Scroll of Dispelling',
 		cost: 1,
 		keywords: ['Item'],
@@ -17840,6 +19226,7 @@ export const cards: Card[] = [
 		releases: { PW: 145 }
 	},
 	{
+		id: 'PW146',
 		name: 'Enchanted Axe',
 		cost: 2,
 		strength: 1,
@@ -17852,6 +19239,7 @@ export const cards: Card[] = [
 		releases: { PW: 146 }
 	},
 	{
+		id: 'PW147',
 		name: 'Sentinel of Ages',
 		cost: 8,
 		strength: 8,
@@ -17865,6 +19253,7 @@ export const cards: Card[] = [
 		releases: { PW: 147 }
 	},
 	{
+		id: 'PW148',
 		name: 'Warlock Triklok',
 		cost: 3,
 		strength: 1,
@@ -17878,6 +19267,7 @@ export const cards: Card[] = [
 		releases: { PW: 148 }
 	},
 	{
+		id: 'PW149',
 		name: 'The Black Coach of Malroth',
 		cost: 4,
 		strength: 3,
@@ -17891,6 +19281,7 @@ export const cards: Card[] = [
 		releases: { PW: 149 }
 	},
 	{
+		id: 'PW150',
 		name: 'Strigoi Blood Murder',
 		cost: 5,
 		strength: 5,
@@ -17904,6 +19295,7 @@ export const cards: Card[] = [
 		releases: { PW: 150 }
 	},
 	{
+		id: 'PW151',
 		name: "Anglinus's Fighting Lancers",
 		cost: 3,
 		strength: 2,
@@ -17917,6 +19309,7 @@ export const cards: Card[] = [
 		releases: { PW: 151 }
 	},
 	{
+		id: 'PW152',
 		name: "Anglinus's Valiant Fighters",
 		cost: 2,
 		strength: 2,
@@ -17930,6 +19323,7 @@ export const cards: Card[] = [
 		releases: { PW: 152 }
 	},
 	{
+		id: 'PW153',
 		name: 'Xanax-Qol, the Rage That Burns',
 		cost: 6,
 		strength: 6,
@@ -17943,6 +19337,7 @@ export const cards: Card[] = [
 		releases: { PW: 153 }
 	},
 	{
+		id: 'PW154',
 		name: "Rokanquol's Thunder Riders",
 		cost: 5,
 		strength: 4,
@@ -17956,6 +19351,7 @@ export const cards: Card[] = [
 		releases: { PW: 154 }
 	},
 	{
+		id: 'PW155',
 		name: 'Willhelm the Explorer',
 		cost: 3,
 		strength: 3,
@@ -17969,6 +19365,7 @@ export const cards: Card[] = [
 		releases: { PW: 155 }
 	},
 	{
+		id: 'PW156',
 		name: 'Borgio the Beseiger',
 		cost: 4,
 		strength: 3,
@@ -17978,10 +19375,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
-		text: "<p> <b>WarCry</b> Discard 1 card with a die greater than the enemy unit's gold cost: This unit gets a strength bonus equal to the discarded card's die.</p>",
+		text: "<p><b>WarCry</b> Discard 1 card with a die greater than the enemy unit's gold cost: This unit gets a strength bonus equal to the discarded card's die.</p>",
 		releases: { PW: 156 }
 	},
 	{
+		id: 'PW157',
 		name: "Bronzino's Galloping Guns",
 		cost: 4,
 		strength: 3,
@@ -17991,10 +19389,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
-		text: '<p><b>Ranged Attack</b>: 8</p><p> <b>Command</b>: Move this unit to or from your battle line. You may declare a ranged attack with this unit.</p><p><b>Reaction</b>: When your enemy declares an attack against this unit or this unit blocks an enemy attack, this combat becomes a ranged attack with this unit as the attacker.</p>',
+		text: '<p><b>Ranged Attack</b>: 8</p><p><b>Command</b>: Move this unit to or from your battle line. You may declare a ranged attack with this unit.</p><p><b>Reaction</b>: When your enemy declares an attack against this unit or this unit blocks an enemy attack, this combat becomes a ranged attack with this unit as the attacker.</p>',
 		releases: { PW: 157 }
 	},
 	{
+		id: 'PW158',
 		name: 'Lorenzo Lupo',
 		cost: 5,
 		strength: 5,
@@ -18008,6 +19407,7 @@ export const cards: Card[] = [
 		releases: { PW: 158 }
 	},
 	{
+		id: 'PW159',
 		name: 'Marksmen of Miragliano',
 		cost: 4,
 		strength: 1,
@@ -18021,6 +19421,7 @@ export const cards: Card[] = [
 		releases: { PW: 159 }
 	},
 	{
+		id: 'PW160',
 		name: 'Where Is Your God Now?',
 		cost: 1,
 		die: 2,
@@ -18028,10 +19429,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: Until the next command, all units with "<b>Faith</b>" have their "<b>Faith</b>" level reduced to 0.</p>',
+		text: '<p><b>WarCry</b>: Until the next command, all units with "<b>Faith</b>" have their "<b>Faith</b>" level reduced to 0.</p>',
 		releases: { PW: 160 }
 	},
 	{
+		id: 'PW161',
 		name: 'Until the Last Moment',
 		die: 3,
 		keywords: [],
@@ -18042,6 +19444,7 @@ export const cards: Card[] = [
 		releases: { PW: 161 }
 	},
 	{
+		id: 'PW162',
 		name: "Oi! Dat's My Leg",
 		cost: 2,
 		die: 2,
@@ -18049,10 +19452,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: "<p> <b>WarCry</b>: Choose a unit in this combat. That unit's strength is reduced to 0. That unit gains a tactic point bonus equal to the strength lost and it's controller draws a card for every 2 points of strength lost. Not playable during a ranged attack.</p>",
+		text: "<p><b>WarCry</b>: Choose a unit in this combat. That unit's strength is reduced to 0. That unit gains a tactic point bonus equal to the strength lost and it's controller draws a card for every 2 points of strength lost. Not playable during a ranged attack.</p>",
 		releases: { PW: 162 }
 	},
 	{
+		id: 'PW163',
 		name: 'Loss of Faith',
 		cost: 1,
 		die: 4,
@@ -18064,6 +19468,7 @@ export const cards: Card[] = [
 		releases: { PW: 163 }
 	},
 	{
+		id: 'PW164',
 		name: 'Lying in Wait',
 		cost: 1,
 		die: 2,
@@ -18071,10 +19476,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: "<p>This card may be played before the attacker's first combat tactic is played.</p><p> <b>WarCry</b>: Play a combat tactic costing X tactic points or less without paying the card's tactic point cost. X equals this unit's \"<b>Scout</b>\" level. Only playable while defending.</p>",
+		text: "<p>This card may be played before the attacker's first combat tactic is played.</p><p><b>WarCry</b>: Play a combat tactic costing X tactic points or less without paying the card's tactic point cost. X equals this unit's \"<b>Scout</b>\" level. Only playable while defending.</p>",
 		releases: { PW: 164 }
 	},
 	{
+		id: 'BR1',
 		name: 'Vayj-Nar, Lord of Change',
 		cost: 5,
 		strength: 4,
@@ -18090,6 +19496,7 @@ export const cards: Card[] = [
 		releases: { BR: 1 }
 	},
 	{
+		id: 'BR2',
 		name: "Tzadiqel's Screamers",
 		cost: 2,
 		strength: 2,
@@ -18104,6 +19511,7 @@ export const cards: Card[] = [
 		releases: { BR: 2 }
 	},
 	{
+		id: 'BR3',
 		name: "Tzadiqel's Horrors",
 		cost: 3,
 		strength: 3,
@@ -18114,10 +19522,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Roll. This unit gets +X tactic points and the enemy unit gets -X tactic points. X equals the roll. If the roll is 4 or greater, commit this unit.</p>',
+		text: '<p><b>WarCry</b>: Roll. This unit gets +X tactic points and the enemy unit gets -X tactic points. X equals the roll. If the roll is 4 or greater, commit this unit.</p>',
 		releases: { BR: 3 }
 	},
 	{
+		id: 'BR4',
 		name: "Tzadiqel's Enchanted Warriors",
 		cost: 3,
 		strength: 2,
@@ -18128,10 +19537,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for every 3 spell points that you have.</p>',
+		text: '<p><b>Terror</b>: 1</p><p><b>WarCry</b>: This unit gets +1 strength for every 3 spell points that you have.</p>',
 		releases: { BR: 4 }
 	},
 	{
+		id: 'BR5',
 		name: "Tzadiqel's Screaming Chariot",
 		cost: 3,
 		strength: 2,
@@ -18146,6 +19556,7 @@ export const cards: Card[] = [
 		releases: { BR: 5 }
 	},
 	{
+		id: 'BR6',
 		name: 'Iyar, Lord of Tzeentch',
 		cost: 3,
 		strength: 2,
@@ -18156,11 +19567,12 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Wizard</b>: 1</p><p> <b>WarCry</b>: Your enemy discards their hand and draws 1 card for each card they discarded.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Dark Elf units.</p>',
+		text: '<p><b>Wizard</b>: 1</p><p><b>WarCry</b>: Your enemy discards their hand and draws 1 card for each card they discarded.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Dark Elf units.</p>',
 		releases: { BR: 6 },
 		banned: true
 	},
 	{
+		id: 'BR7',
 		name: "Tzadiqel's Marauder Horsemen",
 		cost: 3,
 		strength: 3,
@@ -18171,10 +19583,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Once per battle, choose an enemy unit. If that unit is still in play at the end of the battle, that unit may not be carried over.</p>',
+		text: '<p><b>Command</b>: Once per battle, choose an enemy unit. If that unit is still in play at the end of the battle, that unit may not be carried over.</p>',
 		releases: { BR: 7 }
 	},
 	{
+		id: 'BR8',
 		name: 'Requiel, Exalted of Tzeentch',
 		cost: 4,
 		strength: 4,
@@ -18189,6 +19602,7 @@ export const cards: Card[] = [
 		releases: { BR: 8 }
 	},
 	{
+		id: 'BR9',
 		name: 'Tzadiqel, Prince of Change',
 		cost: 5,
 		strength: 3,
@@ -18204,6 +19618,7 @@ export const cards: Card[] = [
 		releases: { BR: 9 }
 	},
 	{
+		id: 'BR10',
 		name: 'Tyamal Dancer',
 		cost: 5,
 		strength: 4,
@@ -18219,6 +19634,7 @@ export const cards: Card[] = [
 		releases: { BR: 10 }
 	},
 	{
+		id: 'BR11',
 		name: 'Fera Ebonheart',
 		cost: 3,
 		strength: 2,
@@ -18234,6 +19650,7 @@ export const cards: Card[] = [
 		releases: { BR: 11 }
 	},
 	{
+		id: 'BR12',
 		name: 'Twilight Daughters of the Blade',
 		cost: 4,
 		strength: 3,
@@ -18248,6 +19665,7 @@ export const cards: Card[] = [
 		releases: { BR: 12 }
 	},
 	{
+		id: 'BR13',
 		name: "Ha'asek's Twilight Cauldron",
 		cost: 4,
 		strength: 2,
@@ -18263,6 +19681,7 @@ export const cards: Card[] = [
 		releases: { BR: 13 }
 	},
 	{
+		id: 'BR14',
 		name: 'The Mothers of Twilight',
 		cost: 3,
 		strength: 2,
@@ -18277,6 +19696,7 @@ export const cards: Card[] = [
 		releases: { BR: 14 }
 	},
 	{
+		id: 'BR15',
 		name: 'Lillet Nightwind',
 		cost: 4,
 		strength: 3,
@@ -18291,6 +19711,7 @@ export const cards: Card[] = [
 		releases: { BR: 15 }
 	},
 	{
+		id: 'BR16',
 		name: 'Twilight Sisters of Khaine',
 		cost: 4,
 		strength: 3,
@@ -18305,6 +19726,7 @@ export const cards: Card[] = [
 		releases: { BR: 16 }
 	},
 	{
+		id: 'BR17',
 		name: "Kor'rin Blackheart",
 		cost: 5,
 		strength: 4,
@@ -18316,10 +19738,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Rally any number of enemy units: Once per battle, rally one of your units with the monster keyword and a gold cost equal to or less than X. X equals the combined gold cost of the rallied enemy units.</p>',
+		text: '<p><b>Command</b> Rally any number of enemy units: Once per battle, rally one of your units with the monster keyword and a gold cost equal to or less than X. X equals the combined gold cost of the rallied enemy units.</p>',
 		releases: { BR: 17 }
 	},
 	{
+		id: 'BR18',
 		name: "Ha'asek's Feral Daughters",
 		cost: 5,
 		strength: 4,
@@ -18334,6 +19757,7 @@ export const cards: Card[] = [
 		releases: { BR: 18 }
 	},
 	{
+		id: 'BR19',
 		name: 'Togurg the Filthy',
 		cost: 5,
 		strength: 4,
@@ -18344,10 +19768,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: "<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (1): The enemy unit gets -2 tactic points. Only playable if your unit has a higher printed strength than the enemy unit in this combat.</p><p> <b>Command</b>: If all of your enemy's units are committed, the battle ends.</p>",
+		text: "<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (1): The enemy unit gets -2 tactic points. Only playable if your unit has a higher printed strength than the enemy unit in this combat.</p><p><b>Command</b>: If all of your enemy's units are committed, the battle ends.</p>",
 		releases: { BR: 19 }
 	},
 	{
+		id: 'BR20',
 		name: "Bartog's Savage Rippas",
 		cost: 3,
 		strength: 3,
@@ -18362,6 +19787,7 @@ export const cards: Card[] = [
 		releases: { BR: 20 }
 	},
 	{
+		id: 'BR21',
 		name: "Bartog's Boyz of the Bloody Fang",
 		cost: 3,
 		strength: 3,
@@ -18376,6 +19802,7 @@ export const cards: Card[] = [
 		releases: { BR: 21 }
 	},
 	{
+		id: 'BR22',
 		name: 'Black Orcs of the Conqueror',
 		cost: 4,
 		strength: 4,
@@ -18390,6 +19817,7 @@ export const cards: Card[] = [
 		releases: { BR: 22 }
 	},
 	{
+		id: 'BR23',
 		name: "Bartog's Savage Boar Boyz",
 		cost: 4,
 		strength: 3,
@@ -18404,6 +19832,7 @@ export const cards: Card[] = [
 		releases: { BR: 23 }
 	},
 	{
+		id: 'BR24',
 		name: "The Conqueror's Smashin' Boyz",
 		cost: 4,
 		strength: 4,
@@ -18418,6 +19847,7 @@ export const cards: Card[] = [
 		releases: { BR: 24 }
 	},
 	{
+		id: 'BR25',
 		name: 'Razalt Skineater',
 		cost: 5,
 		strength: 4,
@@ -18432,6 +19862,7 @@ export const cards: Card[] = [
 		releases: { BR: 25 }
 	},
 	{
+		id: 'BR26',
 		name: 'Blagark the Colossal',
 		cost: 6,
 		strength: 7,
@@ -18446,6 +19877,7 @@ export const cards: Card[] = [
 		releases: { BR: 26 }
 	},
 	{
+		id: 'BR27',
 		name: 'Bartog the Conqueror',
 		cost: 6,
 		strength: 5,
@@ -18462,6 +19894,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'BR28',
 		name: 'Rise from the Ashes',
 		die: 2,
 		keywords: [],
@@ -18469,10 +19902,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Destroy one of your ready units and attach this card to one of your other units. Put a number of gold tokens on that unit equal to the gold cost of the destroyed unit. While attached this unit gets "<b>Reaction</b> Remove all gold tokens, discard this action card: While mustering a unit, reduce the mustered unit\'s gold cost by the number of gold tokens removed (minimum 0)."</p>',
+		text: '<p><b>Command</b>: Destroy one of your ready units and attach this card to one of your other units. Put a number of gold tokens on that unit equal to the gold cost of the destroyed unit. While attached this unit gets "<b>Reaction</b> Remove all gold tokens, discard this action card: While mustering a unit, reduce the mustered unit\'s gold cost by the number of gold tokens removed (minimum 0)."</p>',
 		releases: { BR: 28 }
 	},
 	{
+		id: 'BR29',
 		name: 'Conscripts',
 		cost: 1,
 		strength: 1,
@@ -18487,6 +19921,7 @@ export const cards: Card[] = [
 		releases: { BR: 29 }
 	},
 	{
+		id: 'BR30',
 		name: "Pirazzo's Lost Legion",
 		cost: 4,
 		strength: 4,
@@ -18501,6 +19936,7 @@ export const cards: Card[] = [
 		releases: { BR: 30 }
 	},
 	{
+		id: 'BR31',
 		name: 'Mercenary General Madinlich',
 		cost: 5,
 		strength: 4,
@@ -18516,6 +19952,7 @@ export const cards: Card[] = [
 		releases: { BR: 31 }
 	},
 	{
+		id: 'BR32',
 		name: "You're Next",
 		cost: 2,
 		die: 3,
@@ -18524,10 +19961,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Super rare',
-		text: '<p> <b>WarCry</b>: This unit gets +1 strength. If you win this combat and rout the enemy unit, you may select the target of your follow-up attack.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +1 strength. If you win this combat and rout the enemy unit, you may select the target of your follow-up attack.</p>',
 		releases: { BR: 32 }
 	},
 	{
+		id: 'BR33',
 		name: "It Can't End This Way",
 		cost: 1,
 		die: 4,
@@ -18536,10 +19974,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Super rare',
-		text: '<p> <b>WarCry</b>: If this combat ends in a slaughter, each player may rally one of their units.</p>',
+		text: '<p><b>WarCry</b>: If this combat ends in a slaughter, each player may rally one of their units.</p>',
 		releases: { BR: 33 }
 	},
 	{
+		id: 'BR34',
 		name: 'Keep Them Under Fire',
 		die: 5,
 		keywords: [],
@@ -18551,6 +19990,7 @@ export const cards: Card[] = [
 		releases: { BR: 34 }
 	},
 	{
+		id: 'BR35',
 		name: "Gausser's Camouflage",
 		die: 3,
 		keywords: [],
@@ -18562,6 +20002,7 @@ export const cards: Card[] = [
 		releases: { BR: 35 }
 	},
 	{
+		id: 'BR36',
 		name: 'Second Wave Charge',
 		cost: 1,
 		die: 3,
@@ -18574,6 +20015,7 @@ export const cards: Card[] = [
 		releases: { BR: 36 }
 	},
 	{
+		id: 'BR37',
 		name: 'Knowing the Field of Battle',
 		die: 2,
 		keywords: [],
@@ -18585,6 +20027,7 @@ export const cards: Card[] = [
 		releases: { BR: 37 }
 	},
 	{
+		id: 'BR38',
 		name: 'Command Decisions',
 		die: 2,
 		keywords: [],
@@ -18596,6 +20039,7 @@ export const cards: Card[] = [
 		releases: { BR: 38 }
 	},
 	{
+		id: 'BR39',
 		name: 'Divine Intervention',
 		die: 3,
 		keywords: [],
@@ -18607,6 +20051,7 @@ export const cards: Card[] = [
 		releases: { BR: 39 }
 	},
 	{
+		id: 'BR40',
 		name: 'Tactics of Fright',
 		die: 3,
 		keywords: [],
@@ -18618,6 +20063,7 @@ export const cards: Card[] = [
 		releases: { BR: 40 }
 	},
 	{
+		id: 'BR41',
 		name: 'Ancient Knowledge',
 		die: 4,
 		keywords: [],
@@ -18629,6 +20075,7 @@ export const cards: Card[] = [
 		releases: { BR: 41 }
 	},
 	{
+		id: 'BR42',
 		name: 'News from the Front',
 		cost: 1,
 		die: 2,
@@ -18637,10 +20084,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b> Commit one of your other <b>Scout</b> units in your battle line: This unit gets +X strength. X equals the "<b>Scout</b>" level of the committed unit.</p>',
+		text: '<p><b>WarCry</b> Commit one of your other <b>Scout</b> units in your battle line: This unit gets +X strength. X equals the "<b>Scout</b>" level of the committed unit.</p>',
 		releases: { BR: 42 }
 	},
 	{
+		id: 'BR43',
 		name: 'The Unseen Advantage',
 		cost: 2,
 		die: 3,
@@ -18653,6 +20101,7 @@ export const cards: Card[] = [
 		releases: { BR: 43 }
 	},
 	{
+		id: 'BR44',
 		name: 'Test of Resolve',
 		cost: 4,
 		die: 2,
@@ -18661,10 +20110,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: The result of this combat is a slaughter unless your enemy passes at least one of 3 leadership tests.</p>',
+		text: '<p><b>WarCry</b>: The result of this combat is a slaughter unless your enemy passes at least one of 3 leadership tests.</p>',
 		releases: { BR: 44 }
 	},
 	{
+		id: 'BR45',
 		name: 'Rally Against the Unjust',
 		die: 5,
 		keywords: [],
@@ -18676,6 +20126,7 @@ export const cards: Card[] = [
 		releases: { BR: 45 }
 	},
 	{
+		id: 'BR46',
 		name: "Fate's Cyclical Wheel",
 		die: 4,
 		keywords: [],
@@ -18687,6 +20138,7 @@ export const cards: Card[] = [
 		releases: { BR: 46 }
 	},
 	{
+		id: 'BR47',
 		name: 'Trump',
 		die: 3,
 		keywords: [],
@@ -18698,6 +20150,7 @@ export const cards: Card[] = [
 		releases: { BR: 47 }
 	},
 	{
+		id: 'BR48',
 		name: 'Take Control',
 		die: 4,
 		keywords: ['Strategy'],
@@ -18709,6 +20162,7 @@ export const cards: Card[] = [
 		releases: { BR: 48 }
 	},
 	{
+		id: 'BR49',
 		name: 'Everything Has a Price',
 		die: 5,
 		keywords: ['Strategy'],
@@ -18720,6 +20174,7 @@ export const cards: Card[] = [
 		releases: { BR: 49 }
 	},
 	{
+		id: 'BR50',
 		name: 'Back to Basics',
 		cost: 0,
 		die: 3,
@@ -18728,10 +20183,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: During this combat, as a combat tactic for 2 tactic points, either player may reveal the top card of their deck and gain a strength bonus equal to the die of the revealed card.</p>',
+		text: '<p><b>WarCry</b>: During this combat, as a combat tactic for 2 tactic points, either player may reveal the top card of their deck and gain a strength bonus equal to the die of the revealed card.</p>',
 		releases: { BR: 50 }
 	},
 	{
+		id: 'BR51',
 		name: 'Risky Proposition',
 		cost: 3,
 		die: 2,
@@ -18740,10 +20196,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets +2 strength and if this unit wins the combat the enemy unit is routed (no roll needed). Only playable by an attacking unit being blocked. Additionally, should this unit win the follow-up attack it may attempt to rout the enemy unit</p><p>(rolling as normal).</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 strength and if this unit wins the combat the enemy unit is routed (no roll needed). Only playable by an attacking unit being blocked. Additionally, should this unit win the follow-up attack it may attempt to rout the enemy unit</p><p>(rolling as normal).</p>',
 		releases: { BR: 51 }
 	},
 	{
+		id: 'BR52',
 		name: 'Making a Name...',
 		cost: 2,
 		die: 3,
@@ -18752,10 +20209,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Attach this card to your unit. While this card is attached, this unit has the ability: "WarCry Remove this action card from the game: If you win the combat, rout the enemy unit (no roll necessary)."</p>',
+		text: '<p><b>WarCry</b>: Attach this card to your unit. While this card is attached, this unit has the ability: "WarCry Remove this action card from the game: If you win the combat, rout the enemy unit (no roll necessary)."</p>',
 		releases: { BR: 52 }
 	},
 	{
+		id: 'BR53',
 		name: 'Preparations',
 		cost: 0,
 		die: 5,
@@ -18764,10 +20222,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: None of your card effects generated during this combat may be cancelled or negated.</p>',
+		text: '<p><b>WarCry</b>: None of your card effects generated during this combat may be cancelled or negated.</p>',
 		releases: { BR: 53 }
 	},
 	{
+		id: 'BR54',
 		name: 'Bait and Strike',
 		cost: 1,
 		die: 2,
@@ -18780,6 +20239,7 @@ export const cards: Card[] = [
 		releases: { BR: 54 }
 	},
 	{
+		id: 'BR55',
 		name: 'Suicide Mission',
 		cost: 2,
 		die: 4,
@@ -18792,6 +20252,7 @@ export const cards: Card[] = [
 		releases: { BR: 55 }
 	},
 	{
+		id: 'BR56',
 		name: 'Experience of the Veteran',
 		cost: 1,
 		die: 3,
@@ -18804,6 +20265,7 @@ export const cards: Card[] = [
 		releases: { BR: 56 }
 	},
 	{
+		id: 'BR57',
 		name: 'Inflation',
 		die: 4,
 		keywords: ['Strategy'],
@@ -18815,6 +20277,7 @@ export const cards: Card[] = [
 		releases: { BR: 57 }
 	},
 	{
+		id: 'BR58',
 		name: 'Stand Against the Giants',
 		cost: 1,
 		keywords: [],
@@ -18826,6 +20289,7 @@ export const cards: Card[] = [
 		releases: { BR: 58 }
 	},
 	{
+		id: 'BR59',
 		name: "Jasenland's Justice",
 		cost: 2,
 		die: 4,
@@ -18834,10 +20298,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Destroy one unit not in this combat. Only playable if your enemy has more gold in play than was prescribed by the battle and you do not (i.e. 20 in the 1st, 25 in the 2nd, etc.)</p>',
+		text: '<p><b>WarCry</b>: Destroy one unit not in this combat. Only playable if your enemy has more gold in play than was prescribed by the battle and you do not (i.e. 20 in the 1st, 25 in the 2nd, etc.)</p>',
 		releases: { BR: 59 }
 	},
 	{
+		id: 'BR60',
 		name: 'The Iron Hand',
 		cost: 0,
 		die: 3,
@@ -18850,6 +20315,7 @@ export const cards: Card[] = [
 		releases: { BR: 60 }
 	},
 	{
+		id: 'BR61',
 		name: 'Use the Terrain to Your Advantage',
 		cost: 3,
 		die: 2,
@@ -18858,10 +20324,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets "<b>Terror</b>: X" and the enemy unit gets -X tactic points, X equals this unit\'s "<b>Scout</b>" level.</p>',
+		text: '<p><b>WarCry</b>: This unit gets "<b>Terror</b>: X" and the enemy unit gets -X tactic points, X equals this unit\'s "<b>Scout</b>" level.</p>',
 		releases: { BR: 61 }
 	},
 	{
+		id: 'BR62',
 		name: 'Deadly Gamble',
 		cost: 2,
 		die: 2,
@@ -18874,6 +20341,7 @@ export const cards: Card[] = [
 		releases: { BR: 62 }
 	},
 	{
+		id: 'BR63',
 		name: 'Test of Strength',
 		die: 4,
 		keywords: ['Strategy'],
@@ -18885,6 +20353,7 @@ export const cards: Card[] = [
 		releases: { BR: 63 }
 	},
 	{
+		id: 'BR64',
 		name: 'A Wall of Arrows',
 		cost: 2,
 		die: 2,
@@ -18893,10 +20362,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>: Raise this unit's strength to equal this unit's printed <b>Ranged Attack</b>. Only playable while defending and if this unit's strength is less than it's ranged attack.</p>",
+		text: "<p><b>WarCry</b>: Raise this unit's strength to equal this unit's printed <b>Ranged Attack</b>. Only playable while defending and if this unit's strength is less than it's ranged attack.</p>",
 		releases: { BR: 64 }
 	},
 	{
+		id: 'BR65',
 		name: 'Devious Tactics',
 		cost: 2,
 		die: 3,
@@ -18905,10 +20375,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Attach this card to your unit. While attached and this unit is in combat, rolls are subtracted instead of added.</p>',
+		text: '<p><b>WarCry</b>: Attach this card to your unit. While attached and this unit is in combat, rolls are subtracted instead of added.</p>',
 		releases: { BR: 65 }
 	},
 	{
+		id: 'BR66',
 		name: 'On Your Own',
 		die: 1,
 		keywords: [],
@@ -18916,11 +20387,12 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Target one of your character attachments and attach that character to this card. This card becomes an <span class="errata">infantry</span> unit with a Strength, Tactic Points, and Leadership equal to twice the characters gold cost <span class="errata">and a gold cost of 0</span>.</p><p>This card is placed in the same rank as the unit the character was attached to.</p>',
+		text: '<p><b>Command</b>: Target one of your character attachments and attach that character to this card. This card becomes an <span class="errata">infantry</span> unit with a Strength, Tactic Points, and Leadership equal to twice the characters gold cost <span class="errata">and a gold cost of 0</span>.</p><p>This card is placed in the same rank as the unit the character was attached to.</p>',
 		releases: { BR: 66 },
 		errata: true
 	},
 	{
+		id: 'BR67',
 		name: 'I Live!',
 		die: 4,
 		keywords: [],
@@ -18932,6 +20404,7 @@ export const cards: Card[] = [
 		releases: { BR: 67 }
 	},
 	{
+		id: 'BR68',
 		name: 'Heroic Example',
 		cost: 1,
 		die: 3,
@@ -18944,6 +20417,7 @@ export const cards: Card[] = [
 		releases: { BR: 68 }
 	},
 	{
+		id: 'BR69',
 		name: 'All I Have',
 		cost: 1,
 		die: 3,
@@ -18952,10 +20426,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +4 strength. Only playable if this is the last card in your hand.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +4 strength. Only playable if this is the last card in your hand.</p>',
 		releases: { BR: 69 }
 	},
 	{
+		id: 'BR70',
 		name: "Fate's Fortune",
 		cost: 1,
 		die: 4,
@@ -18968,6 +20443,7 @@ export const cards: Card[] = [
 		releases: { BR: 70 }
 	},
 	{
+		id: 'BR71',
 		name: "Thieves' Tactics",
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -18979,6 +20455,7 @@ export const cards: Card[] = [
 		releases: { BR: 71 }
 	},
 	{
+		id: 'BR72',
 		name: 'Overextended',
 		die: 4,
 		keywords: [],
@@ -18990,6 +20467,7 @@ export const cards: Card[] = [
 		releases: { BR: 72 }
 	},
 	{
+		id: 'BR73',
 		name: "Gausser's Gambit",
 		cost: 0,
 		die: 3,
@@ -19002,6 +20480,7 @@ export const cards: Card[] = [
 		releases: { BR: 73 }
 	},
 	{
+		id: 'BR74',
 		name: 'Give It Your Best',
 		cost: 2,
 		die: 2,
@@ -19014,6 +20493,7 @@ export const cards: Card[] = [
 		releases: { BR: 74 }
 	},
 	{
+		id: 'BR75',
 		name: 'Inner Conflict',
 		die: 3,
 		keywords: [],
@@ -19021,10 +20501,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Choose a non-unique enemy unit. This card becomes a copy of the chosen unit. Declare an attack on the chosen unit with this card. This unit may not make follow-up attacks. Once the combat and all follow-ups are resolved,</p><p>your enemy chooses one of your units and this card becomes a copy of the new chosen unit. Your enemy declares an attack on the chosen unit with this card. This unit may not make follow-up attacks.</p>',
+		text: '<p><b>Command</b>: Choose a non-unique enemy unit. This card becomes a copy of the chosen unit. Declare an attack on the chosen unit with this card. This unit may not make follow-up attacks. Once the combat and all follow-ups are resolved,</p><p>your enemy chooses one of your units and this card becomes a copy of the new chosen unit. Your enemy declares an attack on the chosen unit with this card. This unit may not make follow-up attacks.</p>',
 		releases: { BR: 75 }
 	},
 	{
+		id: 'BR76',
 		name: 'The Sun Sets',
 		die: 2,
 		keywords: [],
@@ -19036,6 +20517,7 @@ export const cards: Card[] = [
 		releases: { BR: 76 }
 	},
 	{
+		id: 'BR77',
 		name: 'Dueling Master',
 		cost: 2,
 		die: 2,
@@ -19044,10 +20526,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>: Starting with you, both players take turns playing cards from their hand face down. Once either player passes, no more cards may be played face down. No combat rolls are made this combat. Instead, when the combat rolls would be made,</p><p>the cards are revealed and the total of the dice is considered each player's combat roll.</p>",
+		text: "<p><b>WarCry</b>: Starting with you, both players take turns playing cards from their hand face down. Once either player passes, no more cards may be played face down. No combat rolls are made this combat. Instead, when the combat rolls would be made,</p><p>the cards are revealed and the total of the dice is considered each player's combat roll.</p>",
 		releases: { BR: 77 }
 	},
 	{
+		id: 'BR78',
 		name: 'Sustained Assault',
 		die: 2,
 		keywords: [],
@@ -19059,6 +20542,7 @@ export const cards: Card[] = [
 		releases: { BR: 78 }
 	},
 	{
+		id: 'BR79',
 		name: 'Caught in the Bog',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -19066,10 +20550,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens may not block without a card effect.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
+		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens may not block without a card effect.</p><p><b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
 		releases: { BR: 79 }
 	},
 	{
+		id: 'BR80',
 		name: 'Stuck in the Bog',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -19077,10 +20562,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens have -1 leadership.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
+		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens have -1 leadership.</p><p><b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
 		releases: { BR: 80 }
 	},
 	{
+		id: 'BR81',
 		name: 'Trapped in the Bog',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -19088,10 +20574,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens have -1 tactic point.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
+		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens have -1 tactic point.</p><p><b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
 		releases: { BR: 81 }
 	},
 	{
+		id: 'BR82',
 		name: 'Mired in the Bog',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -19099,10 +20586,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens may not perform follow-up attacks.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
+		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens may not perform follow-up attacks.</p><p><b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
 		releases: { BR: 82 }
 	},
 	{
+		id: 'BR83',
 		name: 'Unsurpassed Strength',
 		cost: 0,
 		keywords: [],
@@ -19110,10 +20598,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Players may play any action card as a combat tactic for 1 tactic point. Their unit gets a strength bonus equal to the die on the card. Players may use this ability any number of times during the combat.</p>',
+		text: '<p><b>WarCry</b>: Players may play any action card as a combat tactic for 1 tactic point. Their unit gets a strength bonus equal to the die on the card. Players may use this ability any number of times during the combat.</p>',
 		releases: { BR: 83 }
 	},
 	{
+		id: 'BR84',
 		name: 'Unsurpassed Loyalty',
 		cost: 'X',
 		die: 1,
@@ -19122,10 +20611,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b> Discard X cards: Your unit gets a strength bonus equal to the combined dice on the discarded cards.</p>',
+		text: '<p><b>WarCry</b> Discard X cards: Your unit gets a strength bonus equal to the combined dice on the discarded cards.</p>',
 		releases: { BR: 84 }
 	},
 	{
+		id: 'BR85',
 		name: 'Confined in the Bog',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -19133,11 +20623,12 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge token may not declare an attack without a card effect.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may play this ability.</p>',
+		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge token may not declare an attack without a card effect.</p><p><b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may play this ability.</p>',
 		releases: { BR: 85 },
 		banned: true
 	},
 	{
+		id: 'BR86',
 		name: 'Virtue of the Small',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -19149,6 +20640,7 @@ export const cards: Card[] = [
 		releases: { BR: 86 }
 	},
 	{
+		id: 'BR87',
 		name: 'Hidden Reserves',
 		die: 3,
 		keywords: [],
@@ -19160,6 +20652,7 @@ export const cards: Card[] = [
 		releases: { BR: 87 }
 	},
 	{
+		id: 'BR88',
 		name: 'The Horror',
 		die: 2,
 		keywords: ['Strategy', 'Terrain'],
@@ -19171,6 +20664,7 @@ export const cards: Card[] = [
 		releases: { BR: 88 }
 	},
 	{
+		id: 'BR89',
 		name: 'Treasured Armour',
 		cost: 1,
 		keywords: ['Armor'],
@@ -19182,6 +20676,7 @@ export const cards: Card[] = [
 		releases: { BR: 89 }
 	},
 	{
+		id: 'BR90',
 		name: 'Witch Hunter',
 		cost: 1,
 		keywords: ['Character'],
@@ -19193,6 +20688,7 @@ export const cards: Card[] = [
 		releases: { BR: 90 }
 	},
 	{
+		id: 'BR91',
 		name: 'Unity Stone',
 		cost: 1,
 		unique: true,
@@ -19205,6 +20701,7 @@ export const cards: Card[] = [
 		releases: { BR: 91 }
 	},
 	{
+		id: 'BR92',
 		name: 'Shadow Cloak',
 		cost: 1,
 		keywords: ['Item'],
@@ -19212,10 +20709,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		rarity: 'Rare',
-		text: '<p>This unit gets "<b>Scout</b>: 2"</p><p> <b>WarCry</b>: This unit gets a shadow token. Only playable if this unit\'s "<b>Scout</b>" level is greater than the enemy unit\'s strength.</p><p><b>Reaction</b> Discard a shadow token from this unit: If this unit is destroyed in a battle, return it to the battle line committed and reduce its printed strength to 0 until after the end of the battle.</p>',
+		text: '<p>This unit gets "<b>Scout</b>: 2"</p><p><b>WarCry</b>: This unit gets a shadow token. Only playable if this unit\'s "<b>Scout</b>" level is greater than the enemy unit\'s strength.</p><p><b>Reaction</b> Discard a shadow token from this unit: If this unit is destroyed in a battle, return it to the battle line committed and reduce its printed strength to 0 until after the end of the battle.</p>',
 		releases: { BR: 92 }
 	},
 	{
+		id: 'BR93',
 		name: 'Enchanted Spear',
 		cost: 1,
 		keywords: ['Weapon'],
@@ -19227,6 +20725,7 @@ export const cards: Card[] = [
 		releases: { BR: 93 }
 	},
 	{
+		id: 'BR94',
 		name: 'Dumin Rockbrow',
 		cost: 3,
 		strength: 3,
@@ -19241,6 +20740,7 @@ export const cards: Card[] = [
 		releases: { BR: 94 }
 	},
 	{
+		id: 'BR95',
 		name: "Droken's Slayers of Skaven",
 		cost: 3,
 		strength: 3,
@@ -19255,6 +20755,7 @@ export const cards: Card[] = [
 		releases: { BR: 95 }
 	},
 	{
+		id: 'BR96',
 		name: 'Halrig Bloodstone',
 		cost: 3,
 		strength: 2,
@@ -19265,10 +20766,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Terror</b>: 1</p><p> <b>Command</b> Destroy this unit: Roll. Destroy a unit with a gold cost equal to or less than the roll.</p><p><b>Combat Tactic</b>: This unit gets a strength bonus equal to the number of tactic points spent by the enemy unit. You may not play this ability after your enemy has passed in the combat.</p>',
+		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Terror</b>: 1</p><p><b>Command</b> Destroy this unit: Roll. Destroy a unit with a gold cost equal to or less than the roll.</p><p><b>Combat Tactic</b>: This unit gets a strength bonus equal to the number of tactic points spent by the enemy unit. You may not play this ability after your enemy has passed in the combat.</p>',
 		releases: { BR: 96 }
 	},
 	{
+		id: 'BR97',
 		name: "Stoneheart's Doomseekers",
 		cost: 4,
 		strength: 1,
@@ -19283,6 +20785,7 @@ export const cards: Card[] = [
 		releases: { BR: 97 }
 	},
 	{
+		id: 'BR98',
 		name: 'Droken Stoneheart',
 		cost: 4,
 		strength: 3,
@@ -19297,6 +20800,7 @@ export const cards: Card[] = [
 		releases: { BR: 98 }
 	},
 	{
+		id: 'BR99',
 		name: "Grimjaw's Volunteer Guard",
 		cost: 4,
 		strength: 4,
@@ -19311,6 +20815,7 @@ export const cards: Card[] = [
 		releases: { BR: 99 }
 	},
 	{
+		id: 'BR100',
 		name: 'Gnollen Stoneheart',
 		cost: 4,
 		strength: 3,
@@ -19325,6 +20830,7 @@ export const cards: Card[] = [
 		releases: { BR: 100 }
 	},
 	{
+		id: 'BR101',
 		name: "Stoneheart's Slayers of the Cursed",
 		cost: 4,
 		strength: 3,
@@ -19339,6 +20845,7 @@ export const cards: Card[] = [
 		releases: { BR: 101 }
 	},
 	{
+		id: 'BR102',
 		name: 'Skollan Stoneheart',
 		cost: 5,
 		strength: 5,
@@ -19349,10 +20856,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>: This unit gets a strength bonus equal to the enemy unit's printed strength.</p>",
+		text: "<p><b>WarCry</b>: This unit gets a strength bonus equal to the enemy unit's printed strength.</p>",
 		releases: { BR: 102 }
 	},
 	{
+		id: 'BR103',
 		name: 'The Implacable',
 		cost: 5,
 		strength: 4,
@@ -19368,6 +20876,7 @@ export const cards: Card[] = [
 		releases: { BR: 103 }
 	},
 	{
+		id: 'BR104',
 		name: "Gausser's Huntsmen of the North",
 		cost: 3,
 		strength: 3,
@@ -19382,6 +20891,7 @@ export const cards: Card[] = [
 		releases: { BR: 104 }
 	},
 	{
+		id: 'BR105',
 		name: 'Inner Circle of the Knights Panther',
 		cost: 3,
 		strength: 2,
@@ -19396,6 +20906,7 @@ export const cards: Card[] = [
 		releases: { BR: 105 }
 	},
 	{
+		id: 'BR106',
 		name: "Gausser's Huntsmen of the South",
 		cost: 4,
 		strength: 4,
@@ -19410,6 +20921,7 @@ export const cards: Card[] = [
 		releases: { BR: 106 }
 	},
 	{
+		id: 'BR107',
 		name: 'Knights of the Bared Fang',
 		cost: 4,
 		strength: 3,
@@ -19424,6 +20936,7 @@ export const cards: Card[] = [
 		releases: { BR: 107 }
 	},
 	{
+		id: 'BR108',
 		name: 'Leon Trolmann',
 		cost: 4,
 		strength: 1,
@@ -19438,6 +20951,7 @@ export const cards: Card[] = [
 		releases: { BR: 108 }
 	},
 	{
+		id: 'BR109',
 		name: "Knights of the Panther's Claw",
 		cost: 5,
 		strength: 4,
@@ -19452,6 +20966,7 @@ export const cards: Card[] = [
 		releases: { BR: 109 }
 	},
 	{
+		id: 'BR110',
 		name: 'Knights of the Savage Cat',
 		cost: 5,
 		strength: 4,
@@ -19466,6 +20981,7 @@ export const cards: Card[] = [
 		releases: { BR: 110 }
 	},
 	{
+		id: 'BR111',
 		name: 'Grand Master Denhaus of the Knights Panther',
 		cost: 5,
 		strength: 5,
@@ -19481,6 +20997,7 @@ export const cards: Card[] = [
 		releases: { BR: 111 }
 	},
 	{
+		id: 'BR112',
 		name: "Whitestar's Thundering Hooves",
 		cost: 4,
 		strength: 3,
@@ -19495,6 +21012,7 @@ export const cards: Card[] = [
 		releases: { BR: 112 }
 	},
 	{
+		id: 'BR113',
 		name: "Whitestar's Shooting Star",
 		cost: 3,
 		strength: 1,
@@ -19509,6 +21027,7 @@ export const cards: Card[] = [
 		releases: { BR: 113 }
 	},
 	{
+		id: 'BR114',
 		name: "Whitestar's Whirling Blades",
 		cost: 3,
 		strength: 3,
@@ -19523,6 +21042,7 @@ export const cards: Card[] = [
 		releases: { BR: 114 }
 	},
 	{
+		id: 'BR115',
 		name: "Whitestar's Silvertips",
 		cost: 4,
 		strength: 3,
@@ -19537,6 +21057,7 @@ export const cards: Card[] = [
 		releases: { BR: 115 }
 	},
 	{
+		id: 'BR116',
 		name: "Bilgarim's Archers of Nightfall",
 		cost: 4,
 		strength: 1,
@@ -19551,6 +21072,7 @@ export const cards: Card[] = [
 		releases: { BR: 116 }
 	},
 	{
+		id: 'BR117',
 		name: 'Calamir Truedance',
 		cost: 4,
 		strength: 3,
@@ -19565,6 +21087,7 @@ export const cards: Card[] = [
 		releases: { BR: 117 }
 	},
 	{
+		id: 'BR118',
 		name: 'Ryndaire Goldenleaf',
 		cost: 4,
 		strength: 4,
@@ -19579,6 +21102,7 @@ export const cards: Card[] = [
 		releases: { BR: 118 }
 	},
 	{
+		id: 'BR119',
 		name: "Bilgarim's Silvercrests",
 		cost: 4,
 		strength: 3,
@@ -19589,10 +21113,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +2 tactic points and you draw 1 card. Only playable vs. units with lower gold costs.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 tactic points and you draw 1 card. Only playable vs. units with lower gold costs.</p>',
 		releases: { BR: 119 }
 	},
 	{
+		id: 'BR120',
 		name: "Whitestar's Protectorate",
 		cost: 4,
 		strength: 4,
@@ -19608,6 +21133,7 @@ export const cards: Card[] = [
 		releases: { BR: 120 }
 	},
 	{
+		id: 'VT1',
 		name: 'Clickclick Bangbang',
 		cost: 3,
 		strength: 0,
@@ -19621,6 +21147,7 @@ export const cards: Card[] = [
 		releases: { VT: 1 }
 	},
 	{
+		id: 'VT2',
 		name: "Headtaker's Censer Bearers",
 		cost: 4,
 		strength: 4,
@@ -19631,10 +21158,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p>This unit may not attack until one of your other units has declared an attack.</p><p> <b>WarCry</b>: This unit gets +1 strength and your enemy discards 1 card.</p><p><b>Combat Tactic</b>: This attacking unit gets +2 strength.</p>',
+		text: '<p>This unit may not attack until one of your other units has declared an attack.</p><p><b>WarCry</b>: This unit gets +1 strength and your enemy discards 1 card.</p><p><b>Combat Tactic</b>: This attacking unit gets +2 strength.</p>',
 		releases: { VT: 2 }
 	},
 	{
+		id: 'VT3',
 		name: "Headtaker's Ratmen",
 		cost: 3,
 		strength: 2,
@@ -19648,6 +21176,7 @@ export const cards: Card[] = [
 		releases: { VT: 3 }
 	},
 	{
+		id: 'VT4',
 		name: "Queek's Foul Monks",
 		cost: 4,
 		strength: 3,
@@ -19661,6 +21190,7 @@ export const cards: Card[] = [
 		releases: { VT: 4 }
 	},
 	{
+		id: 'VT5',
 		name: "Queek's Vile Ratkin",
 		cost: 4,
 		strength: 4,
@@ -19674,6 +21204,7 @@ export const cards: Card[] = [
 		releases: { VT: 5 }
 	},
 	{
+		id: 'VT6',
 		name: 'Skaven Tunnels',
 		cost: 2,
 		strength: 1,
@@ -19683,10 +21214,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p>This unit may not attack. Any ready unit may block an attack on this unit.</p><p> <b>Command</b> Commit: If this unit is in your battle line, one of your Skaven units may declare an attack against an enemy unit in the reserves. This attack may not be blocked.</p>',
+		text: '<p>This unit may not attack. Any ready unit may block an attack on this unit.</p><p><b>Command</b> Commit: If this unit is in your battle line, one of your Skaven units may declare an attack against an enemy unit in the reserves. This attack may not be blocked.</p>',
 		releases: { VT: 6 }
 	},
 	{
+		id: 'VT7',
 		name: 'Swarm of Skavenblight',
 		cost: 2,
 		strength: 3,
@@ -19700,6 +21232,7 @@ export const cards: Card[] = [
 		releases: { VT: 7 }
 	},
 	{
+		id: 'VT8',
 		name: 'Warlock Quiksnak',
 		cost: 5,
 		strength: 3,
@@ -19714,6 +21247,7 @@ export const cards: Card[] = [
 		releases: { VT: 8 }
 	},
 	{
+		id: 'VT9',
 		name: 'Warlord Queek Headtaker',
 		cost: 6,
 		strength: 6,
@@ -19728,6 +21262,7 @@ export const cards: Card[] = [
 		releases: { VT: 9 }
 	},
 	{
+		id: 'VT10',
 		name: 'Cloak of Shadows',
 		cost: 1,
 		keywords: ['Skaven', 'Item'],
@@ -19738,6 +21273,7 @@ export const cards: Card[] = [
 		releases: { VT: 10 }
 	},
 	{
+		id: 'VT11',
 		name: 'Packmaster Teekteek',
 		cost: 1,
 		unique: true,
@@ -19749,6 +21285,7 @@ export const cards: Card[] = [
 		releases: { VT: 11 }
 	},
 	{
+		id: 'VT12',
 		name: 'Weeping Blade',
 		cost: 2,
 		strength: 1,
@@ -19761,6 +21298,7 @@ export const cards: Card[] = [
 		releases: { VT: 12 }
 	},
 	{
+		id: 'VT13',
 		name: 'Death Frenzy',
 		cost: 2,
 		die: 2,
@@ -19772,6 +21310,7 @@ export const cards: Card[] = [
 		releases: { VT: 13 }
 	},
 	{
+		id: 'VT14',
 		name: 'Expendable',
 		cost: 1,
 		die: 3,
@@ -19783,6 +21322,7 @@ export const cards: Card[] = [
 		releases: { VT: 14 }
 	},
 	{
+		id: 'VT15',
 		name: 'He Who Runs Away...',
 		cost: 3,
 		die: 3,
@@ -19794,6 +21334,7 @@ export const cards: Card[] = [
 		releases: { VT: 15 }
 	},
 	{
+		id: 'VT16',
 		name: 'Lead from the Rear',
 		cost: 2,
 		die: 3,
@@ -19805,6 +21346,7 @@ export const cards: Card[] = [
 		releases: { VT: 16 }
 	},
 	{
+		id: 'VT17',
 		name: 'Make Them Fear Us',
 		cost: 1,
 		die: 3,
@@ -19816,6 +21358,7 @@ export const cards: Card[] = [
 		releases: { VT: 17 }
 	},
 	{
+		id: 'VT18',
 		name: 'Plague',
 		die: 2,
 		keywords: [],
@@ -19827,6 +21370,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'VT19',
 		name: 'Skavenblight',
 		die: 2,
 		keywords: ['Skaven', 'Strategy', 'Terrain'],
@@ -19837,6 +21381,7 @@ export const cards: Card[] = [
 		releases: { VT: 19 }
 	},
 	{
+		id: 'VT20',
 		name: 'Swarm Them!',
 		cost: 2,
 		die: 2,
@@ -19844,10 +21389,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
-		text: "<p> <b>WarCry</b>: This unit gets +1 strength for every unit you have in play with a printed gold cost of less than 3.</p><p><b>Reaction</b>: After this card is rolled, it's a die is considered equal to the number of units you have in play with a gold cost of greater than 3.</p>",
+		text: "<p><b>WarCry</b>: This unit gets +1 strength for every unit you have in play with a printed gold cost of less than 3.</p><p><b>Reaction</b>: After this card is rolled, it's a die is considered equal to the number of units you have in play with a gold cost of greater than 3.</p>",
 		releases: { VT: 20 }
 	},
 	{
+		id: 'VT21',
 		name: 'Warpstone Mutation',
 		cost: 2,
 		die: 2,
@@ -19859,6 +21405,7 @@ export const cards: Card[] = [
 		releases: { VT: 21 }
 	},
 	{
+		id: 'VT29',
 		name: "Athel Loren's Eternal Guard",
 		cost: 3,
 		strength: 2,
@@ -19872,6 +21419,7 @@ export const cards: Card[] = [
 		releases: { VT: 29 }
 	},
 	{
+		id: 'VT30',
 		name: 'Callaen Strongblade',
 		cost: 4,
 		strength: 2,
@@ -19882,10 +21430,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: "<p>The following abilities may be played while committed.</p><p> <b>WarCry</b>: This unit gets <b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for each terrain card you have in play.</p><p><b>Combat Tactic</b>: If this unit's combat roll is an unmodified 6, this unit wins the combat instead.</p>",
+		text: "<p>The following abilities may be played while committed.</p><p><b>WarCry</b>: This unit gets <b>Terror</b>: 1</p><p><b>WarCry</b>: This unit gets +1 strength for each terrain card you have in play.</p><p><b>Combat Tactic</b>: If this unit's combat roll is an unmodified 6, this unit wins the combat instead.</p>",
 		releases: { VT: 30 }
 	},
 	{
+		id: 'VT31',
 		name: 'Forest Lookout',
 		cost: 2,
 		strength: 0,
@@ -19899,6 +21448,7 @@ export const cards: Card[] = [
 		releases: { VT: 31 }
 	},
 	{
+		id: 'VT32',
 		name: 'Naieth the Prophetess',
 		cost: 4,
 		strength: 2,
@@ -19913,6 +21463,7 @@ export const cards: Card[] = [
 		releases: { VT: 32 }
 	},
 	{
+		id: 'VT33',
 		name: 'Orion',
 		cost: 5,
 		strength: 4,
@@ -19927,6 +21478,7 @@ export const cards: Card[] = [
 		releases: { VT: 33 }
 	},
 	{
+		id: 'VT34',
 		name: "Orion's Forest Guard",
 		cost: 3,
 		strength: 1,
@@ -19940,6 +21492,7 @@ export const cards: Card[] = [
 		releases: { VT: 34 }
 	},
 	{
+		id: 'VT35',
 		name: 'Treekin of Athel Loren',
 		cost: 4,
 		strength: 6,
@@ -19953,6 +21506,7 @@ export const cards: Card[] = [
 		releases: { VT: 35 }
 	},
 	{
+		id: 'VT36',
 		name: 'Warhawks of Kurnous',
 		cost: 3,
 		strength: 3,
@@ -19962,10 +21516,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b>: this unit gets +2 strength vs. committed units. If this unit loses the combat, destroy this unit.</p>',
+		text: '<p><b>WarCry</b>: this unit gets +2 strength vs. committed units. If this unit loses the combat, destroy this unit.</p>',
 		releases: { VT: 36 }
 	},
 	{
+		id: 'VT37',
 		name: 'Wild Riders of Kurnous',
 		cost: 4,
 		strength: 3,
@@ -19975,10 +21530,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b>: Reveal the top 5 cards of your action deck. Put any terrain cards revaled into play and discard the rest.</p>',
+		text: '<p><b>WarCry</b>: Reveal the top 5 cards of your action deck. Put any terrain cards revaled into play and discard the rest.</p>',
 		releases: { VT: 37 }
 	},
 	{
+		id: 'VT38',
 		name: 'Winter Guard',
 		cost: 4,
 		strength: 'X',
@@ -19992,6 +21548,7 @@ export const cards: Card[] = [
 		releases: { VT: 38 }
 	},
 	{
+		id: 'VT39',
 		name: 'A Murder of Spites',
 		cost: 0,
 		tacticPoints: -1,
@@ -19999,10 +21556,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Attachment',
-		text: '<p>Wood Elf Only</p><p> <b>WarCry</b>: This unit gets +d6 strength. If this roll is 5 or higher, destroy this unit at the end of the combat.</p>',
+		text: '<p>Wood Elf Only</p><p><b>WarCry</b>: This unit gets +d6 strength. If this roll is 5 or higher, destroy this unit at the end of the combat.</p>',
 		releases: { VT: 39 }
 	},
 	{
+		id: 'VT40',
 		name: 'Bow of Loren',
 		cost: 2,
 		unique: true,
@@ -20010,10 +21568,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Attachment',
-		text: '<p>Wood Elf Only</p><p>This unit has <b>Ranged Attack</b>: 4</p><p> <b>Command</b>: Once per battle, this unit may make a ranged attack and does not commit after the combat.</p>',
+		text: '<p>Wood Elf Only</p><p>This unit has <b>Ranged Attack</b>: 4</p><p><b>Command</b>: Once per battle, this unit may make a ranged attack and does not commit after the combat.</p>',
 		releases: { VT: 40 }
 	},
 	{
+		id: 'VT41',
 		name: 'Athel Loren Territories',
 		die: 2,
 		keywords: ['Wood Elf', 'Strategy', 'Terrain'],
@@ -20024,6 +21583,7 @@ export const cards: Card[] = [
 		releases: { VT: 41 }
 	},
 	{
+		id: 'VT42',
 		name: 'Point Blank Fighting',
 		die: 5,
 		keywords: [],
@@ -20034,6 +21594,7 @@ export const cards: Card[] = [
 		releases: { VT: 42 }
 	},
 	{
+		id: 'VT43',
 		name: 'Rally Behind the Arrows',
 		die: 2,
 		keywords: [],
@@ -20044,16 +21605,18 @@ export const cards: Card[] = [
 		releases: { VT: 43 }
 	},
 	{
+		id: 'VT44',
 		name: 'Seize the Battle',
 		die: 3,
 		keywords: [],
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Command',
-		text: '<p> <b>Command</b>: Play 2 strategy cards. If this is your first command play 3 strategy cards.</p>',
+		text: '<p><b>Command</b>: Play 2 strategy cards. If this is your first command play 3 strategy cards.</p>',
 		releases: { VT: 44 }
 	},
 	{
+		id: 'VT45',
 		name: 'Strength in the Bow',
 		cost: 1,
 		die: 3,
@@ -20065,6 +21628,7 @@ export const cards: Card[] = [
 		releases: { VT: 45 }
 	},
 	{
+		id: 'VT46',
 		name: 'Strength in the Woods',
 		cost: 1,
 		die: 3,
@@ -20076,6 +21640,7 @@ export const cards: Card[] = [
 		releases: { VT: 46 }
 	},
 	{
+		id: 'VT47',
 		name: 'Taking Aim from on High',
 		die: 2,
 		keywords: ['Strategy', 'Terrain'],
@@ -20086,6 +21651,7 @@ export const cards: Card[] = [
 		releases: { VT: 47 }
 	},
 	{
+		id: 'VT48',
 		name: 'Tighten the Ranks',
 		cost: 2,
 		die: 5,
@@ -20093,10 +21659,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: Your unit gets +1 ranged attack for every unit you have in play. The enemy unit gets +1 strength for every unit they have in play.</p>',
+		text: '<p><b>WarCry</b>: Your unit gets +1 ranged attack for every unit you have in play. The enemy unit gets +1 strength for every unit they have in play.</p>',
 		releases: { VT: 48 }
 	},
 	{
+		id: 'VT49',
 		name: 'Woodlands',
 		die: 4,
 		keywords: ['Strategy', 'Terrain'],
@@ -20107,6 +21674,7 @@ export const cards: Card[] = [
 		releases: { VT: 49 }
 	},
 	{
+		id: 'SR1',
 		name: 'Zevael, Greater Daemon of Khorne',
 		cost: 6,
 		strength: 3,
@@ -20122,6 +21690,7 @@ export const cards: Card[] = [
 		releases: { SR: 1 }
 	},
 	{
+		id: 'SR2',
 		name: "Bilerot's Marauders",
 		cost: 2,
 		strength: 2,
@@ -20132,10 +21701,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Commit or destroy this unit: Draw 1 card. You may use this ability while committed.</p>',
+		text: '<p><b>Command</b> Commit or destroy this unit: Draw 1 card. You may use this ability while committed.</p>',
 		releases: { SR: 2 }
 	},
 	{
+		id: 'SR3',
 		name: "C'ulvan the Decayed",
 		cost: 9,
 		strength: 9,
@@ -20151,6 +21721,7 @@ export const cards: Card[] = [
 		releases: { SR: 3 }
 	},
 	{
+		id: 'SR4',
 		name: "C'ulvan's Chosen",
 		cost: 4,
 		strength: 7,
@@ -20165,6 +21736,7 @@ export const cards: Card[] = [
 		releases: { SR: 4 }
 	},
 	{
+		id: 'SR5',
 		name: "C'ulvan's Pestilence Swarm",
 		cost: 2,
 		strength: 1,
@@ -20179,6 +21751,7 @@ export const cards: Card[] = [
 		releases: { SR: 5 }
 	},
 	{
+		id: 'SR6',
 		name: 'Plague Bearers',
 		cost: 4,
 		strength: 4,
@@ -20189,10 +21762,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to it\'s "<b>Terror</b>".</p>',
+		text: '<p><b>Terror</b>: 1</p><p><b>WarCry</b>: This unit gets a strength bonus equal to it\'s "<b>Terror</b>".</p>',
 		releases: { SR: 6 }
 	},
 	{
+		id: 'SR7',
 		name: "Tai'Ir the Putrid",
 		cost: 5,
 		strength: 3,
@@ -20207,6 +21781,7 @@ export const cards: Card[] = [
 		releases: { SR: 7 }
 	},
 	{
+		id: 'SR8',
 		name: 'Kurlon the Rotten, Trumpeter of Decay',
 		cost: 1,
 		keywords: ['Chaos', 'Character'],
@@ -20218,6 +21793,7 @@ export const cards: Card[] = [
 		releases: { SR: 8 }
 	},
 	{
+		id: 'SR9',
 		name: 'Plague Banner',
 		cost: 2,
 		unique: true,
@@ -20230,6 +21806,7 @@ export const cards: Card[] = [
 		releases: { SR: 9 }
 	},
 	{
+		id: 'SR10',
 		name: 'Khron Nightglade',
 		cost: 4,
 		strength: 2,
@@ -20244,6 +21821,7 @@ export const cards: Card[] = [
 		releases: { SR: 10 }
 	},
 	{
+		id: 'SR11',
 		name: "Blackspear's Sacrificers",
 		cost: 4,
 		strength: 3,
@@ -20254,10 +21832,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Once per battle, target an enemy unit. If that unit is still in play at the end of the battle, it must be carried over.</p>',
+		text: '<p><b>Command</b>: Once per battle, target an enemy unit. If that unit is still in play at the end of the battle, it must be carried over.</p>',
 		releases: { SR: 11 }
 	},
 	{
+		id: 'SR12',
 		name: 'Death Reapers',
 		cost: 3,
 		strength: 1,
@@ -20273,6 +21852,7 @@ export const cards: Card[] = [
 		releases: { SR: 12 }
 	},
 	{
+		id: 'SR13',
 		name: 'Death Swords',
 		cost: 5,
 		strength: 3,
@@ -20287,6 +21867,7 @@ export const cards: Card[] = [
 		releases: { SR: 13 }
 	},
 	{
+		id: 'SR14',
 		name: "Ha'asek's Blackswords",
 		cost: 4,
 		strength: 3,
@@ -20301,6 +21882,7 @@ export const cards: Card[] = [
 		releases: { SR: 14 }
 	},
 	{
+		id: 'SR15',
 		name: 'Nordhil Blackspear',
 		cost: 8,
 		strength: 5,
@@ -20316,6 +21898,7 @@ export const cards: Card[] = [
 		releases: { SR: 15 }
 	},
 	{
+		id: 'SR16',
 		name: 'Ryna Bloodraven',
 		cost: 5,
 		strength: 3,
@@ -20331,6 +21914,7 @@ export const cards: Card[] = [
 		releases: { SR: 16 }
 	},
 	{
+		id: 'SR17',
 		name: 'Hydra Banner',
 		cost: 2,
 		tacticPoints: 2,
@@ -20344,6 +21928,7 @@ export const cards: Card[] = [
 		releases: { SR: 17 }
 	},
 	{
+		id: 'SR18',
 		name: 'Khardil, Herald of Naggaroth',
 		cost: 1,
 		tacticPoints: 2,
@@ -20356,6 +21941,7 @@ export const cards: Card[] = [
 		releases: { SR: 18 }
 	},
 	{
+		id: 'SR19',
 		name: 'Vorott the Masher',
 		cost: 5,
 		strength: 8,
@@ -20372,6 +21958,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'SR20',
 		name: "Grimgore's Spider Riders",
 		cost: 4,
 		strength: 3,
@@ -20386,6 +21973,7 @@ export const cards: Card[] = [
 		releases: { SR: 20 }
 	},
 	{
+		id: 'SR21',
 		name: "Grubbi's Goblin Elfsnappers",
 		cost: 3,
 		strength: 0,
@@ -20400,6 +21988,7 @@ export const cards: Card[] = [
 		releases: { SR: 21 }
 	},
 	{
+		id: 'SR22',
 		name: "Urguck's 'Eadloppas",
 		cost: 3,
 		strength: 3,
@@ -20410,10 +21999,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: "<p> <b>WarCry</b>: Roll. Commit the enemy unit if the roll is equal to or greater than the enemy's strength.</p>",
+		text: "<p><b>WarCry</b>: Roll. Commit the enemy unit if the roll is equal to or greater than the enemy's strength.</p>",
 		releases: { SR: 22 }
 	},
 	{
+		id: 'SR23',
 		name: "Urguck's Manstompas",
 		cost: 4,
 		strength: 0,
@@ -20428,6 +22018,7 @@ export const cards: Card[] = [
 		releases: { SR: 23 }
 	},
 	{
+		id: 'SR24',
 		name: "Urguck's Sneaky Shootaz",
 		cost: 4,
 		strength: 2,
@@ -20442,6 +22033,7 @@ export const cards: Card[] = [
 		releases: { SR: 24 }
 	},
 	{
+		id: 'SR25',
 		name: 'Vagar Dwarfstomper',
 		cost: 6,
 		strength: 8,
@@ -20458,6 +22050,7 @@ export const cards: Card[] = [
 		banned: true
 	},
 	{
+		id: 'SR26',
 		name: 'Conductor of the Waaagh',
 		cost: 1,
 		keywords: ['Orc', 'Character'],
@@ -20469,6 +22062,7 @@ export const cards: Card[] = [
 		releases: { SR: 26 }
 	},
 	{
+		id: 'SR27',
 		name: 'Raggedy Banner',
 		cost: 2,
 		strength: 1,
@@ -20482,6 +22076,7 @@ export const cards: Card[] = [
 		releases: { SR: 27 }
 	},
 	{
+		id: 'SR28',
 		name: 'War Banner',
 		cost: 2,
 		keywords: ['Standard'],
@@ -20493,6 +22088,7 @@ export const cards: Card[] = [
 		releases: { SR: 28 }
 	},
 	{
+		id: 'SR29',
 		name: 'All We Have to Give',
 		cost: 1,
 		die: 4,
@@ -20505,6 +22101,7 @@ export const cards: Card[] = [
 		releases: { SR: 29 }
 	},
 	{
+		id: 'SR30',
 		name: 'Altered Orders',
 		cost: 2,
 		die: 2,
@@ -20513,10 +22110,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p><b>Combat Tactic</b>: This attacking unit gets +2 strength.</p><p> <b>WarCry</b>: This attacking unit gets +4 strength.</p>',
+		text: '<p><b>Combat Tactic</b>: This attacking unit gets +2 strength.</p><p><b>WarCry</b>: This attacking unit gets +4 strength.</p>',
 		releases: { SR: 30 }
 	},
 	{
+		id: 'SR31',
 		name: 'Altered Strategies',
 		cost: 3,
 		die: 2,
@@ -20525,10 +22123,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p><b>Combat Tactic</b>: This attacking unit gets +3 strength.</p><p> <b>WarCry</b>: This attacking unit gets +5 strength.</p>',
+		text: '<p><b>Combat Tactic</b>: This attacking unit gets +3 strength.</p><p><b>WarCry</b>: This attacking unit gets +5 strength.</p>',
 		releases: { SR: 31 }
 	},
 	{
+		id: 'SR32',
 		name: "I'm Coming for You",
 		cost: 3,
 		die: 3,
@@ -20541,6 +22140,7 @@ export const cards: Card[] = [
 		releases: { SR: 32 }
 	},
 	{
+		id: 'SR33',
 		name: 'Last Ditch Effort (SR)',
 		die: 3,
 		keywords: [],
@@ -20552,6 +22152,7 @@ export const cards: Card[] = [
 		releases: { SR: 33 }
 	},
 	{
+		id: 'SR34',
 		name: 'Altered Tactics',
 		cost: 1,
 		die: 2,
@@ -20560,10 +22161,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><b>Combat Tactic</b>: This attacking unit gets +1 strength.</p><p> <b>WarCry</b>: This attacking unit gets +3 strength.</p>',
+		text: '<p><b>Combat Tactic</b>: This attacking unit gets +1 strength.</p><p><b>WarCry</b>: This attacking unit gets +3 strength.</p>',
 		releases: { SR: 34 }
 	},
 	{
+		id: 'SR35',
 		name: 'Applied Knowledge',
 		cost: 1,
 		die: 4,
@@ -20576,6 +22178,7 @@ export const cards: Card[] = [
 		releases: { SR: 35 }
 	},
 	{
+		id: 'SR36',
 		name: 'Change in the Currents',
 		die: 4,
 		keywords: [],
@@ -20587,6 +22190,7 @@ export const cards: Card[] = [
 		releases: { SR: 36 }
 	},
 	{
+		id: 'SR37',
 		name: 'Changes in the Plan of Attack',
 		die: 4,
 		keywords: ['Strategy'],
@@ -20598,6 +22202,7 @@ export const cards: Card[] = [
 		releases: { SR: 37 }
 	},
 	{
+		id: 'SR38',
 		name: 'Clarity in the Veteran',
 		die: 3,
 		keywords: [],
@@ -20609,6 +22214,7 @@ export const cards: Card[] = [
 		releases: { SR: 38 }
 	},
 	{
+		id: 'SR39',
 		name: 'Empowerment',
 		die: 2,
 		keywords: ['Strategy'],
@@ -20620,6 +22226,7 @@ export const cards: Card[] = [
 		releases: { SR: 39 }
 	},
 	{
+		id: 'SR40',
 		name: 'End Game Maneuvering',
 		cost: 3,
 		die: 3,
@@ -20628,10 +22235,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals the number of your action cards that are removed from the game.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +X strength. X equals the number of your action cards that are removed from the game.</p>',
 		releases: { SR: 40 }
 	},
 	{
+		id: 'SR41',
 		name: 'Extended to Your Limits',
 		die: 4,
 		keywords: [],
@@ -20643,6 +22251,7 @@ export const cards: Card[] = [
 		releases: { SR: 41 }
 	},
 	{
+		id: 'SR42',
 		name: 'Quick Strike',
 		die: 2,
 		keywords: [],
@@ -20654,6 +22263,7 @@ export const cards: Card[] = [
 		releases: { SR: 42 }
 	},
 	{
+		id: 'SR43',
 		name: 'Fill the Gaps in the Line',
 		die: 5,
 		keywords: [],
@@ -20665,6 +22275,7 @@ export const cards: Card[] = [
 		releases: { SR: 43 }
 	},
 	{
+		id: 'SR44',
 		name: 'Forest',
 		die: 3,
 		keywords: ['Strategy', 'Terrain'],
@@ -20676,6 +22287,7 @@ export const cards: Card[] = [
 		releases: { SR: 44 }
 	},
 	{
+		id: 'SR45',
 		name: 'Fortune on the Winds',
 		die: 3,
 		keywords: ['Strategy'],
@@ -20687,6 +22299,7 @@ export const cards: Card[] = [
 		releases: { SR: 45 }
 	},
 	{
+		id: 'SR46',
 		name: 'Full Pull and Release',
 		cost: 1,
 		die: 3,
@@ -20699,6 +22312,7 @@ export const cards: Card[] = [
 		releases: { SR: 46 }
 	},
 	{
+		id: 'SR47',
 		name: 'Get It Right This Time',
 		cost: 1,
 		die: 3,
@@ -20711,6 +22325,7 @@ export const cards: Card[] = [
 		releases: { SR: 47 }
 	},
 	{
+		id: 'SR48',
 		name: 'Herd of Wild Horses',
 		die: 4,
 		keywords: ['Strategy'],
@@ -20722,6 +22337,7 @@ export const cards: Card[] = [
 		releases: { SR: 48 }
 	},
 	{
+		id: 'SR49',
 		name: 'Herd of Wild Pegasi',
 		die: 4,
 		keywords: ['Strategy'],
@@ -20733,6 +22349,7 @@ export const cards: Card[] = [
 		releases: { SR: 49 }
 	},
 	{
+		id: 'SR50',
 		name: 'Influence Fate',
 		die: 3,
 		keywords: [],
@@ -20744,6 +22361,7 @@ export const cards: Card[] = [
 		releases: { SR: 50 }
 	},
 	{
+		id: 'SR51',
 		name: 'Ingrained Tactics',
 		cost: 3,
 		die: 3,
@@ -20756,6 +22374,7 @@ export const cards: Card[] = [
 		releases: { SR: 51 }
 	},
 	{
+		id: 'SR52',
 		name: "Jasenland's Probing Tactics",
 		cost: 2,
 		die: 3,
@@ -20764,10 +22383,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p><b>Combat Tactic</b>: Your unit gets +2 strength.</p><p> <b>WarCry</b>: Your unit gets +2 strength and your enemy must reveal two random cards from their hand.</p>',
+		text: '<p><b>Combat Tactic</b>: Your unit gets +2 strength.</p><p><b>WarCry</b>: Your unit gets +2 strength and your enemy must reveal two random cards from their hand.</p>',
 		releases: { SR: 52 }
 	},
 	{
+		id: 'SR53',
 		name: 'Lead by Example',
 		cost: 1,
 		die: 4,
@@ -20780,6 +22400,7 @@ export const cards: Card[] = [
 		releases: { SR: 53 }
 	},
 	{
+		id: 'SR54',
 		name: 'Lessons Learned',
 		die: 4,
 		keywords: ['Strategy'],
@@ -20791,6 +22412,7 @@ export const cards: Card[] = [
 		releases: { SR: 54 }
 	},
 	{
+		id: 'SR55',
 		name: 'Master of the Battlefield',
 		cost: 2,
 		die: 4,
@@ -20803,6 +22425,7 @@ export const cards: Card[] = [
 		releases: { SR: 55 }
 	},
 	{
+		id: 'SR56',
 		name: 'Maximise Resources',
 		die: 4,
 		keywords: ['Strategy'],
@@ -20814,6 +22437,7 @@ export const cards: Card[] = [
 		releases: { SR: 56 }
 	},
 	{
+		id: 'SR57',
 		name: 'Misguided Tactics',
 		die: 4,
 		keywords: [],
@@ -20821,10 +22445,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Target a unit and name an army keyword. Until the end of the battle, that unit has the named army keyword.</p>',
+		text: '<p><b>Command</b>: Target a unit and name an army keyword. Until the end of the battle, that unit has the named army keyword.</p>',
 		releases: { SR: 57 }
 	},
 	{
+		id: 'SR58',
 		name: 'Moving On',
 		die: 4,
 		keywords: [],
@@ -20836,6 +22461,7 @@ export const cards: Card[] = [
 		releases: { SR: 58 }
 	},
 	{
+		id: 'SR59',
 		name: 'Never Stop',
 		cost: 3,
 		die: 3,
@@ -20848,6 +22474,7 @@ export const cards: Card[] = [
 		releases: { SR: 59 }
 	},
 	{
+		id: 'SR60',
 		name: 'Nothing Left',
 		keywords: [],
 		maxCopies: 3,
@@ -20858,6 +22485,7 @@ export const cards: Card[] = [
 		releases: { SR: 60 }
 	},
 	{
+		id: 'SR61',
 		name: 'Nothing Saved',
 		cost: 2,
 		die: 3,
@@ -20870,6 +22498,7 @@ export const cards: Card[] = [
 		releases: { SR: 61 }
 	},
 	{
+		id: 'SR62',
 		name: 'Plan Twice, Attack Once',
 		die: 4,
 		keywords: [],
@@ -20881,6 +22510,7 @@ export const cards: Card[] = [
 		releases: { SR: 62 }
 	},
 	{
+		id: 'SR63',
 		name: 'Power Drain',
 		die: 3,
 		keywords: [],
@@ -20892,6 +22522,7 @@ export const cards: Card[] = [
 		releases: { SR: 63 }
 	},
 	{
+		id: 'SR64',
 		name: 'Rally to the Banner',
 		cost: 1,
 		die: 4,
@@ -20900,10 +22531,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit with an attached standard may not be routed.</p>',
+		text: '<p><b>WarCry</b>: This unit with an attached standard may not be routed.</p>',
 		releases: { SR: 64 }
 	},
 	{
+		id: 'SR65',
 		name: 'Recon Reports',
 		cost: 1,
 		die: 2,
@@ -20916,6 +22548,7 @@ export const cards: Card[] = [
 		releases: { SR: 65 }
 	},
 	{
+		id: 'SR66',
 		name: 'Redistribution',
 		die: 3,
 		keywords: [],
@@ -20923,10 +22556,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Move all of your tokens from one of your units to another of your units.</p>',
+		text: '<p><b>Command</b>: Move all of your tokens from one of your units to another of your units.</p>',
 		releases: { SR: 66 }
 	},
 	{
+		id: 'SR67',
 		name: 'Sacred Ground',
 		die: 5,
 		keywords: ['Strategy', 'Terrain'],
@@ -20938,6 +22572,7 @@ export const cards: Card[] = [
 		releases: { SR: 67 }
 	},
 	{
+		id: 'SR68',
 		name: 'Shift in Power',
 		die: 4,
 		keywords: ['Strategy'],
@@ -20949,6 +22584,7 @@ export const cards: Card[] = [
 		releases: { SR: 68 }
 	},
 	{
+		id: 'SR69',
 		name: 'Stand Together as One',
 		cost: 0,
 		keywords: [],
@@ -20960,6 +22596,7 @@ export const cards: Card[] = [
 		releases: { SR: 69 }
 	},
 	{
+		id: 'SR70',
 		name: 'Strategies of Sacrifice',
 		die: 4,
 		keywords: ['Strategy'],
@@ -20971,6 +22608,7 @@ export const cards: Card[] = [
 		releases: { SR: 70 }
 	},
 	{
+		id: 'SR71',
 		name: 'Supply Line Confusion',
 		cost: 2,
 		die: 5,
@@ -20983,6 +22621,7 @@ export const cards: Card[] = [
 		releases: { SR: 71 }
 	},
 	{
+		id: 'SR72',
 		name: 'Sweeping Flank',
 		die: 4,
 		keywords: [],
@@ -20990,10 +22629,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b>: Declare an attack with one of your ready infantry units in your reserves.</p>',
+		text: '<p><b>Command</b>: Declare an attack with one of your ready infantry units in your reserves.</p>',
 		releases: { SR: 72 }
 	},
 	{
+		id: 'SR73',
 		name: 'Take Their Place',
 		die: 3,
 		keywords: [],
@@ -21005,6 +22645,7 @@ export const cards: Card[] = [
 		releases: { SR: 73 }
 	},
 	{
+		id: 'SR74',
 		name: 'Test of Faith',
 		cost: 3,
 		die: 3,
@@ -21017,6 +22658,7 @@ export const cards: Card[] = [
 		releases: { SR: 74 }
 	},
 	{
+		id: 'SR75',
 		name: 'Test of Will',
 		cost: 0,
 		die: 2,
@@ -21029,6 +22671,7 @@ export const cards: Card[] = [
 		releases: { SR: 75 }
 	},
 	{
+		id: 'SR76',
 		name: 'Testing Fate',
 		die: 4,
 		keywords: [],
@@ -21040,6 +22683,7 @@ export const cards: Card[] = [
 		releases: { SR: 76 }
 	},
 	{
+		id: 'SR77',
 		name: 'The Face of Horror',
 		cost: 3,
 		die: 3,
@@ -21052,6 +22696,7 @@ export const cards: Card[] = [
 		releases: { SR: 77 }
 	},
 	{
+		id: 'SR78',
 		name: 'The Price Has Been Paid',
 		die: 2,
 		keywords: [],
@@ -21063,6 +22708,7 @@ export const cards: Card[] = [
 		releases: { SR: 78 }
 	},
 	{
+		id: 'SR79',
 		name: 'Tightened Ranks',
 		die: 4,
 		keywords: ['Strategy'],
@@ -21074,6 +22720,7 @@ export const cards: Card[] = [
 		releases: { SR: 79 }
 	},
 	{
+		id: 'SR80',
 		name: 'Troubles Come Not Single Spies',
 		die: 3,
 		keywords: [],
@@ -21085,6 +22732,7 @@ export const cards: Card[] = [
 		releases: { SR: 80 }
 	},
 	{
+		id: 'SR81',
 		name: 'Unexpected Backlash',
 		die: 2,
 		keywords: [],
@@ -21096,6 +22744,7 @@ export const cards: Card[] = [
 		releases: { SR: 81 }
 	},
 	{
+		id: 'SR82',
 		name: 'Unexpected Tactics',
 		cost: 1,
 		die: 4,
@@ -21104,10 +22753,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This infantry unit gets +3 strength and if this unit wins the combat the enemy unit is routed (no roll needed). Only playable when attacking from the reserves.</p>',
+		text: '<p><b>WarCry</b>: This infantry unit gets +3 strength and if this unit wins the combat the enemy unit is routed (no roll needed). Only playable when attacking from the reserves.</p>',
 		releases: { SR: 82 }
 	},
 	{
+		id: 'SR83',
 		name: 'Watch and Learn',
 		cost: 2,
 		die: 2,
@@ -21116,10 +22766,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit with a character attached gets +2 strength, +2 tactic points and +2 leadership.</p>',
+		text: '<p><b>WarCry</b>: This unit with a character attached gets +2 strength, +2 tactic points and +2 leadership.</p>',
 		releases: { SR: 83 }
 	},
 	{
+		id: 'SR84',
 		name: 'Weaken the Ranks',
 		die: 5,
 		keywords: [],
@@ -21131,6 +22782,7 @@ export const cards: Card[] = [
 		releases: { SR: 84 }
 	},
 	{
+		id: 'SR85',
 		name: 'When We Need It the Most',
 		cost: 2,
 		die: 2,
@@ -21143,6 +22795,7 @@ export const cards: Card[] = [
 		releases: { SR: 85 }
 	},
 	{
+		id: 'SR86',
 		name: 'You Get What You Invest In',
 		die: 1,
 		keywords: [],
@@ -21155,6 +22808,7 @@ export const cards: Card[] = [
 		errata: true
 	},
 	{
+		id: 'SR87',
 		name: 'Abandoned Fort',
 		cost: 2,
 		strength: 2,
@@ -21169,6 +22823,7 @@ export const cards: Card[] = [
 		releases: { SR: 87 }
 	},
 	{
+		id: 'SR88',
 		name: 'Dark Emissary',
 		cost: 3,
 		strength: 2,
@@ -21184,6 +22839,7 @@ export const cards: Card[] = [
 		releases: { SR: 88 }
 	},
 	{
+		id: 'SR89',
 		name: 'Earthworks',
 		cost: 2,
 		strength: 1,
@@ -21198,6 +22854,7 @@ export const cards: Card[] = [
 		releases: { SR: 89 }
 	},
 	{
+		id: 'SR90',
 		name: 'Ebonfang',
 		cost: 4,
 		strength: 2,
@@ -21213,6 +22870,7 @@ export const cards: Card[] = [
 		releases: { SR: 90 }
 	},
 	{
+		id: 'SR91',
 		name: 'Furgut',
 		cost: 4,
 		strength: 3,
@@ -21227,6 +22885,7 @@ export const cards: Card[] = [
 		releases: { SR: 91 }
 	},
 	{
+		id: 'SR92',
 		name: "Morrigan's Mercenaries",
 		cost: 3,
 		strength: 1,
@@ -21241,6 +22900,7 @@ export const cards: Card[] = [
 		releases: { SR: 92 }
 	},
 	{
+		id: 'SR93',
 		name: 'Truthsayer',
 		cost: 3,
 		strength: 2,
@@ -21256,6 +22916,7 @@ export const cards: Card[] = [
 		releases: { SR: 93 }
 	},
 	{
+		id: 'SR94',
 		name: 'Varadin Redbeard',
 		cost: 3,
 		strength: 2,
@@ -21271,6 +22932,7 @@ export const cards: Card[] = [
 		releases: { SR: 94 }
 	},
 	{
+		id: 'SR95',
 		name: "Barak's Ironbeards",
 		cost: 4,
 		strength: 0,
@@ -21285,6 +22947,7 @@ export const cards: Card[] = [
 		releases: { SR: 95 }
 	},
 	{
+		id: 'SR96',
 		name: 'Dokkenrok Whitebeard',
 		cost: 6,
 		strength: 4,
@@ -21296,10 +22959,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p><b>Support Tactic</b>: Put a spell token on this unit.</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to the number of spell tokens on this unit.</p>',
+		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p><b>Support Tactic</b>: Put a spell token on this unit.</p><p><b>WarCry</b>: This unit gets a strength bonus equal to the number of spell tokens on this unit.</p>',
 		releases: { SR: 96 }
 	},
 	{
+		id: 'SR97',
 		name: "Grimjaw's Drillers",
 		cost: 3,
 		strength: 3,
@@ -21314,6 +22978,7 @@ export const cards: Card[] = [
 		releases: { SR: 97 }
 	},
 	{
+		id: 'SR98',
 		name: "Grimjaw's Flying Cannons",
 		cost: 4,
 		strength: 1,
@@ -21328,6 +22993,7 @@ export const cards: Card[] = [
 		releases: { SR: 98 }
 	},
 	{
+		id: 'SR99',
 		name: "Grimjaw's Grudgebearers",
 		cost: 3,
 		strength: 2,
@@ -21342,6 +23008,7 @@ export const cards: Card[] = [
 		releases: { SR: 99 }
 	},
 	{
+		id: 'SR100',
 		name: "Makaisson's Bellows",
 		cost: 3,
 		strength: 0,
@@ -21356,6 +23023,7 @@ export const cards: Card[] = [
 		releases: { SR: 100 }
 	},
 	{
+		id: 'SR101',
 		name: 'Bolok Rocksmasher, Drummer of Karaz-a-Karak',
 		cost: 1,
 		keywords: ['Dwarf', 'Character'],
@@ -21367,6 +23035,7 @@ export const cards: Card[] = [
 		releases: { SR: 101 }
 	},
 	{
+		id: 'SR102',
 		name: 'Standard of Taunting',
 		cost: 2,
 		unique: true,
@@ -21379,6 +23048,7 @@ export const cards: Card[] = [
 		releases: { SR: 102 }
 	},
 	{
+		id: 'SR103',
 		name: 'Axelbrand Rainultz',
 		cost: 4,
 		strength: 3,
@@ -21393,6 +23063,7 @@ export const cards: Card[] = [
 		releases: { SR: 103 }
 	},
 	{
+		id: 'SR104',
 		name: 'Boris Mikhail',
 		cost: 4,
 		strength: 4,
@@ -21407,6 +23078,7 @@ export const cards: Card[] = [
 		releases: { SR: 104 }
 	},
 	{
+		id: 'SR105',
 		name: "Boris's Griffon Legion",
 		cost: 3,
 		strength: 5,
@@ -21421,6 +23093,7 @@ export const cards: Card[] = [
 		releases: { SR: 105 }
 	},
 	{
+		id: 'SR106',
 		name: 'Katarin, Bringer of Winter',
 		cost: 7,
 		strength: 5,
@@ -21436,6 +23109,7 @@ export const cards: Card[] = [
 		releases: { SR: 106 }
 	},
 	{
+		id: 'SR107',
 		name: "Katarin's Kossars",
 		cost: 3,
 		strength: 3,
@@ -21446,10 +23120,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Ranged Attack</b>: 6</p><p> <b>Command</b>: Once per battle, make a <b>Long Ranged Attack</b>: 3 without committing.</p>',
+		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Command</b>: Once per battle, make a <b>Long Ranged Attack</b>: 3 without committing.</p>',
 		releases: { SR: 107 }
 	},
 	{
+		id: 'SR108',
 		name: "Katarin's Lancers",
 		cost: 5,
 		strength: 3,
@@ -21460,10 +23135,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit gets +4 strength vs. infantry</p>',
+		text: '<p><b>WarCry</b>: This unit gets +4 strength vs. infantry</p>',
 		releases: { SR: 108 }
 	},
 	{
+		id: 'SR109',
 		name: 'Tzar Brodski',
 		cost: 4,
 		strength: 3,
@@ -21478,6 +23154,7 @@ export const cards: Card[] = [
 		releases: { SR: 109 }
 	},
 	{
+		id: 'SR110',
 		name: 'Banner of Ursun',
 		cost: 2,
 		unique: true,
@@ -21490,6 +23167,7 @@ export const cards: Card[] = [
 		releases: { SR: 110 }
 	},
 	{
+		id: 'SR111',
 		name: 'Mikhail Alekhsko',
 		cost: 1,
 		keywords: ['Empire', 'Kislev', 'Character'],
@@ -21501,6 +23179,7 @@ export const cards: Card[] = [
 		releases: { SR: 111 }
 	},
 	{
+		id: 'SR112',
 		name: 'Glorenlil Suregrace',
 		cost: 5,
 		strength: 4,
@@ -21512,10 +23191,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Support Tactic</b> Discard 1 card: Your High Elf unit gets +2 tactic points. Only playable if your High Elf unit has at least 1 tactic point.</p><p> <b>Command</b>: Once per battle, put a strategy card from your discard pile into play. You may then immediately declare an attack with one of your units.</p>',
+		text: '<p><b>Support Tactic</b> Discard 1 card: Your High Elf unit gets +2 tactic points. Only playable if your High Elf unit has at least 1 tactic point.</p><p><b>Command</b>: Once per battle, put a strategy card from your discard pile into play. You may then immediately declare an attack with one of your units.</p>',
 		releases: { SR: 112 }
 	},
 	{
+		id: 'SR113',
 		name: 'Aethrilmar, Prince of Ulthuan',
 		cost: 6,
 		strength: 5,
@@ -21527,10 +23207,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b> Commit one of your ranged attack units: This unit gets a strength bonus equal to that unit's <b>Ranged Attack</b>.</p>",
+		text: "<p><b>WarCry</b> Commit one of your ranged attack units: This unit gets a strength bonus equal to that unit's <b>Ranged Attack</b>.</p>",
 		releases: { SR: 113 }
 	},
 	{
+		id: 'SR114',
 		name: 'Eldorion Brightwood',
 		cost: 3,
 		strength: 2,
@@ -21545,6 +23226,7 @@ export const cards: Card[] = [
 		releases: { SR: 114 }
 	},
 	{
+		id: 'SR115',
 		name: 'Swiftstrike',
 		cost: 4,
 		strength: 1,
@@ -21559,6 +23241,7 @@ export const cards: Card[] = [
 		releases: { SR: 115 }
 	},
 	{
+		id: 'SR116',
 		name: "Whitestar's Defenders",
 		cost: 4,
 		strength: 4,
@@ -21573,6 +23256,7 @@ export const cards: Card[] = [
 		releases: { SR: 116 }
 	},
 	{
+		id: 'SR117',
 		name: "Whitestar's Skirmishers",
 		cost: 3,
 		strength: 2,
@@ -21587,6 +23271,7 @@ export const cards: Card[] = [
 		releases: { SR: 117 }
 	},
 	{
+		id: 'SR118',
 		name: "Whitestar's Swordmasters",
 		cost: 4,
 		strength: 2,
@@ -21601,6 +23286,7 @@ export const cards: Card[] = [
 		releases: { SR: 118 }
 	},
 	{
+		id: 'SR119',
 		name: 'Banner of the World Dragon',
 		cost: 2,
 		unique: true,
@@ -21613,6 +23299,7 @@ export const cards: Card[] = [
 		releases: { SR: 119 }
 	},
 	{
+		id: 'SR120',
 		name: 'Tylith Puresong',
 		cost: 1,
 		keywords: ['High Elf', 'Character'],
@@ -21624,6 +23311,7 @@ export const cards: Card[] = [
 		releases: { SR: 120 }
 	},
 	{
+		id: 'WA155',
 		name: 'Fire As They Come',
 		cost: 2,
 		die: 3,
@@ -21636,6 +23324,7 @@ export const cards: Card[] = [
 		releases: { WA: 155 }
 	},
 	{
+		id: 'WA156',
 		name: 'Fire on Them Both',
 		cost: 1,
 		die: 3,
@@ -21644,10 +23333,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Choose one enemy unit not in this combat. The enemy unit gets a strength and tactic point bonus equal to those of the chosen unit. If you win this combat, the chosen unit suffers the same result as the enemy unit.</p><p>Only playable during a ranged attack by the attacker.</p>',
+		text: '<p><b>WarCry</b>: Choose one enemy unit not in this combat. The enemy unit gets a strength and tactic point bonus equal to those of the chosen unit. If you win this combat, the chosen unit suffers the same result as the enemy unit.</p><p>Only playable during a ranged attack by the attacker.</p>',
 		releases: { WA: 156 }
 	},
 	{
+		id: 'WA182',
 		name: 'Leitdorf Manuever',
 		cost: 1,
 		die: 3,
@@ -21660,6 +23350,7 @@ export const cards: Card[] = [
 		releases: { WA: 182 }
 	},
 	{
+		id: 'WA249',
 		name: 'Strike As They Are Falling',
 		cost: 2,
 		die: 3,
@@ -21672,6 +23363,7 @@ export const cards: Card[] = [
 		releases: { WA: 249 }
 	},
 	{
+		id: 'WA257',
 		name: 'Take Up the Charge',
 		die: 3,
 		keywords: [],
@@ -21683,6 +23375,7 @@ export const cards: Card[] = [
 		releases: { WA: 257 }
 	},
 	{
+		id: 'WA260',
 		name: 'The Time Is Not Right',
 		die: 5,
 		keywords: [],
@@ -21690,10 +23383,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Discard 1 card: Draw 2 cards.</p><p><b>Spell Command</b> (1): All action cards attached to units are discarded.</p>',
+		text: '<p><b>Command</b> Discard 1 card: Draw 2 cards.</p><p><b>Spell Command</b> (1): All action cards attached to units are discarded.</p>',
 		releases: { WA: 260 }
 	},
 	{
+		id: 'WA262',
 		name: 'The Weak Fall, The Strong Stand',
 		die: 4,
 		keywords: [],
@@ -21701,10 +23395,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b>: Choose a unit with a strength of 0 (or less). That unit is destroyed.</p>',
+		text: '<p><b>Command</b>: Choose a unit with a strength of 0 (or less). That unit is destroyed.</p>',
 		releases: { WA: 262 }
 	},
 	{
+		id: 'HF1',
 		name: 'Blood Reavers',
 		cost: 3,
 		strength: 3,
@@ -21719,6 +23414,7 @@ export const cards: Card[] = [
 		releases: { HF: 1 }
 	},
 	{
+		id: 'HF2',
 		name: 'Blood Scythes',
 		cost: 2,
 		strength: 2,
@@ -21733,6 +23429,7 @@ export const cards: Card[] = [
 		releases: { HF: 2 }
 	},
 	{
+		id: 'HF3',
 		name: 'Kurt Virhoch, Chosen of the Blood God',
 		cost: 6,
 		strength: 4,
@@ -21748,6 +23445,7 @@ export const cards: Card[] = [
 		releases: { HF: 3 }
 	},
 	{
+		id: 'HF4',
 		name: 'Life Drinkers',
 		cost: 3,
 		strength: 3,
@@ -21762,6 +23460,7 @@ export const cards: Card[] = [
 		releases: { HF: 4 }
 	},
 	{
+		id: 'HF5',
 		name: 'The Blood Sworn',
 		cost: 3,
 		strength: 3,
@@ -21776,6 +23475,7 @@ export const cards: Card[] = [
 		releases: { HF: 5 }
 	},
 	{
+		id: 'HF6',
 		name: 'The Blooded',
 		cost: 3,
 		strength: 3,
@@ -21790,6 +23490,7 @@ export const cards: Card[] = [
 		releases: { HF: 6 }
 	},
 	{
+		id: 'HF7',
 		name: 'The Skull Taker',
 		cost: 3,
 		strength: 3,
@@ -21804,6 +23505,7 @@ export const cards: Card[] = [
 		releases: { HF: 7 }
 	},
 	{
+		id: 'HF8',
 		name: "Virhoch's Blood Riders",
 		cost: 2,
 		strength: 1,
@@ -21818,6 +23520,7 @@ export const cards: Card[] = [
 		releases: { HF: 8 }
 	},
 	{
+		id: 'HF9',
 		name: "Virhoch's Blood Trackers",
 		cost: 2,
 		strength: 2,
@@ -21832,6 +23535,7 @@ export const cards: Card[] = [
 		releases: { HF: 9 }
 	},
 	{
+		id: 'HF10',
 		name: "Virhoch's Hounds",
 		cost: 2,
 		strength: 1,
@@ -21846,6 +23550,7 @@ export const cards: Card[] = [
 		releases: { HF: 10 }
 	},
 	{
+		id: 'HF11',
 		name: "Ebonkin's Line Breaker",
 		cost: 5,
 		strength: 5,
@@ -21860,6 +23565,7 @@ export const cards: Card[] = [
 		releases: { HF: 11 }
 	},
 	{
+		id: 'HF12',
 		name: 'Hag Queen Hellebron',
 		cost: 6,
 		strength: 4,
@@ -21875,6 +23581,7 @@ export const cards: Card[] = [
 		releases: { HF: 12 }
 	},
 	{
+		id: 'HF13',
 		name: "Hellebron's Witches",
 		cost: 4,
 		strength: 4,
@@ -21889,6 +23596,7 @@ export const cards: Card[] = [
 		releases: { HF: 13 }
 	},
 	{
+		id: 'HF14',
 		name: "Khaine's Will",
 		cost: 4,
 		strength: 3,
@@ -21899,10 +23607,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: Commit the enemy unit unless it passes a strength test.</p>',
+		text: '<p><b>WarCry</b>: Commit the enemy unit unless it passes a strength test.</p>',
 		releases: { HF: 14 }
 	},
 	{
+		id: 'HF15',
 		name: 'Lolisithi Coldwind',
 		cost: 4,
 		strength: 3,
@@ -21917,6 +23626,7 @@ export const cards: Card[] = [
 		releases: { HF: 15 }
 	},
 	{
+		id: 'HF16',
 		name: "Makdhaine's Corsairs",
 		cost: 5,
 		strength: 2,
@@ -21931,6 +23641,7 @@ export const cards: Card[] = [
 		releases: { HF: 16 }
 	},
 	{
+		id: 'HF17',
 		name: 'Reapers of Khaine',
 		cost: 3,
 		strength: 2,
@@ -21946,6 +23657,7 @@ export const cards: Card[] = [
 		releases: { HF: 17 }
 	},
 	{
+		id: 'HF18',
 		name: 'Shadow Wind',
 		cost: 4,
 		strength: 3,
@@ -21956,10 +23668,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Commit: While this unit remains committed and in play, strategy cards may not be put into play. You may not rally this unit during clean-up (before the muster phase).</p>',
+		text: '<p><b>Command</b> Commit: While this unit remains committed and in play, strategy cards may not be put into play. You may not rally this unit during clean-up (before the muster phase).</p>',
 		releases: { HF: 18 }
 	},
 	{
+		id: 'HF19',
 		name: 'Makdhaine Ebonkin',
 		cost: 1,
 		tacticPoints: 1,
@@ -21972,6 +23685,7 @@ export const cards: Card[] = [
 		releases: { HF: 19 }
 	},
 	{
+		id: 'HF20',
 		name: 'Rynsethryn Cruelheart',
 		cost: 2,
 		keywords: ['Dark Elf', 'Character'],
@@ -21983,6 +23697,7 @@ export const cards: Card[] = [
 		releases: { HF: 20 }
 	},
 	{
+		id: 'HF21',
 		name: 'Azraz Humiesplitter',
 		cost: 5,
 		strength: 3,
@@ -21998,6 +23713,7 @@ export const cards: Card[] = [
 		releases: { HF: 21 }
 	},
 	{
+		id: 'HF22',
 		name: "Azraz's Bashers",
 		cost: 4,
 		strength: 4,
@@ -22012,6 +23728,7 @@ export const cards: Card[] = [
 		releases: { HF: 22 }
 	},
 	{
+		id: 'HF23',
 		name: "Azraz's Boyz",
 		cost: 4,
 		strength: 4,
@@ -22026,6 +23743,7 @@ export const cards: Card[] = [
 		releases: { HF: 23 }
 	},
 	{
+		id: 'HF24',
 		name: "Azraz's Savage Manglers",
 		cost: 4,
 		strength: 5,
@@ -22040,6 +23758,7 @@ export const cards: Card[] = [
 		releases: { HF: 24 }
 	},
 	{
+		id: 'HF25',
 		name: 'Dargur the Insane',
 		cost: 5,
 		strength: 2,
@@ -22055,6 +23774,7 @@ export const cards: Card[] = [
 		releases: { HF: 25 }
 	},
 	{
+		id: 'HF26',
 		name: "Humiesplitter's Hackers",
 		cost: 3,
 		strength: 5,
@@ -22069,6 +23789,7 @@ export const cards: Card[] = [
 		releases: { HF: 26 }
 	},
 	{
+		id: 'HF27',
 		name: 'Humiesplitters Big Uns',
 		cost: 4,
 		strength: 5,
@@ -22083,6 +23804,7 @@ export const cards: Card[] = [
 		releases: { HF: 27 }
 	},
 	{
+		id: 'HF28',
 		name: 'The Impaler',
 		cost: 3,
 		strength: 2,
@@ -22097,6 +23819,7 @@ export const cards: Card[] = [
 		releases: { HF: 28 }
 	},
 	{
+		id: 'HF29',
 		name: 'Kogkog the Dangerous',
 		cost: 1,
 		strength: 2,
@@ -22110,6 +23833,7 @@ export const cards: Card[] = [
 		releases: { HF: 29 }
 	},
 	{
+		id: 'HF30',
 		name: 'Zagzog Gobbothrottler',
 		cost: 2,
 		strength: 1,
@@ -22123,6 +23847,7 @@ export const cards: Card[] = [
 		releases: { HF: 30 }
 	},
 	{
+		id: 'HF31',
 		name: 'Druchii Ascendancy',
 		cost: 1,
 		die: 2,
@@ -22135,6 +23860,7 @@ export const cards: Card[] = [
 		releases: { HF: 31 }
 	},
 	{
+		id: 'HF32',
 		name: 'Gorks Warpath',
 		die: 1,
 		keywords: [],
@@ -22146,6 +23872,7 @@ export const cards: Card[] = [
 		releases: { HF: 32 }
 	},
 	{
+		id: 'HF33',
 		name: 'Insidious Insinuation',
 		die: 4,
 		keywords: [],
@@ -22157,6 +23884,7 @@ export const cards: Card[] = [
 		releases: { HF: 33 }
 	},
 	{
+		id: 'HF34',
 		name: "Khorne's Blessing",
 		cost: 1,
 		die: 2,
@@ -22169,6 +23897,7 @@ export const cards: Card[] = [
 		releases: { HF: 34 }
 	},
 	{
+		id: 'HF35',
 		name: 'Malicious Intent',
 		die: 3,
 		keywords: ['Strategy'],
@@ -22180,6 +23909,7 @@ export const cards: Card[] = [
 		releases: { HF: 35 }
 	},
 	{
+		id: 'HF36',
 		name: 'Baleful Sorcery',
 		cost: 2,
 		die: 3,
@@ -22192,6 +23922,7 @@ export const cards: Card[] = [
 		releases: { HF: 36 }
 	},
 	{
+		id: 'HF37',
 		name: 'Berzerker Fury',
 		cost: 2,
 		die: 2,
@@ -22200,10 +23931,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Super rare',
-		text: '<p> <b>WarCry</b>: This unit gets +2 strength and "<b>Terror</b>: 2". If you win this combat, attach this card to this unit. While attached, this unit gets the Monster keyword and the ability "WarCry: This attacking unit gets "<b>Terror</b>: 2", -2 tactic points, and +2 strength."</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 strength and "<b>Terror</b>: 2". If you win this combat, attach this card to this unit. While attached, this unit gets the Monster keyword and the ability "WarCry: This attacking unit gets "<b>Terror</b>: 2", -2 tactic points, and +2 strength."</p>',
 		releases: { HF: 37 }
 	},
 	{
+		id: 'HF38',
 		name: 'Bestial Rage',
 		cost: 2,
 		die: 2,
@@ -22216,6 +23948,7 @@ export const cards: Card[] = [
 		releases: { HF: 38 }
 	},
 	{
+		id: 'HF39',
 		name: 'Blackened Skies',
 		cost: 1,
 		die: 3,
@@ -22228,6 +23961,7 @@ export const cards: Card[] = [
 		releases: { HF: 39 }
 	},
 	{
+		id: 'HF40',
 		name: 'Blind Faith',
 		cost: 0,
 		die: 4,
@@ -22236,10 +23970,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Choose one enemy unit. Your unit gets a strength bonus equal to that units "<b>Faith</b>" level.</p>',
+		text: '<p><b>WarCry</b>: Choose one enemy unit. Your unit gets a strength bonus equal to that units "<b>Faith</b>" level.</p>',
 		releases: { HF: 40 }
 	},
 	{
+		id: 'HF41',
 		name: 'Devotional Sorcery',
 		cost: 2,
 		die: 3,
@@ -22252,6 +23987,7 @@ export const cards: Card[] = [
 		releases: { HF: 41 }
 	},
 	{
+		id: 'HF42',
 		name: 'Disarmament',
 		die: 2,
 		keywords: [],
@@ -22259,10 +23995,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Rare',
-		text: '<p> <b>Command</b> Destroy one of your ready units: Your enemy must destroy any number of their units and attachments with a gold cost equal to X or more. X equals the combined gold cost of your destroyed unit and any attached attachments.</p><p>Only playable once per battle.</p><p> <b>Command</b>: Destroy 1 attachment on any enemy unit.</p>',
+		text: '<p><b>Command</b> Destroy one of your ready units: Your enemy must destroy any number of their units and attachments with a gold cost equal to X or more. X equals the combined gold cost of your destroyed unit and any attached attachments.</p><p>Only playable once per battle.</p><p><b>Command</b>: Destroy 1 attachment on any enemy unit.</p>',
 		releases: { HF: 42 }
 	},
 	{
+		id: 'HF43',
 		name: 'Done Deal',
 		cost: 1,
 		die: 3,
@@ -22275,6 +24012,7 @@ export const cards: Card[] = [
 		releases: { HF: 43 }
 	},
 	{
+		id: 'HF44',
 		name: 'Echoes of the Distant Past',
 		cost: 1,
 		die: 5,
@@ -22287,6 +24025,7 @@ export const cards: Card[] = [
 		releases: { HF: 44 }
 	},
 	{
+		id: 'HF45',
 		name: 'Erode Their Position',
 		cost: 1,
 		die: 2,
@@ -22295,10 +24034,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: If this unit loses the combat, your enemy must discard a number of cards from their hand with a total dice value equal to or greater than this unit's gold cost.</p>",
+		text: "<p><b>WarCry</b>: If this unit loses the combat, your enemy must discard a number of cards from their hand with a total dice value equal to or greater than this unit's gold cost.</p>",
 		releases: { HF: 45 }
 	},
 	{
+		id: 'HF46',
 		name: 'Extensive Preparation',
 		cost: 1,
 		die: 3,
@@ -22311,6 +24051,7 @@ export const cards: Card[] = [
 		releases: { HF: 46 }
 	},
 	{
+		id: 'HF47',
 		name: 'Forewarning',
 		die: 3,
 		keywords: [],
@@ -22318,10 +24059,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b>: You may move any number of your units to or from the battle line.</p><p> <b>Command</b>: Target an enemy "<b>Scout</b>" unit. That unit is committed unless your enemy discards 2 cards.</p>',
+		text: '<p><b>Command</b>: You may move any number of your units to or from the battle line.</p><p><b>Command</b>: Target an enemy "<b>Scout</b>" unit. That unit is committed unless your enemy discards 2 cards.</p>',
 		releases: { HF: 47 }
 	},
 	{
+		id: 'HF48',
 		name: 'Fortitude',
 		cost: 1,
 		die: 4,
@@ -22334,6 +24076,7 @@ export const cards: Card[] = [
 		releases: { HF: 48 }
 	},
 	{
+		id: 'HF49',
 		name: 'Glorious Charge',
 		cost: 1,
 		die: 2,
@@ -22346,6 +24089,7 @@ export const cards: Card[] = [
 		releases: { HF: 49 }
 	},
 	{
+		id: 'HF50',
 		name: 'Here Be Dragons',
 		die: 4,
 		keywords: ['Strategy'],
@@ -22357,6 +24101,7 @@ export const cards: Card[] = [
 		releases: { HF: 50 }
 	},
 	{
+		id: 'HF51',
 		name: 'I Give You This Sword',
 		cost: 1,
 		die: 4,
@@ -22369,6 +24114,7 @@ export const cards: Card[] = [
 		releases: { HF: 51 }
 	},
 	{
+		id: 'HF52',
 		name: 'Inspiring Leadership',
 		cost: 2,
 		die: 3,
@@ -22377,10 +24123,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Super rare',
-		text: '<p> <b>WarCry</b>: This unit with a character attachment gets +2 strength.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if you have a Harbinger unit in play.</p><p><b>Combat Tactic</b>: This Harbinger unit gets +4 strength.</p>',
+		text: '<p><b>WarCry</b>: This unit with a character attachment gets +2 strength.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if you have a Harbinger unit in play.</p><p><b>Combat Tactic</b>: This Harbinger unit gets +4 strength.</p>',
 		releases: { HF: 52 }
 	},
 	{
+		id: 'HF53',
 		name: 'Iron Constitution',
 		die: 5,
 		keywords: [],
@@ -22392,6 +24139,7 @@ export const cards: Card[] = [
 		releases: { HF: 53 }
 	},
 	{
+		id: 'HF54',
 		name: "It's Good to Be King",
 		cost: 2,
 		die: 3,
@@ -22404,6 +24152,7 @@ export const cards: Card[] = [
 		releases: { HF: 54 }
 	},
 	{
+		id: 'HF55',
 		name: "Kick 'Em While They're Down",
 		cost: 1,
 		die: 3,
@@ -22416,6 +24165,7 @@ export const cards: Card[] = [
 		releases: { HF: 55 }
 	},
 	{
+		id: 'HF56',
 		name: 'Lap Around!',
 		cost: 1,
 		die: 5,
@@ -22428,6 +24178,7 @@ export const cards: Card[] = [
 		releases: { HF: 56 }
 	},
 	{
+		id: 'HF57',
 		name: 'Lightning Reflexes',
 		die: 5,
 		keywords: [],
@@ -22439,6 +24190,7 @@ export const cards: Card[] = [
 		releases: { HF: 57 }
 	},
 	{
+		id: 'HF58',
 		name: 'Make the Most of What You Have',
 		die: 3,
 		keywords: [],
@@ -22450,6 +24202,7 @@ export const cards: Card[] = [
 		releases: { HF: 58 }
 	},
 	{
+		id: 'HF59',
 		name: 'Making Sure',
 		cost: 0,
 		die: 3,
@@ -22462,6 +24215,7 @@ export const cards: Card[] = [
 		releases: { HF: 59 }
 	},
 	{
+		id: 'HF60',
 		name: 'Never Again',
 		die: 4,
 		keywords: [],
@@ -22473,6 +24227,7 @@ export const cards: Card[] = [
 		releases: { HF: 60 }
 	},
 	{
+		id: 'HF61',
 		name: 'Never Say Die',
 		die: 2,
 		keywords: ['Strategy'],
@@ -22484,6 +24239,7 @@ export const cards: Card[] = [
 		releases: { HF: 61 }
 	},
 	{
+		id: 'HF62',
 		name: 'One Shall Fall',
 		die: 5,
 		keywords: [],
@@ -22495,6 +24251,7 @@ export const cards: Card[] = [
 		releases: { HF: 62 }
 	},
 	{
+		id: 'HF63',
 		name: 'One Shall Stand',
 		cost: 1,
 		die: 3,
@@ -22503,10 +24260,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: The unit losing this combat is destroyed. Not playable during a ranged attack.</p>',
+		text: '<p><b>WarCry</b>: The unit losing this combat is destroyed. Not playable during a ranged attack.</p>',
 		releases: { HF: 63 }
 	},
 	{
+		id: 'HF64',
 		name: 'Opening Their Guard',
 		die: 2,
 		keywords: [],
@@ -22518,6 +24276,7 @@ export const cards: Card[] = [
 		releases: { HF: 64 }
 	},
 	{
+		id: 'HF65',
 		name: 'Overwhelming Horror',
 		cost: 1,
 		die: 3,
@@ -22530,6 +24289,7 @@ export const cards: Card[] = [
 		releases: { HF: 65 }
 	},
 	{
+		id: 'HF66',
 		name: 'Petty Reprisal',
 		cost: 1,
 		die: 4,
@@ -22542,6 +24302,7 @@ export const cards: Card[] = [
 		releases: { HF: 66 }
 	},
 	{
+		id: 'HF67',
 		name: 'Price of War',
 		cost: 1,
 		die: 5,
@@ -22554,6 +24315,7 @@ export const cards: Card[] = [
 		releases: { HF: 67 }
 	},
 	{
+		id: 'HF68',
 		name: 'Regimental Tactics',
 		cost: 1,
 		die: 3,
@@ -22566,6 +24328,7 @@ export const cards: Card[] = [
 		releases: { HF: 68 }
 	},
 	{
+		id: 'HF69',
 		name: 'Riposte',
 		die: 5,
 		keywords: [],
@@ -22577,6 +24340,7 @@ export const cards: Card[] = [
 		releases: { HF: 69 }
 	},
 	{
+		id: 'HF70',
 		name: 'Ruthless Expenditure',
 		cost: 3,
 		die: 2,
@@ -22585,10 +24349,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b> Discard 1 card: Exchange this unit with one of your committed units in the battle line.</p>',
+		text: '<p><b>WarCry</b> Discard 1 card: Exchange this unit with one of your committed units in the battle line.</p>',
 		releases: { HF: 70 }
 	},
 	{
+		id: 'HF71',
 		name: 'See How It Feels',
 		cost: 1,
 		die: 3,
@@ -22601,6 +24366,7 @@ export const cards: Card[] = [
 		releases: { HF: 71 }
 	},
 	{
+		id: 'HF72',
 		name: 'Sigmar Protects',
 		cost: 2,
 		die: 3,
@@ -22613,6 +24379,7 @@ export const cards: Card[] = [
 		releases: { HF: 72 }
 	},
 	{
+		id: 'HF73',
 		name: 'Stack the Deck',
 		die: 3,
 		keywords: ['Strategy'],
@@ -22624,6 +24391,7 @@ export const cards: Card[] = [
 		releases: { HF: 73 }
 	},
 	{
+		id: 'HF74',
 		name: 'Stampede',
 		die: 2,
 		keywords: [],
@@ -22631,10 +24399,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Choose one of your Monster units. Immediately rally (if committed) and declare an attack with that unit. For the duration of the command your unit gets "<b>Terror</b>: 2". Destroy the chosen unit at the end of this command.</p>',
+		text: '<p><b>Command</b>: Choose one of your Monster units. Immediately rally (if committed) and declare an attack with that unit. For the duration of the command your unit gets "<b>Terror</b>: 2". Destroy the chosen unit at the end of this command.</p>',
 		releases: { HF: 74 }
 	},
 	{
+		id: 'HF75',
 		name: 'Stand Firm',
 		cost: 'X',
 		die: 2,
@@ -22643,10 +24412,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +X leadership.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +X leadership.</p>',
 		releases: { HF: 75 }
 	},
 	{
+		id: 'HF76',
 		name: 'Steadfast',
 		cost: 1,
 		die: 4,
@@ -22655,10 +24425,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: "<p> <b>WarCry</b>: This unit's strength, tactic points, and leadership may not be reduced by your enemy's cards or abilities.</p>",
+		text: "<p><b>WarCry</b>: This unit's strength, tactic points, and leadership may not be reduced by your enemy's cards or abilities.</p>",
 		releases: { HF: 76 }
 	},
 	{
+		id: 'HF77',
 		name: 'Tactical Denial',
 		cost: 2,
 		die: 3,
@@ -22671,6 +24442,7 @@ export const cards: Card[] = [
 		releases: { HF: 77 }
 	},
 	{
+		id: 'HF78',
 		name: 'Tactics of Intimidation',
 		cost: 2,
 		die: 3,
@@ -22683,6 +24455,7 @@ export const cards: Card[] = [
 		releases: { HF: 78 }
 	},
 	{
+		id: 'HF79',
 		name: '...There Is a Way',
 		cost: 0,
 		die: 5,
@@ -22691,10 +24464,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Any cards that are removed from the game during this combat or as a result of combat are returned to their respective discard piles.</p>',
+		text: '<p><b>WarCry</b>: Any cards that are removed from the game during this combat or as a result of combat are returned to their respective discard piles.</p>',
 		releases: { HF: 79 }
 	},
 	{
+		id: 'HF80',
 		name: 'To Me!',
 		die: 2,
 		keywords: [],
@@ -22706,6 +24480,7 @@ export const cards: Card[] = [
 		releases: { HF: 80 }
 	},
 	{
+		id: 'HF81',
 		name: 'To the Victor Go the Spoils',
 		cost: 1,
 		die: 3,
@@ -22714,10 +24489,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: The winner of this combat may search their army deck for one attachment, attach it to one of their units without cost, and then shuffle their deck.</p>',
+		text: '<p><b>WarCry</b>: The winner of this combat may search their army deck for one attachment, attach it to one of their units without cost, and then shuffle their deck.</p>',
 		releases: { HF: 81 }
 	},
 	{
+		id: 'HF82',
 		name: 'To the Wire',
 		cost: 1,
 		die: 3,
@@ -22730,6 +24506,7 @@ export const cards: Card[] = [
 		releases: { HF: 82 }
 	},
 	{
+		id: 'HF83',
 		name: 'Trick Shot',
 		cost: 1,
 		die: 3,
@@ -22738,10 +24515,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: If you win this combat, destroy the enemy unit. Only playable during a ranged attack.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat, destroy the enemy unit. Only playable during a ranged attack.</p>',
 		releases: { HF: 83 }
 	},
 	{
+		id: 'HF84',
 		name: 'Undermine',
 		cost: 0,
 		die: 5,
@@ -22750,10 +24528,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Any cards or abilities that may target a unit outside of combat must do so if a legal target exists.</p>',
+		text: '<p><b>WarCry</b>: Any cards or abilities that may target a unit outside of combat must do so if a legal target exists.</p>',
 		releases: { HF: 84 }
 	},
 	{
+		id: 'HF85',
 		name: 'Unreliable',
 		cost: 2,
 		die: 4,
@@ -22762,10 +24541,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: Commit a war machine or monster unit.</p>',
+		text: '<p><b>WarCry</b>: Commit a war machine or monster unit.</p>',
 		releases: { HF: 85 }
 	},
 	{
+		id: 'HF86',
 		name: 'Where There Is a Will...',
 		cost: 3,
 		die: 3,
@@ -22778,6 +24558,7 @@ export const cards: Card[] = [
 		releases: { HF: 86 }
 	},
 	{
+		id: 'HF87',
 		name: 'Tunnel Fighter',
 		cost: 1,
 		keywords: ['Character'],
@@ -22789,6 +24570,7 @@ export const cards: Card[] = [
 		releases: { HF: 87 }
 	},
 	{
+		id: 'HF88',
 		name: 'Dorgan Darkeye',
 		cost: 3,
 		strength: 2,
@@ -22799,10 +24581,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b> Commit this unit: Declare an attack with one of your infantry units in the reserves. This attack may not be blocked.</p><p><b>Reaction</b>: If your enemy passes or takes any command that is not an attack, rally this unit. You may use this ability while committed.</p>',
+		text: '<p><b>Command</b> Commit this unit: Declare an attack with one of your infantry units in the reserves. This attack may not be blocked.</p><p><b>Reaction</b>: If your enemy passes or takes any command that is not an attack, rally this unit. You may use this ability while committed.</p>',
 		releases: { HF: 88 }
 	},
 	{
+		id: 'HF89',
 		name: "Dorgan's Digger Crew",
 		cost: 4,
 		strength: 4,
@@ -22817,6 +24600,7 @@ export const cards: Card[] = [
 		releases: { HF: 89 }
 	},
 	{
+		id: 'HF90',
 		name: "Dorgan's Disgraced",
 		cost: 3,
 		strength: 4,
@@ -22831,6 +24615,7 @@ export const cards: Card[] = [
 		releases: { HF: 90 }
 	},
 	{
+		id: 'HF91',
 		name: "Dorgan's Hammers of Spite",
 		cost: 5,
 		strength: 4,
@@ -22845,6 +24630,7 @@ export const cards: Card[] = [
 		releases: { HF: 91 }
 	},
 	{
+		id: 'HF92',
 		name: "Dorgan's Iron Guard",
 		cost: 4,
 		strength: 4,
@@ -22859,6 +24645,7 @@ export const cards: Card[] = [
 		releases: { HF: 92 }
 	},
 	{
+		id: 'HF93',
 		name: "Dorgan's Iron Warriors",
 		cost: 4,
 		strength: 4,
@@ -22873,6 +24660,7 @@ export const cards: Card[] = [
 		releases: { HF: 93 }
 	},
 	{
+		id: 'HF94',
 		name: "Dorgan's Rangers",
 		cost: 3,
 		strength: 3,
@@ -22887,6 +24675,7 @@ export const cards: Card[] = [
 		releases: { HF: 94 }
 	},
 	{
+		id: 'HF95',
 		name: 'Throndil Starhammerer',
 		cost: 4,
 		strength: 3,
@@ -22902,6 +24691,7 @@ export const cards: Card[] = [
 		releases: { HF: 95 }
 	},
 	{
+		id: 'HF96',
 		name: 'Sons of Grungni',
 		cost: 2,
 		strength: 1,
@@ -22915,6 +24705,7 @@ export const cards: Card[] = [
 		releases: { HF: 96 }
 	},
 	{
+		id: 'HF97',
 		name: 'Black Knights of Morr',
 		cost: 5,
 		strength: 4,
@@ -22929,6 +24720,7 @@ export const cards: Card[] = [
 		releases: { HF: 97 }
 	},
 	{
+		id: 'HF98',
 		name: 'Fabian Techlich',
 		cost: 3,
 		strength: 3,
@@ -22943,6 +24735,7 @@ export const cards: Card[] = [
 		releases: { HF: 98 }
 	},
 	{
+		id: 'HF100',
 		name: "Fandelhoch's New Machine",
 		cost: 3,
 		strength: 2,
@@ -22957,6 +24750,7 @@ export const cards: Card[] = [
 		releases: { HF: 100 }
 	},
 	{
+		id: 'HF101',
 		name: "Fandelhoch's Outriders",
 		cost: 4,
 		strength: 3,
@@ -22971,6 +24765,7 @@ export const cards: Card[] = [
 		releases: { HF: 101 }
 	},
 	{
+		id: 'HF102',
 		name: "Fandelhoch's Riders",
 		cost: 4,
 		strength: 2,
@@ -22985,6 +24780,7 @@ export const cards: Card[] = [
 		releases: { HF: 102 }
 	},
 	{
+		id: 'HF103',
 		name: 'Ivan Fandelhoch',
 		cost: 6,
 		strength: 4,
@@ -23000,6 +24796,7 @@ export const cards: Card[] = [
 		releases: { HF: 103 }
 	},
 	{
+		id: 'HF104',
 		name: 'The Hunters of Hochland',
 		cost: 4,
 		strength: 2,
@@ -23010,10 +24807,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Long Ranged Attack</b>: 6</p><p> <b>Command</b>: Destroy 1 character attachment on any enemy unit.</p>',
+		text: '<p><b>Long Ranged Attack</b>: 6</p><p><b>Command</b>: Destroy 1 character attachment on any enemy unit.</p>',
 		releases: { HF: 104 }
 	},
 	{
+		id: 'HF105',
 		name: 'Erwin Fandelhoch',
 		cost: 1,
 		keywords: ['Empire', 'Character'],
@@ -23025,6 +24823,7 @@ export const cards: Card[] = [
 		releases: { HF: 105 }
 	},
 	{
+		id: 'HF106',
 		name: 'Toby Rutzpold',
 		cost: 1,
 		tacticPoints: 1,
@@ -23033,10 +24832,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b> Destroy this card: If this unit wins this combat, destroy the enemy unit. Only playable during a ranged attack.</p>',
+		text: '<p><b>WarCry</b> Destroy this card: If this unit wins this combat, destroy the enemy unit. Only playable during a ranged attack.</p>',
 		releases: { HF: 106 }
 	},
 	{
+		id: 'HF107',
 		name: 'Aetholbrin Eldenstar',
 		cost: 5,
 		strength: 3,
@@ -23052,6 +24852,7 @@ export const cards: Card[] = [
 		releases: { HF: 107 }
 	},
 	{
+		id: 'HF108',
 		name: "Aislinn's Sea Guard",
 		cost: 4,
 		strength: 4,
@@ -23066,6 +24867,7 @@ export const cards: Card[] = [
 		releases: { HF: 108 }
 	},
 	{
+		id: 'HF109',
 		name: "Aislinn's Sea Rangers",
 		cost: 3,
 		strength: 3,
@@ -23076,10 +24878,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Scout</b>: 2</p><p><b>Short Ranged Attack</b>: 4</p><p> <b>Command</b> Remove this card from the game: Declare an attack with another copy of this unit in play (committed or ready). You may play this ability from your discard pile.</p>',
+		text: '<p><b>Scout</b>: 2</p><p><b>Short Ranged Attack</b>: 4</p><p><b>Command</b> Remove this card from the game: Declare an attack with another copy of this unit in play (committed or ready). You may play this ability from your discard pile.</p>',
 		releases: { HF: 109 }
 	},
 	{
+		id: 'HF110',
 		name: 'Cython Menlui',
 		cost: 5,
 		strength: 5,
@@ -23094,6 +24897,7 @@ export const cards: Card[] = [
 		releases: { HF: 110 }
 	},
 	{
+		id: 'HF111',
 		name: 'Eothrilion True Eye',
 		cost: 3,
 		strength: 2,
@@ -23108,6 +24912,7 @@ export const cards: Card[] = [
 		releases: { HF: 111 }
 	},
 	{
+		id: 'HF112',
 		name: 'Kyrlranlaer Silvershore',
 		cost: 4,
 		strength: 3,
@@ -23122,6 +24927,7 @@ export const cards: Card[] = [
 		releases: { HF: 112 }
 	},
 	{
+		id: 'HF113',
 		name: 'Sea Lord Aislinn',
 		cost: 6,
 		strength: 4,
@@ -23137,6 +24943,7 @@ export const cards: Card[] = [
 		releases: { HF: 113 }
 	},
 	{
+		id: 'HF114',
 		name: 'Ships Company of the Pernicious',
 		cost: 3,
 		strength: 3,
@@ -23151,6 +24958,7 @@ export const cards: Card[] = [
 		releases: { HF: 114 }
 	},
 	{
+		id: 'HF115',
 		name: 'Gaensofir Swiftfoot',
 		cost: 1,
 		keywords: ['High Elf', 'Character'],
@@ -23162,6 +24970,7 @@ export const cards: Card[] = [
 		releases: { HF: 115 }
 	},
 	{
+		id: 'HF116',
 		name: 'Loremaster',
 		cost: 2,
 		tacticPoints: 2,
@@ -23170,10 +24979,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Reveal the top card of your deck until you reveal a card with a spell point cost. Add that card to your hand and discard the others.</p>',
+		text: '<p><b>WarCry</b>: Reveal the top card of your deck until you reveal a card with a spell point cost. Add that card to your hand and discard the others.</p>',
 		releases: { HF: 116 }
 	},
 	{
+		id: 'HF117',
 		name: 'Detachment Training',
 		die: 3,
 		keywords: [],
@@ -23185,6 +24995,7 @@ export const cards: Card[] = [
 		releases: { HF: 117 }
 	},
 	{
+		id: 'HF118',
 		name: 'Dwarfen Pride',
 		cost: 1,
 		die: 3,
@@ -23193,10 +25004,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This Dwarf unit cannot be routed.</p>',
+		text: '<p><b>WarCry</b>: This Dwarf unit cannot be routed.</p>',
 		releases: { HF: 118 }
 	},
 	{
+		id: 'HF119',
 		name: 'Pure of Heart',
 		cost: 1,
 		die: 5,
@@ -23209,6 +25021,7 @@ export const cards: Card[] = [
 		releases: { HF: 119 }
 	},
 	{
+		id: 'HF120',
 		name: 'Unshakable Resolve',
 		die: 4,
 		keywords: ['Strategy'],
@@ -23220,6 +25033,7 @@ export const cards: Card[] = [
 		releases: { HF: 120 }
 	},
 	{
+		id: 'MP1',
 		name: "Ch'kal Prince of Lies",
 		cost: 5,
 		strength: 4,
@@ -23235,6 +25049,7 @@ export const cards: Card[] = [
 		releases: { MP: 1 }
 	},
 	{
+		id: 'MP2',
 		name: 'Diamante, Warp Caller',
 		cost: 3,
 		strength: 1,
@@ -23245,10 +25060,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Wizard</b>: 1</p><p> <b>Command</b> Destroy this unit: Move a daemon unit with a gold cost of X or less from your discard pile into your reserves. X equals the total gold cost of this unit and its attachments.</p>',
+		text: '<p><b>Wizard</b>: 1</p><p><b>Command</b> Destroy this unit: Move a daemon unit with a gold cost of X or less from your discard pile into your reserves. X equals the total gold cost of this unit and its attachments.</p>',
 		releases: { MP: 2 }
 	},
 	{
+		id: 'MP3',
 		name: "Eb'boala Contagion's Host",
 		cost: 3,
 		strength: 3,
@@ -23263,6 +25079,7 @@ export const cards: Card[] = [
 		releases: { MP: 3 }
 	},
 	{
+		id: 'MP4',
 		name: "Ka'wile, Deception Weaver",
 		cost: 4,
 		strength: 3,
@@ -23277,6 +25094,7 @@ export const cards: Card[] = [
 		releases: { MP: 4 }
 	},
 	{
+		id: 'MP5',
 		name: "Ka'wile's Horrors",
 		cost: 5,
 		strength: 3,
@@ -23287,10 +25105,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: If you win this combat, move another copy of this unit from your discard to your battle line. Not playable during a follow-up attack.</p>',
+		text: '<p><b>WarCry</b>: If you win this combat, move another copy of this unit from your discard to your battle line. Not playable during a follow-up attack.</p>',
 		releases: { MP: 5 }
 	},
 	{
+		id: 'MP6',
 		name: 'Ishini, Champion of the Changer',
 		cost: 5,
 		strength: 5,
@@ -23306,6 +25125,7 @@ export const cards: Card[] = [
 		releases: { MP: 6 }
 	},
 	{
+		id: 'MP7',
 		name: 'The Company of Change',
 		cost: 4,
 		strength: 4,
@@ -23320,6 +25140,7 @@ export const cards: Card[] = [
 		releases: { MP: 7 }
 	},
 	{
+		id: 'MP8',
 		name: 'Vanisius the Fair',
 		cost: 3,
 		strength: 2,
@@ -23334,6 +25155,7 @@ export const cards: Card[] = [
 		releases: { MP: 8 }
 	},
 	{
+		id: 'MP9',
 		name: 'Bilious Vomitongue',
 		cost: 1,
 		keywords: ['Chaos', 'Character'],
@@ -23345,6 +25167,7 @@ export const cards: Card[] = [
 		releases: { MP: 9 }
 	},
 	{
+		id: 'MP10',
 		name: 'Sintar the Touched',
 		cost: 2,
 		strength: 1,
@@ -23358,6 +25181,7 @@ export const cards: Card[] = [
 		releases: { MP: 10 }
 	},
 	{
+		id: 'MP11',
 		name: 'Zorgoam the Ecstatic',
 		cost: 1,
 		tacticPoints: 2,
@@ -23370,6 +25194,7 @@ export const cards: Card[] = [
 		releases: { MP: 11 }
 	},
 	{
+		id: 'MP12',
 		name: "Darkblade's Highborn",
 		cost: 4,
 		strength: 4,
@@ -23384,6 +25209,7 @@ export const cards: Card[] = [
 		releases: { MP: 12 }
 	},
 	{
+		id: 'MP13',
 		name: 'Eldire, Mother of the Drachau',
 		cost: 5,
 		strength: 3,
@@ -23399,6 +25225,7 @@ export const cards: Card[] = [
 		releases: { MP: 13 }
 	},
 	{
+		id: 'MP14',
 		name: "Eldire's Arrows",
 		cost: 3,
 		strength: 1,
@@ -23413,6 +25240,7 @@ export const cards: Card[] = [
 		releases: { MP: 14 }
 	},
 	{
+		id: 'MP15',
 		name: 'Keth Zarene, Mistress of the Skies',
 		cost: 4,
 		strength: 3,
@@ -23428,6 +25256,7 @@ export const cards: Card[] = [
 		releases: { MP: 15 }
 	},
 	{
+		id: 'MP16',
 		name: 'Malus Darkblade, Drachau of Hag Graef',
 		cost: 5,
 		strength: 4,
@@ -23439,10 +25268,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Veteran</b>: Malus Darkblade</p><p><b>Spell Combat Tactic</b> (1): This unit gets +2 strength and "<b>Terror</b>: 1".</p><p> <b>Command</b>: Rally any Dark Elf unit. You may play this ability while committed. Only playable while you and your enemy have the same number of spell points.</p>',
+		text: '<p><b>Veteran</b>: Malus Darkblade</p><p><b>Spell Combat Tactic</b> (1): This unit gets +2 strength and "<b>Terror</b>: 1".</p><p><b>Command</b>: Rally any Dark Elf unit. You may play this ability while committed. Only playable while you and your enemy have the same number of spell points.</p>',
 		releases: { MP: 16 }
 	},
 	{
+		id: 'MP17',
 		name: "Malus's Black Guard",
 		cost: 5,
 		strength: 4,
@@ -23457,6 +25287,7 @@ export const cards: Card[] = [
 		releases: { MP: 17 }
 	},
 	{
+		id: 'MP18',
 		name: "Malus's Spearmen",
 		cost: 3,
 		strength: 2,
@@ -23471,6 +25302,7 @@ export const cards: Card[] = [
 		releases: { MP: 18 }
 	},
 	{
+		id: 'MP19',
 		name: 'Naggarythe Dark Spears',
 		cost: 3,
 		strength: 3,
@@ -23485,6 +25317,7 @@ export const cards: Card[] = [
 		releases: { MP: 19 }
 	},
 	{
+		id: 'MP20',
 		name: 'Crystal of Midnight',
 		cost: 1,
 		keywords: ['Dark Elf', 'Item'],
@@ -23496,6 +25329,7 @@ export const cards: Card[] = [
 		releases: { MP: 20 }
 	},
 	{
+		id: 'MP21',
 		name: 'Rubric of Dark Dimensions',
 		cost: 2,
 		unique: true,
@@ -23508,6 +25342,7 @@ export const cards: Card[] = [
 		releases: { MP: 21 }
 	},
 	{
+		id: 'MP22',
 		name: 'Crusha Cart',
 		cost: 5,
 		strength: 7,
@@ -23522,6 +25357,7 @@ export const cards: Card[] = [
 		releases: { MP: 22 }
 	},
 	{
+		id: 'MP23',
 		name: 'Gobbo Lobba',
 		cost: 3,
 		strength: 1,
@@ -23536,6 +25372,7 @@ export const cards: Card[] = [
 		releases: { MP: 23 }
 	},
 	{
+		id: 'MP24',
 		name: 'Greenskin Mob',
 		cost: 3,
 		strength: 4,
@@ -23550,6 +25387,7 @@ export const cards: Card[] = [
 		releases: { MP: 24 }
 	},
 	{
+		id: 'MP25',
 		name: 'Snotling Swarm',
 		cost: 2,
 		strength: 1,
@@ -23564,6 +25402,7 @@ export const cards: Card[] = [
 		releases: { MP: 25 }
 	},
 	{
+		id: 'MP26',
 		name: 'Vazrag Brainbuster and the Wolfie Boyz',
 		cost: 4,
 		strength: 4,
@@ -23578,6 +25417,7 @@ export const cards: Card[] = [
 		releases: { MP: 26 }
 	},
 	{
+		id: 'MP27',
 		name: "Vazrag's Fetching Boyz",
 		cost: 3,
 		strength: 3,
@@ -23592,6 +25432,7 @@ export const cards: Card[] = [
 		releases: { MP: 27 }
 	},
 	{
+		id: 'MP28',
 		name: "Yazrag's Pointy Stickers",
 		cost: 2,
 		strength: 2,
@@ -23606,6 +25447,7 @@ export const cards: Card[] = [
 		releases: { MP: 28 }
 	},
 	{
+		id: 'MP29',
 		name: "Wazzi Moonscowler, Gork's Speaker",
 		cost: 3,
 		strength: 2,
@@ -23621,6 +25463,7 @@ export const cards: Card[] = [
 		releases: { MP: 29 }
 	},
 	{
+		id: 'MP30',
 		name: 'Ugbrag the Lucky',
 		cost: 1,
 		keywords: ['Orc', 'Character'],
@@ -23632,6 +25475,7 @@ export const cards: Card[] = [
 		releases: { MP: 30 }
 	},
 	{
+		id: 'MP31',
 		name: "Ugbrag's Lucky Shield",
 		cost: 1,
 		keywords: ['Orc', 'Item'],
@@ -23643,6 +25487,7 @@ export const cards: Card[] = [
 		releases: { MP: 31 }
 	},
 	{
+		id: 'MP32',
 		name: "Arnizipal's Black Horror",
 		die: 3,
 		keywords: [],
@@ -23654,6 +25499,7 @@ export const cards: Card[] = [
 		releases: { MP: 32 }
 	},
 	{
+		id: 'MP33',
 		name: 'Ere We Go Ere We Go Ere We Go',
 		die: 3,
 		keywords: [],
@@ -23665,6 +25511,7 @@ export const cards: Card[] = [
 		releases: { MP: 33 }
 	},
 	{
+		id: 'MP34',
 		name: 'Favoured Poxes',
 		die: 1,
 		keywords: ['Strategy'],
@@ -23676,6 +25523,7 @@ export const cards: Card[] = [
 		releases: { MP: 34 }
 	},
 	{
+		id: 'MP35',
 		name: "Khorne's Favor",
 		cost: 2,
 		die: 3,
@@ -23688,6 +25536,7 @@ export const cards: Card[] = [
 		releases: { MP: 35 }
 	},
 	{
+		id: 'MP36',
 		name: 'Orange Fire of Transition',
 		cost: 1,
 		die: 4,
@@ -23700,6 +25549,7 @@ export const cards: Card[] = [
 		releases: { MP: 36 }
 	},
 	{
+		id: 'MP37',
 		name: 'Titillating Delusions',
 		die: 5,
 		keywords: [],
@@ -23711,6 +25561,7 @@ export const cards: Card[] = [
 		releases: { MP: 37 }
 	},
 	{
+		id: 'MP38',
 		name: "Amshu's Blinding Light",
 		die: 2,
 		keywords: [],
@@ -23722,6 +25573,7 @@ export const cards: Card[] = [
 		releases: { MP: 38 }
 	},
 	{
+		id: 'MP39',
 		name: 'Break Their Momentum',
 		die: 3,
 		keywords: [],
@@ -23729,10 +25581,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Common',
-		text: '<p> <b>Command</b>: Destroy all tokens and attached cards.</p>',
+		text: '<p><b>Command</b>: Destroy all tokens and attached cards.</p>',
 		releases: { MP: 39 }
 	},
 	{
+		id: 'MP40',
 		name: 'Burning Head',
 		die: 3,
 		keywords: [],
@@ -23744,6 +25597,7 @@ export const cards: Card[] = [
 		releases: { MP: 40 }
 	},
 	{
+		id: 'MP41',
 		name: 'Commandment of Brass',
 		cost: 1,
 		die: 3,
@@ -23756,6 +25610,7 @@ export const cards: Card[] = [
 		releases: { MP: 41 }
 	},
 	{
+		id: 'MP42',
 		name: 'Conflagration of Doom',
 		die: 3,
 		keywords: [],
@@ -23767,6 +25622,7 @@ export const cards: Card[] = [
 		releases: { MP: 42 }
 	},
 	{
+		id: 'MP43',
 		name: 'Creeping Death',
 		cost: 1,
 		die: 3,
@@ -23779,6 +25635,7 @@ export const cards: Card[] = [
 		releases: { MP: 43 }
 	},
 	{
+		id: 'MP44',
 		name: 'Dark Hand of Death',
 		die: 2,
 		keywords: [],
@@ -23790,6 +25647,7 @@ export const cards: Card[] = [
 		releases: { MP: 44 }
 	},
 	{
+		id: 'MP45',
 		name: 'Death Dealer (MP)',
 		cost: 1,
 		die: 4,
@@ -23802,6 +25660,7 @@ export const cards: Card[] = [
 		releases: { MP: 45 }
 	},
 	{
+		id: 'MP46',
 		name: 'Distillation of Molten Silver',
 		cost: 2,
 		die: 2,
@@ -23814,6 +25673,7 @@ export const cards: Card[] = [
 		releases: { MP: 46 }
 	},
 	{
+		id: 'MP47',
 		name: 'Doom and Darkness',
 		cost: 2,
 		die: 4,
@@ -23826,6 +25686,7 @@ export const cards: Card[] = [
 		releases: { MP: 47 }
 	},
 	{
+		id: 'MP48',
 		name: 'Drain Life',
 		die: 1,
 		keywords: [],
@@ -23837,6 +25698,7 @@ export const cards: Card[] = [
 		releases: { MP: 48 }
 	},
 	{
+		id: 'MP49',
 		name: 'Eldritch Tempest',
 		die: 2,
 		keywords: ['Strategy'],
@@ -23848,6 +25710,7 @@ export const cards: Card[] = [
 		releases: { MP: 49 }
 	},
 	{
+		id: 'MP50',
 		name: 'Father of the Thorn',
 		die: 3,
 		keywords: ['Strategy'],
@@ -23859,6 +25722,7 @@ export const cards: Card[] = [
 		releases: { MP: 50 }
 	},
 	{
+		id: 'MP51',
 		name: 'Forked Lightning',
 		cost: 1,
 		die: 2,
@@ -23871,6 +25735,7 @@ export const cards: Card[] = [
 		releases: { MP: 51 }
 	},
 	{
+		id: 'MP52',
 		name: 'Gather Your Power',
 		cost: 2,
 		die: 5,
@@ -23883,6 +25748,7 @@ export const cards: Card[] = [
 		releases: { MP: 52 }
 	},
 	{
+		id: 'MP53',
 		name: "Karu's Guardian Radiance",
 		die: 1,
 		keywords: ['Strategy'],
@@ -23894,6 +25760,7 @@ export const cards: Card[] = [
 		releases: { MP: 53 }
 	},
 	{
+		id: 'MP54',
 		name: 'Law of Gold',
 		die: 3,
 		keywords: [],
@@ -23905,6 +25772,7 @@ export const cards: Card[] = [
 		releases: { MP: 54 }
 	},
 	{
+		id: 'MP55',
 		name: 'Master of Stone',
 		die: 2,
 		keywords: ['Strategy'],
@@ -23916,6 +25784,7 @@ export const cards: Card[] = [
 		releases: { MP: 55 }
 	},
 	{
+		id: 'MP56',
 		name: 'Master of the Wood',
 		die: 3,
 		keywords: [],
@@ -23927,6 +25796,7 @@ export const cards: Card[] = [
 		releases: { MP: 56 }
 	},
 	{
+		id: 'MP57',
 		name: 'Mistress of the Marsh',
 		cost: 1,
 		die: 4,
@@ -23939,6 +25809,7 @@ export const cards: Card[] = [
 		releases: { MP: 57 }
 	},
 	{
+		id: 'MP58',
 		name: 'Nullify Magic',
 		cost: 2,
 		die: 3,
@@ -23951,6 +25822,7 @@ export const cards: Card[] = [
 		releases: { MP: 58 }
 	},
 	{
+		id: 'MP59',
 		name: 'Overwhelming Power',
 		cost: 4,
 		die: 2,
@@ -23963,6 +25835,7 @@ export const cards: Card[] = [
 		releases: { MP: 59 }
 	},
 	{
+		id: 'MP60',
 		name: 'Pelt of Midnight',
 		die: 4,
 		keywords: [],
@@ -23974,6 +25847,7 @@ export const cards: Card[] = [
 		releases: { MP: 60 }
 	},
 	{
+		id: 'MP61',
 		name: "Phal's Illumination",
 		cost: 2,
 		die: 3,
@@ -23986,6 +25860,7 @@ export const cards: Card[] = [
 		releases: { MP: 61 }
 	},
 	{
+		id: 'MP62',
 		name: 'Pit of Shades',
 		die: 4,
 		keywords: [],
@@ -23997,6 +25872,7 @@ export const cards: Card[] = [
 		releases: { MP: 62 }
 	},
 	{
+		id: 'MP63',
 		name: 'Portent of Far',
 		cost: 1,
 		die: 5,
@@ -24009,6 +25885,7 @@ export const cards: Card[] = [
 		releases: { MP: 63 }
 	},
 	{
+		id: 'MP64',
 		name: 'Rule of Burning Iron',
 		cost: 1,
 		die: 3,
@@ -24021,6 +25898,7 @@ export const cards: Card[] = [
 		releases: { MP: 64 }
 	},
 	{
+		id: 'MP65',
 		name: 'Second Sign of Amul',
 		die: 4,
 		keywords: ['Strategy'],
@@ -24032,6 +25910,7 @@ export const cards: Card[] = [
 		releases: { MP: 65 }
 	},
 	{
+		id: 'MP66',
 		name: 'Shades of Death',
 		die: 3,
 		keywords: [],
@@ -24043,6 +25922,7 @@ export const cards: Card[] = [
 		releases: { MP: 66 }
 	},
 	{
+		id: 'MP67',
 		name: "Shem's Burning Gaze",
 		cost: 2,
 		die: 2,
@@ -24055,6 +25935,7 @@ export const cards: Card[] = [
 		releases: { MP: 67 }
 	},
 	{
+		id: 'MP68',
 		name: 'Soldiers Carry the Day',
 		cost: 2,
 		die: 3,
@@ -24067,6 +25948,7 @@ export const cards: Card[] = [
 		releases: { MP: 68 }
 	},
 	{
+		id: 'MP69',
 		name: 'Steal Soul',
 		die: 3,
 		keywords: [],
@@ -24078,6 +25960,7 @@ export const cards: Card[] = [
 		releases: { MP: 69 }
 	},
 	{
+		id: 'MP70',
 		name: 'Storm of Cronos',
 		die: 2,
 		keywords: [],
@@ -24089,6 +25972,7 @@ export const cards: Card[] = [
 		releases: { MP: 70 }
 	},
 	{
+		id: 'MP71',
 		name: "The Bear's Anger",
 		cost: 2,
 		die: 3,
@@ -24101,6 +25985,7 @@ export const cards: Card[] = [
 		releases: { MP: 71 }
 	},
 	{
+		id: 'MP72',
 		name: 'The Beast Cowers',
 		cost: 1,
 		die: 3,
@@ -24113,6 +25998,7 @@ export const cards: Card[] = [
 		releases: { MP: 72 }
 	},
 	{
+		id: 'MP73',
 		name: 'The Comet of Casandora',
 		die: 2,
 		keywords: ['Strategy'],
@@ -24124,6 +26010,7 @@ export const cards: Card[] = [
 		releases: { MP: 73 }
 	},
 	{
+		id: 'MP74',
 		name: "The Eagle's Cry",
 		die: 3,
 		keywords: [],
@@ -24135,6 +26022,7 @@ export const cards: Card[] = [
 		releases: { MP: 74 }
 	},
 	{
+		id: 'MP75',
 		name: 'The Oxen Stands',
 		die: 4,
 		keywords: [],
@@ -24146,6 +26034,7 @@ export const cards: Card[] = [
 		releases: { MP: 75 }
 	},
 	{
+		id: 'MP76',
 		name: 'The Rain Lord',
 		die: 3,
 		keywords: [],
@@ -24157,6 +26046,7 @@ export const cards: Card[] = [
 		releases: { MP: 76 }
 	},
 	{
+		id: 'MP77',
 		name: 'The Wolf Hunts',
 		die: 3,
 		keywords: [],
@@ -24168,6 +26058,7 @@ export const cards: Card[] = [
 		releases: { MP: 77 }
 	},
 	{
+		id: 'MP78',
 		name: 'Transmutation of Lead',
 		cost: 2,
 		die: 2,
@@ -24180,6 +26071,7 @@ export const cards: Card[] = [
 		releases: { MP: 78 }
 	},
 	{
+		id: 'MP79',
 		name: "Ulzah's Healing Hand",
 		die: 2,
 		keywords: [],
@@ -24191,6 +26083,7 @@ export const cards: Card[] = [
 		releases: { MP: 79 }
 	},
 	{
+		id: 'MP80',
 		name: 'Unseen Lurker',
 		die: 2,
 		keywords: [],
@@ -24202,6 +26095,7 @@ export const cards: Card[] = [
 		releases: { MP: 80 }
 	},
 	{
+		id: 'MP81',
 		name: "Uranon's Thunderbolt",
 		cost: 2,
 		die: 1,
@@ -24214,6 +26108,7 @@ export const cards: Card[] = [
 		releases: { MP: 81 }
 	},
 	{
+		id: 'MP82',
 		name: "Urru'z Dazzling Brightness",
 		cost: 2,
 		die: 2,
@@ -24226,6 +26121,7 @@ export const cards: Card[] = [
 		releases: { MP: 82 }
 	},
 	{
+		id: 'MP83',
 		name: 'Wall of Fire',
 		die: 2,
 		keywords: ['Strategy', 'Terrain'],
@@ -24237,6 +26133,7 @@ export const cards: Card[] = [
 		releases: { MP: 83 }
 	},
 	{
+		id: 'MP84',
 		name: 'Flaming Sword of Rhiun',
 		cost: 2,
 		strength: 2,
@@ -24250,6 +26147,7 @@ export const cards: Card[] = [
 		releases: { MP: 84 }
 	},
 	{
+		id: 'MP85',
 		name: "Ancestor's Breath",
 		cost: 3,
 		strength: 0,
@@ -24264,6 +26162,7 @@ export const cards: Card[] = [
 		releases: { MP: 85 }
 	},
 	{
+		id: 'MP86',
 		name: "Silverhammer's Blooded Beards",
 		cost: 4,
 		strength: 4,
@@ -24278,6 +26177,7 @@ export const cards: Card[] = [
 		releases: { MP: 86 }
 	},
 	{
+		id: 'MP87',
 		name: "Silverhammer's Eagle Eyes",
 		cost: 3,
 		strength: 2,
@@ -24292,6 +26192,7 @@ export const cards: Card[] = [
 		releases: { MP: 87 }
 	},
 	{
+		id: 'MP88',
 		name: "Silverhammer's Hammers",
 		cost: 3,
 		strength: 3,
@@ -24306,6 +26207,7 @@ export const cards: Card[] = [
 		releases: { MP: 88 }
 	},
 	{
+		id: 'MP89',
 		name: "Silverhammer's Ironbreakers",
 		cost: 4,
 		strength: 3,
@@ -24320,6 +26222,7 @@ export const cards: Card[] = [
 		releases: { MP: 89 }
 	},
 	{
+		id: 'MP90',
 		name: "Silverhammer's Lead Casters",
 		cost: 3,
 		strength: 2,
@@ -24330,10 +26233,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Ranged Attack</b>: 6</p><p> <b>WarCry</b>: If you win this combat, this unit does not commit as a result of the combat. Only playable while you have no spell points and only during a ranged attack.</p>',
+		text: '<p><b>Ranged Attack</b>: 6</p><p><b>WarCry</b>: If you win this combat, this unit does not commit as a result of the combat. Only playable while you have no spell points and only during a ranged attack.</p>',
 		releases: { MP: 90 }
 	},
 	{
+		id: 'MP91',
 		name: 'Skoramin Silverhammer and Anvil of Doom',
 		cost: 4,
 		strength: 2,
@@ -24349,6 +26253,7 @@ export const cards: Card[] = [
 		releases: { MP: 91 }
 	},
 	{
+		id: 'MP92',
 		name: 'Svenador Flametamer',
 		cost: 4,
 		strength: 3,
@@ -24364,6 +26269,7 @@ export const cards: Card[] = [
 		releases: { MP: 92 }
 	},
 	{
+		id: 'MP93',
 		name: 'Master Runic Talisman of Spite',
 		cost: 1,
 		keywords: ['Dwarf', 'Item'],
@@ -24375,6 +26281,7 @@ export const cards: Card[] = [
 		releases: { MP: 93 }
 	},
 	{
+		id: 'MP94',
 		name: 'Rune Axe of Might',
 		cost: 2,
 		strength: 1,
@@ -24388,6 +26295,7 @@ export const cards: Card[] = [
 		releases: { MP: 94 }
 	},
 	{
+		id: 'MP95',
 		name: "Altdorf's Favored Sons",
 		cost: 3,
 		strength: 1,
@@ -24402,6 +26310,7 @@ export const cards: Card[] = [
 		releases: { MP: 95 }
 	},
 	{
+		id: 'MP96',
 		name: 'Balthasar Gelt, Patriarch of the Colleges of Magic',
 		cost: 6,
 		strength: 4,
@@ -24417,6 +26326,7 @@ export const cards: Card[] = [
 		releases: { MP: 96 }
 	},
 	{
+		id: 'MP97',
 		name: 'Defenders of Altdorf',
 		cost: 3,
 		strength: 3,
@@ -24431,6 +26341,7 @@ export const cards: Card[] = [
 		releases: { MP: 97 }
 	},
 	{
+		id: 'MP98',
 		name: 'Favored Knights of the Corona',
 		cost: 5,
 		strength: 5,
@@ -24445,6 +26356,7 @@ export const cards: Card[] = [
 		releases: { MP: 98 }
 	},
 	{
+		id: 'MP99',
 		name: "Gausser's War Wagon",
 		cost: 5,
 		strength: 3,
@@ -24459,6 +26371,7 @@ export const cards: Card[] = [
 		releases: { MP: 99 }
 	},
 	{
+		id: 'MP100',
 		name: 'Knights of the Gleaming Shield',
 		cost: 4,
 		strength: 4,
@@ -24473,6 +26386,7 @@ export const cards: Card[] = [
 		releases: { MP: 100 }
 	},
 	{
+		id: 'MP101',
 		name: 'Sebastion Vorbach, Bright Wizard',
 		cost: 3,
 		strength: 1,
@@ -24487,6 +26401,7 @@ export const cards: Card[] = [
 		releases: { MP: 101 }
 	},
 	{
+		id: 'MP102',
 		name: 'Tobias Vorbach, Amethyst Wizard',
 		cost: 4,
 		strength: 0,
@@ -24501,6 +26416,7 @@ export const cards: Card[] = [
 		releases: { MP: 102 }
 	},
 	{
+		id: 'MP103',
 		name: 'Marcell Drexner, Jade Wizard',
 		cost: 1,
 		keywords: ['Empire', 'Character'],
@@ -24512,6 +26428,7 @@ export const cards: Card[] = [
 		releases: { MP: 103 }
 	},
 	{
+		id: 'MP104',
 		name: "Wizard's Apprentice",
 		cost: 1,
 		keywords: ['Empire', 'Character'],
@@ -24523,6 +26440,7 @@ export const cards: Card[] = [
 		releases: { MP: 104 }
 	},
 	{
+		id: 'MP105',
 		name: 'Archers of Swift Deliverance',
 		cost: 3,
 		strength: 1,
@@ -24537,6 +26455,7 @@ export const cards: Card[] = [
 		releases: { MP: 105 }
 	},
 	{
+		id: 'MP106',
 		name: 'Archers of the Breaking Dawn',
 		cost: 3,
 		strength: 1,
@@ -24551,6 +26470,7 @@ export const cards: Card[] = [
 		releases: { MP: 106 }
 	},
 	{
+		id: 'MP107',
 		name: 'Glorsildaen Shiningmorn',
 		cost: 4,
 		strength: 2,
@@ -24565,6 +26485,7 @@ export const cards: Card[] = [
 		releases: { MP: 107 }
 	},
 	{
+		id: 'MP108',
 		name: 'Guardians of the Tower',
 		cost: 4,
 		strength: 5,
@@ -24579,6 +26500,7 @@ export const cards: Card[] = [
 		releases: { MP: 108 }
 	},
 	{
+		id: 'MP109',
 		name: 'Saphery Shining Spears',
 		cost: 3,
 		strength: 2,
@@ -24593,6 +26515,7 @@ export const cards: Card[] = [
 		releases: { MP: 109 }
 	},
 	{
+		id: 'MP110',
 		name: "Shiningmorn's Ellyrian Harriers",
 		cost: 3,
 		strength: 3,
@@ -24607,6 +26530,7 @@ export const cards: Card[] = [
 		releases: { MP: 110 }
 	},
 	{
+		id: 'MP111',
 		name: "Shiningmorn's Ellyrian Outriders",
 		cost: 3,
 		strength: 2,
@@ -24621,6 +26545,7 @@ export const cards: Card[] = [
 		releases: { MP: 111 }
 	},
 	{
+		id: 'MP112',
 		name: "Shiningmorn's Gleaming Blades",
 		cost: 4,
 		strength: 3,
@@ -24635,6 +26560,7 @@ export const cards: Card[] = [
 		releases: { MP: 112 }
 	},
 	{
+		id: 'MP113',
 		name: "Shiningmorn's Valiant Spears",
 		cost: 3,
 		strength: 3,
@@ -24649,6 +26575,7 @@ export const cards: Card[] = [
 		releases: { MP: 113 }
 	},
 	{
+		id: 'MP114',
 		name: 'Teclis, Master of High Magic',
 		cost: 6,
 		strength: 3,
@@ -24664,6 +26591,7 @@ export const cards: Card[] = [
 		releases: { MP: 114 }
 	},
 	{
+		id: 'MP115',
 		name: 'Drain Magic',
 		die: 4,
 		keywords: [],
@@ -24675,6 +26603,7 @@ export const cards: Card[] = [
 		releases: { MP: 115 }
 	},
 	{
+		id: 'MP116',
 		name: 'Fortune Is Fickle',
 		die: 4,
 		keywords: [],
@@ -24686,6 +26615,7 @@ export const cards: Card[] = [
 		releases: { MP: 116 }
 	},
 	{
+		id: 'MP117',
 		name: 'Grudge Rune',
 		die: 2,
 		keywords: ['Strategy'],
@@ -24697,6 +26627,7 @@ export const cards: Card[] = [
 		releases: { MP: 117 }
 	},
 	{
+		id: 'MP118',
 		name: 'Master Rune of Swiftness',
 		die: 3,
 		keywords: [],
@@ -24708,6 +26639,7 @@ export const cards: Card[] = [
 		releases: { MP: 118 }
 	},
 	{
+		id: 'MP119',
 		name: "Phoenix's Wrath",
 		cost: 2,
 		die: 3,
@@ -24720,6 +26652,7 @@ export const cards: Card[] = [
 		releases: { MP: 119 }
 	},
 	{
+		id: 'MP120',
 		name: 'Spell Eater Rune',
 		die: 2,
 		keywords: ['Strategy'],
@@ -24731,6 +26664,7 @@ export const cards: Card[] = [
 		releases: { MP: 120 }
 	},
 	{
+		id: 'VB1',
 		name: 'Fandar Warptouched',
 		cost: 4,
 		strength: 7,
@@ -24745,6 +26679,7 @@ export const cards: Card[] = [
 		releases: { VB: 1 }
 	},
 	{
+		id: 'VB2',
 		name: "Korvin, Khorne's Chosen",
 		cost: 7,
 		strength: 6,
@@ -24760,6 +26695,7 @@ export const cards: Card[] = [
 		releases: { VB: 2 }
 	},
 	{
+		id: 'VB3',
 		name: "Korvin's Chosen Knights",
 		cost: 4,
 		strength: 4,
@@ -24774,6 +26710,7 @@ export const cards: Card[] = [
 		releases: { VB: 3 }
 	},
 	{
+		id: 'VB4',
 		name: "Korvin's Northern Warriors",
 		cost: 4,
 		strength: 4,
@@ -24788,6 +26725,7 @@ export const cards: Card[] = [
 		releases: { VB: 4 }
 	},
 	{
+		id: 'VB5',
 		name: 'Morghur, Master of Skulls',
 		cost: 7,
 		strength: 4,
@@ -24799,10 +26737,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p><b>Terror</b>: 3</p><p> <b>WarCry</b>: The enemy unit gets -X tactic points. X equals this unit's leadership. If this reduces the enemy's tactic points below 0, this unit gets either +1 strength or may attach a weapon from your discard pile at no cost.</p>",
+		text: "<p><b>Terror</b>: 3</p><p><b>WarCry</b>: The enemy unit gets -X tactic points. X equals this unit's leadership. If this reduces the enemy's tactic points below 0, this unit gets either +1 strength or may attach a weapon from your discard pile at no cost.</p>",
 		releases: { VB: 5 }
 	},
 	{
+		id: 'VB6',
 		name: "Morghur's Horde",
 		cost: 3,
 		strength: 3,
@@ -24813,10 +26752,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals the tactic points printed on your highest leadership unit.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +X strength. X equals the tactic points printed on your highest leadership unit.</p>',
 		releases: { VB: 6 }
 	},
 	{
+		id: 'VB7',
 		name: "Morghur's Ogres",
 		cost: 4,
 		strength: 6,
@@ -24831,6 +26771,7 @@ export const cards: Card[] = [
 		releases: { VB: 7 }
 	},
 	{
+		id: 'VB8',
 		name: "Raaghra's Wild Herd",
 		cost: 3,
 		strength: 3,
@@ -24845,6 +26786,7 @@ export const cards: Card[] = [
 		releases: { VB: 8 }
 	},
 	{
+		id: 'VB9',
 		name: 'Mark of the Chosen',
 		cost: 1,
 		strength: 1,
@@ -24858,6 +26800,7 @@ export const cards: Card[] = [
 		releases: { VB: 9 }
 	},
 	{
+		id: 'VB10',
 		name: 'Arrows of Twilight',
 		cost: 2,
 		strength: 1,
@@ -24872,6 +26815,7 @@ export const cards: Card[] = [
 		releases: { VB: 10 }
 	},
 	{
+		id: 'VB11',
 		name: "Kyleth's Fellstalkers",
 		cost: 3,
 		strength: 3,
@@ -24886,6 +26830,7 @@ export const cards: Card[] = [
 		releases: { VB: 11 }
 	},
 	{
+		id: 'VB12',
 		name: "Kyleth's Reavers",
 		cost: 2,
 		strength: 1,
@@ -24896,10 +26841,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>Command</b>: If you have more total gold in play than your enemy, this ready unit declares an attack from the reserves. If the attack is not blocked, your enemy discards 1 card.</p>',
+		text: '<p><b>Command</b>: If you have more total gold in play than your enemy, this ready unit declares an attack from the reserves. If the attack is not blocked, your enemy discards 1 card.</p>',
 		releases: { VB: 12 }
 	},
 	{
+		id: 'VB13',
 		name: 'Nightbolt',
 		cost: 2,
 		strength: 2,
@@ -24914,6 +26860,7 @@ export const cards: Card[] = [
 		releases: { VB: 13 }
 	},
 	{
+		id: 'VB14',
 		name: "The Archon's Black Riders",
 		cost: 3,
 		strength: 2,
@@ -24928,6 +26875,7 @@ export const cards: Card[] = [
 		releases: { VB: 14 }
 	},
 	{
+		id: 'VB15',
 		name: "Twilight's Harbinger",
 		cost: 7,
 		strength: 5,
@@ -24943,6 +26891,7 @@ export const cards: Card[] = [
 		releases: { VB: 15 }
 	},
 	{
+		id: 'VB16',
 		name: "Twilight's Steeds",
 		cost: 4,
 		strength: 3,
@@ -24957,6 +26906,7 @@ export const cards: Card[] = [
 		releases: { VB: 16 }
 	},
 	{
+		id: 'VB17',
 		name: "Tz'arthi, Beast of Har Ganeth",
 		cost: 4,
 		strength: 3,
@@ -24971,6 +26921,7 @@ export const cards: Card[] = [
 		releases: { VB: 17 }
 	},
 	{
+		id: 'VB18',
 		name: 'Kyleth the Cruel',
 		cost: 3,
 		keywords: ['Dark Elf', 'Character'],
@@ -24982,6 +26933,7 @@ export const cards: Card[] = [
 		releases: { VB: 18 }
 	},
 	{
+		id: 'VB19',
 		name: "Da Overlord's Black Orcs",
 		cost: 4,
 		strength: 5,
@@ -24996,6 +26948,7 @@ export const cards: Card[] = [
 		releases: { VB: 19 }
 	},
 	{
+		id: 'VB20',
 		name: "Manmangler's Wild Boar Boyz",
 		cost: 5,
 		strength: 9,
@@ -25010,6 +26963,7 @@ export const cards: Card[] = [
 		releases: { VB: 20 }
 	},
 	{
+		id: 'VB21',
 		name: "Urguck's Arrer Boyz",
 		cost: 3,
 		strength: 2,
@@ -25024,6 +26978,7 @@ export const cards: Card[] = [
 		releases: { VB: 21 }
 	},
 	{
+		id: 'VB22',
 		name: "Urguck's Boyz",
 		cost: 3,
 		strength: 3,
@@ -25038,6 +26993,7 @@ export const cards: Card[] = [
 		releases: { VB: 22 }
 	},
 	{
+		id: 'VB23',
 		name: "Urguck's Sneaky Gits",
 		cost: 2,
 		strength: 2,
@@ -25052,6 +27008,7 @@ export const cards: Card[] = [
 		releases: { VB: 23 }
 	},
 	{
+		id: 'VB24',
 		name: 'Warboss Man-mangler',
 		cost: 7,
 		strength: 5,
@@ -25067,6 +27024,7 @@ export const cards: Card[] = [
 		releases: { VB: 24 }
 	},
 	{
+		id: 'VB25',
 		name: "Wuzzag's Arrer Boyz",
 		cost: 2,
 		strength: 1,
@@ -25081,6 +27039,7 @@ export const cards: Card[] = [
 		releases: { VB: 25 }
 	},
 	{
+		id: 'VB26',
 		name: "Wuzzag's Gobbo Mob",
 		cost: 2,
 		strength: 1,
@@ -25095,6 +27054,7 @@ export const cards: Card[] = [
 		releases: { VB: 26 }
 	},
 	{
+		id: 'VB27',
 		name: 'Whirly "Skinripper"',
 		cost: 1,
 		strength: 2,
@@ -25107,6 +27067,7 @@ export const cards: Card[] = [
 		releases: { VB: 27 }
 	},
 	{
+		id: 'VB28',
 		name: 'Aura of Fear',
 		cost: 4,
 		die: 2,
@@ -25115,10 +27076,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: This unit gets +2 strength for each of your <b>Terror</b> units.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 strength for each of your <b>Terror</b> units.</p>',
 		releases: { VB: 28 }
 	},
 	{
+		id: 'VB29',
 		name: 'Strength in Deception',
 		die: 2,
 		keywords: [],
@@ -25126,10 +27088,11 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Command',
 		rarity: 'Super rare',
-		text: '<p> <b>Command</b>: Choose one of your units and make a leadership test. If passed, you may declare an attack with that unit (if it legally could do so) on any enemy unit. If you do, your unit gets +1 strength.</p>',
+		text: '<p><b>Command</b>: Choose one of your units and make a leadership test. If passed, you may declare an attack with that unit (if it legally could do so) on any enemy unit. If you do, your unit gets +1 strength.</p>',
 		releases: { VB: 29 }
 	},
 	{
+		id: 'VB30',
 		name: 'Hunters of the Eyebiter Tribe',
 		cost: 4,
 		strength: 3,
@@ -25144,6 +27107,7 @@ export const cards: Card[] = [
 		releases: { VB: 30 }
 	},
 	{
+		id: 'VB31',
 		name: 'Armor of Deflection',
 		cost: 1,
 		keywords: ['Armor'],
@@ -25155,6 +27119,7 @@ export const cards: Card[] = [
 		releases: { VB: 31 }
 	},
 	{
+		id: 'VB32',
 		name: 'Arrows of Seeking',
 		cost: 1,
 		keywords: ['Weapon'],
@@ -25166,6 +27131,7 @@ export const cards: Card[] = [
 		releases: { VB: 32 }
 	},
 	{
+		id: 'VB33',
 		name: 'Power Stone',
 		cost: 0,
 		keywords: ['Item'],
@@ -25177,6 +27143,7 @@ export const cards: Card[] = [
 		releases: { VB: 33 }
 	},
 	{
+		id: 'VB34',
 		name: 'Staff of Sorcery',
 		cost: 1,
 		keywords: ['Item'],
@@ -25188,6 +27155,7 @@ export const cards: Card[] = [
 		releases: { VB: 34 }
 	},
 	{
+		id: 'VB35',
 		name: 'Sword of Battle',
 		cost: 3,
 		strength: 1,
@@ -25196,10 +27164,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: If you win this combat, rout the enemy unit (no rout check necessary).</p>',
+		text: '<p><b>WarCry</b>: If you win this combat, rout the enemy unit (no rout check necessary).</p>',
 		releases: { VB: 35 }
 	},
 	{
+		id: 'VB36',
 		name: 'Armored Protection',
 		cost: 1,
 		die: 4,
@@ -25212,6 +27181,7 @@ export const cards: Card[] = [
 		releases: { VB: 36 }
 	},
 	{
+		id: 'VB37',
 		name: 'Ashes of the Fallen',
 		cost: 3,
 		die: 2,
@@ -25220,10 +27190,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals half the number of units in your discard pile (rounded up). Remove all units in your discard pile from the game.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +X strength. X equals half the number of units in your discard pile (rounded up). Remove all units in your discard pile from the game.</p>',
 		releases: { VB: 37 }
 	},
 	{
+		id: 'VB38',
 		name: 'Back Up Your Brothers',
 		cost: 3,
 		die: 3,
@@ -25236,6 +27207,7 @@ export const cards: Card[] = [
 		releases: { VB: 38 }
 	},
 	{
+		id: 'VB39',
 		name: 'Battle Scream',
 		cost: 2,
 		die: 3,
@@ -25244,10 +27216,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b> Discard any number of cards: This unit gets +2 strength for each card discarded. If no cards were discarded, this unit gets +1 strength.</p>',
+		text: '<p><b>WarCry</b> Discard any number of cards: This unit gets +2 strength for each card discarded. If no cards were discarded, this unit gets +1 strength.</p>',
 		releases: { VB: 39 }
 	},
 	{
+		id: 'VB40',
 		name: 'Behind the Scenes',
 		cost: 1,
 		die: 3,
@@ -25260,6 +27233,7 @@ export const cards: Card[] = [
 		releases: { VB: 40 }
 	},
 	{
+		id: 'VB41',
 		name: 'Brute Force',
 		cost: 2,
 		die: 2,
@@ -25272,6 +27246,7 @@ export const cards: Card[] = [
 		releases: { VB: 41 }
 	},
 	{
+		id: 'VB42',
 		name: 'Choose Your Allies Well',
 		cost: 2,
 		die: 2,
@@ -25280,10 +27255,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets +1 strength for either each committed unit or each ready unit in your army (you choose).</p>',
+		text: '<p><b>WarCry</b>: This unit gets +1 strength for either each committed unit or each ready unit in your army (you choose).</p>',
 		releases: { VB: 42 }
 	},
 	{
+		id: 'VB43',
 		name: 'Confidence',
 		cost: 1,
 		die: 4,
@@ -25296,6 +27272,7 @@ export const cards: Card[] = [
 		releases: { VB: 43 }
 	},
 	{
+		id: 'VB44',
 		name: 'Embark On A Quest',
 		die: 1,
 		keywords: [],
@@ -25303,10 +27280,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		rarity: 'Super rare',
-		text: '<p> <b>Command</b> Commit a <b>Veteran</b> unit: Attach this card to one of your <b>Veteran</b> units. While attached, this unit gets +1 strength and the following abilities: "<b>Reaction</b>: After a command has resolved, draw 1 card." and "<b>Reaction</b> Discard 3 cards: After a command has resolved, ready this unit." These abilities are only playable while committed.</p>',
+		text: '<p><b>Command</b> Commit a <b>Veteran</b> unit: Attach this card to one of your <b>Veteran</b> units. While attached, this unit gets +1 strength and the following abilities: "<b>Reaction</b>: After a command has resolved, draw 1 card." and "<b>Reaction</b> Discard 3 cards: After a command has resolved, ready this unit." These abilities are only playable while committed.</p>',
 		releases: { VB: 44 }
 	},
 	{
+		id: 'VB45',
 		name: 'Examine Your Strategy',
 		cost: 1,
 		die: 2,
@@ -25319,6 +27297,7 @@ export const cards: Card[] = [
 		releases: { VB: 45 }
 	},
 	{
+		id: 'VB46',
 		name: 'Experience Has Its Rewards',
 		cost: 3,
 		die: 3,
@@ -25331,6 +27310,7 @@ export const cards: Card[] = [
 		releases: { VB: 46 }
 	},
 	{
+		id: 'VB47',
 		name: 'Explosion of Power',
 		cost: 1,
 		die: 2,
@@ -25343,6 +27323,7 @@ export const cards: Card[] = [
 		releases: { VB: 47 }
 	},
 	{
+		id: 'VB48',
 		name: 'Feigned Weakness',
 		cost: 1,
 		die: 5,
@@ -25355,6 +27336,7 @@ export const cards: Card[] = [
 		releases: { VB: 48 }
 	},
 	{
+		id: 'VB49',
 		name: 'Fleet of Foot',
 		cost: 2,
 		die: 3,
@@ -25367,6 +27349,7 @@ export const cards: Card[] = [
 		releases: { VB: 49 }
 	},
 	{
+		id: 'VB50',
 		name: 'Force Their Hand',
 		cost: 2,
 		die: 3,
@@ -25375,10 +27358,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: This unit gets +2 strength. When your enemy makes their combat roll for this combat, they roll twice and you choose which die is used as their combat roll.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 strength. When your enemy makes their combat roll for this combat, they roll twice and you choose which die is used as their combat roll.</p>',
 		releases: { VB: 50 }
 	},
 	{
+		id: 'VB51',
 		name: 'Gigantic Weakness',
 		cost: 2,
 		die: 3,
@@ -25391,6 +27375,7 @@ export const cards: Card[] = [
 		releases: { VB: 51 }
 	},
 	{
+		id: 'VB52',
 		name: 'Give and Take',
 		cost: 2,
 		die: 4,
@@ -25403,6 +27388,7 @@ export const cards: Card[] = [
 		releases: { VB: 52 }
 	},
 	{
+		id: 'VB53',
 		name: 'Gutsy Move',
 		cost: 2,
 		die: 3,
@@ -25411,10 +27397,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Roll. You may choose to remove up to X cards from the top of your deck from the game. You get +1 strength for each card removed this way. X equals the number you rolled.</p>',
+		text: '<p><b>WarCry</b>: Roll. You may choose to remove up to X cards from the top of your deck from the game. You get +1 strength for each card removed this way. X equals the number you rolled.</p>',
 		releases: { VB: 53 }
 	},
 	{
+		id: 'VB54',
 		name: 'Hasty Move',
 		cost: 1,
 		die: 2,
@@ -25427,6 +27414,7 @@ export const cards: Card[] = [
 		releases: { VB: 54 }
 	},
 	{
+		id: 'VB55',
 		name: 'Hidden Arms',
 		cost: 0,
 		die: 3,
@@ -25435,10 +27423,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p> <b>WarCry</b>: Attach a weapon card from your discard pile to this unit. Only playable if your unit is a <b>Veteran</b> unit.</p>',
+		text: '<p><b>WarCry</b>: Attach a weapon card from your discard pile to this unit. Only playable if your unit is a <b>Veteran</b> unit.</p>',
 		releases: { VB: 55 }
 	},
 	{
+		id: 'VB56',
 		name: 'Hold Your Aim',
 		cost: 2,
 		die: 4,
@@ -25451,6 +27440,7 @@ export const cards: Card[] = [
 		releases: { VB: 56 }
 	},
 	{
+		id: 'VB57',
 		name: 'Holding Ground',
 		cost: 1,
 		die: 3,
@@ -25463,6 +27453,7 @@ export const cards: Card[] = [
 		releases: { VB: 57 }
 	},
 	{
+		id: 'VB58',
 		name: 'Immediate Weakness',
 		cost: 0,
 		die: 2,
@@ -25475,6 +27466,7 @@ export const cards: Card[] = [
 		releases: { VB: 58 }
 	},
 	{
+		id: 'VB59',
 		name: 'Integrity',
 		cost: 1,
 		die: 4,
@@ -25487,6 +27479,7 @@ export const cards: Card[] = [
 		releases: { VB: 59 }
 	},
 	{
+		id: 'VB60',
 		name: 'Keep Pace',
 		die: 3,
 		keywords: [],
@@ -25498,6 +27491,7 @@ export const cards: Card[] = [
 		releases: { VB: 60 }
 	},
 	{
+		id: 'VB61',
 		name: 'Know Their Formations',
 		cost: 2,
 		die: 3,
@@ -25510,6 +27504,7 @@ export const cards: Card[] = [
 		releases: { VB: 61 }
 	},
 	{
+		id: 'VB62',
 		name: 'Make Them Cow Before You',
 		cost: 4,
 		die: 3,
@@ -25522,6 +27517,7 @@ export const cards: Card[] = [
 		releases: { VB: 62 }
 	},
 	{
+		id: 'VB63',
 		name: 'Manipulation',
 		die: 3,
 		keywords: [],
@@ -25533,6 +27529,7 @@ export const cards: Card[] = [
 		releases: { VB: 63 }
 	},
 	{
+		id: 'VB64',
 		name: 'Money Equals Power',
 		cost: 1,
 		die: 4,
@@ -25545,6 +27542,7 @@ export const cards: Card[] = [
 		releases: { VB: 64 }
 	},
 	{
+		id: 'VB65',
 		name: 'No Rest for the Weary',
 		die: 2,
 		keywords: [],
@@ -25556,6 +27554,7 @@ export const cards: Card[] = [
 		releases: { VB: 65 }
 	},
 	{
+		id: 'VB66',
 		name: 'On the Line',
 		cost: 3,
 		die: 2,
@@ -25568,6 +27567,7 @@ export const cards: Card[] = [
 		releases: { VB: 66 }
 	},
 	{
+		id: 'VB67',
 		name: 'Past Knowledge',
 		cost: 0,
 		die: 3,
@@ -25580,6 +27580,7 @@ export const cards: Card[] = [
 		releases: { VB: 67 }
 	},
 	{
+		id: 'VB68',
 		name: 'Poison the Well',
 		cost: 1,
 		die: 3,
@@ -25588,10 +27589,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: The enemy unit gets -2 strength unless it passes a tactic point test.</p>',
+		text: '<p><b>WarCry</b>: The enemy unit gets -2 strength unless it passes a tactic point test.</p>',
 		releases: { VB: 68 }
 	},
 	{
+		id: 'VB69',
 		name: 'Power Over Those Who Fear',
 		cost: 2,
 		die: 3,
@@ -25604,6 +27606,7 @@ export const cards: Card[] = [
 		releases: { VB: 69 }
 	},
 	{
+		id: 'VB70',
 		name: 'Predict Their Moves',
 		cost: 0,
 		die: 2,
@@ -25616,6 +27619,7 @@ export const cards: Card[] = [
 		releases: { VB: 70 }
 	},
 	{
+		id: 'VB71',
 		name: 'Recycling Your Decisions',
 		cost: 4,
 		die: 2,
@@ -25628,6 +27632,7 @@ export const cards: Card[] = [
 		releases: { VB: 71 }
 	},
 	{
+		id: 'VB72',
 		name: 'Resolute',
 		cost: 1,
 		die: 2,
@@ -25640,6 +27645,7 @@ export const cards: Card[] = [
 		releases: { VB: 72 }
 	},
 	{
+		id: 'VB73',
 		name: 'Stalwart',
 		cost: 2,
 		die: 2,
@@ -25652,6 +27658,7 @@ export const cards: Card[] = [
 		releases: { VB: 73 }
 	},
 	{
+		id: 'VB74',
 		name: 'Stand Alone',
 		die: 3,
 		keywords: [],
@@ -25663,6 +27670,7 @@ export const cards: Card[] = [
 		releases: { VB: 74 }
 	},
 	{
+		id: 'VB75',
 		name: 'Stay On Target',
 		cost: 2,
 		die: 3,
@@ -25675,6 +27683,7 @@ export const cards: Card[] = [
 		releases: { VB: 75 }
 	},
 	{
+		id: 'VB76',
 		name: 'Sting of the Sword',
 		cost: 0,
 		die: 1,
@@ -25687,6 +27696,7 @@ export const cards: Card[] = [
 		releases: { VB: 76 }
 	},
 	{
+		id: 'VB77',
 		name: 'Strength From the Line',
 		cost: 3,
 		die: 2,
@@ -25699,6 +27709,7 @@ export const cards: Card[] = [
 		releases: { VB: 77 }
 	},
 	{
+		id: 'VB78',
 		name: 'Strength in Your Faith',
 		cost: 2,
 		die: 3,
@@ -25711,6 +27722,7 @@ export const cards: Card[] = [
 		releases: { VB: 78 }
 	},
 	{
+		id: 'VB79',
 		name: 'Strength on the Winds',
 		cost: 2,
 		die: 3,
@@ -25723,6 +27735,7 @@ export const cards: Card[] = [
 		releases: { VB: 79 }
 	},
 	{
+		id: 'VB80',
 		name: 'Strike Before They Do',
 		cost: 1,
 		die: 4,
@@ -25731,10 +27744,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: "<p> <b>WarCry</b>: This unit gets a strength bonus equal to the enemy unit's tactic points. If the enemy unit has 0 tactic points at the end of the tactics phase, it gets a strength bonus equal to double it's printed tactic points.</p>",
+		text: "<p><b>WarCry</b>: This unit gets a strength bonus equal to the enemy unit's tactic points. If the enemy unit has 0 tactic points at the end of the tactics phase, it gets a strength bonus equal to double it's printed tactic points.</p>",
 		releases: { VB: 80 }
 	},
 	{
+		id: 'VB81',
 		name: 'Strike With Your Sword',
 		cost: 3,
 		die: 3,
@@ -25747,6 +27761,7 @@ export const cards: Card[] = [
 		releases: { VB: 81 }
 	},
 	{
+		id: 'VB82',
 		name: 'The Knowledge of Your Allies',
 		cost: 2,
 		die: 3,
@@ -25759,6 +27774,7 @@ export const cards: Card[] = [
 		releases: { VB: 82 }
 	},
 	{
+		id: 'VB83',
 		name: 'The Weak Stand Up',
 		cost: 1,
 		die: 3,
@@ -25771,6 +27787,7 @@ export const cards: Card[] = [
 		releases: { VB: 83 }
 	},
 	{
+		id: 'VB84',
 		name: 'The Tide Comes In',
 		cost: 0,
 		die: 3,
@@ -25779,10 +27796,11 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: Your unit gets +1 strength. Any player with 4 or fewer cards in their hand draws 5 cards. Only playable if your unit is a <b>Veteran</b> unit.</p>',
+		text: '<p><b>WarCry</b>: Your unit gets +1 strength. Any player with 4 or fewer cards in their hand draws 5 cards. Only playable if your unit is a <b>Veteran</b> unit.</p>',
 		releases: { VB: 84 }
 	},
 	{
+		id: 'VB85',
 		name: 'Use Their Weapons Against Them',
 		cost: 1,
 		die: 3,
@@ -25795,6 +27813,7 @@ export const cards: Card[] = [
 		releases: { VB: 85 }
 	},
 	{
+		id: 'VB86',
 		name: 'Utilize Your Resources',
 		cost: 3,
 		die: 3,
@@ -25807,6 +27826,7 @@ export const cards: Card[] = [
 		releases: { VB: 86 }
 	},
 	{
+		id: 'VB87',
 		name: 'Variety of Options',
 		cost: 1,
 		die: 4,
@@ -25819,6 +27839,7 @@ export const cards: Card[] = [
 		releases: { VB: 87 }
 	},
 	{
+		id: 'VB88',
 		name: 'Wait for It',
 		cost: 1,
 		die: 3,
@@ -25831,6 +27852,7 @@ export const cards: Card[] = [
 		releases: { VB: 88 }
 	},
 	{
+		id: 'VB89',
 		name: 'Well-Rested',
 		die: 2,
 		keywords: [],
@@ -25842,6 +27864,7 @@ export const cards: Card[] = [
 		releases: { VB: 89 }
 	},
 	{
+		id: 'VB90',
 		name: 'Barak Grimjaw, Harbinger of Pride',
 		cost: 7,
 		strength: 5,
@@ -25857,6 +27880,7 @@ export const cards: Card[] = [
 		releases: { VB: 90 }
 	},
 	{
+		id: 'VB91',
 		name: "Barak's Ironbreakers",
 		cost: 3,
 		strength: 3,
@@ -25871,6 +27895,7 @@ export const cards: Card[] = [
 		releases: { VB: 91 }
 	},
 	{
+		id: 'VB92',
 		name: 'Cannons of Silverspear',
 		cost: 3,
 		strength: 0,
@@ -25885,6 +27910,7 @@ export const cards: Card[] = [
 		releases: { VB: 92 }
 	},
 	{
+		id: 'VB93',
 		name: 'Defender of Karak-Kadrin',
 		cost: 2,
 		strength: 0,
@@ -25899,6 +27925,7 @@ export const cards: Card[] = [
 		releases: { VB: 93 }
 	},
 	{
+		id: 'VB94',
 		name: "Grimjaw's Flamethrower",
 		cost: 3,
 		strength: 1,
@@ -25909,10 +27936,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Ranged Attack</b>: 1</p><p> <b>WarCry</b>: This unit gets +X ranged attack. X equals your current total victory bonus.</p>',
+		text: '<p><b>Ranged Attack</b>: 1</p><p><b>WarCry</b>: This unit gets +X ranged attack. X equals your current total victory bonus.</p>',
 		releases: { VB: 94 }
 	},
 	{
+		id: 'VB95',
 		name: "Grimjaw's Longbeards",
 		cost: 4,
 		strength: 4,
@@ -25927,6 +27955,7 @@ export const cards: Card[] = [
 		releases: { VB: 95 }
 	},
 	{
+		id: 'VB96',
 		name: "Grimjaw's Stonethrower",
 		cost: 3,
 		strength: 0,
@@ -25941,6 +27970,7 @@ export const cards: Card[] = [
 		releases: { VB: 96 }
 	},
 	{
+		id: 'VB97',
 		name: "Grimjaw's Thunderers",
 		cost: 4,
 		strength: 1,
@@ -25955,6 +27985,7 @@ export const cards: Card[] = [
 		releases: { VB: 97 }
 	},
 	{
+		id: 'VB98',
 		name: 'Damakrin Giantbreaker',
 		cost: 1,
 		tacticPoints: -1,
@@ -25967,6 +27998,7 @@ export const cards: Card[] = [
 		releases: { VB: 98 }
 	},
 	{
+		id: 'VB99',
 		name: 'Averland Halberdiers',
 		cost: 4,
 		strength: 4,
@@ -25981,6 +28013,7 @@ export const cards: Card[] = [
 		releases: { VB: 99 }
 	},
 	{
+		id: 'VB100',
 		name: 'Count Theodric Gausser',
 		cost: 6,
 		strength: 4,
@@ -25996,6 +28029,7 @@ export const cards: Card[] = [
 		releases: { VB: 100 }
 	},
 	{
+		id: 'VB101',
 		name: 'Edwin Offmeir',
 		cost: 5,
 		strength: 3,
@@ -26010,6 +28044,7 @@ export const cards: Card[] = [
 		releases: { VB: 101 }
 	},
 	{
+		id: 'VB102',
 		name: 'Friedrich Ruerhart',
 		cost: 3,
 		strength: 3,
@@ -26024,6 +28059,7 @@ export const cards: Card[] = [
 		releases: { VB: 102 }
 	},
 	{
+		id: 'VB103',
 		name: "Gausser's Protectors",
 		cost: 5,
 		strength: 4,
@@ -26038,6 +28074,7 @@ export const cards: Card[] = [
 		releases: { VB: 103 }
 	},
 	{
+		id: 'VB104',
 		name: 'Halberdiers of Norland',
 		cost: 3,
 		strength: 3,
@@ -26052,6 +28089,7 @@ export const cards: Card[] = [
 		releases: { VB: 104 }
 	},
 	{
+		id: 'VB105',
 		name: 'Marienburg Swordsmen',
 		cost: 2,
 		strength: 2,
@@ -26066,6 +28104,7 @@ export const cards: Card[] = [
 		releases: { VB: 105 }
 	},
 	{
+		id: 'VB106',
 		name: 'Wissenburg Greatswords',
 		cost: 2,
 		strength: 3,
@@ -26080,6 +28119,7 @@ export const cards: Card[] = [
 		releases: { VB: 106 }
 	},
 	{
+		id: 'VB107',
 		name: 'Anton Lutrecht',
 		cost: 1,
 		tacticPoints: 3,
@@ -26092,6 +28132,7 @@ export const cards: Card[] = [
 		releases: { VB: 107 }
 	},
 	{
+		id: 'VB108',
 		name: "Bilgarim's Silverhelms",
 		cost: 4,
 		strength: 2,
@@ -26102,10 +28143,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals the strength of the High Elf unit with the most tactic points.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +X strength. X equals the strength of the High Elf unit with the most tactic points.</p>',
 		releases: { VB: 108 }
 	},
 	{
+		id: 'VB109',
 		name: 'Eagles of Ulthuan',
 		cost: 3,
 		strength: 2,
@@ -26120,6 +28162,7 @@ export const cards: Card[] = [
 		releases: { VB: 109 }
 	},
 	{
+		id: 'VB110',
 		name: 'Helms of Caladai',
 		cost: 4,
 		strength: 3,
@@ -26134,6 +28177,7 @@ export const cards: Card[] = [
 		releases: { VB: 110 }
 	},
 	{
+		id: 'VB111',
 		name: "Lathain's Phoenix Guard",
 		cost: 5,
 		strength: 5,
@@ -26148,6 +28192,7 @@ export const cards: Card[] = [
 		releases: { VB: 111 }
 	},
 	{
+		id: 'VB112',
 		name: 'Lord Whitestar, Mage of Ulthuan',
 		cost: 6,
 		strength: 5,
@@ -26163,6 +28208,7 @@ export const cards: Card[] = [
 		releases: { VB: 112 }
 	},
 	{
+		id: 'VB113',
 		name: 'Sarathai, Dragon of Caledor',
 		cost: 6,
 		strength: 4,
@@ -26178,6 +28224,7 @@ export const cards: Card[] = [
 		releases: { VB: 113 }
 	},
 	{
+		id: 'VB114',
 		name: "Whitestar's Shadow Warriors",
 		cost: 3,
 		strength: 3,
@@ -26192,6 +28239,7 @@ export const cards: Card[] = [
 		releases: { VB: 114 }
 	},
 	{
+		id: 'VB115',
 		name: "Whitestar's Truespear",
 		cost: 2,
 		strength: 1,
@@ -26206,6 +28254,7 @@ export const cards: Card[] = [
 		releases: { VB: 115 }
 	},
 	{
+		id: 'VB116',
 		name: 'Kourdhir Brazenlight',
 		cost: 1,
 		tacticPoints: 2,
@@ -26219,6 +28268,7 @@ export const cards: Card[] = [
 		releases: { VB: 116 }
 	},
 	{
+		id: 'VB117',
 		name: "Bugman's Brew",
 		cost: 0,
 		die: 4,
@@ -26231,6 +28281,7 @@ export const cards: Card[] = [
 		releases: { VB: 117 }
 	},
 	{
+		id: 'VB118',
 		name: 'Impressive Might',
 		cost: 3,
 		die: 3,
@@ -26243,6 +28294,7 @@ export const cards: Card[] = [
 		releases: { VB: 118 }
 	},
 	{
+		id: 'VB119',
 		name: 'Strength Versus the Weak',
 		cost: 1,
 		keywords: [],
@@ -26254,6 +28306,7 @@ export const cards: Card[] = [
 		releases: { VB: 119 }
 	},
 	{
+		id: 'VB120',
 		name: 'Virtue of Heroism',
 		cost: 2,
 		keywords: [],
@@ -26261,10 +28314,11 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p> <b>WarCry</b>: If your <b>Faith</b> unit is losing the combat, it gets X+1 strength. X equals how much you are losing the combat by.</p>',
+		text: '<p><b>WarCry</b>: If your <b>Faith</b> unit is losing the combat, it gets X+1 strength. X equals how much you are losing the combat by.</p>',
 		releases: { VB: 120 }
 	},
 	{
+		id: 'PA1',
 		name: 'Blade of Attrition',
 		cost: 1,
 		unique: true,
@@ -26276,6 +28330,7 @@ export const cards: Card[] = [
 		releases: { PA: 1 }
 	},
 	{
+		id: 'PA2',
 		name: 'WA',
 		die: 3,
 		keywords: [],
@@ -26286,6 +28341,7 @@ export const cards: Card[] = [
 		releases: { PA: 2 }
 	},
 	{
+		id: 'PA3',
 		name: 'HF',
 		die: 5,
 		keywords: ['Strategy'],
@@ -26296,6 +28352,7 @@ export const cards: Card[] = [
 		releases: { PA: 3 }
 	},
 	{
+		id: 'PA4',
 		name: 'Alignment of the Heavens',
 		die: 1,
 		keywords: ['Strategy'],
@@ -26306,6 +28363,7 @@ export const cards: Card[] = [
 		releases: { PA: 4 }
 	},
 	{
+		id: 'PA5',
 		name: 'Lethphaos',
 		cost: 5,
 		strength: 4,
@@ -26320,6 +28378,7 @@ export const cards: Card[] = [
 		releases: { PA: 5 }
 	},
 	{
+		id: 'PA6',
 		name: 'Slaahadum',
 		cost: 4,
 		strength: 4,
@@ -26333,6 +28392,7 @@ export const cards: Card[] = [
 		releases: { PA: 6 }
 	},
 	{
+		id: 'PA7',
 		name: 'Yrmaldrel Blackcrown',
 		cost: 5,
 		strength: 2,
@@ -26343,10 +28403,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b>: Your enemy discards 2 cards.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +X strength. X equals the die on the card discarded for this ability.</p>',
+		text: '<p><b>WarCry</b>: Your enemy discards 2 cards.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +X strength. X equals the die on the card discarded for this ability.</p>',
 		releases: { PA: 7 }
 	},
 	{
+		id: 'PA8',
 		name: "Yrmaldrel's Corsairs",
 		cost: 4,
 		strength: 2,
@@ -26356,10 +28417,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
-		text: "<p> <b>WarCry</b>: This unit gets +X strength. X equals the number of cards in your hand in excess of the number of cards in your enemy's hand.</p>",
+		text: "<p><b>WarCry</b>: This unit gets +X strength. X equals the number of cards in your hand in excess of the number of cards in your enemy's hand.</p>",
 		releases: { PA: 8 }
 	},
 	{
+		id: 'PA9',
 		name: 'Nuznar the Destroyer',
 		cost: 4,
 		strength: 8,
@@ -26374,6 +28436,7 @@ export const cards: Card[] = [
 		releases: { PA: 9 }
 	},
 	{
+		id: 'PA10',
 		name: 'Zazerg the Wierd',
 		cost: 4,
 		strength: 2,
@@ -26387,6 +28450,7 @@ export const cards: Card[] = [
 		releases: { PA: 10 }
 	},
 	{
+		id: 'PA11',
 		name: "Siksik's Plague Monks",
 		cost: 3,
 		strength: 1,
@@ -26400,6 +28464,7 @@ export const cards: Card[] = [
 		releases: { PA: 11 }
 	},
 	{
+		id: 'PA12',
 		name: "Rakash's Royal Regiment",
 		cost: 4,
 		strength: 4,
@@ -26413,6 +28478,7 @@ export const cards: Card[] = [
 		releases: { PA: 12 }
 	},
 	{
+		id: 'PA13',
 		name: 'The Red Thirst',
 		cost: 2,
 		die: 3,
@@ -26420,10 +28486,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: Your unit gets +6 strength. Only playabe while your unit has a higher printed strength and tactic points than the enemy unit.</p>',
+		text: '<p><b>WarCry</b>: Your unit gets +6 strength. Only playabe while your unit has a higher printed strength and tactic points than the enemy unit.</p>',
 		releases: { PA: 13 }
 	},
 	{
+		id: 'PA14',
 		name: "Kineater's Ironguts",
 		cost: 8,
 		strength: 10,
@@ -26437,6 +28504,7 @@ export const cards: Card[] = [
 		releases: { PA: 14 }
 	},
 	{
+		id: 'PA15',
 		name: 'Catastrophic Miscalculation',
 		die: 4,
 		keywords: [],
@@ -26447,6 +28515,7 @@ export const cards: Card[] = [
 		releases: { PA: 15 }
 	},
 	{
+		id: 'PA16',
 		name: 'Convocation of Power',
 		die: 4,
 		keywords: [],
@@ -26457,6 +28526,7 @@ export const cards: Card[] = [
 		releases: { PA: 16 }
 	},
 	{
+		id: 'PA17',
 		name: 'Dark Destiny',
 		die: 3,
 		keywords: ['Strategy'],
@@ -26467,6 +28537,7 @@ export const cards: Card[] = [
 		releases: { PA: 17 }
 	},
 	{
+		id: 'PA18',
 		name: 'Death Is My Mistress',
 		die: 3,
 		keywords: [],
@@ -26477,6 +28548,7 @@ export const cards: Card[] = [
 		releases: { PA: 18 }
 	},
 	{
+		id: 'PA19',
 		name: 'Defensive Measures',
 		die: 5,
 		keywords: ['Strategy'],
@@ -26487,6 +28559,7 @@ export const cards: Card[] = [
 		releases: { PA: 19 }
 	},
 	{
+		id: 'PA20',
 		name: 'Enchantment Amplification',
 		die: 4,
 		keywords: [],
@@ -26497,6 +28570,7 @@ export const cards: Card[] = [
 		releases: { PA: 20 }
 	},
 	{
+		id: 'PA21',
 		name: 'Everyone Loves a Winner',
 		cost: 2,
 		die: 2,
@@ -26504,10 +28578,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: This unit gets +2 strength. If this unit wins the combat, draw 2 cards.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +2 strength. If this unit wins the combat, draw 2 cards.</p>',
 		releases: { PA: 21 }
 	},
 	{
+		id: 'PA22',
 		name: 'Inner Fire',
 		cost: 2,
 		die: 3,
@@ -26519,6 +28594,7 @@ export const cards: Card[] = [
 		releases: { PA: 22 }
 	},
 	{
+		id: 'PA23',
 		name: 'Inspired Courage',
 		die: 3,
 		keywords: ['Strategy'],
@@ -26529,16 +28605,18 @@ export const cards: Card[] = [
 		releases: { PA: 23 }
 	},
 	{
+		id: 'PA24',
 		name: 'Lost Wisdom',
 		die: 2,
 		keywords: [],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
-		text: '<p> <b>Command</b>: Choose 5 cards from either your army or action discard pile and then put them on top of their respective decks in any order.</p>',
+		text: '<p><b>Command</b>: Choose 5 cards from either your army or action discard pile and then put them on top of their respective decks in any order.</p>',
 		releases: { PA: 24 }
 	},
 	{
+		id: 'PA25',
 		name: 'Master Assassins',
 		die: 5,
 		keywords: [],
@@ -26549,6 +28627,7 @@ export const cards: Card[] = [
 		releases: { PA: 25 }
 	},
 	{
+		id: 'PA26',
 		name: 'Masterful Maneuvering',
 		die: 5,
 		keywords: [],
@@ -26559,6 +28638,7 @@ export const cards: Card[] = [
 		releases: { PA: 26 }
 	},
 	{
+		id: 'PA27',
 		name: 'Narrowed Options',
 		cost: 1,
 		die: 4,
@@ -26566,10 +28646,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: The enemy unit may only play a number of tactics equal to its leadership minus 1. ("<b>Terror</b>" does not affect this)</p>',
+		text: '<p><b>WarCry</b>: The enemy unit may only play a number of tactics equal to its leadership minus 1. ("<b>Terror</b>" does not affect this)</p>',
 		releases: { PA: 27 }
 	},
 	{
+		id: 'PA28',
 		name: 'No Substitute for Experience',
 		die: 5,
 		keywords: [],
@@ -26580,6 +28661,7 @@ export const cards: Card[] = [
 		releases: { PA: 28 }
 	},
 	{
+		id: 'PA29',
 		name: 'Pessimistic Planning',
 		die: 4,
 		keywords: [],
@@ -26590,6 +28672,7 @@ export const cards: Card[] = [
 		releases: { PA: 29 }
 	},
 	{
+		id: 'PA30',
 		name: 'Superstition',
 		die: 3,
 		keywords: ['Strategy'],
@@ -26600,6 +28683,7 @@ export const cards: Card[] = [
 		releases: { PA: 30 }
 	},
 	{
+		id: 'PA31',
 		name: 'Tireless Defense',
 		die: 4,
 		keywords: [],
@@ -26610,6 +28694,7 @@ export const cards: Card[] = [
 		releases: { PA: 31 }
 	},
 	{
+		id: 'PA32',
 		name: 'Total Mastery',
 		cost: 10,
 		die: 3,
@@ -26621,6 +28706,7 @@ export const cards: Card[] = [
 		releases: { PA: 32 }
 	},
 	{
+		id: 'PA33',
 		name: 'War Is My Master',
 		cost: 3,
 		die: 2,
@@ -26628,10 +28714,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
-		text: '<p> <b>WarCry</b>: Your unit gets +4 strength. Only playable while you are attacking and only if this strength bonus gives you a higher total strength than the enemy unit. If you wn this combat rout the opposing unit automatically (no roll necessary).</p>',
+		text: '<p><b>WarCry</b>: Your unit gets +4 strength. Only playable while you are attacking and only if this strength bonus gives you a higher total strength than the enemy unit. If you wn this combat rout the opposing unit automatically (no roll necessary).</p>',
 		releases: { PA: 33 }
 	},
 	{
+		id: 'PA34',
 		name: 'Gilded Armor',
 		cost: 1,
 		keywords: ['Armor'],
@@ -26642,6 +28729,7 @@ export const cards: Card[] = [
 		releases: { PA: 34 }
 	},
 	{
+		id: 'PA35',
 		name: 'Sword of Might',
 		cost: 1,
 		keywords: ['Weapon'],
@@ -26652,6 +28740,7 @@ export const cards: Card[] = [
 		releases: { PA: 35 }
 	},
 	{
+		id: 'PA36',
 		name: 'Talisman of Might',
 		cost: 1,
 		unique: true,
@@ -26663,6 +28752,7 @@ export const cards: Card[] = [
 		releases: { PA: 36 }
 	},
 	{
+		id: 'PA37',
 		name: "Balduhild's Knights of the Shield",
 		cost: 5,
 		strength: 4,
@@ -26676,6 +28766,7 @@ export const cards: Card[] = [
 		releases: { PA: 37 }
 	},
 	{
+		id: 'PA38',
 		name: 'Furendrin Goldeneye',
 		cost: 4,
 		strength: 4,
@@ -26690,6 +28781,7 @@ export const cards: Card[] = [
 		releases: { PA: 38 }
 	},
 	{
+		id: 'PA39',
 		name: 'Lord Furzin Goldeneye',
 		cost: 5,
 		strength: 5,
@@ -26704,6 +28796,7 @@ export const cards: Card[] = [
 		releases: { PA: 39 }
 	},
 	{
+		id: 'PA40',
 		name: 'Kurt Helborg, Grand Master of the Reiksguard',
 		cost: 6,
 		strength: 5,
@@ -26718,6 +28811,7 @@ export const cards: Card[] = [
 		releases: { PA: 40 }
 	},
 	{
+		id: 'PA41',
 		name: 'Shield of the Emperor',
 		cost: 6,
 		strength: 6,
@@ -26731,6 +28825,7 @@ export const cards: Card[] = [
 		releases: { PA: 41 }
 	},
 	{
+		id: 'PA42',
 		name: 'Gaenrifir Hawkgrace, Silver Helm Champion',
 		cost: 5,
 		strength: 6,
@@ -26741,10 +28836,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p>This unit may not block.</p><p> <b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
+		text: '<p>This unit may not block.</p><p><b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
 		releases: { PA: 42 }
 	},
 	{
+		id: 'PA43',
 		name: 'Prince Khadrynir Pureflight and Swiftwing',
 		cost: 5,
 		strength: 4,
@@ -26759,6 +28855,7 @@ export const cards: Card[] = [
 		releases: { PA: 43 }
 	},
 	{
+		id: 'PA44',
 		name: 'Blessed Spawn of Huanchi',
 		cost: 4,
 		strength: 2,
@@ -26768,10 +28865,11 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Grand Alliance',
 		type: 'Unit',
-		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals one of your other units "<b>Victory</b>" level.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +X strength. X equals one of your other units "<b>Victory</b>" level.</p>',
 		releases: { PA: 44 }
 	},
 	{
+		id: 'PA45',
 		name: 'Standard of War',
 		cost: 1,
 		keywords: ['Standard'],
@@ -26782,6 +28880,7 @@ export const cards: Card[] = [
 		releases: { PA: 45 }
 	},
 	{
+		id: 'PA46',
 		name: 'Resrauch Goldenscale',
 		cost: 6,
 		strength: 4,
@@ -26796,6 +28895,7 @@ export const cards: Card[] = [
 		releases: { PA: 46 }
 	},
 	{
+		id: 'PA47',
 		name: 'Luthor Drauwulf',
 		cost: 3,
 		strength: 3,
@@ -26809,6 +28909,7 @@ export const cards: Card[] = [
 		releases: { PA: 47 }
 	},
 	{
+		id: 'PA48',
 		name: 'MP',
 		die: 4,
 		keywords: ['Strategy'],
@@ -26819,6 +28920,7 @@ export const cards: Card[] = [
 		releases: { PA: 48 }
 	},
 	{
+		id: 'PA49',
 		name: 'Stewards of the Land',
 		cost: 4,
 		strength: 2,
@@ -26832,13 +28934,14 @@ export const cards: Card[] = [
 		releases: { PA: 49 }
 	},
 	{
+		id: 'PA50',
 		name: 'VB',
 		die: 3,
 		keywords: ['Strategy'],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
-		text: '<p>If you have won a battle this game, your units get +1 strength.</p><p> <b>Command</b> Discard your hand: Destroy this card. Your enemy may play this ability.</p>',
+		text: '<p>If you have won a battle this game, your units get +1 strength.</p><p><b>Command</b> Discard your hand: Destroy this card. Your enemy may play this ability.</p>',
 		releases: { PA: 50 }
 	}
 ] as const;
