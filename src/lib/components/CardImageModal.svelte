@@ -5,10 +5,19 @@
 	};
 
 	let { cardId, onclose }: Props = $props();
+
+	let modalElement: HTMLDivElement | undefined = $state();
+
+	$effect(() => {
+		if (cardId && modalElement) {
+			modalElement.focus();
+		}
+	});
 </script>
 
 {#if cardId}
 	<div
+		bind:this={modalElement}
 		class="bg-opacity-75 fixed inset-0 z-50 flex items-center justify-center bg-black p-4"
 		onclick={onclose}
 		onkeydown={(e) => e.key === 'Escape' && onclose()}
