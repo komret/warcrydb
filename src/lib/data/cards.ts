@@ -64,30 +64,53 @@ export const leadershipValues = [1, 2, 3, 4, 5, 6] as const;
 export type Leadership = (typeof leadershipValues)[number];
 
 export const sets = [
-	'WarCry',
-	'Winds of Magic',
-	'Siege of Darkness',
-	'Dogs of War',
-	'Path of Glory',
-	'Chivalry and Deceit',
-	'Legions of Chaos',
-	'Champions',
-	'Siege of Middenheim',
-	'Harbingers of War',
-	'Death and Honour',
-	'Bringers of Darkness',
-	'Legends',
-	'Promo (WC)',
-	'Bearers of Redemption',
-	'Valor and Treachery',
-	'Swords of Retribution',
-	'War of Attrition',
-	'Hand of Fate',
-	'Marks of Power',
-	'Veterans of Battle',
-	'Promo (WA)'
+	'WC',
+	'WM',
+	'SD',
+	'DW',
+	'PG',
+	'CD',
+	'LC',
+	'CC',
+	'SM',
+	'HW',
+	'DH',
+	'LW',
+	'PW',
+	'BR',
+	'VT',
+	'SR',
+	'WA',
+	'HF',
+	'MP',
+	'VB',
+	'PA'
 ] as const;
 export type Set = (typeof sets)[number];
+
+export const setNames: Record<Set, string> = {
+	WC: 'WarCry',
+	WM: 'Winds of Magic',
+	SD: 'Siege of Darkness',
+	DW: 'Dogs of War',
+	PG: 'Path of Glory',
+	CD: 'Chivalry and Deceit',
+	LC: 'Legions of Chaos',
+	CC: 'Champions',
+	SM: 'Siege of Middenheim',
+	HW: 'Harbingers of War',
+	DH: 'Death and Honour',
+	LW: 'Bringers of Darkness',
+	PW: 'Legends',
+	BR: 'Bearers of Redemption',
+	VT: 'Valor and Treachery',
+	SR: 'Swords of Retribution',
+	WA: 'War of Attrition',
+	HF: 'Hand of Fate',
+	MP: 'Marks of Power',
+	VB: 'Veterans of Battle',
+	PA: 'Promo (WA)'
+};
 
 export type Card = {
 	name: string;
@@ -122,7 +145,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>While this unit is ready, your Chaos units get +1 leadership.</p><p><b>Combat Tactic</b>: Use the WarCry or combat tactic on any of your units.</p>',
-		releases: { WarCry: 1, 'War of Attrition': 1 }
+		releases: { WC: 1, WA: 1 }
 	},
 	{
 		name: "Azyrneth's Bloodpack",
@@ -136,7 +159,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After this unit destroys an enemy unit, destroy 1 strategy card.</p>',
-		releases: { WarCry: 2 }
+		releases: { WC: 2 }
 	},
 	{
 		name: "Azyrneth's Deathbringers",
@@ -150,7 +173,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength vs blocking units.</p>',
-		releases: { WarCry: 3 }
+		releases: { WC: 3 }
 	},
 	{
 		name: "Azyrneth's Skullreavers",
@@ -164,7 +187,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 4</p>',
-		releases: { WarCry: 4, 'War of Attrition': 3 }
+		releases: { WC: 4, WA: 3 }
 	},
 	{
 		name: 'Bloodwolf Axemen',
@@ -178,7 +201,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '',
-		releases: { WarCry: 5 }
+		releases: { WC: 5 }
 	},
 	{
 		name: 'Bonerotters',
@@ -192,7 +215,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is in your battle line ready, your units get "<b>Terror</b>: 1".</p>',
-		releases: { WarCry: 6 }
+		releases: { WC: 6 }
 	},
 	{
 		name: "Charon Helgor's Deathreapers",
@@ -206,7 +229,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: -5</p><p> <b>WarCry</b>: This unit gets +5 strength. Only usable while attacking.</p>',
-		releases: { WarCry: 7 }
+		releases: { WC: 7 }
 	},
 	{
 		name: "D'aggorn the Exalted",
@@ -221,7 +244,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: Your enemy discards one random card. This unit gets a strength bonus equal to the die on the discarded card.</p>',
-		releases: { WarCry: 8 }
+		releases: { WC: 8 }
 	},
 	{
 		name: "D'aggorn's Husk Guard",
@@ -235,7 +258,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>You may play tactics for your cavalry units as if they were infantry.</p>',
-		releases: { WarCry: 9 }
+		releases: { WC: 9 }
 	},
 	{
 		name: 'Daemonettes of Slaanesh',
@@ -249,7 +272,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After the Muster phase, move 1 enemy unit from the reserves to the battle line.</p>',
-		releases: { WarCry: 10, 'War of Attrition': 11 }
+		releases: { WC: 10, WA: 11 }
 	},
 	{
 		name: "Dargothal's Fleshrippers",
@@ -263,7 +286,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>WarCry</b>: Play any number of combat tactics from your hand. Those cards tactic point costs are reduced to 0.</p>',
-		releases: { WarCry: 11 }
+		releases: { WC: 11 }
 	},
 	{
 		name: 'Deathclaw Brethren',
@@ -277,7 +300,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '',
-		releases: { WarCry: 12 }
+		releases: { WC: 12 }
 	},
 	{
 		name: "Ga'choran's Doomswords",
@@ -291,7 +314,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: This unit gets a tactic point bonus equal to the enemy unit's unspent tactic points.</p>",
-		releases: { WarCry: 13 }
+		releases: { WC: 13 }
 	},
 	{
 		name: "Melkior's Bloodwolf Horde",
@@ -305,7 +328,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>While this unit is in your battle line ready your cavalry units attack as flyers.</p>',
-		releases: { WarCry: 14 }
+		releases: { WC: 14 }
 	},
 	{
 		name: "Tal'gatha's Harbinger",
@@ -319,7 +342,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Destroy this unit: Discard the top 3 cards of your army deck. Your enemy chooses one unit discarded this way. That unit replaces this unit in combat. If no unit is discarded, this unit remains in the combat.</p>',
-		releases: { WarCry: 15 }
+		releases: { WC: 15 }
 	},
 	{
 		name: 'The Bringers of Terror',
@@ -333,7 +356,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 3</p>',
-		releases: { WarCry: 16 }
+		releases: { WC: 16 }
 	},
 	{
 		name: 'The Destroyer',
@@ -347,7 +370,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only usable during a follow-up attack.</p>',
-		releases: { WarCry: 17 }
+		releases: { WC: 17 }
 	},
 	{
 		name: 'Vargharn Melkior',
@@ -359,7 +382,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Destroy the enemy unit unless it passes an unmodified leadership test.</p><p>This card may only be attached to a Chaos Unit.</p>',
-		releases: { WarCry: 18 }
+		releases: { WC: 18 }
 	},
 	{
 		name: "Deragheth's Spirit Knives",
@@ -373,7 +396,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: If this combat is won by a difference of 1, the result is a slaughter.</p>',
-		releases: { WarCry: 19 }
+		releases: { WC: 19 }
 	},
 	{
 		name: "Dhargethen's Duskreavers",
@@ -387,7 +410,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If you win this combat, rout the enemy unit (no rout check needed). Only usable once per command.</p>',
-		releases: { WarCry: 20, 'War of Attrition': 33 }
+		releases: { WC: 20, WA: 33 }
 	},
 	{
 		name: 'Ebon Deathblades',
@@ -401,7 +424,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. infantry if it passes a leadership test.</p>',
-		releases: { WarCry: 21 }
+		releases: { WC: 21 }
 	},
 	{
 		name: 'Fell Sisters of Clar Karond',
@@ -415,7 +438,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If this combat ends as a slaughter, this unit wins instead.</p>',
-		releases: { WarCry: 22, 'War of Attrition': 34 }
+		releases: { WC: 22, WA: 34 }
 	},
 	{
 		name: "Ha'asek's Twilight Ghosts",
@@ -429,7 +452,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Short Ranged Attack</b>: 6</p>',
-		releases: { WarCry: 23 }
+		releases: { WC: 23 }
 	},
 	{
 		name: "Ha'asek's Wraithriders",
@@ -443,7 +466,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +3 strength. Only usable while you have a ready unit that costs 6 or more gold.</p>',
-		releases: { WarCry: 24 }
+		releases: { WC: 24 }
 	},
 	{
 		name: "Korhadril's Nighthaunters",
@@ -457,7 +480,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Roll. Your enemy rolls as well. Your enemy may not play any combat tactics from their hand with a die equal to either die rolled.</p>',
-		releases: { WarCry: 25, 'War of Attrition': 44 }
+		releases: { WC: 25, WA: 44 }
 	},
 	{
 		name: 'Malus Darkblade',
@@ -472,7 +495,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength and "<b>Terror</b>: 2".</p>',
-		releases: { WarCry: 26 }
+		releases: { WC: 26 }
 	},
 	{
 		name: 'Nightbearers',
@@ -486,7 +509,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit gets +1 tactic point for each tactic point your enemy spends.</p>',
-		releases: { WarCry: 27 }
+		releases: { WC: 27 }
 	},
 	{
 		name: "Raven's Scythe",
@@ -500,7 +523,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 4</p><p><b>Support Tactic</b>: Your unit gets +2 strength unless the enemy unit passes a leadership test.</p>',
-		releases: { WarCry: 28, 'War of Attrition': 49 }
+		releases: { WC: 28, WA: 49 }
 	},
 	{
 		name: "Serakhar's Ebon Reavers",
@@ -514,7 +537,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: Look at your enemy's hand. Your enemy discards a card of your choice.</p>",
-		releases: { WarCry: 29 }
+		releases: { WC: 29 }
 	},
 	{
 		name: 'Spirithaunters of Hag Graef',
@@ -528,7 +551,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 5</p><p><b>Combat Tactic</b>: Commit the defending unit unless your enemy discards 2 cards.</p>',
-		releases: { WarCry: 30, 'War of Attrition': 53 }
+		releases: { WC: 30, WA: 53 }
 	},
 	{
 		name: 'The Archon of Twilight',
@@ -542,7 +565,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Terror</b>: 2</p><p><b>Support Tactic</b>: Choose one <span class="errata">activated</span> ability printed on any enemy unit or attachment. Your enemy may not <span class="errata">play</span> that ability.</p>',
-		releases: { WarCry: 31 },
+		releases: { WC: 31 },
 		errata: true
 	},
 	{
@@ -557,7 +580,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Use a combat tactic printed on any enemy unit.</p>',
-		releases: { WarCry: 32, 'War of Attrition': 56 }
+		releases: { WC: 32, WA: 56 }
 	},
 	{
 		name: 'Twilight Fellstalkers',
@@ -571,7 +594,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '',
-		releases: { WarCry: 33 }
+		releases: { WC: 33 }
 	},
 	{
 		name: 'Twilight Painwraiths',
@@ -585,7 +608,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>While your enemy has more ready units in their reserve than in their battle line, this unit attacks as a flyer.</p>',
-		releases: { WarCry: 34 }
+		releases: { WC: 34 }
 	},
 	{
 		name: 'Naetharion Dhargethen',
@@ -597,7 +620,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength. If you win this combat by a difference of 4 or more, the result is a slaughter.</p><p>This card may only be attached to a Dark Elf unit.</p>',
-		releases: { WarCry: 35 }
+		releases: { WC: 35 }
 	},
 	{
 		name: 'Gurt Bigfist',
@@ -611,7 +634,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: -8</p>',
-		releases: { WarCry: 36 }
+		releases: { WC: 36 }
 	},
 	{
 		name: 'Soulfang Blacktalon',
@@ -625,7 +648,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
-		releases: { WarCry: 37 }
+		releases: { WC: 37 }
 	},
 	{
 		name: 'Stone Trolls',
@@ -639,7 +662,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b> Discard a random card: Destroy all attachments on the enemy unit.</p>',
-		releases: { WarCry: 38 }
+		releases: { WC: 38 }
 	},
 	{
 		name: "Azfang's Boyz",
@@ -653,7 +676,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Commit one of your other Orc units: This unit gets +3 strength.</p>',
-		releases: { WarCry: 39 }
+		releases: { WC: 39 }
 	},
 	{
 		name: "Big Gulgog's Maulers",
@@ -667,7 +690,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only usable while you have no committed units.</p>',
-		releases: { WarCry: 40 }
+		releases: { WC: 40 }
 	},
 	{
 		name: "Bogbref's Bow Gitz",
@@ -681,7 +704,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Short Ranged Attack</b>: 5</p><p> <b>WarCry</b>: This unit gets +d6 <b>Ranged Attack</b>. If you roll 4 or higher, destroy this unit at the end of this command.</p>',
-		releases: { WarCry: 41 }
+		releases: { WC: 41 }
 	},
 	{
 		name: "Ghulbag's Big 'Uns",
@@ -695,7 +718,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: -3</p>',
-		releases: { WarCry: 42 }
+		releases: { WC: 42 }
 	},
 	{
 		name: "Gitnob's Gitz",
@@ -709,7 +732,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b> Destroy this unit: Your unit gets +3 strength.</p>',
-		releases: { WarCry: 43, 'War of Attrition': 63 }
+		releases: { WC: 43, WA: 63 }
 	},
 	{
 		name: "Grubbi's Dogkart",
@@ -723,7 +746,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Commit: Exchange this unit with one of your ready units. That unit gets +2 strength.</p>',
-		releases: { WarCry: 44 }
+		releases: { WC: 44 }
 	},
 	{
 		name: "Morzog's Madmob",
@@ -737,7 +760,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>When you resolve combat this unit gets -1 strength for each of its unspent tactic points.</p>',
-		releases: { WarCry: 45 }
+		releases: { WC: 45 }
 	},
 	{
 		name: "Mulguk's Smashas",
@@ -751,7 +774,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only usable while you have more ready units in your battle line than your enemy.</p>',
-		releases: { WarCry: 46 }
+		releases: { WC: 46 }
 	},
 	{
 		name: "Nhaga's Ladz",
@@ -765,7 +788,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Destroy this unit: Commit the enemy unit.</p>',
-		releases: { WarCry: 47, 'War of Attrition': 75 }
+		releases: { WC: 47, WA: 75 }
 	},
 	{
 		name: "Ogdrag's 'Arrer Boyz",
@@ -779,7 +802,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 5</p><p><b>Support Tactic</b>: Your unit gets +3 strength. Only usable during a follow-up attack.</p>',
-		releases: { WarCry: 48, 'War of Attrition': 76 }
+		releases: { WC: 48, WA: 76 }
 	},
 	{
 		name: "Roklog's Tuskas",
@@ -793,7 +816,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>: Discard the top card of your action deck. If that card was a playable WarCry or combat tactic, play that card without paying it's cost.</p>",
-		releases: { WarCry: 49, 'War of Attrition': 81 }
+		releases: { WC: 49, WA: 81 }
 	},
 	{
 		name: "Snotfink's Dogmob",
@@ -807,7 +830,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b> Discard a random card: If the card you discarded was a playable combat tactic, play it without paying it's cost.</p>",
-		releases: { WarCry: 50 }
+		releases: { WC: 50 }
 	},
 	{
 		name: "Ugbog's Big Rumbler",
@@ -821,7 +844,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only usable while attacking.</p>',
-		releases: { WarCry: 51 }
+		releases: { WC: 51 }
 	},
 	{
 		name: "Urguck's Manglers",
@@ -835,7 +858,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b> Discard a Card: Your Orc unit gets +1 leadership.</p>',
-		releases: { WarCry: 52 }
+		releases: { WC: 52 }
 	},
 	{
 		name: 'Warboss Grimgore Ironhide',
@@ -850,7 +873,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Support Tactic</b>: Your Orc unit gets +2 strength. Only usable while this unit is committed.</p>',
-		releases: { WarCry: 53 }
+		releases: { WC: 53 }
 	},
 	{
 		name: 'Warboss Urguck Man-Mangler',
@@ -864,7 +887,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Terror</b>: 1</p><p><b>Reaction</b>: Before you roll for this unit's combat roll, place any card in your hand on top of your action deck.</p>",
-		releases: { WarCry: 54, 'War of Attrition': 85 }
+		releases: { WC: 54, WA: 85 }
 	},
 	{
 		name: 'Big Boss Ghulgar Headsplitter',
@@ -877,7 +900,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only usable during a follow-up attack.</p><p>This card may only be attached to an Orc unit.</p>',
-		releases: { WarCry: 55 }
+		releases: { WC: 55 }
 	},
 	{
 		name: 'A Question of Honor',
@@ -888,7 +911,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After your enemy routs one of your units with a character attachment, no follow-up may be made.</p>',
-		releases: { WarCry: 56 }
+		releases: { WC: 56 }
 	},
 	{
 		name: 'Armor Break',
@@ -900,7 +923,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Destroy 1 enemy attachment on the enemy unit.</p>',
-		releases: { WarCry: 57 }
+		releases: { WC: 57 }
 	},
 	{
 		name: 'Battle Omens',
@@ -911,7 +934,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your unit gets +1 leadership.</p>',
-		releases: { WarCry: 58, 'War of Attrition': 110 }
+		releases: { WC: 58, WA: 110 }
 	},
 	{
 		name: 'Battlefield Instinct',
@@ -923,7 +946,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Look at the top 3 cards of your action deck and replace them in any order.</p>',
-		releases: { WarCry: 59, 'War of Attrition': 111 }
+		releases: { WC: 59, WA: 111 }
 	},
 	{
 		name: 'Battlefield Options',
@@ -934,7 +957,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Look at the top card of your action deck. You may discard that card.</p>',
-		releases: { WarCry: 60 }
+		releases: { WC: 60 }
 	},
 	{
 		name: 'Blood of the Martyr',
@@ -945,7 +968,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Your unit gets +1 strength.</p>',
-		releases: { WarCry: 61 }
+		releases: { WC: 61 }
 	},
 	{
 		name: 'Breakthrough',
@@ -956,7 +979,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After your unit routs an enemy unit, choose the target of your follow-up attack.</p>',
-		releases: { WarCry: 62 }
+		releases: { WC: 62 }
 	},
 	{
 		name: 'Change of Plan',
@@ -967,7 +990,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b>: Destroy 1 strategy card.</p>',
-		releases: { WarCry: 63, 'War of Attrition': 122 }
+		releases: { WC: 63, WA: 122 }
 	},
 	{
 		name: 'Charge!',
@@ -979,7 +1002,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for every unspent tactic point the enemy unit has.</p>',
-		releases: { WarCry: 64 }
+		releases: { WC: 64 }
 	},
 	{
 		name: 'Confusing Maneuver',
@@ -991,7 +1014,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Your enemy's tactic cards cost 1 additional point.</p>",
-		releases: { WarCry: 65 }
+		releases: { WC: 65 }
 	},
 	{
 		name: 'Countercharge',
@@ -1003,7 +1026,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only usable while blocking.</p>',
-		releases: { WarCry: 66 }
+		releases: { WC: 66 }
 	},
 	{
 		name: 'Crushing Blow',
@@ -1015,7 +1038,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength.</p>',
-		releases: { WarCry: 67 }
+		releases: { WC: 67 }
 	},
 	{
 		name: 'Cunning Raid',
@@ -1026,7 +1049,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you rout an enemy unit, your enemy discards a random card. Draw 1 card.</p>',
-		releases: { WarCry: 68, 'Chivalry and Deceit': 15, 'War of Attrition': 131 }
+		releases: { WC: 68, CD: 15, WA: 131 }
 	},
 	{
 		name: 'Death from Afar',
@@ -1038,7 +1061,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 ranged attack.</p>',
-		releases: { WarCry: 69, 'War of Attrition': 134 }
+		releases: { WC: 69, WA: 134 }
 	},
 	{
 		name: 'Dissention in the Ranks',
@@ -1050,7 +1073,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Move 1 enemy unit from the battle line to the reserves.</p>',
-		releases: { WarCry: 70 }
+		releases: { WC: 70 }
 	},
 	{
 		name: 'Diversion',
@@ -1061,7 +1084,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: Before you declare an attack it may not be blocked.</p>',
-		releases: { WarCry: 71, 'War of Attrition': 140 }
+		releases: { WC: 71, WA: 140 }
 	},
 	{
 		name: 'Dodge',
@@ -1073,7 +1096,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Commit this unit: This unit gets +4 strength.</p>',
-		releases: { WarCry: 72 }
+		releases: { WC: 72 }
 	},
 	{
 		name: 'Effective Planning',
@@ -1085,7 +1108,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength and +1 leadership.</p>',
-		releases: { WarCry: 73 }
+		releases: { WC: 73 }
 	},
 	{
 		name: 'Fast March',
@@ -1096,7 +1119,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After your enemy declares a non-ranged attack, block with any of your ready infantry units.</p>',
-		releases: { WarCry: 74, 'War of Attrition': 150 }
+		releases: { WC: 74, WA: 150 }
 	},
 	{
 		name: 'Furious Charge',
@@ -1108,7 +1131,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only usable while you have more cards in your hand than your enemy.</p>',
-		releases: { WarCry: 75, 'Chivalry and Deceit': 20, 'War of Attrition': 161 }
+		releases: { WC: 75, CD: 20, WA: 161 }
 	},
 	{
 		name: 'Grim Resolution',
@@ -1120,7 +1143,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Your enemy may discard 3 cards. If they do not when this combat ends, the result is a slaughter.</p>',
-		releases: { WarCry: 76, 'Chivalry and Deceit': 21, 'War of Attrition': 165 }
+		releases: { WC: 76, CD: 21, WA: 165 }
 	},
 	{
 		name: 'Hail of Doom',
@@ -1132,7 +1155,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: After you win a ranged attack combat by a difference of 3 or more, your unit may make 1 additional ranged attack before committing.</p>',
-		releases: { WarCry: 77, 'War of Attrition': 167 }
+		releases: { WC: 77, WA: 167 }
 	},
 	{
 		name: 'Hasty Maneuever',
@@ -1144,7 +1167,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Discard a random card: This unit gets +4 strength.</p>',
-		releases: { WarCry: 78 }
+		releases: { WC: 78 }
 	},
 	{
 		name: 'Heroic Sacrifice',
@@ -1156,7 +1179,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Destroy one of your other ready units: Commit the enemy unit.</p>',
-		releases: { WarCry: 79 }
+		releases: { WC: 79 }
 	},
 	{
 		name: 'Hold the Line!',
@@ -1167,7 +1190,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>Your enemy may not attack units in your reserves.</p>',
-		releases: { WarCry: 80 }
+		releases: { WC: 80 }
 	},
 	{
 		name: 'Hurry Up!',
@@ -1178,7 +1201,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>Your infantry may not be blocked by cavalry.</p>',
-		releases: { WarCry: 81 }
+		releases: { WC: 81 }
 	},
 	{
 		name: "It's Not Over...",
@@ -1190,7 +1213,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +2 strength.</p>',
-		releases: { WarCry: 82 }
+		releases: { WC: 82 }
 	},
 	{
 		name: 'Lay of the Land',
@@ -1202,7 +1225,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets a strength bonus equal to it\'s "<b>Scout</b>" rating.</p>',
-		releases: { WarCry: 83, 'War of Attrition': 181 }
+		releases: { WC: 83, WA: 181 }
 	},
 	{
 		name: 'Look Out, Sir!',
@@ -1213,7 +1236,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your attachments is destroyed, move it to one of your ready units.</p>',
-		releases: { WarCry: 84, 'Chivalry and Deceit': 26, 'War of Attrition': 185 }
+		releases: { WC: 84, CD: 26, WA: 185 }
 	},
 	{
 		name: 'Low Morale',
@@ -1224,7 +1247,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After you rout an enemy unit, commit any enemy unit unless it passes a leadership test.</p>',
-		releases: { WarCry: 85, 'War of Attrition': 188 }
+		releases: { WC: 85, WA: 188 }
 	},
 	{
 		name: 'Luck Smiles Upon the Foolish',
@@ -1236,7 +1259,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: Look at the top card of your enemy's action deck. You may discard that card.</p>",
-		releases: { WarCry: 86 }
+		releases: { WC: 86 }
 	},
 	{
 		name: 'Mass March',
@@ -1248,7 +1271,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Commit one of your ready units: This unit gets a strength bonus equal to the strength of the unit you committed.</p>',
-		releases: { WarCry: 87 }
+		releases: { WC: 87 }
 	},
 	{
 		name: 'Mettle',
@@ -1260,7 +1283,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only usable while this unit is losing a combat.</p>',
-		releases: { WarCry: 88, 'War of Attrition': 198 }
+		releases: { WC: 88, WA: 198 }
 	},
 	{
 		name: 'No Quarter!',
@@ -1272,7 +1295,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If your unit wins the combat, your enemy destroys 1 of their committed units.</p>',
-		releases: { WarCry: 89, 'War of Attrition': 200 }
+		releases: { WC: 89, WA: 200 }
 	},
 	{
 		name: 'Nobody Lives Forever!',
@@ -1284,7 +1307,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Your enemy may destroy one of their units. If they do not, when this combat ends, the result is a slaughter.</p>',
-		releases: { WarCry: 90, 'Death and Honour': 36, 'War of Attrition': 201 }
+		releases: { WC: 90, DH: 36, WA: 201 }
 	},
 	{
 		name: 'Not Without a Plan',
@@ -1296,7 +1319,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: This unit gets +1 strength for each of it's attachments.</p>",
-		releases: { WarCry: 91, 'War of Attrition': 202 }
+		releases: { WC: 91, WA: 202 }
 	},
 	{
 		name: 'Onward!',
@@ -1308,7 +1331,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If your unit wins the combat, rout the enemy unit (no rout check needed). Not usable during a ranged attack.</p>',
-		releases: { WarCry: 92, 'War of Attrition': 207 }
+		releases: { WC: 92, WA: 207 }
 	},
 	{
 		name: 'Outflank',
@@ -1320,7 +1343,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -2 tactic points</p>',
-		releases: { WarCry: 93, 'War of Attrition': 210 }
+		releases: { WC: 93, WA: 210 }
 	},
 	{
 		name: 'Perfect Counter',
@@ -1331,7 +1354,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Your enemy discards 2 random cards.</p>',
-		releases: { WarCry: 94 }
+		releases: { WC: 94 }
 	},
 	{
 		name: 'Plotting Revenge',
@@ -1342,7 +1365,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After one of your units is destroyed, play a strategy card.</p>',
-		releases: { WarCry: 95, 'War of Attrition': 213 }
+		releases: { WC: 95, WA: 213 }
 	},
 	{
 		name: 'Prepare Yourselves!',
@@ -1354,7 +1377,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 leadership.</p>',
-		releases: { WarCry: 96, 'War of Attrition': 217 }
+		releases: { WC: 96, WA: 217 }
 	},
 	{
 		name: 'Press the Advantage',
@@ -1366,7 +1389,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: The enemy unit does not make a combat roll.</p>',
-		releases: { WarCry: 97, 'War of Attrition': 218 }
+		releases: { WC: 97, WA: 218 }
 	},
 	{
 		name: 'Prevailing Wind',
@@ -1377,7 +1400,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: Before you choose a target for a ranged attack, you may choose any enemy unit, regardless of range.</p>',
-		releases: { WarCry: 98 }
+		releases: { WC: 98 }
 	},
 	{
 		name: 'Reform!',
@@ -1389,7 +1412,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Move any number of your reserve units to the battle line.</p>',
-		releases: { WarCry: 99 }
+		releases: { WC: 99 }
 	},
 	{
 		name: 'Relentless Advance',
@@ -1401,7 +1424,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If your unit wins the combat, destroy the enemy unit.</p>',
-		releases: { WarCry: 100, 'War of Attrition': 225 }
+		releases: { WC: 100, WA: 225 }
 	},
 	{
 		name: 'Shield Wall',
@@ -1413,7 +1436,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each ready unit in your battle line. Only usable while defending.</p>',
-		releases: { WarCry: 101, 'War of Attrition': 238 }
+		releases: { WC: 101, WA: 238 }
 	},
 	{
 		name: 'Smashing Attack',
@@ -1425,7 +1448,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength if this is the first battle, +2 if it is the second, or +3 if it is the third batTle.</p>',
-		releases: { WarCry: 102 }
+		releases: { WC: 102 }
 	},
 	{
 		name: 'Strategic Withdrawal',
@@ -1436,7 +1459,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Commit one of your units <span class="errata">not in combat</span>: After your enemy routs one of your units, no follow-up attack may be made.</p>',
-		releases: { WarCry: 103, 'War of Attrition': 246 },
+		releases: { WC: 103, WA: 246 },
 		errata: true
 	},
 	{
@@ -1449,7 +1472,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b> Commit any number of your units: This unit gets +2 strength for each unit committed this way.</p>',
-		releases: { WarCry: 104 }
+		releases: { WC: 104 }
 	},
 	{
 		name: 'Strength of Forethought',
@@ -1461,7 +1484,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>: At the end of the tactic phase, this unit gets +1 strength for each of it's unspent tactic points.</p>",
-		releases: { WarCry: 105, 'Death and Honour': 13, 'War of Attrition': 247 }
+		releases: { WC: 105, DH: 13, WA: 247 }
 	},
 	{
 		name: 'Strength of Honor',
@@ -1473,7 +1496,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +d6 strength if it passes a leadership test.</p>',
-		releases: { WarCry: 106, 'Chivalry and Deceit': 32 }
+		releases: { WC: 106, CD: 32 }
 	},
 	{
 		name: 'Study the Maps',
@@ -1484,7 +1507,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: "<p> <b>Command</b>: Choose a number, then look at your enemy's hand. Your enemy discards all cards with a die equal that number.</p>",
-		releases: { WarCry: 107 }
+		releases: { WC: 107 }
 	},
 	{
 		name: 'Sudden Attack',
@@ -1496,7 +1519,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength.</p>',
-		releases: { WarCry: 108, 'War of Attrition': 251 }
+		releases: { WC: 108, WA: 251 }
 	},
 	{
 		name: 'Surprise Attack',
@@ -1507,7 +1530,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 tactic points. Only usable while blocking.</p>',
-		releases: { WarCry: 109 }
+		releases: { WC: 109 }
 	},
 	{
 		name: 'Surround Them',
@@ -1519,7 +1542,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: No more support tactics may be used in this combat.</p>',
-		releases: { WarCry: 110 }
+		releases: { WC: 110 }
 	},
 	{
 		name: 'Test of Steel',
@@ -1531,7 +1554,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets "<b>Terror</b>: 1".</p>',
-		releases: { WarCry: 111 }
+		releases: { WC: 111 }
 	},
 	{
 		name: 'The Conscripts Arrive',
@@ -1543,7 +1566,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Use the support tactic on one of your committed units or attachments, without paying it's costs.</p>",
-		releases: { WarCry: 112, 'War of Attrition': 258 }
+		releases: { WC: 112, WA: 258 }
 	},
 	{
 		name: 'Thundering Hooves',
@@ -1555,7 +1578,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: This cavalry unit gets a strength bonus equal to it's printed strength. Only usable while attacking.</p>",
-		releases: { WarCry: 113 }
+		releases: { WC: 113 }
 	},
 	{
 		name: 'To the Last Man',
@@ -1566,7 +1589,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>Committed enemy units get -2 leadership.</p>',
-		releases: { WarCry: 114, 'War of Attrition': 267 }
+		releases: { WC: 114, WA: 267 }
 	},
 	{
 		name: 'Underhanded Tricks',
@@ -1577,7 +1600,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b>: Commit any enemy unit unless it passes a leadership test.</p>',
-		releases: { WarCry: 115, 'War of Attrition': 269 }
+		releases: { WC: 115, WA: 269 }
 	},
 	{
 		name: 'Valorous Assault',
@@ -1588,7 +1611,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After your enemy makes a combat roll, they re-roll.</p>',
-		releases: { WarCry: 116 }
+		releases: { WC: 116 }
 	},
 	{
 		name: 'Armor of the Dragon',
@@ -1601,7 +1624,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 leadership or +1 tactic point.</p>',
-		releases: { WarCry: 117 }
+		releases: { WC: 117 }
 	},
 	{
 		name: 'Bane Banner',
@@ -1612,7 +1635,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Discard your hand: This unit gets +4 strength.</p>',
-		releases: { WarCry: 118 }
+		releases: { WC: 118 }
 	},
 	{
 		name: 'Banner of Terror',
@@ -1624,10 +1647,10 @@ export const cards: Card[] = [
 		rarity: 'Uncommon',
 		text: '<p>This unit gets "<b>Terror</b>: 2".</p>',
 		releases: {
-			WarCry: 119,
-			'Chivalry and Deceit': 35,
-			'Death and Honour': 16,
-			'War of Attrition': 281
+			WC: 119,
+			CD: 35,
+			DH: 16,
+			WA: 281
 		}
 	},
 	{
@@ -1639,7 +1662,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: If this combat ends in a slaughter, this unit wins instead.</p>',
-		releases: { WarCry: 120, 'Chivalry and Deceit': 36, 'War of Attrition': 283 }
+		releases: { WC: 120, CD: 36, WA: 283 }
 	},
 	{
 		name: 'Enchanted Shield',
@@ -1650,7 +1673,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>This unit may block any non-ranged attack.</p>',
-		releases: { WarCry: 121, 'War of Attrition': 284 }
+		releases: { WC: 121, WA: 284 }
 	},
 	{
 		name: 'Hammer of Thunder',
@@ -1661,7 +1684,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Super rare',
 		text: "<p><b>Combat Tactic</b>: Choose one tactic or reaction ability printed on the enemy unit or it's attachments. That ability may not be used.</p>",
-		releases: { WarCry: 122 }
+		releases: { WC: 122 }
 	},
 	{
 		name: 'Mighty Warhorn',
@@ -1672,7 +1695,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>This unit gets "<b>Scout</b>: 3".</p>',
-		releases: { WarCry: 123, 'Promo (WC)': 42, 'War of Attrition': 288 }
+		releases: { WC: 123, PW: 42, WA: 288 }
 	},
 	{
 		name: 'Mounts',
@@ -1683,7 +1706,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>Replace this unit\'s "Infantry" or "Flyer" keyword with "Cavalry".</p><p><b>Combat Tactic</b>: This unit gets +1 strength vs. infantry.</p>',
-		releases: { WarCry: 124 }
+		releases: { WC: 124 }
 	},
 	{
 		name: 'Musician',
@@ -1695,7 +1718,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>This unit cannot be blocked.</p>',
-		releases: { WarCry: 125, 'War of Attrition': 289 }
+		releases: { WC: 125, WA: 289 }
 	},
 	{
 		name: 'Standard Bearer',
@@ -1706,7 +1729,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>This unit gets "<b>Victory</b>: +3".</p>',
-		releases: { WarCry: 126 }
+		releases: { WC: 126 }
 	},
 	{
 		name: 'Sword of Destiny',
@@ -1717,7 +1740,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Look at the top 3 cards of your enemy's action deck and replace them in any order.</p>",
-		releases: { WarCry: 127 }
+		releases: { WC: 127 }
 	},
 	{
 		name: 'Sword of Striking',
@@ -1729,7 +1752,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '',
-		releases: { WarCry: 128, 'Chivalry and Deceit': 38, 'Death and Honour': 39 }
+		releases: { WC: 128, CD: 38, DH: 39 }
 	},
 	{
 		name: 'Talisman of Strength',
@@ -1740,7 +1763,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Destroy this card: This unit gets +2 strength or +2 leadership.</p>',
-		releases: { WarCry: 129, 'War of Attrition': 292 }
+		releases: { WC: 129, WA: 292 }
 	},
 	{
 		name: "Alrik's Throneguard",
@@ -1754,7 +1777,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is in your battle line ready, your enemy may not attack your "Unique" units.</p>',
-		releases: { WarCry: 130 }
+		releases: { WC: 130 }
 	},
 	{
 		name: "Barak's Brawlers",
@@ -1768,7 +1791,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: +2</p><p><b>Combat Tactic</b> Destroy one of your strategy cards: this unit gets +3 strength. You may use this ability any number of times.</p>',
-		releases: { WarCry: 131 }
+		releases: { WC: 131 }
 	},
 	{
 		name: "Barak's Strongbolts",
@@ -1782,7 +1805,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Short Ranged Attack</b>: 6</p>',
-		releases: { WarCry: 132 }
+		releases: { WC: 132 }
 	},
 	{
 		name: 'Brotherhood of Karak Azul',
@@ -1796,7 +1819,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>After you attack with any other unit, commit this unit.</p>',
-		releases: { WarCry: 133 }
+		releases: { WC: 133 }
 	},
 	{
 		name: "Bugman's Rangers",
@@ -1810,7 +1833,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 2</p><p><b>Combat Tactic</b>: Look at the top card of your action deck. You may discard that card.</p>',
-		releases: { WarCry: 134 }
+		releases: { WC: 134 }
 	},
 	{
 		name: "Dorgan's Ironshields",
@@ -1824,7 +1847,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: +2</p><p>While this unit is in combat, your enemy may not use support tactics.</p>',
-		releases: { WarCry: 135, 'War of Attrition': 296 }
+		releases: { WC: 135, WA: 296 }
 	},
 	{
 		name: "Drakk's Breath",
@@ -1838,7 +1861,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b> Discard a card: Your unit gets +1 strength.</p>',
-		releases: { WarCry: 136 }
+		releases: { WC: 136 }
 	},
 	{
 		name: "Ganulf's Youngbeards",
@@ -1852,7 +1875,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +2</p>',
-		releases: { WarCry: 137, 'War of Attrition': 301 }
+		releases: { WC: 137, WA: 301 }
 	},
 	{
 		name: 'Greyfathers of Karak-Hirn',
@@ -1866,7 +1889,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: +2</p><p><b>Combat Tactic</b>: Discard any number of cards. Draw 1 card for each card discarded this way.</p>',
-		releases: { WarCry: 138, 'War of Attrition': 302 }
+		releases: { WC: 138, WA: 302 }
 	},
 	{
 		name: "Gripnir's Stormguard",
@@ -1880,7 +1903,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. Only usable while this unit has a weapon attachment.</p><p><b>Combat Tactic</b>: This unit gets +1 strength. Only usable while this unit has an armor attachment.</p>',
-		releases: { WarCry: 139 }
+		releases: { WC: 139 }
 	},
 	{
 		name: 'Iron Brotherhood',
@@ -1894,7 +1917,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: +2</p>',
-		releases: { WarCry: 140 }
+		releases: { WC: 140 }
 	},
 	{
 		name: 'King Alrik Ranulfsson',
@@ -1909,7 +1932,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>While this unit is ready, all your other Dwarf units may play WarCry cards for 0 tactic points and get "<b>Terror</b>: 1".</p>',
-		releases: { WarCry: 141 }
+		releases: { WC: 141 }
 	},
 	{
 		name: "King Alrik's Shieldbearers",
@@ -1923,7 +1946,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>While this unit is committed, your units get +1 leadership.</p>',
-		releases: { WarCry: 142 }
+		releases: { WC: 142 }
 	},
 	{
 		name: 'Orcbane',
@@ -1937,7 +1960,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 4</p><p><b>Support Tactic</b> Discard a card: If this combat ends as a slaughter your unit wins instead.</p>',
-		releases: { WarCry: 143 }
+		releases: { WC: 143 }
 	},
 	{
 		name: 'Rockgrinder',
@@ -1951,7 +1974,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Ranged Attack</b>: 3</p><p><b>Support Tactic</b> Discard a card: Your unit gets a strength bonus equal to the tactic point cost of the discarded card.</p>',
-		releases: { WarCry: 144, 'War of Attrition': 313 }
+		releases: { WC: 144, WA: 313 }
 	},
 	{
 		name: "Thori's Tunnelers",
@@ -1965,7 +1988,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b> Commit: Play any number of strategy cards. Draw 1 card for each strategy card played this way.</p>',
-		releases: { WarCry: 145 }
+		releases: { WC: 145 }
 	},
 	{
 		name: "Ulfrik's Axe-Bearers",
@@ -1979,7 +2002,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Discard the top 4 cards of your action deck. Add 1 combat tactic discarded this way to your hand.</p>',
-		releases: { WarCry: 146, 'War of Attrition': 319 }
+		releases: { WC: 146, WA: 319 }
 	},
 	{
 		name: 'Barak Grimjaw',
@@ -1993,7 +2016,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Destroy 1 attachment on the enemy unit.</p><p>This card may only be attached to a Dwarf unit.</p>',
-		releases: { WarCry: 147 }
+		releases: { WC: 147 }
 	},
 	{
 		name: 'Altdorf Halberdiers',
@@ -2007,7 +2030,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '',
-		releases: { WarCry: 148 }
+		releases: { WC: 148 }
 	},
 	{
 		name: 'Altdorf Swordsmen',
@@ -2021,7 +2044,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b> Commit: Your unit gets +3 strength if it passes a leadership test.</p>',
-		releases: { WarCry: 149 }
+		releases: { WC: 149 }
 	},
 	{
 		name: 'Carroburg Greatswords',
@@ -2035,7 +2058,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +1</p><p><b>Reaction</b>: After a tactic gives this unit a strength bonus this unit gets +1 strength.</p>',
-		releases: { WarCry: 150 }
+		releases: { WC: 150 }
 	},
 	{
 		name: 'Elector Count Theodric Gausser',
@@ -2050,7 +2073,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p>While this unit is in your reserves, your Empire units get +1 leadership.</p><p><b>Combat Tactic</b>: Use the support tactic on one of your committed units, without paying it's cost.</p>",
-		releases: { WarCry: 151 }
+		releases: { WC: 151 }
 	},
 	{
 		name: "Fandelhoch's Yeomen",
@@ -2064,7 +2087,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 4</p><p><b>Support Tactic</b> Commit: Your unit gets +4 strength vs. blocking units.</p>',
-		releases: { WarCry: 152 }
+		releases: { WC: 152 }
 	},
 	{
 		name: "Gausser's Guard",
@@ -2079,7 +2102,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is ready and in the battle line, your enemy may not attack units in your reserves.</p>',
-		releases: { WarCry: 153 }
+		releases: { WC: 153 }
 	},
 	{
 		name: 'Grand Master Hans Leitdorf',
@@ -2094,7 +2117,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Support Tactic</b>: Play a combat tactic from your hand without paying it's cost. Only usable while one of your cavalry units is in combat.</p>",
-		releases: { WarCry: 154, 'War of Attrition': 330 }
+		releases: { WC: 154, WA: 330 }
 	},
 	{
 		name: "Knights of Sigmar's Blood",
@@ -2108,7 +2131,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only usable while blocking.</p>',
-		releases: { WarCry: 155 }
+		releases: { WC: 155 }
 	},
 	{
 		name: 'Knights of the North Star',
@@ -2122,7 +2145,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit gets +1 strength for each of your committed war machines.</p>',
-		releases: { WarCry: 156 }
+		releases: { WC: 156 }
 	},
 	{
 		name: 'Middenheim Halberdiers',
@@ -2136,7 +2159,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b> Commit: Your unit gets +2 strength.</p>',
-		releases: { WarCry: 157 }
+		releases: { WC: 157 }
 	},
 	{
 		name: 'Middenland Swordsmen',
@@ -2150,7 +2173,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b> Commit: Your unit gets +3 leadership.</p>',
-		releases: { WarCry: 158, 'War of Attrition': 340 }
+		releases: { WC: 158, WA: 340 }
 	},
 	{
 		name: "Pfanelholt's Swordsmen",
@@ -2164,7 +2187,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b> Commit: After one of your units wins a combat, destroy the enemy unit.</p>',
-		releases: { WarCry: 159, 'War of Attrition': 342 }
+		releases: { WC: 159, WA: 342 }
 	},
 	{
 		name: 'Reik River Patrol',
@@ -2178,7 +2201,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Short Ranged Attack</b>: 8</p>',
-		releases: { WarCry: 160 }
+		releases: { WC: 160 }
 	},
 	{
 		name: 'Reikland Militia',
@@ -2192,7 +2215,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b> Commit: Draw 2 cards, then discard 2 cards.</p>',
-		releases: { WarCry: 161 }
+		releases: { WC: 161 }
 	},
 	{
 		name: "Riemann's Archers",
@@ -2206,7 +2229,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p>',
-		releases: { WarCry: 162 }
+		releases: { WC: 162 }
 	},
 	{
 		name: "Riemann's Halberdiers",
@@ -2220,7 +2243,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may block infantry.</p>',
-		releases: { WarCry: 163 }
+		releases: { WC: 163 }
 	},
 	{
 		name: 'The Penitents of Altdorf',
@@ -2234,7 +2257,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for each card in your enemy's hand.</p>",
-		releases: { WarCry: 164, 'War of Attrition': 346 }
+		releases: { WC: 164, WA: 346 }
 	},
 	{
 		name: 'Captain Karl Riemann',
@@ -2248,7 +2271,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Draw 1 card.</p><p>This card may only be attached to an Empire unit.</p>',
-		releases: { WarCry: 165 }
+		releases: { WC: 165 }
 	},
 	{
 		name: "Aelleron's Everwatch",
@@ -2262,7 +2285,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>WarCry</b>: Name a card, then look at your enemy's hand. If the named card is in their hand, this unit gets +4 strength.</p>",
-		releases: { WarCry: 166 }
+		releases: { WC: 166 }
 	},
 	{
 		name: "Calath's Sentinels",
@@ -2276,7 +2299,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Your High Elf unit gets +1 strength. Only usable while this unit is in the battle line.</p>',
-		releases: { WarCry: 167, 'War of Attrition': 361 }
+		releases: { WC: 167, WA: 361 }
 	},
 	{
 		name: "Caradril's Seekers",
@@ -2290,7 +2313,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 2</p><p>While this unit is in your battle line ready, enemy units may not block your attacks.</p>',
-		releases: { WarCry: 168 }
+		releases: { WC: 168 }
 	},
 	{
 		name: "Caradril's Silver Arrows",
@@ -2304,7 +2327,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p>',
-		releases: { WarCry: 169 }
+		releases: { WC: 169 }
 	},
 	{
 		name: 'Cothique Sapphire Company',
@@ -2318,7 +2341,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each strategy card you have in play.</p>',
-		releases: { WarCry: 170 }
+		releases: { WC: 170 }
 	},
 	{
 		name: "Eagle's Claw",
@@ -2332,7 +2355,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 5</p><p><b>Support Tactic</b> Commit: Your unit gets +2 strength.</p>',
-		releases: { WarCry: 171 }
+		releases: { WC: 171 }
 	},
 	{
 		name: "Elrohyr's Brighthelms",
@@ -2346,7 +2369,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: The defending unit is committed unless it passes a leadership test. Only usable during a ranged attack.</p>',
-		releases: { WarCry: 172 }
+		releases: { WC: 172 }
 	},
 	{
 		name: "Fuviel's Shining Lances",
@@ -2360,7 +2383,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After this unit destroys an enemy unit, you may move one enemy unit from the battle line to the reserves.</p>',
-		releases: { WarCry: 173 }
+		releases: { WC: 173 }
 	},
 	{
 		name: "Galathel's Greycloaks",
@@ -2374,7 +2397,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 4</p>',
-		releases: { WarCry: 174, 'War of Attrition': 363 }
+		releases: { WC: 174, WA: 363 }
 	},
 	{
 		name: "Gelthion's Brightblades",
@@ -2388,7 +2411,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p> <b>WarCry</b>: Your enemy may not play any tactic or reaction abilities printed on the enemy unit or any of it's attachments.</p>",
-		releases: { WarCry: 175 }
+		releases: { WC: 175 }
 	},
 	{
 		name: "Ilthorial's Riders",
@@ -2402,7 +2425,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>While attacking from the battle line this unit attacks as a flyer.</p>',
-		releases: { WarCry: 176 }
+		releases: { WC: 176 }
 	},
 	{
 		name: 'Imrik, Dragon Prince of Caledor',
@@ -2417,7 +2440,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Reaction</b>: After your High Elf unit routs an enemy unit, choose the target of it's follow-up attack.</p>",
-		releases: { WarCry: 177, 'War of Attrition': 365 }
+		releases: { WC: 177, WA: 365 }
 	},
 	{
 		name: "Imrik's Knights",
@@ -2432,7 +2455,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets +3 strength. Only usable while attacking from the battle line.</p>',
-		releases: { WarCry: 178 }
+		releases: { WC: 178 }
 	},
 	{
 		name: "Lathain's Patrol",
@@ -2446,7 +2469,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Long Ranged Attack</b>: 6</p>',
-		releases: { WarCry: 179 }
+		releases: { WC: 179 }
 	},
 	{
 		name: 'Phoenix Guard of Asuryan',
@@ -2460,7 +2483,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only usable while you have no other ready units.</p>',
-		releases: { WarCry: 180 }
+		releases: { WC: 180 }
 	},
 	{
 		name: 'Prince Boranhyr Geddesil',
@@ -2474,7 +2497,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Play up to 2 strategy cards.</p>',
-		releases: { WarCry: 181 }
+		releases: { WC: 181 }
 	},
 	{
 		name: "Silanthir's Defenders",
@@ -2488,7 +2511,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. cavalry.</p>',
-		releases: { WarCry: 182 }
+		releases: { WC: 182 }
 	},
 	{
 		name: 'Swiftwing',
@@ -2502,7 +2525,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets +2 strength for each of your committed ranged attack units.</p>',
-		releases: { WarCry: 183 }
+		releases: { WC: 183 }
 	},
 	{
 		name: 'Rylanus Evaenarion',
@@ -2515,7 +2538,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Look at the top 2 cards of your action deck. Discard 1 of them, then place the other on top of your action deck.</p>',
-		releases: { WarCry: 184 }
+		releases: { WC: 184 }
 	},
 	{
 		name: "D'aggorn's Deathblades",
@@ -2529,7 +2552,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p>While this unit is in combat, your enemy's combat roll gets -2.</p>",
-		releases: { 'Winds of Magic': 1, 'War of Attrition': 10 }
+		releases: { WM: 1, WA: 10 }
 	},
 	{
 		name: "D'aggorn's Hellrazers",
@@ -2543,7 +2566,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. wizard units</p>',
-		releases: { 'Winds of Magic': 2 }
+		releases: { WM: 2 }
 	},
 	{
 		name: 'Melekh the Changer',
@@ -2558,7 +2581,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Reaction</b>: After you muster this unit, name a unit. Your enemy may not muster units with that name <span class="errata">during this muster phase while this unit is in play</span>.</p>',
-		releases: { 'Winds of Magic': 3, 'War of Attrition': 18 },
+		releases: { WM: 3, WA: 18 },
 		errata: true
 	},
 	{
@@ -2573,7 +2596,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Short Ranged Attack</b>: 8</p><p>SpellWarCry (1): Destroy 1 enemy character attachment in this combat.</p>',
-		releases: { 'Winds of Magic': 4, 'War of Attrition': 19 }
+		releases: { WM: 4, WA: 19 }
 	},
 	{
 		name: "Melekh's Wyrdswords",
@@ -2587,7 +2610,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>While you have 0 spell points, this unt gets "<b>Victory</b>: +2".</p>',
-		releases: { 'Winds of Magic': 5 }
+		releases: { WM: 5 }
 	},
 	{
 		name: "Quel'hi'liak",
@@ -2602,7 +2625,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Terror</b>: 2</p><p><b>Wizard</b>: 2</p><p><b>Spell WarCry</b> (3): Destroy the enemy unit. Discard the top 3 cards of your enemy's army deck. Your enemy chooses 1 unit card discarded in this way. That unit replaces the destroyed unit in combat. Only playable while attacking.</p>",
-		releases: { 'Winds of Magic': 6 }
+		releases: { WM: 6 }
 	},
 	{
 		name: "Tal'gatha the Fallen",
@@ -2616,7 +2639,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Combat Tactic</b> (1): The enemy unit gets -2 tactic points.</p>',
-		releases: { 'Winds of Magic': 7 }
+		releases: { WM: 7 }
 	},
 	{
 		name: 'Tzeentch Screamers',
@@ -2630,7 +2653,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 1</p><p><b>Support Tactic</b>: The enemy unit gets -1 tactic point unless it passes a leadership test.</p>',
-		releases: { 'Winds of Magic': 8, 'War of Attrition': 26 }
+		releases: { WM: 8, WA: 26 }
 	},
 	{
 		name: 'Vendhal Skullwarper',
@@ -2642,7 +2665,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell WarCry</b> (1): The enemy unit makes a leadership test. If it fails the enemy may not play spell cards or abilities.</p>',
-		releases: { 'Winds of Magic': 9 }
+		releases: { WM: 9 }
 	},
 	{
 		name: 'Black Ark Hunters',
@@ -2656,7 +2679,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable while the enemy unit has 0 tactic points.</p><p><b>Support Tactic</b>: Your unit gets +1 strength vs. High Elf units.</p>',
-		releases: { 'Winds of Magic': 10 }
+		releases: { WM: 10 }
 	},
 	{
 		name: 'Ganethia Blacksoul',
@@ -2670,7 +2693,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Combat Tactic</b> (2): Your enemy discards 1 random card.</p>',
-		releases: { 'Winds of Magic': 11, 'War of Attrition': 35 }
+		releases: { WM: 11, WA: 35 }
 	},
 	{
 		name: 'Har Ganeth Executioners',
@@ -2684,7 +2707,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p>While this unit is in combat your enemy's tactic cards cost 1 additional tactic point.</p>",
-		releases: { 'Winds of Magic': 12 }
+		releases: { WM: 12 }
 	},
 	{
 		name: "Kae'bhirnek's Twilight Grievers",
@@ -2698,7 +2721,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: The enemy unit gets -2 tactic points unless your enemy discards 2 cards.</p>',
-		releases: { 'Winds of Magic': 13 }
+		releases: { WM: 13 }
 	},
 	{
 		name: "Menghil's Mankillers",
@@ -2712,7 +2735,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: When this combat ends, the result is a slaughter. Only playable while the enemy unit has 0 tactic points.</p>',
-		releases: { 'Winds of Magic': 14, 'War of Attrition': 46 }
+		releases: { WM: 14, WA: 46 }
 	},
 	{
 		name: 'Morathi, the Hag Sorceress',
@@ -2727,7 +2750,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 2</p><p> <b>WarCry</b>: Choose a number. Your enemy reveals their hand. This unit gets +1 strength for each card in their hand with a die equal to the chosen number.</p>',
-		releases: { 'Winds of Magic': 15, 'War of Attrition': 47 }
+		releases: { WM: 15, WA: 47 }
 	},
 	{
 		name: 'Saerith the Bladed',
@@ -2741,7 +2764,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Reaction</b>: After your enemy discards a card from their hand, you get 1 spell point.</p>',
-		releases: { 'Winds of Magic': 16, 'War of Attrition': 52 }
+		releases: { WM: 16, WA: 52 }
 	},
 	{
 		name: 'The Scarlet Coven',
@@ -2755,7 +2778,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After a combat ends in a slaughter, draw 1 card.</p>',
-		releases: { 'Winds of Magic': 17 }
+		releases: { WM: 17 }
 	},
 	{
 		name: "Ellekiel, Bride of Ha'asek",
@@ -2767,7 +2790,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (2): Your enemy discards 1 card.</p>',
-		releases: { 'Winds of Magic': 18 }
+		releases: { WM: 18 }
 	},
 	{
 		name: 'Baz Thunderbelly',
@@ -2781,7 +2804,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit is defeated in combat, your enemy destroys one of their units with strength 3 or less.</p>',
-		releases: { 'Winds of Magic': 19 }
+		releases: { WM: 19 }
 	},
 	{
 		name: 'Grubbi Hookblade',
@@ -2796,7 +2819,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Your infantry unit gets +1 strength.</p>',
-		releases: { 'Winds of Magic': 20, 'War of Attrition': 65 }
+		releases: { WM: 20, WA: 65 }
 	},
 	{
 		name: "Grubbi's Skullcracker",
@@ -2810,7 +2833,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: After this unit wins a ranged attack combat, commit all other enemy units with the same name as the losing unit.</p>',
-		releases: { 'Winds of Magic': 21, 'War of Attrition': 67 }
+		releases: { WM: 21, WA: 67 }
 	},
 	{
 		name: "Grubbi's Wolfboyz",
@@ -2824,7 +2847,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 3</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your committed units.</p>',
-		releases: { 'Winds of Magic': 22 }
+		releases: { WM: 22 }
 	},
 	{
 		name: "Moonscowler's Jabbers",
@@ -2838,7 +2861,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. Dwarf units.</p>',
-		releases: { 'Winds of Magic': 23 }
+		releases: { WM: 23 }
 	},
 	{
 		name: 'Uzzag Gharkhul Skullburster',
@@ -2852,7 +2875,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Combat Tactic</b> (1): This unit gets +1 strength for each of your committed wizard units.</p>',
-		releases: { 'Winds of Magic': 24 }
+		releases: { WM: 24 }
 	},
 	{
 		name: 'Wazzi Moonscowler',
@@ -2866,7 +2889,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Reaction</b>: After you rout an enemy unit you get 1 spell point.</p>',
-		releases: { 'Winds of Magic': 25, 'War of Attrition': 86 }
+		releases: { WM: 25, WA: 86 }
 	},
 	{
 		name: 'Wurrzag Ud Ura Zahabu',
@@ -2881,7 +2904,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell WarCry</b> (1): Destroy the enemy unit unless it passes an unmodified leadership test.</p>',
-		releases: { 'Winds of Magic': 26 }
+		releases: { WM: 26 }
 	},
 	{
 		name: 'Borgokk Bonecaster',
@@ -2892,7 +2915,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Combat Tactic</b> (1): This unit gets +2 strength. Only usable while you have more ready units than your enemy.</p>',
-		releases: { 'Winds of Magic': 27, 'War of Attrition': 88 }
+		releases: { WM: 27, WA: 88 }
 	},
 	{
 		name: 'All or Nothing',
@@ -2904,7 +2927,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: All your other combat tactics cost 0 tactic points.</p>',
-		releases: { 'Winds of Magic': 28 }
+		releases: { WM: 28 }
 	},
 	{
 		name: 'Bane of Forged Steel',
@@ -2916,7 +2939,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): Destroy all enemy attachments in this combat.</p>',
-		releases: { 'Winds of Magic': 29 }
+		releases: { WM: 29 }
 	},
 	{
 		name: 'Battle Cry',
@@ -2928,7 +2951,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b> Discard any number of cards: This unit gets +1 strength or each card discarded.</p>',
-		releases: { 'Winds of Magic': 30 }
+		releases: { WM: 30 }
 	},
 	{
 		name: 'Battle Hardened',
@@ -2940,7 +2963,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: If this <span class="errata">combat</span> ends in a slaughter, this unit wins instead.</p>',
-		releases: { 'Winds of Magic': 31, 'War of Attrition': 109 },
+		releases: { WM: 31, WA: 109 },
 		errata: true
 	},
 	{
@@ -2952,7 +2975,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> (1): Destroy all enemy strategy cards.</p>',
-		releases: { 'Winds of Magic': 32, 'War of Attrition': 115 }
+		releases: { WM: 32, WA: 115 }
 	},
 	{
 		name: 'Borrowed Power',
@@ -2964,7 +2987,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Spell WarCry</b> (2): Play a WarCry or combat tactic ability on 1 of your units, paying all costs.</p>',
-		releases: { 'Winds of Magic': 33, 'War of Attrition': 116 }
+		releases: { WM: 33, WA: 116 }
 	},
 	{
 		name: 'Borrowed Steel',
@@ -2976,7 +2999,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): Play 1 combat tactic on any enemy attachment in this combat, paying no costs. Destroy that attachment.</p>',
-		releases: { 'Winds of Magic': 34 }
+		releases: { WM: 34 }
 	},
 	{
 		name: 'Buy Me Some Time',
@@ -2988,7 +3011,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Commit this unit: This combat ends. Return the enemy unit to the battle line ready.</p>',
-		releases: { 'Winds of Magic': 35, 'Valor and Treachery': 22 }
+		releases: { WM: 35, VT: 22 }
 	},
 	{
 		name: 'Chain Casting',
@@ -3000,7 +3023,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +1 strength for each of your ready wizard units.</p>',
-		releases: { 'Winds of Magic': 36 }
+		releases: { WM: 36 }
 	},
 	{
 		name: 'Choices of War',
@@ -3012,7 +3035,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Name a card. Your enemy may not play the named card.</p>',
-		releases: { 'Winds of Magic': 37 }
+		releases: { WM: 37 }
 	},
 	{
 		name: 'Command the Heights',
@@ -3023,7 +3046,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>All of your units get "<b>Ranged Attack</b>: 0".</p><p><b>Support Tactic</b>: Your unit gets +2 ranged attack.</p>',
-		releases: { 'Winds of Magic': 38, 'Valor and Treachery': 23, 'War of Attrition': 125 }
+		releases: { WM: 38, VT: 23, WA: 125 }
 	},
 	{
 		name: "Devil's Bargain",
@@ -3035,7 +3058,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> Rally 1 enemy unit in the battle line (1): This unit gets a strength bonus equal to that units gold cost.</p>',
-		releases: { 'Winds of Magic': 39, 'War of Attrition': 138 }
+		releases: { WM: 39, WA: 138 }
 	},
 	{
 		name: 'Disruption of Support',
@@ -3046,7 +3069,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All support tactics cost 1 additional spell point.</p>',
-		releases: { 'Winds of Magic': 40 }
+		releases: { WM: 40 }
 	},
 	{
 		name: 'Dissipate Magic',
@@ -3057,7 +3080,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: "<p><b>Spell Reaction</b> (1): After your enemy plays a spell card or ability, negate it's effects. Only playable while you have a ready wizard.</p>",
-		releases: { 'Winds of Magic': 41, 'War of Attrition': 139 }
+		releases: { WM: 41, WA: 139 }
 	},
 	{
 		name: 'Dual Casting',
@@ -3069,7 +3092,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (X): Play X combat tactics, paying no costs. X may be no greater than the number of your ready wizard units.</p>',
-		releases: { 'Winds of Magic': 42 }
+		releases: { WM: 42 }
 	},
 	{
 		name: 'Duplicate',
@@ -3081,7 +3104,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Spell Combat Tactic</b> (2): Copy any combat tactic card played this combat, paying all costs.</p>',
-		releases: { 'Winds of Magic': 43, 'War of Attrition': 142 }
+		releases: { WM: 43, WA: 142 }
 	},
 	{
 		name: 'Elite Support',
@@ -3092,7 +3115,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Your unit gets +1 tactic point.</p>',
-		releases: { 'Winds of Magic': 44 }
+		releases: { WM: 44 }
 	},
 	{
 		name: 'Fearsome Opponent',
@@ -3104,7 +3127,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -1 tactic point for each level of "<b>Terror</b>" this unit has.</p>',
-		releases: { 'Winds of Magic': 45 }
+		releases: { WM: 45 }
 	},
 	{
 		name: 'Fiery Blast',
@@ -3116,7 +3139,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (1): This wizard unit gets +3 strength.</p>',
-		releases: { 'Winds of Magic': 46, 'War of Attrition': 152 }
+		releases: { WM: 46, WA: 152 }
 	},
 	{
 		name: 'Final Assault',
@@ -3128,7 +3151,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength.</p>',
-		releases: { 'Winds of Magic': 47 }
+		releases: { WM: 47 }
 	},
 	{
 		name: 'Final Challenge',
@@ -3140,7 +3163,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: If this combat is won by a difference of 2 or less, the result is a slaughter.</p>',
-		releases: { 'Winds of Magic': 48 }
+		releases: { WM: 48 }
 	},
 	{
 		name: 'Flank Charge',
@@ -3152,7 +3175,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This cavalry unit gets "<b>Terror</b>: 2".</p>',
-		releases: { 'Winds of Magic': 49 }
+		releases: { WM: 49 }
 	},
 	{
 		name: 'Flash of Insight',
@@ -3164,7 +3187,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Spell Combat Tactic</b> (1): This unit gets a tactic point bonus equal to the opposing unit's printed tactic points.</p>",
-		releases: { 'Winds of Magic': 50 }
+		releases: { WM: 50 }
 	},
 	{
 		name: 'Foresight',
@@ -3175,7 +3198,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (1): After your enemy declares an attack, you play the first tactic during that combat.</p>',
-		releases: { 'Winds of Magic': 51 }
+		releases: { WM: 51 }
 	},
 	{
 		name: 'Fury from Above',
@@ -3187,7 +3210,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This flyer unit gets +3 strength.</p>',
-		releases: { 'Winds of Magic': 52 }
+		releases: { WM: 52 }
 	},
 	{
 		name: 'Guardian Light',
@@ -3199,7 +3222,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): Move 1 attachment to this unit from another of your ready units.</p>',
-		releases: { 'Winds of Magic': 53 }
+		releases: { WM: 53 }
 	},
 	{
 		name: 'Heroic Presence',
@@ -3211,7 +3234,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets "<b>Terror</b>: 3".</p>',
-		releases: { 'Winds of Magic': 54 }
+		releases: { WM: 54 }
 	},
 	{
 		name: 'Hex',
@@ -3222,7 +3245,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (1): After any roll is made, that roll gets -1.</p>',
-		releases: { 'Winds of Magic': 55, 'War of Attrition': 173 }
+		releases: { WM: 55, WA: 173 }
 	},
 	{
 		name: 'Ire of the Magus',
@@ -3233,7 +3256,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Spell Reaction</b> (3): After 1 of your wizard units is destroyed, commit 1 enemy unit.</p>',
-		releases: { 'Winds of Magic': 56, 'Death and Honour': 12 }
+		releases: { WM: 56, DH: 12 }
 	},
 	{
 		name: "Let 'Em Run",
@@ -3244,7 +3267,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After you fail a rout check, return the destroyed enemy unit to the battle line committed. Make a follow-up attack.</p>',
-		releases: { 'Winds of Magic': 57 }
+		releases: { WM: 57 }
 	},
 	{
 		name: 'Luck',
@@ -3255,7 +3278,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (1): After any roll is made, that roll gets +1.</p>',
-		releases: { 'Winds of Magic': 58, 'War of Attrition': 189 }
+		releases: { WM: 58, WA: 189 }
 	},
 	{
 		name: 'Magical Aptitude',
@@ -3267,7 +3290,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: All spell combat tactics you play this combat cost 0 spell points.</p>',
-		releases: { 'Winds of Magic': 59 }
+		releases: { WM: 59 }
 	},
 	{
 		name: 'Magnify Terror',
@@ -3279,7 +3302,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (2): This unit gets a strength bonus equal to it\'s levels of "<b>Terror</b>".</p>',
-		releases: { 'Winds of Magic': 60, 'War of Attrition': 190 }
+		releases: { WM: 60, WA: 190 }
 	},
 	{
 		name: 'Mass Confusion',
@@ -3291,7 +3314,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Discard 1 card: Exchange this unit with 1 of your other ready units.</p>',
-		releases: { 'Winds of Magic': 61, 'War of Attrition': 194 }
+		releases: { WM: 61, WA: 194 }
 	},
 	{
 		name: 'Meet Me in the Middle',
@@ -3303,7 +3326,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each committed enemy unit.</p>',
-		releases: { 'Winds of Magic': 62 }
+		releases: { WM: 62 }
 	},
 	{
 		name: "Melkior's Gambit",
@@ -3314,7 +3337,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: Before you declare an attack, you may choose to attack an enemy unit in the reserves.</p>',
-		releases: { 'Winds of Magic': 63, 'War of Attrition': 197 }
+		releases: { WM: 63, WA: 197 }
 	},
 	{
 		name: 'Open Field',
@@ -3325,7 +3348,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All your ranged attack units get "<b>Long Ranged Attack</b>: 6".</p>',
-		releases: { 'Winds of Magic': 64, 'Valor and Treachery': 24, 'War of Attrition': 208 }
+		releases: { WM: 64, VT: 24, WA: 208 }
 	},
 	{
 		name: 'Overload',
@@ -3336,7 +3359,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> (1): Your enemy loses 3 spell points.</p>',
-		releases: { 'Winds of Magic': 65, 'War of Attrition': 211 }
+		releases: { WM: 65, WA: 211 }
 	},
 	{
 		name: 'Ready the Shields',
@@ -3347,7 +3370,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After you enemy declares a ranged attack, choose 1 of your ready units to be the target of that attack.</p>',
-		releases: { 'Winds of Magic': 66 }
+		releases: { WM: 66 }
 	},
 	{
 		name: 'Rune of Holding',
@@ -3358,7 +3381,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (1): After your enemy plays a combat tactic from their hand, they discard 1 card.</p>',
-		releases: { 'Winds of Magic': 67 }
+		releases: { WM: 67 }
 	},
 	{
 		name: 'Sacrifice',
@@ -3369,7 +3392,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Destroy 1 of your units: Your enemy discards 3 cards.</p>',
-		releases: { 'Winds of Magic': 68, 'War of Attrition': 232 }
+		releases: { WM: 68, WA: 232 }
 	},
 	{
 		name: 'Simple Plan',
@@ -3381,7 +3404,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each tactic point your enemy has spent.</p>',
-		releases: { 'Winds of Magic': 69 }
+		releases: { WM: 69 }
 	},
 	{
 		name: 'Spell of Shielding',
@@ -3393,7 +3416,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (5): Exchange this unit with a unit from your army deck discard pile. That unit is destroyed at the end of this combat.</p>',
-		releases: { 'Winds of Magic': 70 }
+		releases: { WM: 70 }
 	},
 	{
 		name: 'Steed of Shadows',
@@ -3404,7 +3427,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (2): Before you declare an attack, replace 1 of your unit\'s "Infantry" or "Cavalry" keywords with "Flyer" <span class="errata">until the end of the combat</span>.</p>',
-		releases: { 'Winds of Magic': 71 },
+		releases: { WM: 71 },
 		errata: true
 	},
 	{
@@ -3416,7 +3439,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +1 strength, +1 tactic point and +1 leadership.</p>',
-		releases: { 'Winds of Magic': 72, 'War of Attrition': 245 }
+		releases: { WM: 72, WA: 245 }
 	},
 	{
 		name: 'Strategic Maneuver',
@@ -3428,7 +3451,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card in your hand in excess of the cards in your enemy's hand.</p>",
-		releases: { 'Winds of Magic': 73 }
+		releases: { WM: 73 }
 	},
 	{
 		name: 'Overmaster',
@@ -3440,7 +3463,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each ready unit you have in excess of the number of ready enemy units.</p>',
-		releases: { 'Winds of Magic': 74 }
+		releases: { WM: 74 }
 	},
 	{
 		name: 'Strength of Focus',
@@ -3451,7 +3474,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (1): After your enemy rolls they reroll.</p><p><b>Spell Reaction</b> (1): After any roll is made, that roll gets +1.</p>',
-		releases: { 'Winds of Magic': 75 }
+		releases: { WM: 75 }
 	},
 	{
 		name: 'Superior Intellect',
@@ -3463,7 +3486,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Spell Combat Tactic</b> (1): This unit gets +1 strength for each printed tactic point in excess of the enemy unit's printed tactic points.</p>",
-		releases: { 'Winds of Magic': 76 }
+		releases: { WM: 76 }
 	},
 	{
 		name: 'Surprise Arms',
@@ -3475,7 +3498,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell WarCry</b> (1): Discard the top 5 cards of your army deck. Choose 1 attachment discarded this way and add it to this unit, if possible.</p>',
-		releases: { 'Winds of Magic': 77 }
+		releases: { WM: 77 }
 	},
 	{
 		name: "The Crow's Feast",
@@ -3487,7 +3510,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +2 ranged attack for each of your ready wizard units.</p>',
-		releases: { 'Winds of Magic': 78 }
+		releases: { WM: 78 }
 	},
 	{
 		name: 'The Fog of War',
@@ -3498,7 +3521,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Discard 1 card: After your enemy declares a non-ranged attack, block with 1 of your ready units.</p>',
-		releases: { 'Winds of Magic': 79 }
+		releases: { WM: 79 }
 	},
 	{
 		name: 'The Howler Wind',
@@ -3509,7 +3532,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (3): Commit 1 enemy unit with strength equal to or less than your spell points unless your enemy destroys 1 of their units.</p>',
-		releases: { 'Winds of Magic': 80 }
+		releases: { WM: 80 }
 	},
 	{
 		name: 'Threaten',
@@ -3521,7 +3544,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
-		releases: { 'Winds of Magic': 81, 'War of Attrition': 263 }
+		releases: { WM: 81, WA: 263 }
 	},
 	{
 		name: 'The Strength of One',
@@ -3533,7 +3556,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength. Only playable while you have no other ready units.</p>',
-		releases: { 'Winds of Magic': 82 }
+		releases: { WM: 82 }
 	},
 	{
 		name: 'Turn of Events',
@@ -3545,7 +3568,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +1 strength and may play cards as if it were attacking.</p>',
-		releases: { 'Winds of Magic': 83 }
+		releases: { WM: 83 }
 	},
 	{
 		name: 'Unleashed Fury',
@@ -3557,7 +3580,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +4 strength.Only playable while attacking.</p>',
-		releases: { 'Winds of Magic': 84 }
+		releases: { WM: 84 }
 	},
 	{
 		name: "Warrior's Sight",
@@ -3568,7 +3591,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +3 tactic points.</p>',
-		releases: { 'Winds of Magic': 85 }
+		releases: { WM: 85 }
 	},
 	{
 		name: 'Weapons Master',
@@ -3580,7 +3603,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: Play the combat tactic on 1 of this unit's weapon attachments, paying all costs.</p>",
-		releases: { 'Winds of Magic': 86, 'War of Attrition': 275 }
+		releases: { WM: 86, WA: 275 }
 	},
 	{
 		name: 'Wind of Death',
@@ -3592,7 +3615,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Spell WarCry</b> (X): If you win this combat, destroy 1 enemy unit with strength equal to or less than X. You may not make a follow-up attack.</p>',
-		releases: { 'Winds of Magic': 87, 'War of Attrition': 277 }
+		releases: { WM: 87, WA: 277 }
 	},
 	{
 		name: 'Winds of Fate',
@@ -3604,7 +3627,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Spell WarCry</b> (1): When this unit makes a combat roll, roll 3 times instead of once. Your enemy picks 2 of those rollsand adds both die numbers together. This total is your combat roll.</p>',
-		releases: { 'Winds of Magic': 88, 'War of Attrition': 278 }
+		releases: { WM: 88, WA: 278 }
 	},
 	{
 		name: 'You Shall Not Pass',
@@ -3615,7 +3638,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Spell Command</b> Destroy one of your strategy cards (1): Commit 1 enemy unit with strength equal to or less than the die on the destroyed card.</p>',
-		releases: { 'Winds of Magic': 89 }
+		releases: { WM: 89 }
 	},
 	{
 		name: 'Crystal of Seeing',
@@ -3627,7 +3650,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Spell Support Tactic</b> (1): Look at the top card of your action deck. You may discard that card.</p><p>This item may only be attached to a wizard unit.</p>',
-		releases: { 'Winds of Magic': 90 }
+		releases: { WM: 90 }
 	},
 	{
 		name: 'Griffon War Banner',
@@ -3639,7 +3662,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Super rare',
 		text: '<p>While this unit is ready in the battle line, your infantry units get +1 tactic point and may attack from the reserves.</p><p>After this attachment is destroyed, commit each unit in your reserves unless it passes a leadership test.</p>',
-		releases: { 'Winds of Magic': 91 }
+		releases: { WM: 91 }
 	},
 	{
 		name: 'Lance of Piercing',
@@ -3650,7 +3673,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable while attacking.</p><p>This weapon may not be attached to infantry.</p>',
-		releases: { 'Winds of Magic': 92, 'Chivalry and Deceit': 37, 'War of Attrition': 285 }
+		releases: { WM: 92, CD: 37, WA: 285 }
 	},
 	{
 		name: "Sword of Forest's Might",
@@ -3662,7 +3685,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (1): This unit gets +2 strength unless your enemy discards 2 cards.</p>',
-		releases: { 'Winds of Magic': 93 }
+		releases: { WM: 93 }
 	},
 	{
 		name: 'Anvil of Doom',
@@ -3677,7 +3700,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Runesmith</b>: 2 <i>(Counts as Wizard)</i></p><p><span class="errata">Spell</span> Support <span class="errata">Tactic</span> (1): Your enemy loses 1 spell point.</p><p><b>Reaction</b>: After 1 of your other units wins a combat, you get 1 spell point.</p>',
-		releases: { 'Winds of Magic': 94 },
+		releases: { WM: 94 },
 		errata: true
 	},
 	{
@@ -3692,7 +3715,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Reaction</b> Discard 1 card: After you declare an attack with this unit, choose an enemy unit in the reserves. You attack that unit. This attack may not be blocked.</p>',
-		releases: { 'Winds of Magic': 95 }
+		releases: { WM: 95 }
 	},
 	{
 		name: "Barak's Slayers",
@@ -3706,7 +3729,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for each enemy unit with a support tactic.</p>',
-		releases: { 'Winds of Magic': 96 }
+		releases: { WM: 96 }
 	},
 	{
 		name: "Borri Durinsson's Stoutbeards",
@@ -3720,7 +3743,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength vs. ranged attack units.</p>',
-		releases: { 'Winds of Magic': 97 }
+		releases: { WM: 97 }
 	},
 	{
 		name: 'Dwarf Gunners',
@@ -3734,7 +3757,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b> Commit: Play the support tactic on 1 of your war machines, paying all costs.</p>',
-		releases: { 'Winds of Magic': 98 }
+		releases: { WM: 98 }
 	},
 	{
 		name: 'Pride of Karak-Hirn',
@@ -3748,7 +3771,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Ranged Attack</b>: 8</p><p><b>Reaction</b>: After this unit wins a ranged attack combat vs. an enemy unit in the battle line, declare a <b>Ranged Attack</b>: 5 attack against an enemy unit in the reserves.</p>',
-		releases: { 'Winds of Magic': 99 }
+		releases: { WM: 99 }
 	},
 	{
 		name: 'Runelord Thurin Stormhammer',
@@ -3762,7 +3785,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p><b>Spell Reaction</b> (1): After you destroy an enemy attachment, draw 1 card.</p>',
-		releases: { 'Winds of Magic': 100 }
+		releases: { WM: 100 }
 	},
 	{
 		name: 'Runesmith Gottri Grimsson',
@@ -3776,7 +3799,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p>While this unit is in combat all you enemy's spells cost 1 additional spell point.</p>",
-		releases: { 'Winds of Magic': 101, 'War of Attrition': 314 }
+		releases: { WM: 101, WA: 314 }
 	},
 	{
 		name: 'Boldur Runestriker',
@@ -3788,7 +3811,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i>.</p><p><b>Spell Combat Tactic</b> (1): Your enemy loses 2 spell points.</p>',
-		releases: { 'Winds of Magic': 102, 'War of Attrition': 320 }
+		releases: { WM: 102, WA: 320 }
 	},
 	{
 		name: 'Balthasar Gelt',
@@ -3803,7 +3826,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Support Tactic</b> (1): Move 1 unit from the reserves to the battle line.</p>',
-		releases: { 'Winds of Magic': 103 }
+		releases: { WM: 103 }
 	},
 	{
 		name: 'Carroburg City Garrison',
@@ -3817,7 +3840,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b> Commit: The enemy unit gets -2 leadership.</p>',
-		releases: { 'Winds of Magic': 104 }
+		releases: { WM: 104 }
 	},
 	{
 		name: 'Dieter Menschaff',
@@ -3831,7 +3854,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Combat Tactic</b> Discard 1 card (1): This unit gets +2 strength.</p>',
-		releases: { 'Winds of Magic': 105, 'War of Attrition': 326 }
+		releases: { WM: 105, WA: 326 }
 	},
 	{
 		name: "Gunther's Carroburgers",
@@ -3845,7 +3868,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you muster this unit to the battle line, move 1 enemy unit to the reserves.</p>',
-		releases: { 'Winds of Magic': 106, 'War of Attrition': 331 }
+		releases: { WM: 106, WA: 331 }
 	},
 	{
 		name: 'Knight General Mikael Kobernecht',
@@ -3860,7 +3883,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 1</p><p>While this unit is in combat, your enemy may not play WarCry cards or abilities.</p>',
-		releases: { 'Winds of Magic': 107, 'War of Attrition': 335 }
+		releases: { WM: 107, WA: 335 }
 	},
 	{
 		name: 'Lector Wilhelm Faustus',
@@ -3875,7 +3898,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Your enemy rolls. This unit gets a strength bonus equal to the die rolled.</p><p><b>Combat Tactic</b>: Reveal the top card of your enemy's action deck. Only playable vs. a Chaos unit.</p>",
-		releases: { 'Winds of Magic': 108, 'War of Attrition': 336 }
+		releases: { WM: 108, WA: 336 }
 	},
 	{
 		name: 'Reiksguard Knights',
@@ -3889,7 +3912,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 tactic points. Only playable while you have a ready "Unique" unit.</p>',
-		releases: { 'Winds of Magic': 109 }
+		releases: { WM: 109 }
 	},
 	{
 		name: 'Wissen Highway Patrol',
@@ -3903,7 +3926,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 4</p><p><b>Support Tactic</b> Discard 1 card: Your unit gets +1 ranged attack.</p>',
-		releases: { 'Winds of Magic': 110 }
+		releases: { WM: 110 }
 	},
 	{
 		name: 'Gerhart Brennend, Bright Wizard',
@@ -3915,7 +3938,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Reaction</b> (1): After the enemy unit receives a strength bonus, this unit gets +2 tactic points.</p>',
-		releases: { 'Winds of Magic': 111, 'War of Attrition': 352 }
+		releases: { WM: 111, WA: 352 }
 	},
 	{
 		name: 'Eagles of the Dawn Eyrie',
@@ -3929,7 +3952,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength vs. committed units.</p>',
-		releases: { 'Winds of Magic': 112 }
+		releases: { WM: 112 }
 	},
 	{
 		name: 'Alarielle, the Everqueen',
@@ -3944,7 +3967,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Support Tactic</b>: Your unit gets +1 strength or +1 ranged attack.</p>',
-		releases: { 'Winds of Magic': 113, 'War of Attrition': 353 }
+		releases: { WM: 113, WA: 353 }
 	},
 	{
 		name: "Celethil's Swordmasters",
@@ -3958,7 +3981,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is in combat your tactic cards, cost 1 less tactic point.</p>',
-		releases: { 'Winds of Magic': 114 }
+		releases: { WM: 114 }
 	},
 	{
 		name: 'Mage Bilgarim Whitestar',
@@ -3972,7 +3995,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (1): Your unit gets +1 leadership.</p>',
-		releases: { 'Winds of Magic': 115 }
+		releases: { WM: 115 }
 	},
 	{
 		name: "Quenarion's Brightspears",
@@ -3986,7 +4009,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. Dark Elf units.</p>',
-		releases: { 'Winds of Magic': 116 }
+		releases: { WM: 116 }
 	},
 	{
 		name: 'Teclis, High Loremaster',
@@ -4001,7 +4024,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 3</p><p>While Teclis is committed, you may play abilities on him or his attachments.</p><p><b>Spell WarCry</b> (2): Play the WarCry or combat tactic printed on any unit, paying all costs.</p>',
-		releases: { 'Winds of Magic': 117 }
+		releases: { WM: 117 }
 	},
 	{
 		name: 'White Lions of Chrace',
@@ -4015,7 +4038,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>Cambat Tactic: This unit gets +1 strength and +1 leadership. Only playable while this unit has a character attachment.</p>',
-		releases: { 'Winds of Magic': 118 }
+		releases: { WM: 118 }
 	},
 	{
 		name: 'Yvresse White Company',
@@ -4029,7 +4052,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Long Ranged Attack</b>: 4</p>',
-		releases: { 'Winds of Magic': 119 }
+		releases: { WM: 119 }
 	},
 	{
 		name: 'Lady Ellaneil the Dawnbringer',
@@ -4041,7 +4064,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 1</p><p> <b>WarCry</b>: Play a spell combat tactic card, paying no costs.</p>',
-		releases: { 'Winds of Magic': 120, 'War of Attrition': 381 }
+		releases: { WM: 120, WA: 381 }
 	},
 	{
 		name: 'Angkor, Father of Mammoths',
@@ -4056,7 +4079,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Terror</b>: 2</p><p>While this unit is ready in the battle line, your enemy may not make follow-up attacks.</p><p> <b>WarCry</b>: If you win this combat, destroy all enemy units with the same name as the losing unit.</p>',
-		releases: { 'Siege of Darkness': 1 }
+		releases: { SD: 1 }
 	},
 	{
 		name: "Mal'angor",
@@ -4071,7 +4094,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Terror</b>: 4</p><p>While this unit is in combat, you may not play spell cards or abilities.</p><p> <b>WarCry</b> Discard any number of cards: This unit gets +1 strength for each card discarded.</p>',
-		releases: { 'Siege of Darkness': 2 }
+		releases: { SD: 2 }
 	},
 	{
 		name: 'Bloodaxe Horde',
@@ -4085,7 +4108,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. Empire units.</p>',
-		releases: { 'Siege of Darkness': 3 }
+		releases: { SD: 3 }
 	},
 	{
 		name: 'Haargoth',
@@ -4100,7 +4123,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After your enemy plays a spell card or ability, they discard 1 card.</p><p> <b>WarCry</b>: Your enemy's tactic cards cost 2 additional tactic points.</p>",
-		releases: { 'Siege of Darkness': 4 }
+		releases: { SD: 4 }
 	},
 	{
 		name: "Haargoth's Bloodletters",
@@ -4114,7 +4137,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>:1</p><p><b>Combat Tactic</b>: Destroy 1 attachment on the enemy unit.</p>',
-		releases: { 'Siege of Darkness': 5, 'War of Attrition': 14 }
+		releases: { SD: 5, WA: 14 }
 	},
 	{
 		name: "Haargoth's Blooddrinkers",
@@ -4128,7 +4151,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Discard 1 card: After this unit gets a strength bonus, double that strength bonus. Destroy this unit as that end of combat.</p>',
-		releases: { 'Siege of Darkness': 6 }
+		releases: { SD: 6 }
 	},
 	{
 		name: "Haargoth's Scourge-Scythe",
@@ -4142,7 +4165,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: If you rout the enemy unit, choose the target of your follow-up attack. Only playable while this unit has a character attachment.</p>',
-		releases: { 'Siege of Darkness': 7 }
+		releases: { SD: 7 }
 	},
 	{
 		name: 'Korvin the Sentinel',
@@ -4157,7 +4180,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is ready, your other Chaos infantry units attack as though they were cavalry units.</p><p><b>Reaction</b>: After your enemy plays a spell card or ability, they lose 1 spell point.</p>',
-		releases: { 'Siege of Darkness': 8 }
+		releases: { SD: 8 }
 	},
 	{
 		name: 'The Skull Pack',
@@ -4171,7 +4194,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>While this unit is in combat, your enemy may not play spell cards.</p><p><b>Reaction</b>: After you rout an enemy unit, draw 1 card.</p>',
-		releases: { 'Siege of Darkness': 9, 'War of Attrition': 25 }
+		releases: { SD: 9, WA: 25 }
 	},
 	{
 		name: "Minotaur's Bane",
@@ -4183,7 +4206,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>: Choose 1 of your units. This unit gets a strength bonus equal to the chosen unit's printed strength. If you lose this combat, destroy the chosen unit.</p><p>This card may only be attached to a Chaos unit.</p>",
-		releases: { 'Siege of Darkness': 10 }
+		releases: { SD: 10 }
 	},
 	{
 		name: 'Cauldron of Blood',
@@ -4198,7 +4221,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Support Tactic</b>: Your Dark Elf unit gets "<b>Terror</b>: 1."</p><p><b>Reaction</b>: Before you make a combat roll, roll twice and choose the highest result.</p>',
-		releases: { 'Siege of Darkness': 11, 'War of Attrition': 32 }
+		releases: { SD: 11, WA: 32 }
 	},
 	{
 		name: 'Malekith, the Witch King',
@@ -4213,7 +4236,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 3</p><p> <b>WarCry</b>: Destroy all enemy attachments in this combat. This unit gets +1 strength for each attachment destroyed this way.</p>',
-		releases: { 'Siege of Darkness': 12 }
+		releases: { SD: 12 }
 	},
 	{
 		name: 'Blades of Twilight',
@@ -4227,7 +4250,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. Only playable while defending.</p>',
-		releases: { 'Siege of Darkness': 13 }
+		releases: { SD: 13 }
 	},
 	{
 		name: 'Harpies',
@@ -4241,7 +4264,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +2 strength unless your enemy discards 2 cards.</p>',
-		releases: { 'Siege of Darkness': 14 }
+		releases: { SD: 14 }
 	},
 	{
 		name: 'Keth Zarene',
@@ -4256,7 +4279,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Reaction</b> (2): After your enemy plays a card or ability that grants a strength bonus, they discard 1 card.</p>',
-		releases: { 'Siege of Darkness': 15, 'War of Attrition': 43 }
+		releases: { SD: 15, WA: 43 }
 	},
 	{
 		name: "Malekith's Black Host",
@@ -4270,7 +4293,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit costs 2 less gold to muster if you have Malekith, The Witch King in play.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +2 leadership.</p>',
-		releases: { 'Siege of Darkness': 16 }
+		releases: { SD: 16 }
 	},
 	{
 		name: "Malekith's Executioners",
@@ -4284,7 +4307,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit wins a combat, commit 1 enemy unit that played a support tactic during this combat.</p>',
-		releases: { 'Siege of Darkness': 17 }
+		releases: { SD: 17 }
 	},
 	{
 		name: "Sa'har the Ashen Lord",
@@ -4299,7 +4322,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each unit in the enemy reserves. Only playable while attacking.</p>',
-		releases: { 'Siege of Darkness': 18 }
+		releases: { SD: 18 }
 	},
 	{
 		name: 'The Hydra Blade',
@@ -4311,7 +4334,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength if it passes a leadership test.</p><p>This card may only be attached to a Dark Elf unit.</p>',
-		releases: { 'Siege of Darkness': 19 }
+		releases: { SD: 19 }
 	},
 	{
 		name: 'Da Big Lobba',
@@ -4325,7 +4348,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p> <b>Command</b> Commit: Discard the top card of your enemy's army deck. If that card was a unit, destroy all copies of that card in play.</p>",
-		releases: { 'Siege of Darkness': 20 }
+		releases: { SD: 20 }
 	},
 	{
 		name: "Oglok the 'Orrible",
@@ -4340,7 +4363,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b> Destroy 1 of your units: This unit gets a strength bonus equal to the destroyed units gold cost.</p>',
-		releases: { 'Siege of Darkness': 21 }
+		releases: { SD: 21 }
 	},
 	{
 		name: "Ghulgar's Tuska Boyz",
@@ -4354,7 +4377,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength vs. committed units.</p>',
-		releases: { 'Siege of Darkness': 22 }
+		releases: { SD: 22 }
 	},
 	{
 		name: "Kurgrot's Doom Divers",
@@ -4368,7 +4391,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 3</p><p><b>Support WarCry</b>: Your enemy may not play WarCry cards or abilities.</p>',
-		releases: { 'Siege of Darkness': 23, 'War of Attrition': 70 }
+		releases: { SD: 23, WA: 70 }
 	},
 	{
 		name: "Urguck's Chainas",
@@ -4382,7 +4405,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: -3</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. cavalry units.</p>',
-		releases: { 'Siege of Darkness': 24 }
+		releases: { SD: 24 }
 	},
 	{
 		name: "Urguck's Chukka Boyz",
@@ -4396,7 +4419,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>Short ranged Attack: 8</p><p><b>Combat Tactic</b>: This unit gets +2 ranged attack vs. Dwarf units.</p>',
-		releases: { 'Siege of Darkness': 25 }
+		releases: { SD: 25 }
 	},
 	{
 		name: "Wazzi's Lunatic Gitz",
@@ -4410,7 +4433,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets +2d6 strength. If the die numbers on the 2 cards rolled are equal, destroy this unit and commit 1 of your other ready units.</p>',
-		releases: { 'Siege of Darkness': 26, 'War of Attrition': 87 }
+		releases: { SD: 26, WA: 87 }
 	},
 	{
 		name: "Wazzi's Netter Ladz",
@@ -4424,7 +4447,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Discard X cards: The enemy unit gets -X tactic points.</p>',
-		releases: { 'Siege of Darkness': 27 }
+		releases: { SD: 27 }
 	},
 	{
 		name: "Kleeva's Cleaver",
@@ -4436,7 +4459,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (X): If you win this combat, rout the enemy unit. X is the printed strength of the enemy unit. Only playable once per command.</p><p>This card may only be attached to an Orc unit.</p>',
-		releases: { 'Siege of Darkness': 28 }
+		releases: { SD: 28 }
 	},
 	{
 		name: "Skcub's Gutter Runners",
@@ -4450,7 +4473,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 2</p><p><b>Reaction</b> Discard 1 card: After setup, your enemy discards 1 random card. Only playable while this unit is in the battle line.</p>',
-		releases: { 'Siege of Darkness': 29 }
+		releases: { SD: 29 }
 	},
 	{
 		name: 'Trolls of Blackbile Marsh',
@@ -4464,7 +4487,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b> Discard 1 card: Destroy all strategy cards.</p>',
-		releases: { 'Siege of Darkness': 30 }
+		releases: { SD: 30 }
 	},
 	{
 		name: 'Vial of Unicorn Blood',
@@ -4475,7 +4498,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Destroy this attachment: You get 3 spell points.</p>',
-		releases: { 'Siege of Darkness': 31, 'Death and Honour': 15, 'War of Attrition': 95 }
+		releases: { SD: 31, DH: 15, WA: 95 }
 	},
 	{
 		name: 'Champion',
@@ -4487,7 +4510,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Discard the top 2 cards of your action deck. You may place 1 of the cards discarded in this way on top of your action deck.</p>',
-		releases: { 'Siege of Darkness': 32 }
+		releases: { SD: 32 }
 	},
 	{
 		name: 'Doom Axe',
@@ -4498,7 +4521,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: This unit gets +2 strength.</p>',
-		releases: { 'Siege of Darkness': 33 }
+		releases: { SD: 33 }
 	},
 	{
 		name: "Black Raven's Lurkers",
@@ -4513,7 +4536,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>All other units cost 1 additional gold to muster.</p>',
-		releases: { 'Siege of Darkness': 34, 'War of Attrition': 101 }
+		releases: { SD: 34, WA: 101 }
 	},
 	{
 		name: "Golgfag's Mercenary Ogres",
@@ -4528,7 +4551,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Your enemy may not play combat tactic cards.</p>',
-		releases: { 'Siege of Darkness': 35 }
+		releases: { SD: 35 }
 	},
 	{
 		name: 'Accurate and Precise',
@@ -4540,7 +4563,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p> <b>WarCry</b>: This unit gets a ranged attack bonus equal to it's printed tactic points.</p>",
-		releases: { 'Siege of Darkness': 36, 'War of Attrition': 105 }
+		releases: { SD: 36, WA: 105 }
 	},
 	{
 		name: 'Against the Tide',
@@ -4552,7 +4575,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each ready enemy unit.</p>',
-		releases: { 'Siege of Darkness': 37 }
+		releases: { SD: 37 }
 	},
 	{
 		name: 'Aura of Futility',
@@ -4564,7 +4587,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): The enemy unit gets -2 strength.</p>',
-		releases: { 'Siege of Darkness': 38 }
+		releases: { SD: 38 }
 	},
 	{
 		name: "Azyrneth's Battle Cry",
@@ -4576,7 +4599,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength if it passes a leadership test.</p>',
-		releases: { 'Siege of Darkness': 39 }
+		releases: { SD: 39 }
 	},
 	{
 		name: 'Blood Pact',
@@ -4588,7 +4611,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: When combat rolls are made for this combat, you roll from your enemy's deck and your enemy rolls from yours.</p>",
-		releases: { 'Siege of Darkness': 40 }
+		releases: { SD: 40 }
 	},
 	{
 		name: 'Bogged Down',
@@ -4599,7 +4622,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>Cavalry units may not make follow-up attacks.</p>',
-		releases: { 'Siege of Darkness': 41, 'War of Attrition': 114 }
+		releases: { SD: 41, WA: 114 }
 	},
 	{
 		name: 'Break for Winter',
@@ -4610,7 +4633,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (3): Each player discards their hand and draws 5 cards.</p>',
-		releases: { 'Siege of Darkness': 42, 'War of Attrition': 117 }
+		releases: { SD: 42, WA: 117 }
 	},
 	{
 		name: 'Chaos Vortex',
@@ -4621,7 +4644,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> Destroy 1 of your ready units (2): Discard the top 3 cards of your army deck. Your enemy chooses 1 unit discarded this way. Place the chosen unit in your battle line ready.</p>',
-		releases: { 'Siege of Darkness': 43 }
+		releases: { SD: 43 }
 	},
 	{
 		name: 'Courageous Mounts',
@@ -4633,7 +4656,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This cavalry unit gets +1 strength and "<b>Terror</b>: 1".</p>',
-		releases: { 'Siege of Darkness': 44 }
+		releases: { SD: 44 }
 	},
 	{
 		name: 'Crude Measures',
@@ -4644,7 +4667,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Your defending infantry unit gets +2 strength vs. cavalry units.</p>',
-		releases: { 'Siege of Darkness': 45 }
+		releases: { SD: 45 }
 	},
 	{
 		name: 'Crush the Flank',
@@ -4656,7 +4679,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable while you have more ready units in the battle line than your enemy.</p>',
-		releases: { 'Siege of Darkness': 46 }
+		releases: { SD: 46 }
 	},
 	{
 		name: 'Dark Horizon',
@@ -4667,7 +4690,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your flyer unit gets +2 strength.</p>',
-		releases: { 'Siege of Darkness': 47 }
+		releases: { SD: 47 }
 	},
 	{
 		name: 'Dazzling Display',
@@ -4679,7 +4702,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): The enemy unit gets -3 tactic points unless they discard 1 card.</p>',
-		releases: { 'Siege of Darkness': 48 }
+		releases: { SD: 48 }
 	},
 	{
 		name: 'Earthquake',
@@ -4691,7 +4714,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): Neither player makes a combat roll.</p>',
-		releases: { 'Siege of Darkness': 49, 'War of Attrition': 143 }
+		releases: { SD: 49, WA: 143 }
 	},
 	{
 		name: 'Enlightened Counsel',
@@ -4702,7 +4725,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Move any number of your units from the reserves to the battle line. Move any number of your units from the battle line to the reserves.</p>',
-		releases: { 'Siege of Darkness': 50 }
+		releases: { SD: 50 }
 	},
 	{
 		name: "Fandelhoch's Folly",
@@ -4714,7 +4737,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: The enemy unit gets -2 strength.</p>',
-		releases: { 'Siege of Darkness': 51, 'Death and Honour': 11, 'War of Attrition': 149 }
+		releases: { SD: 51, DH: 11, WA: 149 }
 	},
 	{
 		name: 'Gallant Death',
@@ -4726,7 +4749,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If you lose this combat, your enemy discards 2 random cards.</p>',
-		releases: { 'Siege of Darkness': 52 }
+		releases: { SD: 52 }
 	},
 	{
 		name: 'Get Back Here!',
@@ -4737,7 +4760,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After you retreat, all of your units pass their leadership tests.</p>',
-		releases: { 'Siege of Darkness': 53, 'Valor and Treachery': 25, 'War of Attrition': 162 }
+		releases: { SD: 53, VT: 25, WA: 162 }
 	},
 	{
 		name: "Ha'asek's Grief",
@@ -4748,7 +4771,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After 1 of your units is destroyed in combat, commit 1 enemy unit unless it passes a leadership test.</p>',
-		releases: { 'Siege of Darkness': 54, 'War of Attrition': 166 }
+		releases: { SD: 54, WA: 166 }
 	},
 	{
 		name: 'Haunted Fen',
@@ -4759,7 +4782,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b> Discard 1 card: Your unit gets "<b>Terror</b>: 1".</p>',
-		releases: { 'Siege of Darkness': 55 }
+		releases: { SD: 55 }
 	},
 	{
 		name: 'Heavy Cavalry Charge',
@@ -4771,7 +4794,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This cavalry unit gets +3 strength.</p>',
-		releases: { 'Siege of Darkness': 56, 'War of Attrition': 170 }
+		releases: { SD: 56, WA: 170 }
 	},
 	{
 		name: 'Heroic Intervention',
@@ -4783,7 +4806,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength. Only playable while this unit is losing a combat by 3 or more.</p>',
-		releases: { 'Siege of Darkness': 57 }
+		releases: { SD: 57 }
 	},
 	{
 		name: 'Heroic Resolve',
@@ -4795,7 +4818,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only usable while this unit is attacking from the battle line.</p>',
-		releases: { 'Siege of Darkness': 58, 'War of Attrition': 172 }
+		releases: { SD: 58, WA: 172 }
 	},
 	{
 		name: 'Increased Supplies',
@@ -4806,7 +4829,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your enemy plays a card or ability that forces you to discard 1 or more cards, draw 2 cards.</p>',
-		releases: { 'Siege of Darkness': 59, 'War of Attrition': 176 }
+		releases: { SD: 59, WA: 176 }
 	},
 	{
 		name: 'Inspirational Victory',
@@ -4818,7 +4841,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: If you win this combat, play 1 strategy card.</p>',
-		releases: { 'Siege of Darkness': 60, 'War of Attrition': 178 }
+		releases: { SD: 60, WA: 178 }
 	},
 	{
 		name: 'Know Your Enemy',
@@ -4830,7 +4853,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each copy of the enemy unit that your enemy has in play.</p>',
-		releases: { 'Siege of Darkness': 61 }
+		releases: { SD: 61 }
 	},
 	{
 		name: 'Lucky Blow',
@@ -4842,7 +4865,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only usable during a follow-up attack.</p>',
-		releases: { 'Siege of Darkness': 62 }
+		releases: { SD: 62 }
 	},
 	{
 		name: 'Marsh of Morr',
@@ -4853,7 +4876,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b> Destroy 1 of your units: You get spell points equal to the destroyed units gold cost.</p>',
-		releases: { 'Siege of Darkness': 63, 'War of Attrition': 193 }
+		releases: { SD: 63, WA: 193 }
 	},
 	{
 		name: 'Master of the Field',
@@ -4865,7 +4888,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength and +2 leadership.</p>',
-		releases: { 'Siege of Darkness': 64, 'War of Attrition': 195 }
+		releases: { SD: 64, WA: 195 }
 	},
 	{
 		name: 'Might of Heroes',
@@ -4877,7 +4900,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p> <b>WarCry</b>: This unit gets a strength bonus equal to it's leadership.</p>",
-		releases: { 'Siege of Darkness': 65, 'War of Attrition': 199 }
+		releases: { SD: 65, WA: 199 }
 	},
 	{
 		name: 'Misdirection',
@@ -4889,7 +4912,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Exchange the enemy unit with 1 other enemy unit in the battle line. Not playable during a ranged attack.</p>',
-		releases: { 'Siege of Darkness': 66 }
+		releases: { SD: 66 }
 	},
 	{
 		name: 'Moral Victory',
@@ -4901,7 +4924,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: If you win this combat, move 1 card from your action discard pile into your hand.</p>',
-		releases: { 'Siege of Darkness': 67 }
+		releases: { SD: 67 }
 	},
 	{
 		name: 'Natural Leader',
@@ -4913,7 +4936,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Choose 1 of your ready units. This unit makes all leadership tests using the chosen units leadership.</p>',
-		releases: { 'Siege of Darkness': 68 }
+		releases: { SD: 68 }
 	},
 	{
 		name: 'Numerical Advantage',
@@ -4925,7 +4948,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Choose a number. Your enemy reveals their hand. This unit gets +1 strength for each card in their hand with a die equal to the chosen number.</p>',
-		releases: { 'Siege of Darkness': 69 }
+		releases: { SD: 69 }
 	},
 	{
 		name: 'Out Think',
@@ -4937,7 +4960,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Choose <span class="errata">one activated</span> ability printed on any enemy unit or attachment. Your enemy may not play that ability.</p>',
-		releases: { 'Siege of Darkness': 70, 'War of Attrition': 209 },
+		releases: { SD: 70, WA: 209 },
 		errata: true
 	},
 	{
@@ -4950,7 +4973,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card in your enemy's hand in excess of the cards in your hand.</p>",
-		releases: { 'Siege of Darkness': 71 }
+		releases: { SD: 71 }
 	},
 	{
 		name: 'Proven Tactics',
@@ -4962,7 +4985,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Play a combat tactic ability printed on this unit, paying all costs.</p>',
-		releases: { 'Siege of Darkness': 72, 'War of Attrition': 219 }
+		releases: { SD: 72, WA: 219 }
 	},
 	{
 		name: 'Rain of Fire',
@@ -4974,7 +4997,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets "<b>Terror</b>: 1" for each of your ready ranged attack units.</p>',
-		releases: { 'Siege of Darkness': 73 }
+		releases: { SD: 73 }
 	},
 	{
 		name: 'Reap the Whirlwind',
@@ -4986,7 +5009,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit and the enemy unit each get +d6 strength.</p>',
-		releases: { 'Siege of Darkness': 74 }
+		releases: { SD: 74 }
 	},
 	{
 		name: 'Reckless Assault',
@@ -4998,7 +5021,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit gets +3 strength. If you lose this combat, discard your hand.</p>',
-		releases: { 'Siege of Darkness': 75, 'War of Attrition': 223 }
+		releases: { SD: 75, WA: 223 }
 	},
 	{
 		name: 'Ruined Keep',
@@ -5009,7 +5032,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>Cavalry units may not attack from the reserves.</p>',
-		releases: { 'Siege of Darkness': 76 }
+		releases: { SD: 76 }
 	},
 	{
 		name: 'Scatter the Ranks',
@@ -5021,7 +5044,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Move 1 enemy unit from the reserves to the battle line. Move 1 enemy unit from the battle line to the reserves.</p>',
-		releases: { 'Siege of Darkness': 77, 'War of Attrition': 233 }
+		releases: { SD: 77, WA: 233 }
 	},
 	{
 		name: 'Sorcerous Guidance',
@@ -5033,7 +5056,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (1): This unit gets +3 ranged attack. This card costs 1 less tactic point for each of your ready wizard units.</p>',
-		releases: { 'Siege of Darkness': 78 }
+		releases: { SD: 78 }
 	},
 	{
 		name: 'Stout of Heart',
@@ -5044,7 +5067,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After an enemy plays a card or ability that commits 1 or more of your units, rally those units.</p>',
-		releases: { 'Siege of Darkness': 79, 'War of Attrition': 244 }
+		releases: { SD: 79, WA: 244 }
 	},
 	{
 		name: 'Strength of Arms',
@@ -5056,7 +5079,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +3 strength.</p>',
-		releases: { 'Siege of Darkness': 80 }
+		releases: { SD: 80 }
 	},
 	{
 		name: 'Strength of Iron',
@@ -5068,7 +5091,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This war machine unit gets +3 strength.</p>',
-		releases: { 'Siege of Darkness': 81, 'War of Attrition': 248 }
+		releases: { SD: 81, WA: 248 }
 	},
 	{
 		name: 'Strength of Will',
@@ -5080,7 +5103,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: If you win this combat by 4 or more, rout the enemy unit. Not playable during a follow-up attack.</p>',
-		releases: { 'Siege of Darkness': 82 }
+		releases: { SD: 82 }
 	},
 	{
 		name: 'Surge of Faith',
@@ -5092,7 +5115,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> Discard 1 random card (1): This unit gets a strength bonus equal to the die on the discarded card.</p>',
-		releases: { 'Siege of Darkness': 83 }
+		releases: { SD: 83 }
 	},
 	{
 		name: 'Tactical Flexibility',
@@ -5103,7 +5126,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Choose 1 enemy unit. Draw 1 card for each copy of that unit your enemy has.</p>',
-		releases: { 'Siege of Darkness': 84 }
+		releases: { SD: 84 }
 	},
 	{
 		name: 'Tighten the Noose',
@@ -5115,7 +5138,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Name a card. Search your enemy's action deck for all copies of that card and place them in your enemy's discard pile. Then your enemy shuffles their deck.</p>",
-		releases: { 'Siege of Darkness': 85, 'War of Attrition': 264 }
+		releases: { SD: 85, WA: 264 }
 	},
 	{
 		name: 'Trapping Maneuver',
@@ -5127,7 +5150,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength vs. blocking units.</p>',
-		releases: { 'Siege of Darkness': 86 }
+		releases: { SD: 86 }
 	},
 	{
 		name: 'Unrevealed Arts',
@@ -5139,7 +5162,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: Look at your enemy's hand.</p>",
-		releases: { 'Siege of Darkness': 87 }
+		releases: { SD: 87 }
 	},
 	{
 		name: 'When You Need It the Most',
@@ -5151,7 +5174,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 tactic point if it is the first battle, +2 tactic points if it is the second battle, or +3 tactic points if it is the third battle.</p>',
-		releases: { 'Siege of Darkness': 88, 'War of Attrition': 276 }
+		releases: { SD: 88, WA: 276 }
 	},
 	{
 		name: 'Wings of the Harpy',
@@ -5163,7 +5186,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (1): This unit gets +2 strength and your enemy discards 1 card.</p>',
-		releases: { 'Siege of Darkness': 89, 'War of Attrition': 279 }
+		releases: { SD: 89, WA: 279 }
 	},
 	{
 		name: 'Lyonesse Questing Knights',
@@ -5177,7 +5200,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: Move 1 attachment from your discard pile to this unit, if possible.</p>',
-		releases: { 'Siege of Darkness': 90 }
+		releases: { SD: 90 }
 	},
 	{
 		name: "Elli's Cannon",
@@ -5191,7 +5214,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>Command</b> Commit: Choose 1 enemy unit. Commit that unit unless it passes a leadership test.</p>',
-		releases: { 'Siege of Darkness': 91 }
+		releases: { SD: 91 }
 	},
 	{
 		name: 'Iron Thunder',
@@ -5205,7 +5228,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Short Ranged Attack</b>: 4</p><p><b>Reaction</b>: After setup, look at your enemy's hand.</p>",
-		releases: { 'Siege of Darkness': 92 }
+		releases: { SD: 92 }
 	},
 	{
 		name: 'Ungrim Ironfist, the Slayer King',
@@ -5220,7 +5243,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Terror</b>: 1</p><p><b>Victory</b>: +2</p><p> <b>WarCry</b>: If this unit wins this combat, commit one enemy unit unless it passes a leadership test.</p>',
-		releases: { 'Siege of Darkness': 93 }
+		releases: { SD: 93 }
 	},
 	{
 		name: "Izzumbard's Old Growlers",
@@ -5234,7 +5257,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 4</p><p><b>Support WarCry</b>: Your unit gets +1 ranged attack for each of your war machine units in the battle line.</p>',
-		releases: { 'Siege of Darkness': 94, 'War of Attrition': 309 }
+		releases: { SD: 94, WA: 309 }
 	},
 	{
 		name: 'Izzumbard Endrinkuli',
@@ -5249,7 +5272,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit has "<b>Victory</b>: +1" for each of your war machine units.</p><p><b>Reaction</b>: After setup, draw 2 cards. Only playable if you have more war machine units than your enemy.</p>',
-		releases: { 'Siege of Darkness': 95, 'War of Attrition': 310 }
+		releases: { SD: 95, WA: 310 }
 	},
 	{
 		name: "Izzumbard's Warriors",
@@ -5263,7 +5286,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: +1</p><p> <b>WarCry</b> Commit 1 of your war machine units: This unit gets a strength bonus equal to the committed units gold cost.</p>',
-		releases: { 'Siege of Darkness': 96 }
+		releases: { SD: 96 }
 	},
 	{
 		name: "Miners of Thorag's Deep",
@@ -5277,7 +5300,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support WarCry</b> Discard 1 card: Exchange your infantry unit with one of your other ready infantry units in the battle line. Only playable while defending.</p>',
-		releases: { 'Siege of Darkness': 97 }
+		releases: { SD: 97 }
 	},
 	{
 		name: "Morglan's Shieldwall",
@@ -5291,7 +5314,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you muster a war machine unit, draw 1 card from your army deck.</p>',
-		releases: { 'Siege of Darkness': 98 }
+		releases: { SD: 98 }
 	},
 	{
 		name: "Ulfson's Sharpshooters",
@@ -5305,7 +5328,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 4</p><p><b>Combat Tactic</b>: This unit gets +1 ranged attack for each of your war machine units.</p>',
-		releases: { 'Siege of Darkness': 99 }
+		releases: { SD: 99 }
 	},
 	{
 		name: 'Malakai Makaisson',
@@ -5317,7 +5340,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable if you have a ready war machine unit.</p>',
-		releases: { 'Siege of Darkness': 100, 'War of Attrition': 321 }
+		releases: { SD: 100, WA: 321 }
 	},
 	{
 		name: 'The Hammer of Fate',
@@ -5329,7 +5352,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p><b>Spell WarCry</b> (2): This unit gets a strength bonus equal to it's leadership.</p><p>This card may only be attached to a Dwarf unit.</p>",
-		releases: { 'Siege of Darkness': 101 }
+		releases: { SD: 101 }
 	},
 	{
 		name: 'Reiksmarshall Kurt Helborg',
@@ -5344,7 +5367,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>While this unit is ready, your cavalry may play WarCry cards as if they were combat tactics.</p>',
-		releases: { 'Siege of Darkness': 102 }
+		releases: { SD: 102 }
 	},
 	{
 		name: "Von Boen's Steel Dragon",
@@ -5359,7 +5382,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>This unit may not have attachments.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +1 strength and "<b>Terror</b>: 1". You may play this tactic any number of times.</p>',
-		releases: { 'Siege of Darkness': 103 }
+		releases: { SD: 103 }
 	},
 	{
 		name: "Fandelhoch's Crossbowmen",
@@ -5373,7 +5396,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Support Tactic</b>: Your unit gets +1 strength vs. cavalry units.</p>',
-		releases: { 'Siege of Darkness': 104 }
+		releases: { SD: 104 }
 	},
 	{
 		name: "Fandelhoch's Halberdiers",
@@ -5387,7 +5410,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. Chaos units.</p>',
-		releases: { 'Siege of Darkness': 105, 'Hand of Fate': 99 }
+		releases: { SD: 105, HF: 99 }
 	},
 	{
 		name: "Fandelhoch's Hellblaster",
@@ -5401,7 +5424,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support WarCry</b>: Your unit gets +2 strength. Only playable while your enemy has another copy of the unit that is in this combat.</p>',
-		releases: { 'Siege of Darkness': 106 }
+		releases: { SD: 106 }
 	},
 	{
 		name: "Helborg's Knights",
@@ -5415,7 +5438,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Discard 1 card: Choose 1 enemy unit with strength equal to or less than the die on the discarded card. If you win this combat, commit the chosen unit.</p>',
-		releases: { 'Siege of Darkness': 107 }
+		releases: { SD: 107 }
 	},
 	{
 		name: "Kobernecht's Crossbowmen",
@@ -5429,7 +5452,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 3</p><p><b>Support Tactic</b> Commit: Your unit gets +2 ranged attack.</p>',
-		releases: { 'Siege of Darkness': 108 }
+		releases: { SD: 108 }
 	},
 	{
 		name: "Kobernecht's Pistoliers",
@@ -5443,7 +5466,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +2 strength if it passes a leadership test.</p>',
-		releases: { 'Siege of Darkness': 109 }
+		releases: { SD: 109 }
 	},
 	{
 		name: "Von Trapp's Mortars",
@@ -5457,7 +5480,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Long Ranged Attack</b>: 6</p><p><b>Support WarCry</b>: All units in this combat get -2 tactic points.</p>',
-		releases: { 'Siege of Darkness': 110 }
+		releases: { SD: 110 }
 	},
 	{
 		name: 'The Sollen Runefang',
@@ -5469,7 +5492,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>This unit gets "<b>Terror</b> :1".</p><p><b>Combat Tactic</b>: Commit the enemy unit unless it passes a leadership test.</p><p>This card may only be attached to an Empire unit.</p>',
-		releases: { 'Siege of Darkness': 111 }
+		releases: { SD: 111 }
 	},
 	{
 		name: 'Evanshol, Prince of Tiranoc',
@@ -5484,7 +5507,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b>: After your enemy plays a combat tactic card from their hand, the enemy unit gets -1 strength.</p>',
-		releases: { 'Siege of Darkness': 112 }
+		releases: { SD: 112 }
 	},
 	{
 		name: 'Tyrion, Defender of Ulthuan',
@@ -5499,7 +5522,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b>: After this unit is defeated in combat, return it to the battle line committed. Your enemy may make a follow-up attack.</p>',
-		releases: { 'Siege of Darkness': 113 }
+		releases: { SD: 113 }
 	},
 	{
 		name: 'Archers of the Shining Sun',
@@ -5513,7 +5536,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>While this unit is ready, all units have their "<b>Scout</b>" level reduced to 1.</p><p><b>Ranged Attack</b>: 3</p><p><b>Combat Tactic</b>: This unit gets +3 ranged attack vs. units in the reserves.</p>',
-		releases: { 'Siege of Darkness': 114 }
+		releases: { SD: 114 }
 	},
 	{
 		name: 'Dragon Princes',
@@ -5528,7 +5551,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 tactic point for each of your ready cavalry units.</p>',
-		releases: { 'Siege of Darkness': 115 }
+		releases: { SD: 115 }
 	},
 	{
 		name: 'Phoenix Guard of Ulthuan',
@@ -5542,7 +5565,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After you muster this unit add 1 card from your army discard pile to your hand.</p><p><b>Combat Tactic</b>: This unit gets a leadership bonus equal to the enemy unit's printed tactic points.</p>",
-		releases: { 'Siege of Darkness': 116 }
+		releases: { SD: 116 }
 	},
 	{
 		name: 'Rhyian Dawnrider',
@@ -5557,7 +5580,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (1): Your unit gets +2 ranged attack.</p>',
-		releases: { 'Siege of Darkness': 117, 'War of Attrition': 370 }
+		releases: { SD: 117, WA: 370 }
 	},
 	{
 		name: "Tyrion's Silver Riders",
@@ -5571,7 +5594,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may block flyers.</p><p><b>Reaction</b>: After setup, play 1 strategy card.</p>',
-		releases: { 'Siege of Darkness': 118, 'War of Attrition': 373 }
+		releases: { SD: 118, WA: 373 }
 	},
 	{
 		name: "Tyrion's Ulthuan Defenders",
@@ -5585,7 +5608,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength and +1 leadership vs. Dark Elf units.</p>',
-		releases: { 'Siege of Darkness': 119 }
+		releases: { SD: 119 }
 	},
 	{
 		name: 'The Bow of the Seafarer',
@@ -5597,7 +5620,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (1): This unit gets +2 ranged attack. If you win this combat, destroy the enemy unit.</p><p>This card may only be attached to a High Elf unit.</p>',
-		releases: { 'Siege of Darkness': 120 }
+		releases: { SD: 120 }
 	},
 	{
 		name: 'Herd of Skulkkoth',
@@ -5611,7 +5634,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>Your enemy may not make a follow-up attack after routing this unit.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your other copies of this unit.</p>',
-		releases: { 'Dogs of War': 1, 'War of Attrition': 15 }
+		releases: { DW: 1, WA: 15 }
 	},
 	{
 		name: 'Khazrak the One-Eye',
@@ -5626,7 +5649,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p> <b>WarCry</b>: Exchange this unit with one of your other ready Beastmen units. That unit gets +2 strength.</p>',
-		releases: { 'Dogs of War': 2 }
+		releases: { DW: 2 }
 	},
 	{
 		name: "Raaghra's Bestigors",
@@ -5641,7 +5664,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is ready, tactic cards cost your Beastmen units 1 less tactic point to play.</p><p> <b>WarCry</b>: This unit gets +3 strength. Only usable if you have more committed units in your battle line than your enemy.</p>',
-		releases: { 'Dogs of War': 3 }
+		releases: { DW: 3 }
 	},
 	{
 		name: "Raaghra's Tuskgor Chariot",
@@ -5655,7 +5678,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if you have another ready Beastmen unit.</p>',
-		releases: { 'Dogs of War': 4 }
+		releases: { DW: 4 }
 	},
 	{
 		name: 'Skulkkoth the Defiler',
@@ -5669,7 +5692,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell WarCry</b> (1): Raise this unit's strength to equal the enemy unit's strength.</p>",
-		releases: { 'Dogs of War': 5, 'War of Attrition': 22 }
+		releases: { DW: 5, WA: 22 }
 	},
 	{
 		name: 'Raaghra the Culler',
@@ -5681,7 +5704,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength and "<b>Terror</b>: 1".</p>',
-		releases: { 'Dogs of War': 6, 'War of Attrition': 29 }
+		releases: { DW: 6, WA: 29 }
 	},
 	{
 		name: 'Black Rose Coven',
@@ -5695,7 +5718,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit is destroyed in combat, each enemy unit gets 1 "<b>Victory</b>: -1" token.</p>',
-		releases: { 'Dogs of War': 7, 'War of Attrition': 31 }
+		releases: { DW: 7, WA: 31 }
 	},
 	{
 		name: 'Eldire',
@@ -5710,7 +5733,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Support Tactic</b> Discard 1 card with a spell point cost: Your unit gets a strength bonus equal to the spell point cost of the discarded card.</p>',
-		releases: { 'Dogs of War': 8 }
+		releases: { DW: 8 }
 	},
 	{
 		name: "Sa'har's Ashen Wraiths",
@@ -5724,7 +5747,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: Commit the defending unit unless it passes a strength test.</p>',
-		releases: { 'Dogs of War': 9, 'War of Attrition': 51 }
+		releases: { DW: 9, WA: 51 }
 	},
 	{
 		name: 'Shadowblade',
@@ -5739,7 +5762,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Destroy 1 enemy character attachment.</p><p><b>Reaction</b>: After you declare an attack with this unit, choose an enemy unit with a character attachment. You attack this unit. This attack may not be blocked.</p>',
-		releases: { 'Dogs of War': 10 }
+		releases: { DW: 10 }
 	},
 	{
 		name: 'Zelekendel, Blade of Khaine',
@@ -5753,7 +5776,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 3</p><p>While this unit is ready in the battle line, your enemy must discard 1 card to block.</p>',
-		releases: { 'Dogs of War': 11, 'War of Attrition': 58 }
+		releases: { DW: 11, WA: 58 }
 	},
 	{
 		name: "Zelekendel's Blackblades",
@@ -5767,7 +5790,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: Remove the top card of your enemy's action deck from the game. This unit gets a strength bonus equal to the die on that card.</p>",
-		releases: { 'Dogs of War': 12, 'War of Attrition': 59 }
+		releases: { DW: 12, WA: 59 }
 	},
 	{
 		name: 'Jezzi Poisonbite',
@@ -5781,7 +5804,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 1</p><p>While attacking from the battle line this unit attacks as a flyer.</p><p><b>Combat Tactic</b>: this unit gets +2 strength vs. infantry units.</p>',
-		releases: { 'Dogs of War': 13, 'War of Attrition': 69 }
+		releases: { DW: 13, WA: 69 }
 	},
 	{
 		name: "Jezzi's Ambush Gang",
@@ -5795,7 +5818,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 2</p><p>Enemy units may not play WarCry cards or abilities while in combat with this unit.</p>',
-		releases: { 'Dogs of War': 14 }
+		releases: { DW: 14 }
 	},
 	{
 		name: "Jezzi's Git Mob",
@@ -5809,7 +5832,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>After this unit enters combat woth a unit with "<b>Terror</b>", commit this unit.</p>',
-		releases: { 'Dogs of War': 15 }
+		releases: { DW: 15 }
 	},
 	{
 		name: "Jezzi's Poison Herders",
@@ -5823,7 +5846,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After one of your units is destroyed, move 1 of your reserve units into the battle line.</p>',
-		releases: { 'Dogs of War': 16 }
+		releases: { DW: 16 }
 	},
 	{
 		name: "Jezzi's Poison Riders",
@@ -5837,7 +5860,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may block flyers.</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. flyer units.</p>',
-		releases: { 'Dogs of War': 17 }
+		releases: { DW: 17 }
 	},
 	{
 		name: "Jezzi's Stingers",
@@ -5851,7 +5874,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 8</p>',
-		releases: { 'Dogs of War': 18 }
+		releases: { DW: 18 }
 	},
 	{
 		name: "Skcub's Tempest Vermin",
@@ -5865,7 +5888,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Discard 1 card: This unit gets a strength bonus equal to the tactic points cost of the discarded card.</p>',
-		releases: { 'Dogs of War': 19 }
+		releases: { DW: 19 }
 	},
 	{
 		name: 'Ogres of the Chaos Wastes',
@@ -5879,7 +5902,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b> Destroy 1 of your other ready units: After this unit loses a combat, instead of destroying this unit, return it to your battle line ready.</p>',
-		releases: { 'Dogs of War': 20 }
+		releases: { DW: 20 }
 	},
 	{
 		name: 'The Hordes of Darkness',
@@ -5891,7 +5914,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable while you have at least one Chaos unit, one Dark Elf unit and one Orc unit.</p>',
-		releases: { 'Dogs of War': 21, 'War of Attrition': 93 }
+		releases: { DW: 21, WA: 93 }
 	},
 	{
 		name: "Al'Muktar's Desert Dogs",
@@ -5906,7 +5929,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. If you lose this combat remove this unit from the game.</p>',
-		releases: { 'Dogs of War': 22 }
+		releases: { DW: 22 }
 	},
 	{
 		name: "Badenov's Mercenaries",
@@ -5921,7 +5944,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit has a strength equal to the number of Dogs of War units you have in play.</p>',
-		releases: { 'Dogs of War': 23 }
+		releases: { DW: 23 }
 	},
 	{
 		name: "Beorg's Bearmen",
@@ -5936,7 +5959,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. cavalry</p>',
-		releases: { 'Dogs of War': 24 }
+		releases: { DW: 24 }
 	},
 	{
 		name: 'Black Fire Bandits',
@@ -5950,7 +5973,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After this unit wins a combat, put a gold token on it.</p><p><b>Reaction</b> Discard 1 gold token from this unit: Before you muster a unit, reduce it's gold cost by 1 gold.</p>",
-		releases: { 'Dogs of War': 25, 'War of Attrition': 96 }
+		releases: { DW: 25, WA: 96 }
 	},
 	{
 		name: "Braganza's Besiegers",
@@ -5965,7 +5988,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p><p> <b>Command</b>: Destroy 1 enemy strategy card.</p>',
-		releases: { 'Dogs of War': 26 }
+		releases: { DW: 26 }
 	},
 	{
 		name: "Carmen's Maiden Knights",
@@ -5980,7 +6003,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b>: After this unit wins a non-ranged attack vs. a unit with a gold cost 3 or less, rout that unit.</p><p><b>Combat Tactic</b>: Play a WarCry printed on the enemy unit or any of its attachments.</p>',
-		releases: { 'Dogs of War': 27, 'War of Attrition': 97 }
+		releases: { DW: 27, WA: 97 }
 	},
 	{
 		name: "Karkov's Winged Lancers",
@@ -5994,7 +6017,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After an enemy plays a card or ability that commits 1 or more of your units, rally those units.</p>',
-		releases: { 'Dogs of War': 28, 'War of Attrition': 98 }
+		releases: { DW: 28, WA: 98 }
 	},
 	{
 		name: 'Leonus the Beastmaster',
@@ -6009,7 +6032,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. This unit may not make a follow-up attack.</p>',
-		releases: { 'Dogs of War': 29 }
+		releases: { DW: 29 }
 	},
 	{
 		name: "Leopold's Leopard Company",
@@ -6024,7 +6047,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit may block cavalry.</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. cavalry units.</p>',
-		releases: { 'Dogs of War': 30 }
+		releases: { DW: 30 }
 	},
 	{
 		name: "Pasha's Caravan Guards",
@@ -6038,7 +6061,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: Rally this unit. You may play this ability while committed.</p>',
-		releases: { 'Dogs of War': 31 }
+		releases: { DW: 31 }
 	},
 	{
 		name: "Sengupta's Cobra Cult",
@@ -6052,7 +6075,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: The enemy unit gets a -1 strength token.</p>',
-		releases: { 'Dogs of War': 32, 'War of Attrition': 99 }
+		releases: { DW: 32, WA: 99 }
 	},
 	{
 		name: 'The Crowmaster',
@@ -6067,7 +6090,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 2</p><p>Spel <b>Support Tactic</b> (1): Your unit gets +2 ranged attack.</p>',
-		releases: { 'Dogs of War': 33, 'War of Attrition': 100 }
+		releases: { DW: 33, WA: 100 }
 	},
 	{
 		name: "Ugugh's Mountain Men",
@@ -6081,7 +6104,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Victory</b>: -2</p><p><b>Combat Tactic</b>: Reveal the top card of your enemy's action deck.</p>",
-		releases: { 'Dogs of War': 34 }
+		releases: { DW: 34 }
 	},
 	{
 		name: "Vespero's Vendetta",
@@ -6096,7 +6119,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>When this unit comes into play choose 1 army keyword.</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. units with the chosen army keyword.</p>',
-		releases: { 'Dogs of War': 35 }
+		releases: { DW: 35 }
 	},
 	{
 		name: 'A Better Offer',
@@ -6107,7 +6130,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Discard X cards: Rally 1 Dogs of War unit with a gold cost equal to or less than X.</p>',
-		releases: { 'Dogs of War': 36 }
+		releases: { DW: 36 }
 	},
 	{
 		name: 'A Good Offer',
@@ -6118,7 +6141,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b>: Commit 1 Dogs of War unit unless your enemy discards 3 cards.</p>',
-		releases: { 'Dogs of War': 37 }
+		releases: { DW: 37 }
 	},
 	{
 		name: 'Ambush',
@@ -6129,7 +6152,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b>: Remove up to 2 action cards in any discard pile from the game.</p>',
-		releases: { 'Dogs of War': 38 }
+		releases: { DW: 38 }
 	},
 	{
 		name: 'Armed to the Teeth',
@@ -6140,7 +6163,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: This unit gets +1 tactic point for each of it's attachments.</p>",
-		releases: { 'Dogs of War': 39 }
+		releases: { DW: 39 }
 	},
 	{
 		name: 'Ashes to Ashes',
@@ -6151,7 +6174,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (1): After you destroy an enemy unit, remove that unit from the game.</p>',
-		releases: { 'Dogs of War': 40 }
+		releases: { DW: 40 }
 	},
 	{
 		name: 'Contingency Plan',
@@ -6162,7 +6185,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you fail a rout check, 1 of your units gets 2 "<b>Victory</b>: +1" tokens.</p>',
-		releases: { 'Dogs of War': 41, 'War of Attrition': 126 }
+		releases: { DW: 41, WA: 126 }
 	},
 	{
 		name: 'Crush the Line',
@@ -6174,7 +6197,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. At the end of combat, instead of putting this card into your discard pile, return it to your hand.</p>',
-		releases: { 'Dogs of War': 42 }
+		releases: { DW: 42 }
 	},
 	{
 		name: 'Cry Havoc',
@@ -6186,7 +6209,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. This unit gets an additional +2 strength for each copy of this card already played this combat.</p>',
-		releases: { 'Dogs of War': 43 }
+		releases: { DW: 43 }
 	},
 	{
 		name: 'Enervation',
@@ -6197,7 +6220,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (1): After a unit gets a strength bonus of 3 or greater, reduce that bonus to 2.</p>',
-		releases: { 'Dogs of War': 44, 'War of Attrition': 144 }
+		releases: { DW: 44, WA: 144 }
 	},
 	{
 		name: 'Exploited Weakness',
@@ -6209,7 +6232,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength. Only playable if Probing Attack has been played this combat.</p>',
-		releases: { 'Dogs of War': 45 }
+		releases: { DW: 45 }
 	},
 	{
 		name: 'Fading Winds',
@@ -6220,7 +6243,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (1): After your enemy plays a spell card or ability, cancel it unless your enemy pays an additional 3 spell points.</p>',
-		releases: { 'Dogs of War': 46, 'War of Attrition': 147 }
+		releases: { DW: 46, WA: 147 }
 	},
 	{
 		name: 'False Orders',
@@ -6232,7 +6255,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Play a support tactic printed on 1 enemy unit paying no costs.</p>',
-		releases: { 'Dogs of War': 47 }
+		releases: { DW: 47 }
 	},
 	{
 		name: 'Feint',
@@ -6244,7 +6267,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Your unit gets +1 strength. Your enemy may not play support tactics.</p>',
-		releases: { 'Dogs of War': 48, 'War of Attrition': 151 }
+		releases: { DW: 48, WA: 151 }
 	},
 	{
 		name: 'Final Blow',
@@ -6256,7 +6279,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets +4 strength. You may not play any more combat tactics this combat.</p>',
-		releases: { 'Dogs of War': 49 }
+		releases: { DW: 49 }
 	},
 	{
 		name: 'Good Timing',
@@ -6268,7 +6291,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Choose a number. Your enemy rolls. If the roll matches the number you chose, this unit gets +3 strength.</p>',
-		releases: { 'Dogs of War': 50 }
+		releases: { DW: 50 }
 	},
 	{
 		name: 'Hamstring',
@@ -6280,7 +6303,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: This unit gets +1 strength. Your enemy's combat tactic cards cost 1 additional tactic point.</p>",
-		releases: { 'Dogs of War': 51 }
+		releases: { DW: 51 }
 	},
 	{
 		name: 'Hatred',
@@ -6292,7 +6315,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength and "<b>Terror</b>: 1".</p>',
-		releases: { 'Dogs of War': 52 }
+		releases: { DW: 52 }
 	},
 	{
 		name: 'Hidden Support',
@@ -6304,7 +6327,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each of your committed units with a support tactic ability.</p>',
-		releases: { 'Dogs of War': 53 }
+		releases: { DW: 53 }
 	},
 	{
 		name: 'Inner Strength',
@@ -6316,7 +6339,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (1): This unit may play WarCry cards as combat tactics.</p>',
-		releases: { 'Dogs of War': 54, 'War of Attrition': 177 }
+		releases: { DW: 54, WA: 177 }
 	},
 	{
 		name: 'Leitdorf Maneuver',
@@ -6328,7 +6351,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Play a support tactic printed on this unit paying all costs.</p>',
-		releases: { 'Dogs of War': 55 }
+		releases: { DW: 55 }
 	},
 	{
 		name: "Leitdorf's Plan",
@@ -6339,7 +6362,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After your enemy plays a support tactic printed on a unit, commit that unit unless it passes a leadership test.</p>',
-		releases: { 'Dogs of War': 56, 'War of Attrition': 183 }
+		releases: { DW: 56, WA: 183 }
 	},
 	{
 		name: 'Lure of Iron',
@@ -6350,7 +6373,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: "<p><b>Spell Command</b> (2): Remove all attachments in the enemy's discard pile from the game.</p>",
-		releases: { 'Dogs of War': 57 }
+		releases: { DW: 57 }
 	},
 	{
 		name: 'Martyrs',
@@ -6362,7 +6385,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If you lose this combat, commit the enemy unit unless it passes a leadership test.</p>',
-		releases: { 'Dogs of War': 58 }
+		releases: { DW: 58 }
 	},
 	{
 		name: 'Overrun',
@@ -6374,7 +6397,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Discard X cards: If you win this combat, rout the enemy unit if it has printed gold cost of X or less.</p>',
-		releases: { 'Dogs of War': 59 }
+		releases: { DW: 59 }
 	},
 	{
 		name: 'Passing the Torch',
@@ -6386,7 +6409,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Move any number of attachments from this unit to 1 of your ready units.</p>',
-		releases: { 'Dogs of War': 60 }
+		releases: { DW: 60 }
 	},
 	{
 		name: 'Pillage',
@@ -6398,7 +6421,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: If you win this combat, remove the top 3 cards of your enemy's action deck from the game.</p>",
-		releases: { 'Dogs of War': 61 }
+		releases: { DW: 61 }
 	},
 	{
 		name: 'Practiced Maneuver',
@@ -6410,7 +6433,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. Your enemy may not play cards or abilities that force you to discard cards.</p>',
-		releases: { 'Dogs of War': 62 }
+		releases: { DW: 62 }
 	},
 	{
 		name: 'Probing Attack',
@@ -6422,7 +6445,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength.</p>',
-		releases: { 'Dogs of War': 63 }
+		releases: { DW: 63 }
 	},
 	{
 		name: 'Raise the Dead',
@@ -6434,7 +6457,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Spell WarCry</b> (3): Remove 1 unit in your discard pile from the game. This unit gets a strength bonus equal to the removed unit's strength.</p>",
-		releases: { 'Dogs of War': 64, 'War of Attrition': 220 }
+		releases: { DW: 64, WA: 220 }
 	},
 	{
 		name: 'Rallying Cry',
@@ -6446,7 +6469,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If you win this combat by 4 or more strength, return this unit to the battle line ready. You may not make a follow-up attack.</p>',
-		releases: { 'Dogs of War': 65, 'War of Attrition': 221 }
+		releases: { DW: 65, WA: 221 }
 	},
 	{
 		name: 'Reap the Rewards',
@@ -6457,7 +6480,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Support WarCry</b>: If you win this combat, put a "<b>Victory</b>: +1" token on your unit.</p><p><b>Support Tactic</b>: Put 2 "<b>Victory</b>: +1" tokens on your Dogs of War unit.</p>',
-		releases: { 'Dogs of War': 66, 'War of Attrition': 222 }
+		releases: { DW: 66, WA: 222 }
 	},
 	{
 		name: 'Reap What You Sow',
@@ -6469,7 +6492,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell WarCry</b> (1): The player with the most cards in their hand discards 2 cards.</p>',
-		releases: { 'Dogs of War': 67 }
+		releases: { DW: 67 }
 	},
 	{
 		name: 'Recruiting Drive',
@@ -6480,7 +6503,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Place 1 unit from your army discard pile on top of your deck.</p>',
-		releases: { 'Dogs of War': 68 }
+		releases: { DW: 68 }
 	},
 	{
 		name: 'Renewal of Power',
@@ -6491,7 +6514,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Remove all tokens in play from the game.</p>',
-		releases: { 'Dogs of War': 69, 'War of Attrition': 228 }
+		releases: { DW: 69, WA: 228 }
 	},
 	{
 		name: 'Returned Power',
@@ -6502,7 +6525,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your enemy plays a card or ability that forces you to discard 1 or more cards, move 1 action card from your discard pile into your hand.</p>',
-		releases: { 'Dogs of War': 70 }
+		releases: { DW: 70 }
 	},
 	{
 		name: "Saerith's Gambit",
@@ -6514,7 +6537,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +3 strength unless the enemy unit passes a leadership test.</p>',
-		releases: { 'Dogs of War': 71 }
+		releases: { DW: 71 }
 	},
 	{
 		name: 'Salt the Earth',
@@ -6526,7 +6549,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: At the end of the tactics phase, remove all tactics played this combat from the game.</p>',
-		releases: { 'Dogs of War': 72 }
+		releases: { DW: 72 }
 	},
 	{
 		name: 'Show of Force',
@@ -6538,7 +6561,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets "<b>Terror</b>" equal to the number of ready units in your battle line.</p>',
-		releases: { 'Dogs of War': 73, 'War of Attrition': 239 }
+		releases: { DW: 73, WA: 239 }
 	},
 	{
 		name: 'Skirmish Combat',
@@ -6550,7 +6573,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +2 strength.</p>',
-		releases: { 'Dogs of War': 74 }
+		releases: { DW: 74 }
 	},
 	{
 		name: 'Stand and Shoot',
@@ -6562,7 +6585,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 ranged attack. Only playable while this unit is in the battle line.</p>',
-		releases: { 'Dogs of War': 75 }
+		releases: { DW: 75 }
 	},
 	{
 		name: 'Steady Advance',
@@ -6574,7 +6597,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. Play 1 strategy card.</p>',
-		releases: { 'Dogs of War': 76 }
+		releases: { DW: 76 }
 	},
 	{
 		name: 'Stockpile',
@@ -6585,7 +6608,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your enemy plays a card or ability which forces you to discard 1 or more cards, place 1 token on this card.</p><p><b>Support Tactic</b> Destroy this card: Draw 1 card for each token on this card.</p>',
-		releases: { 'Dogs of War': 77 }
+		releases: { DW: 77 }
 	},
 	{
 		name: 'Strategic Planning',
@@ -6596,7 +6619,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Move 1 action card from your discard pile to the top of your deck.</p>',
-		releases: { 'Dogs of War': 78 }
+		releases: { DW: 78 }
 	},
 	{
 		name: 'Strength of Conservation',
@@ -6608,7 +6631,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (1): At the end of the tactics phase, this unit gets +1 strength for each card in your hand.</p>',
-		releases: { 'Dogs of War': 79 }
+		releases: { DW: 79 }
 	},
 	{
 		name: 'Strength of Leadership',
@@ -6619,7 +6642,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After you make a combat roll, reroll. Only playable if your unit in combat has a character attachment.</p>',
-		releases: { 'Dogs of War': 80 }
+		releases: { DW: 80 }
 	},
 	{
 		name: 'Strength of Opposition',
@@ -6631,7 +6654,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Spell WarCry</b> (1): At the end of the tactics phase, this unit gets +1 strength for each card in your enemy's hand.</p>",
-		releases: { 'Dogs of War': 81 }
+		releases: { DW: 81 }
 	},
 	{
 		name: 'Suicidal Charge',
@@ -6643,7 +6666,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +5 strength. Destroy this unit at the end of the combat.</p>',
-		releases: { 'Dogs of War': 82 }
+		releases: { DW: 82 }
 	},
 	{
 		name: 'Summon the Storm',
@@ -6654,7 +6677,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>Units may not declare ranged attacks.</p><p> <b>Command</b> Commit 1 of your units: Destroy this card. Any player may play this ability.</p>',
-		releases: { 'Dogs of War': 83 }
+		releases: { DW: 83 }
 	},
 	{
 		name: 'Taking the Initiative',
@@ -6665,7 +6688,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After setup, if you have more tactic points in your battle line than your enemy, you take the first command during the battle.</p>',
-		releases: { 'Dogs of War': 84 }
+		releases: { DW: 84 }
 	},
 	{
 		name: 'Thunderous Charge',
@@ -6677,7 +6700,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable while you have fewer cards in your hand than your enemy.</p>',
-		releases: { 'Dogs of War': 85 }
+		releases: { DW: 85 }
 	},
 	{
 		name: 'Trample',
@@ -6689,7 +6712,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This cavalry unit gets +3 strength vs. infantry.</p>',
-		releases: { 'Dogs of War': 86 }
+		releases: { DW: 86 }
 	},
 	{
 		name: 'Triumphant Celebration',
@@ -6701,7 +6724,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: If you win this combat this unit gets 2 "<b>Victory</b>: +1" tokens.</p>',
-		releases: { 'Dogs of War': 87, 'War of Attrition': 268 }
+		releases: { DW: 87, WA: 268 }
 	},
 	{
 		name: 'Underestimated Strength',
@@ -6713,7 +6736,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength if it passes a tactic point test.</p>',
-		releases: { 'Dogs of War': 88 }
+		releases: { DW: 88 }
 	},
 	{
 		name: 'Unexpected Quarter',
@@ -6724,7 +6747,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After you declare an attack, your enemy may not draw any cards in the resulting combat. Only playable if you have a ready Dogs of War unit.</p>',
-		releases: { 'Dogs of War': 89 }
+		releases: { DW: 89 }
 	},
 	{
 		name: 'Unfinished Business',
@@ -6736,7 +6759,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable if this unit has a character attachment.</p>',
-		releases: { 'Dogs of War': 90 }
+		releases: { DW: 90 }
 	},
 	{
 		name: 'Upset Balance',
@@ -6748,7 +6771,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if the enemy unit has a support tactic ability.</p>',
-		releases: { 'Dogs of War': 91 }
+		releases: { DW: 91 }
 	},
 	{
 		name: 'Weakening Clouds',
@@ -6760,7 +6783,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell WarCry</b> (1): Any strength bonuses the enemy unit receives from combat tactics are reduced by 1, minimum 0.</p>',
-		releases: { 'Dogs of War': 92 }
+		releases: { DW: 92 }
 	},
 	{
 		name: 'Wisdom of the Ages',
@@ -6772,7 +6795,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Spell Combat Tactic</b> (1): Look at the top 3 cards of your enemy's action deck and replace them in any order.</p>",
-		releases: { 'Dogs of War': 93 }
+		releases: { DW: 93 }
 	},
 	{
 		name: 'Bloodfire Scythe',
@@ -6784,7 +6807,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>: Reduce the enemy unit's strength to half of it's current strength, rounding down.</p>",
-		releases: { 'Dogs of War': 94 }
+		releases: { DW: 94 }
 	},
 	{
 		name: 'Glorious Standard',
@@ -6796,7 +6819,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Support WarCry</b>: Your unit gets +2 strength and +2 leadership. If you lose this combat, commit this unit.</p>',
-		releases: { 'Dogs of War': 95 }
+		releases: { DW: 95 }
 	},
 	{
 		name: 'Hellbrandt Grimm',
@@ -6808,7 +6831,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Commit 1 of your units: This unit gets a strength bonus equal to the committed units gold cost.</p>',
-		releases: { 'Dogs of War': 96 }
+		releases: { DW: 96 }
 	},
 	{
 		name: 'Master Kwoh',
@@ -6820,7 +6843,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p>While this unit is in combat, your tactic cards cost 1 less spell point.</p>',
-		releases: { 'Dogs of War': 97 }
+		releases: { DW: 97 }
 	},
 	{
 		name: 'Steelheart Shield',
@@ -6831,7 +6854,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>Any strength bonuses the enemy unit receives from tactics are reduced by 1</p>',
-		releases: { 'Dogs of War': 98, 'War of Attrition': 291 }
+		releases: { DW: 98, WA: 291 }
 	},
 	{
 		name: 'The Jewels of Vaerkylla',
@@ -6842,7 +6865,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After this unit is committed by an enemy card or ability, destroy this attachment and rally this unit.</p>',
-		releases: { 'Dogs of War': 99 }
+		releases: { DW: 99 }
 	},
 	{
 		name: "Taber's Harlequins",
@@ -6857,7 +6880,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is ready in your battle line, your Bretonnian units get +1 leadership.</p><p><b>Support Tactic</b> Discard 1 card: Your unit gets +2 tactic points.</p>',
-		releases: { 'Dogs of War': 100 }
+		releases: { DW: 100 }
 	},
 	{
 		name: 'High King Thorgrim',
@@ -6872,7 +6895,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p> <b>WarCry</b> Discard your hand: This unit gets +4 strength.</p><p><b>Support WarCry</b>: Your Dwarf unit gets +2 strength. Only usable while your unit is losing the combat.</p>',
-		releases: { 'Dogs of War': 101 }
+		releases: { DW: 101 }
 	},
 	{
 		name: "Karfin's Hammer Lords",
@@ -6887,7 +6910,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Destroy the enemy unit unless your enemy discards 2 cards.</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. infantry units.</p>',
-		releases: { 'Dogs of War': 102 }
+		releases: { DW: 102 }
 	},
 	{
 		name: "Karfin's Ironguard",
@@ -6901,7 +6924,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Destroy 1 attachment on the enemy unit. This unit gets 1 "<b>Victory</b>: +1" token.</p>',
-		releases: { 'Dogs of War': 103 }
+		releases: { DW: 103 }
 	},
 	{
 		name: "Thorgrim's Grim-Axes",
@@ -6915,7 +6938,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength if it passes a leadership test.</p>',
-		releases: { 'Dogs of War': 104 }
+		releases: { DW: 104 }
 	},
 	{
 		name: "Thorgrim's Steel Hammers",
@@ -6929,7 +6952,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Victory</b>: +2</p><p><b>Combat Tactic</b>: Play the combat tactic on 1 of this unit's attachments paying all costs.</p>",
-		releases: { 'Dogs of War': 105, 'War of Attrition': 317 }
+		releases: { DW: 105, WA: 317 }
 	},
 	{
 		name: "Varamir's Forest Walkers",
@@ -6943,7 +6966,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 2</p><p>While this unit is in combat, your enemy may not play combat tactic cards with a tactic point cost greater than 2.</p>',
-		releases: { 'Dogs of War': 106 }
+		releases: { DW: 106 }
 	},
 	{
 		name: 'Snorri Nosebiter',
@@ -6955,7 +6978,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: "<p>This unit may have any number of character attachments.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of it's character attachments.</p>",
-		releases: { 'Dogs of War': 107, 'War of Attrition': 322 }
+		releases: { DW: 107, WA: 322 }
 	},
 	{
 		name: 'Blades of Ostland',
@@ -6969,7 +6992,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit gets +1 strength for each card in your hand. The enemy unit may commit to negate the effects of this ability.</p>',
-		releases: { 'Dogs of War': 108 }
+		releases: { DW: 108 }
 	},
 	{
 		name: 'Halberdiers of Ostland',
@@ -6983,7 +7006,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength vs. cavalry units.</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. Chaos units.</p>',
-		releases: { 'Dogs of War': 109 }
+		releases: { DW: 109 }
 	},
 	{
 		name: "Hearthfoot's Scouts",
@@ -6997,7 +7020,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +4 strength vs. "Unique" units.</p>',
-		releases: { 'Dogs of War': 110 }
+		releases: { DW: 110 }
 	},
 	{
 		name: 'Spearmen of Ostland',
@@ -7011,7 +7034,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may block cavalry.</p>',
-		releases: { 'Dogs of War': 111 }
+		releases: { DW: 111 }
 	},
 	{
 		name: 'Valmir von Raukov',
@@ -7026,7 +7049,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is ready, all of your infantry units gets +1 tactic point.</p><p><b>Combat Tactic</b>: Play the support tactic on 1 of your committed units. Destroy that unit.</p>',
-		releases: { 'Dogs of War': 112 }
+		releases: { DW: 112 }
 	},
 	{
 		name: 'Valten',
@@ -7041,7 +7064,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>This unit gets "<b>Victory</b>: +1" for each of your other Empire units.</p><p><b>Reaction</b>: After you muster this unit, search your deck for an Empire unit. Add that unit to your hand.</p>',
-		releases: { 'Dogs of War': 113 }
+		releases: { DW: 113 }
 	},
 	{
 		name: "Alith's Ghost Bows",
@@ -7055,7 +7078,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 4</p><p><b>Scout</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +d6 ranged attack. Remove the card you rolled from the game.</p>',
-		releases: { 'Dogs of War': 114, 'War of Attrition': 355 }
+		releases: { DW: 114, WA: 355 }
 	},
 	{
 		name: "Alith's Shadow Warriors",
@@ -7069,7 +7092,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 3</p><p><b>Combat Tactic</b>: Your enemy discards 1 random card.</p>',
-		releases: { 'Dogs of War': 115 }
+		releases: { DW: 115 }
 	},
 	{
 		name: "Alith's Shadowed Steeds",
@@ -7083,7 +7106,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit gets "<b>Terror</b>: 2" while attacking.</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. Dark Elf units.</p>',
-		releases: { 'Dogs of War': 116 }
+		releases: { DW: 116 }
 	},
 	{
 		name: "Belannaer's Swordbrethren",
@@ -7098,7 +7121,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Reaction</b>: After a spell combat tactic is played, this unit gets +2 strength.</p>',
-		releases: { 'Dogs of War': 117 }
+		releases: { DW: 117 }
 	},
 	{
 		name: 'Eltharion',
@@ -7112,7 +7135,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Discard 1 random card from your hand. If that card was a playable combat tactic, play it paying no costs. You may play this ability any number of times.</p>',
-		releases: { 'Dogs of War': 118 }
+		releases: { DW: 118 }
 	},
 	{
 		name: 'The Shadow King',
@@ -7127,7 +7150,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>All High Elf units in your battle line get "<b>Scout</b>: 1."</p><p><b>Support Tactic</b>: Your High Elf unit gets "<b>Terror</b>: 1".</p>',
-		releases: { 'Dogs of War': 119 }
+		releases: { DW: 119 }
 	},
 	{
 		name: 'The Grand Alliance',
@@ -7139,7 +7162,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable while you have at least one Empire unit, one High Elf unit, and one Dwarf unit.</p>',
-		releases: { 'Dogs of War': 120, 'War of Attrition': 386 }
+		releases: { DW: 120, WA: 386 }
 	},
 	{
 		name: "Ni'nnanuam the Afflicted",
@@ -7154,7 +7177,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 2</p><p>While this unit is in combat, reduce any strength bonus the enemy unit receives to 1.</p>',
-		releases: { 'Path of Glory': 1 }
+		releases: { PG: 1 }
 	},
 	{
 		name: 'Bilerot Plagueflesh',
@@ -7168,7 +7191,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Reaction</b>: After one of your units is destroyed, this unit gets a -1 strength plague token.</p><p><b>Spell WarCry</b> (2): Move all -1 strength plague tokens from this unit to the enemy unit.</p>',
-		releases: { 'Path of Glory': 2, 'War of Attrition': 4 }
+		releases: { PG: 2, WA: 4 }
 	},
 	{
 		name: "Bileth's Marauders",
@@ -7182,7 +7205,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit attacks as a flyer.</p>',
-		releases: { 'Path of Glory': 3 }
+		releases: { PG: 3 }
 	},
 	{
 		name: "Festerheart's Plagueswords",
@@ -7196,7 +7219,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: The enemy unit gets -2 strength unless they pass a leadership test.</p>',
-		releases: { 'Path of Glory': 4 }
+		releases: { PG: 4 }
 	},
 	{
 		name: 'Feytor',
@@ -7211,7 +7234,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 2</p><p> <b>WarCry</b>: Your enemy may discard 3 cards. If they do not the enemy gets -3 tactic points.</p>',
-		releases: { 'Path of Glory': 5, 'War of Attrition': 12 }
+		releases: { PG: 5, WA: 12 }
 	},
 	{
 		name: 'Gibbering Hordes',
@@ -7225,7 +7248,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Both units in combat get a -1 strength plague token. You may play this ability twice per combat.</p>',
-		releases: { 'Path of Glory': 6, 'War of Attrition': 13 }
+		releases: { PG: 6, WA: 13 }
 	},
 	{
 		name: 'Maggotkin',
@@ -7239,7 +7262,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>:If you win this combat and the enemy's strength is 1 or less, that unit is routed.</p>",
-		releases: { 'Path of Glory': 7 }
+		releases: { PG: 7 }
 	},
 	{
 		name: 'Tallymen of Plagues',
@@ -7253,7 +7276,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: The enemy unit gets -2 strength. Only playable if one of your units has a standard attachment.</p>',
-		releases: { 'Path of Glory': 8 }
+		releases: { PG: 8 }
 	},
 	{
 		name: "Sa'har's Ashen Raiders",
@@ -7268,7 +7291,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Combat Tactic</b> Commit: This unit gets +3 strength.</p>',
-		releases: { 'Path of Glory': 9 }
+		releases: { PG: 9 }
 	},
 	{
 		name: "Morbeth's Corsairs",
@@ -7282,7 +7305,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -2 tactic points.</p><p>Only playable if you have a ready Chaos unit.</p>',
-		releases: { 'Path of Glory': 10 }
+		releases: { PG: 10 }
 	},
 	{
 		name: "Morbeth's Dread Knights",
@@ -7296,7 +7319,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your Dark Elf Cavalry unit gets +3 strength. Only usable vs. non-flyer units.</p>',
-		releases: { 'Path of Glory': 11 }
+		releases: { PG: 11 }
 	},
 	{
 		name: "Morbeth's Hellblades",
@@ -7310,7 +7333,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: At the end of the tactic phase, if your enemy has 5 or more cards in their hand, your unit gains +2 strength.</p>',
-		releases: { 'Path of Glory': 12, 'War of Attrition': 48 }
+		releases: { PG: 12, WA: 48 }
 	},
 	{
 		name: "Rikhaine's Black Legion",
@@ -7324,7 +7347,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: If the enemy unit's strength is equal to or less than this unit's strength when the combat ends, the result is a slaughter.</p>",
-		releases: { 'Path of Glory': 13, 'War of Attrition': 50 }
+		releases: { PG: 13, WA: 50 }
 	},
 	{
 		name: "T'aelira Morbeth",
@@ -7338,7 +7361,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell WarCry</b> (1): Exchange one unit in the enemy battle line with one unit in the enemy reserves.</p>',
-		releases: { 'Path of Glory': 14 }
+		releases: { PG: 14 }
 	},
 	{
 		name: "Gorgut's Ladz",
@@ -7352,7 +7375,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After this unit routs an enemy unit, make a tactic point test. If successful you may choose the target of your follow-up attack.</p>',
-		releases: { 'Path of Glory': 15 }
+		releases: { PG: 15 }
 	},
 	{
 		name: "Moggit's Savage Wazboyz",
@@ -7366,7 +7389,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is ready, your other units get -1 strength.</p>',
-		releases: { 'Path of Glory': 16 }
+		releases: { PG: 16 }
 	},
 	{
 		name: 'Kaltorg Skinripper',
@@ -7381,7 +7404,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell WarCry</b> (1): This unit gets +3 strength. Only playable while this unit is losing a combat.</p>',
-		releases: { 'Path of Glory': 17 }
+		releases: { PG: 17 }
 	},
 	{
 		name: 'Pigstikkas',
@@ -7395,7 +7418,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable if you have a ready Chaos unit.</p>',
-		releases: { 'Path of Glory': 18 }
+		releases: { PG: 18 }
 	},
 	{
 		name: "Rotfang's Brawlerz",
@@ -7409,7 +7432,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: -2</p>',
-		releases: { 'Path of Glory': 19, 'War of Attrition': 82 }
+		releases: { PG: 19, WA: 82 }
 	},
 	{
 		name: "Skraggi's Wolf Riders",
@@ -7423,7 +7446,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Reaction</b>: After the end of the muster phase, destroy this unit and replace it with a unit from your discard pile with a gold cost of 4 or less.</p>',
-		releases: { 'Path of Glory': 20 }
+		releases: { PG: 20 }
 	},
 	{
 		name: "Skullgrinder's Pigkart",
@@ -7438,7 +7461,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b> Commit one of your Orc units. This unit gets a strength bonus equal to the committed unit's strength.</p>",
-		releases: { 'Path of Glory': 21 }
+		releases: { PG: 21 }
 	},
 	{
 		name: "Wazzi's Night Raiderz",
@@ -7452,7 +7475,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength.Only playable while you have no cards in your hand.</p>',
-		releases: { 'Path of Glory': 22 }
+		releases: { PG: 22 }
 	},
 	{
 		name: "Sniktnit's Warp Cannon",
@@ -7467,7 +7490,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>Spell <b>Ranged Attack</b> (X): X+3</p><p><b>Reaction</b>: After this unit wins a combat, commit 1 enemy unit with a strength less than the amount you won by.</p>',
-		releases: { 'Path of Glory': 23 }
+		releases: { PG: 23 }
 	},
 	{
 		name: 'Screaming Bell of Clan Skryre',
@@ -7482,7 +7505,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><p><b>Wizard</b>: 2</p><p><b>Support WarCry</b>: Roll.</p><p>1 or less: If you win this combat, rout the enemy unit.</p><p>2-4: Your unit gets +1 strength.</p><p>5+: Destroy your unit.</p></p>',
-		releases: { 'Path of Glory': 24 }
+		releases: { PG: 24 }
 	},
 	{
 		name: 'Snikluk Fellpest',
@@ -7496,7 +7519,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: The enemy unit gets -2 strength.</p>',
-		releases: { 'Path of Glory': 25 }
+		releases: { PG: 25 }
 	},
 	{
 		name: 'Vermintide',
@@ -7510,7 +7533,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may block infantry.</p><p><b>Reaction</b> Commit this unit: After you roll, change the roll to a 1.</p>',
-		releases: { 'Path of Glory': 26 }
+		releases: { PG: 26 }
 	},
 	{
 		name: 'Giants of Albion',
@@ -7524,7 +7547,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: -5</p><p>Your enemy may not target this unit with ranged attacks. During setup, you draw one less card.</p>',
-		releases: { 'Path of Glory': 27 }
+		releases: { PG: 27 }
 	},
 	{
 		name: "Kreuger's Cursed Company",
@@ -7538,7 +7561,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 1</p><p>This unit has it\'s strength, leadership and "<b>Terror</b>" reduced by the enemy unit\'s "<b>Faith</b>".</p>',
-		releases: { 'Path of Glory': 28 }
+		releases: { PG: 28 }
 	},
 	{
 		name: 'A Taste of Their Own Tactics',
@@ -7550,7 +7573,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If this unit passes a tactic point test, play one WarCry or combat tactic printed on the enemy unit, without cost.</p>',
-		releases: { 'Path of Glory': 29 }
+		releases: { PG: 29 }
 	},
 	{
 		name: 'Arrows from the Hills',
@@ -7561,7 +7584,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Support WarCry</b>: Your unit gets +2 ranged attack. If you win this combat, draw 1 card.</p>',
-		releases: { 'Path of Glory': 30 }
+		releases: { PG: 30 }
 	},
 	{
 		name: 'Back Them Up',
@@ -7573,7 +7596,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b> Commit a unit in your battle line: This unit gets a strength bonus equal to the committed unit's strength and a tactic point bonus equal to the committed unit's tactic points. Your enemy may do the same.</p><p>If the loser of the combat committed a unit in this way, that unit is destroyed.</p>",
-		releases: { 'Path of Glory': 31, 'War of Attrition': 108 }
+		releases: { PG: 31, WA: 108 }
 	},
 	{
 		name: 'Battlefield Spies',
@@ -7585,7 +7608,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Spell WarCry</b> (1): Look at your enemy's hand and choose one card. Your enemy discards that card.</p>",
-		releases: { 'Path of Glory': 32 }
+		releases: { PG: 32 }
 	},
 	{
 		name: 'Bring Them to Us',
@@ -7597,7 +7620,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable during a follow-up attack by an enemy unit.</p><p> <b>WarCry</b> Commit your unit: This combat ends and both units are returned to their battle lines committed. Only playable during a follow-up attack by an enemy unit.</p>',
-		releases: { 'Path of Glory': 33 }
+		releases: { PG: 33 }
 	},
 	{
 		name: 'Chain Lightning',
@@ -7609,7 +7632,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell WarCry</b> (X): This unit gets +X strength. X may not exceed the number of your wizard units.</p>',
-		releases: { 'Path of Glory': 34, 'War of Attrition': 121 }
+		releases: { PG: 34, WA: 121 }
 	},
 	{
 		name: 'Cunning Plan',
@@ -7621,7 +7644,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. You may immediately play another combat tactic or support tactic, paying all costs.</p>',
-		releases: { 'Path of Glory': 35 }
+		releases: { PG: 35 }
 	},
 	{
 		name: 'Diversity of Arms',
@@ -7633,7 +7656,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +3 strength.Only playable while you have at least one Grand Alliance or Hordes Of Darkness unit and at least one neutral unit.</p>',
-		releases: { 'Path of Glory': 36, 'War of Attrition': 141 }
+		releases: { PG: 36, WA: 141 }
 	},
 	{
 		name: 'Empowered Strike',
@@ -7645,7 +7668,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +3 strength. Only playable while you have as many spell points as your enemy.</p>',
-		releases: { 'Path of Glory': 37 }
+		releases: { PG: 37 }
 	},
 	{
 		name: 'Everwatch Technique',
@@ -7657,7 +7680,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p> <b>WarCry</b>: Name a card, then look at your enemy's hand. If the named card is in their hand this unit gets +4 strength.</p>",
-		releases: { 'Path of Glory': 38 }
+		releases: { PG: 38 }
 	},
 	{
 		name: 'Feed the Earth',
@@ -7668,7 +7691,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: <span class="errata">You may</span> destroy 1 enemy strategy card. <span class="errata">If you do,</span> draw 1 card.</p>',
-		releases: { 'Path of Glory': 39 },
+		releases: { PG: 39 },
 		errata: true
 	},
 	{
@@ -7681,7 +7704,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength unless your opponent discards 1 card.</p>',
-		releases: { 'Path of Glory': 40 }
+		releases: { PG: 40 }
 	},
 	{
 		name: 'Fire as They Come',
@@ -7693,7 +7716,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: This unit gets a strength bonus equal to half of it's ranged attack (rounded down).</p>",
-		releases: { 'Path of Glory': 41 }
+		releases: { PG: 41 }
 	},
 	{
 		name: 'Flanking Charge',
@@ -7705,7 +7728,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Commit one of your units not in the combat: Commit the enemy unit. Only playable during a ranged attack.</p>',
-		releases: { 'Path of Glory': 42, 'War of Attrition': 157 }
+		releases: { PG: 42, WA: 157 }
 	},
 	{
 		name: 'For the Fallen!',
@@ -7717,7 +7740,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +5 strength. Only playable during a follow-up attack.</p>',
-		releases: { 'Path of Glory': 43 }
+		releases: { PG: 43 }
 	},
 	{
 		name: 'Force the Skirmish',
@@ -7729,7 +7752,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: Play during a ranged attack. Replace the attacking unit's ranged attack with it's strength. The loser of this combat is destroyed.</p>",
-		releases: { 'Path of Glory': 44 }
+		releases: { PG: 44 }
 	},
 	{
 		name: 'Forest Cover',
@@ -7740,7 +7763,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your unit gets +2 strength. Only playable during a ranged attack.</p>',
-		releases: { 'Path of Glory': 45 }
+		releases: { PG: 45 }
 	},
 	{
 		name: 'Frost Covered Hills',
@@ -7751,7 +7774,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Destroy this strategy card: After you make a rout check, add +2 to the roll.</p>',
-		releases: { 'Path of Glory': 46 }
+		releases: { PG: 46 }
 	},
 	{
 		name: 'Glory Favors the Brave',
@@ -7762,7 +7785,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After you roll, if the card rolled is Glory Favors The Brave, you may add +2 or subtract -4 from the roll.</p>',
-		releases: { 'Path of Glory': 47, 'Valor and Treachery': 26, 'War of Attrition': 163 }
+		releases: { PG: 47, VT: 26, WA: 163 }
 	},
 	{
 		name: "Gausser's Return",
@@ -7773,7 +7796,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After you fail a rout check, reroll. Only playable if this unit has a character attachment.</p>',
-		releases: { 'Path of Glory': 48 }
+		releases: { PG: 48 }
 	},
 	{
 		name: "He's Mine",
@@ -7785,7 +7808,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets +4 strength. Only playable vs. "Unique" units or units with a "Unique" character attachment.</p>',
-		releases: { 'Path of Glory': 49 }
+		releases: { PG: 49 }
 	},
 	{
 		name: 'High Winds',
@@ -7796,7 +7819,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All cards have the "Flyer" keyword replaced with the "Infantry" keyword.</p>',
-		releases: { 'Path of Glory': 50, 'War of Attrition': 174 }
+		releases: { PG: 50, WA: 174 }
 	},
 	{
 		name: 'Intervention',
@@ -7808,7 +7831,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (3): Name a card. Search your action deck and discard pile for all copies of the named card. Add one of them to your hand and remove all other copies from the game. Reshuffle your action deck.</p>',
-		releases: { 'Path of Glory': 51, 'War of Attrition': 179 }
+		releases: { PG: 51, WA: 179 }
 	},
 	{
 		name: 'Into the Heart of the Enemy',
@@ -7820,7 +7843,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: If you win this combat, rout the enemy unit if this unit's current strength is at least double the enemy unit's printed strength.</p>",
-		releases: { 'Path of Glory': 52 }
+		releases: { PG: 52 }
 	},
 	{
 		name: 'Know the Terrain',
@@ -7831,7 +7854,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +2 tactic points and the enemy unit gets -2 tactic points. Only playable if you have a Terrain card in play.</p>',
-		releases: { 'Path of Glory': 53 }
+		releases: { PG: 53 }
 	},
 	{
 		name: 'Last Ditch Effort',
@@ -7843,7 +7866,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: Choose a number. If your enemy's combat roll equals the chosen number, change the roll to a 1.</p>",
-		releases: { 'Path of Glory': 54 },
+		releases: { PG: 54 },
 		banned: true
 	},
 	{
@@ -7856,7 +7879,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +3 strength. Only playable while defending.</p>',
-		releases: { 'Path of Glory': 55 }
+		releases: { PG: 55 }
 	},
 	{
 		name: 'Level the Field',
@@ -7868,7 +7891,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): Destroy all tokens on the enemy unit.</p>',
-		releases: { 'Path of Glory': 56, 'War of Attrition': 184 }
+		releases: { PG: 56, WA: 184 }
 	},
 	{
 		name: 'Look Them in the Eyes',
@@ -7880,7 +7903,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -2 leadership.</p>',
-		releases: { 'Path of Glory': 57, 'War of Attrition': 186 }
+		releases: { PG: 57, WA: 186 }
 	},
 	{
 		name: 'Make Something from Nothing',
@@ -7892,7 +7915,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. If you win this combat, attach this card to this unit. While this card is attached, this unit has +1 strength.</p>',
-		releases: { 'Path of Glory': 58, 'War of Attrition': 191 }
+		releases: { PG: 58, WA: 191 }
 	},
 	{
 		name: 'Make Their Strengths Yours',
@@ -7904,7 +7927,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each attachment on the enemy unit.</p>',
-		releases: { 'Path of Glory': 59 }
+		releases: { PG: 59 }
 	},
 	{
 		name: 'Marsh Land',
@@ -7915,7 +7938,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All players get -X to their combat rolls, to a minimum of 1. X equals the number of cards in their hand.</p>',
-		releases: { 'Path of Glory': 60 }
+		releases: { PG: 60 }
 	},
 	{
 		name: 'Norse Tactics',
@@ -7927,7 +7950,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: At the end of the tactic phase, both units get -1 strength for each unit in their reserves.</p>',
-		releases: { 'Path of Glory': 61 }
+		releases: { PG: 61 }
 	},
 	{
 		name: 'Not Without a Fight',
@@ -7939,7 +7962,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength. Only playable if your unit is losing the combat. Remove this card from the game.</p>',
-		releases: { 'Path of Glory': 62 }
+		releases: { PG: 62 }
 	},
 	{
 		name: 'Planned Diversion',
@@ -7950,7 +7973,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Discard 1 card: After one of your units gets a strength bonus of 3 or more, increase that bonus by 2. If you win the combat, draw 1 card.</p>',
-		releases: { 'Path of Glory': 63 }
+		releases: { PG: 63 }
 	},
 	{
 		name: 'Prepare for the Worst',
@@ -7961,7 +7984,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your enemy plays a card or ability that forces you to discard, commit the enemy unit. Only playable during combat.</p>',
-		releases: { 'Path of Glory': 64, 'War of Attrition': 216 }
+		releases: { PG: 64, WA: 216 }
 	},
 	{
 		name: 'Rear Charge',
@@ -7972,7 +7995,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (X): Choose up to X enemy units. Move any chosen units in the battle line to the reserves and any chosen units in the reserves to the battle line. Only playable if you have a ready wizard.</p>',
-		releases: { 'Path of Glory': 65 }
+		releases: { PG: 65 }
 	},
 	{
 		name: 'Reinforced Supply Lines',
@@ -7984,7 +8007,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: Search your army deck for one attachment with a gold cost of 1 or less and attach it to this unit, if possible. Reshuffle your army deck.</p>',
-		releases: { 'Path of Glory': 66 }
+		releases: { PG: 66 }
 	},
 	{
 		name: 'Research',
@@ -7995,7 +8018,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (X): Draw X cards, then discard X cards.</p>',
-		releases: { 'Path of Glory': 67 }
+		releases: { PG: 67 }
 	},
 	{
 		name: 'Scout the Terrain',
@@ -8006,7 +8029,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After setup, if you have a higher "<b>Scout</b>" total then your enemy, discard the top card of your action deck until you reveal a terrain card or run out of cards. Put that Terrain into play.</p>',
-		releases: { 'Path of Glory': 68 }
+		releases: { PG: 68 }
 	},
 	{
 		name: 'Scramble for a Solution',
@@ -8018,7 +8041,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Discard the top 3 cards of your action deck. Add one of those cards to your hand. Remove this card from the game.</p>',
-		releases: { 'Path of Glory': 69 }
+		releases: { PG: 69 }
 	},
 	{
 		name: 'See Through the Diversion',
@@ -8029,7 +8052,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After a unit gets a bonus of 3 or more, reduce that bonus to 2. Only playable during combat.</p>',
-		releases: { 'Path of Glory': 70, 'War of Attrition': 237 }
+		releases: { PG: 70, WA: 237 }
 	},
 	{
 		name: 'Snow Burdened Hill',
@@ -8040,7 +8063,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>When this card comes into play, choose one enemy unit.</p><p><b>Support Tactic</b> Destroy this card: The chosen unit gets -4 strength.</p>',
-		releases: { 'Path of Glory': 71 }
+		releases: { PG: 71 }
 	},
 	{
 		name: 'Spectral Divination',
@@ -8052,7 +8075,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (1): Name a card. Reveal the top 7 cards of your action deck. If you reveal the named card, put one copy of that card into your hand. Discard the other cards and shuffle your action deck.</p>',
-		releases: { 'Path of Glory': 72 }
+		releases: { PG: 72 }
 	},
 	{
 		name: 'Strike as They Are Falling',
@@ -8064,7 +8087,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength.Draw 1 card.</p>',
-		releases: { 'Path of Glory': 73 }
+		releases: { PG: 73 }
 	},
 	{
 		name: 'Suffer Not the Witch',
@@ -8076,7 +8099,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +3 strength. Only usable vs. daemon or monster units.</p><p><b>Spell Combat Tactic</b> (X): Choose a daemon or monster unit with a gold cost less than X. If you win this combat, the chosen unit is destroyed.</p>',
-		releases: { 'Path of Glory': 74 }
+		releases: { PG: 74 }
 	},
 	{
 		name: 'The Charge of 1000 Horses',
@@ -8088,7 +8111,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This cavalry unit gets +1 strength for each of your other ready cavalry units.</p>',
-		releases: { 'Path of Glory': 75 }
+		releases: { PG: 75 }
 	},
 	{
 		name: 'Tides of Battle',
@@ -8100,7 +8123,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Both players roll. The unit controlled by the player with the highest roll gets +2 strength.</p>',
-		releases: { 'Path of Glory': 76 }
+		releases: { PG: 76 }
 	},
 	{
 		name: 'To the Teeth',
@@ -8112,7 +8135,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets "<b>Terror</b>: 1" for each of it’s attachments.</p>',
-		releases: { 'Path of Glory': 77 }
+		releases: { PG: 77 }
 	},
 	{
 		name: 'Trapping Attack',
@@ -8124,7 +8147,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p> <b>WarCry</b>: This unit gets +X strength if it passes a leadership test. X equals this unit's printed tactic points.</p>",
-		releases: { 'Path of Glory': 78 }
+		releases: { PG: 78 }
 	},
 	{
 		name: 'Unexpected Strike',
@@ -8136,7 +8159,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: Your enemy's combat tactic cards cost 1 additional tactic point. Draw 1 card</p>",
-		releases: { 'Path of Glory': 79 }
+		releases: { PG: 79 }
 	},
 	{
 		name: 'Unity of Arms',
@@ -8148,7 +8171,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +3 strength. Only playable if you have no neutral units in play.</p>',
-		releases: { 'Path of Glory': 80 }
+		releases: { PG: 80 }
 	},
 	{
 		name: 'Until You Have Nothing Left',
@@ -8160,7 +8183,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Destroy one attachment on this unit: This unit gets +3 strength.</p>',
-		releases: { 'Path of Glory': 81 }
+		releases: { PG: 81 }
 	},
 	{
 		name: "Warrior's Rage",
@@ -8171,7 +8194,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After your unit receives a strength bonus double that bonus. If you do not rout the enemy unit at the end of the combat, destroy this unit. You can only play one copy of this card each combat.</p>',
-		releases: { 'Path of Glory': 82, 'War of Attrition': 274 }
+		releases: { PG: 82, WA: 274 }
 	},
 	{
 		name: 'We Claim This Territory',
@@ -8183,7 +8206,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): Attach this card to this unit. This unit gets "<b>Victory</b>: +1".</p>',
-		releases: { 'Path of Glory': 83 }
+		releases: { PG: 83 }
 	},
 	{
 		name: 'We Have Nothing to Fear',
@@ -8195,7 +8218,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Remove this card from the game.</p>',
-		releases: { 'Path of Glory': 84 }
+		releases: { PG: 84 }
 	},
 	{
 		name: "When It's All You've Got",
@@ -8207,7 +8230,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: This unit gets +1 strength for each card in your enemy's hand in excess of 5.</p>",
-		releases: { 'Path of Glory': 85 }
+		releases: { PG: 85 }
 	},
 	{
 		name: 'Wipe Them Out',
@@ -8219,7 +8242,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p>This unit gets +3 strength. Only playable during a follow-up attack.</p>',
-		releases: { 'Path of Glory': 86 }
+		releases: { PG: 86 }
 	},
 	{
 		name: 'Word of Pain',
@@ -8231,7 +8254,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (X): If this combat is won by a difference of X or less, the result is a slaughter. Only playable while you have a ready wizard.</p>',
-		releases: { 'Path of Glory': 87 }
+		releases: { PG: 87 }
 	},
 	{
 		name: "You'll Be Dead Before You Bleed",
@@ -8243,7 +8266,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable vs. blocking units.</p>',
-		releases: { 'Path of Glory': 88 }
+		releases: { PG: 88 }
 	},
 	{
 		name: 'Hilt of the Norn Sword',
@@ -8255,7 +8278,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: Combat tactic cards you play have their tactic point cost reduced by 1.</p>',
-		releases: { 'Path of Glory': 89 }
+		releases: { PG: 89 }
 	},
 	{
 		name: 'Ring of Stealth',
@@ -8267,7 +8290,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b> Remove this card from the game: After this unit has been targeted for an attack, choose another ready unit in your battle line. The chosen unit becomes the target of the attack. If you lose the combat, commit this unit.</p>',
-		releases: { 'Path of Glory': 90 }
+		releases: { PG: 90 }
 	},
 	{
 		name: 'Scribe',
@@ -8278,7 +8301,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell WarCry</b> (1): Discard the top card of your action deck. If it is a spell WarCry or spell combat tactic, you may play it paying no costs.</p><p>May only be attached to a wizard unit.</p>',
-		releases: { 'Path of Glory': 91 }
+		releases: { PG: 91 }
 	},
 	{
 		name: 'Standard of Faith',
@@ -8289,7 +8312,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>This unit gets "<b>Faith</b>: 2".</p>',
-		releases: { 'Path of Glory': 92, 'Death and Honour': 38, 'War of Attrition': 290 }
+		releases: { PG: 92, DH: 38, WA: 290 }
 	},
 	{
 		name: 'The Green Knight',
@@ -8304,7 +8327,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>While this unit is in combat, any strength bonuses the enemy unit receives are reduced by 2, minimum 1.</p><p> <b>WarCry</b>: This unit gets +1 strength for each of your units with <b>Faith</b>.</p>',
-		releases: { 'Path of Glory': 93 }
+		releases: { PG: 93 }
 	},
 	{
 		name: "The Damsel's Guard",
@@ -8318,7 +8341,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: +2</p><p> <b>WarCry</b>: All of your combat tactics have their tactic point cost reduced by 2, to a minimum of 1.</p>',
-		releases: { 'Path of Glory': 94 }
+		releases: { PG: 94 }
 	},
 	{
 		name: 'Theolind Adaltrud',
@@ -8332,7 +8355,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: This unit gets "<b>Terror</b>: X". X equals this unit\'s "<b>Faith</b>". Only playable vs. monster units.</p><p><b>Combat Tactic</b>: This attacking unit gets +2 strength.</p>',
-		releases: { 'Path of Glory': 95 }
+		releases: { PG: 95 }
 	},
 	{
 		name: 'Trebuchet',
@@ -8346,7 +8369,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Long Ranged Attack</b>: 8</p><p> <b>Command</b> Commit: Destroy one war machine unit.</p>',
-		releases: { 'Path of Glory': 96 }
+		releases: { PG: 96 }
 	},
 	{
 		name: "Thorgrim's Trollslayers",
@@ -8361,7 +8384,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength vs. monster units.</p>',
-		releases: { 'Path of Glory': 97 }
+		releases: { PG: 97 }
 	},
 	{
 		name: 'Forest Stalkers',
@@ -8375,7 +8398,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 1</p><p><b>Combat Tactic</b>: This unit gets a strength bonus equal to it\'s "<b>Scout</b>".</p>',
-		releases: { 'Path of Glory': 98 }
+		releases: { PG: 98 }
 	},
 	{
 		name: 'Greybeard Thunderers',
@@ -8389,7 +8412,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Long Ranged Attack</b>: 4</p><p><b>Victory</b>: +2</p><p><b>Support Tactic</b>: Your unit gets +1 ranged attack. Only playable during a ranged attack.</p>',
-		releases: { 'Path of Glory': 99 }
+		releases: { PG: 99 }
 	},
 	{
 		name: 'Thagrund the Greybeard',
@@ -8404,7 +8427,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Faith</b>: 2</p><p><b>Support Tactic</b>: Your unit gets +1 strength. Only playable if your unit has a weapon attachment.</p>',
-		releases: { 'Path of Glory': 100 }
+		releases: { PG: 100 }
 	},
 	{
 		name: "Thagrund's Gold Miners",
@@ -8418,7 +8441,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: Destroy all enemy strategy cards. This unit gets +1 strength for each strategy card destroyed.</p>',
-		releases: { 'Path of Glory': 101 }
+		releases: { PG: 101 }
 	},
 	{
 		name: "Thagrund's Longbeards",
@@ -8432,7 +8455,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +1</p><p><b>Combat Tactic</b>: This unit gets +1 strength if this is the first battle, +2 strength if it is the second battle, or +3 strength if it is the third battle.</p>',
-		releases: { 'Path of Glory': 102 }
+		releases: { PG: 102 }
 	},
 	{
 		name: "Thagrund's Stone Thrower",
@@ -8446,7 +8469,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 4</p><p><b>Spell Support Tactic</b> (1): Your unit gets +1 strength. Only playable while you have an Empire wizard unit.</p>',
-		releases: { 'Path of Glory': 103 }
+		releases: { PG: 103 }
 	},
 	{
 		name: "Thagrund's War Cannon",
@@ -8460,7 +8483,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 8</p><p><b>Support Tactic</b>: Both units in the combet get -3 tactic points.</p>',
-		releases: { 'Path of Glory': 104, 'War of Attrition': 316 }
+		releases: { PG: 104, WA: 316 }
 	},
 	{
 		name: 'Valten, Champion of Sigmar',
@@ -8475,7 +8498,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Valten</p><p>While this unit is in your battle line ready, your other Grand Alliance units get +1 strength and +1 leadership.</p><p> <b>WarCry</b>: This unit gets +4 strength vs. Hordes Of Darkness units.</p>',
-		releases: { 'Path of Glory': 105 }
+		releases: { PG: 105 }
 	},
 	{
 		name: 'Ophelia Grundheim',
@@ -8490,7 +8513,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Faith</b>: 2</p><p><b>Reaction</b>: After a unit with <b>Faith</b> passes a test, draw 1 card, then discard 1 card.</p>',
-		releases: { 'Path of Glory': 106 }
+		releases: { PG: 106 }
 	},
 	{
 		name: "Ratai's Frost Riders",
@@ -8504,7 +8527,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Play two WarCry cards or <b>Support WarCry</b> abilities, paying all costs.</p>',
-		releases: { 'Path of Glory': 107 }
+		releases: { PG: 107 }
 	},
 	{
 		name: "Ratai's Horse Archers",
@@ -8518,7 +8541,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Short Ranged Attack</b>: 7</p><p><b>Reaction</b>: After this unit wins a ranged attack, it may make a follow-up attack as though it had routed the enemy unit. Use this unit's strength for the follow-up attack.</p>",
-		releases: { 'Path of Glory': 108, 'War of Attrition': 344 }
+		releases: { PG: 108, WA: 344 }
 	},
 	{
 		name: 'Tamisalv Ratai',
@@ -8533,7 +8556,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: The enemy unit gets -X strength. X equals this unit\'s "<b>Terror</b>".</p>',
-		releases: { 'Path of Glory': 109 }
+		releases: { PG: 109 }
 	},
 	{
 		name: 'Tzarina Katarin the Ice Queen',
@@ -8548,7 +8571,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p>If Tzarina is destroyed, your enemy may rally up to two of their units.</p><p><b>Spell Support Tactic</b> (3): Commit one enemy unit.</p>',
-		releases: { 'Path of Glory': 110, 'War of Attrition': 349 }
+		releases: { PG: 110, WA: 349 }
 	},
 	{
 		name: 'White Plain Kossars',
@@ -8562,7 +8585,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Ranged Attack</b>: X. X equals this unit's strength +1.</p>",
-		releases: { 'Path of Glory': 111, 'War of Attrition': 350 }
+		releases: { PG: 111, WA: 350 }
 	},
 	{
 		name: 'Korhil, Captain of the White Lions',
@@ -8577,7 +8600,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>This unit may block any attack.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your other "Unique" units.</p>',
-		releases: { 'Path of Glory': 112 }
+		releases: { PG: 112 }
 	},
 	{
 		name: "Alarielle's Maidenguard",
@@ -8592,7 +8615,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p>This unit gets +2 leadership while you have Allarielle the Everqueen in play.</p><p><b>Combat Tactic</b>: Look at your enemy's hand and choose one card. Your enemy places that card on top of their deck.</p>",
-		releases: { 'Path of Glory': 113, 'War of Attrition': 354 }
+		releases: { PG: 113, WA: 354 }
 	},
 	{
 		name: "Eataine's Coastal Protectors",
@@ -8606,7 +8629,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>While ready this unit may block attacks that target units in your reserves (including ranged attacks).</p>',
-		releases: { 'Path of Glory': 114 }
+		releases: { PG: 114 }
 	},
 	{
 		name: "Ellerion's Ghost Blades",
@@ -8620,7 +8643,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p>',
-		releases: { 'Path of Glory': 115 }
+		releases: { PG: 115 }
 	},
 	{
 		name: 'Keepers of the Flame',
@@ -8634,7 +8657,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each strategy card you have in play. If your enemy has no strategy cards in play, this unit gets +2 strength for each strategy card instead.</p>',
-		releases: { 'Path of Glory': 116, 'War of Attrition': 366 }
+		releases: { PG: 116, WA: 366 }
 	},
 	{
 		name: 'Luril Ellerion',
@@ -8648,7 +8671,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Combat Tactic</b> (1): This unit gets "<b>Terror</b>: 1" for each of your other wizard units.</p>',
-		releases: { 'Path of Glory': 117 }
+		releases: { PG: 117 }
 	},
 	{
 		name: "Luril's Guardians",
@@ -8662,7 +8685,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After this unit is destroyed, move any character attachments on it to any of your other units without character attachments.</p><p><b>Support WarCry</b> Commit your unit: Exchange this unit with your unit in combat.</p>',
-		releases: { 'Path of Glory': 118 }
+		releases: { PG: 118 }
 	},
 	{
 		name: "Rhyian's Emerald Company",
@@ -8676,7 +8699,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: This unit gets +2 ranged attack. Only playable if you have an Empire unit.</p>',
-		releases: { 'Path of Glory': 119 }
+		releases: { PG: 119 }
 	},
 	{
 		name: 'Zarahadron, Hydra of War',
@@ -8690,7 +8713,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: This unit gets a +1 strength token.</p>',
-		releases: { 'Path of Glory': 120 }
+		releases: { PG: 120 }
 	},
 	{
 		name: 'Clanrats of the Warlord Clans',
@@ -8703,7 +8726,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>You may have up to 12 of this card in your deck.</p>',
-		releases: { 'Chivalry and Deceit': 1 }
+		releases: { CD: 1 }
 	},
 	{
 		name: "Clawspeck's Night Runners",
@@ -8716,7 +8739,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p>This unit may block infantry.</p><p><b>Combat Tactic</b> Commit or destroy one of your units in your battle line: This unit gets a strength or leadership bonus equal to the committed or destroyed unit's leadership.</p>",
-		releases: { 'Chivalry and Deceit': 2 }
+		releases: { CD: 2 }
 	},
 	{
 		name: 'Grey Seer Thanquol Boneripper',
@@ -8729,7 +8752,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 2</p><p>This unit may play <b>Spell WarCry</b> cards as combat tactics.</p><p> <b>WarCry</b>: This unit gets +4 strength and "<b>Terror</b>: 2".</p>',
-		releases: { 'Chivalry and Deceit': 3 }
+		releases: { CD: 3 }
 	},
 	{
 		name: "Queekpest's Stenchmonks",
@@ -8742,7 +8765,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b>: This defending unit gets +3 strength. If this unit wins, rout the enemy unit.Only playable during a follow-up attack.</p>',
-		releases: { 'Chivalry and Deceit': 4 }
+		releases: { CD: 4 }
 	},
 	{
 		name: 'Stikstik Bloodbone',
@@ -8755,7 +8778,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Support Tactic</b>: Your Skaven unit gets +1 strength, +1 leadership and +1 tactic point. Only playable while you have more units in your battle line than your enemy.</p>',
-		releases: { 'Chivalry and Deceit': 5 }
+		releases: { CD: 5 }
 	},
 	{
 		name: "Stikstik's Giant Rats",
@@ -8768,7 +8791,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength and +1 leadership. Only playable if your enemy has less than 4 cards in their hand.</p>',
-		releases: { 'Chivalry and Deceit': 6 }
+		releases: { CD: 6 }
 	},
 	{
 		name: "Stikstik's Throat Rippers",
@@ -8781,7 +8804,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p><b>Victory</b>: -2</p>',
-		releases: { 'Chivalry and Deceit': 7 }
+		releases: { CD: 7 }
 	},
 	{
 		name: 'Warlock Skriskrivet',
@@ -8794,7 +8817,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Reaction</b>: After you muster this unit, each player gets an additional 5 gold to spend during this muster phase <span class="errata">while this unit remains in play</span>. Players who have passed may continue to muster.</p><p><b>Spell Reaction</b> (1): After any roll, that roll gets +1.</p>',
-		releases: { 'Chivalry and Deceit': 8 },
+		releases: { CD: 8 },
 		errata: true
 	},
 	{
@@ -8805,7 +8828,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		text: '<p>This unit gets "<b>Terror</b>: 2".</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to it\'s <b>Terror</b> rating.</p><p>This card may only be attached to a Skaven unit.</p>',
-		releases: { 'Chivalry and Deceit': 9 }
+		releases: { CD: 9 }
 	},
 	{
 		name: 'Battle Plan',
@@ -8816,7 +8839,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: "<p><b>Combat Tactic</b> Commit one of your units: This unit gets a strength bonus equal to the committed unit's tactic points up to the committed unit's gold cost +1.</p>",
-		releases: { 'Chivalry and Deceit': 10 }
+		releases: { CD: 10 }
 	},
 	{
 		name: 'Battlefield Orders',
@@ -8826,7 +8849,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 tactic point for each unit in your reserves.</p>',
-		releases: { 'Chivalry and Deceit': 11 }
+		releases: { CD: 11 }
 	},
 	{
 		name: 'Blessings of the Lady',
@@ -8837,7 +8860,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This Bretonnian unit gets +3 strength.</p><p> <b>WarCry</b>: This Bretonnian unit gets +4 strength when attacking from the reserves.</p>',
-		releases: { 'Chivalry and Deceit': 12 }
+		releases: { CD: 12 }
 	},
 	{
 		name: 'Boundless Faith',
@@ -8848,7 +8871,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: If this unit passes a leadership test, play a combat tactic or WarCry card from your hand paying no costs.</p>',
-		releases: { 'Chivalry and Deceit': 13 }
+		releases: { CD: 13 }
 	},
 	{
 		name: 'Critical Strike',
@@ -8860,7 +8883,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. You may destroy one attachment on the enemy unit.</p>',
-		releases: { 'Chivalry and Deceit': 14, 'War of Attrition': 128 }
+		releases: { CD: 14, WA: 128 }
 	},
 	{
 		name: 'Empower Weapon',
@@ -8871,7 +8894,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +2 strength. Only playable if this unit has a weapon attachment.</p>',
-		releases: { 'Chivalry and Deceit': 16 }
+		releases: { CD: 16 }
 	},
 	{
 		name: 'Faithful Devotion',
@@ -8883,7 +8906,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: This unit gets a strength bonus equal to it's <b>Faith</b> rating.</p>",
-		releases: { 'Chivalry and Deceit': 17, 'War of Attrition': 148 }
+		releases: { CD: 17, WA: 148 }
 	},
 	{
 		name: 'Fireball',
@@ -8894,7 +8917,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +1 strength.</p>',
-		releases: { 'Chivalry and Deceit': 18 }
+		releases: { CD: 18 }
 	},
 	{
 		name: 'Full Charge',
@@ -8906,7 +8929,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This non-infantry unit gets +4 strength. Only playable while attacking from the battle line.</p><p><b>Combat Tactic</b>: This non-infantry unit gets +2 strength.</p>',
-		releases: { 'Chivalry and Deceit': 19, 'War of Attrition': 160 }
+		releases: { CD: 19, WA: 160 }
 	},
 	{
 		name: 'Hold Your Ground',
@@ -8916,7 +8939,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets a tactic point bonus equal to the number of units in your battle line with a gold cost greater than 2.</p>',
-		releases: { 'Chivalry and Deceit': 22 }
+		releases: { CD: 22 }
 	},
 	{
 		name: 'Immortal Charge',
@@ -8927,7 +8950,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This cavalry unit gets +2 strength. Only playable if you have less units in your battle line than your enemy.</p>',
-		releases: { 'Chivalry and Deceit': 23 }
+		releases: { CD: 23 }
 	},
 	{
 		name: 'Iron Fist',
@@ -8938,7 +8961,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: Draw 2 cards. If you lose this combat destroy one of your other units. You may only play one copy of this card per combat.</p>',
-		releases: { 'Chivalry and Deceit': 24 }
+		releases: { CD: 24 }
 	},
 	{
 		name: 'Life Is Cheap',
@@ -8949,7 +8972,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This Skaven unit gets +3 strength.</p><p> <b>WarCry</b>: This Skaven unit gets a leadership bonus equal to the number of Skaven in your battle line.</p>',
-		releases: { 'Chivalry and Deceit': 25, 'Valor and Treachery': 27 }
+		releases: { CD: 25, VT: 27 }
 	},
 	{
 		name: 'One for One',
@@ -8960,7 +8983,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: Your enemy discards 1 random card.</p>',
-		releases: { 'Chivalry and Deceit': 27 }
+		releases: { CD: 27 }
 	},
 	{
 		name: 'One Last Charge',
@@ -8972,7 +8995,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +2 strength. Remove this card from the game.</p>',
-		releases: { 'Chivalry and Deceit': 28, 'War of Attrition': 204 }
+		releases: { CD: 28, WA: 204 }
 	},
 	{
 		name: 'Overwhelming Numbers',
@@ -8983,7 +9006,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable if you have more units in your battle line than your enemy has in their battle line.</p>',
-		releases: { 'Chivalry and Deceit': 29 }
+		releases: { CD: 29 }
 	},
 	{
 		name: 'Sacrificial Unit',
@@ -8994,7 +9017,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: Draw 2 cards. If you win this combat, return the enemy unit to the battle line committed. You may not make a follow-up attack. You may only play one copy of this card per combat.</p>',
-		releases: { 'Chivalry and Deceit': 30 }
+		releases: { CD: 30 }
 	},
 	{
 		name: 'Stare into the Face of Death',
@@ -9006,7 +9029,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 leadership.</p>',
-		releases: { 'Chivalry and Deceit': 31, 'Valor and Treachery': 28, 'War of Attrition': 241 }
+		releases: { CD: 31, VT: 28, WA: 241 }
 	},
 	{
 		name: 'Sweeping Flank Maneuver',
@@ -9018,7 +9041,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -2 tactic points. Draw 1 card.</p>',
-		releases: { 'Chivalry and Deceit': 33, 'War of Attrition': 255 }
+		releases: { CD: 33, WA: 255 }
 	},
 	{
 		name: 'When They Least Expect It',
@@ -9029,7 +9052,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b> Discard 2 cards: This unit gets +5 strength.</p>',
-		releases: { 'Chivalry and Deceit': 34 }
+		releases: { CD: 34 }
 	},
 	{
 		name: "Adaltrud's Scrappers",
@@ -9042,7 +9065,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Ranged Attack</b>: 6</p><p>While this unit is in combat, players subtract their combat rolls instead of adding them.</p>',
-		releases: { 'Chivalry and Deceit': 39 }
+		releases: { CD: 39 }
 	},
 	{
 		name: "Angelburg's Volunteers",
@@ -9055,7 +9078,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable if this unit has an attachment.</p>',
-		releases: { 'Chivalry and Deceit': 40 }
+		releases: { CD: 40 }
 	},
 	{
 		name: 'King Louen Leoncouer',
@@ -9069,7 +9092,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Faith</b>: 3</p><p>While this unit is ready, your other Bretonnian units get "<b>Faith</b>: 1".</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to it\'s <b>Faith</b> rating.</p>',
-		releases: { 'Chivalry and Deceit': 41 }
+		releases: { CD: 41 }
 	},
 	{
 		name: "Knights of the Lady's Banner",
@@ -9082,7 +9105,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: Search your enemy's discard pile for an attachment and remove it from the game. This unit gets +1 strength.</p>",
-		releases: { 'Chivalry and Deceit': 42 }
+		releases: { CD: 42 }
 	},
 	{
 		name: 'Knights of Winged Valor',
@@ -9095,7 +9118,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Support Tactic</b>: Your cavalry unit gets +1 tactic point. If your unit in the combat is a Bretonnian, you may use this ability while this unit is committed.</p>',
-		releases: { 'Chivalry and Deceit': 43 }
+		releases: { CD: 43 }
 	},
 	{
 		name: "Leoncouer's Defenders of the Realm",
@@ -9108,7 +9131,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Faith</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +d6 strength. You do not make a combat roll.</p>',
-		releases: { 'Chivalry and Deceit': 44 }
+		releases: { CD: 44 }
 	},
 	{
 		name: "Leoncouer's Lancers",
@@ -9121,7 +9144,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +3 strength if it passes a leadership test.</p>',
-		releases: { 'Chivalry and Deceit': 45 }
+		releases: { CD: 45 }
 	},
 	{
 		name: 'The Battle Pilgrims',
@@ -9134,7 +9157,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Faith</b>: 3</p><p><b>Support Tactic</b> Commit this unit: Your unit gets a strength bonus equal to this unit's <b>Faith</b> rating.</p>",
-		releases: { 'Chivalry and Deceit': 46 }
+		releases: { CD: 46 }
 	},
 	{
 		name: 'The White Mistress',
@@ -9148,7 +9171,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 1</p><p>When determining who goes first, you may add the <b>Wizard</b> levels of your units to your total tactic points.</p><p><b>Spell Reaction</b> (1): After any roll, that roll gets -1.</p>',
-		releases: { 'Chivalry and Deceit': 47 }
+		releases: { CD: 47 }
 	},
 	{
 		name: 'The Grail Shield',
@@ -9159,7 +9182,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		text: '<p>This unit gets "<b>Faith</b>: 1"."</p><p> <b>WarCry</b>: This unit gets +2 strength and "<b>Terror</b>: X". X equals this units <b>Faith</b> rating.</p><p>This card may only be attached to a Bretonnian unit.</p>',
-		releases: { 'Chivalry and Deceit': 48 }
+		releases: { CD: 48 }
 	},
 	{
 		name: "Archaon's Blood Horde",
@@ -9173,7 +9196,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After the enemy unit plays a combat tactic, this unit gets +1 tactic point.</p>',
-		releases: { 'Legions of Chaos': 1 }
+		releases: { LC: 1 }
 	},
 	{
 		name: "Archaon's Vanguard",
@@ -9187,7 +9210,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Reaction</b>: When this unit is destroyed, remove 1 card in your enemy's army discard pile from the game.</p>",
-		releases: { 'Legions of Chaos': 2, 'War of Attrition': 2 }
+		releases: { LC: 2, WA: 2 }
 	},
 	{
 		name: "Bilith's Madmen",
@@ -9201,7 +9224,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength vs. units with a higher gold cost.</p>',
-		releases: { 'Legions of Chaos': 3, 'War of Attrition': 5 }
+		releases: { LC: 3, WA: 5 }
 	},
 	{
 		name: "Crom's Chosen",
@@ -9215,7 +9238,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b> Commit this unit: If your Chaos unit passes a leadership test it gets +2 strength. If it wins the combat, return it to the battle line ready. Not playable during a follow-up attack.</p>',
-		releases: { 'Legions of Chaos': 4, 'War of Attrition': 8 }
+		releases: { LC: 4, WA: 8 }
 	},
 	{
 		name: "D'aggorn's Chosen",
@@ -9229,7 +9252,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p>Units with a strength less than this unit's printed strength may not declare an attack against this unit unless there are no other units that may be targeted for attacks in the battle line.</p>",
-		releases: { 'Legions of Chaos': 5 }
+		releases: { LC: 5 }
 	},
 	{
 		name: 'Grunt Trollskinner',
@@ -9244,7 +9267,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 1</p><p><b>Victory</b>: -4</p><p><b>Reaction</b>: After this unit loses a combat the enemy must pass an unmodified leadership test or be destroyed.</p>',
-		releases: { 'Legions of Chaos': 6 }
+		releases: { LC: 6 }
 	},
 	{
 		name: 'Rack of the Damned',
@@ -9258,7 +9281,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: +5</p><p><b>Reaction</b>: When this unit is targeted for an attack, select one of your ready Chaos infantry units to block the attack.</p><p><b>Support Tactic</b>: Your Chaos Unit gets "<b>Terror</b>: 2".</p>',
-		releases: { 'Legions of Chaos': 7, 'War of Attrition': 20 }
+		releases: { LC: 7, WA: 20 }
 	},
 	{
 		name: 'Styrkaar of the Sortsvinaer',
@@ -9273,7 +9296,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: The enemy unit must make a leadership test. If they fail, the enemy unit may not play any cards or abilities this combat.</p><p><b>Reaction</b>: After your enemy fails a test, draw 1 card.</p>',
-		releases: { 'Legions of Chaos': 8 }
+		releases: { LC: 8 }
 	},
 	{
 		name: 'Swords of Chaos',
@@ -9287,7 +9310,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength and +2 tactic points. Only playable during a follow-up attack.</p>',
-		releases: { 'Legions of Chaos': 9 }
+		releases: { LC: 9 }
 	},
 	{
 		name: 'The Brides of Styrkaar',
@@ -9301,7 +9324,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>While this unit is ready in your battle line, your non-daemon units may not be targeted with attacks.</p>',
-		releases: { 'Legions of Chaos': 10 }
+		releases: { LC: 10 }
 	},
 	{
 		name: 'Zoekarl, Bringer of Darkness',
@@ -9316,7 +9339,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Terror</b>: 3</p><p> <b>WarCry</b> Discard 2 cards: Once per battle, destroy an enemy unit in the battle line. This unit's strength is reduced by the destroyed unit's gold cost.</p>",
-		releases: { 'Legions of Chaos': 11 }
+		releases: { LC: 11 }
 	},
 	{
 		name: 'Archers of Nightbreeze',
@@ -9330,7 +9353,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Short Ranged Attack</b>: 5</p><p><b>Reaction</b>: Once per battle, after this unit has performed a ranged attack, declare a "<b>Short Ranged Attack</b>: 4" attack against an enemy unit.</p>',
-		releases: { 'Legions of Chaos': 12, 'War of Attrition': 30 }
+		releases: { LC: 12, WA: 30 }
 	},
 	{
 		name: 'Beastlord Rakarth of Karrond Kar',
@@ -9345,7 +9368,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength for each of your ready monster units.</p><p><b>Support Tactic</b>: Your monster unit gets +2 tactic points.</p>',
-		releases: { 'Legions of Chaos': 13 }
+		releases: { LC: 13 }
 	},
 	{
 		name: "Rikhaine's Black Maidens",
@@ -9359,7 +9382,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may not declare an attack.</p><p><b>Combat Tactic</b>: If this unit wins the combat, rout the enemy unit. Only playable during a follow-up attack and only once per battle.</p>',
-		releases: { 'Legions of Chaos': 14 }
+		releases: { LC: 14 }
 	},
 	{
 		name: "Rikhaine's Dark Sisters",
@@ -9373,7 +9396,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: Play a WarCry card from your hand, paying no costs.</p><p><b>Reaction</b>: After your enemy plays a combat tactic or support tactic while this unit is in combat, this unit gets +2 tactic points.</p>',
-		releases: { 'Legions of Chaos': 15 }
+		releases: { LC: 15 }
 	},
 	{
 		name: "Rikhaine's Foot",
@@ -9387,7 +9410,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: The enemy unit gets -2 tactic points.</p><p><b>Combat Tactic</b>: This unit gets +1 strength. Only playable while this unit is losing a combat.</p>',
-		releases: { 'Legions of Chaos': 16 }
+		releases: { LC: 16 }
 	},
 	{
 		name: "Rikhaine's Vengeance",
@@ -9401,7 +9424,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: Before the enemy unit plays it's first combat tactic in a combat with this unit, you may play 1 WarCry or combat tactic paying no costs.</p>",
-		releases: { 'Legions of Chaos': 17 }
+		releases: { LC: 17 }
 	},
 	{
 		name: "Rikhaine's Wrath",
@@ -9415,7 +9438,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit may not make a follow-up attack unless it passes an unmodified leadership test.</p>',
-		releases: { 'Legions of Chaos': 18 }
+		releases: { LC: 18 }
 	},
 	{
 		name: 'Saerith, Bride of Haasek',
@@ -9430,7 +9453,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (1): After your enemy plays a Spell combat tactic, your unit in the combat gets +1 strength.</p>',
-		releases: { 'Legions of Chaos': 19 }
+		releases: { LC: 19 }
 	},
 	{
 		name: 'Da Pump Pump Truck',
@@ -9444,7 +9467,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Replace this unit\'s "Infantry" keyword with "Cavalry."</p><p><b>Reaction</b>: This attacking unit roll 3d6 for it\'s combat roll. Replace this units "Cavalry" keyword with "Infantry." Only playable while this unt has the "Cavalry" keyword.</p>',
-		releases: { 'Legions of Chaos': 20 }
+		releases: { LC: 20 }
 	},
 	{
 		name: "Facebeater's Big Stick Smashaz",
@@ -9458,7 +9481,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After an enemy unit is destroyed in combat with this unit, the enemy unit and all attached cards are removed from the game.</p>',
-		releases: { 'Legions of Chaos': 21 }
+		releases: { LC: 21 }
 	},
 	{
 		name: 'Gobbo Elfchasers',
@@ -9472,7 +9495,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b> Commit this unit: After another of your Orc units routs an enemy unit, do not make a follow-up attack. Your unit returns to the battle line ready.</p>',
-		releases: { 'Legions of Chaos': 22, 'War of Attrition': 64 }
+		releases: { LC: 22, WA: 64 }
 	},
 	{
 		name: "Grimgor's Spikey Boyz",
@@ -9486,7 +9509,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Victory</b>: -1</p><p><b>Reaction</b>: After this unit routs an enemy unit, remove the top card of the enemy's action deck from the game.</p>",
-		releases: { 'Legions of Chaos': 23 }
+		releases: { LC: 23 }
 	},
 	{
 		name: "Ozol's Netterboyz",
@@ -9500,7 +9523,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Commit or destroy this unit: After your enemy routs one of your units with a card effect, no follow-up attack may be made. You may play this ability while committed.</p>',
-		releases: { 'Legions of Chaos': 24, 'War of Attrition': 77 }
+		releases: { LC: 24, WA: 77 }
 	},
 	{
 		name: "Ozol's Snotling Swarm",
@@ -9514,7 +9537,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit gets +3 tactic points. Only playable if you have another ready Orc unit.</p>',
-		releases: { 'Legions of Chaos': 25 }
+		releases: { LC: 25 }
 	},
 	{
 		name: "Ozol's Squig Chasers",
@@ -9528,7 +9551,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: -1</p><p><b>Combat Tactic</b>: This unit gets +d6 tactic points.</p>',
-		releases: { 'Legions of Chaos': 26, 'War of Attrition': 78 }
+		releases: { LC: 26, WA: 78 }
 	},
 	{
 		name: 'Zahubu, Exalted of Gork',
@@ -9543,7 +9566,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Wurrzag Ud Ura Zahubu</p><p><b>Wizard</b>: 2</p><p><b>Combat Tactic</b>: If the enemy unit\'s combat roll is 4 or more, then the roll is reduced to 0. Only playable vs. "Monster", "<b>Wizard</b>", or "Unique" units.</p>',
-		releases: { 'Legions of Chaos': 27 }
+		releases: { LC: 27 }
 	},
 	{
 		name: 'Throt the Unclean',
@@ -9558,7 +9581,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>While this unit is ready all of your other Skaven units gets +1 leadership.</p><p><b>Reaction</b> Discard 1 card: When this unit gets a strength bonus of 4 or less, incresae that bonus by 2.</p>',
-		releases: { 'Legions of Chaos': 28 }
+		releases: { LC: 28 }
 	},
 	{
 		name: 'Summon Daemon',
@@ -9569,7 +9592,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> Commit one of your ready Chaos "<b>Wizard</b>" units (4): If you have no other copies of this card in play, this card enters play as a unit with the keywords: Chaos,Daemon,Infantry, 3 strength, 3 tactic points, 3 leadership and a gold cost of 0.</p>',
-		releases: { 'Legions of Chaos': 29 }
+		releases: { LC: 29 }
 	},
 	{
 		name: 'And Then Comes Darkness',
@@ -9580,7 +9603,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All units with "<b>Terror</b>" get "<b>Victory</b>: +1".</p>',
-		releases: { 'Legions of Chaos': 30 }
+		releases: { LC: 30 }
 	},
 	{
 		name: 'Armed and Dangerous',
@@ -9592,7 +9615,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength if it has a weapon and an armor attachment.</p><p><b>Combat Tactic</b>: This Dwarf unit gets +3 strength if it has a weapon and an armor attachment.</p>',
-		releases: { 'Legions of Chaos': 31 }
+		releases: { LC: 31 }
 	},
 	{
 		name: 'As Heroes Kill Flags Fall',
@@ -9604,7 +9627,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -X strength. X equals that unit\'s positive "<b>Victory</b>." If the unit has a "<b>Victory</b>" penalty this card has no effect.</p>',
-		releases: { 'Legions of Chaos': 32 }
+		releases: { LC: 32 }
 	},
 	{
 		name: 'Attack the Scouts',
@@ -9616,7 +9639,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Choose one enemy unit. This unit gets a strength bonus equal to the target unit\'s "<b>Scout</b>" level.</p>',
-		releases: { 'Legions of Chaos': 33 }
+		releases: { LC: 33 }
 	},
 	{
 		name: 'Battlefield Veteran',
@@ -9628,7 +9651,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: All action cards attached to the enemy unit are discarded.</p><p><b>Combat Tactic</b>: The enemy unit gets -1 tactic point.</p>',
-		releases: { 'Legions of Chaos': 34 }
+		releases: { LC: 34 }
 	},
 	{
 		name: 'Blessing',
@@ -9639,7 +9662,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (2): Attach this card to one of your ready units. This unit gets +2 strength.</p>',
-		releases: { 'Legions of Chaos': 35, 'War of Attrition': 113 }
+		releases: { LC: 35, WA: 113 }
 	},
 	{
 		name: 'Breaking Their Spirit',
@@ -9650,7 +9673,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All units with a positive "<b>Victory</b>" bonus have their positive bonus replaced with a negative bonus (I.e. a unit with "<b>Victory</b>: +3", now has "<b>Victory</b>: -3" instead).</p>',
-		releases: { 'Legions of Chaos': 36 }
+		releases: { LC: 36 }
 	},
 	{
 		name: 'Bretonnian Resolve',
@@ -9662,7 +9685,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit with "<b>Faith</b>" gets +1 leadership.</p><p><b>Combat Tactic</b>: This Bretonnian unit with "<b>Faith</b>" gets +1 leadership and it may not be routed this combat.</p>',
-		releases: { 'Legions of Chaos': 37 }
+		releases: { LC: 37 }
 	},
 	{
 		name: 'Call in the Reserves',
@@ -9673,7 +9696,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Super rare',
 		text: '<p> <b>Command</b>: Return all of your cards removed from the game to their discard piles.</p>',
-		releases: { 'Legions of Chaos': 38 }
+		releases: { LC: 38 }
 	},
 	{
 		name: 'Channel Your Power',
@@ -9685,7 +9708,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets a strength bonus equal to it\'s current "<b>Wizard</b>" level.</p>',
-		releases: { 'Legions of Chaos': 39, 'War of Attrition': 123 }
+		releases: { LC: 39, WA: 123 }
 	},
 	{
 		name: 'Charge of the Knights Panther',
@@ -9697,7 +9720,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This cavalry unit gets +4 strength. Only playable if you have a ready infantry unit in play. If you lose this <span class="errata">combat</span>, commit one of your infantry units.</p>',
-		releases: { 'Legions of Chaos': 40 },
+		releases: { LC: 40 },
 		errata: true
 	},
 	{
@@ -9709,7 +9732,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After a player shuffles their discard pile into their deck, go through that player's deck and remove all copies of any one card from the game. You may not play this ability again until your enemy has used this ability.</p><p>Either player may play this ability.</p>",
-		releases: { 'Legions of Chaos': 41 }
+		releases: { LC: 41 }
 	},
 	{
 		name: 'Coordinated Battle Plans',
@@ -9721,7 +9744,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength if you have three or more units with a printed gold cost of 5 or more.</p><p><b>Combat Tactic</b>: This Orc unit gets +4 strength if you have three or more units with a printed gold cost of 5 or more.</p>',
-		releases: { 'Legions of Chaos': 42 }
+		releases: { LC: 42 }
 	},
 	{
 		name: 'Cunning Battle Plans',
@@ -9732,7 +9755,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: Before the <span class="errata">first command is played</span>, take up to 2 commands. These commands may not be attacks <span class="errata">or ranged attacks</span>.</p>',
-		releases: { 'Legions of Chaos': 43 },
+		releases: { LC: 43 },
 		errata: true
 	},
 	{
@@ -9745,7 +9768,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: If you win this combat, rout the enemy unit. Only playable vs. an enemy unit with a "<b>Victory</b>" bonus.</p>',
-		releases: { 'Legions of Chaos': 44 }
+		releases: { LC: 44 }
 	},
 	{
 		name: 'Defence of the Empire',
@@ -9757,7 +9780,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. If this combat ends in a slaughter, this unit wins instead. Only playable while defending.</p>',
-		releases: { 'Legions of Chaos': 45, 'War of Attrition': 136 }
+		releases: { LC: 45, WA: 136 }
 	},
 	{
 		name: 'Epic Duel',
@@ -9768,7 +9791,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p> <b>Command</b>: Both you and then your enemy choose one of the other player's units. Both players discard their hands, draw 5 cards and rally the chosen units. Only playable if there are no ready units in play.</p>",
-		releases: { 'Legions of Chaos': 46, 'War of Attrition': 146 }
+		releases: { LC: 46, WA: 146 }
 	},
 	{
 		name: 'Escape Through The Sewers',
@@ -9780,7 +9803,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: If you lose this combat, instead of being destroyed, your unit is returned to your battle line committed.</p><p><b>Combat Tactic</b>: If this Skaven unit loses this combat, instead of being destroyed, your unit is returned to your battle line committed and the enemy unit may not make a follow-up attack.</p>',
-		releases: { 'Legions of Chaos': 47 }
+		releases: { LC: 47 }
 	},
 	{
 		name: 'Fight Until Dawn',
@@ -9791,7 +9814,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Rally one enemy unit: Your enemy chooses one of your committed units. Rally that unit.</p>',
-		releases: { 'Legions of Chaos': 48, 'War of Attrition': 154 }
+		releases: { LC: 48, WA: 154 }
 	},
 	{
 		name: 'Fire On Them Both',
@@ -9803,7 +9826,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Choose one enemy unit not in this combat. The enemy unit gets a strength and tactic point bonus equal to those of the chosen unit. If you win this combat, the chosen unit suffers the same result as the enemy unit.</p><p>Only playable during a ranged attack by the attacker.</p>',
-		releases: { 'Legions of Chaos': 49 }
+		releases: { LC: 49 }
 	},
 	{
 		name: 'Follow My Lead',
@@ -9815,7 +9838,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Whenever this unit makes a leadership test, the result is automatically a 1. No roll necessary.</p>',
-		releases: { 'Legions of Chaos': 50 }
+		releases: { LC: 50 }
 	},
 	{
 		name: "Franz's Charge",
@@ -9826,7 +9849,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After one of your units without "<b>Victory</b>" wins a combat, attach this card to that unit. While attached that unit gets "<b>Victory</b>: +2." Only playable during a follow-up attack.</p>',
-		releases: { 'Legions of Chaos': 51 }
+		releases: { LC: 51 }
 	},
 	{
 		name: "Franz's Regroup",
@@ -9838,7 +9861,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Move any number of your units in the battle line to the reserves. Only playable by an infantry unit.</p>',
-		releases: { 'Legions of Chaos': 52 }
+		releases: { LC: 52 }
 	},
 	{
 		name: 'Glorious Melee',
@@ -9850,7 +9873,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: All rolls made during this combat, except rout checks, get +3.</p>',
-		releases: { 'Legions of Chaos': 53 }
+		releases: { LC: 53 }
 	},
 	{
 		name: 'Hordes of the North',
@@ -9861,7 +9884,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All units with "<b>Scout</b>" get "<b>Victory</b>: +1".</p>',
-		releases: { 'Legions of Chaos': 54 }
+		releases: { LC: 54 }
 	},
 	{
 		name: "Huss' Arrival",
@@ -9873,7 +9896,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +4 strength. Only playable if you have a ready cavalry unit in play. If you lose the <span class="errata">combat</span> commit one of your cavalry units.</p>',
-		releases: { 'Legions of Chaos': 55 },
+		releases: { LC: 55 },
 		errata: true
 	},
 	{
@@ -9886,7 +9909,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: This unit gets a strength bonus equal to it's printed strength. After the combat, attach this card to this unit. While attached this unit's printed strength is reduced to 0.</p>",
-		releases: { 'Legions of Chaos': 56, 'War of Attrition': 169 }
+		releases: { LC: 56, WA: 169 }
 	},
 	{
 		name: 'Into The Fray',
@@ -9898,7 +9921,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p> <b>WarCry</b>: Choose one enemy unit not in this combat. The enemy unit gets a strength bonus equal to the chosen unit's strength and a tactic point bonus equal to the chosen unit's tactic points. If you win this combat, destroy the chosen unit.</p><p>Only playable by an attacking infantry unit during a non-ranged attack.</p>",
-		releases: { 'Legions of Chaos': 57 }
+		releases: { LC: 57 }
 	},
 	{
 		name: "It's Not The Blade, But The Soldier",
@@ -9910,7 +9933,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: If you control more units with support tactics than your enemy, this unit gets +3 strength.</p><p><b>Combat Tactic</b>: If you control more units with support tactics than your enemy, this Dark Elf unit gets +4 strength.</p>',
-		releases: { 'Legions of Chaos': 58 }
+		releases: { LC: 58 }
 	},
 	{
 		name: "Jasenland's Rolling Charge",
@@ -9922,7 +9945,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This cavalry unit gets +2 strength vs infantry units.</p><p><b>Combat Tactic</b>: This Empire cavalry unit gets +2 strength and "<b>Terror</b>: 2" vs. infantry units.</p>',
-		releases: { 'Legions of Chaos': 59 }
+		releases: { LC: 59 }
 	},
 	{
 		name: 'Keep Them Pinned',
@@ -9934,7 +9957,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +4 strength. Only playable if you have a ready unit in play with a <b>Ranged Attack</b>. If you lose this <span class="errata">combat</span> commit one of your units with a <b>Ranged Attack</b>.</p>',
-		releases: { 'Legions of Chaos': 60 },
+		releases: { LC: 60 },
 		errata: true
 	},
 	{
@@ -9946,7 +9969,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All units with "<b>Wizard</b>" get "<b>Victory</b>: +1".</p>',
-		releases: { 'Legions of Chaos': 61 }
+		releases: { LC: 61 }
 	},
 	{
 		name: 'March of the Damned',
@@ -9957,7 +9980,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: "<p>When combat rolls are made, the rolls are subtracted from each unit's strength instead of added to each unit's strength.</p>",
-		releases: { 'Legions of Chaos': 62, 'War of Attrition': 192 }
+		releases: { LC: 62, WA: 192 }
 	},
 	{
 		name: 'Overtake Them!',
@@ -9968,7 +9991,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your units without "<b>Victory</b>" wins a combat as the defender, attach this card to that unit. While attached, that unit gets "<b>Victory</b>: +2".</p>',
-		releases: { 'Legions of Chaos': 63 }
+		releases: { LC: 63 }
 	},
 	{
 		name: 'Own The Battlefield',
@@ -9980,7 +10003,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable if you have a higher <b>Scout</b> total than your enemy.</p><p><b>Combat Tactic</b>: This High Elf unit gets +3 strength. Only playable if you have a higher <b>Scout</b> total than your enemy.</p>',
-		releases: { 'Legions of Chaos': 64 }
+		releases: { LC: 64 }
 	},
 	{
 		name: 'Rain Hell Upon Them!',
@@ -9991,7 +10014,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your units without "<b>Victory</b>" wins a ranged attack as the attacker and destroys the enemy unit, attach this card to your unit. While attached, that unit gets "<b>Victory</b>: +2".</p>',
-		releases: { 'Legions of Chaos': 65 }
+		releases: { LC: 65 }
 	},
 	{
 		name: 'Re-equip',
@@ -10002,7 +10025,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Both you and then your enemy reveal the top 5 cards of your deck. Any attachments revealed in this way may be attached to a legal unit.</p>',
-		releases: { 'Legions of Chaos': 66 }
+		releases: { LC: 66 }
 	},
 	{
 		name: 'Relentless March',
@@ -10013,7 +10036,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Declare a non-ranged attack with one of your committed units.</p>',
-		releases: { 'Legions of Chaos': 67, 'War of Attrition': 226 }
+		releases: { LC: 67, WA: 226 }
 	},
 	{
 		name: 'Remember Your Training!',
@@ -10025,7 +10048,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p> <b>WarCry</b>: At the end of the tactics phase, this infantry unit gets a strength bonus equal to the number of bonuses it received in this combat to it's strength, leadership or tactic points.</p>",
-		releases: { 'Legions of Chaos': 68 }
+		releases: { LC: 68 }
 	},
 	{
 		name: 'Scouting Skirmish',
@@ -10037,7 +10060,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Your opponent may allow you to draw 3 cards. If they do not, when this combat ends, the result is a slaughter.</p>',
-		releases: { 'Legions of Chaos': 69 }
+		releases: { LC: 69 }
 	},
 	{
 		name: 'Siphoned Power',
@@ -10048,7 +10071,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (4): After one of your units becomes committed, make a leadership test for one of your other units. If successful, commit the other unit instead.</p>',
-		releases: { 'Legions of Chaos': 70 }
+		releases: { LC: 70 }
 	},
 	{
 		name: 'Strike When They Are Weak',
@@ -10060,7 +10083,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: If the enemy unit is committed at the end of the combat, and your unit has a printed strength of 3 or more, the result is a slaughter. Not playable during a ranged attack.</p>',
-		releases: { 'Legions of Chaos': 71 }
+		releases: { LC: 71 }
 	},
 	{
 		name: 'Take Up The Charge',
@@ -10071,7 +10094,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you rout an enemy unit, exchange this unit with one of your other ready units. The new unit performs the follow-up attack.</p>',
-		releases: { 'Legions of Chaos': 72 }
+		releases: { LC: 72 }
 	},
 	{
 		name: 'Taunting Tactics',
@@ -10083,7 +10106,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Choose one enemy unit in the reserves. Move that unit to the battle line. Your enemy may commit the chosen unit to cancel this effect.</p>',
-		releases: { 'Legions of Chaos': 73 }
+		releases: { LC: 73 }
 	},
 	{
 		name: 'The Bretonnian Fields of Battle',
@@ -10094,7 +10117,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All units with "<b>Faith</b>" get "<b>Victory</b>: +1".</p>',
-		releases: { 'Legions of Chaos': 74 }
+		releases: { LC: 74 }
 	},
 	{
 		name: 'The Faithful Fear Not',
@@ -10106,7 +10129,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Choose one enemy unit. This unit gets a strength bonus equal to the target unit\'s "<b>Terror</b>" level.</p>',
-		releases: { 'Legions of Chaos': 75 }
+		releases: { LC: 75 }
 	},
 	{
 		name: 'The Fight Belongs To The Soldier',
@@ -10118,7 +10141,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +3 strength. If this combat ends in a slaughter this unit wins instead. Only playable while you have another ready infantry unit in your battle line.</p>',
-		releases: { 'Legions of Chaos': 76 }
+		releases: { LC: 76 }
 	},
 	{
 		name: 'The Hand of Chaos',
@@ -10130,7 +10153,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (2): Your enemy may pay 3 spell points. If they do not, when this combat ends the result is a slaughter.</p>',
-		releases: { 'Legions of Chaos': 77 }
+		releases: { LC: 77 }
 	},
 	{
 		name: 'The Judgement of Sigmar',
@@ -10141,7 +10164,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Commit one of your units: After your enemy retreats, remove all units in play from the game.</p>',
-		releases: { 'Legions of Chaos': 78 }
+		releases: { LC: 78 }
 	},
 	{
 		name: 'The Triumph of Huss',
@@ -10153,7 +10176,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets a strength bonus equal to its "<b>Victory</b>." If the unit has a "<b>Victory</b>" penalty this card has no effect.</p>',
-		releases: { 'Legions of Chaos': 79, 'War of Attrition': 261 }
+		releases: { LC: 79, WA: 261 }
 	},
 	{
 		name: 'To Our Last Man',
@@ -10164,7 +10187,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After your unit wins a follow-up combat, you make a rout check against the enemy unit. Only playable if you have fewer units in play than your opponent. Only playable once per command.</p>',
-		releases: { 'Legions of Chaos': 80, 'War of Attrition': 265 }
+		releases: { LC: 80, WA: 265 }
 	},
 	{
 		name: 'Unexpected Assault',
@@ -10176,7 +10199,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: At the end of the combat, if you rout the enemy unit, target another enemy unit with a gold cost less than the routed unit's gold cost. The target unit is destroyed. This unit may not make a follow-up attack.</p>",
-		releases: { 'Legions of Chaos': 81 }
+		releases: { LC: 81 }
 	},
 	{
 		name: 'Victory!',
@@ -10187,7 +10210,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After one of your units without "<b>Victory</b>" wins a combat, attach this card to that unit. While attached, that unit gets "<b>Victory</b>: +1".</p>',
-		releases: { 'Legions of Chaos': 82 }
+		releases: { LC: 82 }
 	},
 	{
 		name: 'Leave Nothing Alive',
@@ -10199,7 +10222,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This cavalry unit gets +4 strength. Only playable if you have ready flyer unit in play. If you lose this <span class="errata">combat</span> commit one of your flyer units.</p>',
-		releases: { 'Legions of Chaos': 83 },
+		releases: { LC: 83 },
 		errata: true
 	},
 	{
@@ -10211,7 +10234,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Destroy this card: After this unit wins a combat, return one of your action cards played during that combat to your hand.</p>',
-		releases: { 'Legions of Chaos': 84 }
+		releases: { LC: 84 }
 	},
 	{
 		name: 'Cache of Scrolls',
@@ -10222,7 +10245,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>This unit gets "<b>Wizard</b>: 1".</p>',
-		releases: { 'Legions of Chaos': 85, 'War of Attrition': 282 }
+		releases: { LC: 85, WA: 282 }
 	},
 	{
 		name: 'Lucas Volkmann, Middenheim Spy',
@@ -10234,7 +10257,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Target a card with a combat tactic in your opponent's discard pile (army or action). Play that ability, paying all costs. Your enemy may then choose to remove that card from the game.</p>",
-		releases: { 'Legions of Chaos': 86 }
+		releases: { LC: 86 }
 	},
 	{
 		name: 'Maximillion Gluttonfist',
@@ -10246,7 +10269,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b>: This unit attacks a committed unit with a printed positive "<b>Victory</b>" bonus. The loser of this combat is destroyed. You may play this ability while this unit is committed.</p>',
-		releases: { 'Legions of Chaos': 87, 'War of Attrition': 287 }
+		releases: { LC: 87, WA: 287 }
 	},
 	{
 		name: 'Ward of Wisdom',
@@ -10257,7 +10280,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: Name two action cards. The named cards may not be played during this combat.</p><p><b>Combat Tactic</b>: Choose and reveal a random card in your enemy's hand. Cards of that name may not be played during this combat.</p>",
-		releases: { 'Legions of Chaos': 88, 'War of Attrition': 293 }
+		releases: { LC: 88, WA: 293 }
 	},
 	{
 		name: 'Brotherhood of Grimnir',
@@ -10271,7 +10294,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Victory</b>: +1</p><p>At the end of the tactics phase, raise or lower this unit's strength to equal that of the opposing unit.</p><p><b>Combat Tactic</b>: If this combat ends in a slaughter, this unit wins instead. This unit may not make a follow-up attack.</p>",
-		releases: { 'Legions of Chaos': 89 }
+		releases: { LC: 89 }
 	},
 	{
 		name: "Grimjaw's Hammers",
@@ -10285,7 +10308,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Commit this unit: When one of your Dwarf units declares an attack, the enemy unit may not make a combat roll at the end of the combat.</p>',
-		releases: { 'Legions of Chaos': 90 }
+		releases: { LC: 90 }
 	},
 	{
 		name: 'Guildmaster Burlock Damminson',
@@ -10300,7 +10323,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Support Tactic</b>: Play a support tactic on one of your committed War Machines paying all costs.</p><p><b>Support Tactic</b>: Your War Machine unit gets +2 strength and +2 tactic points.</p>',
-		releases: { 'Legions of Chaos': 91 }
+		releases: { LC: 91 }
 	},
 	{
 		name: "Ironbrow's Digger Company",
@@ -10314,7 +10337,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Commit this unit: After an enemy unit is destroyed in combat, the enemy unit and all attached cards are removed from the game.</p>',
-		releases: { 'Legions of Chaos': 92 }
+		releases: { LC: 92 }
 	},
 	{
 		name: "Ironfist's Disciples",
@@ -10328,7 +10351,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: This unit gets +X strength vs. monster units. X equals the enemy unit's gold cost.</p>",
-		releases: { 'Legions of Chaos': 93 }
+		releases: { LC: 93 }
 	},
 	{
 		name: "Ironfist's Doomseekers",
@@ -10342,7 +10365,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p>This unit's leadership may not be reduced.</p><p><b>Combat Tactic</b>: This unit gets +X strength. X equals the number of your enemy's infantry units.</p>",
-		releases: { 'Legions of Chaos': 94 }
+		releases: { LC: 94 }
 	},
 	{
 		name: "Makaisson's Belly of Fire",
@@ -10356,7 +10379,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 9</p><p><b>Combat Tactic</b>: If this unit is destroyed in a slaughter, your enemy must destroy another one of their units.</p>',
-		releases: { 'Legions of Chaos': 95, 'War of Attrition': 311 }
+		releases: { LC: 95, WA: 311 }
 	},
 	{
 		name: "Malakai Makaisson's Goblin-Hewer",
@@ -10371,7 +10394,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: After this unit destroys a unit during a ranged attack, your enemy must destroy another of their units.</p>',
-		releases: { 'Legions of Chaos': 96, 'War of Attrition': 312 }
+		releases: { LC: 96, WA: 312 }
 	},
 	{
 		name: 'Ambassador Kasper Von Velten',
@@ -10386,7 +10409,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Once per battle, discard the top 3 cards of your army deck. If one of those cards is a Kislev unit, you may immediately destroy one of your other ready units in your army and replace it with that Kislev unit.</p>',
-		releases: { 'Legions of Chaos': 97 }
+		releases: { LC: 97 }
 	},
 	{
 		name: 'Boris Todbringer',
@@ -10401,7 +10424,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p> <b>Command</b>: If this unit passes a leadership test, rally this unit. Your next command may not be an attack. If your enemy passes as their next command, the battle ends immediately. This ability may be played while committed and only once per battle.</p>',
-		releases: { 'Legions of Chaos': 98 }
+		releases: { LC: 98 }
 	},
 	{
 		name: "Bremen's Knights Panther",
@@ -10415,7 +10438,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the number of your infantry nuits in the battle line. Only playable while attacking or defending from the battle line.</p>',
-		releases: { 'Legions of Chaos': 99 }
+		releases: { LC: 99 }
 	},
 	{
 		name: 'Emperor Karl Franz',
@@ -10430,7 +10453,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Support WarCry</b>: Your Empire unit gets +3 leadership.</p><p><b>Reaction</b>: After mustering a unit, instead of drawing a card from your army deck, add one unit card from your army discard pile to your hand.</p>',
-		releases: { 'Legions of Chaos': 100 }
+		releases: { LC: 100 }
 	},
 	{
 		name: "Heralds of Sigmar's Blood",
@@ -10444,7 +10467,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b> Commit or destroy this unit: After an enemy unit routs one of your units with a card effect, cancel that follow-up attack. You may play this ability while committed.</p>',
-		releases: { 'Legions of Chaos': 101, 'War of Attrition': 332 }
+		releases: { LC: 101, WA: 332 }
 	},
 	{
 		name: 'Kirenwulf Jasenland',
@@ -10459,7 +10482,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b> Discard 1 card: After your enemy plays a <b>Reaction</b>, negate it's effects.</p>",
-		releases: { 'Legions of Chaos': 102, 'War of Attrition': 334 },
+		releases: { LC: 102, WA: 334 },
 		banned: true
 	},
 	{
@@ -10474,7 +10497,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Reaction</b>: After an enemy's card effect forces you to discard, roll. If the roll is a 3 or more, draw 2 cards.</p>",
-		releases: { 'Legions of Chaos': 103, 'War of Attrition': 337 }
+		releases: { LC: 103, WA: 337 }
 	},
 	{
 		name: 'Middenland Battalion',
@@ -10488,7 +10511,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may not declare an attack.</p><p>This unit may block infantry.</p>',
-		releases: { 'Legions of Chaos': 104, 'War of Attrition': 339 }
+		releases: { LC: 104, WA: 339 }
 	},
 	{
 		name: 'Rein Volkhard',
@@ -10503,7 +10526,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b> Commit one of your Empire units: This unit gets a strength bonus equal to the committed unit's strength. This combat tactic may be played any number of times.</p>",
-		releases: { 'Legions of Chaos': 105 }
+		releases: { LC: 105 }
 	},
 	{
 		name: "Piotr's Gryphon Legion",
@@ -10517,7 +10540,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +5 tactic points.</p>',
-		releases: { 'Legions of Chaos': 106, 'War of Attrition': 343 }
+		releases: { LC: 106, WA: 343 }
 	},
 	{
 		name: 'Swords of the Reiksguard',
@@ -10531,7 +10554,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: When one of your units begins a combat with a blocking unit, exchange this unit with your unit in combat.</p>',
-		releases: { 'Legions of Chaos': 107 }
+		releases: { LC: 107 }
 	},
 	{
 		name: 'The Black Raiders of Middenland',
@@ -10545,7 +10568,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: Once per battle, after this unit wins a combat, roll. If the roll is equal to or less than the number of enemy units in play you may attempt to rout the enemy unit.</p>',
-		releases: { 'Legions of Chaos': 108, 'War of Attrition': 345 }
+		releases: { LC: 108, WA: 345 }
 	},
 	{
 		name: 'Ambassador of the Empire',
@@ -10558,7 +10581,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>May only be attached to an Empire or Kislev unit.</p><p><b>Reaction</b>: After a command has concluded in which one of your Empire or Kislev units was destroyed in a combat, this unit may immediately declare an attack.</p>',
-		releases: { 'Legions of Chaos': 109 }
+		releases: { LC: 109 }
 	},
 	{
 		name: 'Ludwig Scharzelm',
@@ -10572,7 +10595,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>May only be attached to an Empire unit.</p><p><b>Combat Tactic</b>: If you destroy the enemy unit in combat, the enemy unit and all attached cards are removed from the game.</p>',
-		releases: { 'Legions of Chaos': 110 }
+		releases: { LC: 110 }
 	},
 	{
 		name: 'Archers of the Weeping Skies',
@@ -10586,7 +10609,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 5</p><p> <b>Command</b> Discard 2 cards: This unit declares a ranged attack. You may play this ability while this unit is committed.</p>',
-		releases: { 'Legions of Chaos': 111, 'War of Attrition': 357 }
+		releases: { LC: 111, WA: 357 }
 	},
 	{
 		name: "Aveldan's Sea Rangers",
@@ -10600,7 +10623,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Ranged Attack</b>: 4</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. Dark Elf units.</p>',
-		releases: { 'Legions of Chaos': 112, 'War of Attrition': 358 }
+		releases: { LC: 112, WA: 358 }
 	},
 	{
 		name: "Elduranel's Brilliant Lancers",
@@ -10614,7 +10637,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After this unit rolls a 1 for it's combat roll, that roll gets +5.</p>",
-		releases: { 'Legions of Chaos': 113, 'War of Attrition': 362 }
+		releases: { LC: 113, WA: 362 }
 	},
 	{
 		name: "Glory's Fading",
@@ -10628,7 +10651,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: When this unit blocks an attack, change the combat to a ranged attack with this unit as the attacker. If you lose the combat, this unit is destroyed and the enemy unit may make a rout check.</p>',
-		releases: { 'Legions of Chaos': 114, 'War of Attrition': 364 }
+		releases: { LC: 114, WA: 364 }
 	},
 	{
 		name: "Indomril's Sea Rangers",
@@ -10642,7 +10665,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: Rout the enemy unit if you win this combat. Only playable while the enemy unit is committed.</p>',
-		releases: { 'Legions of Chaos': 115 }
+		releases: { LC: 115 }
 	},
 	{
 		name: "Lindanel's Seeking Blades",
@@ -10656,7 +10679,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 1</p><p><b>Reaction</b>: After this unit is mustered, destroy an enemy unit with "<b>Scout</b>". Your enemy gets an amount of gold equal to the destroyed unit\'s gold cost plus the cost of any attachments on the destroyed unit. Your enemy may continue to muster units.</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. "<b>Scout</b>" units.</p>',
-		releases: { 'Legions of Chaos': 116, 'War of Attrition': 368 }
+		releases: { LC: 116, WA: 368 }
 	},
 	{
 		name: "Sorrow's Song",
@@ -10670,7 +10693,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 5</p><p><b>Support Tactic</b> Commit this unit: The enemy unit gets -2 strength and -1 tactic point. If the enemy unit is a monster, it gets an additional -2 strength and -1 tactic point.</p>',
-		releases: { 'Legions of Chaos': 117 }
+		releases: { LC: 117 }
 	},
 	{
 		name: 'Yrlis Bluestorm',
@@ -10685,7 +10708,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b>: When one of your other units begins a follow-up attack, exchange that unit with this unit.</p>',
-		releases: { 'Legions of Chaos': 118 }
+		releases: { LC: 118 }
 	},
 	{
 		name: 'Anyone But Them!',
@@ -10696,7 +10719,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>When this card enters play, choose an enemy unit. While this card is in play, that unit may not attack. If your enemy has no units in play that may attack, destroy this card.</p>',
-		releases: { 'Legions of Chaos': 119 }
+		releases: { LC: 119 }
 	},
 	{
 		name: 'Helm of Dominion',
@@ -10708,7 +10731,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b> Destroy this card: Your unit gets +4 leadership and is immune to "<b>Terror</b>".</p>',
-		releases: { 'Legions of Chaos': 120 }
+		releases: { LC: 120 }
 	},
 	{
 		name: "Be'lakor the Darkmaster",
@@ -10722,7 +10745,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 3</p><p><b>Wizard</b>: 3</p><p>All your infantry units get "<b>Victory</b>: +1."</p><p><b>Support Tactic</b>: Roll. Your Chaos unit gets "<b>Terror</b>: X", where X is equal to the roll.</p>',
-		releases: { Champions: 1 }
+		releases: { CC: 1 }
 	},
 	{
 		name: 'Garagrim Ironfist',
@@ -10736,7 +10759,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Victory</b>: -2</p><p><b>Support Tactic</b>: Your Dwarf unit gets +2 strength vs. monster and daemon units.</p><p><b>Combat Tactic</b>: This unit gets +2 strength if you have 3 or more cards in your hand.</p>',
-		releases: { Champions: 1 }
+		releases: { CC: 1 }
 	},
 	{
 		name: 'Vardek Crom, the Conqueror',
@@ -10749,7 +10772,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>This unit may only be mustered in the first muster phase.</p><p><b>Support Tactic</b>: Your Chaos unit gets +2 strength if this is the second battle and +4 strength if this is the third battle.</p>',
-		releases: { Champions: 2 }
+		releases: { CC: 2 }
 	},
 	{
 		name: 'Thorek Ironbrow',
@@ -10763,7 +10786,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Runesmith</b>: 2 <i>(Counts as Wizard)</i></p><p><b>Spell Support Tactic</b> (1): Your Dwarf unit gets "<b>Terror</b>: 2".</p>',
-		releases: { Champions: 2 }
+		releases: { CC: 2 }
 	},
 	{
 		name: 'Rikhaine Blackblade',
@@ -10776,7 +10799,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Support Tactic</b>: Your unit with a printed gold cost of 5 or more gets +1 strength.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your other ready Dark Elf units with a printed gold cost of 5 or more.</p>',
-		releases: { Champions: 3 }
+		releases: { CC: 3 }
 	},
 	{
 		name: 'Luthor Huss',
@@ -10790,7 +10813,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: If this unit passes a tactic point test, play a combat tactic from your hand paying no costs.</p><p><b>Reaction</b> Discard 1 card: After your enemy plays a Spell card or ability, negate it's effects if this unit passes a tactic point test.</p>",
-		releases: { Champions: 3 }
+		releases: { CC: 3 }
 	},
 	{
 		name: 'Tullaris of Har Geneth',
@@ -10803,7 +10826,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p> <b>WarCry</b>: Choose a number and roll from your enemy's deck. If the roll matches the chosen number, destroy both units. If the roll does not match that number this unit gets -1 strength.</p>",
-		releases: { Champions: 4 }
+		releases: { CC: 4 }
 	},
 	{
 		name: 'Valten, Exalted of Sigmar',
@@ -10817,7 +10840,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Veteran</b>: Valten/Valten, Champion Of Sigmar</p><p>While this unit is ready your Empire units are immune to "<b>Terror</b>".</p><p><b>Reaction</b>: After you muster this unit, search your deck and discard pile for up to three attachments with a gold cost of 4 or less. Play those attachments on Valten, paying no costs.</p>',
-		releases: { Champions: 4 }
+		releases: { CC: 4 }
 	},
 	{
 		name: 'Borgut Facebeata',
@@ -10831,7 +10854,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Victory</b>: -2</p><p><b>Combat Tactic</b>: Place 1 card from either of your discard piles on top of your deck.</p>',
-		releases: { Champions: 5, 'War of Attrition': 60 }
+		releases: { CC: 5, WA: 60 }
 	},
 	{
 		name: 'Elduranel Aellian',
@@ -10845,7 +10868,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 2</p><p> <b>Command</b> Discard 1 card: You get a number of spell points equal to the die number on the discarded card. Only playable once per battle.</p>',
-		releases: { Champions: 5 }
+		releases: { CC: 5 }
 	},
 	{
 		name: 'Effigies of Gork and Mork',
@@ -10859,7 +10882,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Ranged Attack</b>: 5</p><p>All of your Orc <b>Wizard</b>s get +1 to their "<b>Wizard</b>" level.</p><p><b>Support Tactic</b>: Your Orc unit gets "<b>Faith</b>: 3".</p>',
-		releases: { Champions: 6 }
+		releases: { CC: 6 }
 	},
 	{
 		name: 'Brothers of the Fallen Tree',
@@ -10873,7 +10896,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Combat Tactic</b>: Destroy the enemy unit. Only playable if you have already played a combat tactic or WarCry this combat, and only if your unit's strength is at least 3 more than the enemy's strength.</p>",
-		releases: { Champions: 6 }
+		releases: { CC: 6 }
 	},
 	{
 		name: "Archaon's Judgement",
@@ -10888,7 +10911,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Victory</b>: +2</p><p><b>Long Ranged Attack</b>: 7</p><p><b>Support Tactic</b>: Commit this unit. Play a WarCry or combat tactic card from your hand paying no costs.</p>',
-		releases: { 'Siege of Middenheim': 1 }
+		releases: { SM: 1 }
 	},
 	{
 		name: 'Bloodcrushers',
@@ -10902,7 +10925,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may not be carried over to another battle.</p><p><b>Reaction</b>: After an enemy unit is destroyed in combat, this unit gets a +1 strength token.</p>',
-		releases: { 'Siege of Middenheim': 2, 'War of Attrition': 6 }
+		releases: { SM: 2, WA: 6 }
 	},
 	{
 		name: 'Changebringers',
@@ -10916,7 +10939,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell WarCry</b> (1): Commit the enemy unit unless it passes a tactic point test.</p>',
-		releases: { 'Siege of Middenheim': 3 }
+		releases: { SM: 3 }
 	},
 	{
 		name: 'Chaos Furies',
@@ -10930,7 +10953,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. a unit with a support tactic ability.</p>',
-		releases: { 'Siege of Middenheim': 4 }
+		releases: { SM: 4 }
 	},
 	{
 		name: "D'aggorn the Exalted – Veteran of Chaos",
@@ -10945,7 +10968,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Veteran</b>: D'aggorn The Exalted</p><p><b>Combat Tactic</b>: Look at your enemy's hand. Your enemy discards a card of your choice. This unit gets a strength bonus equal to the die on the discarded card.</p>",
-		releases: { 'Siege of Middenheim': 5, 'War of Attrition': 9 }
+		releases: { SM: 5, WA: 9 }
 	},
 	{
 		name: 'Bile Rot, Daemonic Herald',
@@ -10960,7 +10983,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>While this unit is ready, your other Daemon units get +1 strength and +1 tactic point.</p><p><b>Reaction</b>: After one of your other Daemon units is destroyed, draw 1 card.</p>',
-		releases: { 'Siege of Middenheim': 6 }
+		releases: { SM: 6 }
 	},
 	{
 		name: 'Flayerkin',
@@ -10974,7 +10997,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Commit the enemy unit if it is a fortification.</p>',
-		releases: { 'Siege of Middenheim': 7 }
+		releases: { SM: 7 }
 	},
 	{
 		name: 'Kordel Shogaar, Standard Bearer',
@@ -10989,7 +11012,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>When you muster this unit, search your army deck for a unique Chaos unit and add it to your hand.</p><p><b>Support WarCry</b>: Your Chaos cavalry unit gets +2 strength. If you lose this combat, commit this unit.</p>',
-		releases: { 'Siege of Middenheim': 8, 'War of Attrition': 16 }
+		releases: { SM: 8, WA: 16 }
 	},
 	{
 		name: 'Sorrowbringers',
@@ -11003,7 +11026,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may block cavalry.</p><p><b>Combat Tactic</b>: This unit gets +1 strength while blocking.</p>',
-		releases: { 'Siege of Middenheim': 9 }
+		releases: { SM: 9 }
 	},
 	{
 		name: 'Plagueriders',
@@ -11017,7 +11040,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: The enemy unit's tactic points are reduced to 0 unless it passes a strength test.</p>",
-		releases: { 'Siege of Middenheim': 10 }
+		releases: { SM: 10 }
 	},
 	{
 		name: 'Pleasureseekers',
@@ -11031,7 +11054,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: The enemy unit gets -2 leadership.</p><p><b>Combat Tactic</b>: This unit gets +2 tactic points. Only playable if the enemy unit has leadership 1 or less.</p>',
-		releases: { 'Siege of Middenheim': 11 }
+		releases: { SM: 11 }
 	},
 	{
 		name: 'Regiment of Khorne',
@@ -11045,7 +11068,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Place 1 card from your discard pile on top of your action deck.</p>',
-		releases: { 'Siege of Middenheim': 12, 'War of Attrition': 21 }
+		releases: { SM: 12, WA: 21 }
 	},
 	{
 		name: 'Siege Tower',
@@ -11059,7 +11082,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may not attack.</p><p>While this unit is ready in your battle line, your infantry may attack from the reserves.</p><p> <b>Command</b> Commit one of your infantry units: Destroy a fortification unit.</p>',
-		releases: { 'Siege of Middenheim': 13 }
+		releases: { SM: 13 }
 	},
 	{
 		name: 'Siryk Silver Tongue',
@@ -11074,7 +11097,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Terror</b>: 2</p><p><b>Wizard</b>: 2</p><p> <b>WarCry</b>: Reduce the enemy unit's strength to 0 unless it passes an unmodified leadership test.</p>",
-		releases: { 'Siege of Middenheim': 14 }
+		releases: { SM: 14 }
 	},
 	{
 		name: "Narsin's Black Guard",
@@ -11088,7 +11111,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +2 strength and +2 leadership. Only playable while you are losing a combat.</p>',
-		releases: { 'Siege of Middenheim': 15 }
+		releases: { SM: 15 }
 	},
 	{
 		name: 'Death Dealer',
@@ -11102,7 +11125,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit routs an enemy unit choose the target of your follow-up attack.</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. committed units.</p>',
-		releases: { 'Siege of Middenheim': 16 }
+		releases: { SM: 16 }
 	},
 	{
 		name: "Blacktear's Brigands",
@@ -11116,7 +11139,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Reveal the top card of your action deck. If that card is a playable combat tactic, play that card, paying all costs.</p>',
-		releases: { 'Siege of Middenheim': 17 }
+		releases: { SM: 17 }
 	},
 	{
 		name: 'The Serrated',
@@ -11130,7 +11153,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. High Elf units.</p>',
-		releases: { 'Siege of Middenheim': 18 }
+		releases: { SM: 18 }
 	},
 	{
 		name: 'Black Riders',
@@ -11144,7 +11167,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you rout an enemy unit, your enemy discards 1 card.</p>',
-		releases: { 'Siege of Middenheim': 19 }
+		releases: { SM: 19 }
 	},
 	{
 		name: 'The Gates of Karond Kar',
@@ -11159,7 +11182,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit may not attack.</p><p>Any ready infantry unit may block an attack targeting this unit.</p><p><b>Support Tactic</b>: If your Dark Elf unit wins this combat, you get +1 to your rout check.</p>',
-		releases: { 'Siege of Middenheim': 20 }
+		releases: { SM: 20 }
 	},
 	{
 		name: 'Coven of Sorrows',
@@ -11173,7 +11196,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After a tactic gives this unit a strength bonus, the enemy unit gets -1 strength.</p>',
-		releases: { 'Siege of Middenheim': 21 }
+		releases: { SM: 21 }
 	},
 	{
 		name: 'Loukhane Nightblade',
@@ -11187,7 +11210,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Super rare',
 		text: '<p>May only be attached to a Dark Elf unit.</p><p><b>Combat Tactic</b>: Destroy a character attachment on the enemy unit or this unit gets +2 strength vs. "Unique" units.</p>',
-		releases: { 'Siege of Middenheim': 22 }
+		releases: { SM: 22 }
 	},
 	{
 		name: 'Ardug the Unbreakable',
@@ -11201,7 +11224,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Victory</b>: -1</p><p>Enemy units destroyed in a combat vs. this unit must pass a leadership test or be removed from the game.</p>',
-		releases: { 'Siege of Middenheim': 23 }
+		releases: { SM: 23 }
 	},
 	{
 		name: "Facebeata's Big 'Uns",
@@ -11215,7 +11238,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Destroy one attachment on the enemy unit.</p>',
-		releases: { 'Siege of Middenheim': 24, 'War of Attrition': 61 }
+		releases: { SM: 24, WA: 61 }
 	},
 	{
 		name: "Facebeata's Dark Boyz",
@@ -11230,7 +11253,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: -3</p><p><b>Reaction</b>: After one of your units is routed, if this unit passes a tactic point test the enemy unit may not make a follow-up attack.</p>',
-		releases: { 'Siege of Middenheim': 25, 'War of Attrition': 62 }
+		releases: { SM: 25, WA: 62 }
 	},
 	{
 		name: "Skinripper's Horde of Greenies",
@@ -11244,7 +11267,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>When you muster this unit you may search your deck for another copy of this card and add it to your hand.</p><p><b>Support Tactic</b> Commit: Your unit gets +1 strength for each of your other copies of this unit.</p>',
-		releases: { 'Siege of Middenheim': 26, 'War of Attrition': 84 }
+		releases: { SM: 26, WA: 84 }
 	},
 	{
 		name: "Facebeata's 'Ard House",
@@ -11258,7 +11281,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may not attack.Any ready infantry unit may block an attack targeting this unit.</p><p>After you muster a unit, instead of drawing a card you may place this card into your hand from your discard pile.</p><p><b>Reaction</b>: After one of your Orc units is routed, draw 1 card.</p>',
-		releases: { 'Siege of Middenheim': 27 }
+		releases: { SM: 27 }
 	},
 	{
 		name: 'Farell Bloodfist',
@@ -11272,7 +11295,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (1): After you play a <b>Spell Command</b>, draw 1 card.</p>',
-		releases: { 'Siege of Middenheim': 28 }
+		releases: { SM: 28 }
 	},
 	{
 		name: "Skinripper's Hoppin' Boyz",
@@ -11286,7 +11309,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>When attacking from the battle line, this unit may attack the enemy reserves.</p><p><b>Reaction</b>: After this unit declares an attack, choose 1 enemy unit, that unit may not block this attack.</p>',
-		releases: { 'Siege of Middenheim': 29, 'War of Attrition': 83 }
+		releases: { SM: 29, WA: 83 }
 	},
 	{
 		name: 'Taugrek the Throttler',
@@ -11301,7 +11324,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p>Any standard attached to this unit has it's gold cost reduced to 0.</p><p><b>Support Tactic</b>: Your unit gets +1 leadership. Only playable while this unit has a standard attachment.</p>",
-		releases: { 'Siege of Middenheim': 30 }
+		releases: { SM: 30 }
 	},
 	{
 		name: 'Blood for the Blood God',
@@ -11312,7 +11335,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Your attacking Chaos unit gets +2 strength.</p>',
-		releases: { 'Siege of Middenheim': 31 }
+		releases: { SM: 31 }
 	},
 	{
 		name: 'Last Waaagh!',
@@ -11323,7 +11346,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Support WarCry</b> (1): Your Orc wizard unit or your unit with an Orc wizard attachment gets +1 strength for each of your opponents spell points.</p>',
-		releases: { 'Siege of Middenheim': 32 }
+		releases: { SM: 32 }
 	},
 	{
 		name: 'Standard of Darkness',
@@ -11334,7 +11357,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your unit gets +1 strength vs. Grand Alliance units.</p><p><b>Reaction</b> Discard 1 card: After this unit loses a combat, move this attachment to one of your ready units.</p>',
-		releases: { 'Siege of Middenheim': 33 }
+		releases: { SM: 33 }
 	},
 	{
 		name: 'Watch Tower',
@@ -11348,7 +11371,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may not attack. Any ready infantry unit may block an attack targeting this unit.</p><p><b>Scout</b>: 2</p><p><b>Support Tactic</b>: Your unit gets +1 strength.</p>',
-		releases: { 'Siege of Middenheim': 34, 'War of Attrition': 104 }
+		releases: { SM: 34, WA: 104 }
 	},
 	{
 		name: 'Join the Fray',
@@ -11360,7 +11383,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: Choose one of your ready units. This unit gets a strength bonus equal to the chosen unit's strength and a tactic point bonus equal to the chosen unit's tactic points. If you lose the combat, destroy the chosen unit.</p>",
-		releases: { 'Siege of Middenheim': 35 }
+		releases: { SM: 35 }
 	},
 	{
 		name: 'Reliable Support',
@@ -11372,7 +11395,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Play a support tactic on one of your ready units, paying all costs.</p>',
-		releases: { 'Siege of Middenheim': 36, 'War of Attrition': 227 }
+		releases: { SM: 36, WA: 227 }
 	},
 	{
 		name: 'Deadly Attrition',
@@ -11384,7 +11407,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: Your opponent discards 2 cards.</p>',
-		releases: { 'Siege of Middenheim': 37 }
+		releases: { SM: 37 }
 	},
 	{
 		name: 'Awakening',
@@ -11395,7 +11418,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Rally one of your units with strength X or less. X equals the number of ready enemy units. X may not equal 0.</p>',
-		releases: { 'Siege of Middenheim': 38 }
+		releases: { SM: 38 }
 	},
 	{
 		name: 'Blind Fury',
@@ -11407,7 +11430,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Each player selects any number of cards from their hand and sets the rest aside. Only the selected cards may be played in this combat. Cards set aside may not be used until after this combat.</p><p>Any selected cards not played in this combat are discarded after the resolution. After this combat return the cards set aside to your hand.</p>',
-		releases: { 'Siege of Middenheim': 39 }
+		releases: { SM: 39 }
 	},
 	{
 		name: 'Clinch',
@@ -11419,7 +11442,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: <span class="errata">You may</span> remove all attached cards and tokens <span class="errata">from both units</span> in this combat. <span class="errata">If you do,</span> return both units to their printed strength.</p>',
-		releases: { 'Siege of Middenheim': 40 },
+		releases: { SM: 40 },
 		errata: true
 	},
 	{
@@ -11432,7 +11455,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Play a support tactic printed on one of your units in the battle line, paying all costs.</p>',
-		releases: { 'Siege of Middenheim': 41 }
+		releases: { SM: 41 }
 	},
 	{
 		name: 'Crush the Weak',
@@ -11444,7 +11467,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -2 strength and -2 tactic points. Only playable if the enemy units printed strength is 2 or less.</p>',
-		releases: { 'Siege of Middenheim': 42, 'War of Attrition': 129 }
+		releases: { SM: 42, WA: 129 }
 	},
 	{
 		name: 'Twister',
@@ -11456,7 +11479,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (2): At the end of the tactics phase, both players draw 1 card for each card they played.</p>',
-		releases: { 'Siege of Middenheim': 43 }
+		releases: { SM: 43 }
 	},
 	{
 		name: 'Danger to the Wind',
@@ -11468,7 +11491,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This attacking unit gets +1 strength. If you win this combat, attach this card to your unit.</p><p>While attached, the unit gets the ability WarCry: "Double all strength bonuses this unit receives. Remove all attached cards at the end of the combat."</p>',
-		releases: { 'Siege of Middenheim': 44, 'War of Attrition': 132 }
+		releases: { SM: 44, WA: 132 }
 	},
 	{
 		name: 'Desperate Gamble',
@@ -11480,7 +11503,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Discard the top card of your action deck. If that card is a playable combat tactic, play that card paying no costs.</p>',
-		releases: { 'Siege of Middenheim': 45 }
+		releases: { SM: 45 }
 	},
 	{
 		name: 'Destiny Now',
@@ -11492,7 +11515,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +6 strength. You do not make a combat roll.</p>',
-		releases: { 'Siege of Middenheim': 46, 'War of Attrition': 137 }
+		releases: { SM: 46, WA: 137 }
 	},
 	{
 		name: 'Destruction',
@@ -11503,7 +11526,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> (X): Destroy X units with a strength of 1 or less.</p>',
-		releases: { 'Siege of Middenheim': 47 }
+		releases: { SM: 47 }
 	},
 	{
 		name: 'Dirty Fighting',
@@ -11515,7 +11538,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. Any combat tactics played this combat ignore all restrictions regarding keywords and whether or not the units are attacking or defending.</p>',
-		releases: { 'Siege of Middenheim': 48 }
+		releases: { SM: 48 }
 	},
 	{
 		name: 'Divine Guidance',
@@ -11526,7 +11549,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: Before you take a test, your unit gets "<b>Faith</b>: 3" for the duration of the roll.</p>',
-		releases: { 'Siege of Middenheim': 49 }
+		releases: { SM: 49 }
 	},
 	{
 		name: 'Equipment Master',
@@ -11538,7 +11561,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: Play the combat tactic printed on one of this unit's attachments, paying all costs.</p>",
-		releases: { 'Siege of Middenheim': 50 }
+		releases: { SM: 50 }
 	},
 	{
 		name: 'Calm Before the Storm',
@@ -11550,7 +11573,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your next combat tactic card is played at no cost.</p>',
-		releases: { 'Siege of Middenheim': 51, 'War of Attrition': 120 }
+		releases: { SM: 51, WA: 120 }
 	},
 	{
 		name: 'Fast Strike',
@@ -11562,7 +11585,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This attacking unit gets +1 strength.</p>',
-		releases: { 'Siege of Middenheim': 52 }
+		releases: { SM: 52 }
 	},
 	{
 		name: "Fate's Hand",
@@ -11573,7 +11596,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (1): After you make a combat roll, reroll.</p>',
-		releases: { 'Siege of Middenheim': 53 }
+		releases: { SM: 53 }
 	},
 	{
 		name: 'Another Day',
@@ -11585,7 +11608,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: At the end of the tactics phase return 1 card you played to your hand.</p>',
-		releases: { 'Siege of Middenheim': 54 }
+		releases: { SM: 54 }
 	},
 	{
 		name: 'For the Greater Glory',
@@ -11597,7 +11620,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. If this unit is attacking it gets an additional +2 strength.</p>',
-		releases: { 'Siege of Middenheim': 55, 'War of Attrition': 158 }
+		releases: { SM: 55, WA: 158 }
 	},
 	{
 		name: 'Hail of Fire',
@@ -11609,7 +11632,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Commit the enemy unit unless it passes a strength test. Only playable by a ranged attack unit.</p>',
-		releases: { 'Siege of Middenheim': 56, 'War of Attrition': 168 }
+		releases: { SM: 56, WA: 168 }
 	},
 	{
 		name: 'Karma',
@@ -11620,7 +11643,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After your enemy commits one of your units with a card or ability, commit one of their units.</p>',
-		releases: { 'Siege of Middenheim': 57 }
+		releases: { SM: 57 }
 	},
 	{
 		name: 'Last Chance',
@@ -11631,7 +11654,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you fail a test, reroll.</p>',
-		releases: { 'Siege of Middenheim': 58 }
+		releases: { SM: 58 }
 	},
 	{
 		name: 'Lasting Sting',
@@ -11643,7 +11666,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Your enemy\'s tactic cards cost 1 additional tactic point. If you win this combat, attach this card to your unit.</p><p>While attached, this unit gets the ability "<b>Combat Tactic</b>: Your enemy discards 1 random card."</p>',
-		releases: { 'Siege of Middenheim': 59, 'War of Attrition': 180 }
+		releases: { SM: 59, WA: 180 }
 	},
 	{
 		name: 'Great Leadership',
@@ -11655,7 +11678,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Attach one character attachment from your army discard pile to this unit. If you win this combat, attach this card to your unit.</p><p>While attached, this unit gets the ability "<b>Combat Tactic</b>: This unit gets +2 tactic points."</p>',
-		releases: { 'Siege of Middenheim': 60, 'War of Attrition': 164 }
+		releases: { SM: 60, WA: 164 }
 	},
 	{
 		name: 'Look to the Sky',
@@ -11667,7 +11690,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable vs. flyers. If you win this combat, attach this card to your unit.</p><p>While attached, this unit gets the ability "<b>Combat Tactic</b>: Draw 1 card."</p>',
-		releases: { 'Siege of Middenheim': 61, 'War of Attrition': 187 }
+		releases: { SM: 61, WA: 187 }
 	},
 	{
 		name: 'Battlefield Presence',
@@ -11678,7 +11701,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (1): After you fail a rout check, reroll.</p>',
-		releases: { 'Siege of Middenheim': 62 }
+		releases: { SM: 62 }
 	},
 	{
 		name: 'Magnetism',
@@ -11690,7 +11713,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): Commit the enemy unit if it has an attachment. Your opponent may destroy all attachments on the unit to negate this effect.</p>',
-		releases: { 'Siege of Middenheim': 63 }
+		releases: { SM: 63 }
 	},
 	{
 		name: 'Measure Your Opponent',
@@ -11702,7 +11725,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. If the enemy unit has a gold cost of 5 or more, draw 1 card.</p>',
-		releases: { 'Siege of Middenheim': 64 }
+		releases: { SM: 64 }
 	},
 	{
 		name: 'Phalanx',
@@ -11714,7 +11737,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +2 strength. Only playable vs. cavalry units. If you win this combat, attach this card to your unit.</p><p>While attached, this unit gets the ability "<b>Combat Tactic</b>: The enemy unit gets -2 tactic points."</p>',
-		releases: { 'Siege of Middenheim': 65 }
+		releases: { SM: 65 }
 	},
 	{
 		name: 'Purity of Arms',
@@ -11726,7 +11749,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Name one keyword other than infantry, cavalry or flyer. This unit gets +1 strength for each of your units with that keyword.</p>',
-		releases: { 'Siege of Middenheim': 66 }
+		releases: { SM: 66 }
 	},
 	{
 		name: 'Ration',
@@ -11738,7 +11761,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. If you lose this combat return this card to your hand.</p>',
-		releases: { 'Siege of Middenheim': 67 }
+		releases: { SM: 67 }
 	},
 	{
 		name: 'Reinforcements!',
@@ -11749,7 +11772,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Command</b>: Each player chooses one unit in their discard pile with a gold cost of 5 or less and places the chosen unit in their reserves.</p><p><span class="errata">You can only include one copy of this card in your deck.</span></p>',
-		releases: { 'Siege of Middenheim': 68 },
+		releases: { SM: 68 },
 		errata: true
 	},
 	{
@@ -11762,7 +11785,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Reveal the top 3 cards of your action deck and place them in your discard pile. Add 1 combat tactic revealed this way to your hand.</p>',
-		releases: { 'Siege of Middenheim': 69 }
+		releases: { SM: 69 }
 	},
 	{
 		name: 'Resistance',
@@ -11773,7 +11796,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b> Discard 1 card: After you make a combat roll, exchange your combat roll with your enemy's. Only playable while you have a ready High Elf unit.</p>",
-		releases: { 'Siege of Middenheim': 70 }
+		releases: { SM: 70 }
 	},
 	{
 		name: 'Rush the Flank',
@@ -11785,7 +11808,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each enemy unit with a support tactic ability.</p>',
-		releases: { 'Siege of Middenheim': 71, 'War of Attrition': 231 }
+		releases: { SM: 71, WA: 231 }
 	},
 	{
 		name: 'Rust',
@@ -11796,7 +11819,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (X): Destroy any number of attachment cards with a combined gold cost of X or less. Only playable while you have a ready <b>Wizard</b> unit.</p>',
-		releases: { 'Siege of Middenheim': 72 }
+		releases: { SM: 72 }
 	},
 	{
 		name: 'Second Wind',
@@ -11808,7 +11831,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Rally this unit. Not playable during a ranged attack.</p>',
-		releases: { 'Siege of Middenheim': 73 }
+		releases: { SM: 73 }
 	},
 	{
 		name: 'Sink Hole',
@@ -11819,7 +11842,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: If your Dark Elf unit loses this combat by a difference of X or less, the result is a slaughter. X equals the number of Sink Hole cards in play.</p>',
-		releases: { 'Siege of Middenheim': 74 }
+		releases: { SM: 74 }
 	},
 	{
 		name: 'Siphon Strength',
@@ -11831,7 +11854,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (2): The enemy unit gets -2 strength. If you win this combat, attach this card to your unit.</p><p>While attached, this unit gets the ability "<b>Combat Tactic</b>: This unit gets +2 strength. Remove all of this unit\'s attached tactic cards at the end of the combat."</p>',
-		releases: { 'Siege of Middenheim': 75, 'War of Attrition': 240 }
+		releases: { SM: 75, WA: 240 }
 	},
 	{
 		name: "Spy's Lament",
@@ -11842,7 +11865,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p> <b>Command</b>: Look at your enemy's hand. Your enemy discards a card of your choice.</p>",
-		releases: { 'Siege of Middenheim': 76 }
+		releases: { SM: 76 }
 	},
 	{
 		name: 'Steel Rain',
@@ -11854,7 +11877,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets a strength bonus equal to the number of ready ranged attack units you control.</p>',
-		releases: { 'Siege of Middenheim': 77 }
+		releases: { SM: 77 }
 	},
 	{
 		name: 'Stunning Blast',
@@ -11866,7 +11889,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (X): The enemy unit gets -X tactic points.</p>',
-		releases: { 'Siege of Middenheim': 78, 'War of Attrition': 250 }
+		releases: { SM: 78, WA: 250 }
 	},
 	{
 		name: 'Siege',
@@ -11878,7 +11901,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: If you win this combat, destroy one enemy fortification.</p>',
-		releases: { 'Siege of Middenheim': 79 }
+		releases: { SM: 79 }
 	},
 	{
 		name: 'Supporting Fire',
@@ -11890,7 +11913,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b> Commit one of your units: This unit gets a ranged attack bonus equal to the committed unit's ranged attack.</p>",
-		releases: { 'Siege of Middenheim': 80, 'War of Attrition': 253 }
+		releases: { SM: 80, WA: 253 }
 	},
 	{
 		name: 'The Time is Not Right',
@@ -11901,7 +11924,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Discard 1 card: Draw 2 cards.</p><p><b>Spell Command</b> (1): All action cards attached to units are discarded.</p>',
-		releases: { 'Siege of Middenheim': 81 }
+		releases: { SM: 81 }
 	},
 	{
 		name: 'Unfortunate News',
@@ -11913,7 +11936,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: For this combat, your enemy subtracts their combat roll from their unit's strength instead of adding it.</p>",
-		releases: { 'Siege of Middenheim': 82, 'War of Attrition': 271 }
+		releases: { SM: 82, WA: 271 }
 	},
 	{
 		name: 'Veteran',
@@ -11925,7 +11948,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit gets +1 strength. If you win this combat, attach this card to your unit.</p><p>While attached, this unit gets the ability "<b>Combat Tactic</b>: This unit gets +1 strength and "<b>Terror</b>: 1"."</p>',
-		releases: { 'Siege of Middenheim': 83, 'War of Attrition': 273 }
+		releases: { SM: 83, WA: 273 }
 	},
 	{
 		name: "Winter's Chill",
@@ -11936,7 +11959,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b>: Commit one enemy unit unless your enemy discards 2 cards.</p>',
-		releases: { 'Siege of Middenheim': 84, 'War of Attrition': 280 }
+		releases: { SM: 84, WA: 280 }
 	},
 	{
 		name: 'Maps',
@@ -11947,7 +11970,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p> <b>Command</b>: Place 1 card from your hand under this attachment face down. If this item is destroyed, all cards under it are discarded.</p><p><b>Combat Tactic</b>: Return all cards under this attachment to their owner's hands.</p>",
-		releases: { 'Siege of Middenheim': 85, 'War of Attrition': 286 }
+		releases: { SM: 85, WA: 286 }
 	},
 	{
 		name: 'The Fey Enchantress',
@@ -11962,7 +11985,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Reaction</b>: When an enemy plays a card or ability to draw 1 or more cards, draw 2 cards. Not playable during the muster phase.</p>',
-		releases: { 'Siege of Middenheim': 86 }
+		releases: { SM: 86 }
 	},
 	{
 		name: "Drong's Slayer Pirates",
@@ -11977,7 +12000,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: Roll. If the roll is lower than the die on the discarded card, this unit gets +2 strength. This combat tactic may be played multiple times.</p>',
-		releases: { 'Siege of Middenheim': 87, 'War of Attrition': 297 }
+		releases: { SM: 87, WA: 297 }
 	},
 	{
 		name: 'Gates of Karaz-a-Karak',
@@ -11992,7 +12015,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit may not attack. Any ready infantry unit may block an attack targeting this unit.</p><p><b>Victory</b>: +2</p><p><b>Support Tactic</b>: Your Dwarf unit gets +1 strength.</p>',
-		releases: { 'Siege of Middenheim': 88 }
+		releases: { SM: 88 }
 	},
 	{
 		name: "Grimjaw's Grey Veterans",
@@ -12006,7 +12029,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may not make a follow-up attack.</p><p><b>Reaction</b> Discard 1 card: After you win a combat by 4 or more, return this unit to the battle line ready.</p>',
-		releases: { 'Siege of Middenheim': 89, 'War of Attrition': 305 }
+		releases: { SM: 89, WA: 305 }
 	},
 	{
 		name: "Thunderhead's Air Cavalry",
@@ -12020,7 +12043,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +1</p><p><b>Support Tactic</b> Discard 1 card: The enemy unit gets -2 tactic points.</p>',
-		releases: { 'Siege of Middenheim': 90, 'War of Attrition': 318 }
+		releases: { SM: 90, WA: 318 }
 	},
 	{
 		name: "Grimjaw's Personal Bodyguard",
@@ -12034,7 +12057,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Choose one activated ability on the enemy unit. Your enemy may not play that ability.</p>',
-		releases: { 'Siege of Middenheim': 91 }
+		releases: { SM: 91 }
 	},
 	{
 		name: "Grimjaw's Excavators",
@@ -12048,7 +12071,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support WarCry</b>: Your enemy may not play Support tactics.</p>',
-		releases: { 'Siege of Middenheim': 92 }
+		releases: { SM: 92 }
 	},
 	{
 		name: 'Runesmith Morangrin',
@@ -12062,7 +12085,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p><b>Spell Reaction</b> (2): Before you make a rout check, that roll is 4 (no roll necessary).</p>',
-		releases: { 'Siege of Middenheim': 93, 'War of Attrition': 315 }
+		releases: { SM: 93, WA: 315 }
 	},
 	{
 		name: 'The Spirit of Grungni',
@@ -12077,7 +12100,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Victory</b>: +2</p><p><b>Support WarCry</b>: Roll. If the roll is odd, your enemy may not play combat tactics from their hand with an odd die number. If the roll is even, your enemy may not play combat tactics from their hand with an even die number.</p>',
-		releases: { 'Siege of Middenheim': 94 }
+		releases: { SM: 94 }
 	},
 	{
 		name: 'Prophets of Doom',
@@ -12091,7 +12114,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>If you lost the previous battle, this unit\'s gold cost is reduced by 1.</p><p> <b>Command</b>: This unit declares an attack and gets the ability "<b>Reaction</b>: If this unit wins the combat , the result is a slaughter". These abilities may only be played while this unit is committed.</p>',
-		releases: { 'Siege of Middenheim': 95 }
+		releases: { SM: 95 }
 	},
 	{
 		name: 'The Great Cannon of Middenheim',
@@ -12105,7 +12128,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit may not attack.</p><p> <b>Command</b> Commit this unit and discard X cards: Destroy 1 enemy unit with strength X or less. Only playable while you have a ready infantry unit.</p>',
-		releases: { 'Siege of Middenheim': 96 }
+		releases: { SM: 96 }
 	},
 	{
 		name: 'Grand Theogonist Volkmar',
@@ -12120,7 +12143,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Faith</b>: 2</p><p><b>Reaction</b>: When one of your Empire units plays a combat tactic card, reduce the tactic point cost by 1, to a minimum of 1.</p>',
-		releases: { 'Siege of Middenheim': 97 }
+		releases: { SM: 97 }
 	},
 	{
 		name: 'Black Hand Pistoliers',
@@ -12134,7 +12157,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Ranged Attack</b>: 4</p><p><b>Reaction</b>: After this unit gets a ranged attack bonus, increase this unit's strength by the same amount.</p>",
-		releases: { 'Siege of Middenheim': 98, 'War of Attrition': 325 }
+		releases: { SM: 98, WA: 325 }
 	},
 	{
 		name: "Ar-Ulric's Teutogen Guard",
@@ -12149,7 +12172,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Faith</b>: 1</p><p><b>Support Tactic</b>: Your Empire unit gets +2 strength. Only playable if the enemy printed leadership of 2 or less.</p>',
-		releases: { 'Siege of Middenheim': 99, 'War of Attrition': 323 }
+		releases: { SM: 99, WA: 323 }
 	},
 	{
 		name: 'Hunt Master Ethlich',
@@ -12163,7 +12186,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After this unit destroys an enemy unit in combat, make an immediate follow-up attack into another unit with the same name.</p>',
-		releases: { 'Siege of Middenheim': 100 }
+		releases: { SM: 100 }
 	},
 	{
 		name: 'Knights of Twin Tailed Comet',
@@ -12177,7 +12200,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: If you win this combat, rout the enemy unit. Only playable while defending.</p>',
-		releases: { 'Siege of Middenheim': 101 }
+		releases: { SM: 101 }
 	},
 	{
 		name: "Jasenland's Imperial Defenders",
@@ -12191,7 +12214,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Attach this unit to your unit. While attached your unit gets +1 strength, +1 Tactic points, and gets the ability "<b>Support Tactic</b> Discard 1 card: Return Jasenland\'s Imperial Defenders to your battle line ready. You may use this ability while committed."</p>',
-		releases: { 'Siege of Middenheim': 102 }
+		releases: { SM: 102 }
 	},
 	{
 		name: 'High Priest Udo Latnehr',
@@ -12205,7 +12228,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Faith</b>: 1</p><p><b>Combat Tactic</b>: If this unit passes a strength test, draw 1 card.</p>',
-		releases: { 'Siege of Middenheim': 103, 'War of Attrition': 333 }
+		releases: { SM: 103, WA: 333 }
 	},
 	{
 		name: 'Senechal Valdric Gathowe',
@@ -12220,7 +12243,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Play a WarCry card from your hand paying all costs.</p>',
-		releases: { 'Siege of Middenheim': 104 }
+		releases: { SM: 104 }
 	},
 	{
 		name: 'Vorn Thugenheim, Standard Bearer',
@@ -12235,7 +12258,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: If your combat roll is 2 or less, that roll gets +2.</p>',
-		releases: { 'Siege of Middenheim': 105 }
+		releases: { SM: 105 }
 	},
 	{
 		name: 'Warriors of Ulfric',
@@ -12249,7 +12272,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each of your committed units.</p>',
-		releases: { 'Siege of Middenheim': 106 }
+		releases: { SM: 106 }
 	},
 	{
 		name: 'Wolf Kin Skirmishers',
@@ -12263,7 +12286,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Discard 1 card: When choosing the target of a follow-up attack, you may choose one of your committed units.</p>',
-		releases: { 'Siege of Middenheim': 107, 'War of Attrition': 351 }
+		releases: { SM: 107, WA: 351 }
 	},
 	{
 		name: 'Archers of Nightfall',
@@ -12277,7 +12300,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Support Tactic</b>: Your unit gets +1 strength vs. cavalry units.</p>',
-		releases: { 'Siege of Middenheim': 108, 'War of Attrition': 356 }
+		releases: { SM: 108, WA: 356 }
 	},
 	{
 		name: 'Vanguard of the Silver Lord',
@@ -12292,7 +12315,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Victory</b>: +4</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your spell points. Only playable if you have Teclis, High Loremaster inplay.</p>',
-		releases: { 'Siege of Middenheim': 109 }
+		releases: { SM: 109 }
 	},
 	{
 		name: 'Riders of the Golden Star',
@@ -12306,7 +12329,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. cavalry units.</p>',
-		releases: { 'Siege of Middenheim': 110 }
+		releases: { SM: 110 }
 	},
 	{
 		name: 'The Fair Maiden of Ulthuan',
@@ -12320,7 +12343,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Command</b> (1): Destroy an enemy attachment. Only playable while this unit is in the battle line.</p>',
-		releases: { 'Siege of Middenheim': 111, 'War of Attrition': 372 }
+		releases: { SM: 111, WA: 372 }
 	},
 	{
 		name: 'Sea Guard of the Northern Ports',
@@ -12334,7 +12357,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength vs. flyer units.</p>',
-		releases: { 'Siege of Middenheim': 112 }
+		releases: { SM: 112 }
 	},
 	{
 		name: 'Spearmen of the Golden Star',
@@ -12348,7 +12371,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Your defending infantry unit gets +2 strength. If you lose this combat, commit this unit.</p>',
-		releases: { 'Siege of Middenheim': 113, 'War of Attrition': 371 }
+		releases: { SM: 113, WA: 371 }
 	},
 	{
 		name: 'Sword Maidens of Hoeth',
@@ -12362,7 +12385,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: If this unit passes a leadership test, draw 1 card.</p>',
-		releases: { 'Siege of Middenheim': 114 }
+		releases: { SM: 114 }
 	},
 	{
 		name: 'Ward Tower',
@@ -12376,7 +12399,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may not attack. Any ready infantry unit may block an attack targeting this unit.</p><p>While ready, all units with the keyword Monster or Daemon have -1 strength.</p>',
-		releases: { 'Siege of Middenheim': 115 }
+		releases: { SM: 115 }
 	},
 	{
 		name: 'Defend the Walls',
@@ -12387,7 +12410,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Your defending Empire unit gets +2 strength.</p>',
-		releases: { 'Siege of Middenheim': 116 }
+		releases: { SM: 116 }
 	},
 	{
 		name: 'Nerves of Steel',
@@ -12398,7 +12421,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Put a "<b>Victory</b>: +1" token on your Dwarf unit.</p>',
-		releases: { 'Siege of Middenheim': 117 }
+		releases: { SM: 117 }
 	},
 	{
 		name: 'For the Empire!',
@@ -12410,7 +12433,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: The enemy unit may not play WarCry cards or abilities.</p>',
-		releases: { 'Siege of Middenheim': 118 }
+		releases: { SM: 118 }
 	},
 	{
 		name: 'Stand Your Ground',
@@ -12422,7 +12445,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +3 strength vs. cavalry units.</p>',
-		releases: { 'Siege of Middenheim': 119 }
+		releases: { SM: 119 }
 	},
 	{
 		name: 'Standard of Light',
@@ -12434,7 +12457,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your unit gets +1 strength vs. Hordes of Darkness units.</p><p><b>Reaction</b> Discard 1 card: After this unit loses a combat, move this attachment to one of your ready units.</p>',
-		releases: { 'Siege of Middenheim': 120 }
+		releases: { SM: 120 }
 	},
 	{
 		name: 'Bull Lords of Pain',
@@ -12448,7 +12471,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: -2</p><p><b>Terror</b>: 3</p><p>This unit may not make follow-up attacks.</p><p> <b>WarCry</b>: This unit gets +3 strength and +3 tactic points. Only playable while attacking.</p>',
-		releases: { 'Harbingers of War': 1, 'War of Attrition': 7 }
+		releases: { HW: 1, WA: 7 }
 	},
 	{
 		name: 'Korvin, Champion of Khorne',
@@ -12463,7 +12486,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Korvin The Sentinel</p><p><b>Combat Tactic</b>: You lose all of your spell points.</p><p><b>Combat Tactic</b>: Your enemy may choose to lose any number of their spell points. This unit gets +1 strength for each spell point that player has remaining.</p>',
-		releases: { 'Harbingers of War': 2, 'War of Attrition': 17 }
+		releases: { HW: 2, WA: 17 }
 	},
 	{
 		name: "Korvin's Raging Centigors",
@@ -12477,7 +12500,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After one of your units wins a combat, move this unit from the reserves to the battle line.</p>',
-		releases: { 'Harbingers of War': 3 }
+		releases: { HW: 3 }
 	},
 	{
 		name: 'Pahadiel, the Mammoth Drawn Fortress',
@@ -12491,7 +12514,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +2</p><p>This unit may not block.</p><p><b>Reaction</b>: If you commit an enemy unit with a ranged attack and he combat was won by a difference of 2 or more, destroy that unit.</p>',
-		releases: { 'Harbingers of War': 4 }
+		releases: { HW: 4 }
 	},
 	{
 		name: 'Servants of Itmon',
@@ -12505,7 +12528,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 1</p><p><b>Reaction</b>: After this unit wins a combat, move an enemy unit from the battle line to the reserves.</p>',
-		releases: { 'Harbingers of War': 5 }
+		releases: { HW: 5 }
 	},
 	{
 		name: 'Urmas, Champion of the Khorngor',
@@ -12520,7 +12543,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Victory</b>: -1</p><p><b>Reaction</b> Commit this unit: Instead of mustering a unit or attachment, your enemy must commit a number of their units with a total gold cost equal to or greater than this unit's gold cost.</p>",
-		releases: { 'Harbingers of War': 6 }
+		releases: { HW: 6 }
 	},
 	{
 		name: "Ha'asek, the Archon of Twilight",
@@ -12535,7 +12558,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Reaction</b>: After this unit is mustered, take the top 2 cards from your army deck and put them face down adjacent to this unit. These cards are treated as Dark Elf flyer units with 2 strength, 3 tactic points, 2 leadership, and a gold cost of 0.</p><p>If Ha'asek leaves play, remove these units from play.</p>",
-		releases: { 'Harbingers of War': 7, 'War of Attrition': 36 }
+		releases: { HW: 7, WA: 36 }
 	},
 	{
 		name: "Ha'asek's Black Arrows",
@@ -12549,7 +12572,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Scout</b>: 1</p><p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: Once per battle, after your enemy has rallied an enemy unit with a gold cost equal to or greater than this unit's gold cost with a card effect, rally this unit as well. You may use this ability while committed.</p>",
-		releases: { 'Harbingers of War': 8 }
+		releases: { HW: 8 }
 	},
 	{
 		name: "Ha'asek's Black Riders",
@@ -12563,7 +12586,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: If your enemy has 4 or more cards in their hand, they discard 2 cards.</p><p><b>Combat Tactic</b>: If your enemy has no cards in their hand, this unit gets +3 strength and "<b>Terror</b>: 2".</p>',
-		releases: { 'Harbingers of War': 9, 'War of Attrition': 37 }
+		releases: { HW: 9, WA: 37 }
 	},
 	{
 		name: "Ha'asek's Bolt Slinger",
@@ -12577,7 +12600,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: After this unit performs a ranged attack targeting a unit in the battle line, perform another ranged attack targeting a unit in the reserves.</p>',
-		releases: { 'Harbingers of War': 10, 'War of Attrition': 38 }
+		releases: { HW: 10, WA: 38 }
 	},
 	{
 		name: "Ha'asek's Devil Brides",
@@ -12591,7 +12614,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p> <b>Command</b> Commit: Choose a flyer unit. While this unit remains in play and committed, after the chosen unit declares an attack, you may discard 1 card from your hand to prevent the attack and end the enemy's command.</p>",
-		releases: { 'Harbingers of War': 11 }
+		releases: { HW: 11 }
 	},
 	{
 		name: "Ha'asek's Hands of Retribution",
@@ -12605,7 +12628,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>Command</b> Commit: If you win this battle, your enemy may only draw a hand of 4 cards to begin the next muster phase.</p>',
-		releases: { 'Harbingers of War': 12, 'War of Attrition': 39 }
+		releases: { HW: 12, WA: 39 }
 	},
 	{
 		name: "Ha'asek's Knights of Terror",
@@ -12619,7 +12642,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 1</p><p><b>Support Tactic</b>: Your unit gets "<b>Terror</b>: 1".</p>',
-		releases: { 'Harbingers of War': 13, 'War of Attrition': 40 }
+		releases: { HW: 13, WA: 40 }
 	},
 	{
 		name: "Ha'asek's Standing Guard",
@@ -12633,7 +12656,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: If you rout the enemy unit, your enemy may not draw a card at the start of the follow-up attack.</p>',
-		releases: { 'Harbingers of War': 14, 'War of Attrition': 41 }
+		releases: { HW: 14, WA: 41 }
 	},
 	{
 		name: "Ha'asek's Personal Guard",
@@ -12647,7 +12670,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After this unit is mustered you may look at the top 5 cards of your action deck. You may choose to discard these cards or place them back on top of your deck in any order.</p>',
-		releases: { 'Harbingers of War': 15, 'War of Attrition': 42 }
+		releases: { HW: 15, WA: 42 }
 	},
 	{
 		name: "Ha'asek's Wild Ones",
@@ -12661,7 +12684,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Once per battle, rally an enemy unit.</p>',
-		releases: { 'Harbingers of War': 16 }
+		releases: { HW: 16 }
 	},
 	{
 		name: "Ha'asek's Witch Elves",
@@ -12675,7 +12698,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength for each unit it has routed this command.</p>',
-		releases: { 'Harbingers of War': 17 }
+		releases: { HW: 17 }
 	},
 	{
 		name: "Grubbi's Fast Fast Kart",
@@ -12689,7 +12712,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit is moved into a combat via an exchange with another of your units, this unit gets +3 strength.</p>',
-		releases: { 'Harbingers of War': 18 }
+		releases: { HW: 18 }
 	},
 	{
 		name: "Manmangler's Armoured Orcs",
@@ -12703,7 +12726,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: -5</p>',
-		releases: { 'Harbingers of War': 19, 'War of Attrition': 71 }
+		releases: { HW: 19, WA: 71 }
 	},
 	{
 		name: "Manmangler's Big Chukka",
@@ -12717,7 +12740,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 8</p><p><b>Support WarCry</b>: Your enemy may not play support tactics printed on their war machine units.</p>',
-		releases: { 'Harbingers of War': 20 }
+		releases: { HW: 20 }
 	},
 	{
 		name: "Manmangler's Boarboyz",
@@ -12731,7 +12754,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Both units in the combat get a tactic point bonus equal to their printed tactic points.</p>',
-		releases: { 'Harbingers of War': 21 }
+		releases: { HW: 21 }
 	},
 	{
 		name: "Manmangler's Brute Boyz",
@@ -12745,7 +12768,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Play a combat tactic from your hand without cost. Only playable while you have an infantry unit in combat vs. a cavalry or flyer unit.</p>',
-		releases: { 'Harbingers of War': 22, 'War of Attrition': 72 }
+		releases: { HW: 22, WA: 72 }
 	},
 	{
 		name: "Manmangler's Flailing Gobbos",
@@ -12759,7 +12782,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p> <b>Command</b>: If this unit passes a leadership test, it may immediately declare an attack against any unit in the enemy's reserves. This attack may not be blocked.</p><p><b>Combat Tactic</b>: Reveal the top card of your deck. Add that card's die to this unit's strength. If that card's die is 5 or more, destroy this unit after the combat.</p>",
-		releases: { 'Harbingers of War': 23, 'War of Attrition': 73 }
+		releases: { HW: 23, WA: 73 }
 	},
 	{
 		name: "Manmangler's Hench Boyz",
@@ -12773,7 +12796,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b> Commit: Instead of mustering a unit or attachment, you gain an additional 3 gold to muster.</p>',
-		releases: { 'Harbingers of War': 24 },
+		releases: { HW: 24 },
 		banned: true
 	},
 	{
@@ -12788,7 +12811,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. units with a gold cost less than this unit's gold cost.</p>",
-		releases: { 'Harbingers of War': 25, 'War of Attrition': 74 }
+		releases: { HW: 25, WA: 74 }
 	},
 	{
 		name: "Manmangler's Savage Killaz",
@@ -12802,7 +12825,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: If this unit wins the combat and the enemy unit is committed, rout the enemy unit (no roll necessary).</p>',
-		releases: { 'Harbingers of War': 26 }
+		releases: { HW: 26 }
 	},
 	{
 		name: 'Nazall the Nasty',
@@ -12816,7 +12839,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Support Tactic</b> (2): Your unit gets +2 tactic points.</p>',
-		releases: { 'Harbingers of War': 27 }
+		releases: { HW: 27 }
 	},
 	{
 		name: 'Urguck Manmangler, Orc Overlord',
@@ -12831,7 +12854,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b> Discard a card: After you roll, add the card rolled to your hand.</p><p><b>Reaction</b>: Once per battle, after your enemy declares an attack, choose one of your committed units to block the attack. The chosen unit remains committed.</p>',
-		releases: { 'Harbingers of War': 28 }
+		releases: { HW: 28 }
 	},
 	{
 		name: 'Anelia, Mistress of Slaanesh',
@@ -12843,7 +12866,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Discard a card from your hand: Your enemy discards a card. This unit gets a strength bonus equal to the difference of the lowest die from the highest die of the cards discarded.</p><p><b>Combat Tactic</b>: If this combat ends in a slaughter, this unit wins instead.</p>',
-		releases: { 'Harbingers of War': 29, 'War of Attrition': 28 }
+		releases: { HW: 29, WA: 28 }
 	},
 	{
 		name: 'A Dangerous Game',
@@ -12855,7 +12878,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Count the number of cards in your action deck. This unit gets +1 strength for every 5 cards in your action deck (not counting cards in your discard pile or removed from the game). Shuffle your action deck.</p>',
-		releases: { 'Harbingers of War': 30 }
+		releases: { HW: 30 }
 	},
 	{
 		name: 'A Deadly Game',
@@ -12867,7 +12890,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Count the number of cards in your action deck. This unit gets +2 strength for every 5 cards in your action deck (not counting cards in your discard pile or removed from the game). Shuffle your action deck.</p>',
-		releases: { 'Harbingers of War': 31 }
+		releases: { HW: 31 }
 	},
 	{
 		name: 'A Fortunate Wind',
@@ -12878,7 +12901,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>While one or more copies of this card are in play, after each command is completed each player discards 1 card then draws 1 card.</p>',
-		releases: { 'Harbingers of War': 32 }
+		releases: { HW: 32 }
 	},
 	{
 		name: 'A Shift in Morale',
@@ -12889,7 +12912,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b> Attach this card to one of your committed units: After one of your units destroys an enemy unit with a gold cost of 6 or more in combat, rally this unit. While attached, this unit may not make follow-up attacks.</p>',
-		releases: { 'Harbingers of War': 33 }
+		releases: { HW: 33 }
 	},
 	{
 		name: 'Act Foolish, Be Smart',
@@ -12900,7 +12923,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After an enemy unit gets a strength bonus of 5 or more, draw 2 cards. Your enemy discards 1 card.</p>',
-		releases: { 'Harbingers of War': 34 }
+		releases: { HW: 34 }
 	},
 	{
 		name: 'Aerial Support',
@@ -12912,7 +12935,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +4 strength. Only playable if you have a ready flyer unit in play. If you lose this combat, commit one of your flyer units.</p>',
-		releases: { 'Harbingers of War': 35 }
+		releases: { HW: 35 }
 	},
 	{
 		name: 'Attack the Neighbor with Impunity',
@@ -12923,7 +12946,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>Any player may use this ability (but it may only be used once per combat):</p><p><b>Reaction</b>: After a combat ends, place a "<b>Victory</b>: -1" token on each surviving unit that was in the combat.</p>',
-		releases: { 'Harbingers of War': 36, 'War of Attrition': 107 }
+		releases: { HW: 36, WA: 107 }
 	},
 	{
 		name: 'Beat the Grass to Startle the Snakes',
@@ -12935,7 +12958,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: If this unit has the highest "<b>Scout</b>" rating in this combat, the enemy unit gets -2 strength and -2 tactic points.</p>',
-		releases: { 'Harbingers of War': 37 }
+		releases: { HW: 37 }
 	},
 	{
 		name: 'Calculated Reserves',
@@ -12947,7 +12970,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p>Before the game begins, if this card is in your deck, you may reveal it to your enemy. If you do, take any 3 cards out of your deck and place them in a sideboard.</p><p>After you place any cards in your sideboard, you must still have at least 30 cards in your deck. Shuffle this card back into your deck.</p><p><b>Combat Tactic</b> Remove this card from the game: Choose one card from your sideboard and place it into your hand.</p>',
-		releases: { 'Harbingers of War': 38, 'War of Attrition': 119 }
+		releases: { HW: 38, WA: 119 }
 	},
 	{
 		name: 'Catch the Leader to Nab the Bandits',
@@ -12958,7 +12981,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All units with at least one attachment get "<b>Victory</b>: -X". X equals the number of attachments attached to the unit.</p>',
-		releases: { 'Harbingers of War': 39 }
+		releases: { HW: 39 }
 	},
 	{
 		name: 'Charge Under a Blackened Sky',
@@ -12970,7 +12993,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p>This cavalry unit gets +4 strength. Only playable if you have a ready ranged attack unit. If you lose this combat commit one of your ranged attack units.</p>',
-		releases: { 'Harbingers of War': 40 }
+		releases: { HW: 40 }
 	},
 	{
 		name: 'Costly Tactics',
@@ -12982,7 +13005,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b> Remove the top 3 cards of your action deck from the game: This unit gets a +2 strength bonus.</p>',
-		releases: { 'Harbingers of War': 41 }
+		releases: { HW: 41 }
 	},
 	{
 		name: 'Counter Spell',
@@ -12993,7 +13016,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> Remove this card from the game (3): After the cost for any reaction is paid, negate the effects of that reaction.</p>',
-		releases: { 'Harbingers of War': 42, 'War of Attrition': 127 }
+		releases: { HW: 42, WA: 127 }
 	},
 	{
 		name: 'Counter-Attack',
@@ -13005,7 +13028,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: If this unit wins this combat the enemy unit is routed. Only playable during a follow-up attack as the defender. May not be played during a ranged attack.</p>',
-		releases: { 'Harbingers of War': 43 }
+		releases: { HW: 43 }
 	},
 	{
 		name: 'Dawn of a New Day',
@@ -13016,7 +13039,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Remove this card and all copies of this card in your deck and discard pile from the game: Rally all units in play.</p>',
-		releases: { 'Harbingers of War': 44 },
+		releases: { HW: 44 },
 		banned: true
 	},
 	{
@@ -13028,7 +13051,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b> Commit one of your units: After one of your units enters a combat, no support tactics may be played for the remainder of this command. Your enemy may discard 3 cards to cancel this effect.</p>',
-		releases: { 'Harbingers of War': 45 }
+		releases: { HW: 45 }
 	},
 	{
 		name: 'Drive Them to the Skies',
@@ -13040,7 +13063,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This flyer unit gets +4 strength. Only playable if you have a ready infantry unit in play. If you lose this combat, commit one of your infantry units.</p>',
-		releases: { 'Harbingers of War': 46 }
+		releases: { HW: 46 }
 	},
 	{
 		name: 'Dwarven Victory',
@@ -13052,7 +13075,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p>You may not play this card if you have another copy of this card attached to one of your units. If this card is played without using it's WarCry ability, destroy it.</p><p> <b>WarCry</b>: reduce this unit's printed strength to 0. If this unit wins the combat, attach this card to your unit. Not playable during a ranged attack.</p>",
-		releases: { 'Harbingers of War': 47 }
+		releases: { HW: 47 }
 	},
 	{
 		name: 'Elven Victory',
@@ -13064,7 +13087,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p>You may not play this card if you have another copy of this card attached to one of your units. If this card is played without using it's WarCry ability, destroy it.</p><p> <b>WarCry</b>: This unit's text box is considered blank for this combat. This unit retains all keywords. Your combat roll for this combat is a 2 (no roll necessary). If this unit wins this combat attach this card to your unit.</p><p>Not playable during a ranged attack.</p>",
-		releases: { 'Harbingers of War': 48 }
+		releases: { HW: 48 }
 	},
 	{
 		name: 'End Game Maneuvers',
@@ -13076,7 +13099,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: This unit gains +X strength. X equals 6 minus the number of cards in your enemy's hand (minimum 0).</p>",
-		releases: { 'Harbingers of War': 49 }
+		releases: { HW: 49 }
 	},
 	{
 		name: 'Enough!',
@@ -13087,7 +13110,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After an enemy unit has gained a strength bonus of 3 or more, attach this card to one of your units. This unit gets +2 strength while this card is attached.</p>',
-		releases: { 'Harbingers of War': 50, 'War of Attrition': 145 }
+		releases: { HW: 50, WA: 145 }
 	},
 	{
 		name: 'Face the Weary in a Condition of Ease',
@@ -13099,7 +13122,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets -2 strength. The enemy unit gets -3 leadership.</p>',
-		releases: { 'Harbingers of War': 51 }
+		releases: { HW: 51 }
 	},
 	{
 		name: 'Feint One Way, Strike Another',
@@ -13110,7 +13133,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p>This unit gets -1 strength and +4 tactic points.</p>',
-		releases: { 'Harbingers of War': 52 }
+		releases: { HW: 52 }
 	},
 	{
 		name: 'Final Wave',
@@ -13121,7 +13144,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>Only playable by either player once per battle.</p><p> <b>Command</b>: Both you and your enemy may muster 7 gold from your army deck. This command is played as a normal muster phase, although no units in play may be rallied during this muster phase.</p>',
-		releases: { 'Harbingers of War': 53 },
+		releases: { HW: 53 },
 		banned: true
 	},
 	{
@@ -13133,7 +13156,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (2): After a roll is made, change that roll to X. X equals 6 minus the original roll.</p>',
-		releases: { 'Harbingers of War': 54 }
+		releases: { HW: 54 }
 	},
 	{
 		name: 'Fortune Favours the Brave',
@@ -13145,7 +13168,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit with a gold cost of 6 or more gets a +2 strength bonus.</p>',
-		releases: { 'Harbingers of War': 55, 'War of Attrition': 159 }
+		releases: { HW: 55, WA: 159 }
 	},
 	{
 		name: 'Hide a Sword in a Smile',
@@ -13156,7 +13179,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Place a +1 strength token on one of your units and a "<b>Victory</b>: +1" token on an enemy unit of your enemy\'s choosing.</p>',
-		releases: { 'Harbingers of War': 56 },
+		releases: { HW: 56 },
 		errata: 'Strategy'
 	},
 	{
@@ -13169,7 +13192,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This flyer unit gets +4 strength. Only playable if you have a ready cavalry unit in play. If you lose this combat, commit one of your cavalry units.</p>',
-		releases: { 'Harbingers of War': 57 }
+		releases: { HW: 57 }
 	},
 	{
 		name: 'High Pressure Tactics',
@@ -13180,7 +13203,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your unit enters a combat, neither player draws any cards for starting a combat. Draw 1 card.</p>',
-		releases: { 'Harbingers of War': 58 }
+		releases: { HW: 58 }
 	},
 	{
 		name: 'Hold Nothing Back',
@@ -13192,7 +13215,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: If this unit has played a WarCry combat tactic in this combat (either from hand, an inherent ability or from an attached card), this unit gets +3 strength.</p>',
-		releases: { 'Harbingers of War': 59, 'War of Attrition': 175 }
+		releases: { HW: 59, WA: 175 }
 	},
 	{
 		name: 'Homeland Victories',
@@ -13203,7 +13226,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your units without "<b>Victory</b>" wins a combat as the defender, attach this card to that unit.</p><p>While attached, that unit gets "<b>Victory</b>: +3".</p><p>May not be played during a follow-up attack.</p>',
-		releases: { 'Harbingers of War': 60 }
+		releases: { HW: 60 }
 	},
 	{
 		name: 'Imperial Victory',
@@ -13215,7 +13238,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p>You may not play this card if you have another copy of this card attached to one of your units. If this card is played without using it's WarCry ability, destroy it.</p><p> <b>WarCry</b>: Reduce this unit's printed tactic points to 0. If this unit wins the combat, attach this card to your unit. Not playable during a ranged attack.</p>",
-		releases: { 'Harbingers of War': 61 }
+		releases: { HW: 61 }
 	},
 	{
 		name: 'Kill with a Borrowed Sword',
@@ -13227,7 +13250,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This neutral unit gets +2 strength. Only playable if you have a Hordes of Darkness unit or Grand Alliance unit in play.</p>',
-		releases: { 'Harbingers of War': 62 }
+		releases: { HW: 62 }
 	},
 	{
 		name: 'Lock the Gates to Catch the Bandits',
@@ -13238,7 +13261,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: Before the first tactic is played this combat, switch the strength and tactic points values for each unit in the combat. Any bonuses or penalties to the strength or tactic points of the units will affect the new values.</p>',
-		releases: { 'Harbingers of War': 63 }
+		releases: { HW: 63 }
 	},
 	{
 		name: 'Magical Overload',
@@ -13249,7 +13272,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (X): Your enemy gains X spell points.</p>',
-		releases: { 'Harbingers of War': 64 }
+		releases: { HW: 64 }
 	},
 	{
 		name: 'Make Allies at a Distance, Attack Nearby',
@@ -13261,7 +13284,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit gets +2 strength.If this combat ends in a slaughter, this unit wins instead. Only playable if you have more units in your army discard pile than your enemy.</p>',
-		releases: { 'Harbingers of War': 65 }
+		releases: { HW: 65 }
 	},
 	{
 		name: 'Dogged Determination',
@@ -13273,7 +13296,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Draw 3 cards. Only playable if this is the only card in your hand.</p>',
-		releases: { 'Harbingers of War': 66 }
+		releases: { HW: 66 }
 	},
 	{
 		name: 'Offer a Brick in Exchange for Gold',
@@ -13285,7 +13308,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Your enemy discards 2 random cards and then draws 1 card. Draw 1 card.</p>',
-		releases: { 'Harbingers of War': 67 }
+		releases: { HW: 67 }
 	},
 	{
 		name: 'One Defeat Follows Another',
@@ -13296,7 +13319,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: "<p><b>Reaction</b>: After you win a combat, destroy a strategy card.</p><p><b>Reaction</b>: After you win a combat, place any one card in your enemy's action discard pile on top of their action deck.</p>",
-		releases: { 'Harbingers of War': 68, 'War of Attrition': 203 }
+		releases: { HW: 68, WA: 203 }
 	},
 	{
 		name: 'One Tree Falls for Another',
@@ -13308,7 +13331,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Attach this card to this unit. While attached this unit gets the ability "<b>Combat Tactic</b>: This unit gets +2 strength. Only playable during a follow-up attack." This card may not be played or attached during a follow-up attack.</p>',
-		releases: { 'Harbingers of War': 69, 'War of Attrition': 205 }
+		releases: { HW: 69, WA: 205 }
 	},
 	{
 		name: 'Path of the Arrow',
@@ -13320,7 +13343,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This flyer unit gets +4 strength. Only playable if you have a ready ranged attack unit. If you lose this combat commit one of your ranged attack units.</p>',
-		releases: { 'Harbingers of War': 70 }
+		releases: { HW: 70 }
 	},
 	{
 		name: "Pick a Fight in the Enemy's Home",
@@ -13331,7 +13354,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>Neutral units may not attack or block while their controller has one or more ready Hordes of Darkness or Grand Alliance units.</p>',
-		releases: { 'Harbingers of War': 71, 'War of Attrition': 212 }
+		releases: { HW: 71, WA: 212 }
 	},
 	{
 		name: 'Point at One to Scold Another',
@@ -13343,7 +13366,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: If this unit wins the combat, the enemy unit is routed. Only playable during a follow-up attack where the previous unit was routed without a card effect.</p>',
-		releases: { 'Harbingers of War': 72 }
+		releases: { HW: 72 }
 	},
 	{
 		name: 'Rally Up',
@@ -13354,7 +13377,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Remove a card in your hand from the game: Choose 2 of your units. Make a leadership test for each of the chosen units with a -1 modifier to their leadership. If both units succeed, rally one of those units. Remove this card from the game.</p>',
-		releases: { 'Harbingers of War': 73 }
+		releases: { HW: 73 }
 	},
 	{
 		name: 'Replace Beams with Pillars',
@@ -13365,7 +13388,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>War machines have +1 strength while ready.</p><p>All infantry with 4 or more tactic points may attack and block as flyers.</p>',
-		releases: { 'Harbingers of War': 74 }
+		releases: { HW: 74 }
 	},
 	{
 		name: 'Rob a Burning House',
@@ -13376,7 +13399,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p> <b>Command</b> Commit one of your units: Remove any number of attachments from your enemy's discard pile from the game.</p>",
-		releases: { 'Harbingers of War': 75, 'War of Attrition': 230 }
+		releases: { HW: 75, WA: 230 }
 	},
 	{
 		name: 'Run Far Away',
@@ -13387,7 +13410,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: Before the combat roll is made, your unit loses the combat and is routed. Return it to the battle line committed instead of destroying it. If your enemy makes a follow-up attack, the unit that is attacked gets +1 strength.</p>',
-		releases: { 'Harbingers of War': 76 }
+		releases: { HW: 76 }
 	},
 	{
 		name: 'Save Something for Later',
@@ -13399,7 +13422,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If this unit has a printed WarCry ability, this unit gets +X strength. X equals the number of your units in your army with a printed WarCry ability +2.</p>',
-		releases: { 'Harbingers of War': 77 }
+		releases: { HW: 77 }
 	},
 	{
 		name: 'Scheme with Beauties',
@@ -13410,7 +13433,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Super rare',
 		text: '<p> <b>Command</b>: This card begins a combat between an enemy unit and this card. This card is considered an infantry unit with 2 strength, 4 tactic points, 1 leadership, and a gold cost of 0.</p><p>This unit may not rout enemy units, but may be routed and is discarded after the combat. If you lose this combat, the enemy unit returns to its reserves without committing, unless it chooses to follow-up.</p>',
-		releases: { 'Harbingers of War': 78, 'War of Attrition': 235 },
+		releases: { HW: 78, WA: 235 },
 		banned: true
 	},
 	{
@@ -13422,7 +13445,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Destroy any number of your attachments: Commit a unit with a gold cost of X or less. X equals the total gold cost of the destroyed attachments.</p>',
-		releases: { 'Harbingers of War': 79 }
+		releases: { HW: 79 }
 	},
 	{
 		name: 'Scheme with Self Inflicted Wounds',
@@ -13434,7 +13457,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b> Destroy one of your units not in this combat: This unit gets a strength bonus equal to the destroyed unit's strength.</p>",
-		releases: { 'Harbingers of War': 80, 'War of Attrition': 236 }
+		releases: { HW: 80, WA: 236 }
 	},
 	{
 		name: 'Take and Hold',
@@ -13445,7 +13468,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your units without "<b>Victory</b>" wins a combat as the attacker, attach this card to that unit. While attached, that unit gets "<b>Victory</b>: +3". Only playable during a follow-up attack.</p>',
-		releases: { 'Harbingers of War': 81 }
+		releases: { HW: 81 }
 	},
 	{
 		name: 'Take the Firewood from under the Pot',
@@ -13456,7 +13479,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your units has destroyed a committed unit, your unit is returned to your battle line ready.</p>',
-		releases: { 'Harbingers of War': 82, 'War of Attrition': 256 }
+		releases: { HW: 82, WA: 256 }
 	},
 	{
 		name: 'The Fall of the Mighty',
@@ -13467,7 +13490,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your units without <b>Victory</b>" wins a combat, attach this card to that unit. While attached that unit gets "<b>Victory</b>: +3." Only playable if the losing unit had a gold cost greater than your unit."</p>',
-		releases: { 'Harbingers of War': 83 }
+		releases: { HW: 83 }
 	},
 	{
 		name: 'The Silver Serpent Sheds Its Skin',
@@ -13478,7 +13501,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b>: After both players have passed their actions in the battle, declare an attack with one of your units. If this attacking unit is committed, the losing unit in this combat is destroyed.</p><p>Follow-up attacks may not be made though units may be routed.</p>',
-		releases: { 'Harbingers of War': 84, 'War of Attrition': 259 }
+		releases: { HW: 84, WA: 259 }
 	},
 	{
 		name: 'The Weak Fall, the Strong Stand',
@@ -13489,7 +13512,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Choose a unit with a strength of 0 (or less). That unit is destroyed.</p>',
-		releases: { 'Harbingers of War': 85 }
+		releases: { HW: 85 }
 	},
 	{
 		name: 'To the Bone',
@@ -13501,7 +13524,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: The loser of this combat is automatically routed (no roll necessary).</p><p> <b>WarCry</b>: Both units in this combat get a strength bonus equal to their printed strength.</p>',
-		releases: { 'Harbingers of War': 86, 'War of Attrition': 266 }
+		releases: { HW: 86, WA: 266 }
 	},
 	{
 		name: 'Victory at Any Cost',
@@ -13512,7 +13535,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Destroy one of your ready units with Elven <b>Victory</b> attached, one of your ready units with Dwarven <b>Victory</b> attached, one of your ready units with Imperial <b>Victory</b> attached, and remove this card from the game</p><p>(the cards must be attached using their own text): You win this battle.</p>',
-		releases: { 'Harbingers of War': 87 }
+		releases: { HW: 87 }
 	},
 	{
 		name: 'Amulet of the Southern Hand',
@@ -13523,7 +13546,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After one of your wizards plays a non-spell combat tactic action card in a combat or you play a command action card, you get 1 spell point.</p>',
-		releases: { 'Harbingers of War': 88 }
+		releases: { HW: 88 }
 	},
 	{
 		name: 'Banner of Warding',
@@ -13534,7 +13557,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After an enemy unit has rallied, put a "<b>Victory</b>: +1" token on this unit. You may use this ability while this unit is committed.</p>',
-		releases: { 'Harbingers of War': 89 }
+		releases: { HW: 89 }
 	},
 	{
 		name: 'Flying Mounts',
@@ -13545,7 +13568,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>This unit has their "Cavalry" or "Infantry" keyword replaced with the keyword "Flyer".</p>',
-		releases: { 'Harbingers of War': 90 }
+		releases: { HW: 90 }
 	},
 	{
 		name: 'Standard of the Harbinger',
@@ -13557,7 +13580,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>If attached to a Harbinger this card\'s gold cost is reduced by 1 (minimum 0).</p><p> <b>Command</b>: Put a "<b>Victory</b>: +1" token on this unit. If your enemy passes their next command, the battle ends.</p>',
-		releases: { 'Harbingers of War': 91 }
+		releases: { HW: 91 }
 	},
 	{
 		name: 'Barak Grimjaw, Hammer of the Dwarfs',
@@ -13572,7 +13595,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Barak Grimjaw</p><p>All of your other Dwarf units get "<b>Victory</b>: +1".</p><p><b>Reaction</b>: After this unit enters a combat, both players discard their hands and draw 4 cards from their deck.</p>',
-		releases: { 'Harbingers of War': 92, 'War of Attrition': 295 }
+		releases: { HW: 92, WA: 295 }
 	},
 	{
 		name: "Grimjaw's Dwarfs of Vigilance",
@@ -13586,7 +13609,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: When your enemy places any number of tokens on this card due to a card effect, place an equal number of "<b>Victory</b>: +1" tokens on this unit.</p>',
-		releases: { 'Harbingers of War': 93, 'War of Attrition': 303 }
+		releases: { HW: 93, WA: 303 }
 	},
 	{
 		name: "Grimjaw's Enchanted Bolt Thrower",
@@ -13600,7 +13623,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: This unit gets +2 strength and +2 <b>Ranged Attack</b>. If this unit loses this combat, your enemy gets 3 spell points.</p><p><b>Combat Tactic</b>: This unit gets +4 <b>Ranged Attack</b> vs. monster units.</p>',
-		releases: { 'Harbingers of War': 94 }
+		releases: { HW: 94 }
 	},
 	{
 		name: "Grimjaw's Honour Guard",
@@ -13614,7 +13637,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>While you have one or more copies of this unit in play, your combat tactic action cards with a tactic point cost of 4 or more have their tactic point cost reduced by 1 when played by a Dwarf unit.</p>',
-		releases: { 'Harbingers of War': 95 }
+		releases: { HW: 95 }
 	},
 	{
 		name: "Grimjaw's Iron Lords",
@@ -13628,7 +13651,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit is immune to "<b>Terror</b>" and its leadership may not be reduced.</p><p><b>Reaction</b>: After your second unit has been routed this command, this unit becomes the defender of the next follow-up attack. You may use this ability while committed.</p>',
-		releases: { 'Harbingers of War': 96 }
+		releases: { HW: 96 }
 	},
 	{
 		name: "Grimjaw's Loners",
@@ -13643,7 +13666,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After another of your Dwarf units gets a strength bonus, that Dwarf unit gets +1 tactic points.</p>',
-		releases: { 'Harbingers of War': 97 }
+		releases: { HW: 97 }
 	},
 	{
 		name: "Grimjaw's Stouthearts",
@@ -13657,7 +13680,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p>This unit's strength is equal to half the number of your enemy's spell points (rounded up).</p>",
-		releases: { 'Harbingers of War': 98, 'War of Attrition': 306 }
+		releases: { HW: 98, WA: 306 }
 	},
 	{
 		name: "Grimjaw's Undying Slayers",
@@ -13671,7 +13694,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: Once per battle, this unit may block any attack. This ability may be used while this unit is committed.</p>',
-		releases: { 'Harbingers of War': 99, 'War of Attrition': 307 }
+		releases: { HW: 99, WA: 307 }
 	},
 	{
 		name: "Grimjaw's Valorous Veterans",
@@ -13685,7 +13708,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: Instead of mustering a unit or attachment, destroy one of your <span class="errata">other Dwarf</span> units. You gain additional gold to muster equal to the gold cost paid for the destroyed unit and its attachments. Only playable once per Muster Phase.</p>',
-		releases: { 'Harbingers of War': 100 },
+		releases: { HW: 100 },
 		errata: true,
 		banned: true
 	},
@@ -13701,7 +13724,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 1</p><p>While this unit is ready, it may block any unit with less tactic points.</p>',
-		releases: { 'Harbingers of War': 101, 'War of Attrition': 308 }
+		releases: { HW: 101, WA: 308 }
 	},
 	{
 		name: "Gausser's Veterans",
@@ -13716,7 +13739,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After an attack is declared against a unit in your reserves, this unit may block that attack.</p><p><b>Reaction</b>: After this unit wins a combat, make a leadership test. If successful this unit does not commit. Only playable while blocking.</p>',
-		releases: { 'Harbingers of War': 102, 'War of Attrition': 329 }
+		releases: { HW: 102, WA: 329 }
 	},
 	{
 		name: "Gausser's Hellblaster",
@@ -13730,7 +13753,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +2</p><p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: Once per battle, after this unit has won a ranged attack, immediately select a new target and perform another ranged attack.</p>',
-		releases: { 'Harbingers of War': 103 }
+		releases: { HW: 103 }
 	},
 	{
 		name: "Gausser's Young Guns",
@@ -13744,7 +13767,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 2</p><p><b>Short Ranged Attack</b>: 7</p><p><b>Reaction</b>: After you have performed a command, move this unit from the reserves to the battle line or vice versa.</p>',
-		releases: { 'Harbingers of War': 104 }
+		releases: { HW: 104 }
 	},
 	{
 		name: 'Lifeguard of Frote',
@@ -13758,7 +13781,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: +1</p><p><b>Reaction</b>: After this unit destroys a wizard unit in combat, you get 3 spell points.</p>',
-		releases: { 'Harbingers of War': 105, 'War of Attrition': 338 }
+		releases: { HW: 105, WA: 338 }
 	},
 	{
 		name: 'Theodric Gausser, Guardian of the Empire',
@@ -13773,7 +13796,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Elector Count Theodric Gausser.</p><p><b>Reaction</b>: After this unit is mustered, name 2 different action cards. Search your deck and discard pile for 1 copy of each of the named cards. Then shuffle your deck and put those 2 cards on top of your deck in any order.</p>',
-		releases: { 'Harbingers of War': 106, 'War of Attrition': 347 }
+		releases: { HW: 106, WA: 347 }
 	},
 	{
 		name: 'Xavier, Transcriber of Wind',
@@ -13787,7 +13810,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Reaction</b> Commit this unit: Instead of mustering a unit or attachment, your attachments have their gold cost reduced by 1 (minimum of 1) until the end of this muster phase.</p>',
-		releases: { 'Harbingers of War': 107 }
+		releases: { HW: 107 }
 	},
 	{
 		name: 'Bilgarim Whitestar, Elven Lord',
@@ -13802,7 +13825,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 2</p><p>While this unit is in combat your spells cost 2 less spell points (minimum 0).</p><p>If this unit is in play at the end of the battle, you may choose to have any number of your strategy cards remain in play.</p>',
-		releases: { 'Harbingers of War': 108, 'War of Attrition': 360 }
+		releases: { HW: 108, WA: 360 }
 	},
 	{
 		name: "Whitestar's Archers of the White Pillar",
@@ -13816,7 +13839,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b> Discard a card from your hand: This unit gets +X <b>Ranged Attack</b>. X equals half the die of the discarded card (rounded up). You may play this ability any number of times per combat.</p>',
-		releases: { 'Harbingers of War': 109, 'War of Attrition': 375 }
+		releases: { HW: 109, WA: 375 }
 	},
 	{
 		name: "Whitestar's Coastal Guardians",
@@ -13830,7 +13853,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Place a +1 tactic point token on any unit or place a -1 tactic point token on any unit. If your enemy passes as their next command the battle ends.</p>',
-		releases: { 'Harbingers of War': 110, 'War of Attrition': 376 }
+		releases: { HW: 110, WA: 376 }
 	},
 	{
 		name: "Whitestar's Guardians",
@@ -13844,7 +13867,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>If you have a wizard in play when you start the battle you receive 1 extra spell point for the battle.</p><p><b>Combat Tactic</b>: You and your opponent each gain 2 spell points.</p><p> <b>WarCry</b>: Put a strategy card into play.</p>',
-		releases: { 'Harbingers of War': 111, 'War of Attrition': 377 }
+		releases: { HW: 111, WA: 377 }
 	},
 	{
 		name: "Whitestar's Guardians of the Sky",
@@ -13858,7 +13881,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b> Commit: Remove your unit from the combat and place it in the same line as this unit. If the enemy unit passes a leadership test, that unit may make a follow-up attack following this combat.</p>',
-		releases: { 'Harbingers of War': 112, 'War of Attrition': 378 },
+		releases: { HW: 112, WA: 378 },
 		banned: true
 	},
 	{
@@ -13873,7 +13896,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: When this unit enters a combat, the enemy unit gets -2 tactic points.</p>',
-		releases: { 'Harbingers of War': 113 }
+		releases: { HW: 113 }
 	},
 	{
 		name: "Whitestar's Order of the Black Rose",
@@ -13887,7 +13910,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Reaction</b> Commit this unit: Instead of mustering a unit or attachment, name a unit or attachment and search your enemy's deck for that card and place all copies of that unit in your enemy's discard pile. Shuffle your enemy's deck.</p>",
-		releases: { 'Harbingers of War': 114 }
+		releases: { HW: 114 }
 	},
 	{
 		name: "Whitestar's Silverhelms",
@@ -13901,7 +13924,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After this unit wins a combat, search your discard pile for a strategy card and put it into play.</p>',
-		releases: { 'Harbingers of War': 115, 'War of Attrition': 379 }
+		releases: { HW: 115, WA: 379 }
 	},
 	{
 		name: "Whitestar's White Lions",
@@ -13915,7 +13938,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After this unit is mustered, place the top two cards of your action deck under this unit face down (you may look at the cards).</p><p><b>Combat Tactic</b>: Put the facedown cards attached for this unit into your hand.</p>',
-		releases: { 'Harbingers of War': 116, 'War of Attrition': 380 }
+		releases: { HW: 116, WA: 380 }
 	},
 	{
 		name: "Whitestar's White Reavers",
@@ -13929,7 +13952,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: Once per muster phase, instead of mustering a unit or attachment, draw 2 cards from your army deck.</p>',
-		releases: { 'Harbingers of War': 117 }
+		releases: { HW: 117 }
 	},
 	{
 		name: "Whitestar's Youngheart Spearmen",
@@ -13943,7 +13966,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b> Commit: After an enemy unit has destroyed one of your units in an attack, place two -1 tactic point tokens on that unit.</p>',
-		releases: { 'Harbingers of War': 118 }
+		releases: { HW: 118 }
 	},
 	{
 		name: 'Doramin Gimragson',
@@ -13955,7 +13978,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p>While attached to Logrok Gimragson, this attachment's <b>Runesmith</b> rating is increased by 1.</p><p><b>Spell WarCry</b> (2): This unit gets a strength bonus equal to its tactic points.</p>",
-		releases: { 'Harbingers of War': 119 }
+		releases: { HW: 119 }
 	},
 	{
 		name: 'Otwin Salenholt',
@@ -13966,7 +13989,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Reaction</b>: When you play a spell action card, the spell point cost is reduced by 1 (minimum 1). If you have another ready Empire wizard, you may use this ability while this unit is committed.</p>',
-		releases: { 'Harbingers of War': 120 }
+		releases: { HW: 120 }
 	},
 	{
 		name: 'Black Hand of Death',
@@ -13976,7 +13999,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Command',
 		text: "<p>All units have their leadership reduced by 1 (minimum 1).</p><p><b>Spell Command</b> Commit one of your Vampire Counts units (0): You gain a number of spell points equal to the committed unit's printed strength.</p>",
-		releases: { 'Death and Honour': 1 }
+		releases: { DH: 1 }
 	},
 	{
 		name: 'Curse of the Immortal',
@@ -13987,7 +14010,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: "<p><b>Spell WarCry</b> (0): You gain a number of spell points equal to this wizard unit's leadership plus it's <b>Wizard</b> rating. Remove this card from the game.</p>",
-		releases: { 'Death and Honour': 2 }
+		releases: { DH: 2 }
 	},
 	{
 		name: 'Curse of Years',
@@ -13999,7 +14022,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (1): The enemy unit must make 3 leadership tests. For each failed test the unit gets -1 strength.</p>',
-		releases: { 'Death and Honour': 3, 'War of Attrition': 89 }
+		releases: { DH: 3, WA: 89 }
 	},
 	{
 		name: "From Hell's Heart",
@@ -14011,7 +14034,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell WarCry</b> (1): This unit may not be routed unless the enemy unit has <b>Faith</b>.</p><p><b>Spell Combat Tactic</b> (0): Destroy 1 strategy card.</p>',
-		releases: { 'Death and Honour': 4, 'War of Attrition': 90 }
+		releases: { DH: 4, WA: 90 }
 	},
 	{
 		name: 'Gaze of Nagash',
@@ -14022,7 +14045,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Spell Command</b> (2): One of your ready wizard units gets "<b>Ranged Attack</b>: 6" and immediately performs a ranged attack. This wizard does not commit after the combat is completed if it wins the combat.</p>',
-		releases: { 'Death and Honour': 5, 'War of Attrition': 91 }
+		releases: { DH: 5, WA: 91 }
 	},
 	{
 		name: 'Hand of Dust',
@@ -14033,7 +14056,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p><b>Spell Combat Tactic</b> (1): The enemy unit may only play 1 more tactic in this combat. You may not play any more combat or support tactics in this combat.</p>',
-		releases: { 'Death and Honour': 6 }
+		releases: { DH: 6 }
 	},
 	{
 		name: 'Hellish Vigor',
@@ -14045,7 +14068,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell WarCry</b> (1): You may play any number of combat tactics before your enemy plays any more tactics.</p>',
-		releases: { 'Death and Honour': 7, 'War of Attrition': 92 }
+		releases: { DH: 7, WA: 92 }
 	},
 	{
 		name: 'Invocation of Nehek',
@@ -14056,7 +14079,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p><b>Spell Combat Tactic</b> (3): Choose a Vampire Counts or Khemri unit with a gold cost less than 4 in your discard pile and attach it to this unit. While attached this unit gets +X strength and "<b>Victory</b>: -X". X equals the attached units strength.</p>',
-		releases: { 'Death and Honour': 8 }
+		releases: { DH: 8 }
 	},
 	{
 		name: 'That Which Does Not Die',
@@ -14067,7 +14090,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: Play a combat tactic on one of your other units in play with the same keyword as this unit.</p>',
-		releases: { 'Death and Honour': 9 }
+		releases: { DH: 9 }
 	},
 	{
 		name: "Vanhel's Danse Macabre",
@@ -14078,7 +14101,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> (0): Move one of your units from the reserve line to the battle line and declare an attack with that unit.</p>',
-		releases: { 'Death and Honour': 10, 'War of Attrition': 94 }
+		releases: { DH: 10, WA: 94 }
 	},
 	{
 		name: 'The Carstein Ring',
@@ -14089,7 +14112,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		text: "<p>May only be attached to a Vampire Counts unit.</p><p><b>Spell Reaction</b> (2): After this unit is destroyed, exchange this unit with another of your units. The other unit is destroyed instead. This unit takes on the status of the other unit (committed or ready).</p><p><b>Spell Command</b> (0): Gain 2 spell points. If your enemy's next command is a pass, the battle is over.</p>",
-		releases: { 'Death and Honour': 14 }
+		releases: { DH: 14 }
 	},
 	{
 		name: 'Adolphus Krieger',
@@ -14103,7 +14126,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Combat Tactic</b> Discard a spell card from your hand: Gain 2 spell points. You may play this ability any number of times per combat.</p><p><b>Spell Combat Tactic</b> (2): This unit gets +3 strength vs. units with a gold cost of 5 or more. You may play this ability any number of times per combat.</p>',
-		releases: { 'Death and Honour': 17 }
+		releases: { DH: 17 }
 	},
 	{
 		name: 'Banshees of Nightfall',
@@ -14116,7 +14139,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 1</p><p> <b>Command</b> Commit: Once per battle, all non-Hordes of Darkness units in a battleline must make a leadership and strength test. Any units failing one or more of the tests are committed. Only playable from the battleline.</p>',
-		releases: { 'Death and Honour': 18 }
+		releases: { DH: 18 }
 	},
 	{
 		name: "Carstein's Black Hand",
@@ -14129,7 +14152,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p><b>Reaction</b>: After this unit routs an enemy unit, gain 2 spell points.</p><p> <b>WarCry</b>: If the enemy unit has "<b>Faith</b>", for the duration of this combat, that unit does not have "<b>Faith</b>".</p>',
-		releases: { 'Death and Honour': 19 }
+		releases: { DH: 19 }
 	},
 	{
 		name: "Carstein's Black Knights",
@@ -14142,7 +14165,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. Grand Alliance units.</p><p><b>Reaction</b>: After this unit plays a WarCry, play another WarCry.</p>',
-		releases: { 'Death and Honour': 20 }
+		releases: { DH: 20 }
 	},
 	{
 		name: "Carstein's Flesh Eaters",
@@ -14155,7 +14178,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p><b>Reaction</b> Remove this unit from the game: After this unit is destroyed, you gain 3 spell points.</p><p> <b>WarCry</b> Discard a card from your hand: Your enemy must discard a card from their hand. This unit gets a strength bonus equal to the die of your enemy's discarded card.</p>",
-		releases: { 'Death and Honour': 21 }
+		releases: { DH: 21 }
 	},
 	{
 		name: "Carstein's Grave Guard",
@@ -14168,7 +14191,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>You may not muster this unit unless you have a wizard in play. If you ever do not have a wizard in play this unit is destroyed.</p>',
-		releases: { 'Death and Honour': 22 }
+		releases: { DH: 22 }
 	},
 	{
 		name: "Carstein's Wights",
@@ -14181,7 +14204,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>Weapons with a gold cost of 2 or less attached to this unit have their gold cost reduced to 0.</p><p> <b>WarCry</b>: this unit gets +2 strength vs. Grand Alliance units.</p>',
-		releases: { 'Death and Honour': 23 }
+		releases: { DH: 23 }
 	},
 	{
 		name: 'Gothard, the Undying Knight',
@@ -14194,7 +14217,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength and "<b>Terror</b>: 1" for each card attached to this unit.</p><p><b>Combat Tactic</b>: You and your enemy each get 1 spell point.</p>',
-		releases: { 'Death and Honour': 24 }
+		releases: { DH: 24 }
 	},
 	{
 		name: 'Manfred von Carstein',
@@ -14208,7 +14231,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (X): After one of your other Hordes of Darkness units is destroyed as a result of combat, return that unit to the battle line committed. You may use this ability once per command. X equals the target unit's gold cost.</p>",
-		releases: { 'Death and Honour': 25 }
+		releases: { DH: 25 }
 	},
 	{
 		name: 'A Good Death to Save Another',
@@ -14218,7 +14241,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b> Remove this card and one of your units from the game: When one of your units is destroyed by a card effect, that unit is not destroyed.</p><p><b>Reaction</b> Destroy one of your units: After you make a roll, that roll gets +2.</p>',
-		releases: { 'Death and Honour': 26 }
+		releases: { DH: 26 }
 	},
 	{
 		name: 'Blood Precedes Glory',
@@ -14229,7 +14252,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>You may put this card into play as a combat tactic for 3 tactic points.</p><p><b>Support Tactic</b> Remove up to 2 units in your discard pile from the game: This unit gets +X strength. X equals the number of units removed from the game.</p>',
-		releases: { 'Death and Honour': 27, 'War of Attrition': 382 }
+		releases: { DH: 27, WA: 382 }
 	},
 	{
 		name: 'Death Comes to All',
@@ -14240,7 +14263,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: If this combat ends in a slaughter, this unit and the enemy unit are removed from the game.</p>',
-		releases: { 'Death and Honour': 28 }
+		releases: { DH: 28 }
 	},
 	{
 		name: 'Devotion to a Cause',
@@ -14252,7 +14275,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This attacking unit gets a strength bonus equal to the number of units in your battle line. This number may not exceed the number of units in your reserves.</p>',
-		releases: { 'Death and Honour': 29, 'War of Attrition': 383 }
+		releases: { DH: 29, WA: 383 }
 	},
 	{
 		name: 'Freedom Is Not Free',
@@ -14264,7 +14287,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. If this unit wins the combat, after this combat ends this unit is destroyed and you may rally one of your other units.</p>',
-		releases: { 'Death and Honour': 30, 'War of Attrition': 384 }
+		releases: { DH: 30, WA: 384 }
 	},
 	{
 		name: 'That Which Does Not Kill Us...',
@@ -14274,7 +14297,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Command',
 		text: '<p>You may put this card into play as a combat tactic for 2 tactic points.</p><p>All of your Empire units without <b>Faith</b> have "<b>Faith</b>: 1".</p>',
-		releases: { 'Death and Honour': 31 }
+		releases: { DH: 31 }
 	},
 	{
 		name: 'The Battle Goes to the Vigilant',
@@ -14284,7 +14307,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Command',
 		text: '<p>You may put this card into play as a combat tactic for 2 tactic points. When this card is removed from play remove it from the game.</p><p><b>Reaction</b>: After your unit with <b>Faith</b> makes a combat roll, make a leadership test. If passed, add 1 to the roll.</p>',
-		releases: { 'Death and Honour': 32 }
+		releases: { DH: 32 }
 	},
 	{
 		name: 'The Enemy Is Ours',
@@ -14295,7 +14318,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>You may put this card into play as a combat tactic for 2 tactic points.</p><p><b>Support Tactic</b>: Your units attacking or defending from the battle line get +1 strength.</p>',
-		releases: { 'Death and Honour': 33, 'War of Attrition': 385 }
+		releases: { DH: 33, WA: 385 }
 	},
 	{
 		name: 'Valor and Vigilance',
@@ -14307,7 +14330,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: If this unit loses the combat and this unit's combat roll is at least 2 more than the enemy unit's combat roll, this combat is a slaughter instead. Effects that would allow this unit to win the combat instead of being slaughtered have no effect.</p>",
-		releases: { 'Death and Honour': 34, 'War of Attrition': 387 }
+		releases: { DH: 34, WA: 387 }
 	},
 	{
 		name: 'War Is Cruelty',
@@ -14319,7 +14342,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. If this unit wins the combat, after this combat ends this unit is destroyed. Remove this card from the game.</p>',
-		releases: { 'Death and Honour': 35, 'War of Attrition': 388 }
+		releases: { DH: 35, WA: 388 }
 	},
 	{
 		name: 'Grand Theogonist Kurt III',
@@ -14332,7 +14355,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		text: '<p><b>Wizard</b>: 2</p><p>This unit has <b>Faith</b>: 2</p><p><b>Spell WarCry</b> (X): The enemy may not play any spell tactics and spell reactions with a spell point cost less than X during the battle.</p>',
-		releases: { 'Death and Honour': 37 }
+		releases: { DH: 37 }
 	},
 	{
 		name: 'Axelbrand, Archelector of Taal',
@@ -14346,7 +14369,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Faith</b>: 2</p><p><b>Reaction</b>: Once per battle, before paying the spell cost of a spell action card, reduce that cost to 0.</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. infantry units.</p>',
-		releases: { 'Death and Honour': 40 }
+		releases: { DH: 40 }
 	},
 	{
 		name: 'Knights of the Divine Sword',
@@ -14359,7 +14382,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Faith</b>: 1</p><p><b>Combat Tactic</b>: Reduce the enemy unit's leadership by 2. Only playable vs. Hordes of Darkness units.</p>",
-		releases: { 'Death and Honour': 41 }
+		releases: { DH: 41 }
 	},
 	{
 		name: 'Martin, Elector of Stirland',
@@ -14373,7 +14396,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Reaction</b>: After one of your Empire units is destroyed, put that card on top of your army deck instead of in your discard pile.</p><p><b>Combat Tactic</b>: Return the enemy unit's strength to it's printed strength. Restore that units tactic points (printed and provided by permanent bonuses).</p>",
-		releases: { 'Death and Honour': 42 }
+		releases: { DH: 42 }
 	},
 	{
 		name: "Martin's War Hounds",
@@ -14386,7 +14409,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p>While this unit is in your battle line ready, your Empire infantry units may target units in your enemy's reserves for attacks and may not be blocked by cavalry.</p>",
-		releases: { 'Death and Honour': 43 }
+		releases: { DH: 43 }
 	},
 	{
 		name: 'Ostermark Vampire Hunters',
@@ -14399,7 +14422,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: After this unit destroys an enemy unit, your enemy loses 3 spell points.</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. Hordes of Darkness units.</p>',
-		releases: { 'Death and Honour': 44 }
+		releases: { DH: 44 }
 	},
 	{
 		name: 'Priests of Taal',
@@ -14412,7 +14435,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Faith</b>: 2</p><p><b>Reaction</b> Commit: After a roll, add 1 to the roll for every 2 points of this unit\'s "<b>Faith</b>" rating.</p>',
-		releases: { 'Death and Honour': 45 }
+		releases: { DH: 45 }
 	},
 	{
 		name: 'Stirland Crossbowmen of the Stake',
@@ -14425,7 +14448,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: After this unit commits a Vampire Counts unit with a ranged attack, draw 1 card.</p>',
-		releases: { 'Death and Honour': 46 }
+		releases: { DH: 46 }
 	},
 	{
 		name: 'Woeful Flagellants',
@@ -14438,7 +14461,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: After a spell is played by an enemy unit or player while this unit is in combat, this unit gets +1 strength and +1 leadership.</p>',
-		releases: { 'Death and Honour': 47 }
+		releases: { DH: 47 }
 	},
 	{
 		name: 'Zealots of Taal',
@@ -14451,7 +14474,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Faith</b>: 1</p><p><b>Reaction</b>: After this unit destroys a Hordes of Darkness unit as the defender, if this unit passes a leadership test, this unit does not commit as a result of the combat.</p>',
-		releases: { 'Death and Honour': 48 }
+		releases: { DH: 48 }
 	},
 	{
 		name: 'Anelia, Harridan of Slaanesh',
@@ -14466,7 +14489,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Veteran</b>: Anelia, Mistress of Slaanesh</p><p><b>Reaction</b> Commit: After set-up, commit an enemy unit with a gold cost equal to or less than this unit's gold cost.</p>",
-		releases: { 'Bringers of Darkness': 1 }
+		releases: { LW: 1 }
 	},
 	{
 		name: 'Brotherhood of Carnage',
@@ -14480,7 +14503,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b> Commit an attachment on this unit: This unit gets +1 strength. This ability may be used any number of times per combat. Activated abilities on committed attachments may not be used.</p>',
-		releases: { 'Bringers of Darkness': 2 }
+		releases: { LW: 2 }
 	},
 	{
 		name: 'Itmon, the Mountain That Breathes',
@@ -14495,7 +14518,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Terror</b>: 3</p><p><b>Combat Tactic</b>: The enemy unit must pass an unmodified leadership test or be committed.</p>',
-		releases: { 'Bringers of Darkness': 3 }
+		releases: { LW: 3 }
 	},
 	{
 		name: "Styrkaar's Bearers of Enigma",
@@ -14509,7 +14532,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (1): After you play a combat tactic from your hand while this unit is in a combat, your enemy discards 1 card from their hand.</p>',
-		releases: { 'Bringers of Darkness': 4, 'War of Attrition': 23 }
+		releases: { LW: 4, WA: 23 }
 	},
 	{
 		name: "Styrkaar's Blissful Spawn",
@@ -14523,7 +14546,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Terror</b>: 3</p><p><b>Spell Reaction</b> (2): If this unit is destroyed in a slaughter, your enemy discards 2 cards.</p>',
-		releases: { 'Bringers of Darkness': 5 }
+		releases: { LW: 5 }
 	},
 	{
 		name: "Styrkaar's Blood Sisters",
@@ -14537,7 +14560,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Support WarCry</b>: Your unit wih the "<b>Scout</b>" ability gets a strength bonus equal to its printed "<b>Scout</b>" rating. Not playable during a follow-up attack.</p>',
-		releases: { 'Bringers of Darkness': 6 }
+		releases: { LW: 6 }
 	},
 	{
 		name: "Styrkaar's Chariot of Sisters",
@@ -14551,7 +14574,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: If this combat ends in slaughter, this unit wins instead. Only playable during a follow-up attack.</p>',
-		releases: { 'Bringers of Darkness': 7, 'War of Attrition': 24 }
+		releases: { LW: 7, WA: 24 }
 	},
 	{
 		name: "Styrkaar's Daughters of Bloodlust",
@@ -14565,7 +14588,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: If you have fewer cards in your hand than your opponent draw 1 card. Your unit gets -1 strength.</p>',
-		releases: { 'Bringers of Darkness': 8 }
+		releases: { LW: 8 }
 	},
 	{
 		name: 'Xaphen Kell, Keeper of Secrets',
@@ -14580,7 +14603,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: Move an enemy unit to the battle line. This unit gets a strength bonus equal to the target unit's printed strength unless the target unit passes a leadership test.</p>",
-		releases: { 'Bringers of Darkness': 9, 'War of Attrition': 27 }
+		releases: { LW: 9, WA: 27 }
 	},
 	{
 		name: "Ha'asek's Shadow Assassins",
@@ -14595,7 +14618,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p>This unit may block any attack targeting a unit in your reserves, even while committed.</p><p><b>Combat Tactic</b>: This unit gets +X strength vs. infantry units. X equals the number of cards in your hand.</p>',
-		releases: { 'Bringers of Darkness': 10 }
+		releases: { LW: 10 }
 	},
 	{
 		name: 'Lukhdror Fastdoom',
@@ -14609,7 +14632,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: When one of your units loses a combat, that unit is routed and this unit becomes the target of the follow-up attack (which the enemy may not opt out of). The loser of the next battle is routed (no roll necessary).</p>',
-		releases: { 'Bringers of Darkness': 11, 'War of Attrition': 45 }
+		releases: { LW: 11, WA: 45 }
 	},
 	{
 		name: 'Ryneys Sharpwing',
@@ -14623,7 +14646,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Support WarCry</b> (2): If your Dark Elf unit has a higher printed tactic points than the enemy unit, this combat ends in a slaughter.</p>',
-		releases: { 'Bringers of Darkness': 12 }
+		releases: { LW: 12 }
 	},
 	{
 		name: 'The Black Hand of Twilight',
@@ -14637,7 +14660,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Orc units.</p>',
-		releases: { 'Bringers of Darkness': 13 }
+		releases: { LW: 13 }
 	},
 	{
 		name: 'The Black Sky of Twilight',
@@ -14651,7 +14674,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 7</p><p><b>Support WarCry</b> Discard 1 card: The enemy unit may only play a number of tactics in this combat equal to its leadership -1 ("<b>Terror</b>" does not affect this).</p>',
-		releases: { 'Bringers of Darkness': 14 }
+		releases: { LW: 14 }
 	},
 	{
 		name: 'The Dread Knights of Twilight',
@@ -14665,7 +14688,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After this unit routs an enemy unit, before a follow-up attack begins, move up to 2 units in your enemy's batle line to their reserves.</p>",
-		releases: { 'Bringers of Darkness': 15, 'War of Attrition': 54 }
+		releases: { LW: 15, WA: 54 }
 	},
 	{
 		name: 'The Silent Brothers of Twilight',
@@ -14679,7 +14702,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Scout</b>: 4</p><p><b>Reaction</b>: After initiative is determined, move this unit from the battle line to reserves.</p><p><b>Support Tactic</b>: Look at the top card of your enemy's action deck. You may choose to have your enemy draw that card or leave it on top of the deck.</p>",
-		releases: { 'Bringers of Darkness': 16, 'War of Attrition': 55 }
+		releases: { LW: 16, WA: 55 }
 	},
 	{
 		name: "Twilight's Mistresses of Murder",
@@ -14693,7 +14716,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Choose a number. Youre enemy may not play cards that have a printed tactic point cost of that number.</p>',
-		releases: { 'Bringers of Darkness': 17 }
+		releases: { LW: 17 }
 	},
 	{
 		name: 'Yrleth Soaringvale',
@@ -14707,7 +14730,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> Discard 1 card (1): After an action card is played in a combat with this unit, negate the effects of the action card if it's die is equal to the die on the card discarded to pay this ability's cost.</p>",
-		releases: { 'Bringers of Darkness': 18, 'War of Attrition': 57 }
+		releases: { LW: 18, WA: 57 }
 	},
 	{
 		name: 'Gotti Skullcrusher',
@@ -14721,7 +14744,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Support WarCry</b>: Your attacking "<b>Scout</b>" unit gets a strength bonus equal to its "<b>Scout</b>" level. Then reduce your unit\'s "<b>Scout</b>" level to 0.</p>',
-		releases: { 'Bringers of Darkness': 19 }
+		releases: { LW: 19 }
 	},
 	{
 		name: "Grubbi's High Boys",
@@ -14735,7 +14758,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Destroy this unit: After an enemy unit gets a strength bonus of 3 or more, reduce that bonus to 0.</p>',
-		releases: { 'Bringers of Darkness': 20, 'War of Attrition': 66 }
+		releases: { LW: 20, WA: 66 }
 	},
 	{
 		name: "Grubbi's Net Tossers",
@@ -14749,7 +14772,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 1</p><p><b>Support Tactic</b> Destroy or commit this unit: Your unit gets +X strength. X equals this unit\'s "<b>Scout</b>" level. You may play this ability while this unit is committed.</p>',
-		releases: { 'Bringers of Darkness': 21 }
+		releases: { LW: 21 }
 	},
 	{
 		name: "Grubbi's Savage Riders",
@@ -14763,7 +14786,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 2</p><p><b>Reaction</b>: After this unit wins a combat, destroy a unit not in this combat. Only playable if the enemy has more gold in play than prescribed by the battle (20 in the 1st battle, 25 in the 2nd, etc.).</p>',
-		releases: { 'Bringers of Darkness': 22 }
+		releases: { LW: 22 }
 	},
 	{
 		name: "Grubbi's Wolf Raiders",
@@ -14777,7 +14800,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Play a support tactic on one of your committed units, paying all costs. If the support tactic requires the unit to commit, destroy the committed unit instead of committing it.</p>',
-		releases: { 'Bringers of Darkness': 23, 'War of Attrition': 68 }
+		releases: { LW: 23, WA: 68 }
 	},
 	{
 		name: "Manmangler's Black Orcs",
@@ -14791,7 +14814,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Victory</b>: -4</p><p>This unit\'s "<b>Victory</b>:-4" is negated if you have 4 or more other Orc units in your battle line.</p>',
-		releases: { 'Bringers of Darkness': 24 }
+		releases: { LW: 24 }
 	},
 	{
 		name: 'Ozzi Batchewer',
@@ -14805,7 +14828,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 3</p><p> <b>Command</b>: Once per battle, attach a reaction card to this unit.</p><p><b>Reaction</b> Discard 1 card: When a <b>Reaction</b> attached to this unit could be played, play that <b>Reaction</b>, paying all costs. You may only use any one attached card once per trigger effect.</p>',
-		releases: { 'Bringers of Darkness': 25, 'War of Attrition': 79 }
+		releases: { LW: 25, WA: 79 }
 	},
 	{
 		name: "Ozzi's Night Guard",
@@ -14819,7 +14842,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p> <b>WarCry</b>: The enemy unit may not play action cards with a die equal to or less than this unit\'s "<b>Scout</b>" level.</p>',
-		releases: { 'Bringers of Darkness': 26, 'War of Attrition': 80 }
+		releases: { LW: 26, WA: 80 }
 	},
 	{
 		name: 'Rokki Blood Spitter',
@@ -14834,7 +14857,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 2</p><p><b>Wizard</b>: 1</p><p><b>Support Tactic</b>: Play a combat tactic from your hand, reducing the tactic point cost to 0. Only playable if your unit has a printed tactic points of 0.</p>',
-		releases: { 'Bringers of Darkness': 27 }
+		releases: { LW: 27 }
 	},
 	{
 		name: "Grunson's Marauders",
@@ -14849,7 +14872,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Ranged Attack</b>: 4</p><p><b>Wizard</b>: 2</p><p><b>Scout</b>: 2 <b>Terror</b>: 2</p><p><b>Faith</b>: 2</p>',
-		releases: { 'Bringers of Darkness': 28, 'War of Attrition': 102 }
+		releases: { LW: 28, WA: 102 }
 	},
 	{
 		name: "Voland's Venerators",
@@ -14863,7 +14886,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After an enemy unit gets a strength bonus from a combat tactic card, if the strength bonus was greater than the tactic point cost of the card, the bonus is reduced to the tactic point cost of the card.</p>',
-		releases: { 'Bringers of Darkness': 29, 'War of Attrition': 103 }
+		releases: { LW: 29, WA: 103 }
 	},
 	{
 		name: 'Animosity',
@@ -14875,7 +14898,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength if your enemy has another unit in their reserve or battle line with a different army keyword than the enemy unit.</p>',
-		releases: { 'Bringers of Darkness': 30, 'War of Attrition': 106 }
+		releases: { LW: 30, WA: 106 }
 	},
 	{
 		name: 'Best Laid Plans',
@@ -14887,7 +14910,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +6 strength.</p>',
-		releases: { 'Bringers of Darkness': 31, 'War of Attrition': 112 }
+		releases: { LW: 31, WA: 112 }
 	},
 	{
 		name: 'Bitterness',
@@ -14899,7 +14922,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength if your enemy unit has another unit in their reserve or battle line with a different army keyword than the enemy unit.</p>',
-		releases: { 'Bringers of Darkness': 32 }
+		releases: { LW: 32 }
 	},
 	{
 		name: 'Blessings of Steel',
@@ -14910,7 +14933,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p>After this card is rolled, put it into play as a strategy card.</p><p>All units with 1 or more attachments get +1 strength.</p><p>If this card is rolled as a combat roll, this card will not effect the strengths of the units until after the loser is destroyed.</p>',
-		releases: { 'Bringers of Darkness': 33 }
+		releases: { LW: 33 }
 	},
 	{
 		name: 'Brilliant Intellect',
@@ -14922,7 +14945,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: This unit gets +1 strength if this unit's printed tactic points are greater than the enemy unit's printed tactic points.</p>",
-		releases: { 'Bringers of Darkness': 34, 'War of Attrition': 118 }
+		releases: { LW: 34, WA: 118 }
 	},
 	{
 		name: 'Cautious Advance',
@@ -14934,7 +14957,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Your enemy may not play cards that create or may create a slaughter for this combat.</p>',
-		releases: { 'Bringers of Darkness': 35 }
+		releases: { LW: 35 }
 	},
 	{
 		name: 'Choosing a General',
@@ -14945,7 +14968,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Commit one of your units: Attach this card to any one of your units. While attached this unit does not commit after attacking, but may not perform follow-up attacks.</p><p>Additionally, if your enemy passes after this unit completes an attack, the battle is over.You may not put this card into play if you have another copy of it in play.</p>',
-		releases: { 'Bringers of Darkness': 36, 'War of Attrition': 124 }
+		releases: { LW: 36, WA: 124 }
 	},
 	{
 		name: 'Command',
@@ -14957,7 +14980,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Spell WarCry</b> (1): Look at your enemy's hand. You may choose one card that can be legally played by the enemy unit as their next tactic. If you do, that card must be played by the enemy unit as their next tactic.</p>",
-		releases: { 'Bringers of Darkness': 37 }
+		releases: { LW: 37 }
 	},
 	{
 		name: 'Confusion in Command',
@@ -14968,7 +14991,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>When a player wishes to play a combat tactic from their hand, the enemy player selects one card at random from their hand. If this card is a combat tactic that can legally be played, it must be played (paying all costs). If the card cannot be played legally as a combat tactic, then that card is played as a combat tactic that costs 1 tactic point and has the text "<b>Combat Tactic</b>: This unit gets +1 strength". If the card\'s cost cannot be paid the card is discarded.</p>',
-		releases: { 'Bringers of Darkness': 38 }
+		releases: { LW: 38 }
 	},
 	{
 		name: 'Countrymen Stand Together',
@@ -14980,7 +15003,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets a strength bonus equal to its leadership. Only playable vs. a unit of a different faction than this unit.</p>',
-		releases: { 'Bringers of Darkness': 39 }
+		releases: { LW: 39 }
 	},
 	{
 		name: 'Crushing Tactics',
@@ -14992,7 +15015,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: This unit gets +3 strength if this unit's printed gold cost is greater than the enemy unit's printed gold cost.</p>",
-		releases: { 'Bringers of Darkness': 40, 'War of Attrition': 130 }
+		releases: { LW: 40, WA: 130 }
 	},
 	{
 		name: 'Cunning Tactics',
@@ -15004,7 +15027,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: This unit gets +2 strength if this unit's printed tactic points are greater than the enemy unit's printed tactic points.</p>",
-		releases: { 'Bringers of Darkness': 41 }
+		releases: { LW: 41 }
 	},
 	{
 		name: 'Darkness Falls',
@@ -15015,7 +15038,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: If all of the enemy units are committed, the battle is over.</p>',
-		releases: { 'Bringers of Darkness': 42 }
+		releases: { LW: 42 }
 	},
 	{
 		name: 'Deadly Games',
@@ -15026,7 +15049,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p>After this card is rolled, put it into play as a strategy card.</p><p>All units have the ability: "<b>Combat Tactic</b>: If this unit wins the combat, the enemy unit is routed (no roll necessary). You may play this ability once per command."</p>',
-		releases: { 'Bringers of Darkness': 43, 'War of Attrition': 133 }
+		releases: { LW: 43, WA: 133 }
 	},
 	{
 		name: 'Death Mark',
@@ -15037,7 +15060,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p>After this card is rolled outside of a combat, target any unit. The target unit attaches the top card of their action deck. While attached that unit gets a strength and tactic point bonus equal to the die of that card and gets the keyword "Bounty."</p><p>Then, attach this card to a ready unit controlled by another player. While attached this unit gets the ability "Command Commit: Commit a Bounty unit."</p>',
-		releases: { 'Bringers of Darkness': 44 }
+		releases: { LW: 44 }
 	},
 	{
 		name: 'Death of a Hero',
@@ -15048,7 +15071,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p>After this card is rolled, destroy your unit with the highest gold cost (your choice if there is a tie). All of your other units with the same army keyword(s) have +1 strength and +1 leadership until the end of the battle.</p>',
-		releases: { 'Bringers of Darkness': 45, 'War of Attrition': 135 }
+		releases: { LW: 45, WA: 135 }
 	},
 	{
 		name: 'Departing the Field of Battle',
@@ -15059,7 +15082,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p> <b>Command</b> Return all of an enemy player's cards removed from the game back to their deck: Only playable if all of your enemy's cards have been removed from the game.</p>",
-		releases: { 'Bringers of Darkness': 46 }
+		releases: { LW: 46 }
 	},
 	{
 		name: 'Detestation',
@@ -15071,7 +15094,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength if your enemy has another unit in their reserve or battle line with a different army keyword than the enemy unit.</p>',
-		releases: { 'Bringers of Darkness': 47 }
+		releases: { LW: 47 }
 	},
 	{
 		name: 'Divine the Future',
@@ -15082,7 +15105,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>All players play with the top card of both decks (army and action) face up.</p>',
-		releases: { 'Bringers of Darkness': 48 }
+		releases: { LW: 48 }
 	},
 	{
 		name: 'Establishing Dominance',
@@ -15094,7 +15117,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: This unit gets +2 strength if this unit's printed gold cost is greater than the enemy unit's printed gold cost.</p>",
-		releases: { 'Bringers of Darkness': 49 }
+		releases: { LW: 49 }
 	},
 	{
 		name: 'Falsified Orders',
@@ -15105,7 +15128,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: Before you play your first tactic, look at your enemy's hand. You may select one combat tactic. Your unit may play that card (paying all costs), however the card is not discarded and remains in the player's hand</p><p>(effects that would cause that card to leave the enemy player's hand are negated).</p>",
-		releases: { 'Bringers of Darkness': 50 }
+		releases: { LW: 50 }
 	},
 	{
 		name: 'Fight as One',
@@ -15117,7 +15140,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength if you have another unit in your reserve or battle line that has the same army keyword as this unit.</p>',
-		releases: { 'Bringers of Darkness': 51, 'War of Attrition': 153 }
+		releases: { LW: 51, WA: 153 }
 	},
 	{
 		name: 'Guarded Coffers',
@@ -15128,7 +15151,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>This card is not discarded after the battle it comes into play. Discard all other copies of this card when it enters play.</p><p>Either player may use this ability once per muster phase.</p><p><b>Reaction</b>: Instead of mustering a unit or attachment, both players discard their hands and draw the same number of cards that they discarded.</p>',
-		releases: { 'Bringers of Darkness': 52 }
+		releases: { LW: 52 }
 	},
 	{
 		name: 'Heavy Rains',
@@ -15139,7 +15162,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p>After this card is rolled put it into play as a strategy card.</p><p>All units in play get -1 tactic point.</p>',
-		releases: { 'Bringers of Darkness': 53, 'War of Attrition': 171 }
+		releases: { LW: 53, WA: 171 }
 	},
 	{
 		name: 'Hide Your Strength',
@@ -15151,7 +15174,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card your enemy played from their hand during this combat.</p>',
-		releases: { 'Bringers of Darkness': 54 }
+		releases: { LW: 54 }
 	},
 	{
 		name: 'Matter of Honor',
@@ -15162,7 +15185,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>You may put this card into play as a combat tactic for 1 tactic point.</p><p><b>Reaction</b>: After an enemy unit gets a strength bonus from a <b>Combat Tactic</b> action card, if the strength bonus was greater than the printed tactic point cost of the card, the bonus is reduced to the tactic point cost of the card.</p>',
-		releases: { 'Bringers of Darkness': 55, 'War of Attrition': 196 }
+		releases: { LW: 55, WA: 196 }
 	},
 	{
 		name: 'Might Wins the Skirmish',
@@ -15173,7 +15196,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: "<p>After this card is rolled as a combat roll, your opponent's combat roll is negated and is considered equal to this roll.</p>",
-		releases: { 'Bringers of Darkness': 56 }
+		releases: { LW: 56 }
 	},
 	{
 		name: 'Mirror Tactics',
@@ -15184,7 +15207,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p>If another copy of this card enters play, discard this card.</p><p>All of your opponent's strategy cards are considered to be your strategy cards.</p>",
-		releases: { 'Bringers of Darkness': 57 }
+		releases: { LW: 57 }
 	},
 	{
 		name: 'Only One Shall Fall',
@@ -15195,7 +15218,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After your enemy plays a card or ability that creates or may create a slaughter, destroy the enemy unit (the combat does not end in a slaughter). Your unit may make a follow-up attack after this combat is completed (no rout check needed).</p>',
-		releases: { 'Bringers of Darkness': 58, 'War of Attrition': 206 }
+		releases: { LW: 58, WA: 206 }
 	},
 	{
 		name: 'Overpower',
@@ -15207,7 +15230,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: This unit gets +1 strength if this unit's printed gold cost is greater than the enemy unit's printed gold cost.</p>",
-		releases: { 'Bringers of Darkness': 59 }
+		releases: { LW: 59 }
 	},
 	{
 		name: 'Point Blank Shot',
@@ -15219,7 +15242,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 <b>Ranged Attack</b>.</p><p><b>Combat Tactic</b>: This unit gets +2 strength.</p>',
-		releases: { 'Bringers of Darkness': 60, 'War of Attrition': 214 }
+		releases: { LW: 60, WA: 214 }
 	},
 	{
 		name: 'Possession',
@@ -15230,7 +15253,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p>After this card is rolled, any one unit in play gets the following until the end of the combat: +2 strength, -2 leadership and the Keywords "Daemon" and "Monster".</p>',
-		releases: { 'Bringers of Darkness': 61, 'War of Attrition': 215 }
+		releases: { LW: 61, WA: 215 }
 	},
 	{
 		name: 'Relent or We Both Die!',
@@ -15241,7 +15264,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p>After this card is rolled as a combat roll or during a combat the result of this combat is a slaughter, unless your enemy immediately commits their unit in this combat.</p>',
-		releases: { 'Bringers of Darkness': 62, 'War of Attrition': 224 }
+		releases: { LW: 62, WA: 224 }
 	},
 	{
 		name: 'Resourceful Management',
@@ -15252,7 +15275,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: Before you discard 1 card as the cost of an ability, you may roll. If the roll is a 1 you do not need to discard a card. If not, discard the card as normal. Only playable once per combat.</p>',
-		releases: { 'Bringers of Darkness': 63 }
+		releases: { LW: 63 }
 	},
 	{
 		name: 'Restrained Power',
@@ -15263,7 +15286,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> (0): If the enemy player has more than 6 spell points, that player loses all but 6 of their spell points. You gain a number of spell points equal to the number of spell points that the enemy player lost.</p>',
-		releases: { 'Bringers of Darkness': 64 }
+		releases: { LW: 64 }
 	},
 	{
 		name: 'Rivalry',
@@ -15275,7 +15298,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength if your enemy has another unit in their reserve or battle line with a different army keyword than the enemy unit.</p>',
-		releases: { 'Bringers of Darkness': 65, 'War of Attrition': 229 }
+		releases: { LW: 65, WA: 229 }
 	},
 	{
 		name: 'Scheme with an Empty Castle',
@@ -15286,7 +15309,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Super rare',
 		text: "<p><b>Reaction</b> Remove this card from the game: After a unit declares an attack, that unit must pass a tactic point test or be returned to their battle line ready and the player's command is over.</p>",
-		releases: { 'Bringers of Darkness': 66, 'War of Attrition': 234 }
+		releases: { LW: 66, WA: 234 }
 	},
 	{
 		name: 'Steal a Sheep in Passing',
@@ -15297,7 +15320,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b>: After your enemy declares an attack with a unit, select one of their other ready units to make the attack. Your enemy may then choose one of your ready units as the target of the attack.</p><p>The chosen unit must be one that could normally be targeted by the attacking unit. Only playable while both you and your enemy have a ready unit.</p>',
-		releases: { 'Bringers of Darkness': 67, 'War of Attrition': 242 }
+		releases: { LW: 67, WA: 242 }
 	},
 	{
 		name: 'Stomach for the Fight',
@@ -15309,7 +15332,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +5 strength. Only playable if this is the last card in your hand.</p>',
-		releases: { 'Bringers of Darkness': 68, 'War of Attrition': 243 }
+		releases: { LW: 68, WA: 243 }
 	},
 	{
 		name: 'Sunrise',
@@ -15320,7 +15343,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p>After this card is rolled, draw 2 cards. Remove this card from the game.</p>',
-		releases: { 'Bringers of Darkness': 69, 'War of Attrition': 252 }
+		releases: { LW: 69, WA: 252 }
 	},
 	{
 		name: 'Superior Strategies',
@@ -15332,7 +15355,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: This unit gets +3 strength if this unit's printed tactic points are greater than the enemy unit's printed tactic points.</p>",
-		releases: { 'Bringers of Darkness': 70 }
+		releases: { LW: 70 }
 	},
 	{
 		name: 'Surge of Power',
@@ -15343,7 +15366,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (0): All players gain a number of spell points equal to half the number of spell points they currently have. Other copies of this card may not be played this battle.</p>',
-		releases: { 'Bringers of Darkness': 71, 'War of Attrition': 254 }
+		releases: { LW: 71, WA: 254 }
 	},
 	{
 		name: 'The Ties That Bind',
@@ -15355,7 +15378,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength if you have another unit in your reserve or battle line that has the same army keyword as this unit.</p>',
-		releases: { 'Bringers of Darkness': 72 }
+		releases: { LW: 72 }
 	},
 	{
 		name: 'To the Last',
@@ -15367,7 +15390,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This ready unit gets +5 strength. Only playable if you have no other ready units.</p>',
-		releases: { 'Bringers of Darkness': 73 }
+		releases: { LW: 73 }
 	},
 	{
 		name: 'Unexpected Turn of Events',
@@ -15379,7 +15402,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (X): Your enemy must destroy X number of their strategy cards in play.</p>',
-		releases: { 'Bringers of Darkness': 74, 'War of Attrition': 270 }
+		releases: { LW: 74, WA: 270 }
 	},
 	{
 		name: 'Unity',
@@ -15391,7 +15414,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength if you have another unit in your reserve or battle line that has the same army keyword as this unit.</p>',
-		releases: { 'Bringers of Darkness': 75, 'War of Attrition': 272 }
+		releases: { LW: 75, WA: 272 }
 	},
 	{
 		name: 'Victory Has a Price',
@@ -15402,7 +15425,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p>You may have any number of this card in your deck.</p><p> <b>WarCry</b> Discard X copies of this card: This unit gets a strength bonus equal to X times X.</p>',
-		releases: { 'Bringers of Darkness': 76 }
+		releases: { LW: 76 }
 	},
 	{
 		name: "When It's All You Have",
@@ -15414,7 +15437,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: At the end of the tactics phase, this unit gets +1 strength for each card you played during this combat.</p>',
-		releases: { 'Bringers of Darkness': 77 }
+		releases: { LW: 77 }
 	},
 	{
 		name: 'When You Stand with Your Brother',
@@ -15426,7 +15449,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength if you have another unit in your reserve or battle line that has the same army keyword as this unit.</p>',
-		releases: { 'Bringers of Darkness': 78 }
+		releases: { LW: 78 }
 	},
 	{
 		name: 'Winds of Attrition',
@@ -15438,7 +15461,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>3 or less: The enemy must roll. If the roll is 2 or less, when this combat ands the result is a slaughter.</p><p>4: No effect.</p><p>5+: Destroy this unit. The enemy may make a follow-up attack.</p></p>',
-		releases: { 'Bringers of Darkness': 79 }
+		releases: { LW: 79 }
 	},
 	{
 		name: 'Winds of Destruction',
@@ -15450,7 +15473,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>1 or less: The enemy unit gets -3 strength.</p><p>2: The enemy unit gets -2 strength.</p><p>3: The enemy unit gets -1 strength.</p><p>4: The enemy unit gets +1 strength.</p><p>5: Commit this unit.</p><p>6+: Destroy this unit.</p></p>',
-		releases: { 'Bringers of Darkness': 80 }
+		releases: { LW: 80 }
 	},
 	{
 		name: 'Winds of Destiny',
@@ -15462,7 +15485,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>1 or less: When this combat ends the result is a slaughter.</p><p>2: Commit both units.</p><p>3: Both units get a strength bonus equal to their gold cost.</p><p>4: Both units get +4 tactic points.</p><p>5+: Destroy this unit.</p><p>The enemy unit may make a follow-up attack.</p></p>',
-		releases: { 'Bringers of Darkness': 81 }
+		releases: { LW: 81 }
 	},
 	{
 		name: 'Winds of Domination',
@@ -15474,7 +15497,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>3 or less: This unit gets +3 strength. If this combat ends in a slaughter this unit wins instead.</p><p>4+: Destroy this unit. The enemy unit may make a follow-up attack.</p></p>',
-		releases: { 'Bringers of Darkness': 82 }
+		releases: { LW: 82 }
 	},
 	{
 		name: 'Winds of Luck',
@@ -15486,7 +15509,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>2 or less: Draw 2 cards.</p><p>3: Both players draw 1 card.</p><p>4: Your enemy may draw 1 card.</p><p>5+: Discard your hand.</p></p>',
-		releases: { 'Bringers of Darkness': 83 }
+		releases: { LW: 83 }
 	},
 	{
 		name: 'Winds of Power',
@@ -15498,7 +15521,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>1 or less: This unit gets +3 strength.</p><p>2: This unit gets +2 strength.</p><p>3: This unit gets +1 strength.</p><p>4: This unit gets -1 strength.</p><p>5: Commit this unit.</p><p>6+: Destroy this unit. The enemy unit may make a follow-up attack.</p></p>',
-		releases: { 'Bringers of Darkness': 84 }
+		releases: { LW: 84 }
 	},
 	{
 		name: 'Winds of Salvation',
@@ -15510,7 +15533,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>2 or less: Both players may put the top card of their army deck into play without cost (if the card is an attachment it may be attached to any legal unit). Remove this card from the game.</p><p>3+: This unit gets -3 strength.</p></p>',
-		releases: { 'Bringers of Darkness': 85 }
+		releases: { LW: 85 }
 	},
 	{
 		name: 'Winds of Suffering',
@@ -15522,7 +15545,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>2 or less: if you win this combat the enemy unit is routed (no roll necessary).</p><p>3: If you win this combat you may not make a follow-up attack.</p><p>4: If you lose this combat your unit is routed (no roll necessary).</p><p>5+: Destroy this unit.</p><p>The enemy unit may make a follow-up attack.</p></p>',
-		releases: { 'Bringers of Darkness': 86 }
+		releases: { LW: 86 }
 	},
 	{
 		name: 'Winds of War',
@@ -15534,7 +15557,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><p><b>WarCry</b>: Roll.</p><p>1 or less: Commit the enemy unit.</p><p>2: The enemy unit gets -2 strength.</p><p>3: The enemy unit gets -2 tactic points.</p><p>4: The enemy unit gets -2 leadership.</p><p>5+: Destroy this unit. The enemy unit may make a follow-up attack.</p></p>',
-		releases: { 'Bringers of Darkness': 87 }
+		releases: { LW: 87 }
 	},
 	{
 		name: 'Ancestral Tablet',
@@ -15546,7 +15569,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this card is mustered draw two cards from your army deck.</p>',
-		releases: { 'Bringers of Darkness': 88 }
+		releases: { LW: 88 }
 	},
 	{
 		name: 'Cavalry Banner',
@@ -15557,7 +15580,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>May only be attached to a cavalry unit.</p><p><b>Support Tactic</b>: Your cavalry unit gets +1 strength.</p>',
-		releases: { 'Bringers of Darkness': 89 }
+		releases: { LW: 89 }
 	},
 	{
 		name: 'Enchanted Halberd',
@@ -15568,7 +15591,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>This unit may play tactics as if it were blocking or being blocked.</p><p><b>Combat Tactic</b>: This unit gets +1 strength.</p>',
-		releases: { 'Bringers of Darkness': 90 }
+		releases: { LW: 90 }
 	},
 	{
 		name: "General's Standard",
@@ -15580,7 +15603,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>This unit has "<b>Victory</b>: +X". X equals the number of non-duplicated unit you have in play.</p>',
-		releases: { 'Bringers of Darkness': 91 }
+		releases: { LW: 91 }
 	},
 	{
 		name: 'Shadow Guide',
@@ -15593,7 +15616,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +1</p><p>This unit cannot attack or block without a card effect.</p><p><b>Spell Command</b> (2): This unit declares an attack against an enemy unit of your choice.</p>',
-		releases: { 'Bringers of Darkness': 92 }
+		releases: { LW: 92 }
 	},
 	{
 		name: 'The Seventh Spear of the Fallen',
@@ -15605,7 +15628,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p><b>Support Tactic</b>: Your unit gets a strength bonus equal to this unit's strength. If your unit is destroyed this unit is destroyed as well. After the combat, this unit makes a leadership test. If this unit fails the test this unit is committed.</p>",
-		releases: { 'Bringers of Darkness': 93 }
+		releases: { LW: 93 }
 	},
 	{
 		name: "Alrik's Hunting Rangers",
@@ -15619,7 +15642,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Scout</b>: 2</p><p> <b>Command</b>: If all of your enemy's units are committed, the battle ends.</p>",
-		releases: { 'Bringers of Darkness': 94, 'War of Attrition': 294 }
+		releases: { LW: 94, WA: 294 }
 	},
 	{
 		name: "Barak's Iron Wall",
@@ -15633,7 +15656,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Empire units.</p><p><b>Support WarCry</b>: Destroy an attachment on the enemy unit.</p>',
-		releases: { 'Bringers of Darkness': 95 }
+		releases: { LW: 95 }
 	},
 	{
 		name: "Barak's Pipers",
@@ -15647,7 +15670,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 7</p><p> <b>Command</b> Discard 3 cards: Rally this unit. Only playable if this unit performed a ranged attack this battle. If your enemy passes as their next action, the battle is over.</p>',
-		releases: { 'Bringers of Darkness': 96 }
+		releases: { LW: 96 }
 	},
 	{
 		name: "Ganulf's Crack Shots",
@@ -15661,7 +15684,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: After this unit destroys another unit with a ranged attack, make a leadership test with one of your other units. If passed rally that unit.</p>',
-		releases: { 'Bringers of Darkness': 97, 'War of Attrition': 298 }
+		releases: { LW: 97, WA: 298 }
 	},
 	{
 		name: "Ganulf's Forest Walkers",
@@ -15675,7 +15698,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 2</p><p><b>Combat Tactic</b>: The enemy unit may not play any more action cards with a die equal to or less than this unit\'s "<b>Scout</b>" level.</p>',
-		releases: { 'Bringers of Darkness': 98, 'War of Attrition': 299 }
+		releases: { LW: 98, WA: 299 }
 	},
 	{
 		name: "Ganulf's Ironworkers",
@@ -15689,7 +15712,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After your enemy completes a command, move one of your war machine units to or from the battle line.</p><p><b>Support Tactic</b>: Your war machine unit gets +2 leadership and "<b>Terror</b>: 2".</p>',
-		releases: { 'Bringers of Darkness': 99, 'War of Attrition': 300 }
+		releases: { LW: 99, WA: 300 }
 	},
 	{
 		name: "Grimjaw's Flying Hammers",
@@ -15703,7 +15726,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: When an enemy unit gets a strength bonus of 4 or more, reduce that bonus by 3. Not playable while this unit is in combat.</p>',
-		releases: { 'Bringers of Darkness': 100, 'War of Attrition': 304 }
+		releases: { LW: 100, WA: 304 }
 	},
 	{
 		name: 'Hargum Ganulf',
@@ -15718,7 +15741,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: When an enemy unit is destroyed in a combat, put a "<b>Victory</b>: +1" token on this unit.</p>',
-		releases: { 'Bringers of Darkness': 101 }
+		releases: { LW: 101 }
 	},
 	{
 		name: 'Logtok Gimragson',
@@ -15733,7 +15756,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p>While "Doramin Gimragson" is attached this unit\'s <b>Runesmith</b> rating is increased by 1.</p><p><b>Spell Combat Tactic</b> (1): This unit gets +1 strength for every 3 of your spell points.</p>',
-		releases: { 'Bringers of Darkness': 102 }
+		releases: { LW: 102 }
 	},
 	{
 		name: "Barthelm's Harriers",
@@ -15747,7 +15770,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 1</p><p><b>Reaction</b>: Before one of your other units makes a rout check, add this unit\'s "<b>Scout</b>" level to the roll. You may only use one copy of this ability per rout check.</p>',
-		releases: { 'Bringers of Darkness': 103, 'War of Attrition': 324 }
+		releases: { LW: 103, WA: 324 }
 	},
 	{
 		name: 'Carroburg Swordguard',
@@ -15761,7 +15784,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 2</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to its "<b>Scout</b>" level.</p>',
-		releases: { 'Bringers of Darkness': 104 }
+		releases: { LW: 104 }
 	},
 	{
 		name: "Fandelhoch's Huntsmen",
@@ -15775,7 +15798,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 2</p><p><b>Ranged Attack</b>: 6</p><p><b>Support Tactic</b>: Your unit gets a strength bonus equal to this unit\'s "<b>Scout</b>" level. Commit this unit unless it passes a leadership test.</p>',
-		releases: { 'Bringers of Darkness': 105, 'War of Attrition': 327 }
+		releases: { LW: 105, WA: 327 }
 	},
 	{
 		name: "Gausser's Foresters",
@@ -15789,7 +15812,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 3</p><p><b>Ranged Attack</b>: 6</p><p> <b>WarCry</b>: This unit gets +1 strength or +1 ranged attack for each of your other "<b>Scout</b>" units.</p>',
-		releases: { 'Bringers of Darkness': 106 }
+		releases: { LW: 106 }
 	},
 	{
 		name: "Gausser's Lead Breather",
@@ -15803,7 +15826,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Ranged Attack</b>: 8</p><p> <b>Command</b> Commit: Target one enemy unit in the battle line and up to one enemy unit in the reserves. Roll for the unit in the battle line and then roll for the unit in the reserves.</p><p>If a target unit's strength plus the roll is less than this unit's <b>Ranged Attack</b>, the target unit is committed.</p>",
-		releases: { 'Bringers of Darkness': 107, 'War of Attrition': 328 }
+		releases: { LW: 107, WA: 328 }
 	},
 	{
 		name: 'Gunter Braunschaft',
@@ -15817,7 +15840,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Both you and your enemy draw 2 cards or discard 2 cards (your choice).</p>',
-		releases: { 'Bringers of Darkness': 108 }
+		releases: { LW: 108 }
 	},
 	{
 		name: 'Harman Barthelm',
@@ -15832,7 +15855,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: Attach one attachment in your discard pile to this unit without cost.</p>',
-		releases: { 'Bringers of Darkness': 109 }
+		releases: { LW: 109 }
 	},
 	{
 		name: 'Old Reliable',
@@ -15847,7 +15870,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Ranged Attack</b>: 8</p><p><b>Reaction</b>: After this unit performs a <b>Ranged Attack</b>, this unit makes a leadership test. If it passes, rally this unit at the end of the combat.</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. infantry units.</p>',
-		releases: { 'Bringers of Darkness': 110, 'War of Attrition': 341 }
+		releases: { LW: 110, WA: 341 }
 	},
 	{
 		name: "Theodric's Sharp Shooters",
@@ -15861,7 +15884,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 4</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets a ranged attack bonus equal to the die on the discarded card.</p>',
-		releases: { 'Bringers of Darkness': 111, 'War of Attrition': 348 }
+		releases: { LW: 111, WA: 348 }
 	},
 	{
 		name: 'Bearers of the Sacred Flame',
@@ -15875,7 +15898,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you play a strategy card as a command, this unit declares an attack.</p><p><b>Combat Tactic</b>: This unit gets +2 tactic points if you have 3 or less cards in your hand.</p>',
-		releases: { 'Bringers of Darkness': 112, 'War of Attrition': 359 }
+		releases: { LW: 112, WA: 359 }
 	},
 	{
 		name: "Korrim's Grey Avengers",
@@ -15889,7 +15912,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your unit gets +3 strength. Only playable during a follow-up attack. If you lose this combat your unit is routed.</p>',
-		releases: { 'Bringers of Darkness': 113, 'War of Attrition': 367 }
+		releases: { LW: 113, WA: 367 }
 	},
 	{
 		name: 'Lord Korrim Swifteagle',
@@ -15904,7 +15927,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 1</p><p><b>Support Tactic</b>: Your unit gets +2 tactic points and both players draw 1 card.</p><p><b>Support Tactic</b>: Your unit gets a strength bonus equal to the number of "<b>Scout</b>" units in your reserves.</p>',
-		releases: { 'Bringers of Darkness': 114, 'War of Attrition': 369 }
+		releases: { LW: 114, WA: 369 }
 	},
 	{
 		name: "Luril's Seafarers",
@@ -15918,7 +15941,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Scout</b>: 2</p><p><b>Reaction</b>: At the beginning of the battle phase, once both players have drawn their hands but before initiative has been decided, this unit may make a ranged attack. Only playable if you have more tactic points in your battle line than your enemy.</p>',
-		releases: { 'Bringers of Darkness': 115 }
+		releases: { LW: 115 }
 	},
 	{
 		name: 'Spears of the Fallen Tree',
@@ -15932,7 +15955,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your enemy plays a combat tactic in a combat with this unit, the tactic point cost of your next combat tactic is reduced to 0.</p>',
-		releases: { 'Bringers of Darkness': 116 }
+		releases: { LW: 116 }
 	},
 	{
 		name: 'Talaefanil Peacebringer',
@@ -15946,7 +15969,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Reaction</b>: After this unit is mustered, destroy any one attachment. That attachment's player may muster gold equal to that attachments gold cost.</p><p><b>Combat Tactic</b>: Put a strategy card into play.</p>",
-		releases: { 'Bringers of Darkness': 117 }
+		releases: { LW: 117 }
 	},
 	{
 		name: 'Tormeclis Keensight',
@@ -15960,7 +15983,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 1</p><p>Before you take a command action (or pass), if this unit has any +1 strength tokens on it remove one of them.</p><p><b>Spell Command</b> (X): This unit gets X +1 strength tokens. X may not exceed the number of cards in your hand.</p>',
-		releases: { 'Bringers of Darkness': 118 }
+		releases: { LW: 118 }
 	},
 	{
 		name: 'Warriors of the Fallen Tree',
@@ -15974,7 +15997,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Ranged Attack</b>: 4</p><p> <b>WarCry</b>: Your enemy discards their hand and draws the same number of cards.</p><p><b>Support WarCry</b>: Target unit\'s "<b>Scout</b>" level is reduced to 0.</p>',
-		releases: { 'Bringers of Darkness': 119, 'War of Attrition': 374 }
+		releases: { LW: 119, WA: 374 }
 	},
 	{
 		name: "Whitestar's Guardians (BD)",
@@ -15988,7 +16011,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each tactic point it has spent this combat. Only playable while blocking.</p>',
-		releases: { 'Bringers of Darkness': 120 }
+		releases: { LW: 120 }
 	},
 	{
 		name: 'Asavar Kul, the Anointed',
@@ -16002,7 +16025,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p><b>Terror</b>: 4</p><p><b>Combat Tactic</b>: Play the combat tactic or WarCry on any action card in any discard pile, paying all costs. That card is placed at the bottom of the owner's deck.</p><p><b>Reaction</b>: Instead of mustering a unit or attachment, get a Daemon from your deck and add it to your hand. Shuffle your army deck.</p>",
-		releases: { Legends: 1 }
+		releases: { PW: 1 }
 	},
 	{
 		name: 'Hotek, Weaponsmith of Vaul',
@@ -16016,7 +16039,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: Instead of mustering a unit or attachment get up to one amor, item, standard, and weapon from your army deck and attach those to one of your Dark Elf units (paying all costs). Shuffle your army deck.</p>',
-		releases: { Legends: 2 }
+		releases: { PW: 2 }
 	},
 	{
 		name: 'Grom the Paunch of Misty Mountain',
@@ -16030,7 +16053,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Reaction</b> Discard 2 cards: When this unit is destroyed in combat after losing a combat, return it to your battle line, ready. This unit is not destroyed (you may not use this ability if this unit is committed).</p><p><b>Combat Tactic</b>: This attacking unit gets +3 strength.</p>',
-		releases: { Legends: 3 }
+		releases: { PW: 3 }
 	},
 	{
 		name: 'Snorri Whitebeard of Karaz-A-Karak',
@@ -16044,7 +16067,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p> <b>Command</b> Commit: One by one, attach the top card of your deck to each of your Dwarf units. Those units have "<b>Victory</b>: +X". X equals the die of the attached card. While this unit remains in play, your units may not declare attacks. Discard all cards attached this way if this unit leaves play or after battle resolution. Only playable as your first command.</p>',
-		releases: { Legends: 4 }
+		releases: { PW: 4 }
 	},
 	{
 		name: 'Magnus the Pious, Bane of Chaos',
@@ -16058,7 +16081,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Faith</b>: 4</p><p><b>Combat Tactic</b>: Play a WarCry or combat tactic ability on any unit or attachment in play, paying no cost.</p>',
-		releases: { Legends: 5 }
+		releases: { PW: 5 }
 	},
 	{
 		name: 'Tethlis the Slayer',
@@ -16072,7 +16095,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>While this unit is committed all of your other High Elf units get +1 strength.</p><p><b>Reaction</b>: When one of your High Elf units is making a rout check, add their unspent tactic points to the roll.</p>',
-		releases: { Legends: 6 }
+		releases: { PW: 6 }
 	},
 	{
 		name: 'WarCry',
@@ -16083,7 +16106,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: If you win this combat, draw 3 cards.</p>',
-		releases: { 'Promo (WC)': 1 }
+		releases: { PW: 1 }
 	},
 	{
 		name: 'Gherin Azyrneth',
@@ -16096,7 +16119,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b> Destroy this unit: Destroy the enemy unit. Only usable while attacking.</p>',
-		releases: { 'Promo (WC)': 2 }
+		releases: { PW: 2 }
 	},
 	{
 		name: 'The Twilight Coven',
@@ -16109,7 +16132,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b> Discard your hand: When this combat ends, the result is a slaughter.</p>',
-		releases: { 'Promo (WC)': 3 }
+		releases: { PW: 3 }
 	},
 	{
 		name: "Gribbit's Wildboyz",
@@ -16122,7 +16145,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b>: This unit gets +1 strength for each card in your hand.</p>',
-		releases: { 'Promo (WC)': 4 }
+		releases: { PW: 4 }
 	},
 	{
 		name: 'Survey the Battlefield',
@@ -16132,7 +16155,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 tactic points.</p>',
-		releases: { 'Promo (WC)': 5 }
+		releases: { PW: 5 }
 	},
 	{
 		name: 'Blade of Soul Stealing',
@@ -16142,7 +16165,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Combat Tactic</b>: <span class="errata">Play</span> any <span class="errata">combat tactic</span> printed on the enemy unit or <span class="errata">one</span> of it\'s attachments<span class="errata">, paying all costs</span>.</p>',
-		releases: { 'Promo (WC)': 6 },
+		releases: { PW: 6 },
 		errata: true
 	},
 	{
@@ -16154,7 +16177,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p> <b>WarCry</b>: Discard the top card of your action deck until you discard a playable combat tactic or run out of cards. Play that card for free.</p>',
-		releases: { 'Promo (WC)': 7 }
+		releases: { PW: 7 }
 	},
 	{
 		name: 'Aranauch the Fangheart',
@@ -16168,7 +16191,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 3</p><p>This unit may play WarCry cards as if they were combat tactics.</p>',
-		releases: { 'Promo (WC)': 8 }
+		releases: { PW: 8 }
 	},
 	{
 		name: "Bel-Aenor's Grey Kindred",
@@ -16182,7 +16205,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p>After you draw your command hand, whichever player has the highest "<b>Scout</b>" total draws 2 cards.</p>',
-		releases: { 'Promo (WC)': 9 }
+		releases: { PW: 9 }
 	},
 	{
 		name: 'The White Dwarf',
@@ -16194,7 +16217,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		text: '<p><b>Combat Tactic</b>: Put any number of cards from your hand on top of your deck.</p>',
-		releases: { 'Promo (WC)': 10 }
+		releases: { PW: 10 }
 	},
 	{
 		name: 'Gotrek and Felix',
@@ -16208,7 +16231,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>This unit cannot be blocked.</p><p> <b>WarCry</b> this unit gets +4 strength. Only playable while this unit is in combat with the enemy unit with the highest strength.</p>',
-		releases: { 'Promo (WC)': 11 }
+		releases: { PW: 11 }
 	},
 	{
 		name: "Snorri's Stormshooters",
@@ -16221,7 +16244,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: Commit any enemy unit in the battle line unless it pases a leadership test. Only usable during this unit's ranged attack.</p>",
-		releases: { 'Promo (WC)': 12 }
+		releases: { PW: 12 }
 	},
 	{
 		name: 'Knights of the White Wolf',
@@ -16234,7 +16257,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p>',
-		releases: { 'Promo (WC)': 13 }
+		releases: { PW: 13 }
 	},
 	{
 		name: "Evaenarion's Silver Company",
@@ -16247,10 +16270,10 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Support Tactic</b>: Your unit gets +1 tactic point.</p>',
-		releases: { 'Promo (WC)': 14 }
+		releases: { PW: 14 }
 	},
 	{
-		name: 'Winds of Magic',
+		name: 'WM',
 		cost: 1,
 		die: 5,
 		keywords: [],
@@ -16258,7 +16281,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: You get 3 spell points.</p>',
-		releases: { 'Promo (WC)': 15 }
+		releases: { PW: 15 }
 	},
 	{
 		name: 'Fires of Change',
@@ -16269,7 +16292,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: "<p><b>Spell WarCry</b> (X): Destroy the enemy unit if it has strength X or less. Replace that unit in combat with any unit from your enemy's army discard pile. Only playable while you have a ready Chaos wizard.</p>",
-		releases: { 'Promo (WC)': 16 }
+		releases: { PW: 16 }
 	},
 	{
 		name: 'Doom Bolt',
@@ -16280,7 +16303,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p><b>Spell WarCry</b> (2): Commit the enemy unit if it has a strength less than your spell points. Only usable while you have a ready Dark Elf wizard.</p>',
-		releases: { 'Promo (WC)': 17 }
+		releases: { PW: 17 }
 	},
 	{
 		name: 'Foot of Gork',
@@ -16290,7 +16313,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Command',
 		text: '<p><b>Spell Command</b> (2): You and your enemy both roll. If your roll is higher, commit 1 enemy unit. Only playable while you have a ready Orc wizard.</p>',
-		releases: { 'Promo (WC)': 18 }
+		releases: { PW: 18 }
 	},
 	{
 		name: 'Rune of Adamant',
@@ -16301,7 +16324,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: '<p><b>Spell Combat Tactic</b> (X): Destroy X enemy attachments in this combat. This unit gets +X strength. Only playable while you have a ready Dwarf runesmith.</p>',
-		releases: { 'Promo (WC)': 19 }
+		releases: { PW: 19 }
 	},
 	{
 		name: "Gelt's Golden Glyph",
@@ -16312,7 +16335,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: "<p><b>Spell WarCry</b> (2): This unit gets a strength bonus equal to the enemy unit's gold cost. Only playable if you have a ready Empire wizard.</p>",
-		releases: { 'Promo (WC)': 20 }
+		releases: { PW: 20 }
 	},
 	{
 		name: 'Flames of the Phoenix',
@@ -16323,10 +16346,10 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: '<p><b>Spell WarCry</b> (1): At the end of the tactics phase, this unit gets +1 strength for each combat tactic played this combat. Only playable if you have a ready High Elf wizard.</p>',
-		releases: { 'Promo (WC)': 21 }
+		releases: { PW: 21 }
 	},
 	{
-		name: 'Siege of Darkness',
+		name: 'SD',
 		cost: 2,
 		die: 3,
 		keywords: [],
@@ -16334,7 +16357,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each of your ready war machine units.</p>',
-		releases: { 'Promo (WC)': 22 }
+		releases: { PW: 22 }
 	},
 	{
 		name: "Azyrneth's Chosen",
@@ -16347,7 +16370,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for each of your other daemon units.</p>',
-		releases: { 'Promo (WC)': 23 }
+		releases: { PW: 23 }
 	},
 	{
 		name: 'Heralds of Twilight',
@@ -16360,7 +16383,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b>: Your enemy discards 2 cards.</p>',
-		releases: { 'Promo (WC)': 24 }
+		releases: { PW: 24 }
 	},
 	{
 		name: "Bogrot's Savage 'Uns",
@@ -16373,7 +16396,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b>: If the enemy unit has strength 3 or less, this unit gets +3 strength.</p>',
-		releases: { 'Promo (WC)': 25 }
+		releases: { PW: 25 }
 	},
 	{
 		name: 'Stone Lords of Karak-Norn',
@@ -16386,7 +16409,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p>The first attachment played on this unit has it's gold cost reduced to 0.</p>",
-		releases: { 'Promo (WC)': 26 }
+		releases: { PW: 26 }
 	},
 	{
 		name: "Reinhold's Middenheimers",
@@ -16399,7 +16422,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: Copy any combat tactic card played by the enemy paying all costs.</p>',
-		releases: { 'Promo (WC)': 27 }
+		releases: { PW: 27 }
 	},
 	{
 		name: "Evaenarion's Silver Blades",
@@ -16412,7 +16435,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b>: Draw 1 card.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +2 tactic points.</p>',
-		releases: { 'Promo (WC)': 28 }
+		releases: { PW: 28 }
 	},
 	{
 		name: "Shagroth's Gors",
@@ -16425,7 +16448,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: This unit gets a tactic point bonus equal to the die on the discarded card.</p>',
-		releases: { 'Promo (WC)': 29 }
+		releases: { PW: 29 }
 	},
 	{
 		name: "Houton Red's Mercenaries",
@@ -16438,7 +16461,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: This unit gets +X or -X strength where X is the die of the discarded card. This combat tactic may be played multiple times. Either player may play this combat tactic.</p>',
-		releases: { 'Promo (WC)': 30 }
+		releases: { PW: 30 }
 	},
 	{
 		name: 'Lord Xili-Quncani',
@@ -16452,7 +16475,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 2</p><p>This unit gets "<b>Victory</b>: +1" for each of your enemy\'s spell points.</p>',
-		releases: { 'Promo (WC)': 31 }
+		releases: { PW: 31 }
 	},
 	{
 		name: 'Decisive Maneuver',
@@ -16463,7 +16486,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: Play up to 2 combat or support tactics, paying all costs.</p>',
-		releases: { 'Promo (WC)': 32 }
+		releases: { PW: 32 }
 	},
 	{
 		name: 'Defend Against the Siege',
@@ -16473,7 +16496,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b>: After your enemy plays a support tactic, draw 2 cards.</p>',
-		releases: { 'Promo (WC)': 33 }
+		releases: { PW: 33 }
 	},
 	{
 		name: 'From the Hands of Defeat...',
@@ -16484,7 +16507,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Spell Combat Tactic</b> (2): Raise this units strength to equal the enemy units strength.</p>',
-		releases: { 'Promo (WC)': 34 }
+		releases: { PW: 34 }
 	},
 	{
 		name: 'Blade of the Assassin',
@@ -16495,7 +16518,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p>You may play this card before the attackers first tactic.</p><p><b>Combat Tactic</b>: This Dark Elf unit gets +2 strength and the enemy unit gets -2 tactic points.</p>',
-		releases: { 'Promo (WC)': 35 }
+		releases: { PW: 35 }
 	},
 	{
 		name: 'Chaos Mutation',
@@ -16506,7 +16529,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: This Chaos unit gets +4 strength and "<b>Terror</b>: 2".</p>',
-		releases: { 'Promo (WC)': 36 }
+		releases: { PW: 36 }
 	},
 	{
 		name: 'Might of the Orc Horde',
@@ -16517,7 +16540,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: If you win this combat rout the enemy unit. Only playable by an Orc unit.</p>',
-		releases: { 'Promo (WC)': 37 }
+		releases: { PW: 37 }
 	},
 	{
 		name: 'Rune of Fortitude',
@@ -16528,7 +16551,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: '<p><b>Spell Combat Tactic</b> (1): This Dwarf unit gets +3 strength if it has an armor attachment.</p>',
-		releases: { 'Promo (WC)': 38 }
+		releases: { PW: 38 }
 	},
 	{
 		name: "Gausser's Maneuver",
@@ -16539,7 +16562,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: "<p> <b>WarCry</b>: Your units' support tactics do not require them to commit. Only playable by an Empire unit.</p>",
-		releases: { 'Promo (WC)': 39 }
+		releases: { PW: 39 }
 	},
 	{
 		name: 'Perfect Timing',
@@ -16550,10 +16573,10 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This High Elf unit gets +1 strength. Play 1 strategy card.</p>',
-		releases: { 'Promo (WC)': 40 }
+		releases: { PW: 40 }
 	},
 	{
-		name: 'Dogs of War',
+		name: 'DW',
 		cost: 2,
 		die: 3,
 		keywords: [],
@@ -16561,7 +16584,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This Dogs of War unit gets +2 strength.</p>',
-		releases: { 'Promo (WC)': 41 }
+		releases: { PW: 41 }
 	},
 	{
 		name: "Melkior's Warband",
@@ -16575,7 +16598,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>When you muster this unit, search your deck for Vargharn Melkior and add it to your hand.</p><p><b>Reaction</b>: After an enemy unit passes a leadership test, draw 1 card.</p>',
-		releases: { 'Promo (WC)': 43 }
+		releases: { PW: 43 }
 	},
 	{
 		name: "Dhargethen's Bloodkith",
@@ -16589,7 +16612,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>When you muster this unit, search your deck for Naetharion Dhargethen and add it to your hand.</p><p> <b>WarCry</b>: If this combat ends in a slaughter, this unit wins instead.</p>',
-		releases: { 'Promo (WC)': 44 }
+		releases: { PW: 44 }
 	},
 	{
 		name: "Headsplitter's Big 'Uns",
@@ -16603,7 +16626,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>When you muster this unit search your deck for Big Boss Ghulgar Headsplitter and ad it to your hand.</p><p> <b>WarCry</b>: This unit gets +2 strength. Not playable during a follow-up attack.</p>',
-		releases: { 'Promo (WC)': 45 }
+		releases: { PW: 45 }
 	},
 	{
 		name: "Skriskrivet's Jezzails",
@@ -16616,7 +16639,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Long Ranged Attack</b>: 5</p><p><b>Support Tactic</b>: Destroy 1 character attachment on the enemy unit.</p>',
-		releases: { 'Promo (WC)': 46 }
+		releases: { PW: 46 }
 	},
 	{
 		name: "Skriskrivet's Skyre Globethrowers",
@@ -16629,7 +16652,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: Commit 1 enemy unit in the reserves unless it passes a strength test.</p>',
-		releases: { 'Promo (WC)': 47 }
+		releases: { PW: 47 }
 	},
 	{
 		name: 'Gaston Balduhild',
@@ -16643,7 +16666,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +d6 strength if it passes a leadership test.</p>',
-		releases: { 'Promo (WC)': 48 }
+		releases: { PW: 48 }
 	},
 	{
 		name: "Sigigard's Grail Knights",
@@ -16657,7 +16680,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Faith</b>: 2</p><p> <b>WarCry</b>: This unit gets +1 strength for each of it's attachments if it passes a leadership test.</p>",
-		releases: { 'Promo (WC)': 49 }
+		releases: { PW: 49 }
 	},
 	{
 		name: "Grimjaw's Clanbrothers",
@@ -16671,7 +16694,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>When you muster this unit, search your deck for Barak Grimjaw and add it to your hand.</p><p> <b>WarCry</b>: This unit gets +1 strength for each attachment on the enemy unit.</p>',
-		releases: { 'Promo (WC)': 50 }
+		releases: { PW: 50 }
 	},
 	{
 		name: "Riemann's Elites",
@@ -16685,7 +16708,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>When you muster this unit, search your deck for Captain Karl Riemann and add it to your hand.</p><p> <b>WarCry</b>: Look at the top 4 cards of your action deck and replace them in any order.</p>',
-		releases: { 'Promo (WC)': 51 }
+		releases: { PW: 51 }
 	},
 	{
 		name: "Evaenarion's Companions",
@@ -16699,7 +16722,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>When you muster this unit, search your deck for Rylanus Evaenarion and add it to your hand.</p><p> <b>WarCry</b>: This unit gets +1 strength for each of your strategy cards.</p>',
-		releases: { 'Promo (WC)': 52 }
+		releases: { PW: 52 }
 	},
 	{
 		name: 'Saauthrilast',
@@ -16713,7 +16736,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: The enemy unit must pass a leadership test. If they fail, they may not play combat tactic cards or abilities during this combat.</p>',
-		releases: { 'Promo (WC)': 53 }
+		releases: { PW: 53 }
 	},
 	{
 		name: 'Dauntless Reckoning',
@@ -16724,10 +16747,10 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: If you win this combat, destroy all units that played support tactics on the combat.</p>',
-		releases: { 'Promo (WC)': 54 }
+		releases: { PW: 54 }
 	},
 	{
-		name: 'Path of Glory',
+		name: 'PG',
 		cost: 1,
 		die: 1,
 		keywords: [],
@@ -16735,7 +16758,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: Double all bonuses this unit receives this combat.</p><p> <b>WarCry</b>: Halve all bonuses the enemy receives this combat, rounding down.</p>',
-		releases: { 'Promo (WC)': 55 }
+		releases: { PW: 55 }
 	},
 	{
 		name: 'Baron Porthos the Outcast',
@@ -16747,7 +16770,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p>After you muster this attachment do not draw to replace it.</p>',
-		releases: { 'Promo (WC)': 56 }
+		releases: { PW: 56 }
 	},
 	{
 		name: 'Blade of the Norn Sword',
@@ -16759,7 +16782,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 leadership.</p>',
-		releases: { 'Promo (WC)': 57 }
+		releases: { PW: 57 }
 	},
 	{
 		name: 'Kyral-Tor, the Norn Sword',
@@ -16771,7 +16794,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength, +1 tactic point and +1 leadership.</p>',
-		releases: { 'Promo (WC)': 58 }
+		releases: { PW: 58 }
 	},
 	{
 		name: 'Shard of the Norn Sword',
@@ -16782,7 +16805,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: "<p><b>Combat Tactic</b>: This unit gets +1 strength for each of it's attachments.</p>",
-		releases: { 'Promo (WC)': 59 }
+		releases: { PW: 59 }
 	},
 	{
 		name: 'Mage Gerhart Brennend',
@@ -16796,7 +16819,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Veteran</b>: Gerhart Brennend, Bright <b>Wizard</b></p><p><b>Wizard</b>: 2</p><p>This unit may use tactic points as spell points.</p>',
-		releases: { 'Promo (WC)': 60 }
+		releases: { PW: 60 }
 	},
 	{
 		name: "Alya's Thorn Patrol",
@@ -16810,7 +16833,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Ranged Attack</b>: 4</p><p><b>Reaction</b>: After this unit receives a strength bonus increase it's ranged attack by the same amount.</p>",
-		releases: { 'Promo (WC)': 61 }
+		releases: { PW: 61 }
 	},
 	{
 		name: 'Liche Priest Amuntahk',
@@ -16823,7 +16846,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Victory</b>: +2</p><p><b>Reaction</b> Discard 1 card: After one of your units commits a unit with a ranged attack, destroy the committed unit.</p>',
-		releases: { 'Promo (WC)': 62 }
+		releases: { PW: 62 }
 	},
 	{
 		name: "Nekhesh's Eternity Guard",
@@ -16836,7 +16859,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: After an enemy unit gets a strength bonus while in vombat with this unit, this unit gets +1 strength.</p>',
-		releases: { 'Promo (WC)': 63 }
+		releases: { PW: 63 }
 	},
 	{
 		name: 'Deathmaster Snikch',
@@ -16850,7 +16873,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p> <b>Command</b>: Discard any number of cards from your hand: Once per battle, destroy a committed unit with a gold cost less than the discarded card's total dice.</p>",
-		releases: { 'Promo (WC)': 64 }
+		releases: { PW: 64 }
 	},
 	{
 		name: 'Tomb Guard of Nekhesh',
@@ -16863,7 +16886,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>This unit may not perform follow-up attacks.</p><p><b>Reaction</b>: After this unit destroys an enemy unit in a combat, attach the top card of your action deck to this unit. While attached this unit has a "<b>Victory</b>" bonus equal to the die number on the card.</p>',
-		releases: { 'Promo (WC)': 65 }
+		releases: { PW: 65 }
 	},
 	{
 		name: 'Plague Truck',
@@ -16877,7 +16900,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Veteran</b>: Sigismund, Steam Tank of the Empire</p><p><b>Terror</b>: 2</p><p><b>Ranged Attack</b>: 8</p><p> <b>WarCry</b>: At the end of the combat this unit gets +1 strength for each combat tactic played by the enemy.</p>',
-		releases: { 'Promo (WC)': 66 }
+		releases: { PW: 66 }
 	},
 	{
 		name: 'The Dark Axe of the North',
@@ -16890,7 +16913,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. Grand Alliance units. If the enemy unit is an Empire unit, this unit gets +3 strength and "<b>Terror</b>: 2" instead.</p>',
-		releases: { 'Promo (WC)': 67 }
+		releases: { PW: 67 }
 	},
 	{
 		name: 'Chariots of Alkhazzar',
@@ -16903,7 +16926,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Ranged Attack</b>: 8</p><p><b>Reaction</b>: After this unit commits a unit with a ranged attack, do not commit this unit. This unit immediately declares a non-ranged attack against that enemy unit.</p>',
-		releases: { 'Promo (WC)': 68 }
+		releases: { PW: 68 }
 	},
 	{
 		name: "Eternity's Sentinel",
@@ -16916,7 +16939,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: If this unit's strength is greater than the enemy unit's strength, play a combat tactic from your hand without paying it's tactic point cost.</p>",
-		releases: { 'Promo (WC)': 69 }
+		releases: { PW: 69 }
 	},
 	{
 		name: 'King Nekhesh of the First Dynasty',
@@ -16930,7 +16953,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p> <b>Command</b> Discard 1 card and destroy one of your units: Search your discard pile for another Khemri unit with a gold cost equal to or less than the destroyed units gold cost and put it in play. Only playable while the enemy has a ready unit.</p><p><b>Support Tactic</b> Remove X Khemri units in your army discard pile from the game: Your unit gets +X strength.</p>',
-		releases: { 'Promo (WC)': 70 }
+		releases: { PW: 70 }
 	},
 	{
 		name: 'Liche Priest Ahkaten',
@@ -16944,7 +16967,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p><b>Reaction</b>: Once per battle, after a Khemri unit with a gold cost of 3 or less is destroyed, roll. If the roll is greater than the unit's leadership, return the unit to play in your reserves, committed.</p>",
-		releases: { 'Promo (WC)': 71 }
+		releases: { PW: 71 }
 	},
 	{
 		name: 'Riders of Nekhesh',
@@ -16957,7 +16980,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b>: Discard the top card of your army deck. If that card is a Khemri unit, you may remove that card from the game to give this unit +3 strength.</p>',
-		releases: { 'Promo (WC)': 72 }
+		releases: { PW: 72 }
 	},
 	{
 		name: 'Soldiers of Nekhesh',
@@ -16969,7 +16992,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>You may have any number of this card in your deck.</p><p><b>Support Tactic</b>: Your Khemri infantry unit gets +1 strength. Only playable while this unit is in the battle line.</p>',
-		releases: { 'Promo (WC)': 73 }
+		releases: { PW: 73 }
 	},
 	{
 		name: 'Sun Chariots of Ptaph',
@@ -16982,7 +17005,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Support WarCry</b>: Your infantry unit gets +2 strength and -1 tactic points. Only playable while this unit is in the battle line.</p>',
-		releases: { 'Promo (WC)': 74 }
+		releases: { PW: 74 }
 	},
 	{
 		name: 'Valiant Dead of Ptaph',
@@ -16995,7 +17018,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b>: The defending unit gets +1 strength. Only playable if you have a <b>Wizard</b> in play.</p>',
-		releases: { 'Promo (WC)': 75 }
+		releases: { PW: 75 }
 	},
 	{
 		name: 'Daggers of the Dead',
@@ -17006,7 +17029,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		text: '<p>May only be attached to a Khemri unit.</p><p><b>Support Tactic</b>: If your attacking Khemri unit loses this combat, the enemy may not make a follow-up attack. If you lose this combat, destroy this card.</p>',
-		releases: { 'Promo (WC)': 76 }
+		releases: { PW: 76 }
 	},
 	{
 		name: 'Destroyer of Eternities',
@@ -17018,7 +17041,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		text: "<p>May only be attached to a Khemri unit.</p><p> <b>WarCry</b>: If you win this non-ranged attack combat, remove the defeated unit from the game. Search your enemy's army discard pile for all copies of the defeated unit and remove those from the game.</p>",
-		releases: { 'Promo (WC)': 77 }
+		releases: { PW: 77 }
 	},
 	{
 		name: 'Staff of Mastery',
@@ -17030,7 +17053,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		text: '<p>May only be attached to a wizard unit.</p><p>All of your Khemri units have "<b>Terror</b>: 1."</p><p><b>Spell Reaction</b> (2): After you rout an enemy unit, do not make a follow-up attack. Choose a Khemri unit in your army discard pile with a gold cost of 3 or less and put that into play.</p>',
-		releases: { 'Promo (WC)': 78 }
+		releases: { PW: 78 }
 	},
 	{
 		name: 'The Birdmen of Catrazza',
@@ -17043,7 +17066,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: "<p><b>Reaction</b>: After your enemy plays a card or ability to draw 1 or more cards or to force you to discard 1 or more cards, negate it's effect. Attach a combat tactic card from your hand to this unit face up.</p><p><b>Combat Tactic</b> Discard 1 attached card: Play that card, paying no costs.</p>",
-		releases: { 'Promo (WC)': 79 }
+		releases: { PW: 79 }
 	},
 	{
 		name: 'Fires from Within',
@@ -17054,7 +17077,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Spell WarCry</b> (1): At The end of the tactics phase, this unit gets a strength bonus equal to the number of tactic cards played by the enemy unit.</p>',
-		releases: { 'Promo (WC)': 80 }
+		releases: { PW: 80 }
 	},
 	{
 		name: 'Formulate a Plan',
@@ -17064,7 +17087,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p> <b>Command</b>: Name a card. Reveal your hand and shuffle all copies of that card in your hand and discard pile into your deck. Draw 1 card.</p>',
-		releases: { 'Promo (WC)': 81 }
+		releases: { PW: 81 }
 	},
 	{
 		name: 'Hold and Do Not Be Lured',
@@ -17074,27 +17097,27 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b>: After routing an enemy unit as a defender. If your unit has a higher printed strength than the enemy unit, return your unit to the battle line ready. You may not make a follow-up attack.</p>',
-		releases: { 'Promo (WC)': 82 }
+		releases: { PW: 82 }
 	},
 	{
-		name: 'Legions of Chaos',
+		name: 'LC',
 		die: 2,
 		keywords: ['Strategy'],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p>This card is not destroyed after the battle in which it was brought into play.</p><p><b>Reaction</b> Destroy this card: When you are mustering a "Unique" unit, reduce the unit\'s gold cost by 2.</p>',
-		releases: { 'Promo (WC)': 83 }
+		releases: { PW: 83 }
 	},
 	{
-		name: 'Siege of Middenheim',
+		name: 'SM',
 		die: 3,
 		keywords: [],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p> <b>Command</b>: Place up to 3 cards from your army discard pile on top of your deck.</p>',
-		releases: { 'Promo (WC)': 84 }
+		releases: { PW: 84 }
 	},
 	{
 		name: 'Unrelenting Horde',
@@ -17104,7 +17127,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b>: Before you make a rout check, rout the enemy unit. You may only play this card if your unit has a printed gold cost of 5 or more.</p>',
-		releases: { 'Promo (WC)': 85 }
+		releases: { PW: 85 }
 	},
 	{
 		name: 'Coffer of Gold',
@@ -17115,7 +17138,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p>You get 1 extra gold during the muster phase.</p><p><b>Combat Tactic</b>: This unit gets +1 leadership.</p>',
-		releases: { 'Promo (WC)': 86 }
+		releases: { PW: 86 }
 	},
 	{
 		name: 'Crown of the Champion',
@@ -17125,7 +17148,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: "<p><b>Reaction</b>: After this unit plays its first WarCry card in combat, reduce the WarCry's tactic point cost to 0.</p>",
-		releases: { 'Promo (WC)': 87 }
+		releases: { PW: 87 }
 	},
 	{
 		name: 'Sceptre of Sovereignty',
@@ -17136,7 +17159,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Support WarCry</b>: Your unit gets +4 strength. You do not make a combat roll this combat.</p>',
-		releases: { 'Promo (WC)': 88 }
+		releases: { PW: 88 }
 	},
 	{
 		name: 'Coatlcol',
@@ -17149,7 +17172,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Reaction</b>: Before you muster this unit, you may increase this unit's gold cost by 1 and make a leadership test. If you pass the test, attach the top card of your action deck to this unit. While attached this unit has <b>Scout</b> equal to the die number.</p>",
-		releases: { 'Promo (WC)': 89 }
+		releases: { PW: 89 }
 	},
 	{
 		name: 'Cupped Hands of the Old Ones',
@@ -17160,7 +17183,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		text: '<p>May only be attached to a Lizardmen unit.</p><p><b>Support Tactic</b>: Your unit in a ranged attack gets +2 strength or your unit in a non-ranged attack gets +1 leadership.</p>',
-		releases: { 'Promo (WC)': 90 }
+		releases: { PW: 90 }
 	},
 	{
 		name: 'Dawn Spawn of Hexoatl',
@@ -17173,7 +17196,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b> Rally an enemy unit: This unit gets +3 strength and "<b>Terror</b>: 2".</p>',
-		releases: { 'Promo (WC)': 91 }
+		releases: { PW: 91 }
 	},
 	{
 		name: 'Guard of the Ziggurat',
@@ -17186,7 +17209,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Reaction</b> Destroy this unit: After one of your other units loses a combat, return it to your battle line committed.</p>',
-		releases: { 'Promo (WC)': 92 }
+		releases: { PW: 92 }
 	},
 	{
 		name: 'Zacharias the Everlasting',
@@ -17199,7 +17222,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 2</p><p>This unit may play spell WarCry cards as normal spell combat tactics.</p><p><b>Combat Tactic</b>: Reveal your hand. If you do not have a spell in your hand, search your deck for a spell and add it to your hand.</p>',
-		releases: { 'Promo (WC)': 93 }
+		releases: { PW: 93 }
 	},
 	{
 		name: 'Barku',
@@ -17212,7 +17235,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p><b>Ranged Attack</b>: 8</p><p><b>Reaction</b>: After this unit commits a unit using its ranged attack, make a leadership test. If this unit passes that test, destroy the committed unit.</p><p><b>Support Tactic</b> Commit: Destroy the enemy unit if the enemy unit has an ability to generate tokens.</p>',
-		releases: { 'Promo (WC)': 94 }
+		releases: { PW: 94 }
 	},
 	{
 		name: 'Lord Botl-Xlotac',
@@ -17225,7 +17248,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (1) Discard 1 card: After your enemy plays a support tactic, negate it's effects.</p>",
-		releases: { 'Promo (WC)': 95 }
+		releases: { PW: 95 }
 	},
 	{
 		name: 'Lord Mazdamundi',
@@ -17238,7 +17261,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Victory</b>: +2</p><p>While this unit is ready all of your lizardmen have "<b>Faith</b>: 1".</p><p><b>Spell Support Tactic</b> (1): Play or destroy a terrain card.</p>',
-		releases: { 'Promo (WC)': 96 }
+		releases: { PW: 96 }
 	},
 	{
 		name: 'Gnoblars of the Black Hills',
@@ -17251,7 +17274,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Reaction</b> Commit: After a support tactic is played, destroy the unit that played that support tactic.</p>',
-		releases: { 'Promo (WC)': 97 }
+		releases: { PW: 97 }
 	},
 	{
 		name: "Rokanquol's Terradon",
@@ -17264,7 +17287,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b>: This combat ends immediately. No further actions may be taken and no roll is made. Both units are rallied if committed, the enemy unit is returned to the battle line and this unit is returned to the reserves ready.</p><p>Only playable while attacking.</p>',
-		releases: { 'Promo (WC)': 98 },
+		releases: { PW: 98 },
 		banned: true
 	},
 	{
@@ -17278,7 +17301,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: If a copy of this unit is not in play, after your enemy rolls an unmodified 6, search your army deck (not discard pile) for a copy of this card and put it into your reserves. Shuffle your army deck.</p><p>This ability may be played from your army deck.</p>',
-		releases: { 'Promo (WC)': 99 }
+		releases: { PW: 99 }
 	},
 	{
 		name: 'Spawning of Kolquetz',
@@ -17291,7 +17314,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Scout</b>: 3</p><p>This unit attacks as cavalry.</p><p><b>Short Ranged Attack</b>: 4</p><p><b>Reaction</b>: After this unit wins a ranged attack destroy the enemy unit.</p>',
-		releases: { 'Promo (WC)': 100 }
+		releases: { PW: 100 }
 	},
 	{
 		name: 'The Thunder that Walks',
@@ -17304,7 +17327,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p> <b>Command</b>: Once per battle, this unit may perform a "<b>Ranged Attack</b>: 6" attack without committing.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable during a follow-up attack.</p>',
-		releases: { 'Promo (WC)': 101 }
+		releases: { PW: 101 }
 	},
 	{
 		name: "Tekoq-Koq's Spawn",
@@ -17317,7 +17340,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Scout</b>: 2</p><p>This unit attacks as cavalry.</p><p><b>Reaction</b>: After an enemy unit rallies, draw 1 card.</p>',
-		releases: { 'Promo (WC)': 102 }
+		releases: { PW: 102 }
 	},
 	{
 		name: 'Tzurel, Hunter for the Kingdoms',
@@ -17330,7 +17353,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p> <b>Command</b>: Once per battle, take the top card of your army deck and put it into play face down adjacent to this unit as a monster cavalry unit with 2 strength, 2 tactic points, 2 leadership, "<b>Terror</b>: 1", and a gold cost of 0. The new unit must immediately declare an attack. Once this command is over, put the new unit into your army discard pile.</p>',
-		releases: { 'Promo (WC)': 103 }
+		releases: { PW: 103 }
 	},
 	{
 		name: 'Tzahuan the Lurker',
@@ -17343,7 +17366,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>This unit attacks as cavalry.</p><p><b>Combat Tactic</b>: Reveal the top card of your army deck. If that unit is another copy of this card, put that card in your battle line.</p>',
-		releases: { 'Promo (WC)': 104 }
+		releases: { PW: 104 }
 	},
 	{
 		name: 'Lupus Halfwulf',
@@ -17356,7 +17379,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Scout</b>: 5</p><p><b>Terror</b>: 2</p>',
-		releases: { 'Promo (WC)': 105 }
+		releases: { PW: 105 }
 	},
 	{
 		name: 'The Hammer of the Southern Realm',
@@ -17368,10 +17391,10 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. Hordes of Darkness units. If the enemy unit is a Chaos unit, this unit gets +3 strength and +2 leadership instead.</p>',
-		releases: { 'Promo (WC)': 106 }
+		releases: { PW: 106 }
 	},
 	{
-		name: 'Bringers of Darkness',
+		name: 'LW',
 		cost: 3,
 		die: 3,
 		keywords: [],
@@ -17379,10 +17402,10 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: "<p><b>Combat Tactic</b>: If you rout the enemy unit, commit the enemy unit instead of destroying it. Choose another unit in the enemy's battle line and commit that unit as well. This unit may still perform a follow-up attack.</p>",
-		releases: { 'Promo (WC)': 107 }
+		releases: { PW: 107 }
 	},
 	{
-		name: 'Harbingers of War',
+		name: 'HW',
 		cost: 4,
 		die: 2,
 		keywords: [],
@@ -17390,7 +17413,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b> Remove this card from the game: One of your other ready units may declare an attack. Units already involved in combat may not play abilities or be targeted during this attack. Resolve the new attack and all follow-ups before returning to this combat. If you win the new combat, this unit gets a +2 strength bonus. You may not play another copy of this card for the rest of the battle.</p>',
-		releases: { 'Promo (WC)': 108 }
+		releases: { PW: 108 }
 	},
 	{
 		name: 'Shift in Balance',
@@ -17400,7 +17423,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p> <b>Command</b>: Choose an enemy unit with at least one attached action card. Destroy all attached action cards on the target unit and rally one of your units with a gold cost of 3 or less.</p>',
-		releases: { 'Promo (WC)': 109 }
+		releases: { PW: 109 }
 	},
 	{
 		name: 'Take Away the Ladder',
@@ -17410,7 +17433,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Spell Reaction</b> (2): Choose a reaction printed on one of your cards in play and activate it without paying any costs. The chosen reaction must be one that can be played at this time, but it may be on a committed unit and/</p><p>or a reaction that has already been played.</p>',
-		releases: { 'Promo (WC)': 110 }
+		releases: { PW: 110 }
 	},
 	{
 		name: 'Take One Path While Pretending to Take Another',
@@ -17420,7 +17443,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p>After an attack is declared, the defending player chooses the defending unit to be attacked and may ignore infantry, cavalry, and flyer restrictions.</p>',
-		releases: { 'Promo (WC)': 111 }
+		releases: { PW: 111 }
 	},
 	{
 		name: 'The Guest Becomes the Host',
@@ -17431,7 +17454,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: "<p><b>Combat Tactic</b>: Your enemy replaces this unit with any of your other units. You replace your enemy's unit with one of their other units. Ready units remain ready and committed units remain committed.</p><p>All bonuses and effects applied to the previous units are now applied to the new units.</p>",
-		releases: { 'Promo (WC)': 112 }
+		releases: { PW: 112 }
 	},
 	{
 		name: 'Under Concealment of Broad Daylight',
@@ -17442,7 +17465,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: Name a die number. Your enemy draws and reveals 3 cards. If any of the revealed cards have the named die number, those cards are removed from the game, the others are discarded and your unit gets +2 strength.</p><p>If none of the revealed cards have the named die number, your enemy adds those cards to their hand.</p>',
-		releases: { 'Promo (WC)': 113 }
+		releases: { PW: 113 }
 	},
 	{
 		name: 'Watch the Fire from Across the River',
@@ -17453,7 +17476,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: "<p> <b>WarCry</b> Discard two cards from your hand: Rally one of your units with a gold cost less than this unit's gold cost.</p>",
-		releases: { 'Promo (WC)': 114 }
+		releases: { PW: 114 }
 	},
 	{
 		name: 'Armour of the Harbinger',
@@ -17463,7 +17486,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: "<p>If attached to a Harbinger this card's gold cost is reduced by 1 (minimum 0).</p><p><b>Reaction</b>: After this unit enters a combat, instead of drawing a card this unit gets +3 strength.</p>",
-		releases: { 'Promo (WC)': 115 }
+		releases: { PW: 115 }
 	},
 	{
 		name: 'Champion of the Harbinger',
@@ -17474,7 +17497,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: "<p>If attached to a Harbinger this card's gold cost is reduced by 1 (minimum 0).</p><p><b>Reaction</b>: After this unit gets a strength bonus, that bonus is increased by +1.</p>",
-		releases: { 'Promo (WC)': 116 }
+		releases: { PW: 116 }
 	},
 	{
 		name: 'Horn of the Harbinger',
@@ -17486,7 +17509,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: "<p>If attached to a Harbinger this card's gold cost is reduced by 1 (minimum 0).</p><p><b>Combat Tactic</b>: Draw 1 card. You may not use this ability if you have 4 or more cards in your hand.</p>",
-		releases: { 'Promo (WC)': 117 }
+		releases: { PW: 117 }
 	},
 	{
 		name: 'Sword of the Harbinger',
@@ -17498,7 +17521,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p>If attached to a Harbinger this card\'s gold cost is reduced by 1 (minimum 0).</p><p><b>Combat Tactic</b>: This unit gets +2 leadership. If this takes this unit\'s leadership over 6, this unit gets "<b>Terror</b>: 3".</p>',
-		releases: { 'Promo (WC)': 118 }
+		releases: { PW: 118 }
 	},
 	{
 		name: 'Mistress Chloee',
@@ -17511,7 +17534,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Command</b> (2): While this unit remains in play all units with ranged attack or long ranged attack have short ranged attack instead.</p><p><b>Spell Command</b> Commit one of your other wizards (0): Gain 3 spell points.</p>',
-		releases: { 'Promo (WC)': 119 }
+		releases: { PW: 119 }
 	},
 	{
 		name: 'Sigismund, Steam Tank of the Empire',
@@ -17524,7 +17547,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Ranged Attack</b>: 8</p><p> <b>WarCry</b>: This unit gets +1 strength or +1 <b>Ranged Attack</b> for each card in your enemy's hand.</p><p><b>Reaction</b>: After you draw a card for this unit entering a combat, discard that card and draw another card.</p>",
-		releases: { 'Promo (WC)': 120 }
+		releases: { PW: 120 }
 	},
 	{
 		name: 'Toq-Zat, Rage of the Earth',
@@ -17537,7 +17560,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: After this unit has won a combat against an enemy unit with a gold cost of 3 or less, target and destroy another unit with a gold cost of 3 or less. Then, if your enemy has any committed units you must rally an enemy unit.</p>',
-		releases: { 'Promo (WC)': 121 }
+		releases: { PW: 121 }
 	},
 	{
 		name: 'Tzar Boris',
@@ -17551,7 +17574,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p>If this unit routs the enemy unit it must make a follow-up attack.</p><p> <b>WarCry</b>: No more tactics may be played during this combat.</p>',
-		releases: { 'Promo (WC)': 122 }
+		releases: { PW: 122 }
 	},
 	{
 		name: 'Savour the Victory',
@@ -17562,7 +17585,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: If this unit wins this combat, attach this card to this unit. While attached this unit gets the ability "Command Discard this card: Rally this unit. This may be played while the unit is committed."</p>',
-		releases: { 'Promo (WC)': 123 }
+		releases: { PW: 123 }
 	},
 	{
 		name: 'Gar-Oax Oldblood',
@@ -17573,7 +17596,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		text: "<p>May only be attached to a Lizardmen unit.</p><p><b>Combat Tactic</b> Rally an enemy unit: This unit gets +X strength. X equals this unit's printed strength. If this combat ends in a slaughter, this unit wins instead.</p>",
-		releases: { 'Promo (WC)': 124 }
+		releases: { PW: 124 }
 	},
 	{
 		name: 'Horde of Hexoatl',
@@ -17586,7 +17609,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: After a Hordes of Darkness unit is destroyed, put a +1 strength token on this unit.</p>',
-		releases: { 'Promo (WC)': 125 }
+		releases: { PW: 125 }
 	},
 	{
 		name: 'Hexoatl Temple Guard',
@@ -17599,7 +17622,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>This unit may block any non-ranged attack targeting one of your Lizardmen units.</p><p><b>Combat Tactic</b> Rally an enemy unit: This unit gets +6 strength. Only playable while defending.</p>',
-		releases: { 'Promo (WC)': 126 }
+		releases: { PW: 126 }
 	},
 	{
 		name: 'Tepoc-Kroq',
@@ -17612,7 +17635,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>This unit is immune to "<b>Terror</b>".</p><p><b>Combat Tactic</b>: This unit gets +2 leadership. Only playable while attacking.</p>',
-		releases: { 'Promo (WC)': 127 }
+		releases: { PW: 127 }
 	},
 	{
 		name: 'Moon Spawn of Hexoatl',
@@ -17625,7 +17648,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p> <b>Command</b> Discard 3 cards: Rally this unit and declare an attack on a committed Hordes of Darkness unit. You may only use this ability while committed. Only playable once per battle.</p>',
-		releases: { 'Promo (WC)': 128 }
+		releases: { PW: 128 }
 	},
 	{
 		name: 'Scar-veteran Raq-goq',
@@ -17638,7 +17661,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p> <b>Command</b> Commit this unit: While this unit remains committed, all of your Lizardmen have the keyword "Infantry" replaced with the keyword "Cavalry".</p>',
-		releases: { 'Promo (WC)': 129 }
+		releases: { PW: 129 }
 	},
 	{
 		name: "Ptaph's Tomb Scorpion",
@@ -17651,7 +17674,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Victory</b>: -2</p><p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: If you have a wizard in play and this combat ends in a slaughter, this unit wins instead. You may use this ability up to 2 times per combat.</p>',
-		releases: { 'Promo (WC)': 130 }
+		releases: { PW: 130 }
 	},
 	{
 		name: 'Razutt the Angry',
@@ -17664,7 +17687,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +1 strength unless the enemy unit passes a leadership test.</p><p> <b>Command</b>: Once per battle, exchange an enemy unit in the battle line with an enemy unit in the reserves. You may immediately declare an attack with this unit.</p>',
-		releases: { 'Promo (WC)': 131 }
+		releases: { PW: 131 }
 	},
 	{
 		name: 'Dugurth the Rowdy',
@@ -17677,7 +17700,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: The enemy unit gets -X tactic points. X equals this units level of "<b>Terror</b>".</p><p><b>Reaction</b> Destroy this unit: After an enemy unit uses an ability printed on a unit or attached card to commit one of your units, destroy that enemy unit. You may play this ability while committed.</p>',
-		releases: { 'Promo (WC)': 132 }
+		releases: { PW: 132 }
 	},
 	{
 		name: 'Face the Danger',
@@ -17687,7 +17710,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p>This card may be put into play as a combat tactic for 1 point.</p><p><b>Reaction</b>: When your enemy plays a card that removes itself from the game as a cost or effect, they must also discard 1 random card from their hand.</p>',
-		releases: { 'Promo (WC)': 133 }
+		releases: { PW: 133 }
 	},
 	{
 		name: 'A Question of Morale',
@@ -17698,7 +17721,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: "<p> <b>WarCry</b>: The enemy unit's leadership is reduced by your unit's printed tactic points.</p>",
-		releases: { 'Promo (WC)': 134 }
+		releases: { PW: 134 }
 	},
 	{
 		name: 'Battle Yell',
@@ -17709,7 +17732,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: "<p> <b>WarCry</b>: The enemy unit's tactic points are reduced by your unit's printed leadership.</p>",
-		releases: { 'Promo (WC)': 135 }
+		releases: { PW: 135 }
 	},
 	{
 		name: "Jasenland's Entrenchment",
@@ -17719,7 +17742,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: This ready unit gets +7 strength. If this unit wins the combat, return both units to the battle line ready instead of any units being destroyed; you may not make a follow-up attack. You may not play any other cards in this combat.</p>',
-		releases: { 'Promo (WC)': 136 }
+		releases: { PW: 136 }
 	},
 	{
 		name: 'The Strong Survive',
@@ -17730,7 +17753,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This unit gets +7 strength.</p>',
-		releases: { 'Promo (WC)': 137 }
+		releases: { PW: 137 }
 	},
 	{
 		name: 'Stalemate',
@@ -17741,7 +17764,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: Neither unit may be destroyed nor committed as a result of this combat (card effects in the combat may still destroy or commit units). Units may still be routed and follow-up attacks may be made as normal, as if the loser had been destroyed.</p>',
-		releases: { 'Promo (WC)': 138 }
+		releases: { PW: 138 }
 	},
 	{
 		name: 'Narrow Pass',
@@ -17751,7 +17774,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p><b>Support Tactic</b>: Players may not play combat tactic cards with a tactic point cost greater than 1.</p>',
-		releases: { 'Promo (WC)': 139 }
+		releases: { PW: 139 }
 	},
 	{
 		name: 'Two Hands, Two Swords',
@@ -17762,20 +17785,20 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: Attach this card to your unit. While attached this unit may have 2 weapons attached. Get up to 2 weapons from your discard pile and attach them to this unit without cost. Only playable by a unique unit or a unit with a character attachment.</p>',
-		releases: { 'Promo (WC)': 140 }
+		releases: { PW: 140 }
 	},
 	{
-		name: 'Bearers of Redemption',
+		name: 'BR',
 		die: 3,
 		keywords: ['Strategy'],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p><b>Reaction</b> Discard 1 card: After your enemy rolls, that roll is negated and your enemy must re-roll from your deck.</p>',
-		releases: { 'Promo (WC)': 141 }
+		releases: { PW: 141 }
 	},
 	{
-		name: 'Swords of Retribution',
+		name: 'SR',
 		cost: 2,
 		die: 3,
 		keywords: [],
@@ -17783,7 +17806,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. If this combat ends in a slaughter this unit wins instead. Only playable if one of your units was destroyed in this command.</p>',
-		releases: { 'Promo (WC)': 142 }
+		releases: { PW: 142 }
 	},
 	{
 		name: 'Dragonhide Armor',
@@ -17794,7 +17817,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p>This unit may play non-spell WarCry cards as combat tactics.</p>',
-		releases: { 'Promo (WC)': 143 }
+		releases: { PW: 143 }
 	},
 	{
 		name: 'Golden Kite Shield',
@@ -17804,7 +17827,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Reaction</b>: While in combat, when this unit gets a <b>Ranged Attack</b> bonus, this unit gets a strength bonus equal to the <b>Ranged Attack</b> bonus.</p><p><b>Combat Tactic</b>: This unit gets +1 leadership.</p>',
-		releases: { 'Promo (WC)': 144 }
+		releases: { PW: 144 }
 	},
 	{
 		name: 'Scroll of Dispelling',
@@ -17814,7 +17837,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Spell Reaction</b> Destroy this item (1): When your enemy plays a spell card or ability, negate its effects.</p>',
-		releases: { 'Promo (WC)': 145 }
+		releases: { PW: 145 }
 	},
 	{
 		name: 'Enchanted Axe',
@@ -17826,7 +17849,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Combat Tactic</b>: If you have fewer cards in your hand than your opponent, draw 1 card.</p>',
-		releases: { 'Promo (WC)': 146 }
+		releases: { PW: 146 }
 	},
 	{
 		name: 'Sentinel of Ages',
@@ -17839,7 +17862,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>This unit may block flyers.</p>',
-		releases: { 'Promo (WC)': 147 }
+		releases: { PW: 147 }
 	},
 	{
 		name: 'Warlock Triklok',
@@ -17852,7 +17875,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Reaction</b> Remove this unit from the game: After a Grand Alliance war machine is destroyed you may put that war machine into play as your unit until the end of the battle.</p>',
-		releases: { 'Promo (WC)': 148 }
+		releases: { PW: 148 }
 	},
 	{
 		name: 'The Black Coach of Malroth',
@@ -17865,7 +17888,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p><b>Wizard</b>: 1</p><p><b>Spell Combat Tactic</b> (0): This unit gets +3 strength and +3 leadership. Only playable if this unit has destroyed another unit in combat this battle.</p>',
-		releases: { 'Promo (WC)': 149 }
+		releases: { PW: 149 }
 	},
 	{
 		name: 'Strigoi Blood Murder',
@@ -17878,7 +17901,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>This unit may not be committed with ranged attacks.</p><p><b>Support WarCry</b>: If your unit in the combat has a lower gold cost than this unit, replace your unit in combat with this unit. The loser of this combat is routed. Not playable during a ranged attack.</p>',
-		releases: { 'Promo (WC)': 150 }
+		releases: { PW: 150 }
 	},
 	{
 		name: "Anglinus's Fighting Lancers",
@@ -17891,7 +17914,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Faith</b>:1</p><p><b>Victory</b>:-X. X equals the number of action cards attached to this unit.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Attach the top card of your action deck to this unit. Only playable while attacking.</p>',
-		releases: { 'Promo (WC)': 151 }
+		releases: { PW: 151 }
 	},
 	{
 		name: "Anglinus's Valiant Fighters",
@@ -17904,7 +17927,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>This unit may block cavalry.</p><p><b>Combat Tactic</b>: This unit gets +X leadership. X equals the number of cavalry units in your reserves.</p>',
-		releases: { 'Promo (WC)': 152 }
+		releases: { PW: 152 }
 	},
 	{
 		name: 'Xanax-Qol, the Rage That Burns',
@@ -17917,7 +17940,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>Rection: After this unit loses a combat, if the combat was lost by 3 or less, this unit is not destroyed and a new combat between this and the enemy unit begins (before rout check is made for the last combat). Only playable once per battle.</p>',
-		releases: { 'Promo (WC)': 153 }
+		releases: { PW: 153 }
 	},
 	{
 		name: "Rokanquol's Thunder Riders",
@@ -17930,7 +17953,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>Any WarCry action card played by this unit has its tactic point cost reduced by 2 (minimum 0).</p>',
-		releases: { 'Promo (WC)': 154 }
+		releases: { PW: 154 }
 	},
 	{
 		name: 'Willhelm the Explorer',
@@ -17943,7 +17966,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Scout</b>: 4</p><p><b>Reaction</b>: After set-up, if you are the only player with this card in play, you draw 1 additional card. After the battle, remove a copy of this card from the game (either from play, your deck, or discard pile). If you remove this unit from your deck,</p><p>shuffle your deck.</p>',
-		releases: { 'Promo (WC)': 155 }
+		releases: { PW: 155 }
 	},
 	{
 		name: 'Borgio the Beseiger',
@@ -17956,7 +17979,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: "<p> <b>WarCry</b> Discard 1 card with a die greater than the enemy unit's gold cost: This unit gets a strength bonus equal to the discarded card's die.</p>",
-		releases: { 'Promo (WC)': 156 }
+		releases: { PW: 156 }
 	},
 	{
 		name: "Bronzino's Galloping Guns",
@@ -17969,7 +17992,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Ranged Attack</b>: 8</p><p> <b>Command</b>: Move this unit to or from your battle line. You may declare a ranged attack with this unit.</p><p><b>Reaction</b>: When your enemy declares an attack against this unit or this unit blocks an enemy attack, this combat becomes a ranged attack with this unit as the attacker.</p>',
-		releases: { 'Promo (WC)': 157 }
+		releases: { PW: 157 }
 	},
 	{
 		name: 'Lorenzo Lupo',
@@ -17982,7 +18005,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Support Tactic</b>: Your Dogs of War unit gets +2 tactic points and "<b>Terror</b>: 2". Only playable in a Hordes of Darkness army.</p><p><b>Support Tactic</b>: Your Dogs of War unit gets +2 strength and "<b>Faith</b>: 2". Only playable in a Grand Alliance army.</p>',
-		releases: { 'Promo (WC)': 158 }
+		releases: { PW: 158 }
 	},
 	{
 		name: 'Marksmen of Miragliano',
@@ -17995,7 +18018,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b> Discard 1 card: This card gets +X <b>Ranged Attack</b>. X equals the die on the discarded card.</p><p><b>Reaction</b>: After this unit commits a unit with a ranged attack, if this unit passes a leadership test this unit does not commit as a result of the combat.</p>',
-		releases: { 'Promo (WC)': 159 }
+		releases: { PW: 159 }
 	},
 	{
 		name: 'Where Is Your God Now?',
@@ -18006,7 +18029,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: Until the next command, all units with "<b>Faith</b>" have their "<b>Faith</b>" level reduced to 0.</p>',
-		releases: { 'Promo (WC)': 160 }
+		releases: { PW: 160 }
 	},
 	{
 		name: 'Until the Last Moment',
@@ -18016,7 +18039,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b>: When a non-ranged attack is declared against one of your units with ranged attack, immediately resolve a ranged attack between the two units with your unit sa the attacker. You may not play tactics during this combat.</p><p>Continue with the original attack after this effect has resolved.</p>',
-		releases: { 'Promo (WC)': 161 }
+		releases: { PW: 161 }
 	},
 	{
 		name: "Oi! Dat's My Leg",
@@ -18027,7 +18050,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: "<p> <b>WarCry</b>: Choose a unit in this combat. That unit's strength is reduced to 0. That unit gains a tactic point bonus equal to the strength lost and it's controller draws a card for every 2 points of strength lost. Not playable during a ranged attack.</p>",
-		releases: { 'Promo (WC)': 162 }
+		releases: { PW: 162 }
 	},
 	{
 		name: 'Loss of Faith',
@@ -18038,7 +18061,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: The enemy unit has it\'s "<b>Faith</b>" level reduced by X. X equals this unit\'s "<b>Terror</b>" level minus 2 (minimum 0).</p>',
-		releases: { 'Promo (WC)': 163 }
+		releases: { PW: 163 }
 	},
 	{
 		name: 'Lying in Wait',
@@ -18049,7 +18072,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: "<p>This card may be played before the attacker's first combat tactic is played.</p><p> <b>WarCry</b>: Play a combat tactic costing X tactic points or less without paying the card's tactic point cost. X equals this unit's \"<b>Scout</b>\" level. Only playable while defending.</p>",
-		releases: { 'Promo (WC)': 164 }
+		releases: { PW: 164 }
 	},
 	{
 		name: 'Vayj-Nar, Lord of Change',
@@ -18064,7 +18087,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Terror</b>: 2</p><p><b>Wizard</b>: 3</p><p><b>Combat Tactic</b>: Reveal the top card of your army deck. If that card is a Daemon unit or Daemon attachment, this unit gets +4 strength and you get 2 spell points. Place that card in your discard pile.</p>',
-		releases: { 'Bearers of Redemption': 1 }
+		releases: { BR: 1 }
 	},
 	{
 		name: "Tzadiqel's Screamers",
@@ -18078,7 +18101,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 1</p><p><b>Reaction</b> Destroy this unit: After a unit gets a strength bonus, negate that bonus.</p>',
-		releases: { 'Bearers of Redemption': 2 }
+		releases: { BR: 2 }
 	},
 	{
 		name: "Tzadiqel's Horrors",
@@ -18092,7 +18115,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Roll. This unit gets +X tactic points and the enemy unit gets -X tactic points. X equals the roll. If the roll is 4 or greater, commit this unit.</p>',
-		releases: { 'Bearers of Redemption': 3 }
+		releases: { BR: 3 }
 	},
 	{
 		name: "Tzadiqel's Enchanted Warriors",
@@ -18106,7 +18129,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for every 3 spell points that you have.</p>',
-		releases: { 'Bearers of Redemption': 4 }
+		releases: { BR: 4 }
 	},
 	{
 		name: "Tzadiqel's Screaming Chariot",
@@ -18120,7 +18143,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit gets +1 strength for each of your Orc units.</p>',
-		releases: { 'Bearers of Redemption': 5 }
+		releases: { BR: 5 }
 	},
 	{
 		name: 'Iyar, Lord of Tzeentch',
@@ -18134,7 +18157,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 1</p><p> <b>WarCry</b>: Your enemy discards their hand and draws 1 card for each card they discarded.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Dark Elf units.</p>',
-		releases: { 'Bearers of Redemption': 6 },
+		releases: { BR: 6 },
 		banned: true
 	},
 	{
@@ -18149,7 +18172,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Once per battle, choose an enemy unit. If that unit is still in play at the end of the battle, that unit may not be carried over.</p>',
-		releases: { 'Bearers of Redemption': 7 }
+		releases: { BR: 7 }
 	},
 	{
 		name: 'Requiel, Exalted of Tzeentch',
@@ -18163,7 +18186,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (0): When your enemy plays a card effect to draw one or more cards, choose a number of cards in your enemy's discard pile equal to the number of cards they are about to draw. Add the chosen cards to your enemy's hand instead.</p><p>Only playable while your enemy has at least as many cards in their discard pile as they are attempting to draw.</p>",
-		releases: { 'Bearers of Redemption': 8 }
+		releases: { BR: 8 }
 	},
 	{
 		name: 'Tzadiqel, Prince of Change',
@@ -18178,7 +18201,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell Support Tactic</b> (3): Move the unit in the current combat to the battle line (if it is committed, it stays committed). Move one of your other ready units to take the moved unit's place in the current combat.</p>",
-		releases: { 'Bearers of Redemption': 9 }
+		releases: { BR: 9 }
 	},
 	{
 		name: 'Tyamal Dancer',
@@ -18193,7 +18216,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support WarCry</b> (2): If this combat ends in a slaughter, the enemy player must discard 2 cards.</p>',
-		releases: { 'Bearers of Redemption': 10 }
+		releases: { BR: 10 }
 	},
 	{
 		name: 'Fera Ebonheart',
@@ -18208,7 +18231,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Reaction</b> Discard 1 card (3): When a combat ends in a slaughter, choose a unit with a gold cost less than the number of cards in your hand and destroy that unit.</p>',
-		releases: { 'Bearers of Redemption': 11 }
+		releases: { BR: 11 }
 	},
 	{
 		name: 'Twilight Daughters of the Blade',
@@ -18222,7 +18245,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 1</p><p><b>Combat Tactic</b>: If this unit passes a <b>Scout</b> test, commit the enemy unit.</p>',
-		releases: { 'Bearers of Redemption': 12 }
+		releases: { BR: 12 }
 	},
 	{
 		name: "Ha'asek's Twilight Cauldron",
@@ -18237,7 +18260,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 2</p><p>While this unit is in the battle line, all of your Dark Elf units in combat get "<b>Terror</b>: 1".</p><p><b>Reaction</b>: When one of your Dark Elf units gets a strength bonus, that bonus is increased by 1.</p>',
-		releases: { 'Bearers of Redemption': 13 }
+		releases: { BR: 13 }
 	},
 	{
 		name: 'The Mothers of Twilight',
@@ -18251,7 +18274,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Scout</b>: 1</p><p><b>Reaction</b>: When your enemy uses a card effect to draw 1 or more cards, you may look at your enemy's hand.</p>",
-		releases: { 'Bearers of Redemption': 14 }
+		releases: { BR: 14 }
 	},
 	{
 		name: 'Lillet Nightwind',
@@ -18265,7 +18288,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Scout</b>: 1</p><p><b>Combat Tactic</b>: When this combat ends, the result is a slaughter. Only playable if your enemy has no cards in their hand.</p>',
-		releases: { 'Bearers of Redemption': 15 }
+		releases: { BR: 15 }
 	},
 	{
 		name: 'Twilight Sisters of Khaine',
@@ -18279,7 +18302,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Support WarCry</b>: Your unit gets +X strength unless the enemy passes a tactic point test. X equals the enemy unit's printed tactic points.</p>",
-		releases: { 'Bearers of Redemption': 16 }
+		releases: { BR: 16 }
 	},
 	{
 		name: "Kor'rin Blackheart",
@@ -18294,7 +18317,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Rally any number of enemy units: Once per battle, rally one of your units with the monster keyword and a gold cost equal to or less than X. X equals the combined gold cost of the rallied enemy units.</p>',
-		releases: { 'Bearers of Redemption': 17 }
+		releases: { BR: 17 }
 	},
 	{
 		name: "Ha'asek's Feral Daughters",
@@ -18308,7 +18331,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: When this unit is destroyed in a slaughter, you may draw 1 card.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Chaos units.</p>',
-		releases: { 'Bearers of Redemption': 18 }
+		releases: { BR: 18 }
 	},
 	{
 		name: 'Togurg the Filthy',
@@ -18322,7 +18345,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (1): The enemy unit gets -2 tactic points. Only playable if your unit has a higher printed strength than the enemy unit in this combat.</p><p> <b>Command</b>: If all of your enemy's units are committed, the battle ends.</p>",
-		releases: { 'Bearers of Redemption': 19 }
+		releases: { BR: 19 }
 	},
 	{
 		name: "Bartog's Savage Rippas",
@@ -18336,7 +18359,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may play tactics as if it were blocking or being blocked.</p>',
-		releases: { 'Bearers of Redemption': 20 }
+		releases: { BR: 20 }
 	},
 	{
 		name: "Bartog's Boyz of the Bloody Fang",
@@ -18350,7 +18373,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: You and your enemy roll. If your roll is higher, this unit gets "<b>Terror</b>: X". X equals your enemy\'s roll.</p>',
-		releases: { 'Bearers of Redemption': 21 }
+		releases: { BR: 21 }
 	},
 	{
 		name: 'Black Orcs of the Conqueror',
@@ -18364,7 +18387,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your enemy plays a card effect that allows them to win a slaughter, negate its effects.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Chaos units.</p>',
-		releases: { 'Bearers of Redemption': 22 }
+		releases: { BR: 22 }
 	},
 	{
 		name: "Bartog's Savage Boar Boyz",
@@ -18378,7 +18401,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b> Commit: Your unit with 4 or more strength gets +1 strength. If this unit passes a leadership test you may rally this unit.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Dark Elf units.</p>',
-		releases: { 'Bearers of Redemption': 23 }
+		releases: { BR: 23 }
 	},
 	{
 		name: "The Conqueror's Smashin' Boyz",
@@ -18392,7 +18415,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>You may have up to 6 copies of this card in your deck.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each copy of this card in your discard pile.</p>',
-		releases: { 'Bearers of Redemption': 24 }
+		releases: { BR: 24 }
 	},
 	{
 		name: 'Razalt Skineater',
@@ -18406,7 +18429,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> Discard 1 card (3): After one of your other Orc units is routed, the enemy unit may not make a follow-up attack.</p>',
-		releases: { 'Bearers of Redemption': 25 }
+		releases: { BR: 25 }
 	},
 	{
 		name: 'Blagark the Colossal',
@@ -18420,7 +18443,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: -2</p><p><b>Terror</b>: 3</p><p><b>Support Tactic</b>: Your unit with a negative victory bonus gets +1 strength.</p>',
-		releases: { 'Bearers of Redemption': 26 }
+		releases: { BR: 26 }
 	},
 	{
 		name: 'Bartog the Conqueror',
@@ -18435,7 +18458,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: If the enemy unit has a negative amount of tactic points, destroy that unit. Your unit may make a follow-up attack following the end of the combat.</p>',
-		releases: { 'Bearers of Redemption': 27 },
+		releases: { BR: 27 },
 		banned: true
 	},
 	{
@@ -18447,7 +18470,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Destroy one of your ready units and attach this card to one of your other units. Put a number of gold tokens on that unit equal to the gold cost of the destroyed unit. While attached this unit gets "<b>Reaction</b> Remove all gold tokens, discard this action card: While mustering a unit, reduce the mustered unit\'s gold cost by the number of gold tokens removed (minimum 0)."</p>',
-		releases: { 'Bearers of Redemption': 28 }
+		releases: { BR: 28 }
 	},
 	{
 		name: 'Conscripts',
@@ -18461,7 +18484,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: -1</p><p>Attachments may not be attached to this unit.</p><p>If this unit loses a combat, it is routed (no roll necessary).</p>',
-		releases: { 'Bearers of Redemption': 29 }
+		releases: { BR: 29 }
 	},
 	{
 		name: "Pirazzo's Lost Legion",
@@ -18475,7 +18498,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Ranged Attack</b>: 5</p><p><b>Reaction</b>: When this unit is mustered, raise this unit's gold cost by any amount (paying the cost to bring this unit into play). Put a number of gold tokens on this unit equal to the amount of additional gold paid.</p><p><b>Reaction</b>: While mustering a unit, remove any number of gold tokens on this unit to reduce the mustered unit's cost by the number of tokens removed.</p>",
-		releases: { 'Bearers of Redemption': 30 }
+		releases: { BR: 30 }
 	},
 	{
 		name: 'Mercenary General Madinlich',
@@ -18490,7 +18513,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Victory</b>: +2</p><p><b>Reaction</b>: After this unit routs an enemy unit, if your enemy has a unit with a support tactic printed on it, you may choose that unit as the target of this unit's follow-up attack.</p>",
-		releases: { 'Bearers of Redemption': 31 }
+		releases: { BR: 31 }
 	},
 	{
 		name: "You're Next",
@@ -18502,7 +18525,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p> <b>WarCry</b>: This unit gets +1 strength. If you win this combat and rout the enemy unit, you may select the target of your follow-up attack.</p>',
-		releases: { 'Bearers of Redemption': 32 }
+		releases: { BR: 32 }
 	},
 	{
 		name: "It Can't End This Way",
@@ -18514,7 +18537,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p> <b>WarCry</b>: If this combat ends in a slaughter, each player may rally one of their units.</p>',
-		releases: { 'Bearers of Redemption': 33 }
+		releases: { BR: 33 }
 	},
 	{
 		name: 'Keep Them Under Fire',
@@ -18525,7 +18548,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After one of your units without "<b>Victory</b>" wins a ranged attack as the attacker, attach this card to that unit. While attached, that unit gets "<b>Victory</b>: +1".</p>',
-		releases: { 'Bearers of Redemption': 34 }
+		releases: { BR: 34 }
 	},
 	{
 		name: "Gausser's Camouflage",
@@ -18536,7 +18559,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your "<b>Scout</b>" units is targeted for an attack, that unit makes a "<b>Scout</b>" test. If passed, you may choose another one of your ready units as the target of the attack.</p>',
-		releases: { 'Bearers of Redemption': 35 }
+		releases: { BR: 35 }
 	},
 	{
 		name: 'Second Wave Charge',
@@ -18548,7 +18571,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit with a support tactic gets +2 strength.</p>',
-		releases: { 'Bearers of Redemption': 36 }
+		releases: { BR: 36 }
 	},
 	{
 		name: 'Knowing the Field of Battle',
@@ -18559,7 +18582,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X tactic points. X equals this unit\'s "<b>Scout</b>" level.</p>',
-		releases: { 'Bearers of Redemption': 37 }
+		releases: { BR: 37 }
 	},
 	{
 		name: 'Command Decisions',
@@ -18570,7 +18593,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: This unit gets +X tactic points. X equals this unit's leadership.</p>",
-		releases: { 'Bearers of Redemption': 38 }
+		releases: { BR: 38 }
 	},
 	{
 		name: 'Divine Intervention',
@@ -18581,7 +18604,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X tactic points. X equals this unit\'s "<b>Faith</b>" level.</p>',
-		releases: { 'Bearers of Redemption': 39 }
+		releases: { BR: 39 }
 	},
 	{
 		name: 'Tactics of Fright',
@@ -18592,7 +18615,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X tactic points. X equals this unit\'s "<b>Terror</b>" level.</p>',
-		releases: { 'Bearers of Redemption': 40 }
+		releases: { BR: 40 }
 	},
 	{
 		name: 'Ancient Knowledge',
@@ -18603,7 +18626,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X tactic points. X equals this unit\'s "<b>Wizard</b>" level.</p>',
-		releases: { 'Bearers of Redemption': 41 }
+		releases: { BR: 41 }
 	},
 	{
 		name: 'News from the Front',
@@ -18615,7 +18638,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b> Commit one of your other <b>Scout</b> units in your battle line: This unit gets +X strength. X equals the "<b>Scout</b>" level of the committed unit.</p>',
-		releases: { 'Bearers of Redemption': 42 }
+		releases: { BR: 42 }
 	},
 	{
 		name: 'The Unseen Advantage',
@@ -18627,7 +18650,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the number of your other <b>Scout</b> units.</p>',
-		releases: { 'Bearers of Redemption': 43 }
+		releases: { BR: 43 }
 	},
 	{
 		name: 'Test of Resolve',
@@ -18639,7 +18662,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: The result of this combat is a slaughter unless your enemy passes at least one of 3 leadership tests.</p>',
-		releases: { 'Bearers of Redemption': 44 }
+		releases: { BR: 44 }
 	},
 	{
 		name: 'Rally Against the Unjust',
@@ -18650,7 +18673,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After one of your units has been destroyed in a combat where the enemy played a card to create a slaughter you may rally one of your units.</p>',
-		releases: { 'Bearers of Redemption': 45 }
+		releases: { BR: 45 }
 	},
 	{
 		name: "Fate's Cyclical Wheel",
@@ -18661,7 +18684,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After one of your units has been destroyed in a combat where the enemy played a card effect to create a slaughter, draw 4 cards.</p>',
-		releases: { 'Bearers of Redemption': 46 }
+		releases: { BR: 46 }
 	},
 	{
 		name: 'Trump',
@@ -18672,7 +18695,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After the enemy unit in combat gets a strength bonus of 4 or more, your unit gets the same strength bonus.</p>',
-		releases: { 'Bearers of Redemption': 47 }
+		releases: { BR: 47 }
 	},
 	{
 		name: 'Take Control',
@@ -18683,7 +18706,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>You may put this card into play as a combat tactic for 3 tactic points.</p><p>All strength bonuses of 4 or more are reduced to 3.</p>',
-		releases: { 'Bearers of Redemption': 48 }
+		releases: { BR: 48 }
 	},
 	{
 		name: 'Everything Has a Price',
@@ -18694,7 +18717,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>You may put this card into play as a combat tactic for 2 tactic points.</p><p>All combat tactic cards with a printed tactic point cost of 0, have their tactic point cost increased by 2.</p>',
-		releases: { 'Bearers of Redemption': 49 }
+		releases: { BR: 49 }
 	},
 	{
 		name: 'Back to Basics',
@@ -18706,7 +18729,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: During this combat, as a combat tactic for 2 tactic points, either player may reveal the top card of their deck and gain a strength bonus equal to the die of the revealed card.</p>',
-		releases: { 'Bearers of Redemption': 50 }
+		releases: { BR: 50 }
 	},
 	{
 		name: 'Risky Proposition',
@@ -18718,7 +18741,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets +2 strength and if this unit wins the combat the enemy unit is routed (no roll needed). Only playable by an attacking unit being blocked. Additionally, should this unit win the follow-up attack it may attempt to rout the enemy unit</p><p>(rolling as normal).</p>',
-		releases: { 'Bearers of Redemption': 51 }
+		releases: { BR: 51 }
 	},
 	{
 		name: 'Making a Name...',
@@ -18730,7 +18753,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Attach this card to your unit. While this card is attached, this unit has the ability: "WarCry Remove this action card from the game: If you win the combat, rout the enemy unit (no roll necessary)."</p>',
-		releases: { 'Bearers of Redemption': 52 }
+		releases: { BR: 52 }
 	},
 	{
 		name: 'Preparations',
@@ -18742,7 +18765,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: None of your card effects generated during this combat may be cancelled or negated.</p>',
-		releases: { 'Bearers of Redemption': 53 }
+		releases: { BR: 53 }
 	},
 	{
 		name: 'Bait and Strike',
@@ -18754,7 +18777,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p>Combat Tacitc: Your enemy may play any number of consecutive tactics (paying all costs). That player may not play any more tactics this combat. Only playable while attacking.</p>',
-		releases: { 'Bearers of Redemption': 54 }
+		releases: { BR: 54 }
 	},
 	{
 		name: 'Suicide Mission',
@@ -18766,7 +18789,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 leadership and the enemy unit gets -2 strength. Only playable while attacking.</p>',
-		releases: { 'Bearers of Redemption': 55 }
+		releases: { BR: 55 }
 	},
 	{
 		name: 'Experience of the Veteran',
@@ -18778,7 +18801,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each action card attached to it. You only get the strength bonus for cards attached by their own abilities.</p>',
-		releases: { 'Bearers of Redemption': 56 }
+		releases: { BR: 56 }
 	},
 	{
 		name: 'Inflation',
@@ -18789,7 +18812,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>This strategy card is not discarded after the battle in which it was brought into play.</p><p>Discard this card after another copy of it enters play.</p><p>All units have their gold cost increased by 1.</p>',
-		releases: { 'Bearers of Redemption': 57 }
+		releases: { BR: 57 }
 	},
 	{
 		name: 'Stand Against the Giants',
@@ -18800,7 +18823,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: If this attacking unit's strength is less than the enemy unit's strength, this unit gets +1 tactic points, +1 strength, and you may draw 1 card.</p>",
-		releases: { 'Bearers of Redemption': 58 }
+		releases: { BR: 58 }
 	},
 	{
 		name: "Jasenland's Justice",
@@ -18812,7 +18835,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Destroy one unit not in this combat. Only playable if your enemy has more gold in play than was prescribed by the battle and you do not (i.e. 20 in the 1st, 25 in the 2nd, etc.)</p>',
-		releases: { 'Bearers of Redemption': 59 }
+		releases: { BR: 59 }
 	},
 	{
 		name: 'The Iron Hand',
@@ -18824,7 +18847,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Your enemy may immediately play any number of consecutive tactics (paying all costs). That player may not play any more tactics this combat. Only playable while defending.</p>',
-		releases: { 'Bearers of Redemption': 60 }
+		releases: { BR: 60 }
 	},
 	{
 		name: 'Use the Terrain to Your Advantage',
@@ -18836,7 +18859,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets "<b>Terror</b>: X" and the enemy unit gets -X tactic points, X equals this unit\'s "<b>Scout</b>" level.</p>',
-		releases: { 'Bearers of Redemption': 61 }
+		releases: { BR: 61 }
 	},
 	{
 		name: 'Deadly Gamble',
@@ -18848,7 +18871,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Combat rolls for this combat are substracted instead of added.</p><p><b>Combat Tactic</b>: This unit gets +d6 strength. If this bonus is 4 or more, this unit is destroyed after the combat.</p>',
-		releases: { 'Bearers of Redemption': 62 }
+		releases: { BR: 62 }
 	},
 	{
 		name: 'Test of Strength',
@@ -18859,7 +18882,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Support Tactic</b> (2): No combat rolls are made for this combat.</p>',
-		releases: { 'Bearers of Redemption': 63 }
+		releases: { BR: 63 }
 	},
 	{
 		name: 'A Wall of Arrows',
@@ -18871,7 +18894,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>: Raise this unit's strength to equal this unit's printed <b>Ranged Attack</b>. Only playable while defending and if this unit's strength is less than it's ranged attack.</p>",
-		releases: { 'Bearers of Redemption': 64 }
+		releases: { BR: 64 }
 	},
 	{
 		name: 'Devious Tactics',
@@ -18883,7 +18906,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Attach this card to your unit. While attached and this unit is in combat, rolls are subtracted instead of added.</p>',
-		releases: { 'Bearers of Redemption': 65 }
+		releases: { BR: 65 }
 	},
 	{
 		name: 'On Your Own',
@@ -18894,7 +18917,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Target one of your character attachments and attach that character to this card. This card becomes an <span class="errata">infantry</span> unit with a Strength, Tactic Points, and Leadership equal to twice the characters gold cost <span class="errata">and a gold cost of 0</span>.</p><p>This card is placed in the same rank as the unit the character was attached to.</p>',
-		releases: { 'Bearers of Redemption': 66 },
+		releases: { BR: 66 },
 		errata: true
 	},
 	{
@@ -18906,7 +18929,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: "<p><b>Reaction</b>: After an enemy's card effect has destroyed one of your units during a combat, that unit is not destroyed. Your unit gets +2 strength until the end of the combat.</p>",
-		releases: { 'Bearers of Redemption': 67 }
+		releases: { BR: 67 }
 	},
 	{
 		name: 'Heroic Example',
@@ -18918,7 +18941,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: If this unit has a character attachment, this unit gets +2 strength.</p>',
-		releases: { 'Bearers of Redemption': 68 }
+		releases: { BR: 68 }
 	},
 	{
 		name: 'All I Have',
@@ -18930,7 +18953,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +4 strength. Only playable if this is the last card in your hand.</p>',
-		releases: { 'Bearers of Redemption': 69 }
+		releases: { BR: 69 }
 	},
 	{
 		name: "Fate's Fortune",
@@ -18942,7 +18965,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (1): Both players roll. Both players gain spell points equal to their respective rolls.</p>',
-		releases: { 'Bearers of Redemption': 70 }
+		releases: { BR: 70 }
 	},
 	{
 		name: "Thieves' Tactics",
@@ -18953,7 +18976,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: "<p>All players make their combat rolls from their enemy's deck.</p>",
-		releases: { 'Bearers of Redemption': 71 }
+		releases: { BR: 71 }
 	},
 	{
 		name: 'Overextended',
@@ -18964,7 +18987,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After a unit gets a strength bonus of 6 or more, commit that unit.</p>',
-		releases: { 'Bearers of Redemption': 72 }
+		releases: { BR: 72 }
 	},
 	{
 		name: "Gausser's Gambit",
@@ -18976,7 +18999,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Both players roll 3 times. The player with the highest single roll gives their unit in this combat a strength bonus equal to the highest roll. If a tie occurs then both players' units get the bonus.</p>",
-		releases: { 'Bearers of Redemption': 73 }
+		releases: { BR: 73 }
 	},
 	{
 		name: 'Give It Your Best',
@@ -18988,7 +19011,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: The enemy unit's next strength bonus in this combat is reduced to 0.</p>",
-		releases: { 'Bearers of Redemption': 74 }
+		releases: { BR: 74 }
 	},
 	{
 		name: 'Inner Conflict',
@@ -18999,7 +19022,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Choose a non-unique enemy unit. This card becomes a copy of the chosen unit. Declare an attack on the chosen unit with this card. This unit may not make follow-up attacks. Once the combat and all follow-ups are resolved,</p><p>your enemy chooses one of your units and this card becomes a copy of the new chosen unit. Your enemy declares an attack on the chosen unit with this card. This unit may not make follow-up attacks.</p>',
-		releases: { 'Bearers of Redemption': 75 }
+		releases: { BR: 75 }
 	},
 	{
 		name: 'The Sun Sets',
@@ -19010,7 +19033,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After your enemy shuffles a discard pile into its respective deck, commit one of their units.</p>',
-		releases: { 'Bearers of Redemption': 76 }
+		releases: { BR: 76 }
 	},
 	{
 		name: 'Dueling Master',
@@ -19022,7 +19045,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>: Starting with you, both players take turns playing cards from their hand face down. Once either player passes, no more cards may be played face down. No combat rolls are made this combat. Instead, when the combat rolls would be made,</p><p>the cards are revealed and the total of the dice is considered each player's combat roll.</p>",
-		releases: { 'Bearers of Redemption': 77 }
+		releases: { BR: 77 }
 	},
 	{
 		name: 'Sustained Assault',
@@ -19033,7 +19056,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After one of your Daemon units with a gold cost 3 or less is destroyed, roll. If the roll is equal to or greater than the unit's gold cost, you may place that unit back in your reserves. If the roll is less than the gold cost of the unit,</p><p>your enemy may rally one of their committed units.</p>",
-		releases: { 'Bearers of Redemption': 78 }
+		releases: { BR: 78 }
 	},
 	{
 		name: 'Caught in the Bog',
@@ -19044,7 +19067,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens may not block without a card effect.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
-		releases: { 'Bearers of Redemption': 79 }
+		releases: { BR: 79 }
 	},
 	{
 		name: 'Stuck in the Bog',
@@ -19055,7 +19078,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens have -1 leadership.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
-		releases: { 'Bearers of Redemption': 80 }
+		releases: { BR: 80 }
 	},
 	{
 		name: 'Trapped in the Bog',
@@ -19066,7 +19089,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens have -1 tactic point.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
-		releases: { 'Bearers of Redemption': 81 }
+		releases: { BR: 81 }
 	},
 	{
 		name: 'Mired in the Bog',
@@ -19077,7 +19100,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge tokens may not perform follow-up attacks.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may use this ability.</p>',
-		releases: { 'Bearers of Redemption': 82 }
+		releases: { BR: 82 }
 	},
 	{
 		name: 'Unsurpassed Strength',
@@ -19088,7 +19111,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Players may play any action card as a combat tactic for 1 tactic point. Their unit gets a strength bonus equal to the die on the card. Players may use this ability any number of times during the combat.</p>',
-		releases: { 'Bearers of Redemption': 83 }
+		releases: { BR: 83 }
 	},
 	{
 		name: 'Unsurpassed Loyalty',
@@ -19100,7 +19123,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b> Discard X cards: Your unit gets a strength bonus equal to the combined dice on the discarded cards.</p>',
-		releases: { 'Bearers of Redemption': 84 }
+		releases: { BR: 84 }
 	},
 	{
 		name: 'Confined in the Bog',
@@ -19111,7 +19134,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After this card enters play, place a sludge token on all units in play without a sludge token.</p><p>Units with one or more sludge token may not declare an attack without a card effect.</p><p> <b>Command</b>: Remove all sludge tokens on one of your units in play. Both players may play this ability.</p>',
-		releases: { 'Bearers of Redemption': 85 },
+		releases: { BR: 85 },
 		banned: true
 	},
 	{
@@ -19123,7 +19146,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>Units with a strength of 2 or less get +1 strength.</p>',
-		releases: { 'Bearers of Redemption': 86 }
+		releases: { BR: 86 }
 	},
 	{
 		name: 'Hidden Reserves',
@@ -19134,7 +19157,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: "<p><b>Reaction</b>: If you discard this card as a result of your enemy's card effect, draw 4 cards.</p>",
-		releases: { 'Bearers of Redemption': 87 }
+		releases: { BR: 87 }
 	},
 	{
 		name: 'The Horror',
@@ -19145,7 +19168,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After one of your units enters a combat, roll. That unit gets "<b>Terror</b>: X". X equals the roll.</p>',
-		releases: { 'Bearers of Redemption': 88 }
+		releases: { BR: 88 }
 	},
 	{
 		name: 'Treasured Armour',
@@ -19156,7 +19179,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit passes a leadership test in a combat, this unit gets a strength bonus equal to the difference between the printed leadership and the roll.</p>',
-		releases: { 'Bearers of Redemption': 89 }
+		releases: { BR: 89 }
 	},
 	{
 		name: 'Witch Hunter',
@@ -19167,7 +19190,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>This unit gets "<b>Faith</b>: 1."</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. wizard, monster, Vampire Counts, or Khemri units.</p>',
-		releases: { 'Bearers of Redemption': 90 }
+		releases: { BR: 90 }
 	},
 	{
 		name: 'Unity Stone',
@@ -19179,7 +19202,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Your unit with the same army keyword as this unit gets +1 strength.</p>',
-		releases: { 'Bearers of Redemption': 91 }
+		releases: { BR: 91 }
 	},
 	{
 		name: 'Shadow Cloak',
@@ -19190,7 +19213,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>This unit gets "<b>Scout</b>: 2"</p><p> <b>WarCry</b>: This unit gets a shadow token. Only playable if this unit\'s "<b>Scout</b>" level is greater than the enemy unit\'s strength.</p><p><b>Reaction</b> Discard a shadow token from this unit: If this unit is destroyed in a battle, return it to the battle line committed and reduce its printed strength to 0 until after the end of the battle.</p>',
-		releases: { 'Bearers of Redemption': 92 }
+		releases: { BR: 92 }
 	},
 	{
 		name: 'Enchanted Spear',
@@ -19201,7 +19224,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: "<p><b>Support Tactic</b> Commit this unit: Your unit gets a strength bonus equal to this unit's printed strength.</p><p><b>Support Tactic</b>: Remove up to 2 tokens from play.</p>",
-		releases: { 'Bearers of Redemption': 93 }
+		releases: { BR: 93 }
 	},
 	{
 		name: 'Dumin Rockbrow',
@@ -19215,7 +19238,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b>: If this unit destroys an enemy unit with a higher gold cost in a combat, attach the top card of your deck to this unit. This unit gets "<b>Victory</b>: +X." X equals the die of the attached card.</p>',
-		releases: { 'Bearers of Redemption': 94 }
+		releases: { BR: 94 }
 	},
 	{
 		name: "Droken's Slayers of Skaven",
@@ -19229,7 +19252,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: +1</p><p><b>Reaction</b>: When this unit enters play, commit a unit with a "<b>Scout</b>" level of 5 or more.</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. Skaven units.</p>',
-		releases: { 'Bearers of Redemption': 95 }
+		releases: { BR: 95 }
 	},
 	{
 		name: 'Halrig Bloodstone',
@@ -19243,7 +19266,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Terror</b>: 1</p><p> <b>Command</b> Destroy this unit: Roll. Destroy a unit with a gold cost equal to or less than the roll.</p><p><b>Combat Tactic</b>: This unit gets a strength bonus equal to the number of tactic points spent by the enemy unit. You may not play this ability after your enemy has passed in the combat.</p>',
-		releases: { 'Bearers of Redemption': 96 }
+		releases: { BR: 96 }
 	},
 	{
 		name: "Stoneheart's Doomseekers",
@@ -19257,7 +19280,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Victory</b>: +4</p><p><b>Combat Tactic</b>: Roll. If the roll is equal to or greater than this unit's strength, this unit gets +1 strength. If the roll is less than this unit's strength, this unit is destroyed and the enemy unit may make a follow-up attack.</p><p>You may play this ability any number of times per combat.</p>",
-		releases: { 'Bearers of Redemption': 97 }
+		releases: { BR: 97 }
 	},
 	{
 		name: 'Droken Stoneheart',
@@ -19271,7 +19294,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: Double this unit's strength. You may not play any more tactics this combat.</p>",
-		releases: { 'Bearers of Redemption': 98 }
+		releases: { BR: 98 }
 	},
 	{
 		name: "Grimjaw's Volunteer Guard",
@@ -19285,7 +19308,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Destroy a strategy card in play.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your High Elf units.</p>',
-		releases: { 'Bearers of Redemption': 99 }
+		releases: { BR: 99 }
 	},
 	{
 		name: 'Gnollen Stoneheart',
@@ -19299,7 +19322,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p><b>Spell Combat Tactic</b> (1): Play a combat tactic or WarCry printed on an attachment attached to this unit.</p>',
-		releases: { 'Bearers of Redemption': 100 }
+		releases: { BR: 100 }
 	},
 	{
 		name: "Stoneheart's Slayers of the Cursed",
@@ -19313,7 +19336,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: +2</p><p><b>Reaction</b>: After an enemy unit in a combat with this unit plays a combat tactic from their hand, roll. If the roll is greater than the die on the card played, this unit gets +2 strength.</p><p><b>Combat Tactic</b>: This unit gets +2 strength vs. Vampire Counts or Khemri units.</p>',
-		releases: { 'Bearers of Redemption': 101 }
+		releases: { BR: 101 }
 	},
 	{
 		name: 'Skollan Stoneheart',
@@ -19327,7 +19350,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>: This unit gets a strength bonus equal to the enemy unit's printed strength.</p>",
-		releases: { 'Bearers of Redemption': 102 }
+		releases: { BR: 102 }
 	},
 	{
 		name: 'The Implacable',
@@ -19342,7 +19365,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Ranged Attack</b>: 8</p><p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: Begin a ranged attack with this unit targeting a unit not in this combat. If this unit wins the ranged attack it does not become committed as a result. Only playable once per command.</p>',
-		releases: { 'Bearers of Redemption': 103 }
+		releases: { BR: 103 }
 	},
 	{
 		name: "Gausser's Huntsmen of the North",
@@ -19356,7 +19379,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 2</p><p><b>Ranged Attack</b>: 5</p><p><b>Reaction</b>: You may reroll a combat roll if this unit passes a <b>Ranged Attack</b> test.</p>',
-		releases: { 'Bearers of Redemption': 104 }
+		releases: { BR: 104 }
 	},
 	{
 		name: 'Inner Circle of the Knights Panther',
@@ -19370,7 +19393,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b> Discard a card: When one of your units is making a leadership test, the die on the discarded card is used for the test (no roll needed).</p>',
-		releases: { 'Bearers of Redemption': 105 }
+		releases: { BR: 105 }
 	},
 	{
 		name: "Gausser's Huntsmen of the South",
@@ -19384,7 +19407,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 3</p><p><b>Ranged Attack</b>: 7</p><p><b>Reaction</b>: When a card effect calls for you to reroll a roll, that reroll is a 4 (no roll needed).</p>',
-		releases: { 'Bearers of Redemption': 106 }
+		releases: { BR: 106 }
 	},
 	{
 		name: 'Knights of the Bared Fang',
@@ -19398,7 +19421,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit passes a test in a combat, this unit gets +1 strength.</p>',
-		releases: { 'Bearers of Redemption': 107 }
+		releases: { BR: 107 }
 	},
 	{
 		name: 'Leon Trolmann',
@@ -19412,7 +19435,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support WarCry</b>: If your war machine unit wins this non-ranged attack combat, that unit does not commit as a result of this combat.</p>',
-		releases: { 'Bearers of Redemption': 108 }
+		releases: { BR: 108 }
 	},
 	{
 		name: "Knights of the Panther's Claw",
@@ -19426,7 +19449,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This attacking unit gets +1 strength.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Dwarf units.</p>',
-		releases: { 'Bearers of Redemption': 109 }
+		releases: { BR: 109 }
 	},
 	{
 		name: 'Knights of the Savage Cat',
@@ -19440,7 +19463,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may block flyers while ready.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your High Elf units.</p>',
-		releases: { 'Bearers of Redemption': 110 }
+		releases: { BR: 110 }
 	},
 	{
 		name: 'Grand Master Denhaus of the Knights Panther',
@@ -19455,7 +19478,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Faith</b>: 2</p><p><b>Support WarCry</b>: If the enemy unit has a higher gold cost than your unit, you may put one card from your discard pile on top of your deck.</p>',
-		releases: { 'Bearers of Redemption': 111 }
+		releases: { BR: 111 }
 	},
 	{
 		name: "Whitestar's Thundering Hooves",
@@ -19469,7 +19492,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Short Ranged Attack</b>: 8</p><p><b>Reaction</b>: After this unit wins a ranged attack, move this unit to the reserves.</p>',
-		releases: { 'Bearers of Redemption': 112 }
+		releases: { BR: 112 }
 	},
 	{
 		name: "Whitestar's Shooting Star",
@@ -19483,7 +19506,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Long Ranged Attack</b>: 5</p><p><b>Support Tactic</b>: Roll. 3 or less: Your unit gets +2 strength or +2 ranged attack. 4+: Commit this unit.</p>',
-		releases: { 'Bearers of Redemption': 113 }
+		releases: { BR: 113 }
 	},
 	{
 		name: "Whitestar's Whirling Blades",
@@ -19497,7 +19520,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +3 strength and you draw 1 card. Only playable vs. <b>Scout</b> units.</p>',
-		releases: { 'Bearers of Redemption': 114 }
+		releases: { BR: 114 }
 	},
 	{
 		name: "Whitestar's Silvertips",
@@ -19511,7 +19534,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Scout</b>: 2</p><p><b>Ranged Attack</b>: 6</p><p><b>Support WarCry</b>: Roll. If the roll is 4 or more the roll is reduced to 0. Subtract the roll from the enemy unit's strength.</p>",
-		releases: { 'Bearers of Redemption': 115 }
+		releases: { BR: 115 }
 	},
 	{
 		name: "Bilgarim's Archers of Nightfall",
@@ -19525,7 +19548,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Ranged Attack</b>: 9</p><p><b>Reaction</b>: After this unit wins a combat, if you have no cards in your hand, you may draw 2 cards.</p>',
-		releases: { 'Bearers of Redemption': 116 }
+		releases: { BR: 116 }
 	},
 	{
 		name: 'Calamir Truedance',
@@ -19539,7 +19562,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support WarCry</b> (3): Your unit gets a strength bonus equal to its tactic points.</p><p><b>Spell WarCry</b> (2): This unit gets a strength bonus equal to its tactic points.</p>',
-		releases: { 'Bearers of Redemption': 117 }
+		releases: { BR: 117 }
 	},
 	{
 		name: 'Ryndaire Goldenleaf',
@@ -19553,7 +19576,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Reaction</b>: When your enemy's card effect causes you to discard 1 or more cards, you may draw a number of cards equal to the number of cards discarded.</p>",
-		releases: { 'Bearers of Redemption': 118 }
+		releases: { BR: 118 }
 	},
 	{
 		name: "Bilgarim's Silvercrests",
@@ -19567,7 +19590,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +2 tactic points and you draw 1 card. Only playable vs. units with lower gold costs.</p>',
-		releases: { 'Bearers of Redemption': 119 }
+		releases: { BR: 119 }
 	},
 	{
 		name: "Whitestar's Protectorate",
@@ -19582,7 +19605,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Scout</b>: 2</p><p><b>Combat Tactic</b> Commit: This unit gets +6 strength.</p><p><b>Support Tactic</b> Commit: Your unit gets +3 strength.</p>',
-		releases: { 'Bearers of Redemption': 120 }
+		releases: { BR: 120 }
 	},
 	{
 		name: 'Clickclick Bangbang',
@@ -19595,7 +19618,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p><b>Ranged Attack</b>: X. X equals 3D6. If you roll duplicates or triplicates of a number for this roll, this unit is destroyed. Roll before you draw a card for this combat.</p><p><b>Reaction</b>: If the roll used to determine this unit's <b>Ranged Attack</b> totals 13, destroy the enemy unit. This unit stays ready and this command ends.</p>",
-		releases: { 'Valor and Treachery': 1 }
+		releases: { VT: 1 }
 	},
 	{
 		name: "Headtaker's Censer Bearers",
@@ -19609,7 +19632,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>This unit may not attack until one of your other units has declared an attack.</p><p> <b>WarCry</b>: This unit gets +1 strength and your enemy discards 1 card.</p><p><b>Combat Tactic</b>: This attacking unit gets +2 strength.</p>',
-		releases: { 'Valor and Treachery': 2 }
+		releases: { VT: 2 }
 	},
 	{
 		name: "Headtaker's Ratmen",
@@ -19622,7 +19645,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>If this unit has a Skaven character attached, it gets +2 strength and +1 leadership.</p><p><b>Reaction</b>: Before this unit would be committed by a card effect or a ranged attack, roll. If the roll is greater than 4, destroy one attachment on this unit instead.</p>',
-		releases: { 'Valor and Treachery': 3 }
+		releases: { VT: 3 }
 	},
 	{
 		name: "Queek's Foul Monks",
@@ -19635,7 +19658,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -1 strength. If that unit is a Grand Alliance unit, it also gets -1 leadership.</p>',
-		releases: { 'Valor and Treachery': 4 }
+		releases: { VT: 4 }
 	},
 	{
 		name: "Queek's Vile Ratkin",
@@ -19648,7 +19671,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 1</p><p>If this unit has a Skaven character attachment attached, this unit gets +2 strength and +1 leadership.</p>',
-		releases: { 'Valor and Treachery': 5 }
+		releases: { VT: 5 }
 	},
 	{
 		name: 'Skaven Tunnels',
@@ -19661,7 +19684,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>This unit may not attack. Any ready unit may block an attack on this unit.</p><p> <b>Command</b> Commit: If this unit is in your battle line, one of your Skaven units may declare an attack against an enemy unit in the reserves. This attack may not be blocked.</p>',
-		releases: { 'Valor and Treachery': 6 }
+		releases: { VT: 6 }
 	},
 	{
 		name: 'Swarm of Skavenblight',
@@ -19674,7 +19697,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>This unit costs one less gold for each copy of this unit you have in play.</p><p>This unit must be placed in your battle line. If this unit and/or copies of this unit are the only ready units in your battle line your enemy may attack your reserves.</p>',
-		releases: { 'Valor and Treachery': 7 }
+		releases: { VT: 7 }
 	},
 	{
 		name: 'Warlock Quiksnak',
@@ -19688,7 +19711,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell WarCry</b> (X): This unit gets X+1 strength. You must spend at least 1 spell point to activate this ability.</p><p><b>Spell Support Tactic</b> (X): Your unit gets X+2 leadership. You must spend at least 1 spell point to activate this ability.</p>',
-		releases: { 'Valor and Treachery': 8 }
+		releases: { VT: 8 }
 	},
 	{
 		name: 'Warlord Queek Headtaker',
@@ -19702,7 +19725,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: After this unit wins a combat as the defender, it rallies if committed and immediately declares an attack on the unit that attacked it. You may use this ability while committed.</p>',
-		releases: { 'Valor and Treachery': 9 }
+		releases: { VT: 9 }
 	},
 	{
 		name: 'Cloak of Shadows',
@@ -19712,7 +19735,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		text: '<p>Skaven Only</p><p><b>Reaction</b>: After your enemy declares a ranged attack against this unit, they must roll. If the roll is less than 5, they must choose a different unit to be the target of the ranged attack if there is another legal target.</p>',
-		releases: { 'Valor and Treachery': 10 }
+		releases: { VT: 10 }
 	},
 	{
 		name: 'Packmaster Teekteek',
@@ -19723,7 +19746,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		text: '<p><b>Support Tactic</b> Commit this attachment: Your Skaven unit gets +3 tactic point.</p><p><b>Combat Tactic</b> Commit this attachment: This unit gets +2 strength.</p>',
-		releases: { 'Valor and Treachery': 11 }
+		releases: { VT: 11 }
 	},
 	{
 		name: 'Weeping Blade',
@@ -19735,7 +19758,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Attachment',
 		text: '<p>Skaven Only</p><p><b>Reaction</b>: After the enemy unit play a WarCry ability or card (including Spell and <b>Support WarCry</b>s), this unit gets +3 strength.</p>',
-		releases: { 'Valor and Treachery': 12 }
+		releases: { VT: 12 }
 	},
 	{
 		name: 'Death Frenzy',
@@ -19746,7 +19769,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: "<p><b>Spell WarCry</b> (1): If you win this combat, attach this card to this unit. This unit may continue to make rout checks and follow-up attacks. This unit gets a -1 strength token at the start of each follow-up after the first.</p><p><b>Reaction</b>: After this card is rolled, if you have more units in the battle line than your enemy, this card's die is considered to be a 5. Only playable if you have units in your reserves and battle line.</p>",
-		releases: { 'Valor and Treachery': 13 }
+		releases: { VT: 13 }
 	},
 	{
 		name: 'Expendable',
@@ -19757,7 +19780,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: "<p><b>Combat Tactic</b>: This unit gets +2 strength and -3 leadership.</p><p><b>Reaction</b>: After this card is rolled as a test or rout check, it's die is considered to be a 7. Either player may use this ability.</p>",
-		releases: { 'Valor and Treachery': 14 }
+		releases: { VT: 14 }
 	},
 	{
 		name: 'He Who Runs Away...',
@@ -19768,7 +19791,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p><b>WarCry</b>: If this unit loses this combat, return it to the battle line ready instead of being destroyed; then your opponent may rally one of his units in the reserves at the end of this combat.</p>',
-		releases: { 'Valor and Treachery': 15 }
+		releases: { VT: 15 }
 	},
 	{
 		name: 'Lead from the Rear',
@@ -19779,7 +19802,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p><b>WarCry</b>: If you win this combat, attach this card to one of your unique units in the reserves. While this card is in play, your other units gain +1 strength and +1 leadership.</p><p>Destroy this card if the unit it is attached to enters the battlefield or the battle line.</p>',
-		releases: { 'Valor and Treachery': 16 }
+		releases: { VT: 16 }
 	},
 	{
 		name: 'Make Them Fear Us',
@@ -19790,7 +19813,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: "<p><b>Combat Tactic</b>: The enemy unit gets -1 strength. If this unit's strength is double the enemy unit's strength, this unit gets <b>Terror</b>: 2.</p>",
-		releases: { 'Valor and Treachery': 17 }
+		releases: { VT: 17 }
 	},
 	{
 		name: 'Plague',
@@ -19800,7 +19823,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Command',
 		text: "<p><b>Spell Command</b> (3) Choose one enemy unit. That unit must pass a strength test or be destroyed. Roll.<p>2 or less: Your enemy may choose one of your unit's to make a strength test as above. Roll again.</p><p>3-4: The command ends.</p><p>5+: You may choose another enemy unit and it must make a strength test as above. Roll again.</p>",
-		releases: { 'Valor and Treachery': 18 },
+		releases: { VT: 18 },
 		banned: true
 	},
 	{
@@ -19811,7 +19834,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Command',
 		text: '<p>This strategy is not discarded after a battle.</p><p><b>Spell Reaction</b> (1): After you make a roll reroll.</p>',
-		releases: { 'Valor and Treachery': 19 }
+		releases: { VT: 19 }
 	},
 	{
 		name: 'Swarm Them!',
@@ -19822,7 +19845,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: "<p> <b>WarCry</b>: This unit gets +1 strength for every unit you have in play with a printed gold cost of less than 3.</p><p><b>Reaction</b>: After this card is rolled, it's a die is considered equal to the number of units you have in play with a gold cost of greater than 3.</p>",
-		releases: { 'Valor and Treachery': 20 }
+		releases: { VT: 20 }
 	},
 	{
 		name: 'Warpstone Mutation',
@@ -19833,7 +19856,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: "<p><b>Combat Tactic</b>: This unit gets +2 strength. You may destroy any number of attachments on this unit. This unit gets an additional +2 strength for each attachment destroyed. This unit may not follow-up.</p><p><b>Reaction</b>: After this card is rolled, if you do not have any attachments in play, this card's die is considered to be a 4.</p>",
-		releases: { 'Valor and Treachery': 21 }
+		releases: { VT: 21 }
 	},
 	{
 		name: "Athel Loren's Eternal Guard",
@@ -19846,7 +19869,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: The enemy unit gets -1 strength. If the enemy unit is a Hordes of Darkness unit, it also gets -1 tactic point.</p>',
-		releases: { 'Valor and Treachery': 29 }
+		releases: { VT: 29 }
 	},
 	{
 		name: 'Callaen Strongblade',
@@ -19860,7 +19883,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p>The following abilities may be played while committed.</p><p> <b>WarCry</b>: This unit gets <b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets +1 strength for each terrain card you have in play.</p><p><b>Combat Tactic</b>: If this unit's combat roll is an unmodified 6, this unit wins the combat instead.</p>",
-		releases: { 'Valor and Treachery': 30 }
+		releases: { VT: 30 }
 	},
 	{
 		name: 'Forest Lookout',
@@ -19873,7 +19896,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>This unit may not attack (however it may declare a ranged attack). Ready infantry units may block an attack on this unit.</p><p><b>Short Ranged Attack</b>: 4</p><p><b>Support Tactic</b> Discard 1 card: Your unit gets +2 ranged attack.</p>',
-		releases: { 'Valor and Treachery': 31 }
+		releases: { VT: 31 }
 	},
 	{
 		name: 'Naieth the Prophetess',
@@ -19887,7 +19910,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support WarCry</b> (2): Draw 1 card, then place 1 card in your hand on top of your deck.</p>',
-		releases: { 'Valor and Treachery': 32 }
+		releases: { VT: 32 }
 	},
 	{
 		name: 'Orion',
@@ -19901,7 +19924,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 2</p><p><b>Reaction</b>: After setup, put a Terrain card into play.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your other units with ranged attack.</p>',
-		releases: { 'Valor and Treachery': 33 }
+		releases: { VT: 33 }
 	},
 	{
 		name: "Orion's Forest Guard",
@@ -19914,7 +19937,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Ranged Attack</b>: 7</p><p><b>Combat Tactic</b> Discard a terrain card: This unit gets +1 strength or +1 leadership. You may use this any number of times per combat.</p>',
-		releases: { 'Valor and Treachery': 34 }
+		releases: { VT: 34 }
 	},
 	{
 		name: 'Treekin of Athel Loren',
@@ -19927,7 +19950,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>At the end of the muster phase, your opponent may put two +1 strength tokens on one of his units.</p>',
-		releases: { 'Valor and Treachery': 35 }
+		releases: { VT: 35 }
 	},
 	{
 		name: 'Warhawks of Kurnous',
@@ -19940,7 +19963,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b>: this unit gets +2 strength vs. committed units. If this unit loses the combat, destroy this unit.</p>',
-		releases: { 'Valor and Treachery': 36 }
+		releases: { VT: 36 }
 	},
 	{
 		name: 'Wild Riders of Kurnous',
@@ -19953,7 +19976,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b>: Reveal the top 5 cards of your action deck. Put any terrain cards revaled into play and discard the rest.</p>',
-		releases: { 'Valor and Treachery': 37 }
+		releases: { VT: 37 }
 	},
 	{
 		name: 'Winter Guard',
@@ -19966,7 +19989,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>X equals the number of other <b>Ranged Attack</b> units you have in play</p>',
-		releases: { 'Valor and Treachery': 38 }
+		releases: { VT: 38 }
 	},
 	{
 		name: 'A Murder of Spites',
@@ -19977,7 +20000,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		text: '<p>Wood Elf Only</p><p> <b>WarCry</b>: This unit gets +d6 strength. If this roll is 5 or higher, destroy this unit at the end of the combat.</p>',
-		releases: { 'Valor and Treachery': 39 }
+		releases: { VT: 39 }
 	},
 	{
 		name: 'Bow of Loren',
@@ -19988,7 +20011,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Attachment',
 		text: '<p>Wood Elf Only</p><p>This unit has <b>Ranged Attack</b>: 4</p><p> <b>Command</b>: Once per battle, this unit may make a ranged attack and does not commit after the combat.</p>',
-		releases: { 'Valor and Treachery': 40 }
+		releases: { VT: 40 }
 	},
 	{
 		name: 'Athel Loren Territories',
@@ -19998,7 +20021,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Command',
 		text: '<p><b>Reaction</b> Discard 1 card: After your Wood Elf unit wins a ranged attack, destroy the enemy unit.</p>',
-		releases: { 'Valor and Treachery': 41 }
+		releases: { VT: 41 }
 	},
 	{
 		name: 'Point Blank Fighting',
@@ -20008,7 +20031,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b>: After your Wood Elf unit gets a ranged attack bonus, raise your strength by double that amount. Only playable while your Wood Elf unit is losing a combat.</p>',
-		releases: { 'Valor and Treachery': 42 }
+		releases: { VT: 42 }
 	},
 	{
 		name: 'Rally Behind the Arrows',
@@ -20018,7 +20041,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Reaction',
 		text: '<p><b>Spell Reaction</b> Remove this card from the game (2): After your unit destroys a unit during a <b>Ranged Attack</b>, rally one of your units.</p>',
-		releases: { 'Valor and Treachery': 43 }
+		releases: { VT: 43 }
 	},
 	{
 		name: 'Seize the Battle',
@@ -20028,7 +20051,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Command',
 		text: '<p> <b>Command</b>: Play 2 strategy cards. If this is your first command play 3 strategy cards.</p>',
-		releases: { 'Valor and Treachery': 44 }
+		releases: { VT: 44 }
 	},
 	{
 		name: 'Strength in the Bow',
@@ -20039,7 +20062,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This unit with a <b>Ranged Attack</b> gets +2 strength.</p>',
-		releases: { 'Valor and Treachery': 45 }
+		releases: { VT: 45 }
 	},
 	{
 		name: 'Strength in the Woods',
@@ -20050,7 +20073,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each terrain card you have in play.</p>',
-		releases: { 'Valor and Treachery': 46 }
+		releases: { VT: 46 }
 	},
 	{
 		name: 'Taking Aim from on High',
@@ -20060,7 +20083,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Command',
 		text: '<p><b>Reaction</b>: After you pass as a command, draw 1 card. Only playable while you have a ready ranged attack unit.</p>',
-		releases: { 'Valor and Treachery': 47 }
+		releases: { VT: 47 }
 	},
 	{
 		name: 'Tighten the Ranks',
@@ -20071,7 +20094,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: Your unit gets +1 ranged attack for every unit you have in play. The enemy unit gets +1 strength for every unit they have in play.</p>',
-		releases: { 'Valor and Treachery': 48 }
+		releases: { VT: 48 }
 	},
 	{
 		name: 'Woodlands',
@@ -20081,7 +20104,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Command',
 		text: '<p><b>Spell Support Tactic</b> (2): Your attacking unit gets +2 strength or +2 ranged attack.</p>',
-		releases: { 'Valor and Treachery': 49 }
+		releases: { VT: 49 }
 	},
 	{
 		name: 'Zevael, Greater Daemon of Khorne',
@@ -20096,7 +20119,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Victory</b>: +2</p><p><b>Terror</b>: 3</p><p>Neither player may play spell cards or abilities while this unit is in a combat.</p><p><b>Reaction</b>: After this unit or the enemy unit in combat with this unit gets a strength bonus, increase that bonus by 2 or reduce that bonus to 1, your choice.</p>',
-		releases: { 'Swords of Retribution': 1 }
+		releases: { SR: 1 }
 	},
 	{
 		name: "Bilerot's Marauders",
@@ -20110,7 +20133,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Commit or destroy this unit: Draw 1 card. You may use this ability while committed.</p>',
-		releases: { 'Swords of Retribution': 2 }
+		releases: { SR: 2 }
 	},
 	{
 		name: "C'ulvan the Decayed",
@@ -20125,7 +20148,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +25</p><p>This unit may not attack (including ranged attacks), block, or follow-up. This unit does not commit after it wins a combat.</p><p>After mustering this unit destroy all of your other units in play (you get the gold back for those destroyed units and attachments). You may not muster units or bring other units into play. This unit may only enter play during the muster phase.</p>',
-		releases: { 'Swords of Retribution': 3 }
+		releases: { SR: 3 }
 	},
 	{
 		name: "C'ulvan's Chosen",
@@ -20139,7 +20162,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: -5</p><p><b>Combat Tactic</b>: This unit gets a number of +1 victory tokens equal to the enemy unit\'s "<b>Victory</b>" bonus.</p>',
-		releases: { 'Swords of Retribution': 4 }
+		releases: { SR: 4 }
 	},
 	{
 		name: "C'ulvan's Pestilence Swarm",
@@ -20153,7 +20176,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p>This unit may attack the enemy's reserves.</p>",
-		releases: { 'Swords of Retribution': 5 }
+		releases: { SR: 5 }
 	},
 	{
 		name: 'Plague Bearers',
@@ -20167,7 +20190,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 1</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to it\'s "<b>Terror</b>".</p>',
-		releases: { 'Swords of Retribution': 6 }
+		releases: { SR: 6 }
 	},
 	{
 		name: "Tai'Ir the Putrid",
@@ -20181,7 +20204,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your Daemon unit gets +2 strength if this unit passes a leadership test.</p>',
-		releases: { 'Swords of Retribution': 7 }
+		releases: { SR: 7 }
 	},
 	{
 		name: 'Kurlon the Rotten, Trumpeter of Decay',
@@ -20192,7 +20215,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>Chaos Only</p><p><b>Support WarCry</b>: Your Chaos unit gets +3 strength. Only playable if you have a Daemon unit and a Beastman unit in play.</p>',
-		releases: { 'Swords of Retribution': 8 }
+		releases: { SR: 8 }
 	},
 	{
 		name: 'Plague Banner',
@@ -20204,7 +20227,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p><b>Support Tactic</b>: Roll. Subtract this roll from the enemy unit's strength. You do not make a combat roll.</p><p><b>Reaction</b>: If the enemy's strength plus combat roll total is less than 1, rout the enemy unit.</p>",
-		releases: { 'Swords of Retribution': 9 }
+		releases: { SR: 9 }
 	},
 	{
 		name: 'Khron Nightglade',
@@ -20218,7 +20241,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b>: When one of your card effects calls for an enemy to discard a card, they must discard a random card instead.</p>',
-		releases: { 'Swords of Retribution': 10 }
+		releases: { SR: 10 }
 	},
 	{
 		name: "Blackspear's Sacrificers",
@@ -20232,7 +20255,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Once per battle, target an enemy unit. If that unit is still in play at the end of the battle, it must be carried over.</p>',
-		releases: { 'Swords of Retribution': 11 }
+		releases: { SR: 11 }
 	},
 	{
 		name: 'Death Reapers',
@@ -20247,7 +20270,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b> Destroy this unit: This combat ends in a slaughter.</p>',
-		releases: { 'Swords of Retribution': 12 }
+		releases: { SR: 12 }
 	},
 	{
 		name: 'Death Swords',
@@ -20261,7 +20284,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each of your Dark Elf infantry units.</p>',
-		releases: { 'Swords of Retribution': 13 }
+		releases: { SR: 13 }
 	},
 	{
 		name: "Ha'asek's Blackswords",
@@ -20275,7 +20298,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Reaction</b>: If you played an ability which could create a slaughter and that ability offers a way to negate the slaughter with an another effect, if your enemy did not negate the slaughter, raise this unit's strength to equal the enemy unit's strength.</p><p>Only playable while this unit is attacking.</p>",
-		releases: { 'Swords of Retribution': 14 }
+		releases: { SR: 14 }
 	},
 	{
 		name: 'Nordhil Blackspear',
@@ -20290,7 +20313,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b> Destroy any number of your units: Before you muster this unit, reduce the gold cost of this unit by the gold cost of the destroyed units and attachments.</p><p><b>Reaction</b>: After your Dark Elf unit wins a combat, it may make a rout check to make a follow-up attack. Your enemy may discard 2 cards to negate this effect.</p>',
-		releases: { 'Swords of Retribution': 15 }
+		releases: { SR: 15 }
 	},
 	{
 		name: 'Ryna Bloodraven',
@@ -20305,7 +20328,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After you muster this unit make a leadership test. If passed, destroy one of your enemy's unique units. Your enemy receives gold equal to the destroyed units gold cost plus the gold cost of any attachments.</p><p>That player may continue to muster, and neither player may muster another copy of that unit this muster phase.</p>",
-		releases: { 'Swords of Retribution': 16 }
+		releases: { SR: 16 }
 	},
 	{
 		name: 'Hydra Banner',
@@ -20318,7 +20341,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>Dark Elf Only</p><p><b>Reaction</b>: Before the attacker plays his first tactic in a combat with this unit, this unit may play a tactic. Only playable as the defender.</p>',
-		releases: { 'Swords of Retribution': 17 }
+		releases: { SR: 17 }
 	},
 	{
 		name: 'Khardil, Herald of Naggaroth',
@@ -20330,7 +20353,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>Dark Elf Only</p><p><b>Support WarCry</b>: Your Dark Elf unit gets +2 strength if you control more units with support tactics and attachments with support tactics than your enemy.</p>',
-		releases: { 'Swords of Retribution': 18 }
+		releases: { SR: 18 }
 	},
 	{
 		name: 'Vorott the Masher',
@@ -20345,7 +20368,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Victory</b>: -4</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your other units with a printed strength greater than their gold cost.</p><p><b>Reaction</b> Discard 1 card: When an enemy unit gets a strength bonus greater than it's gold cost, destroy that unit. Your unit may make a follow-up attack after this combat is completed.</p>",
-		releases: { 'Swords of Retribution': 19 },
+		releases: { SR: 19 },
 		banned: true
 	},
 	{
@@ -20360,7 +20383,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your Orc unit gets +2 tactic points if it has more strength than tactic points.</p>',
-		releases: { 'Swords of Retribution': 20 }
+		releases: { SR: 20 }
 	},
 	{
 		name: "Grubbi's Goblin Elfsnappers",
@@ -20374,7 +20397,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you take a command that is not an attack with this unit, place a token on this unit.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each token on this unit. Remove all tokens from this unit.</p>',
-		releases: { 'Swords of Retribution': 21 }
+		releases: { SR: 21 }
 	},
 	{
 		name: "Urguck's 'Eadloppas",
@@ -20388,7 +20411,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p> <b>WarCry</b>: Roll. Commit the enemy unit if the roll is equal to or greater than the enemy's strength.</p>",
-		releases: { 'Swords of Retribution': 22 }
+		releases: { SR: 22 }
 	},
 	{
 		name: "Urguck's Manstompas",
@@ -20402,7 +20425,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit has +1 strength for each of your other Orc units.</p>',
-		releases: { 'Swords of Retribution': 23 }
+		releases: { SR: 23 }
 	},
 	{
 		name: "Urguck's Sneaky Shootaz",
@@ -20416,7 +20439,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 5</p><p><b>Support Tactic</b>: Play the WarCry or combat tactic printed on one of your Orc units in the current combat, paying all costs, even if that ability has already been played.</p>',
-		releases: { 'Swords of Retribution': 24 }
+		releases: { SR: 24 }
 	},
 	{
 		name: 'Vagar Dwarfstomper',
@@ -20431,7 +20454,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: -4</p><p><b>Reaction</b>: After this unit is mustered, destroy all other units in play. Both players get all of the gold back for all units and attachments destroyed and may continue mustering.</p>',
-		releases: { 'Swords of Retribution': 25 },
+		releases: { SR: 25 },
 		banned: true
 	},
 	{
@@ -20443,7 +20466,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Support WarCry</b>: If your Orc unit wins the combat, rout the enemy unit. May not be played during a follow-up attack.</p>',
-		releases: { 'Swords of Retribution': 26 }
+		releases: { SR: 26 }
 	},
 	{
 		name: 'Raggedy Banner',
@@ -20456,7 +20479,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>Orc Only</p><p>Your Orc units get +1 leadership.</p>',
-		releases: { 'Swords of Retribution': 27 }
+		releases: { SR: 27 }
 	},
 	{
 		name: 'War Banner',
@@ -20467,7 +20490,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>While this unit is ready all of your combat rolls get +1.</p>',
-		releases: { 'Swords of Retribution': 28 }
+		releases: { SR: 28 }
 	},
 	{
 		name: 'All We Have to Give',
@@ -20479,7 +20502,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit with no printed abilities or text in their text box gets +3 strength.</p>',
-		releases: { 'Swords of Retribution': 29 }
+		releases: { SR: 29 }
 	},
 	{
 		name: 'Altered Orders',
@@ -20491,7 +20514,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This attacking unit gets +2 strength.</p><p> <b>WarCry</b>: This attacking unit gets +4 strength.</p>',
-		releases: { 'Swords of Retribution': 30 }
+		releases: { SR: 30 }
 	},
 	{
 		name: 'Altered Strategies',
@@ -20503,7 +20526,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This attacking unit gets +3 strength.</p><p> <b>WarCry</b>: This attacking unit gets +5 strength.</p>',
-		releases: { 'Swords of Retribution': 31 }
+		releases: { SR: 31 }
 	},
 	{
 		name: "I'm Coming for You",
@@ -20515,7 +20538,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. If you win this combat and rout the enemy unit, you may select the target for your follow-up attack.</p>',
-		releases: { 'Swords of Retribution': 32 }
+		releases: { SR: 32 }
 	},
 	{
 		name: 'Last Ditch Effort (SR)',
@@ -20526,7 +20549,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Super rare',
 		text: '<p><b>Reaction</b>: After you resolve a command, take another command. After the second command you may not declare any more attacks without a card effect this battle.</p>',
-		releases: { 'Swords of Retribution': 33 }
+		releases: { SR: 33 }
 	},
 	{
 		name: 'Altered Tactics',
@@ -20538,7 +20561,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This attacking unit gets +1 strength.</p><p> <b>WarCry</b>: This attacking unit gets +3 strength.</p>',
-		releases: { 'Swords of Retribution': 34 }
+		releases: { SR: 34 }
 	},
 	{
 		name: 'Applied Knowledge',
@@ -20550,7 +20573,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 to one of their Macro abilities (I.e. <b>Scout</b>, <b>Terror</b>, <b>Wizard</b>, etc.) except <b>Ranged Attack</b>.</p>',
-		releases: { 'Swords of Retribution': 35 }
+		releases: { SR: 35 }
 	},
 	{
 		name: 'Change in the Currents',
@@ -20561,7 +20584,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: When you are paying the spell point cost of a spell ability, reduce that cost by 1 (minimum 0).</p>',
-		releases: { 'Swords of Retribution': 36 }
+		releases: { SR: 36 }
 	},
 	{
 		name: 'Changes in the Plan of Attack',
@@ -20572,7 +20595,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After you have played an ability to force your enemy to discard one or more cards during a combat, and your enemy has no cards in hand at that time, your unit gets +2 strength for each card that should have been discarded.</p>',
-		releases: { 'Swords of Retribution': 37 }
+		releases: { SR: 37 }
 	},
 	{
 		name: 'Clarity in the Veteran',
@@ -20583,7 +20606,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your units has played a WarCry ability in a combat, that unit gets +3 tactic points.</p>',
-		releases: { 'Swords of Retribution': 38 }
+		releases: { SR: 38 }
 	},
 	{
 		name: 'Empowerment',
@@ -20594,7 +20617,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>Either player may use the following ability:</p><p><b>Spell Support Tactic</b> (2): Place the top card of your deck in your discard pile. Your unit gets a strength bonus equal to the die of the card.</p>',
-		releases: { 'Swords of Retribution': 39 }
+		releases: { SR: 39 }
 	},
 	{
 		name: 'End Game Maneuvering',
@@ -20606,7 +20629,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals the number of your action cards that are removed from the game.</p>',
-		releases: { 'Swords of Retribution': 40 }
+		releases: { SR: 40 }
 	},
 	{
 		name: 'Extended to Your Limits',
@@ -20617,7 +20640,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After your unit gets a strength bonus from a combat tactic (or WarCry) ability printed on their card, the loser of this battle is automatically routed (no roll needed).</p>',
-		releases: { 'Swords of Retribution': 41 }
+		releases: { SR: 41 }
 	},
 	{
 		name: 'Quick Strike',
@@ -20628,7 +20651,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: When a unit gets a bonus from a WarCry ability, that bonus is doubled. You may not further increase this bonus.</p>',
-		releases: { 'Swords of Retribution': 42 }
+		releases: { SR: 42 }
 	},
 	{
 		name: 'Fill the Gaps in the Line',
@@ -20639,7 +20662,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your units has been destroyed during a combat (before combat resolution), put one of your units into the combat to replace that unit. The combat continues as normal; any previous routing effects are ignored.</p>',
-		releases: { 'Swords of Retribution': 43 }
+		releases: { SR: 43 }
 	},
 	{
 		name: 'Forest',
@@ -20650,7 +20673,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>All ranged attack units in play have +2 to their <b>Ranged Attack</b> rating.</p>',
-		releases: { 'Swords of Retribution': 44 }
+		releases: { SR: 44 }
 	},
 	{
 		name: 'Fortune on the Winds',
@@ -20661,7 +20684,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>When an effect\'s cost calls for either player to spend "X" spell points, each spell point spent counts as two spell points.</p>',
-		releases: { 'Swords of Retribution': 45 }
+		releases: { SR: 45 }
 	},
 	{
 		name: 'Full Pull and Release',
@@ -20673,7 +20696,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: This unit gets +X <b>Ranged Attack</b>. X equals this unit's strength.</p>",
-		releases: { 'Swords of Retribution': 46 }
+		releases: { SR: 46 }
 	},
 	{
 		name: 'Get It Right This Time',
@@ -20685,7 +20708,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the number of copies of this unit in your army discard pile.</p>',
-		releases: { 'Swords of Retribution': 47 }
+		releases: { SR: 47 }
 	},
 	{
 		name: 'Herd of Wild Horses',
@@ -20696,7 +20719,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All infantry units have their "Infantry" keyword replaced with "Cavalry".</p>',
-		releases: { 'Swords of Retribution': 48 }
+		releases: { SR: 48 }
 	},
 	{
 		name: 'Herd of Wild Pegasi',
@@ -20707,7 +20730,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>All cavalry units have their "Cavalry" keyword replaced with "Flyer".</p>',
-		releases: { 'Swords of Retribution': 49 }
+		releases: { SR: 49 }
 	},
 	{
 		name: 'Influence Fate',
@@ -20718,7 +20741,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (1): After a roll is made that roll gets +1 or -1. Only playable if you have a <b>Wizard</b> unit in play.</p>',
-		releases: { 'Swords of Retribution': 50 }
+		releases: { SR: 50 }
 	},
 	{
 		name: 'Ingrained Tactics',
@@ -20730,7 +20753,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit gets +3 strength. You may place this card on top of your action deck instead of placing it in your discard pile at the end of the combat.</p>',
-		releases: { 'Swords of Retribution': 51 }
+		releases: { SR: 51 }
 	},
 	{
 		name: "Jasenland's Probing Tactics",
@@ -20742,7 +20765,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Your unit gets +2 strength.</p><p> <b>WarCry</b>: Your unit gets +2 strength and your enemy must reveal two random cards from their hand.</p>',
-		releases: { 'Swords of Retribution': 52 }
+		releases: { SR: 52 }
 	},
 	{
 		name: 'Lead by Example',
@@ -20754,7 +20777,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Play the combat tactic or WarCry on one of your character attachments.</p>',
-		releases: { 'Swords of Retribution': 53 }
+		releases: { SR: 53 }
 	},
 	{
 		name: 'Lessons Learned',
@@ -20765,7 +20788,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>You may put this card into play as a WarCry for 2 tactic points.</p><p><b>Support Tactic</b>: Your unit that has played a WarCry on an action card gets +2 strength.</p>',
-		releases: { 'Swords of Retribution': 54 }
+		releases: { SR: 54 }
 	},
 	{
 		name: 'Master of the Battlefield',
@@ -20777,7 +20800,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Play the combat tactic or WarCry on one of this unit's weapon or item attachments, paying all costs.</p>",
-		releases: { 'Swords of Retribution': 55 }
+		releases: { SR: 55 }
 	},
 	{
 		name: 'Maximise Resources',
@@ -20788,7 +20811,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>When an effect\'s cost calls for either player to "discard X cards," each card discarded counts as two cards.</p>',
-		releases: { 'Swords of Retribution': 56 }
+		releases: { SR: 56 }
 	},
 	{
 		name: 'Misguided Tactics',
@@ -20799,7 +20822,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Target a unit and name an army keyword. Until the end of the battle, that unit has the named army keyword.</p>',
-		releases: { 'Swords of Retribution': 57 }
+		releases: { SR: 57 }
 	},
 	{
 		name: 'Moving On',
@@ -20810,7 +20833,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: "<p><b>Reaction</b>: After your enemy's unit in the combat has been destroyed during the combat (before combat resolution), that unit is considered routed and you may make a follow-up attack.</p>",
-		releases: { 'Swords of Retribution': 58 }
+		releases: { SR: 58 }
 	},
 	{
 		name: 'Never Stop',
@@ -20822,7 +20845,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. If you win this combat, you may return this card to your hand instead of discarding it.</p>',
-		releases: { 'Swords of Retribution': 59 }
+		releases: { SR: 59 }
 	},
 	{
 		name: 'Nothing Left',
@@ -20832,7 +20855,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After you have played an action card or ability that reduces an enemy unit's leadership below 0 during a combat, destroy that unit. Your unit may make a follow-up attack. Remove this card from the game.</p>",
-		releases: { 'Swords of Retribution': 60 }
+		releases: { SR: 60 }
 	},
 	{
 		name: 'Nothing Saved',
@@ -20844,7 +20867,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength and your unit may play tactics as if they were in a follow-up attack.</p>',
-		releases: { 'Swords of Retribution': 61 }
+		releases: { SR: 61 }
 	},
 	{
 		name: 'Plan Twice, Attack Once',
@@ -20855,7 +20878,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After you put a strategy card into play (as a command), you may declare an attack.</p>',
-		releases: { 'Swords of Retribution': 62 }
+		releases: { SR: 62 }
 	},
 	{
 		name: 'Power Drain',
@@ -20866,7 +20889,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Spell Reaction</b> (X): When a player is paying a spell point cost, that player must pay X additional spell points or the spell is negated.</p>',
-		releases: { 'Swords of Retribution': 63 }
+		releases: { SR: 63 }
 	},
 	{
 		name: 'Rally to the Banner',
@@ -20878,7 +20901,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit with an attached standard may not be routed.</p>',
-		releases: { 'Swords of Retribution': 64 }
+		releases: { SR: 64 }
 	},
 	{
 		name: 'Recon Reports',
@@ -20890,7 +20913,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Name a number of cards equal to the number of cards in your enemy's hand. You may then look at your enemy's hand. This unit gets a strength bonus equal to the number of named cards that were in that hand</p><p>(duplicate cards need to be named in multiple).</p>",
-		releases: { 'Swords of Retribution': 65 }
+		releases: { SR: 65 }
 	},
 	{
 		name: 'Redistribution',
@@ -20901,7 +20924,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Move all of your tokens from one of your units to another of your units.</p>',
-		releases: { 'Swords of Retribution': 66 }
+		releases: { SR: 66 }
 	},
 	{
 		name: 'Sacred Ground',
@@ -20912,7 +20935,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All units have -1 strength and <b>Victory</b>:+2.</p><p>Destroy this strategy if another copy of it enters play.</p>',
-		releases: { 'Swords of Retribution': 67 }
+		releases: { SR: 67 }
 	},
 	{
 		name: 'Shift in Power',
@@ -20923,7 +20946,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>You may put this card into play as a WarCry for 2 tactic points.</p><p>All units have their strength reduced by 1 (minimum 0) while in a combat.</p>',
-		releases: { 'Swords of Retribution': 68 }
+		releases: { SR: 68 }
 	},
 	{
 		name: 'Stand Together as One',
@@ -20934,7 +20957,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: Each player chooses a unit in their battle line. Both units receive a strength bonus equal to the chosen unit's strength.</p>",
-		releases: { 'Swords of Retribution': 69 }
+		releases: { SR: 69 }
 	},
 	{
 		name: 'Strategies of Sacrifice',
@@ -20945,7 +20968,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>Either player may use the following ability any number of times per trigger effect.</p><p><b>Reaction</b>: When a unit is paying the tactic point cost of a card, that player may reduce the strength of their unit by 1 (if their unit has at least 1 strength) to reduce the tactic point cost by 1 (minimum 0).</p>',
-		releases: { 'Swords of Retribution': 70 }
+		releases: { SR: 70 }
 	},
 	{
 		name: 'Supply Line Confusion',
@@ -20957,7 +20980,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Combat Tactic</b>: Move one of your enemy's attachments from one of their units to another of their legal ready units.</p>",
-		releases: { 'Swords of Retribution': 71 }
+		releases: { SR: 71 }
 	},
 	{
 		name: 'Sweeping Flank',
@@ -20968,7 +20991,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b>: Declare an attack with one of your ready infantry units in your reserves.</p>',
-		releases: { 'Swords of Retribution': 72 }
+		releases: { SR: 72 }
 	},
 	{
 		name: 'Take Their Place',
@@ -20979,7 +21002,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After you have committed an enemy unit with a card effect during a combat tactic phase, move any unit you have in the combat to your battle line ready and then move one of your other units into the combat.</p>',
-		releases: { 'Swords of Retribution': 73 }
+		releases: { SR: 73 }
 	},
 	{
 		name: 'Test of Faith',
@@ -20991,7 +21014,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit makes a number of leadership tests equal to the number of units with "<b>Faith</b>" you have in play. This unit gets +X strength. X equals the number of leadership tests passed.</p>',
-		releases: { 'Swords of Retribution': 74 }
+		releases: { SR: 74 }
 	},
 	{
 		name: 'Test of Will',
@@ -21003,7 +21026,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (2): Both units have their tactic points reduced to 0. Each unit (starting with the attacker) makes a number of leadership tests equal to the number of tactic points lost. Units gets +X strength.</p><p>X equals the number of leadership tests passed.</p>',
-		releases: { 'Swords of Retribution': 75 }
+		releases: { SR: 75 }
 	},
 	{
 		name: 'Testing Fate',
@@ -21014,7 +21037,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After a unit rolls for their combat roll and the result is less than 1, that unit automatically loses the combat.</p>',
-		releases: { 'Swords of Retribution': 76 }
+		releases: { SR: 76 }
 	},
 	{
 		name: 'The Face of Horror',
@@ -21026,7 +21049,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit with "<b>Terror</b>" gets X+2 strength. X equals this units "<b>Terror</b>" rating.</p>',
-		releases: { 'Swords of Retribution': 77 }
+		releases: { SR: 77 }
 	},
 	{
 		name: 'The Price Has Been Paid',
@@ -21037,7 +21060,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Spell Reaction</b> Discard 1 card (2): After paying the cost of an effect that requires destroying one of your units, that destroyed unit is placed in your reserves committed. Remove this card from the game.</p>',
-		releases: { 'Swords of Retribution': 78 }
+		releases: { SR: 78 }
 	},
 	{
 		name: 'Tightened Ranks',
@@ -21048,7 +21071,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All units have the ability: "<b>Support Tactic</b>: Your unit gets +1 leadership."</p>',
-		releases: { 'Swords of Retribution': 79 }
+		releases: { SR: 79 }
 	},
 	{
 		name: 'Troubles Come Not Single Spies',
@@ -21059,7 +21082,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After a unit gets a token, that unit gets another token of the same type.</p>',
-		releases: { 'Swords of Retribution': 80 }
+		releases: { SR: 80 }
 	},
 	{
 		name: 'Unexpected Backlash',
@@ -21070,7 +21093,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: "<p><b>Spell Reaction</b> (3): After your enemy pays the cost of a spell effect, roll:</p><p>1 or less: Your opponent's spell gets played as normal, then again without costs.</p><p>2-5: The spell is negated.</p><p>6: The spell is negated and then you may commit one enemy unit</p><p>7+: The spell is negated and you may destroy one enemy unit.</p>",
-		releases: { 'Swords of Retribution': 81 }
+		releases: { SR: 81 }
 	},
 	{
 		name: 'Unexpected Tactics',
@@ -21082,7 +21105,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This infantry unit gets +3 strength and if this unit wins the combat the enemy unit is routed (no roll needed). Only playable when attacking from the reserves.</p>',
-		releases: { 'Swords of Retribution': 82 }
+		releases: { SR: 82 }
 	},
 	{
 		name: 'Watch and Learn',
@@ -21094,7 +21117,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit with a character attached gets +2 strength, +2 tactic points and +2 leadership.</p>',
-		releases: { 'Swords of Retribution': 83 }
+		releases: { SR: 83 }
 	},
 	{
 		name: 'Weaken the Ranks',
@@ -21105,7 +21128,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After you have committed a unit with a <b>Long Ranged Attack</b> or a <b>Short Ranged Attack</b>, declare a non-ranged attack with one of your other ready units. That unit gets +2 strength for the duration of the combat.</p>',
-		releases: { 'Swords of Retribution': 84 }
+		releases: { SR: 84 }
 	},
 	{
 		name: 'When We Need It the Most',
@@ -21117,7 +21140,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p>If this card is placed in the discard pile from the top of your deck (via a roll or other card effect) you may place this card in your hand.</p><p><b>Combat Tactic</b>: Your unit gets +2 strength.</p>',
-		releases: { 'Swords of Retribution': 85 }
+		releases: { SR: 85 }
 	},
 	{
 		name: 'You Get What You Invest In',
@@ -21128,7 +21151,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: When one of your units with a gold cost greater than 6 declares an attack, you may name any two action cards <span class="errata">other than this card</span> and search your deck and discard pile for those cards (shuffling the discard pile into the deck when you are done) and add those cards to your hand.</p>',
-		releases: { 'Swords of Retribution': 86 },
+		releases: { SR: 86 },
 		errata: true
 	},
 	{
@@ -21143,7 +21166,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may not attack. Ready units may block attacks on this unit.</p><p><b>Support Tactic</b>: Your unit gets +1 ranged attack.</p>',
-		releases: { 'Swords of Retribution': 87 }
+		releases: { SR: 87 }
 	},
 	{
 		name: 'Dark Emissary',
@@ -21158,7 +21181,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Support Tactic</b> (1): Your unit gets "<b>Terror</b>: 2".</p>',
-		releases: { 'Swords of Retribution': 88 }
+		releases: { SR: 88 }
 	},
 	{
 		name: 'Earthworks',
@@ -21172,7 +21195,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may not attack. Ready units in your battle line may block an attack targeting this unit.</p><p>Your battle line units get <b>Scout</b>: 1.</p>',
-		releases: { 'Swords of Retribution': 89 }
+		releases: { SR: 89 }
 	},
 	{
 		name: 'Ebonfang',
@@ -21187,7 +21210,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Your Dogs of War unit gets +2 strength. If your unit loses this combat, commit this unit.</p>',
-		releases: { 'Swords of Retribution': 90 }
+		releases: { SR: 90 }
 	},
 	{
 		name: 'Furgut',
@@ -21201,7 +21224,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Terror</b>: 1</p><p>While this unit is in combat, your enemy may not play abilities or cards without cost.</p>',
-		releases: { 'Swords of Retribution': 91 }
+		releases: { SR: 91 }
 	},
 	{
 		name: "Morrigan's Mercenaries",
@@ -21215,7 +21238,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>After set up, any player with more gold in play than was prescribed by the battle (I.e. 20 in the 1st, 25 in the 2nd, etc.), must destroy any number of units and/or attachments so that they have less gold in play than was prescribed by the battle.</p>',
-		releases: { 'Swords of Retribution': 92 }
+		releases: { SR: 92 }
 	},
 	{
 		name: 'Truthsayer',
@@ -21230,7 +21253,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Support Tactic</b> (2): Your unit gets a +1 strength token.</p>',
-		releases: { 'Swords of Retribution': 93 }
+		releases: { SR: 93 }
 	},
 	{
 		name: 'Varadin Redbeard',
@@ -21245,7 +21268,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p>Spell Supprt Tactic (1): Your war machine unit gets +2 strength.</p><p><b>Spell WarCry</b> (2): If this unit wins the combat this unit is not committed, but it may not make a follow-up attack. Only playable while defending.</p>',
-		releases: { 'Swords of Retribution': 94 }
+		releases: { SR: 94 }
 	},
 	{
 		name: "Barak's Ironbeards",
@@ -21259,7 +21282,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you play a strategy card, this unit gets a +1 strength token.</p>',
-		releases: { 'Swords of Retribution': 95 }
+		releases: { SR: 95 }
 	},
 	{
 		name: 'Dokkenrok Whitebeard',
@@ -21274,7 +21297,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p><b>Support Tactic</b>: Put a spell token on this unit.</p><p> <b>WarCry</b>: This unit gets a strength bonus equal to the number of spell tokens on this unit.</p>',
-		releases: { 'Swords of Retribution': 96 }
+		releases: { SR: 96 }
 	},
 	{
 		name: "Grimjaw's Drillers",
@@ -21288,7 +21311,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Attach an attachment from your discard pile to this unit. Only playable if you have less gold in play then prescribed by the battle.</p>',
-		releases: { 'Swords of Retribution': 97 }
+		releases: { SR: 97 }
 	},
 	{
 		name: "Grimjaw's Flying Cannons",
@@ -21302,7 +21325,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Short Ranged Attack</b>: 4</p><p><b>Reaction</b>: After this unit is mustered, name one action card. Search your opponent's deck and discard pile for all copies of that card and remove them from the game until the end of the battle. Shuffle your enemy's discard pile into their deck.</p>",
-		releases: { 'Swords of Retribution': 98 }
+		releases: { SR: 98 }
 	},
 	{
 		name: "Grimjaw's Grudgebearers",
@@ -21316,7 +21339,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your unit gets +2 strength. Only playable if this unit has a standard attached.</p>',
-		releases: { 'Swords of Retribution': 99 }
+		releases: { SR: 99 }
 	},
 	{
 		name: "Makaisson's Bellows",
@@ -21330,7 +21353,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: +X</p><p><b>Short Ranged Attack</b>: 6</p><p>X equals the number of units with attachments you have in play.</p>',
-		releases: { 'Swords of Retribution': 100 }
+		releases: { SR: 100 }
 	},
 	{
 		name: 'Bolok Rocksmasher, Drummer of Karaz-a-Karak',
@@ -21341,7 +21364,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>Dwarf Only</p><p><b>Support WarCry</b>: Your Dwarf unit gets +3 strength. Only playable if you have a war machine and a fortification in play.</p>',
-		releases: { 'Swords of Retribution': 101 }
+		releases: { SR: 101 }
 	},
 	{
 		name: 'Standard of Taunting',
@@ -21353,7 +21376,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>Dwarf Only</p><p><b>Victory</b>: +1</p><p><b>Reaction</b>: After set-up, choose one enemy unit. That unit must attack this unit as your enemies first command (if it may). Your enemy may commit the chosen unit to negate this effect.</p>',
-		releases: { 'Swords of Retribution': 102 }
+		releases: { SR: 102 }
 	},
 	{
 		name: 'Axelbrand Rainultz',
@@ -21367,7 +21390,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell WarCry</b> (X): Look at your enemy's hand. If the total sum of the dice on the cards in their hand is equal to or less than X, the enemy unit is destroyed and your unit may make a follow-up attack (no rout test needed).</p><p>You may not use this ability in a follow-up attack after a combat in which you used this ability.</p>",
-		releases: { 'Swords of Retribution': 103 }
+		releases: { SR: 103 }
 	},
 	{
 		name: 'Boris Mikhail',
@@ -21381,7 +21404,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Your Kislev unit gets +2 strength. If you lose this combat, commit this unit.</p>',
-		releases: { 'Swords of Retribution': 104 }
+		releases: { SR: 104 }
 	},
 	{
 		name: "Boris's Griffon Legion",
@@ -21395,7 +21418,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may not make follow-up attacks or be selected as the target of a follow-up attack.</p>',
-		releases: { 'Swords of Retribution': 105 }
+		releases: { SR: 105 }
 	},
 	{
 		name: 'Katarin, Bringer of Winter',
@@ -21410,7 +21433,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Veteran</b>: Tzarina Katarin The Ice Queen</p><p><b>Wizard</b>: 2</p><p><b>Spell WarCry</b> (2): Destroy the enemy unit unless it passes a strength test, you may make a rout check against that unit before that unit is destroyed.</p>',
-		releases: { 'Swords of Retribution': 106 }
+		releases: { SR: 106 }
 	},
 	{
 		name: "Katarin's Kossars",
@@ -21424,7 +21447,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p><p> <b>Command</b>: Once per battle, make a <b>Long Ranged Attack</b>: 3 without committing.</p>',
-		releases: { 'Swords of Retribution': 107 }
+		releases: { SR: 107 }
 	},
 	{
 		name: "Katarin's Lancers",
@@ -21438,7 +21461,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit gets +4 strength vs. infantry</p>',
-		releases: { 'Swords of Retribution': 108 }
+		releases: { SR: 108 }
 	},
 	{
 		name: 'Tzar Brodski',
@@ -21452,7 +21475,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your unit plays a tactic, it gets +1 strength. Only playable if your unit is losing a combat.</p>',
-		releases: { 'Swords of Retribution': 109 }
+		releases: { SR: 109 }
 	},
 	{
 		name: 'Banner of Ursun',
@@ -21464,7 +21487,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>Empire Only</p><p><b>Reaction</b>: When this unit targeted for an attack, the attacking unit must pass a leadership test. If the test is not passed, the enemy player must target another legal unit for the attack (if one exists) or forfeit their command (this is not considered "passing").</p>',
-		releases: { 'Swords of Retribution': 110 }
+		releases: { SR: 110 }
 	},
 	{
 		name: 'Mikhail Alekhsko',
@@ -21475,7 +21498,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>Empire Only</p><p><b>Support WarCry</b>: Play 2 support tactics printed on your Empire units, paying all costs.</p>',
-		releases: { 'Swords of Retribution': 111 }
+		releases: { SR: 111 }
 	},
 	{
 		name: 'Glorenlil Suregrace',
@@ -21490,7 +21513,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Support Tactic</b> Discard 1 card: Your High Elf unit gets +2 tactic points. Only playable if your High Elf unit has at least 1 tactic point.</p><p> <b>Command</b>: Once per battle, put a strategy card from your discard pile into play. You may then immediately declare an attack with one of your units.</p>',
-		releases: { 'Swords of Retribution': 112 }
+		releases: { SR: 112 }
 	},
 	{
 		name: 'Aethrilmar, Prince of Ulthuan',
@@ -21505,7 +21528,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b> Commit one of your ranged attack units: This unit gets a strength bonus equal to that unit's <b>Ranged Attack</b>.</p>",
-		releases: { 'Swords of Retribution': 113 }
+		releases: { SR: 113 }
 	},
 	{
 		name: 'Eldorion Brightwood',
@@ -21519,7 +21542,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell WarCry</b> (X): This unit gets +X strength.</p>',
-		releases: { 'Swords of Retribution': 114 }
+		releases: { SR: 114 }
 	},
 	{
 		name: 'Swiftstrike',
@@ -21533,7 +21556,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Long Ranged Attack</b>: 7</p><p><b>Support Tactic</b>: Put a +1 strength token on one of your units. Only playable during a ranged attack.</p>',
-		releases: { 'Swords of Retribution': 115 }
+		releases: { SR: 115 }
 	},
 	{
 		name: "Whitestar's Defenders",
@@ -21547,7 +21570,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may play cards as if it was attacking.</p>',
-		releases: { 'Swords of Retribution': 116 }
+		releases: { SR: 116 }
 	},
 	{
 		name: "Whitestar's Skirmishers",
@@ -21561,7 +21584,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 1</p><p>While you have more <b>Wizard</b> levels then your enemy, this unit has +3 <b>Scout</b>.</p>',
-		releases: { 'Swords of Retribution': 117 }
+		releases: { SR: 117 }
 	},
 	{
 		name: "Whitestar's Swordmasters",
@@ -21575,7 +21598,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: Before this unit rolls for combat that result is a 6 (no roll is made).</p>',
-		releases: { 'Swords of Retribution': 118 }
+		releases: { SR: 118 }
 	},
 	{
 		name: 'Banner of the World Dragon',
@@ -21587,7 +21610,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>High Elf Only</p><p>This unit may not be chosen or targeted by spell effects generated by your enemy.</p>',
-		releases: { 'Swords of Retribution': 119 }
+		releases: { SR: 119 }
 	},
 	{
 		name: 'Tylith Puresong',
@@ -21598,7 +21621,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>High Elf Only</p><p><b>Support WarCry</b>: Your High Elf unit gets +1 strength. If your High Elf unit has at least twice as many printed tactic points than the enemy unit, it gets +3 strength instead.</p>',
-		releases: { 'Swords of Retribution': 120 }
+		releases: { SR: 120 }
 	},
 	{
 		name: 'Fire As They Come',
@@ -21610,7 +21633,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: This unit gets a strength bonus equal to half of it's ranged attack (rounded down).</p>",
-		releases: { 'War of Attrition': 155 }
+		releases: { WA: 155 }
 	},
 	{
 		name: 'Fire on Them Both',
@@ -21622,7 +21645,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Choose one enemy unit not in this combat. The enemy unit gets a strength and tactic point bonus equal to those of the chosen unit. If you win this combat, the chosen unit suffers the same result as the enemy unit.</p><p>Only playable during a ranged attack by the attacker.</p>',
-		releases: { 'War of Attrition': 156 }
+		releases: { WA: 156 }
 	},
 	{
 		name: 'Leitdorf Manuever',
@@ -21634,7 +21657,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Play a support tactic printed on this unit paying all costs.</p>',
-		releases: { 'War of Attrition': 182 }
+		releases: { WA: 182 }
 	},
 	{
 		name: 'Strike As They Are Falling',
@@ -21646,7 +21669,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength.Draw 1 card.</p>',
-		releases: { 'War of Attrition': 249 }
+		releases: { WA: 249 }
 	},
 	{
 		name: 'Take Up the Charge',
@@ -21657,7 +21680,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After you rout an enemy unit, exchange this unit with one of your other ready units. The new unit performs the follow-up attack.</p>',
-		releases: { 'War of Attrition': 257 }
+		releases: { WA: 257 }
 	},
 	{
 		name: 'The Time Is Not Right',
@@ -21668,7 +21691,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Discard 1 card: Draw 2 cards.</p><p><b>Spell Command</b> (1): All action cards attached to units are discarded.</p>',
-		releases: { 'War of Attrition': 260 }
+		releases: { WA: 260 }
 	},
 	{
 		name: 'The Weak Fall, The Strong Stand',
@@ -21679,7 +21702,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b>: Choose a unit with a strength of 0 (or less). That unit is destroyed.</p>',
-		releases: { 'War of Attrition': 262 }
+		releases: { WA: 262 }
 	},
 	{
 		name: 'Blood Reavers',
@@ -21693,7 +21716,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support Tactic</b>: Any Daemon unit gets +2 tactic points. If your unit loses this combat, destroy this unit.</p>',
-		releases: { 'Hand of Fate': 1 }
+		releases: { HF: 1 }
 	},
 	{
 		name: 'Blood Scythes',
@@ -21707,7 +21730,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Commit: After your enemy gains spell points, those spell points are discarded without effect. Put two +1 strength tokens on any of your units in play.</p>',
-		releases: { 'Hand of Fate': 2 }
+		releases: { HF: 2 }
 	},
 	{
 		name: 'Kurt Virhoch, Chosen of the Blood God',
@@ -21722,7 +21745,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Terror</b>:2</p><p><b>Reaction</b>: After this unit gets a tactic point bonus from a tactic card or ability, add that bonus to this unit's strength instead.</p>",
-		releases: { 'Hand of Fate': 3 }
+		releases: { HF: 3 }
 	},
 	{
 		name: 'Life Drinkers',
@@ -21736,7 +21759,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After a token is put into play, discard another token of your choice.</p>',
-		releases: { 'Hand of Fate': 4 }
+		releases: { HF: 4 }
 	},
 	{
 		name: 'The Blood Sworn',
@@ -21750,7 +21773,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After one of your other Chaos units routs an enemy unit, put a +1 strength token on this unit.</p>',
-		releases: { 'Hand of Fate': 5 }
+		releases: { HF: 5 }
 	},
 	{
 		name: 'The Blooded',
@@ -21764,7 +21787,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: "<p><b>Reaction</b>: After this unit gets a tactic point bonus from a tactic card or ability, add that bonus to this unit's leadership instead.</p>",
-		releases: { 'Hand of Fate': 6 }
+		releases: { HF: 6 }
 	},
 	{
 		name: 'The Skull Taker',
@@ -21778,7 +21801,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. If this unit wins the combat, the enemy unit is routed (no roll necessary). Only playable if you started the battle with less printed gold in play than your enemy. You may not use this ability in your next combat</p>',
-		releases: { 'Hand of Fate': 7 }
+		releases: { HF: 7 }
 	},
 	{
 		name: "Virhoch's Blood Riders",
@@ -21792,7 +21815,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Commit: When a unit is making a rout check, that check is automatically successful (no roll necessary). The unit making the rout check must make a follow-up attack.</p>',
-		releases: { 'Hand of Fate': 8 }
+		releases: { HF: 8 }
 	},
 	{
 		name: "Virhoch's Blood Trackers",
@@ -21806,7 +21829,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Combat Tactic</b>: The enemy unit\'s leadership is reduced by this unit\'s "<b>Scout</b>" level.</p>',
-		releases: { 'Hand of Fate': 9 }
+		releases: { HF: 9 }
 	},
 	{
 		name: "Virhoch's Hounds",
@@ -21820,7 +21843,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength. If this unit wins the combat, any rout check made gets a -3 penalty to the roll.</p>',
-		releases: { 'Hand of Fate': 10 }
+		releases: { HF: 10 }
 	},
 	{
 		name: "Ebonkin's Line Breaker",
@@ -21834,7 +21857,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Roll. This unit gets a strength bonus equal to the roll minus 2 (minimum 0).</p>',
-		releases: { 'Hand of Fate': 11 }
+		releases: { HF: 11 }
 	},
 	{
 		name: 'Hag Queen Hellebron',
@@ -21849,7 +21872,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: This attacking unit gets +d6 strength.</p>',
-		releases: { 'Hand of Fate': 12 }
+		releases: { HF: 12 }
 	},
 	{
 		name: "Hellebron's Witches",
@@ -21863,7 +21886,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>Spell cards and abilities cost one additional spell point while this unit is in combat.</p>',
-		releases: { 'Hand of Fate': 13 }
+		releases: { HF: 13 }
 	},
 	{
 		name: "Khaine's Will",
@@ -21877,7 +21900,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: Commit the enemy unit unless it passes a strength test.</p>',
-		releases: { 'Hand of Fate': 14 }
+		releases: { HF: 14 }
 	},
 	{
 		name: 'Lolisithi Coldwind',
@@ -21891,7 +21914,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Any Dark Elf infantry unit in this combat gets +2 strength. Commit this unit if you lose combat.</p>',
-		releases: { 'Hand of Fate': 15 }
+		releases: { HF: 15 }
 	},
 	{
 		name: "Makdhaine's Corsairs",
@@ -21905,7 +21928,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b> Discard 1 card: After an enemy unit in combat with this unit receives a strength bonus, this unit gets a strength bonus equal to double the enemy unit's bonus. Only playable once per combat.</p>",
-		releases: { 'Hand of Fate': 16 }
+		releases: { HF: 16 }
 	},
 	{
 		name: 'Reapers of Khaine',
@@ -21920,7 +21943,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength unless your enemy discards 1 card.</p>',
-		releases: { 'Hand of Fate': 17 }
+		releases: { HF: 17 }
 	},
 	{
 		name: 'Shadow Wind',
@@ -21934,7 +21957,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Commit: While this unit remains committed and in play, strategy cards may not be put into play. You may not rally this unit during clean-up (before the muster phase).</p>',
-		releases: { 'Hand of Fate': 18 }
+		releases: { HF: 18 }
 	},
 	{
 		name: 'Makdhaine Ebonkin',
@@ -21946,7 +21969,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Any monster unit gets +1 tactic point.</p>',
-		releases: { 'Hand of Fate': 19 }
+		releases: { HF: 19 }
 	},
 	{
 		name: 'Rynsethryn Cruelheart',
@@ -21957,7 +21980,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>While this unit is in combat, neither player may play cards that change the result of a slaughter.</p>',
-		releases: { 'Hand of Fate': 20 }
+		releases: { HF: 20 }
 	},
 	{
 		name: 'Azraz Humiesplitter',
@@ -21972,7 +21995,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This attacking unit gets +3 strength.</p><p><b>Reaction</b>: After you rout an enemy unit using a card effect, draw a card.</p>',
-		releases: { 'Hand of Fate': 21 }
+		releases: { HF: 21 }
 	},
 	{
 		name: "Azraz's Bashers",
@@ -21986,7 +22009,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: After you make a combat roll, if your enemy did not make a combat roll, your enemy's unit in this combat gets -4 strength.</p>",
-		releases: { 'Hand of Fate': 22 }
+		releases: { HF: 22 }
 	},
 	{
 		name: "Azraz's Boyz",
@@ -22000,7 +22023,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Any Orc unit gets +1 strength. Only playable from the battle line.</p>',
-		releases: { 'Hand of Fate': 23 }
+		releases: { HF: 23 }
 	},
 	{
 		name: "Azraz's Savage Manglers",
@@ -22014,7 +22037,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>If this unit is ready, you may not take any command other than passing, moving this unit from the reserves to the battle line or declaring an attack with any copy of this unit you have in play.</p>',
-		releases: { 'Hand of Fate': 24 }
+		releases: { HF: 24 }
 	},
 	{
 		name: 'Dargur the Insane',
@@ -22029,7 +22052,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell Command</b> (X) Commit this unit: Starting with one of your units and alternating between your and your enemy's units, each unit must pass a strength test made from your deck or be committed. If the unit is already committed, destroy it instead.</p><p>X equals the total number of units in play.</p>",
-		releases: { 'Hand of Fate': 25 }
+		releases: { HF: 25 }
 	},
 	{
 		name: "Humiesplitter's Hackers",
@@ -22043,7 +22066,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Victory</b>: -4</p><p><b>Support Tactic</b> Remove this card from the game, discard 1 card: Roll. Your copy of this unit gets +X strength and the enemy unit's leadership is reduced by X. X equals the roll.</p>",
-		releases: { 'Hand of Fate': 26 }
+		releases: { HF: 26 }
 	},
 	{
 		name: 'Humiesplitters Big Uns',
@@ -22057,7 +22080,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: -X. X equals the number of weapons attached to this unit.</p><p>This unit may have any number of weapon attachments.</p>',
-		releases: { 'Hand of Fate': 27 }
+		releases: { HF: 27 }
 	},
 	{
 		name: 'The Impaler',
@@ -22071,7 +22094,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Support Tactic</b>: Any unit gets +1 ranged attack.</p>',
-		releases: { 'Hand of Fate': 28 }
+		releases: { HF: 28 }
 	},
 	{
 		name: 'Kogkog the Dangerous',
@@ -22084,7 +22107,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>This unit gets "<b>Victory</b>: -3".</p>',
-		releases: { 'Hand of Fate': 29 }
+		releases: { HF: 29 }
 	},
 	{
 		name: 'Zagzog Gobbothrottler',
@@ -22097,7 +22120,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Any unit gets +1 leadership.</p>',
-		releases: { 'Hand of Fate': 30 }
+		releases: { HF: 30 }
 	},
 	{
 		name: 'Druchii Ascendancy',
@@ -22109,7 +22132,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This Dark Elf unit gets +3 strength. Only playable if your unit has a higher printed tactic points than the enemy unit.</p>',
-		releases: { 'Hand of Fate': 31 }
+		releases: { HF: 31 }
 	},
 	{
 		name: 'Gorks Warpath',
@@ -22120,7 +22143,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Super rare',
 		text: '<p><b>Spell Command</b> (3): Choose one enemy unit. Both players roll. If your roll is higher, commit the chosen unit. After this ability is resolved, you may pay 2 spell points, choose another unit and play this ability again.</p><p>If your roll is lower, your enemy may select one of your units to commit and this command ends. Only playable while you have an Orc <b>Wizard</b>.</p>',
-		releases: { 'Hand of Fate': 32 }
+		releases: { HF: 32 }
 	},
 	{
 		name: 'Insidious Insinuation',
@@ -22131,7 +22154,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: When your enemy plays a support tactic ability, cancel its effects.</p>',
-		releases: { 'Hand of Fate': 33 }
+		releases: { HF: 33 }
 	},
 	{
 		name: "Khorne's Blessing",
@@ -22143,7 +22166,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: If you do not have any wizards in play, this unit gets +2 strength. You may not play any spell abilities for the rest of this combat.</p>',
-		releases: { 'Hand of Fate': 34 }
+		releases: { HF: 34 }
 	},
 	{
 		name: 'Malicious Intent',
@@ -22154,7 +22177,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Any Hordes of Darkness unit in this combat gets "<b>Terror</b>:1".</p>',
-		releases: { 'Hand of Fate': 35 }
+		releases: { HF: 35 }
 	},
 	{
 		name: 'Baleful Sorcery',
@@ -22166,7 +22189,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if you have a "<b>Wizard</b>" unit and a "<b>Terror</b>" unit in play.</p>',
-		releases: { 'Hand of Fate': 36 }
+		releases: { HF: 36 }
 	},
 	{
 		name: 'Berzerker Fury',
@@ -22178,7 +22201,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p> <b>WarCry</b>: This unit gets +2 strength and "<b>Terror</b>: 2". If you win this combat, attach this card to this unit. While attached, this unit gets the Monster keyword and the ability "WarCry: This attacking unit gets "<b>Terror</b>: 2", -2 tactic points, and +2 strength."</p>',
-		releases: { 'Hand of Fate': 37 }
+		releases: { HF: 37 }
 	},
 	{
 		name: 'Bestial Rage',
@@ -22190,7 +22213,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This monster or Beastmen unit gets +3 strength.</p>',
-		releases: { 'Hand of Fate': 38 }
+		releases: { HF: 38 }
 	},
 	{
 		name: 'Blackened Skies',
@@ -22202,7 +22225,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit gets +3 strength. Only playable while all of your units have the "Flyer" keyword.</p>',
-		releases: { 'Hand of Fate': 39 }
+		releases: { HF: 39 }
 	},
 	{
 		name: 'Blind Faith',
@@ -22214,7 +22237,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Choose one enemy unit. Your unit gets a strength bonus equal to that units "<b>Faith</b>" level.</p>',
-		releases: { 'Hand of Fate': 40 }
+		releases: { HF: 40 }
 	},
 	{
 		name: 'Devotional Sorcery',
@@ -22226,7 +22249,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if you have a "<b>Wizard</b>" unit and a "<b>Faith</b>" unit in play.</p>',
-		releases: { 'Hand of Fate': 41 }
+		releases: { HF: 41 }
 	},
 	{
 		name: 'Disarmament',
@@ -22237,7 +22260,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p> <b>Command</b> Destroy one of your ready units: Your enemy must destroy any number of their units and attachments with a gold cost equal to X or more. X equals the combined gold cost of your destroyed unit and any attached attachments.</p><p>Only playable once per battle.</p><p> <b>Command</b>: Destroy 1 attachment on any enemy unit.</p>',
-		releases: { 'Hand of Fate': 42 }
+		releases: { HF: 42 }
 	},
 	{
 		name: 'Done Deal',
@@ -22249,7 +22272,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Both players halve (rounding down) their combat rolls for this combat. This card has no effect if either player is rolling more than once for the combat.</p>',
-		releases: { 'Hand of Fate': 43 }
+		releases: { HF: 43 }
 	},
 	{
 		name: 'Echoes of the Distant Past',
@@ -22261,7 +22284,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 tactic points. Only playable by a unit with Dwarf, Elf, or Daemon as part of their keywords.</p>',
-		releases: { 'Hand of Fate': 44 }
+		releases: { HF: 44 }
 	},
 	{
 		name: 'Erode Their Position',
@@ -22273,7 +22296,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: If this unit loses the combat, your enemy must discard a number of cards from their hand with a total dice value equal to or greater than this unit's gold cost.</p>",
-		releases: { 'Hand of Fate': 45 }
+		releases: { HF: 45 }
 	},
 	{
 		name: 'Extensive Preparation',
@@ -22285,7 +22308,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (2): This unit gets +2 strength. Effects that would exchange a unit in this combat with another unit, that would end this combat before resolution,</p><p>or that would destroy a unit in this combat before resolution may not be played.</p>',
-		releases: { 'Hand of Fate': 46 }
+		releases: { HF: 46 }
 	},
 	{
 		name: 'Forewarning',
@@ -22296,7 +22319,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b>: You may move any number of your units to or from the battle line.</p><p> <b>Command</b>: Target an enemy "<b>Scout</b>" unit. That unit is committed unless your enemy discards 2 cards.</p>',
-		releases: { 'Hand of Fate': 47 }
+		releases: { HF: 47 }
 	},
 	{
 		name: 'Fortitude',
@@ -22308,7 +22331,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: If your enemy wins the combat by a difference of 3 or less, or by a card effect, instead of being destroyed, your unit returns to your battle line committed. Rout checks, if any, may still be made.</p>',
-		releases: { 'Hand of Fate': 48 }
+		releases: { HF: 48 }
 	},
 	{
 		name: 'Glorious Charge',
@@ -22320,7 +22343,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit gets +3 strength. Only playable while all of your units have the "Cavalry" keyword.</p>',
-		releases: { 'Hand of Fate': 49 }
+		releases: { HF: 49 }
 	},
 	{
 		name: 'Here Be Dragons',
@@ -22331,7 +22354,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p>All monster units get "<b>Victory</b>: +1".</p>',
-		releases: { 'Hand of Fate': 50 }
+		releases: { HF: 50 }
 	},
 	{
 		name: 'I Give You This Sword',
@@ -22343,7 +22366,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell WarCry</b> (1): Move 1 attachment from one of your committed units to this unit.</p>',
-		releases: { 'Hand of Fate': 51 }
+		releases: { HF: 51 }
 	},
 	{
 		name: 'Inspiring Leadership',
@@ -22355,7 +22378,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p> <b>WarCry</b>: This unit with a character attachment gets +2 strength.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if you have a Harbinger unit in play.</p><p><b>Combat Tactic</b>: This Harbinger unit gets +4 strength.</p>',
-		releases: { 'Hand of Fate': 52 }
+		releases: { HF: 52 }
 	},
 	{
 		name: 'Iron Constitution',
@@ -22366,7 +22389,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your enemy plays a card or ability that would reduce your strength, tactic points, or leadership, negate its effects.</p>',
-		releases: { 'Hand of Fate': 53 }
+		releases: { HF: 53 }
 	},
 	{
 		name: "It's Good to Be King",
@@ -22378,7 +22401,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable while your unit is winning the combat.</p>',
-		releases: { 'Hand of Fate': 54 }
+		releases: { HF: 54 }
 	},
 	{
 		name: "Kick 'Em While They're Down",
@@ -22390,7 +22413,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable while your unit is winning the combat.</p>',
-		releases: { 'Hand of Fate': 55 }
+		releases: { HF: 55 }
 	},
 	{
 		name: 'Lap Around!',
@@ -22402,7 +22425,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 tactic point and the enemy unit gets -1 tactic point. Only playable while your unit is winning the combat.</p>',
-		releases: { 'Hand of Fate': 56 }
+		releases: { HF: 56 }
 	},
 	{
 		name: 'Lightning Reflexes',
@@ -22413,7 +22436,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After the defending enemy unit in a combat gets a strength bonus, your attacking unit gets +1 strength.</p>',
-		releases: { 'Hand of Fate': 57 }
+		releases: { HF: 57 }
 	},
 	{
 		name: 'Make the Most of What You Have',
@@ -22424,7 +22447,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Spell Reaction</b> (2): After a unit gets a strength bonus, increase that bonus by 3.</p>',
-		releases: { 'Hand of Fate': 58 }
+		releases: { HF: 58 }
 	},
 	{
 		name: 'Making Sure',
@@ -22436,7 +22459,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. Only playable while your unit is winning the combat.</p>',
-		releases: { 'Hand of Fate': 59 }
+		releases: { HF: 59 }
 	},
 	{
 		name: 'Never Again',
@@ -22447,7 +22470,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (1): After a unit plays an ability printed on the unit or an attached card for the second time this battle, that unit must pass 2 leadership test or be committed.</p>',
-		releases: { 'Hand of Fate': 60 }
+		releases: { HF: 60 }
 	},
 	{
 		name: 'Never Say Die',
@@ -22458,7 +22481,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Support WarCry</b>: If you have less than 3 cards in your hand, draw a number of cards so that you have 3 cards in your hand.</p>',
-		releases: { 'Hand of Fate': 61 }
+		releases: { HF: 61 }
 	},
 	{
 		name: 'One Shall Fall',
@@ -22469,7 +22492,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After a combat roll, if the result is a tie, both players re-roll.</p>',
-		releases: { 'Hand of Fate': 62 }
+		releases: { HF: 62 }
 	},
 	{
 		name: 'One Shall Stand',
@@ -22481,7 +22504,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: The unit losing this combat is destroyed. Not playable during a ranged attack.</p>',
-		releases: { 'Hand of Fate': 63 }
+		releases: { HF: 63 }
 	},
 	{
 		name: 'Opening Their Guard',
@@ -22492,7 +22515,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: "<p><b>Reaction</b>: After your enemy pays the cost for a card or ability that would negate or cancel the effects of one of your cards or abilities, your enemy's effect is negated.</p>",
-		releases: { 'Hand of Fate': 64 }
+		releases: { HF: 64 }
 	},
 	{
 		name: 'Overwhelming Horror',
@@ -22504,7 +22527,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Reduce the enemy unit\'s leadership by this unit\'s "<b>Terror</b>" level.</p>',
-		releases: { 'Hand of Fate': 65 }
+		releases: { HF: 65 }
 	},
 	{
 		name: 'Petty Reprisal',
@@ -22516,7 +22539,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: If you win this combat, destroy one enemy unit that gave any bonuses to the unit in combat.</p>',
-		releases: { 'Hand of Fate': 66 }
+		releases: { HF: 66 }
 	},
 	{
 		name: 'Price of War',
@@ -22528,7 +22551,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Your enemy must commit one of your units. Then, you may commit one of their units with a gold cost less than your committed unit's gold cost. Only playable if you have at least one ready unit.</p>",
-		releases: { 'Hand of Fate': 67 }
+		releases: { HF: 67 }
 	},
 	{
 		name: 'Regimental Tactics',
@@ -22540,7 +22563,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit gets +3 strength. Only playable while all of your units have the "Infantry" keyword.</p>',
-		releases: { 'Hand of Fate': 68 }
+		releases: { HF: 68 }
 	},
 	{
 		name: 'Riposte',
@@ -22551,7 +22574,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After the attacking enemy unit in a combat gets a strength bonus, your defending unit gets +1 strength.</p>',
-		releases: { 'Hand of Fate': 69 }
+		releases: { HF: 69 }
 	},
 	{
 		name: 'Ruthless Expenditure',
@@ -22563,7 +22586,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b> Discard 1 card: Exchange this unit with one of your committed units in the battle line.</p>',
-		releases: { 'Hand of Fate': 70 }
+		releases: { HF: 70 }
 	},
 	{
 		name: 'See How It Feels',
@@ -22575,7 +22598,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell WarCry</b> (2): Play a WarCry or combat tactic printed on an enemy unit, paying all costs.</p>',
-		releases: { 'Hand of Fate': 71 }
+		releases: { HF: 71 }
 	},
 	{
 		name: 'Sigmar Protects',
@@ -22587,7 +22610,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if you have a "<b>Faith</b>" unit and a "<b>Scout</b>" unit in play.</p>',
-		releases: { 'Hand of Fate': 72 }
+		releases: { HF: 72 }
 	},
 	{
 		name: 'Stack the Deck',
@@ -22598,7 +22621,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>When this strategy enters play name any action card. Discard this strategy if you put another copy of it into play.</p><p><b>Reaction</b>: When the named action card is rolled (by either player), change the die on that card to either a 1 or a 6 for the roll.</p>',
-		releases: { 'Hand of Fate': 73 }
+		releases: { HF: 73 }
 	},
 	{
 		name: 'Stampede',
@@ -22609,7 +22632,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Choose one of your Monster units. Immediately rally (if committed) and declare an attack with that unit. For the duration of the command your unit gets "<b>Terror</b>: 2". Destroy the chosen unit at the end of this command.</p>',
-		releases: { 'Hand of Fate': 74 }
+		releases: { HF: 74 }
 	},
 	{
 		name: 'Stand Firm',
@@ -22621,7 +22644,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +X leadership.</p>',
-		releases: { 'Hand of Fate': 75 }
+		releases: { HF: 75 }
 	},
 	{
 		name: 'Steadfast',
@@ -22633,7 +22656,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p> <b>WarCry</b>: This unit's strength, tactic points, and leadership may not be reduced by your enemy's cards or abilities.</p>",
-		releases: { 'Hand of Fate': 76 }
+		releases: { HF: 76 }
 	},
 	{
 		name: 'Tactical Denial',
@@ -22645,7 +22668,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Choose a number. Your enemy may not play action cards with a die equal to the chosen number during this combat.</p>',
-		releases: { 'Hand of Fate': 77 }
+		releases: { HF: 77 }
 	},
 	{
 		name: 'Tactics of Intimidation',
@@ -22657,7 +22680,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if you have a "<b>Scout</b>" unit and a "<b>Terror</b>" unit in play.</p>',
-		releases: { 'Hand of Fate': 78 }
+		releases: { HF: 78 }
 	},
 	{
 		name: '...There Is a Way',
@@ -22669,7 +22692,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Any cards that are removed from the game during this combat or as a result of combat are returned to their respective discard piles.</p>',
-		releases: { 'Hand of Fate': 79 }
+		releases: { HF: 79 }
 	},
 	{
 		name: 'To Me!',
@@ -22680,7 +22703,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b> Commit one of your units with a character attachment: Before one of your units is destroyed in combat, return that unit to the battle line committed instead.</p>',
-		releases: { 'Hand of Fate': 80 }
+		releases: { HF: 80 }
 	},
 	{
 		name: 'To the Victor Go the Spoils',
@@ -22692,7 +22715,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: The winner of this combat may search their army deck for one attachment, attach it to one of their units without cost, and then shuffle their deck.</p>',
-		releases: { 'Hand of Fate': 81 }
+		releases: { HF: 81 }
 	},
 	{
 		name: 'To the Wire',
@@ -22704,7 +22727,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Both players double their combat rolls for this combat. This card has no effect if either player is rolling more than once for combat.</p>',
-		releases: { 'Hand of Fate': 82 }
+		releases: { HF: 82 }
 	},
 	{
 		name: 'Trick Shot',
@@ -22716,7 +22739,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: If you win this combat, destroy the enemy unit. Only playable during a ranged attack.</p>',
-		releases: { 'Hand of Fate': 83 }
+		releases: { HF: 83 }
 	},
 	{
 		name: 'Undermine',
@@ -22728,7 +22751,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Any cards or abilities that may target a unit outside of combat must do so if a legal target exists.</p>',
-		releases: { 'Hand of Fate': 84 }
+		releases: { HF: 84 }
 	},
 	{
 		name: 'Unreliable',
@@ -22740,7 +22763,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: Commit a war machine or monster unit.</p>',
-		releases: { 'Hand of Fate': 85 }
+		releases: { HF: 85 }
 	},
 	{
 		name: 'Where There Is a Will...',
@@ -22752,7 +22775,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Remove an action card in your discard pile from the game: This unit gets +X strength. X equals the die of the card removed from the discard pile.</p>',
-		releases: { 'Hand of Fate': 86 }
+		releases: { HF: 86 }
 	},
 	{
 		name: 'Tunnel Fighter',
@@ -22763,7 +22786,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>Skaven and Dwarf only</p><p><b>Reaction</b> Destroy this card: Before this unit declares an attack, target an enemy unit in the reserves. This attack may not be blocked.</p>',
-		releases: { 'Hand of Fate': 87 }
+		releases: { HF: 87 }
 	},
 	{
 		name: 'Dorgan Darkeye',
@@ -22777,7 +22800,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b> Commit this unit: Declare an attack with one of your infantry units in the reserves. This attack may not be blocked.</p><p><b>Reaction</b>: If your enemy passes or takes any command that is not an attack, rally this unit. You may use this ability while committed.</p>',
-		releases: { 'Hand of Fate': 88 }
+		releases: { HF: 88 }
 	},
 	{
 		name: "Dorgan's Digger Crew",
@@ -22791,7 +22814,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After this unit enters a combat as the defender, destroy any one attachment in play.</p>',
-		releases: { 'Hand of Fate': 89 }
+		releases: { HF: 89 }
 	},
 	{
 		name: "Dorgan's Disgraced",
@@ -22805,7 +22828,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: -4</p><p><b>Reaction</b> Remove this card from the game, discard 1 card: After one of your units wins a combat, the enemy unit is routed (no roll necessary). Only playable from your discard pile.</p>',
-		releases: { 'Hand of Fate': 90 }
+		releases: { HF: 90 }
 	},
 	{
 		name: "Dorgan's Hammers of Spite",
@@ -22819,7 +22842,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit gets +2 strength while it has a character attached.</p><p><b>Reaction</b>: Before this unit is destroyed, attach any characters attached to this unit to another of your units.</p>',
-		releases: { 'Hand of Fate': 91 }
+		releases: { HF: 91 }
 	},
 	{
 		name: "Dorgan's Iron Guard",
@@ -22833,7 +22856,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +2</p><p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable vs. Skaven units.</p>',
-		releases: { 'Hand of Fate': 92 }
+		releases: { HF: 92 }
 	},
 	{
 		name: "Dorgan's Iron Warriors",
@@ -22847,7 +22870,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit gets "<b>Victory</b>: +2" while there are no terrain cards in play.</p>',
-		releases: { 'Hand of Fate': 93 }
+		releases: { HF: 93 }
 	},
 	{
 		name: "Dorgan's Rangers",
@@ -22861,7 +22884,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Reaction</b>: When your enemy pays the cost for a command printed on a war machine, negate the effects of that command.</p>',
-		releases: { 'Hand of Fate': 94 }
+		releases: { HF: 94 }
 	},
 	{
 		name: 'Throndil Starhammerer',
@@ -22876,7 +22899,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Runesmith</b>: 2 <i>(Counts as Wizard)</i></p><p><b>Spell Reaction</b> Discard 1 card (1): When your enemy plays a card or ability that destroys at least one of your attachments, negate its effects.</p>',
-		releases: { 'Hand of Fate': 95 }
+		releases: { HF: 95 }
 	},
 	{
 		name: 'Sons of Grungni',
@@ -22889,7 +22912,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: Your enemy may not play cards or abilities that would create a slaughter.</p>',
-		releases: { 'Hand of Fate': 96 }
+		releases: { HF: 96 }
 	},
 	{
 		name: 'Black Knights of Morr',
@@ -22903,7 +22926,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>This unit is immune to "<b>Terror</b>" while in combat with Khemri and Vampire Counts units.</p><p><b>Combat Tactic</b>: This unit gets +2 strength and +2 leadership.</p>',
-		releases: { 'Hand of Fate': 97 }
+		releases: { HF: 97 }
 	},
 	{
 		name: 'Fabian Techlich',
@@ -22917,7 +22940,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable vs. Khemri or Vampire Counts units.</p>',
-		releases: { 'Hand of Fate': 98 }
+		releases: { HF: 98 }
 	},
 	{
 		name: "Fandelhoch's New Machine",
@@ -22931,7 +22954,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 9</p><p><b>Support Tactic</b> Remove this card from the game, discard 1 card: Your unit gets +1 strength. You may play this ability from your discard pile.</p>',
-		releases: { 'Hand of Fate': 100 }
+		releases: { HF: 100 }
 	},
 	{
 		name: "Fandelhoch's Outriders",
@@ -22945,7 +22968,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b> Commit: After your enemy puts a strategy card into play, remove that strategy card from play.</p>',
-		releases: { 'Hand of Fate': 101 }
+		releases: { HF: 101 }
 	},
 	{
 		name: "Fandelhoch's Riders",
@@ -22959,7 +22982,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Short Ranged Attack</b>: 5</p><p><b>Reaction</b>: After this unit is targeted for an attack, move this unit and the attacking unit to their respective battle lines. The combat is changed to a ranged attack with this unit as the attacker.</p><p>If this unit loses the combat, destroy this unit.</p>',
-		releases: { 'Hand of Fate': 102 }
+		releases: { HF: 102 }
 	},
 	{
 		name: 'Ivan Fandelhoch',
@@ -22974,7 +22997,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Faith</b>: 1</p><p><b>Support Tactic</b>: Any unit gets +2 strength. Only playable vs. "<b>Wizard</b>" units.</p>',
-		releases: { 'Hand of Fate': 103 }
+		releases: { HF: 103 }
 	},
 	{
 		name: 'The Hunters of Hochland',
@@ -22988,7 +23011,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Long Ranged Attack</b>: 6</p><p> <b>Command</b>: Destroy 1 character attachment on any enemy unit.</p>',
-		releases: { 'Hand of Fate': 104 }
+		releases: { HF: 104 }
 	},
 	{
 		name: 'Erwin Fandelhoch',
@@ -22999,7 +23022,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This war machine unit gets +2 strength and +1 tactic point.</p>',
-		releases: { 'Hand of Fate': 105 }
+		releases: { HF: 105 }
 	},
 	{
 		name: 'Toby Rutzpold',
@@ -23011,7 +23034,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b> Destroy this card: If this unit wins this combat, destroy the enemy unit. Only playable during a ranged attack.</p>',
-		releases: { 'Hand of Fate': 106 }
+		releases: { HF: 106 }
 	},
 	{
 		name: 'Aetholbrin Eldenstar',
@@ -23026,7 +23049,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your ranged attack units.</p>',
-		releases: { 'Hand of Fate': 107 }
+		releases: { HF: 107 }
 	},
 	{
 		name: "Aislinn's Sea Guard",
@@ -23040,7 +23063,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b> Commit: Before one of your High Elf units plays a combat tactic card during a ranged attack, reduce the tactic point cost of that card to 0.</p>',
-		releases: { 'Hand of Fate': 108 }
+		releases: { HF: 108 }
 	},
 	{
 		name: "Aislinn's Sea Rangers",
@@ -23054,7 +23077,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Short Ranged Attack</b>: 4</p><p> <b>Command</b> Remove this card from the game: Declare an attack with another copy of this unit in play (committed or ready). You may play this ability from your discard pile.</p>',
-		releases: { 'Hand of Fate': 109 }
+		releases: { HF: 109 }
 	},
 	{
 		name: 'Cython Menlui',
@@ -23068,7 +23091,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Terror</b>: 2</p><p><b>Reaction</b>: When this unit enters combat, commit a unit in the enemy\'s battle line unless it passes a leadership test. Only playable while you have a "<b>Wizard</b>" in play.</p>',
-		releases: { 'Hand of Fate': 110 }
+		releases: { HF: 110 }
 	},
 	{
 		name: 'Eothrilion True Eye',
@@ -23082,7 +23105,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Reaction</b>: Once per combat, after a unit gets a strength bonus from a support tactic, that unit gets a bonus to their tactic points instead.</p>',
-		releases: { 'Hand of Fate': 111 }
+		releases: { HF: 111 }
 	},
 	{
 		name: 'Kyrlranlaer Silvershore',
@@ -23096,7 +23119,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 1</p><p>Spell Raction (1): Before you make a ranged attack, you may target any enemy unit, regardless of range.</p>',
-		releases: { 'Hand of Fate': 112 }
+		releases: { HF: 112 }
 	},
 	{
 		name: 'Sea Lord Aislinn',
@@ -23111,7 +23134,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Terror</b>: 1</p><p><b>Reaction</b>: Before the player with who takes the first command is declared, the player with the most tactic points in their battle line takes the first command.</p>',
-		releases: { 'Hand of Fate': 113 }
+		releases: { HF: 113 }
 	},
 	{
 		name: 'Ships Company of the Pernicious',
@@ -23125,7 +23148,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Ranged Attack</b>: 5</p><p><b>Reaction</b> Commit or remove this card from the game: After an enemy unit declares an attack against a unit in your reserves, reduce the enemy unit's strength by this unit's ranged attack.</p><p>You may play this ability from your discard pile.</p>",
-		releases: { 'Hand of Fate': 114 }
+		releases: { HF: 114 }
 	},
 	{
 		name: 'Gaensofir Swiftfoot',
@@ -23136,7 +23159,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>High Elf <b>Scout</b> units only</p><p>This unit may not be targeted for an attack if there is another legal target.</p>',
-		releases: { 'Hand of Fate': 115 }
+		releases: { HF: 115 }
 	},
 	{
 		name: 'Loremaster',
@@ -23148,7 +23171,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Reveal the top card of your deck until you reveal a card with a spell point cost. Add that card to your hand and discard the others.</p>',
-		releases: { 'Hand of Fate': 116 }
+		releases: { HF: 116 }
 	},
 	{
 		name: 'Detachment Training',
@@ -23159,7 +23182,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: "<p><b>Reaction</b>: When one of your Empire units with a gold cost of five or more enters combat, choose another Empire unit with a gold cost of 2 or less.</p><p>Add that unit's strength or half of its ranged attack (your choice) to your unit's strength.</p>",
-		releases: { 'Hand of Fate': 117 }
+		releases: { HF: 117 }
 	},
 	{
 		name: 'Dwarfen Pride',
@@ -23171,7 +23194,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This Dwarf unit cannot be routed.</p>',
-		releases: { 'Hand of Fate': 118 }
+		releases: { HF: 118 }
 	},
 	{
 		name: 'Pure of Heart',
@@ -23183,7 +23206,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Attach this card to any of your High Elf units. While attached, this unit is immune to the effects of "<b>Terror</b>". If this unit is destroyed, you must commit another of your units.</p>',
-		releases: { 'Hand of Fate': 119 }
+		releases: { HF: 119 }
 	},
 	{
 		name: 'Unshakable Resolve',
@@ -23194,7 +23217,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Super rare',
 		text: '<p><b>Support Tactic</b>: Any Grand Alliance unit in this combat gets "<b>Faith</b>: 2".</p>',
-		releases: { 'Hand of Fate': 120 }
+		releases: { HF: 120 }
 	},
 	{
 		name: "Ch'kal Prince of Lies",
@@ -23209,7 +23232,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Wizard</b>: 3</p><p><b>Terror</b>: 1</p><p><b>Spell Support Tactic</b> (0): Gain 2 spell points.</p>',
-		releases: { 'Marks of Power': 1 }
+		releases: { MP: 1 }
 	},
 	{
 		name: 'Diamante, Warp Caller',
@@ -23223,7 +23246,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p> <b>Command</b> Destroy this unit: Move a daemon unit with a gold cost of X or less from your discard pile into your reserves. X equals the total gold cost of this unit and its attachments.</p>',
-		releases: { 'Marks of Power': 2 }
+		releases: { MP: 2 }
 	},
 	{
 		name: "Eb'boala Contagion's Host",
@@ -23237,7 +23260,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (3): Remove a token from any card in play to put two -1 strength plague tokens no any unit.</p>',
-		releases: { 'Marks of Power': 3 }
+		releases: { MP: 3 }
 	},
 	{
 		name: "Ka'wile, Deception Weaver",
@@ -23251,7 +23274,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (1): After you fail a test, re-roll.</p>',
-		releases: { 'Marks of Power': 4 }
+		releases: { MP: 4 }
 	},
 	{
 		name: "Ka'wile's Horrors",
@@ -23265,7 +23288,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: If you win this combat, move another copy of this unit from your discard to your battle line. Not playable during a follow-up attack.</p>',
-		releases: { 'Marks of Power': 5 }
+		releases: { MP: 5 }
 	},
 	{
 		name: 'Ishini, Champion of the Changer',
@@ -23280,7 +23303,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After any roll, re-roll. Either player may play this ability. Only playable while this unit is in combat.</p>',
-		releases: { 'Marks of Power': 6 }
+		releases: { MP: 6 }
 	},
 	{
 		name: 'The Company of Change',
@@ -23294,7 +23317,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (2): Roll: You or your opponent either gain or lose spell points equal to the amount of the roll.</p>',
-		releases: { 'Marks of Power': 7 }
+		releases: { MP: 7 }
 	},
 	{
 		name: 'Vanisius the Fair',
@@ -23308,7 +23331,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (1): The enemy unit gets -1 leadership.</p>',
-		releases: { 'Marks of Power': 8 }
+		releases: { MP: 8 }
 	},
 	{
 		name: 'Bilious Vomitongue',
@@ -23319,7 +23342,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>Chaos Only</p><p><b>Combat Tactic</b>: The enemy unit gets -2 strength unless your enemy discards 1 card.</p>',
-		releases: { 'Marks of Power': 9 }
+		releases: { MP: 9 }
 	},
 	{
 		name: 'Sintar the Touched',
@@ -23332,7 +23355,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>Chaos Only</p><p>This unit gets "<b>Wizard</b>: 1".</p><p><b>Spell Combat Tactic</b> (1): Both players roll. Both units get a strength bonus equal to their roll.</p>',
-		releases: { 'Marks of Power': 10 }
+		releases: { MP: 10 }
 	},
 	{
 		name: 'Zorgoam the Ecstatic',
@@ -23344,7 +23367,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>Chaos Only</p><p>This unit is immune to "<b>Terror</b>".</p>',
-		releases: { 'Marks of Power': 11 }
+		releases: { MP: 11 }
 	},
 	{
 		name: "Darkblade's Highborn",
@@ -23358,7 +23381,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength. Only playable while you have more unique Dark Elf units than non-unique units.</p>',
-		releases: { 'Marks of Power': 12 }
+		releases: { MP: 12 }
 	},
 	{
 		name: 'Eldire, Mother of the Drachau',
@@ -23373,7 +23396,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Veteran</b>: Eldire</p><p><b>Wizard</b>: 2</p><p><b>Spell Support Tactic</b> (0): You get +1 or -1 spell point.</p><p><b>Spell Support Tactic</b> Discard 1 card (1): Your unit gets a strength bonus equal to the discarded card's die. Only playable while you have the same number of spell points as your enemy.</p>",
-		releases: { 'Marks of Power': 13 }
+		releases: { MP: 13 }
 	},
 	{
 		name: "Eldire's Arrows",
@@ -23387,7 +23410,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 8</p><p><b>Combat Tactic</b>: If you win this combat, gain or lose spell points until you have the same number as your enemy. Only playable during a ranged attack.</p>',
-		releases: { 'Marks of Power': 14 }
+		releases: { MP: 14 }
 	},
 	{
 		name: 'Keth Zarene, Mistress of the Skies',
@@ -23402,7 +23425,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Veteran</b>: Keth Zarene</p><p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (2): After your enemy declares a ranged or non-ranged attack, your enemy discards 1 card. If you and your enemy have the same number of spell points they discard 2 cards instead.</p>',
-		releases: { 'Marks of Power': 15 }
+		releases: { MP: 15 }
 	},
 	{
 		name: 'Malus Darkblade, Drachau of Hag Graef',
@@ -23417,7 +23440,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Malus Darkblade</p><p><b>Spell Combat Tactic</b> (1): This unit gets +2 strength and "<b>Terror</b>: 1".</p><p> <b>Command</b>: Rally any Dark Elf unit. You may play this ability while committed. Only playable while you and your enemy have the same number of spell points.</p>',
-		releases: { 'Marks of Power': 16 }
+		releases: { MP: 16 }
 	},
 	{
 		name: "Malus's Black Guard",
@@ -23431,7 +23454,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Your unit gets +1 strength.</p>',
-		releases: { 'Marks of Power': 17 }
+		releases: { MP: 17 }
 	},
 	{
 		name: "Malus's Spearmen",
@@ -23445,7 +23468,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your enemy discards 1 card.</p>',
-		releases: { 'Marks of Power': 18 }
+		releases: { MP: 18 }
 	},
 	{
 		name: 'Naggarythe Dark Spears',
@@ -23459,7 +23482,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength and +1 tactic point. Only playable while defending.</p>',
-		releases: { 'Marks of Power': 19 }
+		releases: { MP: 19 }
 	},
 	{
 		name: 'Crystal of Midnight',
@@ -23470,7 +23493,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>Dark Elf Only</p><p>When this card comes in to play, choose an ability printed on another card in play. While this card is in play the chosen ability has no effect and may not be played or activated.</p>',
-		releases: { 'Marks of Power': 20 }
+		releases: { MP: 20 }
 	},
 	{
 		name: 'Rubric of Dark Dimensions',
@@ -23482,7 +23505,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: "<p>Dark Elf Only</p><p><b>Spell Command</b> Destroy this unit (3): Choose three units in your enemy's battle line. Each of these units is destroyed unless they pass a strength test.</p>",
-		releases: { 'Marks of Power': 21 }
+		releases: { MP: 21 }
 	},
 	{
 		name: 'Crusha Cart',
@@ -23496,7 +23519,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: -1</p><p>While ready, if you have fewer units in your battle line than in your reserves, your next command must be to attack with this unit.</p>',
-		releases: { 'Marks of Power': 22 }
+		releases: { MP: 22 }
 	},
 	{
 		name: 'Gobbo Lobba',
@@ -23510,7 +23533,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Support Tactic</b>: Your unit gets +1 strength.</p>',
-		releases: { 'Marks of Power': 23 }
+		releases: { MP: 23 }
 	},
 	{
 		name: 'Greenskin Mob',
@@ -23524,7 +23547,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable vs. Grand Alliance units.</p>',
-		releases: { 'Marks of Power': 24 }
+		releases: { MP: 24 }
 	},
 	{
 		name: 'Snotling Swarm',
@@ -23538,7 +23561,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: -1</p><p>This unit may block any attack that targets one of your Orc units.</p>',
-		releases: { 'Marks of Power': 25 }
+		releases: { MP: 25 }
 	},
 	{
 		name: 'Vazrag Brainbuster and the Wolfie Boyz',
@@ -23552,7 +23575,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (1): After you roll, if the roll is less than this unit's strength you may re-roll.</p>",
-		releases: { 'Marks of Power': 26 }
+		releases: { MP: 26 }
 	},
 	{
 		name: "Vazrag's Fetching Boyz",
@@ -23566,7 +23589,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>While you have fewer spell points than your enemy this unit may not be blocked.</p><p><b>Combat Tactic</b>: This unit gets +1 strength. Only playable vs. Dwarf units.</p>',
-		releases: { 'Marks of Power': 27 }
+		releases: { MP: 27 }
 	},
 	{
 		name: "Yazrag's Pointy Stickers",
@@ -23580,7 +23603,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 leadership. Only playable while you have fewer spell points than your enemy.</p>',
-		releases: { 'Marks of Power': 28 }
+		releases: { MP: 28 }
 	},
 	{
 		name: "Wazzi Moonscowler, Gork's Speaker",
@@ -23595,7 +23618,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Wizard</b>: 1</p><p><b>Reaction</b>: After a combat roll where you rolled 3 or less, gain 1 spell point.</p><p><b>Spell Command</b> Destroy this unit (2): Gain spell points equal to this unit's tactic points. After this spell point bonus, if you have fewer spell points than your enemy, commit one of their <b>Wizard</b> units.</p>",
-		releases: { 'Marks of Power': 29 }
+		releases: { MP: 29 }
 	},
 	{
 		name: 'Ugbrag the Lucky',
@@ -23606,7 +23629,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Combat Tactic</b> (1): You unit gets +2 tactic points.</p>',
-		releases: { 'Marks of Power': 30 }
+		releases: { MP: 30 }
 	},
 	{
 		name: "Ugbrag's Lucky Shield",
@@ -23617,7 +23640,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>Orc <b>Wizard</b> Only</p><p><b>Reaction</b>: After this unit would be destroyed, you may destroy this attachment instead. You may play this ability while committed.</p>',
-		releases: { 'Marks of Power': 31 }
+		releases: { MP: 31 }
 	},
 	{
 		name: "Arnizipal's Black Horror",
@@ -23628,7 +23651,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (5): Place this card in your battle line. While in play, treat this card as an 8 strength, 0 tactic point, 0 leadership infantry unit that may not have cards attached to it. This card does not count for victory and may not be carried over.</p><p>Only playable while you have a Dark Elf <b>Wizard</b>.</p>',
-		releases: { 'Marks of Power': 32 }
+		releases: { MP: 32 }
 	},
 	{
 		name: 'Ere We Go Ere We Go Ere We Go',
@@ -23639,7 +23662,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> (3): Rally a committed Orc unit. Only playable while you have an Orc <b>Wizard</b>.</p>',
-		releases: { 'Marks of Power': 33 }
+		releases: { MP: 33 }
 	},
 	{
 		name: 'Favoured Poxes',
@@ -23650,7 +23673,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>You may put this card into play as a <b>Combat Tactic</b> for 2 tactic points. When you play this card, pay 3 spell points or discard it. Only playable while you have a Chaos <b>Wizard</b>.</p><p>While this card is in play all non-Chaos units get -1 strength and -1 leadership.</p>',
-		releases: { 'Marks of Power': 34 }
+		releases: { MP: 34 }
 	},
 	{
 		name: "Khorne's Favor",
@@ -23662,7 +23685,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit gets +1 strength and no player may play spell abilities or cards for the rest of the combat. If the opposing unit is a <b>Wizard</b> or has a <b>Wizard</b> attachment, you get +4 strength instead. Only playable while you have no <b>Wizard</b> units.</p>',
-		releases: { 'Marks of Power': 35 }
+		releases: { MP: 35 }
 	},
 	{
 		name: 'Orange Fire of Transition',
@@ -23674,7 +23697,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (1): You may re-roll any roll you make during this combat. Only playable while you have a Chaos <b>Wizard</b>.</p>',
-		releases: { 'Marks of Power': 36 }
+		releases: { MP: 36 }
 	},
 	{
 		name: 'Titillating Delusions',
@@ -23685,7 +23708,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (1): After setup, move one enemy unit from the reserves to the battle line. Only playable if you have a Chaos <b>Wizard</b>.</p>',
-		releases: { 'Marks of Power': 37 }
+		releases: { MP: 37 }
 	},
 	{
 		name: "Amshu's Blinding Light",
@@ -23696,7 +23719,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: "<p><b>Spell Reaction</b> (3): After your enemy declares an attack, block with any ready unit. The enemy unit's strength is halved, rounding up.</p>",
-		releases: { 'Marks of Power': 38 }
+		releases: { MP: 38 }
 	},
 	{
 		name: 'Break Their Momentum',
@@ -23707,7 +23730,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p> <b>Command</b>: Destroy all tokens and attached cards.</p>',
-		releases: { 'Marks of Power': 39 }
+		releases: { MP: 39 }
 	},
 	{
 		name: 'Burning Head',
@@ -23718,7 +23741,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> (4): Your <b>Wizard</b> unit gets "<b>Ranged Attack</b>: 6" and declares an immediate attack targeting a unit in your enemy\'s battle line. After the combat is over, your <b>Wizard</b> unit immediately declares another "<b>Ranged Attack</b>: 6" targeting a unit in your enemy\'s reserves.</p>',
-		releases: { 'Marks of Power': 40 }
+		releases: { MP: 40 }
 	},
 	{
 		name: 'Commandment of Brass',
@@ -23730,7 +23753,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (2): Commit any War Machine unit.</p>',
-		releases: { 'Marks of Power': 41 }
+		releases: { MP: 41 }
 	},
 	{
 		name: 'Conflagration of Doom',
@@ -23741,7 +23764,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p><b>Spell Command</b> (3): Roll. Choose a number of enemy units equal to your roll. Commit each chosen unit unless it passes a tactic point test.</p>',
-		releases: { 'Marks of Power': 42 }
+		releases: { MP: 42 }
 	},
 	{
 		name: 'Creeping Death',
@@ -23753,7 +23776,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (1): Your unit gets +2 strength.</p>',
-		releases: { 'Marks of Power': 43 }
+		releases: { MP: 43 }
 	},
 	{
 		name: 'Dark Hand of Death',
@@ -23764,7 +23787,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: "<p><b>Spell Command</b> (X): Choose one unit in your enemy's battle line. Destroy the chosen unit. X equals double the chosen unit's strength.</p>",
-		releases: { 'Marks of Power': 44 }
+		releases: { MP: 44 }
 	},
 	{
 		name: 'Death Dealer (MP)',
@@ -23776,7 +23799,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (2): If you lose this combat, commit the enemy unit unless it passes a leadership test.</p>',
-		releases: { 'Marks of Power': 45 }
+		releases: { MP: 45 }
 	},
 	{
 		name: 'Distillation of Molten Silver',
@@ -23788,7 +23811,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): Your unit gets +3 strength. If your unit is a <b>Wizard</b> unit it gets +4 strength instead.</p>',
-		releases: { 'Marks of Power': 46 }
+		releases: { MP: 46 }
 	},
 	{
 		name: 'Doom and Darkness',
@@ -23800,7 +23823,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (3): Choose any unit and attach this card to it. While this card is attached the chosen unit gets -3 leadership. After any command, the chosen unit may take a leadership test. If it passes discard this card.</p>',
-		releases: { 'Marks of Power': 47 }
+		releases: { MP: 47 }
 	},
 	{
 		name: 'Drain Life',
@@ -23811,7 +23834,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p><b>Spell Command</b> (4): One at a time, both you and your enemy roll for each unit in your enemy's battle line. If you roll higher than your enemy, you may either commit the unit you were rolling for or rally one of your units.</p>",
-		releases: { 'Marks of Power': 48 }
+		releases: { MP: 48 }
 	},
 	{
 		name: 'Eldritch Tempest',
@@ -23822,7 +23845,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p>When you play this card pay 4 spell points or discard it. If at any time you have 0 spell points discard this card.</p><p>While this card is in play your units may not be targeted by ranged attacks.</p>',
-		releases: { 'Marks of Power': 49 }
+		releases: { MP: 49 }
 	},
 	{
 		name: 'Father of the Thorn',
@@ -23833,7 +23856,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>When you play this card pay 3 spell points or discard it.</p><p>While this card is in play neither player may move units from the reserves to the battle line as a command and attacks may not be declared from the reserves.</p><p><b>Spell Command</b> (5): Destroy this strategy. Either player may play this ability.</p>',
-		releases: { 'Marks of Power': 50 }
+		releases: { MP: 50 }
 	},
 	{
 		name: 'Forked Lightning',
@@ -23845,7 +23868,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (3): Your unit gets +3 strength.</p>',
-		releases: { 'Marks of Power': 51 }
+		releases: { MP: 51 }
 	},
 	{
 		name: 'Gather Your Power',
@@ -23857,7 +23880,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Spell WarCry</b> (0): You get +4 spell points.</p>',
-		releases: { 'Marks of Power': 52 }
+		releases: { MP: 52 }
 	},
 	{
 		name: "Karu's Guardian Radiance",
@@ -23868,7 +23891,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Super rare',
 		text: '<p>When you play this card pay 4 spell points or discard it. If at any time you have 0 spell points discard this card.</p><p>While this card is in play your units are unaffected by "<b>Terror</b>" and can\'t be routed.</p>',
-		releases: { 'Marks of Power': 53 }
+		releases: { MP: 53 }
 	},
 	{
 		name: 'Law of Gold',
@@ -23879,7 +23902,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><p><b>Spell Command</b> (2): Roll.</p><p>1 or less: No effect.</p><p>2-3: Destroy one attachment with a printed spell ability on it.</p><p>4-5: Destroy two attachments with printed spell abilities on them.</p><p>6+: For each <b>Wizard</b> unit you have in play, destroy either one attachment with a printed spell ability or one action card that has been attached to a unit.</p></p>',
-		releases: { 'Marks of Power': 54 }
+		releases: { MP: 54 }
 	},
 	{
 		name: 'Master of Stone',
@@ -23890,7 +23913,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p>You may put this card into play as a combat tactic for 3 tactic points. When you play this card pay 3 spell points or discard it.</p><p>Your enemy's units must pass a strength test to declare an attack. If a unit fails this test, your enemy may draw 1 card and their Command ends.</p>",
-		releases: { 'Marks of Power': 55 }
+		releases: { MP: 55 }
 	},
 	{
 		name: 'Master of the Wood',
@@ -23901,7 +23924,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: "<p><b>Spell Reaction</b> (3): After your enemy declares an attack, put this card into play as a 2 strength, 1 tactic point, 4 leadership unit which then blocks the attack. If this unit wins the combat, your enemy's unit is committed instead of being destroyed.</p><p>This card is discarded at the end of combat regardless of the resolution.</p>",
-		releases: { 'Marks of Power': 56 }
+		releases: { MP: 56 }
 	},
 	{
 		name: 'Mistress of the Marsh',
@@ -23913,7 +23936,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (1): The enemy unit gets -2 leadership.</p><p><b>Spell Reaction</b> (1): After your enemy declares an attack with an infantry or cavalry unit, block with one of your ready units.</p>',
-		releases: { 'Marks of Power': 57 }
+		releases: { MP: 57 }
 	},
 	{
 		name: 'Nullify Magic',
@@ -23925,7 +23948,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Spell WarCry</b> (2): Both players get -2 spell points. Spell cards or abilities may not be played for the rest of the command.</p>',
-		releases: { 'Marks of Power': 58 }
+		releases: { MP: 58 }
 	},
 	{
 		name: 'Overwhelming Power',
@@ -23937,7 +23960,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (3): Your unit gets +5 strength. If your unit passes a tactic point test, it gets +7 strength instead.</p>',
-		releases: { 'Marks of Power': 59 }
+		releases: { MP: 59 }
 	},
 	{
 		name: 'Pelt of Midnight',
@@ -23948,7 +23971,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: "<p><b>Spell Command</b> (2): Attach this card to one of your units. While attached your enemy's unit must pass a tactic point test to target this unit with an attack. If the test fails, the unit must choose another legal target for their attack.</p><p>If there is no other legal target, your enemy's command ends.</p>",
-		releases: { 'Marks of Power': 60 }
+		releases: { MP: 60 }
 	},
 	{
 		name: "Phal's Illumination",
@@ -23960,7 +23983,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: "<p><b>Spell Combat Tactic</b> (3): Your <b>Wizard</b> unit gets +2 strength and abilities printed on the enemy's unit or its attachments may not be played this combat.</p>",
-		releases: { 'Marks of Power': 61 }
+		releases: { MP: 61 }
 	},
 	{
 		name: 'Pit of Shades',
@@ -23971,7 +23994,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Spell Command</b> (1): One of your <b>Wizard</b> units gets "<b>Ranged Attack</b>: 6" and immediately declares a ranged attack. If the <b>Wizard</b> unit wins this combat, the losing unit is moved to the reserves at the end of the combat.</p>',
-		releases: { 'Marks of Power': 62 }
+		releases: { MP: 62 }
 	},
 	{
 		name: 'Portent of Far',
@@ -23983,7 +24006,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): If you roll a 1 for this combat, re-roll.</p>',
-		releases: { 'Marks of Power': 63 }
+		releases: { MP: 63 }
 	},
 	{
 		name: 'Rule of Burning Iron',
@@ -23995,7 +24018,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (1): Your unit gets +1 strength. If the enemy unit has a gold cost of 5 your unit gets +2 strength instead. If the enemy unit has a gold cost of 6 or more your unit gets +3 strength instead.</p>',
-		releases: { 'Marks of Power': 64 }
+		releases: { MP: 64 }
 	},
 	{
 		name: 'Second Sign of Amul',
@@ -24006,7 +24029,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b> (1): After you roll, re-roll.</p>',
-		releases: { 'Marks of Power': 65 }
+		releases: { MP: 65 }
 	},
 	{
 		name: 'Shades of Death',
@@ -24017,7 +24040,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Spell Command</b> (1): Attach this card to one of your units. While attached your unit gets "<b>Terror</b>: 3".</p>',
-		releases: { 'Marks of Power': 66 }
+		releases: { MP: 66 }
 	},
 	{
 		name: "Shem's Burning Gaze",
@@ -24029,7 +24052,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Spell WarCry</b> (2): Your unit gets a strength bonus equal to the enemy unit's strength.</p>",
-		releases: { 'Marks of Power': 67 }
+		releases: { MP: 67 }
 	},
 	{
 		name: 'Soldiers Carry the Day',
@@ -24041,7 +24064,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Your unit gets +1 strength. Until the end of this combat, whenever a spell card or ability is played your unit gets gets an additional +1 strength.</p>',
-		releases: { 'Marks of Power': 68 }
+		releases: { MP: 68 }
 	},
 	{
 		name: 'Steal Soul',
@@ -24052,7 +24075,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: '<p><b>Spell Command</b> (7): Commit one enemy unit and rally one of your units. Not playable vs. Khemri, Vampire Counts or daemon units.</p>',
-		releases: { 'Marks of Power': 69 }
+		releases: { MP: 69 }
 	},
 	{
 		name: 'Storm of Cronos',
@@ -24063,7 +24086,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p><b>Spell Command</b> (X): Draw X cards. X equals the number of units in you and your enemy's battle line.</p>",
-		releases: { 'Marks of Power': 70 }
+		releases: { MP: 70 }
 	},
 	{
 		name: "The Bear's Anger",
@@ -24075,7 +24098,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (2): Your <b>Wizard</b> gets +5 strength.</p>',
-		releases: { 'Marks of Power': 71 }
+		releases: { MP: 71 }
 	},
 	{
 		name: 'The Beast Cowers',
@@ -24087,7 +24110,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Spell Combat Tactic</b> (2): Your unit gets +3 strength. Only playable vs. cavalry, flyer, or monster units.</p>',
-		releases: { 'Marks of Power': 72 }
+		releases: { MP: 72 }
 	},
 	{
 		name: 'The Comet of Casandora',
@@ -24098,7 +24121,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: "<p>When you play this card put 1 comet token on it.</p><p><b>Spell Support Tactic</b> (1): Add 1 comet token to or remove 1 comet token from this card. Either player may play this ability.</p><p><b>Spell Command</b> Destroy this card (1): Each unit in your enemy's battle line must take a strength test. For each comet token on this card add +1 to the roll for each test. If a unit fails this strength test, commit it.</p><p>If the unit is already committed, destroy it instead.</p>",
-		releases: { 'Marks of Power': 73 }
+		releases: { MP: 73 }
 	},
 	{
 		name: "The Eagle's Cry",
@@ -24109,7 +24132,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> (2): Attach this card to any cavalry or flyer unit and put 4 confusion tokens on that unit. While attached, if this unit has any confusion tokens on it, the unit may not attack or block.</p><p>After any Command ends, remove a confusion token from this unit. If this unit has no confusion tokens on it, discard this card.</p>',
-		releases: { 'Marks of Power': 74 }
+		releases: { MP: 74 }
 	},
 	{
 		name: 'The Oxen Stands',
@@ -24120,7 +24143,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (2): After your enemy routs one of your units, they may not follow up.</p>',
-		releases: { 'Marks of Power': 75 }
+		releases: { MP: 75 }
 	},
 	{
 		name: 'The Rain Lord',
@@ -24131,7 +24154,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (2): After you win a combat, commit a unit that has a ranged attack ability unless it passes a strength test.</p>',
-		releases: { 'Marks of Power': 76 }
+		releases: { MP: 76 }
 	},
 	{
 		name: 'The Wolf Hunts',
@@ -24142,7 +24165,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: "<p><b>Spell Reaction</b> (2): After you declare an attack with a cavalry, flyer, or monster unit, this attack can't be blocked and your enemy may not play reactions this combat.</p>",
-		releases: { 'Marks of Power': 77 }
+		releases: { MP: 77 }
 	},
 	{
 		name: 'Transmutation of Lead',
@@ -24154,7 +24177,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Spell Combat Tactic</b> (1): Your enemy's unit gets -2 strength and may not play abilities printed on its attachments.</p>",
-		releases: { 'Marks of Power': 78 }
+		releases: { MP: 78 }
 	},
 	{
 		name: "Ulzah's Healing Hand",
@@ -24165,7 +24188,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> Discard 1 card (X): Rally a unit with a gold cost of X or less. Not playable on Khemri, Vampire Count or daemon units.</p>',
-		releases: { 'Marks of Power': 79 }
+		releases: { MP: 79 }
 	},
 	{
 		name: 'Unseen Lurker',
@@ -24176,7 +24199,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Common',
 		text: "<p><b>Spell Command</b> (2): Declare an attack with one of your units targeting any enemy unit. This attack can't be blocked.</p>",
-		releases: { 'Marks of Power': 80 }
+		releases: { MP: 80 }
 	},
 	{
 		name: "Uranon's Thunderbolt",
@@ -24188,7 +24211,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell WarCry</b> (X): Your unit gets +X strength.</p>',
-		releases: { 'Marks of Power': 81 }
+		releases: { MP: 81 }
 	},
 	{
 		name: "Urru'z Dazzling Brightness",
@@ -24200,7 +24223,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Spell Combat Tactic</b> (2): The enemy's unit gets -4 tactic points. If this would take that unit below 0 tactic points, your unit gets +1 tactic point as well.</p>",
-		releases: { 'Marks of Power': 82 }
+		releases: { MP: 82 }
 	},
 	{
 		name: 'Wall of Fire',
@@ -24211,7 +24234,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>When you put this card into play pay 2 spell points or discard it. Choose one enemy unit. While this card is in play the chosen unit gets -3 strength.</p><p><b>Spell Combat Tactic</b> (4): Destroy this card. Either player may play this ability.</p>',
-		releases: { 'Marks of Power': 83 }
+		releases: { MP: 83 }
 	},
 	{
 		name: 'Flaming Sword of Rhiun',
@@ -24224,7 +24247,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b> Only</p><p>After setup, pay 2 spell points or discard this card.</p><p><b>Spell Combat Tactic</b> (3): Your unit gets +2 strength.</p>',
-		releases: { 'Marks of Power': 84 }
+		releases: { MP: 84 }
 	},
 	{
 		name: "Ancestor's Breath",
@@ -24238,7 +24261,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Ranged Attack</b>: 8</p><p><b>Reaction</b>: After this unit declares a ranged attack on a unit in your enemy's battle line, choose another unit in your enemy's battle line. The target of the ranged attack gets a strength bonus equal to the chosen units strength. If you win this combat,</p><p>commit the chosen unit.</p>",
-		releases: { 'Marks of Power': 85 }
+		releases: { MP: 85 }
 	},
 	{
 		name: "Silverhammer's Blooded Beards",
@@ -24252,7 +24275,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: +1</p><p><b>Combat Tactic</b>: Both you and your enemy get -2 spell points.</p>',
-		releases: { 'Marks of Power': 86 }
+		releases: { MP: 86 }
 	},
 	{
 		name: "Silverhammer's Eagle Eyes",
@@ -24266,7 +24289,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: Pay one spell point; if you do this unit gets +2 ranged attack.</p>',
-		releases: { 'Marks of Power': 87 }
+		releases: { MP: 87 }
 	},
 	{
 		name: "Silverhammer's Hammers",
@@ -24280,7 +24303,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: +2</p><p><b>Reaction</b>: After your enemy gets a spell point bonus, they lose spell points equal to that bonus. Only playable while you have no spell points.</p>',
-		releases: { 'Marks of Power': 88 }
+		releases: { MP: 88 }
 	},
 	{
 		name: "Silverhammer's Ironbreakers",
@@ -24294,7 +24317,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: +2</p><p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable vs. Orc or Monster units.</p>',
-		releases: { 'Marks of Power': 89 }
+		releases: { MP: 89 }
 	},
 	{
 		name: "Silverhammer's Lead Casters",
@@ -24308,7 +24331,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p><p> <b>WarCry</b>: If you win this combat, this unit does not commit as a result of the combat. Only playable while you have no spell points and only during a ranged attack.</p>',
-		releases: { 'Marks of Power': 90 }
+		releases: { MP: 90 }
 	},
 	{
 		name: 'Skoramin Silverhammer and Anvil of Doom',
@@ -24323,7 +24346,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Runesmith</b>: 2 <i>(Counts as Wizard)</i></p><p><b>Spell Command</b> (3) Commit: While this unit remains committed your Dwarf units get "<b>Terror</b>: 2" and "<b>Faith</b>: 2".</p><p><b>Spell Command</b> (3): Rally this unit. This ability may be played while committed and only by your enemy.</p>',
-		releases: { 'Marks of Power': 91 }
+		releases: { MP: 91 }
 	},
 	{
 		name: 'Svenador Flametamer',
@@ -24338,7 +24361,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Runesmith</b>: 1 <i>(Counts as Wizard)</i></p><p><b>Spell Combat Tactic</b> (1): Choose one attachment with a spell ability from your discard and move it to any of your other ready units.</p>',
-		releases: { 'Marks of Power': 92 }
+		releases: { MP: 92 }
 	},
 	{
 		name: 'Master Runic Talisman of Spite',
@@ -24349,7 +24372,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p>Dwarf Only</p><p><b>Spell Combat Tactic</b> (1): Your unit gets +2 strength and if this combat ends in a slaughter, you win instead. Only playable while losing a combat.</p>',
-		releases: { 'Marks of Power': 93 }
+		releases: { MP: 93 }
 	},
 	{
 		name: 'Rune Axe of Might',
@@ -24362,7 +24385,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable vs. units with a higher gold cost than your unit.</p>',
-		releases: { 'Marks of Power': 94 }
+		releases: { MP: 94 }
 	},
 	{
 		name: "Altdorf's Favored Sons",
@@ -24376,7 +24399,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b> Discard 2 cards: After your enemy routs one of your units, they may not follow up.</p>',
-		releases: { 'Marks of Power': 95 }
+		releases: { MP: 95 }
 	},
 	{
 		name: 'Balthasar Gelt, Patriarch of the Colleges of Magic',
@@ -24391,7 +24414,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Balthasar Gelt</p><p><b>Wizard</b>: 3</p><p><b>Spell Support Tactic</b> (1): Move any unit not in combat to the reserves or battle line.</p><p><b>Combat Tactic</b>: If this unit passes a tactic points test, your enemy may not play spell cards or abilities.</p>',
-		releases: { 'Marks of Power': 96 }
+		releases: { MP: 96 }
 	},
 	{
 		name: 'Defenders of Altdorf',
@@ -24405,7 +24428,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>This unit may block attacks that target your "<b>Wizard</b>" units.</p>',
-		releases: { 'Marks of Power': 97 }
+		releases: { MP: 97 }
 	},
 	{
 		name: 'Favored Knights of the Corona',
@@ -24419,7 +24442,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Spell Combat Tactic</b> (3): If you win this combat, take a spell point test. If you pass this test, rout the enemy unit (no roll necesssary). Only playable during a follow-up attack.</p>',
-		releases: { 'Marks of Power': 98 }
+		releases: { MP: 98 }
 	},
 	{
 		name: "Gausser's War Wagon",
@@ -24433,7 +24456,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Ranged Attack</b>: 8</p><p>While this unit is ready in your battle line units in the reserves may not be targeted with attacks.</p><p><b>Reaction</b>: After this unit wins a non-ranged combat but does not rout the enemy unit, return this unit to the battle line and declare a ranged attack with this unit.</p>',
-		releases: { 'Marks of Power': 99 }
+		releases: { MP: 99 }
 	},
 	{
 		name: 'Knights of the Gleaming Shield',
@@ -24447,7 +24470,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p>If your enemy only has infantry in their battle line, this unit attacks as a flyer.</p>',
-		releases: { 'Marks of Power': 100 }
+		releases: { MP: 100 }
 	},
 	{
 		name: 'Sebastion Vorbach, Bright Wizard',
@@ -24461,7 +24484,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Command</b> (3): This unit gets "<b>Ranged Attack</b>: 6" and immediately performs a ranged attack. If this unit wins, it does not commit at the end of the combat.</p>',
-		releases: { 'Marks of Power': 101 }
+		releases: { MP: 101 }
 	},
 	{
 		name: 'Tobias Vorbach, Amethyst Wizard',
@@ -24475,7 +24498,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Command</b> Commit one of your units (3): Choose an enemy unit. the chosen unit makes X strength tests. After it fails one of these tests, commit the chosen unit. If this chosen unit is committed when it fails one of these tests, destroy it instead.</p><p>X equals the strength of the committed unit.</p>',
-		releases: { 'Marks of Power': 102 }
+		releases: { MP: 102 }
 	},
 	{
 		name: 'Marcell Drexner, Jade Wizard',
@@ -24486,7 +24509,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (1): Your unit gets +2 strength and -1 leadership. Only playable while you have a strategy card in play.</p>',
-		releases: { 'Marks of Power': 103 }
+		releases: { MP: 103 }
 	},
 	{
 		name: "Wizard's Apprentice",
@@ -24497,7 +24520,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b> Only</p><p><b>Wizard</b>: 1</p><p><b>Reaction</b> Destroy this card: After this unit is committed to pay a cost or by a card effect, rally it.</p>',
-		releases: { 'Marks of Power': 104 }
+		releases: { MP: 104 }
 	},
 	{
 		name: 'Archers of Swift Deliverance',
@@ -24511,7 +24534,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Ranged Attack</b>: 8</p><p><b>Combat Tactic</b>: If you win this combat, move one of your enemy's units from the battle line to the reserves.</p>",
-		releases: { 'Marks of Power': 105 }
+		releases: { MP: 105 }
 	},
 	{
 		name: 'Archers of the Breaking Dawn',
@@ -24525,7 +24548,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: After your enemy declares an attack with a flyer unit, block with this unit. The attack is changed to a ranged attack with this unit as the attacker and the flyer unit as the defender.</p>',
-		releases: { 'Marks of Power': 106 }
+		releases: { MP: 106 }
 	},
 	{
 		name: 'Glorsildaen Shiningmorn',
@@ -24539,7 +24562,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (1): After your enemy pays the cost of a spell card or ability, cancel its effects unless your enemy pays an additional 2 spell points. Only playable while you have more spell points than your enemy.</p>',
-		releases: { 'Marks of Power': 107 }
+		releases: { MP: 107 }
 	},
 	{
 		name: 'Guardians of the Tower',
@@ -24553,7 +24576,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>This unit may not declare attacks.</p><p>This unit may block any attack or ranged attack targeting your High Elf "<b>Wizard</b>" units.</p>',
-		releases: { 'Marks of Power': 108 }
+		releases: { MP: 108 }
 	},
 	{
 		name: 'Saphery Shining Spears',
@@ -24567,7 +24590,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each High Elf infantry unit in your battle line. Only playable while you have 7 or more spell points.</p>',
-		releases: { 'Marks of Power': 109 }
+		releases: { MP: 109 }
 	},
 	{
 		name: "Shiningmorn's Ellyrian Harriers",
@@ -24581,7 +24604,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable while you have a higher "<b>Scout</b>" total than your enemy.</p>',
-		releases: { 'Marks of Power': 110 }
+		releases: { MP: 110 }
 	},
 	{
 		name: "Shiningmorn's Ellyrian Outriders",
@@ -24595,7 +24618,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Scout</b>: 1</p><p><b>Reaction</b>: After the muster phase, you may move any number of your units from the battle line to the reserves or from the reserves to the battle line.</p>',
-		releases: { 'Marks of Power': 111 }
+		releases: { MP: 111 }
 	},
 	{
 		name: "Shiningmorn's Gleaming Blades",
@@ -24609,7 +24632,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable while you have more spell points than your enemy.</p>',
-		releases: { 'Marks of Power': 112 }
+		releases: { MP: 112 }
 	},
 	{
 		name: "Shiningmorn's Valiant Spears",
@@ -24623,7 +24646,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable vs. cavalry units.</p>',
-		releases: { 'Marks of Power': 113 }
+		releases: { MP: 113 }
 	},
 	{
 		name: 'Teclis, Master of High Magic',
@@ -24638,7 +24661,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Teclis, High Loremaster</p><p><b>Wizard</b>: 3</p><p><b>Spell Reaction</b> (3): After your enemy plays a spell card or ability, cancel its effects.</p><p><b>Spell Command</b> (1): Return any spell card from your discard pile to your hand.</p>',
-		releases: { 'Marks of Power': 114 }
+		releases: { MP: 114 }
 	},
 	{
 		name: 'Drain Magic',
@@ -24649,7 +24672,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Command</b> (2): Your enemy gets -4 spell points. Only playable while you have a High Elf <b>Wizard</b>.</p>',
-		releases: { 'Marks of Power': 115 }
+		releases: { MP: 115 }
 	},
 	{
 		name: 'Fortune Is Fickle',
@@ -24660,7 +24683,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Spell Reaction</b> (2): Any roll gets +1 or -1. Only playable while you have a High Elf <b>Wizard</b>.</p>',
-		releases: { 'Marks of Power': 116 }
+		releases: { MP: 116 }
 	},
 	{
 		name: 'Grudge Rune',
@@ -24671,7 +24694,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Rare',
 		text: '<p>When you play this card you must have a Dwarf <b>Runesmith</b> in play and pay 2 spell points or discard it. When you play this card choose an army keyword.</p><p><b>Spell Combat Tactic</b> (1): Your unit gets +1 strength, +1 tactic point, and +1 leadership. Only playable vs. units with the chosen army keyword.</p>',
-		releases: { 'Marks of Power': 117 }
+		releases: { MP: 117 }
 	},
 	{
 		name: 'Master Rune of Swiftness',
@@ -24682,7 +24705,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Reaction</b> (1): After you draw a card for entering a combat, your unit gets +2 tactic points and gets to play the first tactic in the tactics phase. Only playable while you have a Dwarf <b>Runesmith</b> in play.</p>',
-		releases: { 'Marks of Power': 118 }
+		releases: { MP: 118 }
 	},
 	{
 		name: "Phoenix's Wrath",
@@ -24694,7 +24717,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Spell Combat Tactic</b> (2): Your unit gets +3 strength or +4 ranged attack. Only playable while you have a High Elf <b>Wizard</b>.</p>',
-		releases: { 'Marks of Power': 119 }
+		releases: { MP: 119 }
 	},
 	{
 		name: 'Spell Eater Rune',
@@ -24705,7 +24728,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Uncommon',
 		text: "<p>After your enemy plays a spell card or ability, you may put this card into play as a <b>Reaction</b> for 3 spell points.</p><p><b>Spell Reaction</b> (2): After your enemy plays a spell card or ability, make a tactic point test with one of your Dwarf <b>Runesmith</b>s. If you pass the test, cancel the spell card or ability's effect.</p>",
-		releases: { 'Marks of Power': 120 }
+		releases: { MP: 120 }
 	},
 	{
 		name: 'Fandar Warptouched',
@@ -24719,7 +24742,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: "<p><b>Victory</b>: -4</p><p><b>Combat Tactic</b>: This unit gets a strength bonus equal to the number of cards in your hand minus this unit's victory modifier.</p>",
-		releases: { 'Veterans of Battle': 1 }
+		releases: { VB: 1 }
 	},
 	{
 		name: "Korvin, Khorne's Chosen",
@@ -24734,7 +24757,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Korvin, Champion of Khorne/Korvin The Sentinel</p><p>You start the battle with 0 spell points and may not gain any spell points while this unit is in play.</p><p><b>Support WarCry</b>: Your enemy must either discard their hand or lose all therir spell points. Your unit gets +1 strength.</p>',
-		releases: { 'Veterans of Battle': 2 }
+		releases: { VB: 2 }
 	},
 	{
 		name: "Korvin's Chosen Knights",
@@ -24748,7 +24771,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b> Discard 2 cards: After you declare an attack with a non-infantry Chaos unit, that attack may not be blocked and the attacking unit gets +2 strength.</p>',
-		releases: { 'Veterans of Battle': 3 }
+		releases: { VB: 3 }
 	},
 	{
 		name: "Korvin's Northern Warriors",
@@ -24762,7 +24785,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Your non-infantry unit gets +1 strength.</p>',
-		releases: { 'Veterans of Battle': 4 }
+		releases: { VB: 4 }
 	},
 	{
 		name: 'Morghur, Master of Skulls',
@@ -24777,7 +24800,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Terror</b>: 3</p><p> <b>WarCry</b>: The enemy unit gets -X tactic points. X equals this unit's leadership. If this reduces the enemy's tactic points below 0, this unit gets either +1 strength or may attach a weapon from your discard pile at no cost.</p>",
-		releases: { 'Veterans of Battle': 5 }
+		releases: { VB: 5 }
 	},
 	{
 		name: "Morghur's Horde",
@@ -24791,7 +24814,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals the tactic points printed on your highest leadership unit.</p>',
-		releases: { 'Veterans of Battle': 6 }
+		releases: { VB: 6 }
 	},
 	{
 		name: "Morghur's Ogres",
@@ -24805,7 +24828,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b> Commit any of your attachments in play: Your unit gets a strength bonus equal to the gold cost of the committed attachments.</p>',
-		releases: { 'Veterans of Battle': 7 }
+		releases: { VB: 7 }
 	},
 	{
 		name: "Raaghra's Wild Herd",
@@ -24819,7 +24842,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support WarCry</b> Destroy this unit: Draw 1 card. Your unit gets +1 strength. You may play this ability while committed.</p>',
-		releases: { 'Veterans of Battle': 8 }
+		releases: { VB: 8 }
 	},
 	{
 		name: 'Mark of the Chosen',
@@ -24832,7 +24855,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This <b>Veteran</b> unit gets +1 leadership or +1 strength.</p>',
-		releases: { 'Veterans of Battle': 9 }
+		releases: { VB: 9 }
 	},
 	{
 		name: 'Arrows of Twilight',
@@ -24846,7 +24869,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p><b>Ranged Attack</b>: 3</p><p><b>Combat Tactic</b>: This unit gets +X ranged attack. X equals the number of units you have with support tactics printed on them. If this unit's ranged attack becomes 11 or more because of this ability, your enemy also discards 2 cards.</p>",
-		releases: { 'Veterans of Battle': 10 }
+		releases: { VB: 10 }
 	},
 	{
 		name: "Kyleth's Fellstalkers",
@@ -24860,7 +24883,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b> Discard X cards: Your enemy discards X cards.</p>',
-		releases: { 'Veterans of Battle': 11 }
+		releases: { VB: 11 }
 	},
 	{
 		name: "Kyleth's Reavers",
@@ -24874,7 +24897,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>Command</b>: If you have more total gold in play than your enemy, this ready unit declares an attack from the reserves. If the attack is not blocked, your enemy discards 1 card.</p>',
-		releases: { 'Veterans of Battle': 12 }
+		releases: { VB: 12 }
 	},
 	{
 		name: 'Nightbolt',
@@ -24888,7 +24911,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your enemy discards 1 card unless they pass a tactic point test.</p>',
-		releases: { 'Veterans of Battle': 13 }
+		releases: { VB: 13 }
 	},
 	{
 		name: "The Archon's Black Riders",
@@ -24902,7 +24925,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit declares an attack from the reserves, your enemy discards 1 card.</p>',
-		releases: { 'Veterans of Battle': 14 }
+		releases: { VB: 14 }
 	},
 	{
 		name: "Twilight's Harbinger",
@@ -24917,7 +24940,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Veteran</b>: Ha'asek, The Archon of Twilight</p><p><b>Support WarCry</b>: Choose 2 abilities printed on any of the enemy's units or attachments. Those abilities may not be played. Your enemy may discard 3 cards to cancel this effect.</p>",
-		releases: { 'Veterans of Battle': 15 }
+		releases: { VB: 15 }
 	},
 	{
 		name: "Twilight's Steeds",
@@ -24931,7 +24954,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: Your enemy discards 2 cards. This combat ends and both units are returned to their battle line committed. Only playable while attacking.</p>',
-		releases: { 'Veterans of Battle': 16 }
+		releases: { VB: 16 }
 	},
 	{
 		name: "Tz'arthi, Beast of Har Ganeth",
@@ -24945,7 +24968,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit routs an enemy unit, your enemy discards 1 card.</p>',
-		releases: { 'Veterans of Battle': 17 }
+		releases: { VB: 17 }
 	},
 	{
 		name: 'Kyleth the Cruel',
@@ -24956,7 +24979,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (1): Your enemy discards 1 card.</p>',
-		releases: { 'Veterans of Battle': 18 }
+		releases: { VB: 18 }
 	},
 	{
 		name: "Da Overlord's Black Orcs",
@@ -24970,7 +24993,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Victory</b>: -2</p><p><b>Support Tactic</b>: Your Orc unit with a negative victory modifier cannot be routed.</p>',
-		releases: { 'Veterans of Battle': 19 }
+		releases: { VB: 19 }
 	},
 	{
 		name: "Manmangler's Wild Boar Boyz",
@@ -24984,7 +25007,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: -6</p><p><b>Reaction</b>: After an enemy unit gets a strength bonus, any unit gets -1 strength.</p>',
-		releases: { 'Veterans of Battle': 20 }
+		releases: { VB: 20 }
 	},
 	{
 		name: "Urguck's Arrer Boyz",
@@ -24998,7 +25021,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Long Ranged Attack</b>: 5</p><p><b>Support Tactic</b> Discard 1 card: The enemy unit gets -1 tactic point.</p>',
-		releases: { 'Veterans of Battle': 21 }
+		releases: { VB: 21 }
 	},
 	{
 		name: "Urguck's Boyz",
@@ -25012,7 +25035,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: If this unit passes a tactic point test, it gets +2 strength.</p>',
-		releases: { 'Veterans of Battle': 22 }
+		releases: { VB: 22 }
 	},
 	{
 		name: "Urguck's Sneaky Gits",
@@ -25026,7 +25049,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: If this unit passes a leadership test, it gets +3 tactic points.</p>',
-		releases: { 'Veterans of Battle': 23 }
+		releases: { VB: 23 }
 	},
 	{
 		name: 'Warboss Man-mangler',
@@ -25041,7 +25064,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Urguck Manmangler, Orc Overlord</p><p><b>Reaction</b>: At the end of the Tactic Phase, choose any tactic card played by either player and place it on top of their deck.</p>',
-		releases: { 'Veterans of Battle': 24 }
+		releases: { VB: 24 }
 	},
 	{
 		name: "Wuzzag's Arrer Boyz",
@@ -25055,7 +25078,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Ranged Attack</b>: 7</p><p><b>Support Tactic</b>: If this unit passes a leadership test, your unit gets +1 tactic point.</p>',
-		releases: { 'Veterans of Battle': 25 }
+		releases: { VB: 25 }
 	},
 	{
 		name: "Wuzzag's Gobbo Mob",
@@ -25069,7 +25092,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: If this unit passes a tactic point test, it gets +3 leadership.</p>',
-		releases: { 'Veterans of Battle': 26 }
+		releases: { VB: 26 }
 	},
 	{
 		name: 'Whirly "Skinripper"',
@@ -25081,7 +25104,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: If your Orc unit is attacking or defending from the battle line, move this attachment to the attacking or defending unit.</p>',
-		releases: { 'Veterans of Battle': 27 }
+		releases: { VB: 27 }
 	},
 	{
 		name: 'Aura of Fear',
@@ -25093,7 +25116,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: This unit gets +2 strength for each of your <b>Terror</b> units.</p>',
-		releases: { 'Veterans of Battle': 28 }
+		releases: { VB: 28 }
 	},
 	{
 		name: 'Strength in Deception',
@@ -25104,7 +25127,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Super rare',
 		text: '<p> <b>Command</b>: Choose one of your units and make a leadership test. If passed, you may declare an attack with that unit (if it legally could do so) on any enemy unit. If you do, your unit gets +1 strength.</p>',
-		releases: { 'Veterans of Battle': 29 }
+		releases: { VB: 29 }
 	},
 	{
 		name: 'Hunters of the Eyebiter Tribe',
@@ -25118,7 +25141,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p>This unit may attack the enemy's reserves, even if the enemy has ready units in the battle line.</p><p><b>Reaction</b>: After this unit destroys and routs an enemy War Machine unit, if your enemy has another War Machine unit in play, you may choose that unit as the target of the follow-up attack.</p>",
-		releases: { 'Veterans of Battle': 30 }
+		releases: { VB: 30 }
 	},
 	{
 		name: 'Armor of Deflection',
@@ -25129,7 +25152,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p>This unit may not be targeted with ranged attacks.</p>',
-		releases: { 'Veterans of Battle': 31 }
+		releases: { VB: 31 }
 	},
 	{
 		name: 'Arrows of Seeking',
@@ -25140,7 +25163,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>This unit gets +2 ranged attack to all its ranged attack values.</p>',
-		releases: { 'Veterans of Battle': 32 }
+		releases: { VB: 32 }
 	},
 	{
 		name: 'Power Stone',
@@ -25151,7 +25174,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Common',
 		text: '<p><b>Wizard</b> Only</p><p>You may attach this card to a unit that already has an item attachment.</p><p>You begin the battle with 1 extra spell point.</p>',
-		releases: { 'Veterans of Battle': 33 }
+		releases: { VB: 33 }
 	},
 	{
 		name: 'Staff of Sorcery',
@@ -25162,7 +25185,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p>Your spell reactions cost 1 less spell point.</p>',
-		releases: { 'Veterans of Battle': 34 }
+		releases: { VB: 34 }
 	},
 	{
 		name: 'Sword of Battle',
@@ -25174,7 +25197,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: If you win this combat, rout the enemy unit (no rout check necessary).</p>',
-		releases: { 'Veterans of Battle': 35 }
+		releases: { VB: 35 }
 	},
 	{
 		name: 'Armored Protection',
@@ -25186,7 +25209,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +10 strength. Only playable if it has at least 1 character, weapon, armor, item, and standard attached.</p>',
-		releases: { 'Veterans of Battle': 36 }
+		releases: { VB: 36 }
 	},
 	{
 		name: 'Ashes of the Fallen',
@@ -25198,7 +25221,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals half the number of units in your discard pile (rounded up). Remove all units in your discard pile from the game.</p>',
-		releases: { 'Veterans of Battle': 37 }
+		releases: { VB: 37 }
 	},
 	{
 		name: 'Back Up Your Brothers',
@@ -25210,7 +25233,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength and +2 leadership. Only playable during a follow-up attack.</p>',
-		releases: { 'Veterans of Battle': 38 }
+		releases: { VB: 38 }
 	},
 	{
 		name: 'Battle Scream',
@@ -25222,7 +25245,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b> Discard any number of cards: This unit gets +2 strength for each card discarded. If no cards were discarded, this unit gets +1 strength.</p>',
-		releases: { 'Veterans of Battle': 39 }
+		releases: { VB: 39 }
 	},
 	{
 		name: 'Behind the Scenes',
@@ -25234,7 +25257,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. You may choose to destroy one enemy strategy card.</p>',
-		releases: { 'Veterans of Battle': 40 }
+		releases: { VB: 40 }
 	},
 	{
 		name: 'Brute Force',
@@ -25246,7 +25269,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. You may pay 2 extra tactic points when playing this card to get +5 strength instead.</p>',
-		releases: { 'Veterans of Battle': 41 }
+		releases: { VB: 41 }
 	},
 	{
 		name: 'Choose Your Allies Well',
@@ -25258,7 +25281,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets +1 strength for either each committed unit or each ready unit in your army (you choose).</p>',
-		releases: { 'Veterans of Battle': 42 }
+		releases: { VB: 42 }
 	},
 	{
 		name: 'Confidence',
@@ -25270,7 +25293,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the difference between this unit and the enemy unit. Only playable while your unit has a higher strength than the enemy unit.</p>',
-		releases: { 'Veterans of Battle': 43 }
+		releases: { VB: 43 }
 	},
 	{
 		name: 'Embark On A Quest',
@@ -25281,7 +25304,7 @@ export const cards: Card[] = [
 		type: 'Command',
 		rarity: 'Super rare',
 		text: '<p> <b>Command</b> Commit a <b>Veteran</b> unit: Attach this card to one of your <b>Veteran</b> units. While attached, this unit gets +1 strength and the following abilities: "<b>Reaction</b>: After a command has resolved, draw 1 card." and "<b>Reaction</b> Discard 3 cards: After a command has resolved, ready this unit." These abilities are only playable while committed.</p>',
-		releases: { 'Veterans of Battle': 44 }
+		releases: { VB: 44 }
 	},
 	{
 		name: 'Examine Your Strategy',
@@ -25293,7 +25316,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each strategy card you have in play.</p>',
-		releases: { 'Veterans of Battle': 45 }
+		releases: { VB: 45 }
 	},
 	{
 		name: 'Experience Has Its Rewards',
@@ -25305,7 +25328,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Your <b>Veteran</b> unit gets +3 strength.</p><p><b>Combat Tactic</b>: Your <b>Veteran</b> unit gets +3 leadership.</p><p><b>Combat Tactic</b>: If your unit is a <b>Veteran</b> unit, draw 2 cards.</p>',
-		releases: { 'Veterans of Battle': 46 }
+		releases: { VB: 46 }
 	},
 	{
 		name: 'Explosion of Power',
@@ -25317,7 +25340,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. You may pay 5 extra tactic points when playing this card to get +8 strength instead.</p>',
-		releases: { 'Veterans of Battle': 47 }
+		releases: { VB: 47 }
 	},
 	{
 		name: 'Feigned Weakness',
@@ -25329,7 +25352,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This committed unit gets +2 strength.</p>',
-		releases: { 'Veterans of Battle': 48 }
+		releases: { VB: 48 }
 	},
 	{
 		name: 'Fleet of Foot',
@@ -25341,7 +25364,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +3 Strength if it was not blocked.</p>',
-		releases: { 'Veterans of Battle': 49 }
+		releases: { VB: 49 }
 	},
 	{
 		name: 'Force Their Hand',
@@ -25353,7 +25376,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: This unit gets +2 strength. When your enemy makes their combat roll for this combat, they roll twice and you choose which die is used as their combat roll.</p>',
-		releases: { 'Veterans of Battle': 50 }
+		releases: { VB: 50 }
 	},
 	{
 		name: 'Gigantic Weakness',
@@ -25365,7 +25388,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This ranged attack unit gets +4 strength vs. monster units.</p>',
-		releases: { 'Veterans of Battle': 51 }
+		releases: { VB: 51 }
 	},
 	{
 		name: 'Give and Take',
@@ -25377,7 +25400,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: "<p><b>Combat Tactic</b>: Both units get a strength bonus equal to the cards in their controller's hand.</p>",
-		releases: { 'Veterans of Battle': 52 }
+		releases: { VB: 52 }
 	},
 	{
 		name: 'Gutsy Move',
@@ -25389,7 +25412,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Roll. You may choose to remove up to X cards from the top of your deck from the game. You get +1 strength for each card removed this way. X equals the number you rolled.</p>',
-		releases: { 'Veterans of Battle': 53 }
+		releases: { VB: 53 }
 	},
 	{
 		name: 'Hasty Move',
@@ -25401,7 +25424,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: This unit gets a strength bonus equal to the tactic point cost of the discarded card</p>',
-		releases: { 'Veterans of Battle': 54 }
+		releases: { VB: 54 }
 	},
 	{
 		name: 'Hidden Arms',
@@ -25413,7 +25436,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p> <b>WarCry</b>: Attach a weapon card from your discard pile to this unit. Only playable if your unit is a <b>Veteran</b> unit.</p>',
-		releases: { 'Veterans of Battle': 55 }
+		releases: { VB: 55 }
 	},
 	{
 		name: 'Hold Your Aim',
@@ -25425,7 +25448,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit with "<b>Ranged Attack</b>: 5" or higher gets +3 strength.</p>',
-		releases: { 'Veterans of Battle': 56 }
+		releases: { VB: 56 }
 	},
 	{
 		name: 'Holding Ground',
@@ -25437,7 +25460,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit in the reserves gets +3 strength.</p>',
-		releases: { 'Veterans of Battle': 57 }
+		releases: { VB: 57 }
 	},
 	{
 		name: 'Immediate Weakness',
@@ -25449,7 +25472,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -3 strength. This unit gets -2 strength.</p>',
-		releases: { 'Veterans of Battle': 58 }
+		releases: { VB: 58 }
 	},
 	{
 		name: 'Integrity',
@@ -25461,7 +25484,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the difference in leadership between this unit and the enemy unit. Only playable while your unit has a higher leadership than the enemy unit.</p>',
-		releases: { 'Veterans of Battle': 59 }
+		releases: { VB: 59 }
 	},
 	{
 		name: 'Keep Pace',
@@ -25472,7 +25495,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Common',
 		text: '<p><b>Spell Reaction</b>(X): After an enemy unit gets a strength bonus, you get a strength bonus equal to that bonus. X equals the strength bonus.</p>',
-		releases: { 'Veterans of Battle': 60 }
+		releases: { VB: 60 }
 	},
 	{
 		name: 'Know Their Formations',
@@ -25484,7 +25507,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit with "<b>Scout</b>: 3" or higher gets +3 strength.</p>',
-		releases: { 'Veterans of Battle': 61 }
+		releases: { VB: 61 }
 	},
 	{
 		name: 'Make Them Cow Before You',
@@ -25496,7 +25519,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your enemy discards 2 random cards. If your enemy now has less than 2 cards in their hand, your unit gets +3 strength.</p>',
-		releases: { 'Veterans of Battle': 62 }
+		releases: { VB: 62 }
 	},
 	{
 		name: 'Manipulation',
@@ -25507,7 +25530,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Rare',
 		text: '<p><b>Reaction</b>: After a roll is modified, any unit gets +2 strength. Not playable if the modified roll is a combat roll.</p>',
-		releases: { 'Veterans of Battle': 63 }
+		releases: { VB: 63 }
 	},
 	{
 		name: 'Money Equals Power',
@@ -25519,7 +25542,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the difference in gold cost between this unit and the enemy unit. Only playable if your unit has a higher gold cost than the enemy unit.</p>',
-		releases: { 'Veterans of Battle': 64 }
+		releases: { VB: 64 }
 	},
 	{
 		name: 'No Rest for the Weary',
@@ -25530,7 +25553,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After your committed unit routs a unit, it may make a follow-up attack and gets +2 strength.</p>',
-		releases: { 'Veterans of Battle': 65 }
+		releases: { VB: 65 }
 	},
 	{
 		name: 'On the Line',
@@ -25542,7 +25565,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This infantry unit gets +2 strength for each of your ready non-infantry units.</p>',
-		releases: { 'Veterans of Battle': 66 }
+		releases: { VB: 66 }
 	},
 	{
 		name: 'Past Knowledge',
@@ -25554,7 +25577,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b> Remove a copy of your unit in your discard pile from the game: This unit gets +2 strength.</p>',
-		releases: { 'Veterans of Battle': 67 }
+		releases: { VB: 67 }
 	},
 	{
 		name: 'Poison the Well',
@@ -25566,7 +25589,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: The enemy unit gets -2 strength unless it passes a tactic point test.</p>',
-		releases: { 'Veterans of Battle': 68 }
+		releases: { VB: 68 }
 	},
 	{
 		name: 'Power Over Those Who Fear',
@@ -25578,7 +25601,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: this unit with "<b>Terror</b>: 3" or higher gets +3 strength.</p>',
-		releases: { 'Veterans of Battle': 69 }
+		releases: { VB: 69 }
 	},
 	{
 		name: 'Predict Their Moves',
@@ -25590,7 +25613,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Choose a number and reveal the top 3 cards of your enemy's action deck. This unit gets +1 strength for each card with a die that matches the chosen number.</p>",
-		releases: { 'Veterans of Battle': 70 }
+		releases: { VB: 70 }
 	},
 	{
 		name: 'Recycling Your Decisions',
@@ -25602,7 +25625,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the total dice value printed on the combat tactic cards you have played this combat.</p>',
-		releases: { 'Veterans of Battle': 71 }
+		releases: { VB: 71 }
 	},
 	{
 		name: 'Resolute',
@@ -25614,7 +25637,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength. You may pay 1 extra tactic point when playing this card to get +3 strength instead.</p>',
-		releases: { 'Veterans of Battle': 72 }
+		releases: { VB: 72 }
 	},
 	{
 		name: 'Stalwart',
@@ -25626,7 +25649,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. You may pay 1 extra tactic point when playing this card to get +4 strength instead.</p>',
-		releases: { 'Veterans of Battle': 73 }
+		releases: { VB: 73 }
 	},
 	{
 		name: 'Stand Alone',
@@ -25637,7 +25660,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b> Commit your unit: After your enemy plays an ability that grants a strength bonus, reduce that bonus to 0.</p>',
-		releases: { 'Veterans of Battle': 74 }
+		releases: { VB: 74 }
 	},
 	{
 		name: 'Stay On Target',
@@ -25649,7 +25672,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +4 strength vs. blocking units.</p>',
-		releases: { 'Veterans of Battle': 75 }
+		releases: { VB: 75 }
 	},
 	{
 		name: 'Sting of the Sword',
@@ -25661,7 +25684,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -1 strength. You get +1 tactic point.</p>',
-		releases: { 'Veterans of Battle': 76 }
+		releases: { VB: 76 }
 	},
 	{
 		name: 'Strength From the Line',
@@ -25673,7 +25696,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This non-infantry unit gets +2 strength for each of your ready infantry units.</p>',
-		releases: { 'Veterans of Battle': 77 }
+		releases: { VB: 77 }
 	},
 	{
 		name: 'Strength in Your Faith',
@@ -25685,7 +25708,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit with "<b>Faith</b>: 2" or higher gets +3 strength.</p>',
-		releases: { 'Veterans of Battle': 78 }
+		releases: { VB: 78 }
 	},
 	{
 		name: 'Strength on the Winds',
@@ -25697,7 +25720,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: This unit with "<b>Wizard</b>: 2" or higher gets +3 strength.</p>',
-		releases: { 'Veterans of Battle': 79 }
+		releases: { VB: 79 }
 	},
 	{
 		name: 'Strike Before They Do',
@@ -25709,7 +25732,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p> <b>WarCry</b>: This unit gets a strength bonus equal to the enemy unit's tactic points. If the enemy unit has 0 tactic points at the end of the tactics phase, it gets a strength bonus equal to double it's printed tactic points.</p>",
-		releases: { 'Veterans of Battle': 80 }
+		releases: { VB: 80 }
 	},
 	{
 		name: 'Strike With Your Sword',
@@ -25721,7 +25744,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: If this unit has had its strength modified by an abiity printed on an attachment this combat, it gets +2d6 strength. This unit does not roll for combat.</p>',
-		releases: { 'Veterans of Battle': 81 }
+		releases: { VB: 81 }
 	},
 	{
 		name: 'The Knowledge of Your Allies',
@@ -25733,7 +25756,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b> Commit one of your units: This unit gets a strength bonus equal to the tactic points of the committed unit.</p>',
-		releases: { 'Veterans of Battle': 82 }
+		releases: { VB: 82 }
 	},
 	{
 		name: 'The Weak Stand Up',
@@ -25745,7 +25768,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This strength 0 unit gets +5 strength.</p>',
-		releases: { 'Veterans of Battle': 83 }
+		releases: { VB: 83 }
 	},
 	{
 		name: 'The Tide Comes In',
@@ -25757,7 +25780,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: Your unit gets +1 strength. Any player with 4 or fewer cards in their hand draws 5 cards. Only playable if your unit is a <b>Veteran</b> unit.</p>',
-		releases: { 'Veterans of Battle': 84 }
+		releases: { VB: 84 }
 	},
 	{
 		name: 'Use Their Weapons Against Them',
@@ -25769,7 +25792,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: "<p><b>Combat Tactic</b>: Search your enemy's discard pile for an attachment and remove it from the game. This unit gets a strength bonus equal to the gold cost of the attachment removed from the game.</p>",
-		releases: { 'Veterans of Battle': 85 }
+		releases: { VB: 85 }
 	},
 	{
 		name: 'Utilize Your Resources',
@@ -25781,7 +25804,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +5 strength. Only playable while you have more cards in your hand than your enemy has in their hand.</p>',
-		releases: { 'Veterans of Battle': 86 }
+		releases: { VB: 86 }
 	},
 	{
 		name: 'Variety of Options',
@@ -25793,7 +25816,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the difference in tactic points between this unit and the enemy unit. Only playable while you have more tactic points than the enemy unit.</p>',
-		releases: { 'Veterans of Battle': 87 }
+		releases: { VB: 87 }
 	},
 	{
 		name: 'Wait for It',
@@ -25805,7 +25828,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p><b>Combat Tactic</b>: Your unit in the battle line gets +3 strength.</p>',
-		releases: { 'Veterans of Battle': 88 }
+		releases: { VB: 88 }
 	},
 	{
 		name: 'Well-Rested',
@@ -25816,7 +25839,7 @@ export const cards: Card[] = [
 		type: 'Reaction',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After one of your units is routed, choose one of your committed units to be the target of the follow-up attack. That unit gets +1 strength.</p>',
-		releases: { 'Veterans of Battle': 89 }
+		releases: { VB: 89 }
 	},
 	{
 		name: 'Barak Grimjaw, Harbinger of Pride',
@@ -25831,7 +25854,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Barak Grimjaw, Hammer of The Dwarfs/Barak Grimjaw</p><p><b>Victory</b>: +5 while committed</p><p><b>Combat Tactic</b>: This unit gets +X strength. Destroy X attachments. X equals the number of attachments on the enemy unit.</p>',
-		releases: { 'Veterans of Battle': 90 }
+		releases: { VB: 90 }
 	},
 	{
 		name: "Barak's Ironbreakers",
@@ -25845,7 +25868,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Reaction</b>: After you win a ranged attack, this unit gets one "<b>Victory</b>: +1" token.</p>',
-		releases: { 'Veterans of Battle': 91 }
+		releases: { VB: 91 }
 	},
 	{
 		name: 'Cannons of Silverspear',
@@ -25859,7 +25882,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Victory</b>: +3</p><p><b>Long Ranged Attack</b>: 10</p>',
-		releases: { 'Veterans of Battle': 92 }
+		releases: { VB: 92 }
 	},
 	{
 		name: 'Defender of Karak-Kadrin',
@@ -25873,7 +25896,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Short Ranged Attack</b>: 4</p><p><b>Support Tactic</b> Commit: Your unit gets two "<b>Victory</b>: +1" tokens.</p>',
-		releases: { 'Veterans of Battle': 93 }
+		releases: { VB: 93 }
 	},
 	{
 		name: "Grimjaw's Flamethrower",
@@ -25887,7 +25910,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Ranged Attack</b>: 1</p><p> <b>WarCry</b>: This unit gets +X ranged attack. X equals your current total victory bonus.</p>',
-		releases: { 'Veterans of Battle': 94 }
+		releases: { VB: 94 }
 	},
 	{
 		name: "Grimjaw's Longbeards",
@@ -25901,7 +25924,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Reaction</b>: After this unit wins a combat, this unit gets one "<b>Victory</b>: +1" token. If this unit defeated an Orc unit, it gets three "<b>Victory</b>: +1" tokens instead.</p>',
-		releases: { 'Veterans of Battle': 95 }
+		releases: { VB: 95 }
 	},
 	{
 		name: "Grimjaw's Stonethrower",
@@ -25915,7 +25938,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Long Ranged Attack</b>: 6</p><p><b>Victory</b>: +6 while ready.</p><p><b>Reaction</b>: After this unit wins a ranged attack, destroy the enemy unit.</p>',
-		releases: { 'Veterans of Battle': 96 }
+		releases: { VB: 96 }
 	},
 	{
 		name: "Grimjaw's Thunderers",
@@ -25929,7 +25952,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Victory</b>: +1</p><p><b>Combat Tactic</b>: This unit gets +X ranged attack. X equals the <b>Victory</b> level on one of your units.</p>',
-		releases: { 'Veterans of Battle': 97 }
+		releases: { VB: 97 }
 	},
 	{
 		name: 'Damakrin Giantbreaker',
@@ -25941,7 +25964,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: "<p><b>Victory</b>: +2</p><p><b>Combat Tactic</b> Commit: Double this unit's strength. Only playable vs. units with gold cost higher than this unit's gold cost.</p>",
-		releases: { 'Veterans of Battle': 98 }
+		releases: { VB: 98 }
 	},
 	{
 		name: 'Averland Halberdiers',
@@ -25955,7 +25978,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Any unit gets +4 strength. Only playable vs. Chaos cavalry units.</p>',
-		releases: { 'Veterans of Battle': 99 }
+		releases: { VB: 99 }
 	},
 	{
 		name: 'Count Theodric Gausser',
@@ -25970,7 +25993,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: "<p><b>Veteran</b>: Theodric Gausser, Guardian of the Empire/Elector Count Theodric Gausser.</p><p><b>Support WarCry</b>: Exchange this unit with the unit in combat. This unit gets a strength bonus equal to the exchanged unit's tactic points.</p>",
-		releases: { 'Veterans of Battle': 100 }
+		releases: { VB: 100 }
 	},
 	{
 		name: 'Edwin Offmeir',
@@ -25984,7 +26007,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Support Tactic</b> (2): Your combat roll this combat gets +2.</p>',
-		releases: { 'Veterans of Battle': 101 }
+		releases: { VB: 101 }
 	},
 	{
 		name: 'Friedrich Ruerhart',
@@ -25998,7 +26021,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Faith</b>: 2</p><p><b>Support WarCry</b>: If this unit passes a leadership test, commit any Chaos unit unless it also passes a leadership test.</p>',
-		releases: { 'Veterans of Battle': 102 }
+		releases: { VB: 102 }
 	},
 	{
 		name: "Gausser's Protectors",
@@ -26012,7 +26035,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: "<p>This unit may block any attack or ranged attack targeting one of your unique units.</p><p><b>Support Tactic</b> Commit: Your unit gets +X strength. X equals this unit's strength.</p>",
-		releases: { 'Veterans of Battle': 103 }
+		releases: { VB: 103 }
 	},
 	{
 		name: 'Halberdiers of Norland',
@@ -26026,7 +26049,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p><b>Support WarCry</b>: Destroy the enemy unit unless it passes a tactic point test. Only playable vs. cavalry units.</p>',
-		releases: { 'Veterans of Battle': 104 }
+		releases: { VB: 104 }
 	},
 	{
 		name: 'Marienburg Swordsmen',
@@ -26040,7 +26063,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: Any unit gets +2 strength. Only playable vs. Chaos units.</p>',
-		releases: { 'Veterans of Battle': 105 }
+		releases: { VB: 105 }
 	},
 	{
 		name: 'Wissenburg Greatswords',
@@ -26054,7 +26077,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p>Infantry may block this unit when it declares an attack.</p><p><b>Support Tactic</b>: Your unit gets +2 strength. Destroy it at the end of this command.</p>',
-		releases: { 'Veterans of Battle': 106 }
+		releases: { VB: 106 }
 	},
 	{
 		name: 'Anton Lutrecht',
@@ -26066,7 +26089,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Support Tactic</b>: Your unit gets +1 tactic point.</p>',
-		releases: { 'Veterans of Battle': 107 }
+		releases: { VB: 107 }
 	},
 	{
 		name: "Bilgarim's Silverhelms",
@@ -26080,7 +26103,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals the strength of the High Elf unit with the most tactic points.</p>',
-		releases: { 'Veterans of Battle': 108 }
+		releases: { VB: 108 }
 	},
 	{
 		name: 'Eagles of Ulthuan',
@@ -26094,7 +26117,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Support Tactic</b>: If this unit passes a tactic point test, replace your unit in combat with this unit.</p>',
-		releases: { 'Veterans of Battle': 109 }
+		releases: { VB: 109 }
 	},
 	{
 		name: 'Helms of Caladai',
@@ -26108,7 +26131,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: If this unit passes a tactic point test, replace this unit with a High Elf infantry unit. That unit gets +2 strength.</p>',
-		releases: { 'Veterans of Battle': 110 }
+		releases: { VB: 110 }
 	},
 	{
 		name: "Lathain's Phoenix Guard",
@@ -26122,7 +26145,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Victory</b>: -3</p><p><b>Combat Tactic</b>: If this unit passes a tactic point test, it gets +2 strength and <b>Terror</b>: 1"."</p>',
-		releases: { 'Veterans of Battle': 111 }
+		releases: { VB: 111 }
 	},
 	{
 		name: 'Lord Whitestar, Mage of Ulthuan',
@@ -26137,7 +26160,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Super rare',
 		text: '<p><b>Veteran</b>: Bilgarim Whitestar, Elven Lord</p><p><b>Wizard</b>: 2</p><p>If there is a terrain card in play, your units may not be blocked and your infantry may attack from the reserves.</p><p><b>Spell Reaction</b> (1): After setup, put a terrain card into play.</p><p><b>Spell Reaction</b> (2): After a card or ability is played which would destroy one of your strategy cards, negate its effects.</p>',
-		releases: { 'Veterans of Battle': 112 }
+		releases: { VB: 112 }
 	},
 	{
 		name: 'Sarathai, Dragon of Caledor',
@@ -26152,7 +26175,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>Your units may play Support WarCries as support tactics.</p><p><b>Reaction</b>: After a spell card or ability is played, any unit gets +1 strength.</p>',
-		releases: { 'Veterans of Battle': 113 }
+		releases: { VB: 113 }
 	},
 	{
 		name: "Whitestar's Shadow Warriors",
@@ -26166,7 +26189,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Common',
 		text: '<p><b>Scout</b>: 6</p>',
-		releases: { 'Veterans of Battle': 114 }
+		releases: { VB: 114 }
 	},
 	{
 		name: "Whitestar's Truespear",
@@ -26180,7 +26203,7 @@ export const cards: Card[] = [
 		type: 'Unit',
 		rarity: 'Rare',
 		text: '<p>You must discard 1 card when mustering this unit.</p><p>Your ready units get +1 tactic point for each copy of this unit in play.</p><p><b>Short Ranged Attack</b>: X. X equals the total number of tactic points in your battle line.</p>',
-		releases: { 'Veterans of Battle': 115 }
+		releases: { VB: 115 }
 	},
 	{
 		name: 'Kourdhir Brazenlight',
@@ -26193,7 +26216,7 @@ export const cards: Card[] = [
 		type: 'Attachment',
 		rarity: 'Uncommon',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support Tactic</b> (1): Your unit gets +1 strength or +1 ranged attack. If your unit is a High Elf unit it gets +2 strength or +2 ranged attack instead.</p>',
-		releases: { 'Veterans of Battle': 116 }
+		releases: { VB: 116 }
 	},
 	{
 		name: "Bugman's Brew",
@@ -26205,7 +26228,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Super rare',
 		text: '<p><b>Combat Tactic</b>: Your unit gets -1 strength and is immune to <b>Terror</b>. If your unit is a Dwarf unit, rally it if it is committed and it cannot be routed this combat.</p>',
-		releases: { 'Veterans of Battle': 117 }
+		releases: { VB: 117 }
 	},
 	{
 		name: 'Impressive Might',
@@ -26217,7 +26240,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Rare',
 		text: '<p><b>Combat Tactic</b>: Your unit gets a strength bonus equal to its gold cost.</p>',
-		releases: { 'Veterans of Battle': 118 }
+		releases: { VB: 118 }
 	},
 	{
 		name: 'Strength Versus the Weak',
@@ -26228,7 +26251,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Uncommon',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength vs. committed units.</p>',
-		releases: { 'Veterans of Battle': 119 }
+		releases: { VB: 119 }
 	},
 	{
 		name: 'Virtue of Heroism',
@@ -26239,7 +26262,7 @@ export const cards: Card[] = [
 		type: 'Tactic',
 		rarity: 'Common',
 		text: '<p> <b>WarCry</b>: If your <b>Faith</b> unit is losing the combat, it gets X+1 strength. X equals how much you are losing the combat by.</p>',
-		releases: { 'Veterans of Battle': 120 }
+		releases: { VB: 120 }
 	},
 	{
 		name: 'Blade of Attrition',
@@ -26250,27 +26273,27 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: "<p><b>Reaction</b>: After both players have passed ending the battle, destroy any enemy unit with a gold cost equal to or less than this unit's printed gold cost. Put X -1 strength tokens on this unit. X equals the opposing unit's strength.</p><p>This reaction is playable while committed.</p>",
-		releases: { 'Promo (WA)': 1 }
+		releases: { PA: 1 }
 	},
 	{
-		name: 'War of Attrition',
+		name: 'WA',
 		die: 3,
 		keywords: [],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b>: Remove this card from the game: After one of your units is destroyed in combat, put a number of -1 strength tokens on the enemy unit equal to the printed strength of your unit plus any bonuses or penalties from attached cards and tokens.</p>',
-		releases: { 'Promo (WA)': 2 }
+		releases: { PA: 2 }
 	},
 	{
-		name: 'Hand of Fate',
+		name: 'HF',
 		die: 5,
 		keywords: ['Strategy'],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p>While there are 1 or more copies of this card in play, before each combat, each player discards their hand and draws a new hand of 5 cards.</p>',
-		releases: { 'Promo (WA)': 3 }
+		releases: { PA: 3 }
 	},
 	{
 		name: 'Alignment of the Heavens',
@@ -26280,7 +26303,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Command',
 		text: '<p>When you play this card choose strength, tactic points or leadership.</p><p><b>Spell Command</b> (6): If you and your enemy have the same total of the chosen stat in play, you immediately win the battle.</p>',
-		releases: { 'Promo (WA)': 4 }
+		releases: { PA: 4 }
 	},
 	{
 		name: 'Lethphaos',
@@ -26294,7 +26317,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b>: Rout the enemy unit if you win this combat (no roll necessary). Only playable while the opposing unit is infantry.</p>',
-		releases: { 'Promo (WA)': 5 }
+		releases: { PA: 5 }
 	},
 	{
 		name: 'Slaahadum',
@@ -26307,7 +26330,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Combat Tactic</b> (3): Commit the enemy unit unless it passes a tactic point test.</p>',
-		releases: { 'Promo (WA)': 6 }
+		releases: { PA: 6 }
 	},
 	{
 		name: 'Yrmaldrel Blackcrown',
@@ -26321,7 +26344,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b>: Your enemy discards 2 cards.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +X strength. X equals the die on the card discarded for this ability.</p>',
-		releases: { 'Promo (WA)': 7 }
+		releases: { PA: 7 }
 	},
 	{
 		name: "Yrmaldrel's Corsairs",
@@ -26334,7 +26357,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: "<p> <b>WarCry</b>: This unit gets +X strength. X equals the number of cards in your hand in excess of the number of cards in your enemy's hand.</p>",
-		releases: { 'Promo (WA)': 8 }
+		releases: { PA: 8 }
 	},
 	{
 		name: 'Nuznar the Destroyer',
@@ -26348,7 +26371,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Victory</b>: -5</p><p><b>Support WarCry</b>: If your Orc unit wins this combat and it passes a leadership test, it may attempt to rout the enemy unit.</p>',
-		releases: { 'Promo (WA)': 9 }
+		releases: { PA: 9 }
 	},
 	{
 		name: 'Zazerg the Wierd',
@@ -26361,7 +26384,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Wizard</b>:3</p><p><b>Spell WarCry</b> (1): Play an evil spell combat tactic card (including WarCries) from your discard pile as though it were in your hand, paying no costs.</p>',
-		releases: { 'Promo (WA)': 10 }
+		releases: { PA: 10 }
 	},
 	{
 		name: "Siksik's Plague Monks",
@@ -26374,7 +26397,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: After your enemy discards a card this unit gets +1 strength.</p>',
-		releases: { 'Promo (WA)': 11 }
+		releases: { PA: 11 }
 	},
 	{
 		name: "Rakash's Royal Regiment",
@@ -26387,7 +26410,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p><b>Reaction</b>: After this unit gets a tactic point bonus, the enemy unit gets -1 leadership.</p>',
-		releases: { 'Promo (WA)': 12 }
+		releases: { PA: 12 }
 	},
 	{
 		name: 'The Red Thirst',
@@ -26398,7 +26421,7 @@ export const cards: Card[] = [
 		faction: 'Hordes of Darkness',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: Your unit gets +6 strength. Only playabe while your unit has a higher printed strength and tactic points than the enemy unit.</p>',
-		releases: { 'Promo (WA)': 13 }
+		releases: { PA: 13 }
 	},
 	{
 		name: "Kineater's Ironguts",
@@ -26411,7 +26434,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Victory</b>:-4</p><p><b>Combat Tactic</b> Discard 2 cards: If this unit wins this combat, rout the enemy unit (no roll necessary). Only playable once per command.</p>',
-		releases: { 'Promo (WA)': 14 }
+		releases: { PA: 14 }
 	},
 	{
 		name: 'Catastrophic Miscalculation',
@@ -26421,7 +26444,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p><b>Spell Command</b> (2): Destroy an enemy unit. Only playable while your enemy has at least double the number of spell points they started the battle with.</p>',
-		releases: { 'Promo (WA)': 15 }
+		releases: { PA: 15 }
 	},
 	{
 		name: 'Convocation of Power',
@@ -26431,7 +26454,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p><b>Spell Command</b> (0): One of your <b>Wizard</b> units takes a leadership test. If the test is passed, any one player gets +1 spell point. You must repeat this process until you fail a leadership test or you shuffle your action deck. If you shuffle your action deck during this command, your enemy may destroy any one of your units.</p>',
-		releases: { 'Promo (WA)': 16 }
+		releases: { PA: 16 }
 	},
 	{
 		name: 'Dark Destiny',
@@ -26441,7 +26464,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p>When this strategy enters play, destroy all other versions of this card in play.</p><p><b>Reaction</b>: After an enemy unit takes a test (whether it passes or fails), place a Doom token on this strategy.</p><p><b>Support Tactic</b> Remove X Doom tokens from this strategy: Your unit gets a strength bonus equal to X.</p>',
-		releases: { 'Promo (WA)': 17 }
+		releases: { PA: 17 }
 	},
 	{
 		name: 'Death Is My Mistress',
@@ -26451,7 +26474,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b>: After you rout a unit, draw two cards.</p>',
-		releases: { 'Promo (WA)': 18 }
+		releases: { PA: 18 }
 	},
 	{
 		name: 'Defensive Measures',
@@ -26461,7 +26484,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p>During follow-up attacks, the attacking unit gets -1 strength and the defending unit gets +1 strength.</p>',
-		releases: { 'Promo (WA)': 19 }
+		releases: { PA: 19 }
 	},
 	{
 		name: 'Enchantment Amplification',
@@ -26471,7 +26494,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Spell Reaction</b> (0): After one of your attachments gives you a non-permanent bonus (strength, tactic point, etc.), double that bonus. That bonus may not be modified again.</p><p><b>Spell Reaction</b> (0): After one of your attachments is destroyed during a combat, return that attachment to the unit it was attached to.</p>',
-		releases: { 'Promo (WA)': 20 }
+		releases: { PA: 20 }
 	},
 	{
 		name: 'Everyone Loves a Winner',
@@ -26482,7 +26505,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: This unit gets +2 strength. If this unit wins the combat, draw 2 cards.</p>',
-		releases: { 'Promo (WA)': 21 }
+		releases: { PA: 21 }
 	},
 	{
 		name: 'Inner Fire',
@@ -26493,7 +26516,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +2 strength. Instead of placing this card into your discard pile after you play it, you may discard 1 card from your hand to return this card to your hand.</p>',
-		releases: { 'Promo (WA)': 22 }
+		releases: { PA: 22 }
 	},
 	{
 		name: 'Inspired Courage',
@@ -26503,7 +26526,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p>This strategy is not discarded after the battle it entered play.</p><p>Units may not be committed with card effects by enemy players.</p>',
-		releases: { 'Promo (WA)': 23 }
+		releases: { PA: 23 }
 	},
 	{
 		name: 'Lost Wisdom',
@@ -26513,7 +26536,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p> <b>Command</b>: Choose 5 cards from either your army or action discard pile and then put them on top of their respective decks in any order.</p>',
-		releases: { 'Promo (WA)': 24 }
+		releases: { PA: 24 }
 	},
 	{
 		name: 'Master Assassins',
@@ -26523,7 +26546,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: "<p><b>Reaction</b>: After one of your units has been destroyed in combat, put 1 poison token on the enemy unit and return this card to your hand (you may not react to the same trigger again with any copy of this card).</p><p><b>Reaction</b>: After one of your units enters combat against a unit with at least X pison tokens, rout and destroy that unit. X equals the enemy unit's printed strength plus 1.</p>",
-		releases: { 'Promo (WA)': 25 }
+		releases: { PA: 25 }
 	},
 	{
 		name: 'Masterful Maneuvering',
@@ -26533,7 +26556,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: "<p><b>Reaction</b>: After victory is determined for the current battle, target. one of your enemy's units. That unit must be carried over to the next battle or the chosen card may not be carried over (your choice).</p>",
-		releases: { 'Promo (WA)': 26 }
+		releases: { PA: 26 }
 	},
 	{
 		name: 'Narrowed Options',
@@ -26544,7 +26567,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: The enemy unit may only play a number of tactics equal to its leadership minus 1. ("<b>Terror</b>" does not affect this)</p>',
-		releases: { 'Promo (WA)': 27 }
+		releases: { PA: 27 }
 	},
 	{
 		name: 'No Substitute for Experience',
@@ -26554,7 +26577,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b>: After victory is determined for the current battle, attach this card to one of your units. While attached, this unit gets +1 strength and +1 tactic point.</p>',
-		releases: { 'Promo (WA)': 28 }
+		releases: { PA: 28 }
 	},
 	{
 		name: 'Pessimistic Planning',
@@ -26564,7 +26587,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: "<p><b>Reaction</b>: After one of your units is committed by an enemy's card effect, rally the committed unit.</p><p><b>Reaction</b>: After an enemy unit gets a strength bonus of 4 or more during a combat, reduce that bonus to 3.</p>",
-		releases: { 'Promo (WA)': 29 }
+		releases: { PA: 29 }
 	},
 	{
 		name: 'Superstition',
@@ -26574,7 +26597,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p><b>Reaction</b>: After your enemy plays a spell card or ability, commit any unit unless it passes a leadership test.</p>',
-		releases: { 'Promo (WA)': 30 }
+		releases: { PA: 30 }
 	},
 	{
 		name: 'Tireless Defense',
@@ -26584,7 +26607,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Reaction',
 		text: '<p><b>Reaction</b>: After your defending unit in a follow-up attack wins the combat, your unit is not committed.</p>',
-		releases: { 'Promo (WA)': 31 }
+		releases: { PA: 31 }
 	},
 	{
 		name: 'Total Mastery',
@@ -26595,7 +26618,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p><b>Combat Tactic</b>: This combat ends. Your unit wins this combat and no combat roll is made by either player. The enemy unit is routed (no roll necessary). If this card is played for free or for a reduced cost, your unit loses and is routed instead (no roll necessary).</p>',
-		releases: { 'Promo (WA)': 32 }
+		releases: { PA: 32 }
 	},
 	{
 		name: 'War Is My Master',
@@ -26606,7 +26629,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		text: '<p> <b>WarCry</b>: Your unit gets +4 strength. Only playable while you are attacking and only if this strength bonus gives you a higher total strength than the enemy unit. If you wn this combat rout the opposing unit automatically (no roll necessary).</p>',
-		releases: { 'Promo (WA)': 33 }
+		releases: { PA: 33 }
 	},
 	{
 		name: 'Gilded Armor',
@@ -26616,7 +26639,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Combat Tactic</b>: If this combat ends in a slaughter, this unit wins instead. Only playable while attacking.</p><p><b>Combat Tactic</b>: This unit gets +3 strength and may not follow-up. Only playable while defending.</p>',
-		releases: { 'Promo (WA)': 34 }
+		releases: { PA: 34 }
 	},
 	{
 		name: 'Sword of Might',
@@ -26626,7 +26649,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength or +1 tactic point. This ability may be played twice per combat.</p>',
-		releases: { 'Promo (WA)': 35 }
+		releases: { PA: 35 }
 	},
 	{
 		name: 'Talisman of Might',
@@ -26637,7 +26660,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p><b>Reaction</b>: After any player musters a unit with a lower gold cost than the unit in play with the highest cost, they discard one card. Either player may play this ability.</p>',
-		releases: { 'Promo (WA)': 36 }
+		releases: { PA: 36 }
 	},
 	{
 		name: "Balduhild's Knights of the Shield",
@@ -26650,7 +26673,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p>While you have more units in your reserve than your enemy, this unit attacks as a flyer.</p><p><b>Combat Tactic</b>: Move any unit from the reserves to its controller's battle line.</p>",
-		releases: { 'Promo (WA)': 37 }
+		releases: { PA: 37 }
 	},
 	{
 		name: 'Furendrin Goldeneye',
@@ -26664,7 +26687,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p><b>Ranged Attack</b>: 4</p><p><b>Combat Tactic</b>: Destroy an attachment. This unit gets +X ranged attack. X equals the destroyed attachment's gold cost. Only playable during a ranged attack.</p>",
-		releases: { 'Promo (WA)': 38 }
+		releases: { PA: 38 }
 	},
 	{
 		name: 'Lord Furzin Goldeneye',
@@ -26678,7 +26701,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>While ready, this unit gets "<b>Victory</b>: +1" for each other Dwarf unit with a gold cost of 4 or more you have in play.</p><p><b>Support WarCry</b>: Any unit gets +X strength. X equals this unit\'s "<b>Victory</b>" level.</p>',
-		releases: { 'Promo (WA)': 39 }
+		releases: { PA: 39 }
 	},
 	{
 		name: 'Kurt Helborg, Grand Master of the Reiksguard',
@@ -26692,7 +26715,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p><b>Veteran</b>: Reiksmarshall Kurt Helborg</p><p>Your cavalry units may play WarCry cards as if they were combat tactics (even while this unit is committed).</p><p><b>Combat Tactic</b>: If this unit passes a tactic point test, draw 1 card.</p>',
-		releases: { 'Promo (WA)': 40 }
+		releases: { PA: 40 }
 	},
 	{
 		name: 'Shield of the Emperor',
@@ -26705,7 +26728,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p>When you muster this unit, reveal your hand. If you have more unique cards than non-unique cards, this unit's gold cost is reduced by 2.</p><p><b>Combat Tactic</b>: The Tactic Phase ends. Only playable while your unit's strength is at least double the enemy unit's strength.</p>",
-		releases: { 'Promo (WA)': 41 }
+		releases: { PA: 41 }
 	},
 	{
 		name: 'Gaenrifir Hawkgrace, Silver Helm Champion',
@@ -26719,7 +26742,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p>This unit may not block.</p><p> <b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
-		releases: { 'Promo (WA)': 42 }
+		releases: { PA: 42 }
 	},
 	{
 		name: 'Prince Khadrynir Pureflight and Swiftwing',
@@ -26733,7 +26756,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: "<p>While this unit is ready, all of your High Elf units get +1 leadership.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if your enemy's unit played a WarCry this combat.</p>",
-		releases: { 'Promo (WA)': 43 }
+		releases: { PA: 43 }
 	},
 	{
 		name: 'Blessed Spawn of Huanchi',
@@ -26746,7 +26769,7 @@ export const cards: Card[] = [
 		faction: 'Grand Alliance',
 		type: 'Unit',
 		text: '<p> <b>WarCry</b>: This unit gets +X strength. X equals one of your other units "<b>Victory</b>" level.</p>',
-		releases: { 'Promo (WA)': 44 }
+		releases: { PA: 44 }
 	},
 	{
 		name: 'Standard of War',
@@ -26756,7 +26779,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Attachment',
 		text: '<p>You may have any number of copies of this card in your deck.</p><p><b>Combat Tactic</b> Destroy any copy of this card attached to one of your units: This unit gets +2 strength. You may play this ability any number of times per combat.</p>',
-		releases: { 'Promo (WA)': 45 }
+		releases: { PA: 45 }
 	},
 	{
 		name: 'Resrauch Goldenscale',
@@ -26770,7 +26793,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Terror</b>: 3</p><p><b>Combat Tactic</b>s played by this unit have their tactic point cost reduced to 0.</p>',
-		releases: { 'Promo (WA)': 46 }
+		releases: { PA: 46 }
 	},
 	{
 		name: 'Luthor Drauwulf',
@@ -26783,17 +26806,17 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength and "<b>Faith</b>:2". Only playable while you are playing the Grand Alliance.</p><p><b>Combat Tactic</b>: This unit gets +2 strength and "<b>Terror</b>:1". Only playable while you are playing the Hordes of Darkness.</p>',
-		releases: { 'Promo (WA)': 47 }
+		releases: { PA: 47 }
 	},
 	{
-		name: 'Marks of Power',
+		name: 'MP',
 		die: 4,
 		keywords: ['Strategy'],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p>You may put this card into play as a combat tactic for 2 tactic points.</p><p><b>Support Tactic</b>: You get spell points equal to the tactic points of your unit in combat. Commit that unit unless it passes a leadership test.</p>',
-		releases: { 'Promo (WA)': 48 }
+		releases: { PA: 48 }
 	},
 	{
 		name: 'Stewards of the Land',
@@ -26806,16 +26829,16 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		text: '<p><b>Scout</b>: 3</p><p><b>Reaction</b>: After your enemy plays an ability that destroys one of your strategy cards, negate its effects.</p>',
-		releases: { 'Promo (WA)': 49 }
+		releases: { PA: 49 }
 	},
 	{
-		name: 'Veterans of Battle',
+		name: 'VB',
 		die: 3,
 		keywords: ['Strategy'],
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
 		text: '<p>If you have won a battle this game, your units get +1 strength.</p><p> <b>Command</b> Discard your hand: Destroy this card. Your enemy may play this ability.</p>',
-		releases: { 'Promo (WA)': 50 }
+		releases: { PA: 50 }
 	}
 ] as const;

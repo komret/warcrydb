@@ -5,6 +5,7 @@
 		cardTypes,
 		rarities,
 		sets,
+		setNames,
 		keywords,
 		dieValues,
 		costValues,
@@ -341,32 +342,22 @@
 			if (selectedFormat !== 'any') {
 				const cardReleases = card.releases;
 				const warcryFormatSets = [
-					'WarCry',
-					'Winds of Magic',
-					'Siege of Darkness',
-					'Dogs of War',
-					'Path of Glory',
-					'Chivalry and Deceit',
-					'Legions of Chaos',
-					'Champions',
-					'Siege of Middenheim',
-					'Harbingers of War',
-					'Death and Honour',
-					'Bringers of Darkness',
-					'Legends',
-					'Promo (WC)'
+					'WC',
+					'WM',
+					'SD',
+					'DW',
+					'PG',
+					'CD',
+					'LC',
+					'CC',
+					'SM',
+					'HW',
+					'DH',
+					'LW',
+					'PW'
 				];
-				const attritionFormatSets = [
-					'Bearers of Redemption',
-					'Valor and Treachery',
-					'Swords of Retribution',
-					'War of Attrition',
-					'Hand of Fate',
-					'Marks of Power',
-					'Veterans of Battle',
-					'Promo (WA)'
-				];
-				const oldSchoolBaseSets = ['WarCry', 'Winds of Magic', 'Siege of Darkness'];
+				const attritionFormatSets = ['BR', 'VT', 'SR', 'WA', 'HF', 'MP', 'VB', 'PA'];
+				const oldSchoolBaseSets = ['WC', 'WM', 'SD'];
 
 				if (selectedFormat === 'warcry') {
 					const hasWarcrySet = Object.keys(cardReleases).some((set) =>
@@ -384,7 +375,7 @@
 						oldSchoolBaseSets.includes(set)
 					);
 					const hasPromoWCWithLowNumber =
-						cardReleases['Promo (WC)'] !== undefined && cardReleases['Promo (WC)']! <= 40;
+						cardReleases['PW'] !== undefined && cardReleases['PW']! <= 40;
 					if (!hasBaseSet && !hasPromoWCWithLowNumber) return false;
 				}
 			}
@@ -532,7 +523,7 @@
 					>
 						<option value="any">Any</option>
 						{#each sets as set}
-							<option value={set}>{set}</option>
+							<option value={set}>{setNames[set]}</option>
 						{/each}
 					</select>
 				</div>
