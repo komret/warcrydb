@@ -5,7 +5,7 @@
 	let showMenu = $state(false);
 
 	// Current page prop
-	let { currentPage = 'home' }: { currentPage?: 'home' | 'errata' | 'about' } = $props();
+	let { currentPage = 'home' }: { currentPage?: 'home' | 'errata' | 'faq' | 'about' } = $props();
 </script>
 
 <header class="relative mb-4">
@@ -62,6 +62,14 @@
 						: 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
 				>
 					Errata
+				</a>
+				<a
+					href="/faq"
+					class="rounded-lg px-4 py-2 transition-colors {currentPage === 'faq'
+						? 'bg-gray-700 font-semibold text-white'
+						: 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
+				>
+					FAQ
 				</a>
 				<a
 					href="/about"

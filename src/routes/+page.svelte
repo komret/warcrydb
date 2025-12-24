@@ -15,6 +15,7 @@
 	} from '$lib/data/cards';
 	import Card from '$lib/components/Card.svelte';
 	import Header from '$lib/components/Header.svelte';
+	import SearchInput from '$lib/components/SearchInput.svelte';
 
 	// Type definitions
 	type NumericOperator = 'exact' | 'higher' | 'lower';
@@ -489,13 +490,7 @@
 		<div class="mb-4 rounded-lg bg-gray-800 p-4 shadow-xl">
 			<!-- Search -->
 			<div class="mb-4">
-				<input
-					id="search"
-					type="text"
-					bind:value={searchQuery}
-					placeholder="Search by title or text..."
-					class="h-[42px] w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-2 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-				/>
+				<SearchInput bind:value={searchQuery} placeholder="Search by title or text (use & for AND, | for OR)..." />
 			</div>
 
 			<!-- Keyword Filter and Dropdowns Row -->
