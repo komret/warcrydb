@@ -1,7 +1,6 @@
 <script lang="ts">
 	type Props = {
 		value: string;
-		onInput: (value: string) => void;
 		placeholder?: string;
 	};
 
