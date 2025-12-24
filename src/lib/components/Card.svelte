@@ -6,9 +6,10 @@
 		card: Card;
 		searchQuery?: string;
 		showErrataHighlight?: boolean;
+		onclick?: () => void;
 	};
 
-	let { card, searchQuery = '', showErrataHighlight = false }: Props = $props();
+	let { card, searchQuery = '', showErrataHighlight = false, onclick }: Props = $props();
 
 	// Replace errata class with text-blue-500 if showing errata highlights
 	const processCardText = (html: string): string => {
@@ -55,12 +56,14 @@
 		}
 	};
 
-	const costCircleColor = getCostCircleColor(card.type);
-	const strengthCircleColor = getStrengthCircleColor(card.faction);
+	const costCircleColor = $derived(getCostCircleColor(card.type));
+	const strengthCircleColor = $derived(getStrengthCircleColor(card.faction));
 </script>
 
-<div
-	class="rounded-lg border border-gray-700 bg-gray-800 p-4 shadow-lg transition-all hover:border-blue-500 hover:shadow-xl"
+<button
+	type="button"
+	class="w-full cursor-pointer rounded-lg border border-gray-700 bg-gray-800 p-4 text-left shadow-lg transition-all hover:border-blue-500 hover:shadow-xl"
+	{onclick}
 >
 	<!-- Two column layout on larger screens, single column on mobile -->
 	<div class="grid grid-cols-1 gap-4 md:grid-cols-[minmax(auto,380px)_1fr]">
@@ -190,4 +193,4 @@
 			{/if}
 		</div>
 	</div>
-</div>
+</button>
