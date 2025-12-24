@@ -15,7 +15,7 @@
 		{@html highlightSearchTerms(item.question, searchQuery)}
 	</h2>
 	<div class="relative">
-		<p class="pr-8 text-sm text-gray-400">
+		<p class="pr-8 text-base text-gray-400">
 			{@html highlightSearchTerms(item.answer, searchQuery)}
 		</p>
 		<a

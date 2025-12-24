@@ -456,7 +456,10 @@
 		<div class="mb-4 rounded-lg bg-gray-800 p-4 shadow-xl">
 			<!-- Search -->
 			<div class="mb-4">
-				<SearchInput bind:value={searchQuery} placeholder="Search by title or text (use & for AND, | for OR)..." />
+				<SearchInput
+					bind:value={searchQuery}
+					placeholder="Search by title or text (use & for AND, | for OR)..."
+				/>
 			</div>
 
 			<!-- Keyword Filter and Dropdowns Row -->
@@ -820,7 +823,7 @@
 		<!-- Results Count -->
 		<div class="mb-4 flex items-center justify-between">
 			<div class="text-sm text-gray-400">
-				Showing {filteredCards.length} of {cards.length} cards
+				{filteredCards.length} results
 			</div>
 			<button
 				onclick={resetFilters}

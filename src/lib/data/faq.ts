@@ -46,28 +46,32 @@ export const faq: FAQ[] = [
 		question:
 			"What happens if I play Leitdorf Maneuver while Whitestar's Guardians of the Sky are in combat?",
 		answer: 'You cannot play the support tactic as the Guardians are not in any line.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418163844/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2890&PN=1'
 	},
 	{
 		id: 7,
 		question:
 			"What happens if I play False Orders to use the support tactic on my enemy's Whitestar's Guardians of the Sky?",
 		answer: "You cannot play the support tactic as your unit cannot enter your enemy's lines.",
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418163844/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2890&PN=1'
 	},
 	{
 		id: 8,
 		question:
 			"If a ready unit is removed from combat by the support tactic on Whitestar's Guardians of the Sky, does it commit?",
 		answer: 'No, the unit goes back in whatever state it was in whilst in the combat.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418163844/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2890&PN=1'
 	},
 	{
 		id: 9,
 		question:
 			'Does the WarCry on Katarin, Bringer of Winter create an aborted combat where players continue playing tactis until both of them pass, or does the combat end immediately?',
 		answer: 'The combat ends immediately.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20060117155645/http://sabertoothgames.com/forum/forum_posts.asp?TID=5865&PN=2'
 	},
 	{
 		id: 10,
@@ -130,14 +134,16 @@ export const faq: FAQ[] = [
 		question:
 			'When a committed attachment is moved from one unit to another, does it stay committed?',
 		answer: 'No, the attachment inherits the state of the unit it is attached to.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051103215025/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4394&PN=1'
 	},
 	{
 		id: 19,
 		question: 'What happens if the character attachment attached to On Your Own is destroyed?',
 		answer:
 			'On Your Own becomes a unit with Strength, Tactic Points and Leadership 0. This does not change even if you re-attach the attachment.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051103215025/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4394&PN=1'
 	},
 	{
 		id: 20,
@@ -145,21 +151,24 @@ export const faq: FAQ[] = [
 			"Does a unit attached to Invocation of Nehek count as an attachment or as a unit for the puposes of card effects? For example, can I use the reaction on attached Carstein's Flesh Eaters when they are destroyed?",
 		answer:
 			"It counts as a unit. Whether a card is a unit or not is determined by it's card layout. The fact that they it is attached to another unit means that it has most of the usual rules for being a unit suspended. Carstein's Flesh Eaters' reaction can be used.",
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418160714/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2853&PN=1'
 	},
 	{
 		id: 21,
 		question:
 			'If a reaction is played to return a unit to play after it is destroyed, does it retain its attachments?',
 		answer: 'Only if the reaction uses the word "instead", such as The Carstein Ring.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050506085021/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3174&PN=1'
 	},
 	{
 		id: 22,
 		question:
 			'If an attachment has no attachment keywords, is it free from restrictions on the amount of attachments on a unit?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050128032957/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=966&PN=1'
 	},
 	{
 		id: 23,
@@ -194,41 +203,46 @@ export const faq: FAQ[] = [
 		question: 'Can Scheme with Beauties target a unit in the reserves? Can it be blocked?',
 		answer:
 			'Yes to the first question. No to the second question. The attack declaration is skipped as the card "begins combat". Both players draw a card at the beginning of combat as normal.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20060102113655/http://sabertoothgames.com/forum/forum_posts.asp?TID=4150&PN=1'
 	},
 	{
 		id: 28,
 		question:
 			'When I initiate an attack with Scheme with Beauties, is my unit considered to be an attacker and the enemy unit a defender?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051018031949/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4805&PN=1'
 	},
 	{
 		id: 29,
 		question:
 			'When I play Inner Conflict, can I choose an infantry unit in the reserves as the target of the attack?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051226084904/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=5067&PN=1'
 	},
 	{
 		id: 30,
 		question:
 			'When I play Steal a Sheep in Passing, can I select an enemy unit which cannot legally declare an attack?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051030200155/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4809&PN=1'
 	},
 	{
 		id: 31,
 		question:
 			'When Take One Path While Pretending to Take Another is in play, does choosing the defending unit count as blocking? Can other units block the attack?',
 		answer: 'No to the first question. Yes to the second question.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418160725/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2923&PN=1'
 	},
 	{
 		id: 32,
 		question: 'Is there a difference between "may not attack" and "may not declare an attack"?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2262372037443826/'
 	},
 	{
 		id: 33,
@@ -305,14 +319,16 @@ export const faq: FAQ[] = [
 		question:
 			'If I get e.g. "+1 strength for each...", does this count as a single bonus or multiple bonuses?',
 		answer: 'A single bonus.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051020092939/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4731&PN=1'
 	},
 	{
 		id: 45,
 		question:
 			"Does Brotherhood of Grimnir's static ability increses their strength, does it count as a bonus? Can it be mofied by card effects?",
 		answer: 'Yes to both questions.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051020093003/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4756&PN=1'
 	},
 	{
 		id: 46,
@@ -439,27 +455,31 @@ export const faq: FAQ[] = [
 		question: 'Does Dueling Master prevent players from playing regular tactics?',
 		answer:
 			'No. Once either player passes while playing cards face down, tactics phase continues as normal.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051020084908/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4601&PN=1'
 	},
 	{
 		id: 64,
 		question: 'How does Dueling Master interact with effects to skip combat rolls?',
 		answer:
 			'If a player does not make a combat roll, any cards played face down are discarded at the end of the combat without effect.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051020084908/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4601&PN=1'
 	},
 	{
 		id: 65,
 		question: 'Can the combat tactic granted by Back to Basics be used more than once per combat?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051030001846/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4570&PN=1'
 	},
 	{
 		id: 66,
 		question:
 			'If two delayed triggers cause a unit to be destroyed and prevent it from being destroyed at the same time (e.g. Bow of the Seafarer and Sacrificial Unit), what happens to the unit?',
 		answer: 'Preservation effect takes precedence.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418162758/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2898&PN=1'
 	},
 	{
 		id: 67,
@@ -467,7 +487,8 @@ export const faq: FAQ[] = [
 			'What happens when I play A Good Death to Save Another as a reaction to a combat roll and destroy my unit in combat to pay its cost while I am losing the combat by 1, 2 or 3, respectively?',
 		answer:
 			'In either case, your unit does not count as either winning or losing the combat. If you were losing by 1: the enemy unit counts losing the combat; 2: the result counts as a slaughter; 3: the enemy unit counts as the winner. In cases 1 and 2, the enemy unit returns to the battle line committed. In either case, there is no rout check.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233829/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3074&PN=1'
 	},
 	{
 		id: 68,
@@ -475,14 +496,14 @@ export const faq: FAQ[] = [
 			'If my first tactic in combat instructs me to play another combat tactic (e.g., The Dragonhelm), can I play a WarCry?',
 		answer:
 			'No, unless the effect specifically addresses WarCries or some other effect allows you to play WarCries as if they were combat tactics.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2524399747907719/'
 	},
 	{
 		id: 69,
 		question:
 			'If I play a tactic via a card effect which allows me to play it before the first tactic is played (e.g. Hydra Banner), can I play a WarCry later?',
 		answer: 'No, as it would not be the first tactic anymore.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2526048981076129'
 	},
 	{
 		id: 70,
@@ -517,7 +538,8 @@ export const faq: FAQ[] = [
 		question:
 			'Can I play a card committing a unit and choose a committed unit as its target? For example, can I target a committed unit with Low Morale to trigger a reaction on Styrkaar of the Sortsvinaer?',
 		answer: 'No, that is not a legal target.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20041226210517/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=561&PN=1'
 	},
 	{
 		id: 75,
@@ -602,14 +624,16 @@ export const faq: FAQ[] = [
 		question:
 			'If the target of Inner Conflict is committed, is its copy considered to be committed as well?',
 		answer: "No, only a card's statistics and text are copied.",
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051226084904/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=5067&PN=1'
 	},
 	{
 		id: 87,
 		question:
 			'If the attachment targetted by On Your Own is committed, is the unit newly created unit committed as well?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051030193002/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4529&PN=1'
 	},
 	{
 		id: 88,
@@ -725,14 +749,16 @@ export const faq: FAQ[] = [
 		question:
 			'Does Everything Has a Price affect cards without a printed tactic point cost, i.e. tactics adding tactic points?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051226085333/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4840&PN=1'
 	},
 	{
 		id: 105,
 		question:
 			'Can the tactic point cost of a combat tactic card without a printed tactic point cost be modified by card effects?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051226085333/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4840&PN=1'
 	},
 	{
 		id: 106,
@@ -740,27 +766,29 @@ export const faq: FAQ[] = [
 			'What happens if a unit with another unit attached to it via Invocation of Nehek is carried over to the next battle?',
 		answer:
 			'The attached unit stays attached and keeps the same effects. Its controller does not pay does not pay any gold cost for it.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418160714/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2853&PN=1'
 	},
 	{
 		id: 107,
 		question:
 			'Can I destroy a single unit with the Elven Victory, Dwarven Victory and Imperial Victory attached to pay the cost of Victory at Any Cost?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233920/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3114&PN=1'
 	},
 	{
 		id: 108,
 		question:
 			'Does Furgut prevent from playing tactic cards for 0 tactic points and spell abilities for 0 spell points?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2264241497256880/'
 	},
 	{
 		id: 109,
 		question: 'Can Counter Spell be triggered by a reaction without cost?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2264241983923498/'
 	},
 	{
 		id: 110,
@@ -809,7 +837,8 @@ export const faq: FAQ[] = [
 		id: 116,
 		question: 'When Re-equip is played, what happens to the cards that do not get attached?',
 		answer: 'They are returned to the top of the deck in the same order.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051226104110/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4883&PN=1'
 	},
 	{
 		id: 117,
@@ -903,60 +932,68 @@ export const faq: FAQ[] = [
 		question:
 			"Can Barak's Ironbeards use their ability when a strategy is put into play via an event?",
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20060108130040/http://sabertoothgames.com/forum/forum_posts.asp?TID=5715&PN=1'
 	},
 	{
 		id: 131,
 		question: 'Is "put into play" equivalent to "play"?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20060108130040/http://sabertoothgames.com/forum/forum_posts.asp?TID=5715&PN=1'
 	},
 	{
 		id: 132,
 		question: 'Do initial statistics on units created by card effects count as printed?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051226110656/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4882&PN=1'
 	},
 	{
 		id: 133,
 		question:
 			'If an ability on a card in play states that it can be used only once per a game phase, can other instances of that ability be played? If the ability is used, the card leaves play and enters play again, can the ability be used again?',
 		answer: 'Yes to both questions.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418163915/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2852&PN=1'
 	},
 	{
 		id: 134,
 		question:
 			'Does using an ability on a strategy card to put it into play as a combat tactic count as playing a combat tactic? For example, can I use the support tactic on Lessons Learned after I put it into play as a WarCry?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20060117155210/http://sabertoothgames.com/forum/forum_posts.asp?TID=5840&PN=2'
 	},
 	{
 		id: 135,
 		question: 'Does rolling an event count as playing a card or ability by the controlling player?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20060108130040/http://sabertoothgames.com/forum/forum_posts.asp?TID=5715&PN=1'
 	},
 	{
 		id: 136,
 		question:
 			"Can event strategies be put into play as normal command or only as they've been rolled?",
 		answer: 'Yes, they can be played as a command as well.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233723/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3025&PN=2'
 	},
 	{
 		id: 137,
 		question: 'What happens if Sunrise is rolled during the Muster Phase?',
 		answer:
 			'Its controller draws two army cards. However, if it was rolled to determine who fields the first unit, its effect is ignored as the player does not have a hand yet.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233723/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3025&PN=2'
 	},
 	{
 		id: 138,
 		question:
 			'If an event card is rolled but it is re-rolled by a card effect, does the event trigger?',
 		answer: 'Yes. It triggers before any reactions can be used.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2273508162996880/'
 	},
 	{
 		id: 139,
@@ -1108,7 +1145,8 @@ export const faq: FAQ[] = [
 		question:
 			'Does Practiced Maneuver prevent cards that optionally discard cards, e.g. Grim Resolution?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418155619/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2950&PN=1'
 	},
 	{
 		id: 161,
@@ -1116,14 +1154,15 @@ export const faq: FAQ[] = [
 			'Can The Birdmen of Catrazza negate a card effect that optionally discards cards, e.g. Grim Resolution?',
 		answer:
 			'Yes, but only if their controller has enough cards in their hand to discard (i.e. at least 3 cards in case of Grim Resolution).',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418155619/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2950&PN=1'
 	},
 	{
 		id: 162,
 		question:
 			'Can The Birdmen of Catrazza negate Under Concealment of Broad Daylight? Can they negate Twister?',
 		answer: 'Yes to both questions.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/1703784889969213/'
 	},
 	{
 		id: 163,
@@ -1161,7 +1200,8 @@ export const faq: FAQ[] = [
 		question:
 			'If a unit has a negative amount of tactic points due to card effects, can it play combat tactic cards costing 0 tactic points?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050128033005/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=968&PN=1'
 	},
 	{
 		id: 169,
@@ -1282,39 +1322,45 @@ export const faq: FAQ[] = [
 		question:
 			'What happens if Relent or We Both DIe! is rolled after combat resolution, e.g. as a rout check?',
 		answer: 'It has no effect.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051101105513/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4528&PN=1'
 	},
 	{
 		id: 186,
 		question:
 			'If a card effect end combat immediately (e.g. Buy Me Some Time), do effects that trigger "at the end of the tactics phase" (e.g. Another Day) still trigger?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233801/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3045&PN=2'
 	},
 	{
 		id: 187,
 		question: "Can Luril's Seafarers trigger their reaction before setup is over?",
 		answer: 'Yes. Any reactions triggerring "after setup" can be played later.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051018031856/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4743&PN=1'
 	},
 	{
 		id: 188,
 		question:
 			'If I play Keep Them Pinned on a ranged attack unit and lose the combat, can I choose to commit the unit in combat?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233821/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3068&PN=1'
 	},
 	{
 		id: 189,
 		question: 'When Blind Fury is played, who decides first which cards to select?',
 		answer: 'The attacker must select their cards first.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233934/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3119&PN=1'
 	},
 	{
 		id: 190,
 		question: 'When Reinforcements is played, who chooses their unit first?',
 		answer: 'The player whose command it is chooses their unit first.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050129111503/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=318'
 	},
 	{
 		id: 191,
@@ -1471,7 +1517,8 @@ export const faq: FAQ[] = [
 		question: 'What happens when the defender plays Run Far Away during a ranged attack?',
 		answer:
 			'The defending unit is routed and returns to the battle line committed. There is no follow-up attack.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051226105200/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4884&PN=1'
 	},
 	{
 		id: 213,
@@ -1479,7 +1526,8 @@ export const faq: FAQ[] = [
 			'If a ranged attack unit gets a Ranged Attack value by a card affect, does it affect printed Ranged Attack?',
 		answer:
 			'No, it gains an additional Ranged Attack value. Unlike other macro abilities, Ranged Attack is not cumulative.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051031051118/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4818&PN=1'
 	},
 	{
 		id: 214,
@@ -1487,7 +1535,8 @@ export const faq: FAQ[] = [
 			'What happens if a ranged attack is aborted or one of the units is removed from combat?',
 		answer:
 			'A defending unit stays ready in the same line. An attacking unit is committed and stays in the same line.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050416214416/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2690&PN=1'
 	},
 	{
 		id: 215,
@@ -1603,27 +1652,31 @@ export const faq: FAQ[] = [
 			'What happens if I use the abilitiy on multiple copies of Bearers of the Sacred Flame?',
 		answer:
 			'Reactions resolve one at a time. Perform an attack with one of them, including any follow-up attacks, before proceeding to the next one.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20060108014824/http://sabertoothgames.com/forum/forum_posts.asp?TID=5685&PN=1'
 	},
 	{
 		id: 231,
 		question:
 			'How is the effect on Run Far Away resolved if another card effect states that my unit cannot be routed?',
 		answer: 'The unit returns to the battle line committed and it is not routed.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233739/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3034&PN=1'
 	},
 	{
 		id: 232,
 		question: 'Can I play multiple copies of Cunning Battle Plans at the start of the battle?',
 		answer: 'No, because after the first one resolves, the first command is already over.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233833/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3076&PN=1'
 	},
 	{
 		id: 233,
 		question:
 			'After the enemy unit receives a strength bonus of 4 or more, can I copy that bonus by Trump and then reduce it by See Through the Diversion?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051020093003/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4756&PN=1'
 	},
 	{
 		id: 234,
@@ -1631,7 +1684,8 @@ export const faq: FAQ[] = [
 			"If I play Nobody Lives Forever and may enemy destroys a unit, does it count as my unit destroying an enemy unit? For example, will it trigger the reaction on Malakai Makaisson's Goblin-Hewer?",
 		answer:
 			'No, because the unit is destroyed by your enemy. This is different from cards like Wind of Death or Fire on Them Both.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20041225153733/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=383&PN=1'
 	},
 	{
 		id: 235,
@@ -1699,7 +1753,8 @@ export const faq: FAQ[] = [
 		question:
 			'When multiple rolls are made (either by one player or both) do I have to modify each roll as its made or can i wait until all rolls are made to choose which ones to modify?',
 		answer: 'You can modify after each roll separately.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051101105944/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4667&PN=1'
 	},
 	{
 		id: 245,
@@ -1727,7 +1782,8 @@ export const faq: FAQ[] = [
 		question:
 			'If a card effect creates a slaughter, does it count as destroying a unit by a card effect?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051226111258/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=5027&PN=1'
 	},
 	{
 		id: 249,
@@ -1735,7 +1791,8 @@ export const faq: FAQ[] = [
 			'If a card effect creates a slaughter and another card effect makes one unit to win instead, how is the difference the unit has won by determined for the purposes of card effects that take the difference into account, e.g. Xanax-Qol, the Rage That Burns?',
 		answer:
 			'The combat is won by the actual difference in strength, so the reaction on Xanax-Qol, the Rage That Burns can be used if the difference is 3 or less in either direction.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20060117154644/http://sabertoothgames.com/forum/forum_posts.asp?TID=5635&PN=2'
 	},
 	{
 		id: 250,
@@ -1749,7 +1806,8 @@ export const faq: FAQ[] = [
 		question:
 			'If I use a card effect to play a combat tactic card while Confusion in Command is in play, is the combat tactic affected by Confusion in Command?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051226100030/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4910&PN=1'
 	},
 	{
 		id: 252,
@@ -1757,34 +1815,38 @@ export const faq: FAQ[] = [
 			"What kind of reactions can I trigger when I discard cards or when my opponent draws cards as a result of an opponent's static ability?",
 		answer:
 			"Because static abilities are not played, you can only play reactions to cards being discarded by an enemy card effect, but not reactions to an enemy playing an ability to discard cards. For example, when the abiility on A Fortunate Wind triggers, you can use  Leitdorf's Blood-oathed, but not The Birdmen of Catrazza.",
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418163922/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2894&PN=1'
 	},
 	{
 		id: 253,
 		question:
 			'If a unit is granted Victory by a static ability on its card (e.g. Lord Xili-Quncani), does it count as printed Victory?',
 		answer: 'No. Unlike "Victory: +X", which is considered a printed Victory.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051030002438/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4564&PN=1'
 	},
 	{
 		id: 254,
 		question: 'How does Steed of Shadow interact with High Winds?',
 		answer: "The unit's keyword instantly changes back to Infantry before it declares the attack.",
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050506085005/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3164&PN=1'
 	},
 	{
 		id: 255,
 		question:
 			'How does Brotherhood of Grimnir interact with effects modifying strength at the end of the tactics phase, e.g. Flames of the Phonenix?',
 		answer: 'The attacker triggers their effects before the defender triggers theirs.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050128033008/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=995&PN=1'
 	},
 	{
 		id: 256,
 		question:
 			'If I have multiple copies of Zelekendel, Blade of Khaine ready in the battle line, does my enemy have to discard multiple cards to block?',
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2277502892597407/'
 	},
 	{
 		id: 257,
@@ -1835,21 +1897,24 @@ export const faq: FAQ[] = [
 		question:
 			'When a unit enters combat via the effect on The Guest Becomes the Host, does it pay tactic points for the combat tactics played by the unit it was exchanged with?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051020090353/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2573&PN=1'
 	},
 	{
 		id: 264,
 		question:
 			'What happens to cards and tokens attached to a unit during a combat when the unit is exchanged with another unit via the effect on The Guest Becomes the Host later during the same combat?',
 		answer: 'They are transfered to the new unit.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051020090353/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2573&PN=1'
 	},
 	{
 		id: 265,
 		question: 'How does The Guest Becomes the Host interact with Spell of Shielding?',
 		answer:
 			'The effect of Spell of Shielding is applied to the new unit instead. The unit which entered play via Spell of Shielding stays in play while the new unit is destroyed at the end of the combat.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051020090353/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2573&PN=1'
 	},
 	{
 		id: 266,
@@ -1857,14 +1922,16 @@ export const faq: FAQ[] = [
 			'What happens if a unit commits or readies during combat and is later exchanged with another unit via the effect on The Guest Becoms the Host?',
 		answer:
 			'As the card states, "ready units remain ready and committed units remain committed". This is an exception from other effects.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050418162348/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2924&PN=1'
 	},
 	{
 		id: 267,
 		question:
 			'Can I play The Guest Becomes The Host when there is only one unit left in combat or when either player only has a single unit in the play?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050416214416/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2690&PN=1'
 	},
 	{
 		id: 268,
@@ -1927,14 +1994,16 @@ export const faq: FAQ[] = [
 		question:
 			'What if I play Inner Conflict and my enemy chooses my Unique unit as the target of their attack?',
 		answer: 'Your unit is bounced (destroyed) and the combat is aborted.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051112090939/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4362&PN=1'
 	},
 	{
 		id: 277,
 		question:
 			"If Carstein's Grave Guard is destroyed during the Muster Phase as a result of its controller's only wizard being bounced, does the player get their gold back?",
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233810/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3061&PN=1'
 	},
 	{
 		id: 278,
@@ -1942,7 +2011,8 @@ export const faq: FAQ[] = [
 			'What happens when Anelia, Harridan of Slaanesh enters play while Anelia, Mistress of Slaanesh is in play?',
 		answer:
 			'Nothing happens because Anelia, Mistress of Slaanesh is not Unique, and thus the Veteran rule does not affect her.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233956/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3133&PN=1'
 	},
 	{
 		id: 279,
@@ -1992,27 +2062,31 @@ export const faq: FAQ[] = [
 		question: 'What kind of card effects does Dirty Fighting interact with?',
 		answer:
 			'It only affects restrictions to whether a card can be played or not, e.g. "Only playable..." or "This X unit...".',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051105125614/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4149&PN=1'
 	},
 	{
 		id: 286,
 		question:
 			"If I somehow play Angkor, Father of Mammoths' WarCry during a ranged attack as an attacker, is the enemy unit destroyed?",
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051018030829/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4575&PN=1'
 	},
 	{
 		id: 287,
 		question:
 			'If a card effect halves a value without further specification, is the result rounded up or down?',
 		answer: 'It is rounded up.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233723/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3025&PN=2'
 	},
 	{
 		id: 288,
 		question: "Can Liche Priest Ahkaten's reaction target enemy Khemri units?",
 		answer: 'No, because an enemy unit cannot enter your your reserves.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233447/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2869&PN=2'
 	},
 	{
 		id: 289,
@@ -2020,14 +2094,16 @@ export const faq: FAQ[] = [
 			"If I draw any cards in a combat after Blind Fury has been played, can I play them? If I don't play them, are they discarded after the resolution? Which cards can be discarded by card effects?",
 		answer:
 			'Yes. Yes. Any cards drawn or discarded during the combat will be added to or removed from the "selected cards" as it is currently "your hand".',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233934/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3119&PN=1'
 	},
 	{
 		id: 290,
 		question:
 			"If Ha'asek's Bolt Slinger performs a ranged attack against a unit in the reserves and that unit is moved to the battle line by a card effect during combat, can its reaction be played after the combat?",
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233912/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3111&PN=1'
 	},
 	{
 		id: 291,
@@ -2035,47 +2111,50 @@ export const faq: FAQ[] = [
 			'When there are two different card with the same name, how does it affect deckbuilding restrictions? Do they count as copies of each other?',
 		answer:
 			'They count as the same card for all purposes. You can only include a total of three of these cards in your deck.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20050505233929/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=3118&PN=1'
 	},
 	{
 		id: 292,
 		question:
 			'Does the support tactic on Blood Precedes Glory add count the total amount of units removed from the game or only the units removed to pay its cost?',
 		answer: 'Only the units removed to pay its cost.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20060117160612/http://sabertoothgames.com/forum/forum_posts.asp?TID=5943&PN=2'
 	},
 	{
 		id: 293,
 		question:
 			'What hapens if I play Unexpected Quarter followed by a card effect forcing the enemy to dicard and draw cards, e.g. Warriors of the Fallen Tree?',
 		answer: 'They discard and do not draw.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source:
+			'https://web.archive.org/web/20051020092141/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4545&PN=1'
 	},
 	{
 		id: 294,
 		question:
 			"Can I use Nothing Left after I reduce the enemy unit's leadership by playing a card effect to gain Terror? ",
 		answer: 'Yes.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2262370907443939/'
 	},
 	{
 		id: 295,
 		question:
 			'Can I use Never Again after my enemy uses an ability for a third or subsequent time?',
 		answer: 'No.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2262622994085397/'
 	},
 	{
 		id: 296,
 		question: 'Can I play Stand Together as One when my enemy has no units in their battle line?',
 		answer: 'Yes. The enemy unit will not get a strength bonus.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2263657927315237/'
 	},
 	{
 		id: 297,
 		question:
 			'If I have multiple copies of a unit in play, do they count as +1 "Victory" for General\'s Standard?',
 		answer: 'Not until you have a single copy of that unit you have in play.',
-		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
+		source: 'https://www.facebook.com/groups/1172505629763811/posts/2267260710288292/'
 	}
 ];
