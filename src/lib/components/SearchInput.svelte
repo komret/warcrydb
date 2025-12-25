@@ -1,10 +1,10 @@
 <script lang="ts">
 	type Props = {
 		value: string;
-		placeholder?: string;
+		label: string;
 	};
 
-	let { value = $bindable(''), placeholder = 'Search...' }: Props = $props();
+	let { value = $bindable(''), label }: Props = $props();
 
 	let inputElement: HTMLInputElement | undefined = $state();
 
@@ -27,13 +27,35 @@
 	};
 </script>
 
-<div class="flex items-center gap-2">
-	<div class="relative flex-1">
+<div class="space-y-2">
+	<div class="flex items-center justify-between">
+		<span class="text-sm font-medium text-white">{label}</span>
+		<div class="flex items-center gap-1">
+			<button
+				type="button"
+				onclick={() => insertCharacter('|')}
+				class="flex h-6 w-6 items-center justify-center rounded border border-gray-600 bg-gray-700 text-xs font-medium text-white hover:bg-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+				aria-label="Insert OR operator"
+				title="OR operator"
+			>
+				|
+			</button>
+			<button
+				type="button"
+				onclick={() => insertCharacter('&')}
+				class="flex h-6 w-6 items-center justify-center rounded border border-gray-600 bg-gray-700 text-xs font-medium text-white hover:bg-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+				aria-label="Insert AND operator"
+				title="AND operator"
+			>
+				&
+			</button>
+		</div>
+	</div>
+	<div class="relative">
 		<input
 			bind:this={inputElement}
 			type="text"
 			bind:value
-			{placeholder}
 			class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-2 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 		/>
 		{#if value}
@@ -53,22 +75,4 @@
 			</button>
 		{/if}
 	</div>
-	<button
-		type="button"
-		onclick={() => insertCharacter('|')}
-		class="flex h-[42px] w-8 items-center justify-center rounded border border-gray-600 bg-gray-700 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-		aria-label="Insert OR operator"
-		title="OR operator"
-	>
-		|
-	</button>
-	<button
-		type="button"
-		onclick={() => insertCharacter('&')}
-		class="flex h-[42px] w-8 items-center justify-center rounded border border-gray-600 bg-gray-700 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-		aria-label="Insert AND operator"
-		title="AND operator"
-	>
-		&
-	</button>
 </div>

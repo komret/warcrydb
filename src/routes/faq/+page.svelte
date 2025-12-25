@@ -21,7 +21,7 @@
 
 		<!-- Search Bar -->
 		<div class="mb-6">
-			<SearchInput bind:value={searchQuery} placeholder="Search FAQ..." />
+			<SearchInput bind:value={searchQuery} label="Search" />
 			{#if searchQuery}
 				<p class="mt-2 text-sm text-gray-400">
 					Found {filteredFAQs.length} result{filteredFAQs.length !== 1 ? 's' : ''}

@@ -451,7 +451,7 @@
 		<div class="mb-4 rounded-lg bg-gray-800 p-4 shadow-xl">
 			<!-- Search -->
 			<div class="mb-4">
-				<SearchInput bind:value={searchQuery} placeholder="Search by title or text..." />
+				<SearchInput bind:value={searchQuery} label="Title or text" />
 			</div>
 
 			<!-- Keyword Filter and Dropdowns Row -->
@@ -491,7 +491,6 @@
 									showKeywordSuggestions = true;
 									selectedSuggestionIndex = 0;
 								}}
-								placeholder={selectedKeywords.length === 0 ? 'Type to search keywords...' : ''}
 								class="flex-1 border-0 bg-transparent text-white placeholder-gray-400 focus:ring-0 focus:outline-none"
 							/>
 						</div>
