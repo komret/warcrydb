@@ -17,11 +17,11 @@
 	onMount(() => {
 		// Add click handlers to all card name spans
 		const addClickHandlers = (element: HTMLElement) => {
-			const spans = element.querySelectorAll(
-				'span[class^="WA"], span[class^="BR"], span[class^="DW"], span[class^="DH"], span[class^="LC"], span[class^="LW"], span[class^="PG"], span[class^="PW"], span[class^="SM"], span[class^="SR"], span[class^="WC"], span[class^="WM"], span[class^="CE"], span[class^="SD"], span[class^="HW"]'
-			);
+			const spans = element.querySelectorAll('span[class^="card-id-"]');
 			spans.forEach((span) => {
-				const cardId = span.className;
+				const fullClass = span.className;
+				// Extract the card ID by removing the "card-id-" prefix
+				const cardId = fullClass.replace('card-id-', '');
 				if (cardId) {
 					span.classList.add(
 						'cursor-pointer',
