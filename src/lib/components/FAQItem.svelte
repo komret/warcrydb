@@ -43,7 +43,7 @@
 </script>
 
 <article class="rounded-lg border border-gray-700 bg-gray-800 p-4">
-	<h2 bind:this={questionElement} class="mb-2 text-base text-gray-300">
+	<h2 bind:this={questionElement} class="mb-2 text-base text-gray-200">
 		{@html highlightSearchTerms(item.question, searchQuery)}
 	</h2>
 	<div class="relative">
@@ -54,7 +54,7 @@
 			href={item.source}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="absolute right-0 bottom-0 text-gray-500 hover:text-blue-400"
+			class="absolute right-0 bottom-0 text-gray-500 hover:text-blue-300"
 			aria-label="View source"
 		>
 			<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
