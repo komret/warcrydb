@@ -18,6 +18,7 @@
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import SearchInput from '$lib/components/SearchInput.svelte';
+	import SelectableInput from '$lib/components/SelectableInput.svelte';
 	import FilterSection from '$lib/components/FilterSection.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
 
@@ -527,62 +528,22 @@
 			<!-- Keyword Filter and Dropdowns Row -->
 			<div class="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-[1fr_auto_auto_auto_auto]">
 				<div class="col-span-2 lg:col-span-1">
-					<label for="keyword-input" class="mb-2 block text-sm font-medium">Keywords</label>
-					<div class="relative">
-						<div
-							class="flex min-h-[42px] flex-wrap items-center rounded-lg border border-gray-600 bg-gray-700 px-2 py-1"
-						>
-							{#each selectedKeywords as keyword, index}
-								<button
-									onclick={() => removeKeyword(keyword)}
-									title="Remove keyword"
-									class="rounded bg-transparent px-1 py-0.5 font-normal text-white hover:bg-gray-600 focus:outline-none"
-									aria-label="Remove {keyword}"
-								>
-									{keyword}
-								</button>
-								{#if index < selectedKeywords.length - 1}
-									<button
-										onclick={() => toggleOperator(index)}
-										class="rounded bg-gray-600 px-1 py-0.5 text-xs font-medium text-white hover:bg-gray-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-									>
-										{keywordOperators[index] === '|' ? '|' : '&'}
-									</button>
-								{/if}
-							{/each}
-							<input
-								id="keyword-input"
-								type="text"
-								bind:value={keywordInput}
-								onkeydown={handleKeywordInput}
-								onfocus={() => (showKeywordSuggestions = true)}
-								onblur={() => setTimeout(() => (showKeywordSuggestions = false), 200)}
-								oninput={() => {
-									showKeywordSuggestions = true;
-									selectedSuggestionIndex = 0;
-								}}
-								class="flex-1 border-0 bg-transparent text-white placeholder-gray-400 focus:ring-0 focus:outline-none"
-							/>
-						</div>
-						{#if showKeywordSuggestions && filteredSuggestions.length > 0}
-							<div
-								class="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-gray-600 bg-gray-700 shadow-lg"
-							>
-								{#each filteredSuggestions as suggestion, index}
-									<button
-										type="button"
-										onclick={() => addKeyword(suggestion)}
-										class="w-full px-4 py-2 text-left text-sm text-white hover:bg-gray-600 focus:bg-gray-600 focus:outline-none {index ===
-										selectedSuggestionIndex
-											? 'bg-gray-600'
-											: ''}"
-									>
-										{suggestion}
-									</button>
-								{/each}
-							</div>
-						{/if}
-					</div>
+					<SelectableInput
+						mode="multi"
+						items={keywords.map((k) => ({ id: k, name: k }))}
+						bind:value={keywordInput}
+						label="Keywords"
+						selectedItems={selectedKeywords}
+						operators={keywordOperators}
+						onAddItem={addKeyword}
+						onRemoveItem={removeKeyword}
+						onToggleOperator={toggleOperator}
+						onInputChange={(value) => {
+							keywordInput = value;
+							showKeywordSuggestions = true;
+							selectedSuggestionIndex = 0;
+						}}
+					/>
 				</div>
 				<div class="col-span-2 w-full lg:col-span-1 lg:w-56">
 					<label for="set-filter" class="mb-2 block text-sm font-medium">Set</label>

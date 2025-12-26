@@ -4,6 +4,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import SearchInput from '$lib/components/SearchInput.svelte';
 	import AutocompleteInput from '$lib/components/AutocompleteInput.svelte';
+	import SelectableInput from '$lib/components/SelectableInput.svelte';
 	import FilterSection from '$lib/components/FilterSection.svelte';
 	import FAQItem from '$lib/components/FAQItem.svelte';
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
@@ -88,13 +89,13 @@
 			<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
 				<SearchInput bind:value={searchQuery} label="FAQ text" />
 				<div>
-					<AutocompleteInput
+					<SelectableInput
+						mode="single"
 						items={cards}
 						bind:value={cardNameInput}
 						label="Card name"
+						selectedItem={selectedCard ? cards.find((c) => c.id === selectedCard) || null : null}
 						onSelect={selectCard}
-						onInput={() => (selectedCard = null)}
-						isSelected={selectedCard !== null}
 						onClear={() => {
 							selectedCard = null;
 							cardNameInput = '';
