@@ -34,7 +34,7 @@
 			<button
 				type="button"
 				onclick={() => insertCharacter('|')}
-				class="flex h-6 w-6 items-center justify-center rounded border border-gray-600 bg-gray-700 text-xs font-medium text-white hover:bg-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+				class="flex h-5 w-5 items-center justify-center rounded border border-gray-600 bg-gray-700 text-xs font-medium text-white hover:bg-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 				aria-label="Insert OR operator"
 				title="OR operator"
 			>
@@ -43,7 +43,7 @@
 			<button
 				type="button"
 				onclick={() => insertCharacter('&')}
-				class="flex h-6 w-6 items-center justify-center rounded border border-gray-600 bg-gray-700 text-xs font-medium text-white hover:bg-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+				class="flex h-5 w-5 items-center justify-center rounded border border-gray-600 bg-gray-700 text-xs font-medium text-white hover:bg-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 				aria-label="Insert AND operator"
 				title="AND operator"
 			>
