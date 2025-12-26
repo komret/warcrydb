@@ -49,14 +49,61 @@
 		}
 	];
 
-	let searchQuery = $state('');
+	// Default filter values for hasActiveFilters logic
+	type DefaultFilters = {
+		searchQuery: string;
+		selectedFactions: Set<string>;
+		selectedTypes: Set<string>;
+		selectedRarities: Set<string>;
+		selectedSet: (typeof sets)[number] | 'any';
+		selectedFormat: (typeof formats)[number]['value'] | 'any';
+		selectedKeywords: Keyword[];
+		keywordOperators: ('|' | '&')[];
+		keywordInput: string;
+		uniqueFilter: 'any' | 'yes' | 'no';
+		costOperator: NumericOperator;
+		costValue: string;
+		strengthOperator: NumericOperator;
+		strengthValue: string;
+		tacticPointsOperator: NumericOperator;
+		tacticPointsValue: string;
+		leadershipOperator: NumericOperator;
+		leadershipValue: string;
+		dieOperator: NumericOperator;
+		dieValue: string;
+	};
 
-	let selectedFactions = $state(new Set<string>());
-	let selectedTypes = $state(new Set<string>());
-	let selectedRarities = $state(new Set<string>());
-	let selectedSet = $state<(typeof sets)[number] | 'any'>('any');
-	let selectedFormat = $state<(typeof formats)[number]['value'] | 'any'>('any');
-	let uniqueFilter = $state<'any' | 'yes' | 'no'>('any');
+	const DEFAULT_FILTERS: DefaultFilters = {
+		searchQuery: '',
+		selectedFactions: new Set<string>(),
+		selectedTypes: new Set<string>(),
+		selectedRarities: new Set<string>(),
+		selectedSet: 'any',
+		selectedFormat: 'any',
+		selectedKeywords: [],
+		keywordOperators: [],
+		keywordInput: '',
+		uniqueFilter: 'any',
+		costOperator: 'exact',
+		costValue: '',
+		strengthOperator: 'exact',
+		strengthValue: '',
+		tacticPointsOperator: 'exact',
+		tacticPointsValue: '',
+		leadershipOperator: 'exact',
+		leadershipValue: '',
+		dieOperator: 'exact',
+		dieValue: ''
+	};
+
+	let searchQuery = $state(DEFAULT_FILTERS.searchQuery);
+
+	let selectedFactions = $state(DEFAULT_FILTERS.selectedFactions);
+	let selectedTypes = $state(DEFAULT_FILTERS.selectedTypes);
+	let selectedRarities = $state(DEFAULT_FILTERS.selectedRarities);
+	let selectedSet = $state(DEFAULT_FILTERS.selectedSet);
+	let selectedFormat = $state(DEFAULT_FILTERS.selectedFormat);
+	let uniqueFilter = $state(DEFAULT_FILTERS.uniqueFilter);
 
 	// Check if desktop (768px or wider) to set default open/closed state
 	const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
@@ -68,23 +115,23 @@
 	let showFormatTooltip = $state(false);
 
 	// Keyword filter state
-	let keywordInput = $state('');
-	let selectedKeywords = $state<Keyword[]>([]);
-	let keywordOperators = $state<('|' | '&')[]>([]); // operators between keywords
+	let keywordInput = $state(DEFAULT_FILTERS.keywordInput);
+	let selectedKeywords = $state(DEFAULT_FILTERS.selectedKeywords);
+	let keywordOperators = $state(DEFAULT_FILTERS.keywordOperators); // operators between keywords
 	let showKeywordSuggestions = $state(false);
 	let selectedSuggestionIndex = $state(0);
 
 	// Numerical filter states
-	let costOperator = $state<NumericOperator>('exact');
-	let costValue = $state('');
-	let strengthOperator = $state<NumericOperator>('exact');
-	let strengthValue = $state('');
-	let tacticPointsOperator = $state<NumericOperator>('exact');
-	let tacticPointsValue = $state('');
-	let leadershipOperator = $state<NumericOperator>('exact');
-	let leadershipValue = $state('');
-	let dieOperator = $state<NumericOperator>('exact');
-	let dieValue = $state('');
+	let costOperator = $state(DEFAULT_FILTERS.costOperator);
+	let costValue = $state(DEFAULT_FILTERS.costValue);
+	let strengthOperator = $state(DEFAULT_FILTERS.strengthOperator);
+	let strengthValue = $state(DEFAULT_FILTERS.strengthValue);
+	let tacticPointsOperator = $state(DEFAULT_FILTERS.tacticPointsOperator);
+	let tacticPointsValue = $state(DEFAULT_FILTERS.tacticPointsValue);
+	let leadershipOperator = $state(DEFAULT_FILTERS.leadershipOperator);
+	let leadershipValue = $state(DEFAULT_FILTERS.leadershipValue);
+	let dieOperator = $state(DEFAULT_FILTERS.dieOperator);
+	let dieValue = $state(DEFAULT_FILTERS.dieValue);
 
 	// Modal state
 	let selectedCardId = $state<string | null>(null);
@@ -142,6 +189,29 @@
 			.filter((k) => !selectedKeywords.includes(k) && k.toLowerCase().includes(input))
 			.slice(0, 10);
 	});
+
+	const hasActiveFilters = $derived(
+		searchQuery !== DEFAULT_FILTERS.searchQuery ||
+			selectedFactions.size !== DEFAULT_FILTERS.selectedFactions.size ||
+			selectedTypes.size !== DEFAULT_FILTERS.selectedTypes.size ||
+			selectedRarities.size !== DEFAULT_FILTERS.selectedRarities.size ||
+			selectedSet !== DEFAULT_FILTERS.selectedSet ||
+			selectedFormat !== DEFAULT_FILTERS.selectedFormat ||
+			selectedKeywords.length !== DEFAULT_FILTERS.selectedKeywords.length ||
+			keywordOperators.length !== DEFAULT_FILTERS.keywordOperators.length ||
+			keywordInput !== DEFAULT_FILTERS.keywordInput ||
+			uniqueFilter !== DEFAULT_FILTERS.uniqueFilter ||
+			costOperator !== DEFAULT_FILTERS.costOperator ||
+			costValue !== DEFAULT_FILTERS.costValue ||
+			strengthOperator !== DEFAULT_FILTERS.strengthOperator ||
+			strengthValue !== DEFAULT_FILTERS.strengthValue ||
+			tacticPointsOperator !== DEFAULT_FILTERS.tacticPointsOperator ||
+			tacticPointsValue !== DEFAULT_FILTERS.tacticPointsValue ||
+			leadershipOperator !== DEFAULT_FILTERS.leadershipOperator ||
+			leadershipValue !== DEFAULT_FILTERS.leadershipValue ||
+			dieOperator !== DEFAULT_FILTERS.dieOperator ||
+			dieValue !== DEFAULT_FILTERS.dieValue
+	);
 
 	// Helper function to evaluate search with operator precedence (AND before OR)
 	function evaluateSearchWithPrecedence(
@@ -291,26 +361,26 @@
 	}
 
 	function resetFilters() {
-		searchQuery = '';
-		selectedFactions = new Set<string>();
-		selectedTypes = new Set<string>();
-		selectedRarities = new Set<string>();
-		selectedSet = 'any';
-		selectedFormat = 'any';
-		selectedKeywords = [];
-		keywordOperators = [];
-		keywordInput = '';
-		uniqueFilter = 'any';
-		costOperator = 'exact';
-		costValue = '';
-		strengthOperator = 'exact';
-		strengthValue = '';
-		tacticPointsOperator = 'exact';
-		tacticPointsValue = '';
-		leadershipOperator = 'exact';
-		leadershipValue = '';
-		dieOperator = 'exact';
-		dieValue = '';
+		searchQuery = DEFAULT_FILTERS.searchQuery;
+		selectedFactions = new Set(DEFAULT_FILTERS.selectedFactions);
+		selectedTypes = new Set(DEFAULT_FILTERS.selectedTypes);
+		selectedRarities = new Set(DEFAULT_FILTERS.selectedRarities);
+		selectedSet = DEFAULT_FILTERS.selectedSet;
+		selectedFormat = DEFAULT_FILTERS.selectedFormat;
+		selectedKeywords = [...DEFAULT_FILTERS.selectedKeywords];
+		keywordOperators = [...DEFAULT_FILTERS.keywordOperators];
+		keywordInput = DEFAULT_FILTERS.keywordInput;
+		uniqueFilter = DEFAULT_FILTERS.uniqueFilter;
+		costOperator = DEFAULT_FILTERS.costOperator;
+		costValue = DEFAULT_FILTERS.costValue;
+		strengthOperator = DEFAULT_FILTERS.strengthOperator;
+		strengthValue = DEFAULT_FILTERS.strengthValue;
+		tacticPointsOperator = DEFAULT_FILTERS.tacticPointsOperator;
+		tacticPointsValue = DEFAULT_FILTERS.tacticPointsValue;
+		leadershipOperator = DEFAULT_FILTERS.leadershipOperator;
+		leadershipValue = DEFAULT_FILTERS.leadershipValue;
+		dieOperator = DEFAULT_FILTERS.dieOperator;
+		dieValue = DEFAULT_FILTERS.dieValue;
 	}
 
 	// Compute filtered cards based on current filter state
@@ -448,7 +518,7 @@
 	<div class="mx-auto max-w-7xl px-4 py-8">
 		<Header currentPage="home" />
 
-		<FilterSection resultsCount={filteredCards.length} onReset={resetFilters}>
+		<FilterSection resultsCount={filteredCards.length} onReset={resetFilters} {hasActiveFilters}>
 			<!-- Search -->
 			<div class="mb-4">
 				<SearchInput bind:value={searchQuery} label="Name or text" />

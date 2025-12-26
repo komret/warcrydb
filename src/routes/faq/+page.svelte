@@ -9,12 +9,27 @@
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
 
-	let searchQuery = $state('');
-	let selectedCardId = $state<string | null>(null);
+	// Default filter values for hasActiveFilters logic
+	type DefaultFilters = {
+		searchQuery: string;
+		selectedCardId: string | null;
+		cardNameInput: string;
+		selectedCard: string | null;
+	};
+
+	const DEFAULT_FILTERS: DefaultFilters = {
+		searchQuery: '',
+		selectedCardId: null,
+		cardNameInput: '',
+		selectedCard: null
+	};
+
+	let searchQuery = $state(DEFAULT_FILTERS.searchQuery);
+	let selectedCardId = $state(DEFAULT_FILTERS.selectedCardId);
 
 	// Card name search state
-	let cardNameInput = $state('');
-	let selectedCard = $state<string | null>(null);
+	let cardNameInput = $state(DEFAULT_FILTERS.cardNameInput);
+	let selectedCard = $state(DEFAULT_FILTERS.selectedCard);
 
 	// Filter FAQs based on search query and selected card
 	const filteredFAQs = $derived.by(() => {
@@ -38,6 +53,10 @@
 		return filtered;
 	});
 
+	const hasActiveFilters = $derived(
+		searchQuery !== DEFAULT_FILTERS.searchQuery || selectedCard !== DEFAULT_FILTERS.selectedCard
+	);
+
 	function handleCardClick(cardId: string) {
 		selectedCardId = cardId;
 	}
@@ -47,9 +66,9 @@
 	}
 
 	function resetFilters() {
-		searchQuery = '';
-		selectedCard = null;
-		cardNameInput = '';
+		searchQuery = DEFAULT_FILTERS.searchQuery;
+		selectedCard = DEFAULT_FILTERS.selectedCard;
+		cardNameInput = DEFAULT_FILTERS.cardNameInput;
 	}
 </script>
 
@@ -63,6 +82,7 @@
 			selectedCardName={selectedCard ? cards.find((c) => c.id === selectedCard)?.name : undefined}
 			selectedCardId={selectedCard}
 			onCardClick={handleCardClick}
+			{hasActiveFilters}
 		>
 			<!-- Search Bars -->
 			<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -74,6 +94,11 @@
 						label="Card name"
 						onSelect={selectCard}
 						onInput={() => (selectedCard = null)}
+						isSelected={selectedCard !== null}
+						onClear={() => {
+							selectedCard = null;
+							cardNameInput = '';
+						}}
 					/>
 				</div>
 			</div>
