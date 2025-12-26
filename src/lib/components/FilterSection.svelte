@@ -3,9 +3,13 @@
 		resultsCount: number;
 		onReset: () => void;
 		children: any;
+		selectedCardName?: string;
+		selectedCardId?: string | null;
+		onCardClick?: (cardId: string) => void;
 	};
 
-	let { resultsCount, onReset, children }: Props = $props();
+	let { resultsCount, onReset, children, selectedCardName, selectedCardId, onCardClick }: Props =
+		$props();
 </script>
 
 <!-- Filters Section -->
@@ -16,7 +20,17 @@
 <!-- Results Count -->
 <div class="mb-4 flex items-center justify-between">
 	<div class="text-sm text-gray-400">
-		{resultsCount} result{resultsCount !== 1 ? 's' : ''}
+		{#if selectedCardName && !!selectedCardId && onCardClick}
+			{resultsCount} result{resultsCount !== 1 ? 's' : ''} for
+			<button
+				onclick={() => onCardClick(selectedCardId)}
+				class="cursor-pointer text-blue-400 transition-colors hover:text-blue-300"
+			>
+				{selectedCardName}
+			</button>
+		{:else}
+			{resultsCount} result{resultsCount !== 1 ? 's' : ''}
+		{/if}
 	</div>
 	<button
 		onclick={onReset}

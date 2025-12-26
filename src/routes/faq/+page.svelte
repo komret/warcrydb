@@ -57,23 +57,25 @@
 	<div class="mx-auto max-w-7xl px-4 py-8">
 		<Header currentPage="faq" />
 
-		<FilterSection resultsCount={filteredFAQs.length} onReset={resetFilters}>
+		<FilterSection
+			resultsCount={filteredFAQs.length}
+			onReset={resetFilters}
+			selectedCardName={selectedCard ? cards.find((c) => c.id === selectedCard)?.name : undefined}
+			selectedCardId={selectedCard}
+			onCardClick={handleCardClick}
+		>
 			<!-- Search Bars -->
-			<div class="space-y-4">
-				<SearchInput bind:value={searchQuery} label="Search FAQs" />
-				<AutocompleteInput
-					items={cards}
-					bind:value={cardNameInput}
-					label="Filter by Card Name"
-					placeholder="Enter card name..."
-					onSelect={selectCard}
-					onInput={() => (selectedCard = null)}
-				/>
-				{#if selectedCard}
-					<p class="mt-2 text-sm text-gray-400">
-						Showing FAQ entries related to "{cards.find((c) => c.id === selectedCard)?.name}"
-					</p>
-				{/if}
+			<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+				<SearchInput bind:value={searchQuery} label="FAQ text" />
+				<div>
+					<AutocompleteInput
+						items={cards}
+						bind:value={cardNameInput}
+						label="Card name"
+						onSelect={selectCard}
+						onInput={() => (selectedCard = null)}
+					/>
+				</div>
 			</div>
 		</FilterSection>
 
@@ -83,12 +85,6 @@
 				<FAQItem {item} {searchQuery} onCardClick={handleCardClick} />
 			{/each}
 		</div>
-
-		{#if filteredFAQs.length === 0}
-			<div class="text-center text-gray-400">
-				<p>No FAQs found matching your search.</p>
-			</div>
-		{/if}
 	</div>
 
 	<CardImageModal cardId={selectedCardId} onclose={() => (selectedCardId = null)} />

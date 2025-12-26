@@ -56,20 +56,20 @@
 					Deckbuilder
 				</a>
 				<a
-					href="/errata"
-					class="rounded-lg px-4 py-2 transition-colors {currentPage === 'errata'
-						? 'bg-gray-700 font-semibold text-white'
-						: 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
-				>
-					Errata
-				</a>
-				<a
 					href="/faq"
 					class="rounded-lg px-4 py-2 transition-colors {currentPage === 'faq'
 						? 'bg-gray-700 font-semibold text-white'
 						: 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
 				>
 					FAQ
+				</a>
+				<a
+					href="/errata"
+					class="rounded-lg px-4 py-2 transition-colors {currentPage === 'errata'
+						? 'bg-gray-700 font-semibold text-white'
+						: 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
+				>
+					Errata
 				</a>
 				<a
 					href="/about"

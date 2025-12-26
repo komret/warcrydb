@@ -13,14 +13,7 @@
 		onInput?: () => void;
 	};
 
-	let {
-		items,
-		value = $bindable(''),
-		placeholder = 'Search...',
-		label,
-		onSelect,
-		onInput
-	}: Props = $props();
+	let { items, value = $bindable(''), label, onSelect, onInput }: Props = $props();
 
 	let showSuggestions = $state(false);
 	let selectedSuggestionIndex = $state(0);
@@ -67,7 +60,6 @@
 		id="autocomplete-input"
 		type="text"
 		bind:value
-		{placeholder}
 		onkeydown={handleKeydown}
 		onfocus={() => (showSuggestions = true)}
 		onblur={() => setTimeout(() => (showSuggestions = false), 200)}
