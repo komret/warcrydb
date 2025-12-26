@@ -18,6 +18,7 @@
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import SearchInput from '$lib/components/SearchInput.svelte';
+	import FilterSection from '$lib/components/FilterSection.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
 
 	// Type definitions
@@ -447,8 +448,7 @@
 	<div class="mx-auto max-w-7xl px-4 py-8">
 		<Header currentPage="home" />
 
-		<!-- Filters Section -->
-		<div class="mb-4 rounded-lg bg-gray-800 p-4 shadow-xl">
+		<FilterSection resultsCount={filteredCards.length} onReset={resetFilters}>
 			<!-- Search -->
 			<div class="mb-4">
 				<SearchInput bind:value={searchQuery} label="Name or text" />
@@ -809,20 +809,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<!-- Results Count -->
-		<div class="mb-4 flex items-center justify-between">
-			<div class="text-sm text-gray-400">
-				{filteredCards.length} results
-			</div>
-			<button
-				onclick={resetFilters}
-				class="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-none"
-			>
-				<span>Reset filters</span>
-			</button>
-		</div>
+		</FilterSection>
 
 		<!-- Cards List -->
 		<div class="space-y-4">
