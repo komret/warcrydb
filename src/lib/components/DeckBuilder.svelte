@@ -96,19 +96,26 @@
 									<div class="truncate text-sm font-medium text-white">{card.name}</div>
 									<div class="text-xs text-gray-400">{card.type} • {card.faction}</div>
 								</div>
-								<div class="ml-2 flex items-center gap-2">
+								<div class="ml-2 flex items-center">
 									<button
 										onclick={() => onRemoveCard(cardId)}
-										class="flex h-6 w-6 items-center justify-center rounded bg-red-600 text-white hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:outline-none disabled:opacity-50"
-										disabled={count <= 0}
-										aria-label="Remove one copy"
+										class="flex h-6 w-6 items-center justify-center text-lg {count <= 0
+											? 'cursor-pointer text-red-400 hover:text-red-300'
+											: 'cursor-pointer text-blue-300 hover:text-blue-400'} focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50"
+										disabled={false}
+										aria-label={count === 0 ? 'Remove card from deck' : 'Remove one copy'}
 									>
-										−
+										{count === 0 ? '×' : '−'}
 									</button>
-									<span class="w-8 text-center text-sm font-bold text-white">{count}</span>
+									<span class="flex h-6 w-7 items-center justify-center text-lg text-gray-300"
+										>{count}</span
+									>
 									<button
 										onclick={() => onAddCard(cardId)}
-										class="flex h-6 w-6 items-center justify-center rounded bg-green-600 text-white hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:outline-none disabled:opacity-50"
+										class="flex h-6 w-6 items-center justify-center text-lg {count >=
+										(card.maxCopies || 3)
+											? 'cursor-default text-gray-400'
+											: 'cursor-pointer text-blue-300 hover:text-blue-400'} focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50"
 										disabled={count >= (card.maxCopies || 3)}
 										aria-label="Add one copy"
 									>
@@ -141,19 +148,26 @@
 									<div class="truncate text-sm font-medium text-white">{card.name}</div>
 									<div class="text-xs text-gray-400">{card.type} • {card.faction}</div>
 								</div>
-								<div class="ml-2 flex items-center gap-2">
+								<div class="ml-2 flex items-center">
 									<button
 										onclick={() => onRemoveCard(cardId)}
-										class="flex h-6 w-6 items-center justify-center rounded bg-red-600 text-white hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:outline-none disabled:opacity-50"
+										class="flex h-6 w-6 items-center justify-center text-lg {count <= 0
+											? 'cursor-default text-gray-400'
+											: 'cursor-pointer text-blue-300 hover:text-blue-400'} focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50"
 										disabled={count <= 0}
-										aria-label="Remove one copy"
+										aria-label={count === 1 ? 'Remove card from deck' : 'Remove one copy'}
 									>
-										−
+										{count === 1 ? '×' : '−'}
 									</button>
-									<span class="w-8 text-center text-sm font-bold text-white">{count}</span>
+									<span class="flex h-6 w-7 items-center justify-center text-lg text-gray-300"
+										>{count}</span
+									>
 									<button
 										onclick={() => onAddCard(cardId)}
-										class="flex h-6 w-6 items-center justify-center rounded bg-green-600 text-white hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:outline-none disabled:opacity-50"
+										class="flex h-6 w-6 items-center justify-center text-lg {count >=
+										(card.maxCopies || 3)
+											? 'cursor-default text-gray-400'
+											: 'cursor-pointer text-blue-300 hover:text-blue-400'} focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50"
 										disabled={count >= (card.maxCopies || 3)}
 										aria-label="Add one copy"
 									>

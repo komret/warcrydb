@@ -215,13 +215,13 @@
 				{/if}
 			</div>
 
-			{#if !isOnFaqPage && card.faq && card.faq.length > 0}
-				<div
-					class="flex items-center gap-2 self-end"
-					onclick={(e) => e.stopPropagation()}
-					role="presentation"
-				>
-					<!-- FAQ Button -->
+			<div
+				class="flex items-center gap-2 self-end"
+				onclick={(e) => e.stopPropagation()}
+				role="presentation"
+			>
+				<!-- FAQ Button -->
+				{#if !isOnFaqPage && card.faq && card.faq.length > 0}
 					<span
 						class="flex h-6 w-6 cursor-pointer items-center justify-center text-lg text-blue-300 hover:text-blue-400"
 						role="button"
@@ -242,44 +242,44 @@
 					>
 						?
 					</span>
+				{/if}
 
-					<!-- Deck Controls -->
-					{#if onAddToDeck && onRemoveFromDeck}
-						<div class="flex items-center">
-							<button
-								onclick={(e) => {
-									e.stopPropagation();
-									onRemoveFromDeck();
-								}}
-								class="flex h-6 w-6 items-center justify-center text-lg {deckCount <= 0
-									? 'cursor-default text-gray-400'
-									: 'cursor-pointer text-blue-300 hover:text-blue-400'} focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50"
-								disabled={deckCount <= 0}
-								aria-label="Remove from deck"
-							>
-								−
-							</button>
-							<span class="flex h-6 w-7 items-center justify-center text-lg text-gray-300"
-								>{deckCount}</span
-							>
-							<button
-								onclick={(e) => {
-									e.stopPropagation();
-									onAddToDeck();
-								}}
-								class="flex h-6 w-6 items-center justify-center text-lg {deckCount >=
-								(card.maxCopies || 3)
-									? 'cursor-default text-gray-400'
-									: 'cursor-pointer text-blue-300 hover:text-blue-400'} focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50"
-								disabled={deckCount >= (card.maxCopies || 3)}
-								aria-label="Add to deck"
-							>
-								+
-							</button>
-						</div>
-					{/if}
-				</div>
-			{/if}
+				<!-- Deck Controls -->
+				{#if onAddToDeck && onRemoveFromDeck}
+					<div class="flex items-center">
+						<button
+							onclick={(e) => {
+								e.stopPropagation();
+								onRemoveFromDeck();
+							}}
+							class="flex h-6 w-6 items-center justify-center text-lg {deckCount <= 0
+								? 'cursor-default text-gray-400'
+								: 'cursor-pointer text-blue-300 hover:text-blue-400'} focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50"
+							disabled={deckCount <= 0}
+							aria-label="Remove from deck"
+						>
+							−
+						</button>
+						<span class="flex h-6 w-7 items-center justify-center text-lg text-gray-300"
+							>{deckCount}</span
+						>
+						<button
+							onclick={(e) => {
+								e.stopPropagation();
+								onAddToDeck();
+							}}
+							class="flex h-6 w-6 items-center justify-center text-lg {deckCount >=
+							(card.maxCopies || 3)
+								? 'cursor-default text-gray-400'
+								: 'cursor-pointer text-blue-300 hover:text-blue-400'} focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50"
+							disabled={deckCount >= (card.maxCopies || 3)}
+							aria-label="Add to deck"
+						>
+							+
+						</button>
+					</div>
+				{/if}
+			</div>
 		</div>
 	</div>
 </div>
