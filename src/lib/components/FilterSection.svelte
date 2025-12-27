@@ -1,24 +1,13 @@
 <script lang="ts">
-	import Card from './Card.svelte';
-	import type { Card as CardType } from '$lib/data/cards';
-
 	type Props = {
 		resultsCount: number;
 		onReset: () => void;
 		children: any;
-		selectedCard?: CardType;
-		onCardClick?: (cardId: string) => void;
 		hasActiveFilters?: boolean;
+		extraContent?: any;
 	};
 
-	let {
-		resultsCount,
-		onReset,
-		children,
-		selectedCard,
-		onCardClick,
-		hasActiveFilters = false
-	}: Props = $props();
+	let { resultsCount, onReset, children, hasActiveFilters = false, extraContent }: Props = $props();
 </script>
 
 <!-- Filters Section -->
@@ -27,10 +16,8 @@
 </div>
 
 <!-- Selected Card Display -->
-{#if selectedCard && onCardClick}
-	<div class="mb-4">
-		<Card card={selectedCard} onclick={() => onCardClick(selectedCard.id)} />
-	</div>
+{#if extraContent}
+	{@render extraContent()}
 {/if}
 
 <!-- Results Count -->

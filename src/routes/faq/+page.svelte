@@ -6,6 +6,7 @@
 	import SelectableInput from '$lib/components/SelectableInput.svelte';
 	import FilterSection from '$lib/components/FilterSection.svelte';
 	import FAQItem from '$lib/components/FAQItem.svelte';
+	import Card from '$lib/components/Card.svelte';
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
 	import { goto } from '$app/navigation';
@@ -98,14 +99,22 @@
 	<div class="mx-auto max-w-7xl px-4 py-8">
 		<Header currentPage="faq" />
 
+		{#snippet cardSnippet()}
+			{#if selectedCard}
+				{@const card = cards.find((c) => c.id === selectedCard)}
+				{#if card}
+					<div class="mb-4">
+						<Card {card} onclick={() => handleCardClick(card.id)} isOnFaqPage={true} />
+					</div>
+				{/if}
+			{/if}
+		{/snippet}
+
 		<FilterSection
 			resultsCount={filteredFAQs.length}
 			onReset={resetFilters}
-			selectedCard={selectedCard
-				? cards.find((c) => c.id === selectedCard) || undefined
-				: undefined}
-			onCardClick={handleCardClick}
 			{hasActiveFilters}
+			extraContent={cardSnippet}
 		>
 			<!-- Search Bars -->
 			<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -123,8 +132,6 @@
 				</div>
 			</div>
 		</FilterSection>
-
-		<!-- FAQ List -->
 		<div class="space-y-3">
 			{#each filteredFAQs as item (item.id)}
 				<FAQItem {item} {searchQuery} onCardClick={handleCardClick} />
