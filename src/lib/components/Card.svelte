@@ -1,15 +1,23 @@
 <script lang="ts">
 	import type { Card } from '$lib/data/cards';
 	import { highlightSearchTerms } from '$lib/utils/highlightSearchTerms';
+	import { goto } from '$app/navigation';
 
 	type Props = {
 		card: Card;
 		searchQuery?: string;
 		showErrataHighlight?: boolean;
 		onclick?: () => void;
+		isOnFaqPage?: boolean;
 	};
 
-	let { card, searchQuery = '', showErrataHighlight = false, onclick }: Props = $props();
+	let {
+		card,
+		searchQuery = '',
+		showErrataHighlight = false,
+		onclick,
+		isOnFaqPage = false
+	}: Props = $props();
 
 	// Replace errata class with text-blue-500 if showing errata highlights
 	const processCardText = (html: string): string => {
@@ -62,7 +70,7 @@
 
 <button
 	type="button"
-	class="w-full cursor-pointer rounded-lg border border-gray-700 bg-gray-800 p-4 text-left shadow-lg transition-all hover:border-blue-500 hover:shadow-xl"
+	class="w-full cursor-default rounded-lg border border-gray-700 bg-gray-800 p-4 text-left shadow-lg transition-all hover:border-blue-500 hover:shadow-xl"
 	{onclick}
 >
 	<!-- Two column layout on larger screens, single column on mobile -->
@@ -187,9 +195,32 @@
 		</div>
 
 		<!-- Second column: Card text -->
-		<div class="space-y-2 text-sm text-gray-300">
+		<div class="flex flex-col justify-between text-sm text-gray-300">
 			{#if card.text}
 				{@html highlightedText}
+			{/if}
+
+			{#if !isOnFaqPage && card.faq && card.faq.length > 0}
+				<span
+					class="flex h-5 w-5 cursor-pointer items-center justify-center self-end text-gray-500 hover:text-blue-300"
+					role="button"
+					title="Show related FAQ"
+					tabindex="0"
+					aria-label="Go to FAQ for this card"
+					onclick={(e) => {
+						e.stopPropagation();
+						goto(`/faq?card=${card.id}`);
+					}}
+					onkeydown={(e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
+							e.preventDefault();
+							e.stopPropagation();
+							goto(`/faq?card=${card.id}`);
+						}
+					}}
+				>
+					?
+				</span>
 			{/if}
 		</div>
 	</div>

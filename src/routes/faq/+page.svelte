@@ -8,6 +8,7 @@
 	import FAQItem from '$lib/components/FAQItem.svelte';
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
+	import { onMount } from 'svelte';
 
 	// Default filter values for hasActiveFilters logic
 	type DefaultFilters = {
@@ -30,6 +31,18 @@
 	// Card name search state
 	let cardNameInput = $state(DEFAULT_FILTERS.cardNameInput);
 	let selectedCard = $state(DEFAULT_FILTERS.selectedCard);
+
+	onMount(() => {
+		const url = new URL(window.location.href);
+		const cardParam = url.searchParams.get('card');
+		if (cardParam) {
+			selectedCard = cardParam;
+			const card = cards.find((c) => c.id === cardParam);
+			if (card) {
+				cardNameInput = card.name;
+			}
+		}
+	});
 
 	// Filter FAQs based on search query and selected card
 	const filteredFAQs = $derived.by(() => {
