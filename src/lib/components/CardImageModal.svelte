@@ -13,6 +13,29 @@
 			modalElement.focus();
 		}
 	});
+
+	// Mapping of missing WA card images to their alternative filenames from other sets
+	// Remove items from this list as images are added
+	const waCardFallbacks: Record<string, string> = {
+		WA124: 'bd36',
+		WA161: 'cd20',
+		WA163: 'vt26',
+		WA169: 'lc56',
+		WA194: 'wm61',
+		WA201: 'dh36',
+		WA260: 'SM81',
+		WA263: 'wm81',
+		WA295: 'hw92',
+		WA374: 'bd119',
+		WA376: 'hw110'
+	};
+
+	// Get the image filename for the card
+	const getImageFilename = $derived(() => {
+		if (!cardId) return '';
+		const fallback = waCardFallbacks[cardId];
+		return fallback ? `${fallback}.jpg` : `${cardId.toLowerCase()}.jpg`;
+	});
 </script>
 
 {#if cardId}
@@ -49,7 +72,7 @@
 			</button>
 			<!-- Card image -->
 			<img
-				src="/cards/{cardId.toLowerCase()}.jpg"
+				src="/cards/{getImageFilename()}"
 				alt="Card {cardId}"
 				class="max-h-[90vh] w-auto rounded-lg shadow-2xl"
 			/>
