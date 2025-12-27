@@ -263,7 +263,7 @@ export const faq: FAQ[] = [
 	},
 	{
 		id: 35,
-		question: 'Is something that adds +0, considered a bonus?',
+		question: 'Is something that adds +0 considered a bonus?',
 		answer: 'Yes.',
 		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
 	},

@@ -29879,7 +29879,7 @@ export const cards: Card[] = [
 		releases: {
 			HF: 66
 		},
-		faq: [10]
+		faq: [10, 33]
 	},
 	{
 		id: 'HF67',

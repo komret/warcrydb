@@ -196,9 +196,11 @@
 
 		<!-- Second column: Card text -->
 		<div class="flex flex-col justify-between text-sm text-gray-300">
-			{#if card.text}
-				{@html highlightedText}
-			{/if}
+			<div class="space-y-2">
+				{#if card.text}
+					{@html highlightedText}
+				{/if}
+			</div>
 
 			{#if !isOnFaqPage && card.faq && card.faq.length > 0}
 				<span
