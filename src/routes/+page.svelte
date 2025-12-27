@@ -30,23 +30,23 @@
 		{
 			value: 'any',
 			label: 'Open',
-			description: 'all cards, including banned, are eligible'
+			description: 'all cards, including banned, are eligible.'
 		},
 		{
 			value: 'warcry',
 			label: 'WarCry',
-			description: 'only cards from the initial block are eligible (BD or older)'
+			description: 'only cards from the initial block are eligible (BD or older).'
 		},
 		{
 			value: 'attrition',
 			label: 'Attrition',
 			description:
-				'only cards from the Attrition block are eligible (cards marked by the axe symbol - BR or newer)'
+				'only cards from the Attrition block are eligible (cards marked by the axe symbol - BR or newer).'
 		},
 		{
 			value: 'oldschool',
 			label: 'Old School',
-			description: 'only cards from the first three sets and promos from that era are eligible'
+			description: 'only cards from the first three sets and promos from that era are eligible.'
 		}
 	];
 

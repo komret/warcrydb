@@ -26,25 +26,22 @@
 
 			<h2 class="mb-4 text-xl font-bold">Contact</h2>
 			<div class="mb-6 space-y-4 text-gray-300">
-				<p>
-					Contact me if you want to play a game, trade cards or discuss anything related to this
-					project.
-				</p>
 				<p>Jan Komárek, Prague, Czech Republic</p>
 				<p>
-					<a href="mailto:komret@proton.me" class="text-blue-500 underline hover:text-blue-400">
+					Use <a href="mailto:komret@proton.me" class="text-blue-500 underline hover:text-blue-400">
 						komret@proton.me
-					</a>
+					</a> to contact me if you want to play a game, trade cards etc.
 				</p>
 				<p>
-					<a
+					Visit the <a
 						href="https://github.com/komret/warcry-deckbuilder"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-blue-500 underline hover:text-blue-400"
 					>
-						https://github.com/komret/warcry-deckbuilder
+						Github repository
 					</a>
+					to report technical issues or to contribute via a pull request.
 				</p>
 			</div>
 
