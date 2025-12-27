@@ -8,6 +8,7 @@
 	import FAQItem from '$lib/components/FAQItem.svelte';
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
+	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 
 	// Default filter values for hasActiveFilters logic
@@ -76,12 +77,20 @@
 
 	function selectCard(card: { id: string; name: string }) {
 		selectedCard = card.id;
+		goto(`/faq?card=${card.id}`, { replaceState: true });
+	}
+
+	function clearCard() {
+		selectedCard = null;
+		cardNameInput = '';
+		goto('/faq', { replaceState: true });
 	}
 
 	function resetFilters() {
 		searchQuery = DEFAULT_FILTERS.searchQuery;
 		selectedCard = DEFAULT_FILTERS.selectedCard;
 		cardNameInput = DEFAULT_FILTERS.cardNameInput;
+		goto('/faq', { replaceState: true });
 	}
 </script>
 
@@ -109,10 +118,7 @@
 						label="Card name"
 						selectedItem={selectedCard ? cards.find((c) => c.id === selectedCard) || null : null}
 						onSelect={selectCard}
-						onClear={() => {
-							selectedCard = null;
-							cardNameInput = '';
-						}}
+						onClear={clearCard}
 					/>
 				</div>
 			</div>
