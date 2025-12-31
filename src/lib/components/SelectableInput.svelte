@@ -78,11 +78,9 @@
 
 	// Handle keyboard navigation for both modes
 	function handleKeydown(e: KeyboardEvent) {
-		if (e.key === 'Enter' || e.key === 'Tab') {
+		if (filteredSuggestions.length > 0 && (e.key === 'Enter' || e.key === 'Tab')) {
 			e.preventDefault();
-			if (filteredSuggestions.length > 0) {
-				handleSelect(filteredSuggestions[selectedSuggestionIndex]);
-			}
+			handleSelect(filteredSuggestions[selectedSuggestionIndex]);
 		} else if (e.key === 'ArrowDown') {
 			e.preventDefault();
 			selectedSuggestionIndex = Math.min(
@@ -95,22 +93,6 @@
 		} else if (e.key === 'Escape') {
 			showSuggestions = false;
 		}
-	}
-
-	// Select item for multi mode
-	function selectItem(item: Item) {
-		(rest as MultiSelectionProps).onAddItem(item.name as Keyword);
-		value = ''; // Clear input after selection
-		showSuggestions = false;
-		selectedSuggestionIndex = 0;
-	}
-
-	// Get display value for single mode
-	function getSingleDisplayValue(): string {
-		if (mode === 'single' && (rest as SingleSelectionProps).selectedItem) {
-			return (rest as SingleSelectionProps).selectedItem!.name;
-		}
-		return value;
 	}
 
 	// Check if single mode has selection
