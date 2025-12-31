@@ -2,6 +2,7 @@
 	import type { Card } from '$lib/data/cards';
 	import { highlightSearchTerms } from '$lib/utils/highlightSearchTerms';
 	import { goto } from '$app/navigation';
+	import IconButton from './IconButton.svelte';
 
 	type Props = {
 		card: Card;
@@ -220,40 +221,25 @@
 			>
 				<!-- Show FAQ -->
 				{#if showFaqIcon && card.faq && card.faq.length > 0}
-					<span
-						class="flex h-6 w-6 cursor-pointer items-center justify-center text-lg text-blue-300 hover:text-blue-400"
-						role="button"
+					<IconButton
+						icon="?"
+						variant="primary"
+						size="lg"
 						title="Show related FAQ"
-						tabindex="0"
-						aria-label="Go to FAQ for this card"
-						onclick={(e) => {
-							e.stopPropagation();
-							goto(`/faq?card=${card.id}`);
-						}}
-						onkeydown={(e) => {
-							if (e.key === 'Enter' || e.key === ' ') {
-								e.preventDefault();
-								e.stopPropagation();
-								goto(`/faq?card=${card.id}`);
-							}
-						}}
-					>
-						?
-					</span>
+						onClick={() => goto(`/faq?card=${card.id}`)}
+					/>
 				{/if}
 
 				<!-- Add to deck -->
 				{#if onAddToDeck}
-					<button
-						onclick={() => onAddToDeck()}
+					<IconButton
+						icon="+"
+						variant="primary"
+						size="lg"
+						title="Add to deck"
 						disabled={isInDeck}
-						class="flex h-6 w-6 items-center justify-center text-lg {isInDeck
-							? 'cursor-default text-gray-400'
-							: 'cursor-pointer text-blue-300 hover:text-blue-400'} focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50"
-						aria-label="Add card to deck"
-					>
-						+
-					</button>
+						onClick={onAddToDeck}
+					/>
 				{/if}
 			</div>
 		</div>
