@@ -100,15 +100,6 @@
 	<div class="mx-auto max-w-7xl px-4 py-8">
 		<Header currentPage="faq" />
 
-		{#if selectedCard}
-			{@const card = cards.find((c) => c.id === selectedCard)}
-			{#if card}
-				<div class="mb-4">
-					<Card {card} onclick={() => handleCardClick(card.id)} />
-				</div>
-			{/if}
-		{/if}
-
 		<Box>
 			<!-- Search Bars -->
 			<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -126,6 +117,15 @@
 				</div>
 			</div>
 		</Box>
+
+		{#if selectedCard}
+			{@const card = cards.find((c) => c.id === selectedCard)}
+			{#if card}
+				<div class="mb-4">
+					<Card {card} onclick={() => handleCardClick(card.id)} />
+				</div>
+			{/if}
+		{/if}
 
 		<ResultRow resultsCount={filteredFAQs.length} onReset={resetFilters} {hasActiveFilters} />
 		<div class="space-y-3">
