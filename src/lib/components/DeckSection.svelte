@@ -40,48 +40,44 @@
 		/>
 	</div>
 
-	{#if cards.length === 0}
-		<div class="py-8 text-center text-gray-500">No cards in {title.toLowerCase()} yet</div>
-	{:else}
-		<div class="space-y-2">
-			{#each cards as [cardId, count]}
-				{@const card = getCard(cardId)}
-				{#if card}
-					<div class="flex items-center justify-between rounded bg-gray-600 p-2">
-						<div class="min-w-0 flex-1">
-							<button
-								class="cursor-pointer truncate text-left text-sm font-medium text-white hover:text-blue-400 focus:text-blue-400 focus:outline-none"
-								onclick={() => (selectedCardId = cardId)}
-							>
-								{card.name}
-							</button>
-							<div class="text-xs text-gray-400">{card.type} • {card.faction}</div>
-						</div>
-						<div class="ml-2 flex items-center">
-							<IconButton
-								icon={count === 0 ? '×' : '−'}
-								variant={count === 0 ? 'danger' : 'primary'}
-								size="lg"
-								title={count === 0 ? 'Remove from deck' : 'Remove one copy'}
-								onClick={() => onRemoveCard(cardId)}
-							/>
-							<span class="flex h-6 w-3 items-center justify-center text-lg text-gray-300"
-								>{count}</span
-							>
-							<IconButton
-								icon="+"
-								variant="primary"
-								size="lg"
-								title="Add one copy"
-								disabled={count >= (card.maxCopies || 3)}
-								onClick={() => onAddCard(cardId)}
-							/>
-						</div>
+	<div class="space-y-2">
+		{#each cards as [cardId, count]}
+			{@const card = getCard(cardId)}
+			{#if card}
+				<div class="flex items-center justify-between rounded bg-gray-600 p-2">
+					<div class="min-w-0 flex-1">
+						<button
+							class="cursor-pointer truncate text-left text-sm font-medium text-white hover:text-blue-400 focus:text-blue-400 focus:outline-none"
+							onclick={() => (selectedCardId = cardId)}
+						>
+							{card.name}
+						</button>
+						<div class="text-xs text-gray-400">{card.type} • {card.faction}</div>
 					</div>
-				{/if}
-			{/each}
-		</div>
-	{/if}
+					<div class="ml-2 flex items-center">
+						<IconButton
+							icon={count === 0 ? '×' : '−'}
+							variant={count === 0 ? 'danger' : 'primary'}
+							size="lg"
+							title={count === 0 ? 'Remove from deck' : 'Remove one copy'}
+							onClick={() => onRemoveCard(cardId)}
+						/>
+						<span class="flex h-6 w-3 items-center justify-center text-lg text-gray-300"
+							>{count}</span
+						>
+						<IconButton
+							icon="+"
+							variant="primary"
+							size="lg"
+							title="Add one copy"
+							disabled={count >= (card.maxCopies || 3)}
+							onClick={() => onAddCard(cardId)}
+						/>
+					</div>
+				</div>
+			{/if}
+		{/each}
+	</div>
 </div>
 
 <CardImageModal cardId={selectedCardId} onclose={() => (selectedCardId = null)} />
