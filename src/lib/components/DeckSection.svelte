@@ -2,6 +2,7 @@
 	import type { Card as CardType } from '$lib/data/cards';
 	import IconButton from './IconButton.svelte';
 	import SelectableInput from './SelectableInput.svelte';
+	import CardImageModal from './CardImageModal.svelte';
 
 	type Props = {
 		title: string;
@@ -16,6 +17,7 @@
 	let { title, cards, total, getCard, onRemoveCard, onAddCard, availableCards }: Props = $props();
 
 	let inputValue = $state('');
+	let selectedCardId = $state<string | null>(null);
 </script>
 
 <div class="rounded-lg bg-gray-700 p-4">
@@ -47,7 +49,12 @@
 				{#if card}
 					<div class="flex items-center justify-between rounded bg-gray-600 p-2">
 						<div class="min-w-0 flex-1">
-							<div class="truncate text-sm font-medium text-white">{card.name}</div>
+							<button
+								class="cursor-pointer truncate text-left text-sm font-medium text-white hover:text-blue-400 focus:text-blue-400 focus:outline-none"
+								onclick={() => (selectedCardId = cardId)}
+							>
+								{card.name}
+							</button>
 							<div class="text-xs text-gray-400">{card.type} • {card.faction}</div>
 						</div>
 						<div class="ml-2 flex items-center">
@@ -58,7 +65,7 @@
 								title={count === 0 ? 'Remove from deck' : 'Remove one copy'}
 								onClick={() => onRemoveCard(cardId)}
 							/>
-							<span class="flex h-6 w-7 items-center justify-center text-lg text-gray-300"
+							<span class="flex h-6 w-3 items-center justify-center text-lg text-gray-300"
 								>{count}</span
 							>
 							<IconButton
@@ -76,3 +83,5 @@
 		</div>
 	{/if}
 </div>
+
+<CardImageModal cardId={selectedCardId} onclose={() => (selectedCardId = null)} />
