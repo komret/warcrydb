@@ -18,7 +18,7 @@
 		mode: 'single';
 		selectedItem: Item | null;
 		onSelect: (item: Item) => void;
-		onClear: () => void;
+		onClear?: () => void;
 	};
 
 	type MultiSelectionProps = BaseProps & {
@@ -55,15 +55,7 @@
 
 	// Handle input changes
 	function handleInput() {
-		if (mode === 'single') {
-			// For single mode, clear selection when typing
-			if ((rest as SingleSelectionProps).selectedItem) {
-				(rest as SingleSelectionProps).onClear();
-			}
-		} else {
-			// For multi mode, update the input value
-			(rest as MultiSelectionProps).onInputChange(value);
-		}
+		(rest as MultiSelectionProps).onInputChange(value);
 	}
 
 	// Handle item selection
@@ -172,7 +164,8 @@
 				<button
 					onclick={() => {
 						if (mode === 'single') {
-							(rest as SingleSelectionProps).onClear();
+							value = '';
+							(rest as SingleSelectionProps).onClear?.();
 						}
 					}}
 					title="Remove {(rest as SingleSelectionProps).selectedItem!.name}"
@@ -202,9 +195,7 @@
 				<ClearButton
 					onClick={() => {
 						// Clear selected item and input value
-						if (mode === 'single' && hasSingleSelection()) {
-							(rest as SingleSelectionProps).onClear();
-						}
+						(rest as SingleSelectionProps).onClear?.();
 						value = '';
 					}}
 				/>

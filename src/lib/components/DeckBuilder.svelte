@@ -36,6 +36,21 @@
 	const armyCards = $derived(() => getFilteredCards(['Unit', 'Attachment']));
 	const actionCards = $derived(() => getFilteredCards(['Tactic', 'Command', 'Reaction']));
 
+	// Available cards for each section (not in deck)
+	const availableArmyCards = $derived(() => {
+		return cards.filter(
+			(card) => (card.type === 'Unit' || card.type === 'Attachment') && !deck.has(card.id)
+		);
+	});
+
+	const availableActionCards = $derived(() => {
+		return cards.filter(
+			(card) =>
+				(card.type === 'Tactic' || card.type === 'Command' || card.type === 'Reaction') &&
+				!deck.has(card.id)
+		);
+	});
+
 	const armyTotal = $derived(() => {
 		return armyCards().reduce((sum: number, [, count]: [string, number]) => sum + count, 0);
 	});
@@ -56,20 +71,20 @@
 			title="Army Deck"
 			cards={armyCards()}
 			total={armyTotal()}
-			required={30}
 			{getCard}
 			{onRemoveCard}
 			{onAddCard}
+			availableCards={availableArmyCards()}
 		/>
 
 		<DeckSection
 			title="Action Deck"
 			cards={actionCards()}
 			total={actionTotal()}
-			required={30}
 			{getCard}
 			{onRemoveCard}
 			{onAddCard}
+			availableCards={availableActionCards()}
 		/>
 	</div>
 </Box>

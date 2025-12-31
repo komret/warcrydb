@@ -1,30 +1,47 @@
 <script lang="ts">
 	import type { Card as CardType } from '$lib/data/cards';
 	import IconButton from './IconButton.svelte';
+	import SelectableInput from './SelectableInput.svelte';
 
 	type Props = {
 		title: string;
 		cards: [string, number][];
 		total: number;
-		required: number;
 		getCard: (cardId: string) => CardType | undefined;
 		onRemoveCard: (cardId: string) => void;
 		onAddCard: (cardId: string) => void;
+		availableCards: CardType[];
 	};
 
-	let { title, cards, total, required, getCard, onRemoveCard, onAddCard }: Props = $props();
+	let { title, cards, total, getCard, onRemoveCard, onAddCard, availableCards }: Props = $props();
+
+	let inputValue = $state('');
 </script>
 
 <div class="rounded-lg bg-gray-700 p-4">
 	<div class="mb-3 flex items-center justify-between">
 		<h3 class="text-lg font-semibold text-white">{title}</h3>
-		<span class="text-sm text-gray-400">{total}/{required} cards</span>
+		<span class="text-sm text-gray-400">{total} card{total !== 1 ? 's' : ''}</span>
+	</div>
+
+	<!-- Card selection input -->
+	<div class="mb-2">
+		<SelectableInput
+			mode="single"
+			items={availableCards.map((card) => ({ id: card.id, name: card.name }))}
+			bind:value={inputValue}
+			selectedItem={null}
+			onSelect={(item) => {
+				onAddCard(item.id);
+				inputValue = '';
+			}}
+		/>
 	</div>
 
 	{#if cards.length === 0}
 		<div class="py-8 text-center text-gray-500">No cards in {title.toLowerCase()} yet</div>
 	{:else}
-		<div class="max-h-96 space-y-2 overflow-y-auto">
+		<div class="space-y-2">
 			{#each cards as [cardId, count]}
 				{@const card = getCard(cardId)}
 				{#if card}

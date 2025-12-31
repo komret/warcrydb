@@ -16,24 +16,23 @@
 	// Default filter values for hasActiveFilters logic
 	type DefaultFilters = {
 		searchQuery: string;
-		selectedCardId: string | null;
 		cardNameInput: string;
 		selectedCard: string | null;
 	};
 
 	const DEFAULT_FILTERS: DefaultFilters = {
 		searchQuery: '',
-		selectedCardId: null,
 		cardNameInput: '',
 		selectedCard: null
 	};
 
 	let searchQuery = $state(DEFAULT_FILTERS.searchQuery);
-	let selectedCardId = $state(DEFAULT_FILTERS.selectedCardId);
 
 	// Card name search state
 	let cardNameInput = $state(DEFAULT_FILTERS.cardNameInput);
 	let selectedCard = $state(DEFAULT_FILTERS.selectedCard);
+
+	let selectedCardId = $state<string | null>(null);
 
 	onMount(() => {
 		const url = new URL(window.location.href);
@@ -84,7 +83,6 @@
 
 	function clearCard() {
 		selectedCard = null;
-		cardNameInput = '';
 		goto('/faq', { replaceState: true });
 	}
 
