@@ -223,7 +223,7 @@
 	// Watch for filter changes and trigger debounced filter update
 	$effect(() => {
 		// Read all filter values to track changes
-		const currentSearch = searchQuery; // Watch for search changes
+		searchQuery; // Watch for search changes
 		selectedFactions.size;
 		selectedTypes.size;
 		selectedRarities.size;
@@ -248,8 +248,7 @@
 			clearTimeout(filterDebounceTimer);
 		}
 
-		// Use longer delay for search (more typing expected), shorter for other filters
-		const delay = currentSearch ? 300 : 50;
+		const delay = 250;
 		filterDebounceTimer = setTimeout(() => {
 			filteredCards = computeFilteredCards();
 		}, delay);
