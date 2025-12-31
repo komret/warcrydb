@@ -968,6 +968,7 @@
 				<Card
 					{card}
 					{searchQuery}
+					showFaqIcon
 					isInDeck={deck.has(card.id)}
 					onAddToDeck={() => addToDeck(card.id)}
 					onclick={() => (selectedCardId = card.id)}

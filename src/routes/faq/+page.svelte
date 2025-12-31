@@ -104,7 +104,7 @@
 			{@const card = cards.find((c) => c.id === selectedCard)}
 			{#if card}
 				<div class="mb-4">
-					<Card {card} onclick={() => handleCardClick(card.id)} isOnFaqPage={true} />
+					<Card {card} onclick={() => handleCardClick(card.id)} />
 				</div>
 			{/if}
 		{/if}

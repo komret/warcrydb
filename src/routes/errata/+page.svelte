@@ -24,7 +24,12 @@
 			{#if errataCards.length > 0}
 				<div class="space-y-4">
 					{#each errataCards as card}
-						<Card {card} showErrataHighlight={true} onclick={() => (selectedCardId = card.id)} />
+						<Card
+							{card}
+							showFaqIcon
+							showErrataHighlight={true}
+							onclick={() => (selectedCardId = card.id)}
+						/>
 					{/each}
 				</div>
 			{/if}

@@ -8,7 +8,7 @@
 		searchQuery?: string;
 		showErrataHighlight?: boolean;
 		onclick?: () => void;
-		isOnFaqPage?: boolean;
+		showFaqIcon?: boolean;
 		onAddToDeck?: () => void;
 		isInDeck?: boolean;
 	};
@@ -18,7 +18,7 @@
 		searchQuery = '',
 		showErrataHighlight = false,
 		onclick,
-		isOnFaqPage = false,
+		showFaqIcon = false,
 		onAddToDeck,
 		isInDeck = false
 	}: Props = $props();
@@ -219,7 +219,7 @@
 				role="presentation"
 			>
 				<!-- Show FAQ -->
-				{#if !isOnFaqPage && card.faq && card.faq.length > 0}
+				{#if showFaqIcon && card.faq && card.faq.length > 0}
 					<span
 						class="flex h-6 w-6 cursor-pointer items-center justify-center text-lg text-blue-300 hover:text-blue-400"
 						role="button"
