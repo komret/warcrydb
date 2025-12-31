@@ -1,29 +1,17 @@
 <script lang="ts">
 	type Props = {
 		resultsCount: number;
+		isFiltering?: boolean;
 		onReset: () => void;
-		children: any;
 		hasActiveFilters?: boolean;
-		extraContent?: any;
 	};
 
-	let { resultsCount, onReset, children, hasActiveFilters = false, extraContent }: Props = $props();
+	let { resultsCount, isFiltering = false, onReset, hasActiveFilters = false }: Props = $props();
 </script>
 
-<!-- Filters Section -->
-<div class="mb-4 rounded-lg bg-gray-800 p-4 shadow-xl">
-	{@render children()}
-</div>
-
-<!-- Selected Card Display -->
-{#if extraContent}
-	{@render extraContent()}
-{/if}
-
-<!-- Results Count -->
 <div class="mb-4 flex items-center justify-between">
 	<div class="text-sm text-gray-400">
-		{resultsCount} result{resultsCount !== 1 ? 's' : ''}
+		{isFiltering ? 'Filtering...' : `${resultsCount} result${resultsCount !== 1 ? 's' : ''}`}
 	</div>
 	<button
 		onclick={onReset}

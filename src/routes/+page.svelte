@@ -19,7 +19,8 @@
 	import Header from '$lib/components/Header.svelte';
 	import SearchInput from '$lib/components/SearchInput.svelte';
 	import SelectableInput from '$lib/components/SelectableInput.svelte';
-	import FilterSection from '$lib/components/FilterSection.svelte';
+	import Box from '$lib/components/Box.svelte';
+	import ResultRow from '$lib/components/ResultRow.svelte';
 	import DeckBuilder from '$lib/components/DeckBuilder.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
 	import { onMount } from 'svelte';
@@ -145,6 +146,7 @@
 	// Filtered results (updated after debounce)
 	let filteredCards = $state<typeof cards>([]);
 	let filterDebounceTimer: ReturnType<typeof setTimeout> | null = null;
+	let isFiltering = $state(false);
 
 	onMount(() => {
 		const saved = localStorage.getItem('homeFilters');
@@ -243,7 +245,8 @@
 		dieOperator;
 		dieValue;
 
-		// Reset timer and trigger debounced filter execution
+		// Set filtering state and reset timer
+		isFiltering = true;
 		if (filterDebounceTimer) {
 			clearTimeout(filterDebounceTimer);
 		}
@@ -251,12 +254,14 @@
 		const delay = 250;
 		filterDebounceTimer = setTimeout(() => {
 			filteredCards = computeFilteredCards();
+			isFiltering = false;
 		}, delay);
 
 		return () => {
 			if (filterDebounceTimer) {
 				clearTimeout(filterDebounceTimer);
 			}
+			isFiltering = false;
 		};
 	});
 
@@ -622,7 +627,7 @@
 
 		<DeckBuilder {deck} {cards} onRemoveCard={removeFromDeck} onAddCard={addToDeck} />
 
-		<FilterSection resultsCount={filteredCards.length} onReset={resetFilters} {hasActiveFilters}>
+		<Box>
 			<!-- Search -->
 			<div class="mb-4">
 				<SearchInput bind:value={searchQuery} label="Name or text" />
@@ -943,7 +948,14 @@
 					</div>
 				</div>
 			</div>
-		</FilterSection>
+		</Box>
+
+		<ResultRow
+			resultsCount={filteredCards.length}
+			{isFiltering}
+			onReset={resetFilters}
+			{hasActiveFilters}
+		/>
 
 		<!-- Cards List -->
 		<div class="space-y-4">

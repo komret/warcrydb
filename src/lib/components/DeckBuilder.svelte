@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Card as CardType, Type } from '$lib/data/cards';
 	import DeckSection from './DeckSection.svelte';
+	import Box from './Box.svelte';
 
 	type Props = {
 		deck: Map<string, number>;
@@ -49,7 +50,7 @@
 	const isValidDeck = $derived(() => armyTotal() >= 30 && actionTotal() >= 30);
 </script>
 
-<div class="mb-6 rounded-lg bg-gray-800 p-4 shadow-xl">
+<Box>
 	<div class="mb-4 flex items-center justify-between">
 		<h2 class="text-xl font-bold text-white">Deck Builder</h2>
 		<div class="text-sm text-gray-400">
@@ -85,4 +86,4 @@
 			{onAddCard}
 		/>
 	</div>
-</div>
+</Box>

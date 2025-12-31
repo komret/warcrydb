@@ -4,7 +4,8 @@
 	import Header from '$lib/components/Header.svelte';
 	import SearchInput from '$lib/components/SearchInput.svelte';
 	import SelectableInput from '$lib/components/SelectableInput.svelte';
-	import FilterSection from '$lib/components/FilterSection.svelte';
+	import Box from '$lib/components/Box.svelte';
+	import ResultRow from '$lib/components/ResultRow.svelte';
 	import FAQItem from '$lib/components/FAQItem.svelte';
 	import Card from '$lib/components/Card.svelte';
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
@@ -99,23 +100,16 @@
 	<div class="mx-auto max-w-7xl px-4 py-8">
 		<Header currentPage="faq" />
 
-		{#snippet cardSnippet()}
-			{#if selectedCard}
-				{@const card = cards.find((c) => c.id === selectedCard)}
-				{#if card}
-					<div class="mb-4">
-						<Card {card} onclick={() => handleCardClick(card.id)} isOnFaqPage={true} />
-					</div>
-				{/if}
+		{#if selectedCard}
+			{@const card = cards.find((c) => c.id === selectedCard)}
+			{#if card}
+				<div class="mb-4">
+					<Card {card} onclick={() => handleCardClick(card.id)} isOnFaqPage={true} />
+				</div>
 			{/if}
-		{/snippet}
+		{/if}
 
-		<FilterSection
-			resultsCount={filteredFAQs.length}
-			onReset={resetFilters}
-			{hasActiveFilters}
-			extraContent={cardSnippet}
-		>
+		<Box>
 			<!-- Search Bars -->
 			<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
 				<SearchInput bind:value={searchQuery} label="FAQ text" />
@@ -131,7 +125,9 @@
 					/>
 				</div>
 			</div>
-		</FilterSection>
+		</Box>
+
+		<ResultRow resultsCount={filteredFAQs.length} onReset={resetFilters} {hasActiveFilters} />
 		<div class="space-y-3">
 			{#each filteredFAQs as item (item.id)}
 				<FAQItem {item} {searchQuery} onCardClick={handleCardClick} />
