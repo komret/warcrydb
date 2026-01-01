@@ -3,6 +3,7 @@
 	import { highlightSearchTerms } from '$lib/utils/highlightSearchTerms';
 	import { goto } from '$app/navigation';
 	import IconButton from './IconButton.svelte';
+	import { colors } from '$lib/constants/colors';
 
 	type Props = {
 		card: Card;
@@ -43,13 +44,13 @@
 		switch (cardType) {
 			case 'Unit':
 			case 'Attachment':
-				return 'bg-[#FC922B]'; // Gold
+				return `bg-[${colors.types.unit}]`; // Gold
 			case 'Tactic':
-				return 'bg-[#C6C144]'; // Yellow
+				return `bg-[${colors.types.tactic}]`; // Yellow
 			case 'Command':
-				return 'bg-[#538DB2]'; // Blue
+				return `bg-[${colors.types.command}]`; // Blue
 			case 'Reaction':
-				return 'bg-[#BD362C]'; // Red
+				return `bg-[${colors.types.reaction}]`; // Red
 			default:
 				return 'bg-gray-500';
 		}
@@ -59,11 +60,11 @@
 	const getStrengthCircleColor = (faction: string): string => {
 		switch (faction) {
 			case 'Neutral':
-				return 'bg-[#723820]';
+				return `bg-[${colors.factions.neutral}]`;
 			case 'Hordes of Darkness':
-				return 'bg-[#3F5146]';
+				return `bg-[${colors.factions.hordesOfDarkness}]`;
 			case 'Grand Alliance':
-				return 'bg-[#D7DCD5]';
+				return `bg-[${colors.factions.grandAlliance}]`;
 			default:
 				return 'bg-gray-500';
 		}
@@ -201,7 +202,7 @@
 			<div class="text-center font-bold text-gray-300">
 				{#if card.leadership !== undefined}{card.leadership}{/if}
 			</div>
-			<div class="text-center text-xl text-[#FC922B]">
+			<div class="text-center text-xl text-[${colors.unique}]">
 				{#if card.unique}*{/if}
 			</div>
 		</div>

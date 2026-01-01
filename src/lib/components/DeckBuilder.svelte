@@ -58,6 +58,47 @@
 	const actionTotal = $derived(() => {
 		return actionCards().reduce((sum: number, [, count]: [string, number]) => sum + count, 0);
 	});
+
+	// Deck validation
+	const isDeckValid = $derived(() => {
+		// Check minimum card counts
+		if (armyTotal() < 30 || actionTotal() < 30) {
+			return false;
+		}
+
+		// Check faction compatibility
+		const allCardsInDeck = Array.from(deck.entries())
+			.map(([cardId]) => getCard(cardId))
+			.filter(Boolean);
+		const factionsInDeck = new Set(allCardsInDeck.map((card) => card!.faction));
+
+		// Invalid if both Hordes of Darkness and Grand Alliance are present
+		if (factionsInDeck.has('Hordes of Darkness') && factionsInDeck.has('Grand Alliance')) {
+			return false;
+		}
+
+		return true;
+	});
+
+	const validationMessage = $derived(() => {
+		if (armyTotal() < 30) {
+			return `Army deck needs ${30 - armyTotal()} more cards`;
+		}
+		if (actionTotal() < 30) {
+			return `Action deck needs ${30 - actionTotal()} more cards`;
+		}
+
+		const allCardsInDeck = Array.from(deck.entries())
+			.map(([cardId]) => getCard(cardId))
+			.filter(Boolean);
+		const factionsInDeck = new Set(allCardsInDeck.map((card) => card!.faction));
+
+		if (factionsInDeck.has('Hordes of Darkness') && factionsInDeck.has('Grand Alliance')) {
+			return 'Cannot mix Hordes of Darkness and Grand Alliance cards';
+		}
+
+		return 'Deck is valid';
+	});
 </script>
 
 <Box>
@@ -81,5 +122,11 @@
 			{onAddCard}
 			availableCards={availableActionCards()}
 		/>
+	</div>
+
+	<div class="flex items-center justify-between">
+		<span class="text-sm font-medium {isDeckValid() ? 'text-green-400' : 'text-red-400'}">
+			{validationMessage()}
+		</span>
 	</div>
 </Box>
