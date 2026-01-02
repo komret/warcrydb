@@ -204,7 +204,7 @@
 		const factionsInDeck = new Set(allCardsInDeck.map((card) => card.faction));
 
 		// Invalid if both Hordes of Darkness and Grand Alliance are present
-		if (factionsInDeck.has('Hordes of Darkness') && factionsInDeck.has('Grand Alliance')) {
+		if (factionsInDeck.has('The Hordes of Darkness') && factionsInDeck.has('The Grand Alliance')) {
 			validationMessages.push('mixed factions');
 		}
 
@@ -214,10 +214,10 @@
 
 		// Valid deck - determine faction and format
 		let faction = 'Neutral';
-		if (factionsInDeck.has('Grand Alliance')) {
-			faction = 'Grand Alliance';
-		} else if (factionsInDeck.has('Hordes of Darkness')) {
-			faction = 'Hordes of Darkness';
+		if (factionsInDeck.has('The Grand Alliance')) {
+			faction = 'The Grand Alliance';
+		} else if (factionsInDeck.has('The Hordes of Darkness')) {
+			faction = 'The Hordes of Darkness';
 		}
 
 		// Determine format using shared utility

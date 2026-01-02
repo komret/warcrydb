@@ -35,9 +35,9 @@
 		switch (faction) {
 			case 'Neutral':
 				return 'bg-neutral-faction/30';
-			case 'Hordes of Darkness':
+			case 'The Hordes of Darkness':
 				return 'bg-hordes-faction/50';
-			case 'Grand Alliance':
+			case 'The Grand Alliance':
 				return 'bg-alliance-faction/20';
 			default:
 				return 'bg-gray-600';

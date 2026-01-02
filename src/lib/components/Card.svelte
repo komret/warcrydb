@@ -60,9 +60,9 @@
 		switch (faction) {
 			case 'Neutral':
 				return 'bg-neutral-faction';
-			case 'Hordes of Darkness':
+			case 'The Hordes of Darkness':
 				return 'bg-hordes-faction';
-			case 'Grand Alliance':
+			case 'The Grand Alliance':
 				return 'bg-alliance-faction';
 			default:
 				return 'bg-gray-500';
@@ -101,7 +101,7 @@
 			<div class="flex items-center justify-center">
 				<div
 					class="flex h-10 w-10 items-center justify-center rounded-full {strengthCircleColor} text-lg font-bold {card.faction ===
-					'Grand Alliance'
+					'The Grand Alliance'
 						? 'text-gray-900'
 						: 'text-gray-300'}"
 				>
