@@ -15096,6 +15096,7 @@ export const cards: Card[] = [
 		id: 'SM33',
 		name: 'Standard of Darkness',
 		cost: 1,
+		unique: true,
 		keywords: ['Standard'],
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
