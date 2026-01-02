@@ -28,7 +28,6 @@
 		onAddItem: (item: Keyword) => void;
 		onRemoveItem: (item: Keyword) => void;
 		onToggleOperator: (index: number) => void;
-		onInputChange: (value: string) => void;
 	};
 
 	type Props = SingleSelectionProps | MultiSelectionProps;
@@ -52,11 +51,6 @@
 
 		return filtered.slice(0, 10);
 	});
-
-	// Handle input changes
-	function handleInput() {
-		(rest as MultiSelectionProps).onInputChange(value);
-	}
 
 	// Handle item selection
 	function handleSelect(item: Item) {
@@ -137,7 +131,6 @@
 				oninput={() => {
 					showSuggestions = true;
 					selectedSuggestionIndex = 0;
-					handleInput();
 				}}
 				class="min-w-[100px] flex-1 border-0 bg-transparent px-0 py-0 text-white placeholder-gray-400 focus:ring-0 focus:outline-none"
 			/>
@@ -185,7 +178,6 @@
 					oninput={() => {
 						showSuggestions = true;
 						selectedSuggestionIndex = 0;
-						handleInput();
 					}}
 					class="min-w-[100px] flex-1 border-0 bg-transparent px-0 py-0 text-white placeholder-gray-400 focus:ring-0 focus:outline-none"
 				/>

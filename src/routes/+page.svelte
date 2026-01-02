@@ -484,7 +484,7 @@
 		const currentDeckCount = deckMap.get(cardId) ?? 0;
 		const otherDeckCount = (deckMap === deck ? sideboard.get(cardId) : deck.get(cardId)) ?? 0;
 		const totalCount = currentDeckCount + otherDeckCount;
-		const maxCopies = card.maxCopies || 3;
+		const maxCopies = card.maxCopies;
 
 		if (totalCount < maxCopies) {
 			deckMap.set(cardId, currentDeckCount + 1);
@@ -687,11 +687,6 @@
 						onAddItem={addKeyword}
 						onRemoveItem={removeKeyword}
 						onToggleOperator={toggleOperator}
-						onInputChange={(value) => {
-							keywordInput = value;
-							showKeywordSuggestions = true;
-							selectedSuggestionIndex = 0;
-						}}
 					/>
 				</div>
 				<div class="col-span-2 w-full lg:col-span-1 lg:w-56">
