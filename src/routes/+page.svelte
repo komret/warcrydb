@@ -143,6 +143,7 @@
 
 	// Deck state
 	let deck = $state(new Map<string, number>());
+	let sideboard = $state(new Map<string, number>());
 
 	// Filtered results (updated after debounce)
 	let filteredCards = $state<typeof cards>([]);
@@ -476,24 +477,84 @@
 	}
 
 	// Deck functions
-	function addToDeck(cardId: string) {
-		const currentCount = deck.get(cardId) ?? -1;
+	function addToDeck(cardId: string, deckMap: Map<string, number> = deck) {
 		const card = cards.find((c) => c.id === cardId);
-		const maxCopies = card?.maxCopies || 3;
-		if (currentCount < maxCopies) {
-			deck.set(cardId, currentCount + 1);
-			deck = new Map(deck); // Trigger reactivity
+		if (!card) return;
+
+		const currentDeckCount = deckMap.get(cardId) ?? 0;
+		const otherDeckCount = (deckMap === deck ? sideboard.get(cardId) : deck.get(cardId)) ?? 0;
+		const totalCount = currentDeckCount + otherDeckCount;
+		const maxCopies = card.maxCopies || 3;
+
+		if (totalCount < maxCopies) {
+			deckMap.set(cardId, currentDeckCount + 1);
+			if (deckMap === deck) {
+				deck = new Map(deck); // Trigger reactivity
+			} else if (deckMap === sideboard) {
+				sideboard = new Map(sideboard); // Trigger reactivity
+			}
 		}
 	}
 
-	function removeFromDeck(cardId: string) {
-		const currentCount = deck.get(cardId) || 0;
+	function removeFromDeck(cardId: string, deckMap: Map<string, number> = deck) {
+		const currentCount = deckMap.get(cardId) || 0;
 		if (currentCount > 0) {
-			deck.set(cardId, currentCount - 1);
+			deckMap.set(cardId, currentCount - 1);
 		} else if (currentCount === 0) {
-			deck.delete(cardId);
+			deckMap.delete(cardId);
 		}
-		deck = new Map(deck); // Trigger reactivity
+		if (deckMap === deck) {
+			deck = new Map(deck); // Trigger reactivity
+		} else if (deckMap === sideboard) {
+			sideboard = new Map(sideboard); // Trigger reactivity
+		}
+	}
+
+	// Sideboard functions
+	function moveToSideboard(cardId: string) {
+		const card = cards.find((c) => c.id === cardId);
+		if (!card) return;
+
+		const deckCount = deck.get(cardId) || 0;
+
+		// Can only move if we have at least 1 copy in deck
+		if (deckCount > 0) {
+			const sideboardCount = sideboard.get(cardId) || 0;
+
+			// Remove from deck
+			deck.set(cardId, deckCount - 1);
+			if (deckCount === 1) {
+				deck.delete(cardId);
+			}
+
+			// Add to sideboard
+			sideboard.set(cardId, sideboardCount + 1);
+			deck = new Map(deck); // Trigger reactivity
+			sideboard = new Map(sideboard); // Trigger reactivity
+		}
+	}
+
+	function moveFromSideboard(cardId: string) {
+		const card = cards.find((c) => c.id === cardId);
+		if (!card) return;
+
+		const sideboardCount = sideboard.get(cardId) || 0;
+
+		// Can only move if we have at least 1 copy in sideboard
+		if (sideboardCount > 0) {
+			const deckCount = deck.get(cardId) || 0;
+
+			// Remove from sideboard
+			sideboard.set(cardId, sideboardCount - 1);
+			if (sideboardCount === 1) {
+				sideboard.delete(cardId);
+			}
+
+			// Add to deck
+			deck.set(cardId, deckCount + 1);
+			deck = new Map(deck); // Trigger reactivity
+			sideboard = new Map(sideboard); // Trigger reactivity
+		}
 	}
 
 	// Compute filtered cards based on current filter state
@@ -597,7 +658,15 @@
 	<div class="mx-auto max-w-7xl px-4 py-8">
 		<Header currentPage="home" />
 
-		<DeckBuilder {deck} {cards} onRemoveCard={removeFromDeck} onAddCard={addToDeck} />
+		<DeckBuilder
+			{deck}
+			{sideboard}
+			{cards}
+			onRemoveCard={removeFromDeck}
+			onAddCard={addToDeck}
+			onMoveToSideboard={moveToSideboard}
+			onMoveFromSideboard={moveFromSideboard}
+		/>
 
 		<Box>
 			<!-- Search -->

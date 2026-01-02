@@ -6,15 +6,31 @@
 
 	type Props = {
 		title: string;
-		cards: [string, number][];
+		cards: [string, number, number][]; // [cardId, count, totalCount]
 		total: number;
 		getCard: (cardId: string) => CardType | undefined;
 		onRemoveCard: (cardId: string) => void;
 		onAddCard: (cardId: string) => void;
 		availableCards: CardType[];
+		hasSideboard?: boolean;
+		onMoveToSideboard?: (cardId: string) => void;
+		onMoveFromSideboard?: (cardId: string) => void;
+		layoutDirection?: 'vertical' | 'horizontal';
 	};
 
-	let { title, cards, total, getCard, onRemoveCard, onAddCard, availableCards }: Props = $props();
+	let {
+		title,
+		cards,
+		total,
+		getCard,
+		onRemoveCard,
+		onAddCard,
+		availableCards,
+		hasSideboard = false,
+		onMoveToSideboard,
+		onMoveFromSideboard,
+		layoutDirection = 'vertical'
+	}: Props = $props();
 
 	let inputValue = $state('');
 	let selectedCardId = $state<string | null>(null);
@@ -41,16 +57,21 @@
 	</div>
 
 	<div class="space-y-2">
-		{#each cards as [cardId, count]}
+		{#each cards as [cardId, count, totalCount]}
 			{@const card = getCard(cardId)}
 			{#if card}
 				<DeckItem
 					{cardId}
 					{count}
+					{totalCount}
 					{card}
 					{onRemoveCard}
 					{onAddCard}
 					onOpenModal={(id) => (selectedCardId = id)}
+					{hasSideboard}
+					{onMoveToSideboard}
+					{onMoveFromSideboard}
+					{layoutDirection}
 				/>
 			{/if}
 		{/each}

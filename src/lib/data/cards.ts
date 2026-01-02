@@ -124,7 +124,7 @@ export type Card = {
 	unique?: boolean;
 	die?: Die;
 	keywords: Keyword[];
-	maxCopies?: number;
+	maxCopies: number;
 	faction: Faction;
 	type: Type;
 	rarity?: Rarity;
@@ -20580,6 +20580,7 @@ export const cards: Card[] = [
 		cost: 2,
 		die: 4,
 		keywords: [],
+		maxCopies: Infinity,
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
@@ -22650,6 +22651,7 @@ export const cards: Card[] = [
 		tacticPoints: 2,
 		leadership: 2,
 		keywords: ['Khemri', 'Infantry'],
+		maxCopies: Infinity,
 		faction: 'Hordes of Darkness',
 		type: 'Unit',
 		text: '<p>You may have any number of this card in your deck.</p><p><b>Support Tactic</b>: Your Khemri infantry unit gets +1 strength. Only playable while this unit is in the battle line.</p>',
