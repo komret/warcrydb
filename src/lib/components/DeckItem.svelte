@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Card as CardType } from '$lib/data/cards';
 	import IconButton from './IconButton.svelte';
-	import { colors } from '$lib/constants/colors';
 
 	type Props = {
 		cardId: string;
@@ -14,14 +13,15 @@
 
 	let { cardId, count, card, onRemoveCard, onAddCard, onOpenModal }: Props = $props();
 
+	// Helper functions for consistent color application
 	const getFactionBackgroundColor = (faction: string): string => {
 		switch (faction) {
 			case 'Neutral':
-				return `bg-[${colors.factions.neutral}]/30`;
+				return 'bg-neutral-faction/30';
 			case 'Hordes of Darkness':
-				return `bg-[${colors.factions.hordesOfDarkness}]/50`;
+				return 'bg-hordes-faction/50';
 			case 'Grand Alliance':
-				return `bg-[${colors.factions.grandAlliance}]/20`;
+				return 'bg-alliance-faction/20';
 			default:
 				return 'bg-gray-600';
 		}
@@ -29,18 +29,18 @@
 
 	const getTypeBorderColor = (cardType: string, unique?: boolean): string => {
 		if (unique) {
-			return `border-l-4 border-l-[${colors.unique}]`;
+			return 'border-l-unique';
 		}
 
 		switch (cardType) {
 			case 'Tactic':
-				return `border-l-4 border-l-[${colors.types.tactic}]`;
+				return 'border-l-tactic';
 			case 'Command':
-				return `border-l-4 border-l-[${colors.types.command}]`;
+				return 'border-l-command';
 			case 'Reaction':
-				return `border-l-4 border-l-[${colors.types.reaction}]`;
+				return 'border-l-reaction';
 			default:
-				return 'border-l-4 border-l-transparent';
+				return 'border-l-transparent';
 		}
 	};
 
@@ -48,7 +48,9 @@
 	const borderColor = $derived(getTypeBorderColor(card.type, card.unique));
 </script>
 
-<div class="flex items-center justify-between rounded {factionBgColor} {borderColor} py-1 pl-1.5">
+<div
+	class="flex items-center justify-between rounded {factionBgColor} border-l-4 {borderColor} py-1 pl-1.5"
+>
 	<div class="min-w-0 flex-1 overflow-hidden">
 		<button
 			class="max-w-full cursor-pointer truncate text-left text-sm font-medium text-white hover:text-blue-400 focus:text-blue-400 focus:outline-none"

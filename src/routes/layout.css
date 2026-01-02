@@ -1,3 +1,14 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/* Custom color definitions for faction and card type colors */
+@theme {
+	--color-neutral-faction: #723820;
+	--color-hordes-faction: #3f5146;
+	--color-alliance-faction: #d7dcd5;
+	--color-unique: #fc922b;
+	--color-tactic: #c6c144;
+	--color-command: #538db2;
+	--color-reaction: #bd362c;
+}
