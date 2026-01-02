@@ -16,6 +16,8 @@
 		onMoveToSideboard?: (cardId: string) => void;
 		onMoveFromSideboard?: (cardId: string) => void;
 		layoutDirection?: 'vertical' | 'horizontal';
+		minCards: number;
+		maxCards?: number;
 	};
 
 	let {
@@ -29,17 +31,30 @@
 		hasSideboard = false,
 		onMoveToSideboard,
 		onMoveFromSideboard,
-		layoutDirection = 'vertical'
+		layoutDirection = 'vertical',
+		minCards,
+		maxCards
 	}: Props = $props();
 
 	let inputValue = $state('');
 	let selectedCardId = $state<string | null>(null);
+
+	// Determine card count display and validation
+	const cardCountDisplay = $derived(() => `${total}/${minCards}`);
+
+	const isValidCount = $derived(() => {
+		if (minCards !== undefined && total < minCards) return false;
+		if (maxCards !== undefined && total > maxCards) return false;
+		return true;
+	});
 </script>
 
 <div class="rounded-lg bg-gray-700 p-3">
 	<div class="mb-2 flex items-center justify-between">
 		<h3 class="text-lg font-semibold text-white">{title}</h3>
-		<span class="text-sm text-gray-400">{total} card{total !== 1 ? 's' : ''}</span>
+		<span class={`text-sm ${isValidCount() ? 'text-gray-400' : 'text-red-300'}`}>
+			{cardCountDisplay()} card{total !== 1 ? 's' : ''}
+		</span>
 	</div>
 
 	<!-- Card selection input -->

@@ -90,6 +90,12 @@
 	// Check if sideboard should be shown (WA119 present or sideboard has cards)
 	const hasSideboard = $derived(() => deck.has('WA119') || sideboard.size > 0);
 
+	// Calculate required sideboard cards (WA119 count * 3)
+	const requiredSideboardCards = $derived(() => {
+		const wa119Count = deck.get('WA119') || 0;
+		return wa119Count * 3;
+	});
+
 	// Sideboard cards (only action cards)
 	const sideboardCards = $derived(() => {
 		return getSideboardCards();
@@ -231,6 +237,7 @@
 			{onRemoveCard}
 			{onAddCard}
 			availableCards={availableArmyCards()}
+			minCards={30}
 		/>
 
 		<DeckSection
@@ -244,6 +251,7 @@
 			hasSideboard={hasSideboard()}
 			{onMoveToSideboard}
 			{layoutDirection}
+			minCards={30}
 		/>
 		{#if hasSideboard()}
 			<DeckSection
@@ -257,6 +265,8 @@
 				hasSideboard={hasSideboard()}
 				{onMoveFromSideboard}
 				{layoutDirection}
+				minCards={requiredSideboardCards()}
+				maxCards={requiredSideboardCards()}
 			/>
 		{/if}
 	</div>
