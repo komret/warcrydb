@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Card as CardType, Type } from '$lib/data/cards';
 	import DeckSection from './DeckSection.svelte';
+	import DeckActions from './DeckActions.svelte';
 	import Box from './Box.svelte';
 	import { cardMatchesFormat } from '$lib/utils/cardMatchesFormat';
 
@@ -12,6 +13,7 @@
 		onAddCard: (cardId: string, deckMap?: Map<string, number>) => void;
 		onMoveToSideboard: (cardId: string) => void;
 		onMoveFromSideboard: (cardId: string) => void;
+		onClearDeck?: () => void;
 	};
 
 	let {
@@ -21,7 +23,8 @@
 		onRemoveCard,
 		onAddCard,
 		onMoveToSideboard,
-		onMoveFromSideboard
+		onMoveFromSideboard,
+		onClearDeck
 	}: Props = $props();
 
 	// Detect layout direction based on screen size
@@ -216,6 +219,10 @@
 	const deckFormat = $derived(() => {
 		return getDeckFormatOptimized(allCardsInDeck());
 	});
+
+	const hasCards = $derived(() => {
+		return deck.size > 0 || sideboard.size > 0;
+	});
 </script>
 
 <Box>
@@ -271,6 +278,13 @@
 			<span class="text-sm font-medium text-gray-300">
 				{deckFormat()}
 			</span>
+		</div>
+	{/if}
+
+	{#if onClearDeck}
+		<!-- Deck Actions -->
+		<div class="mt-4 border-t border-gray-600 pt-4">
+			<DeckActions {onClearDeck} hasCards={hasCards()} />
 		</div>
 	{/if}
 </Box>

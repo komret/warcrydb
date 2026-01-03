@@ -426,33 +426,6 @@
 		);
 	}
 
-	function handleKeywordInput(e: KeyboardEvent) {
-		const input = e.target as HTMLInputElement;
-
-		if (e.key === 'Backspace' && keywordInput === '' && selectedKeywords.length > 0) {
-			// Remove last keyword on backspace when input is empty
-			e.preventDefault();
-			const lastKeyword = selectedKeywords[selectedKeywords.length - 1];
-			removeKeyword(lastKeyword);
-		} else if (e.key === 'Enter' || e.key === 'Tab') {
-			e.preventDefault();
-			if (filteredSuggestions.length > 0) {
-				addKeyword(filteredSuggestions[selectedSuggestionIndex]);
-			}
-		} else if (e.key === 'ArrowDown') {
-			e.preventDefault();
-			selectedSuggestionIndex = Math.min(
-				selectedSuggestionIndex + 1,
-				filteredSuggestions.length - 1
-			);
-		} else if (e.key === 'ArrowUp') {
-			e.preventDefault();
-			selectedSuggestionIndex = Math.max(selectedSuggestionIndex - 1, 0);
-		} else if (e.key === 'Escape') {
-			showKeywordSuggestions = false;
-		}
-	}
-
 	function resetFilters() {
 		searchQuery = DEFAULT_FILTERS.searchQuery;
 		selectedFactions = new Set(DEFAULT_FILTERS.selectedFactions);
@@ -557,6 +530,11 @@
 			deck = new Map(deck); // Trigger reactivity
 			sideboard = new Map(sideboard); // Trigger reactivity
 		}
+	}
+
+	function clearDeck() {
+		deck = new Map();
+		sideboard = new Map();
 	}
 
 	// Compute filtered cards based on current filter state
@@ -668,6 +646,7 @@
 			onAddCard={addToDeck}
 			onMoveToSideboard={moveToSideboard}
 			onMoveFromSideboard={moveFromSideboard}
+			onClearDeck={clearDeck}
 		/>
 
 		<Box>
