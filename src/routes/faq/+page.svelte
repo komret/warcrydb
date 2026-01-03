@@ -114,6 +114,11 @@
 					/>
 				</div>
 			</div>
+
+			<!-- Results and Reset -->
+			<div class="mt-4 border-t border-gray-600 pt-4">
+				<ResultRow resultsCount={filteredFAQs.length} onReset={resetFilters} {hasActiveFilters} />
+			</div>
 		</Box>
 
 		{#if selectedCard}
@@ -125,7 +130,6 @@
 			{/if}
 		{/if}
 
-		<ResultRow resultsCount={filteredFAQs.length} onReset={resetFilters} {hasActiveFilters} />
 		<div class="space-y-3">
 			{#each filteredFAQs as item (item.id)}
 				<FAQItem {item} {searchQuery} onCardClick={handleCardClick} />

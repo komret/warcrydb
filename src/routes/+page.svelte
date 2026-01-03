@@ -986,14 +986,17 @@
 					</div>
 				</div>
 			</div>
-		</Box>
 
-		<ResultRow
-			resultsCount={filteredCards.length}
-			{isFiltering}
-			onReset={resetFilters}
-			{hasActiveFilters}
-		/>
+			<!-- Results and Reset -->
+			<div class="mt-4 border-t border-gray-600 pt-4">
+				<ResultRow
+					resultsCount={filteredCards.length}
+					{isFiltering}
+					onReset={resetFilters}
+					{hasActiveFilters}
+				/>
+			</div>
+		</Box>
 
 		<!-- Cards List -->
 		<div class="space-y-4">

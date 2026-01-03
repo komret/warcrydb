@@ -9,7 +9,7 @@
 	let { resultsCount, isFiltering = false, onReset, hasActiveFilters = false }: Props = $props();
 </script>
 
-<div class="mb-4 flex items-center justify-between">
+<div class="flex items-center justify-between">
 	<div class="text-sm text-gray-400">
 		{isFiltering ? 'Loading...' : `${resultsCount} result${resultsCount !== 1 ? 's' : ''}`}
 	</div>
