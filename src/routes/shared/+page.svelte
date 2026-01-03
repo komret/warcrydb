@@ -4,7 +4,6 @@
 	import type { Card as CardType } from '$lib/data/cards';
 	import { cards } from '$lib/data/cards';
 	import DeckBuilder from '$lib/components/DeckBuilder.svelte';
-	import Header from '$lib/components/Header.svelte';
 	import Modal from '$lib/components/Modal.svelte';
 	import { onMount } from 'svelte';
 
@@ -93,41 +92,25 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Shared Deck - Warcry Deck Builder</title>
-</svelte:head>
+<DeckBuilder {deck} {sideboard} {cards} readOnly={true} onOpenInDeckBuilder={openInDeckBuilder} />
 
-<div class="min-h-screen bg-gray-900 text-white">
-	<div class="mx-auto max-w-7xl px-4 py-8">
-		<Header currentPage="home" />
+<Modal show={showWarningDialog} title="Warning" onClose={cancelOpening}>
+	{#snippet children()}
+		<p class="text-gray-300">This action will override any unsaved deck in the Deck Builder.</p>
+	{/snippet}
 
-		<DeckBuilder
-			{deck}
-			{sideboard}
-			{cards}
-			readOnly={true}
-			onOpenInDeckBuilder={openInDeckBuilder}
-		/>
-	</div>
-
-	<Modal show={showWarningDialog} title="Warning" onClose={cancelOpening}>
-		{#snippet children()}
-			<p class="text-gray-300">This action will override any unsaved deck in the Deck Builder.</p>
-		{/snippet}
-
-		{#snippet actions()}
-			<button
-				onclick={cancelOpening}
-				class="rounded-lg bg-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:outline-none"
-			>
-				Go back
-			</button>
-			<button
-				onclick={proceedWithOpening}
-				class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-			>
-				Proceed
-			</button>
-		{/snippet}
-	</Modal>
-</div>
+	{#snippet actions()}
+		<button
+			onclick={cancelOpening}
+			class="rounded-lg bg-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:outline-none"
+		>
+			Go back
+		</button>
+		<button
+			onclick={proceedWithOpening}
+			class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+		>
+			Proceed
+		</button>
+	{/snippet}
+</Modal>

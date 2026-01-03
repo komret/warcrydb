@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { faq, type FAQ } from '$lib/data/faq';
 	import { cards } from '$lib/data/cards';
-	import Header from '$lib/components/Header.svelte';
 	import SearchInput from '$lib/components/SearchInput.svelte';
 	import SelectableInput from '$lib/components/SelectableInput.svelte';
 	import Box from '$lib/components/Box.svelte';
@@ -94,52 +93,42 @@
 	}
 </script>
 
-<svelte:head>
-	<title>FAQ - Warcry Deck Builder</title>
-</svelte:head>
-
-<div class="min-h-screen bg-gray-900 text-white">
-	<div class="mx-auto max-w-7xl px-4 py-8">
-		<Header currentPage="faq" />
-
-		<Box>
-			<!-- Search Bars -->
-			<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-				<SearchInput bind:value={searchQuery} label="FAQ text" />
-				<div>
-					<SelectableInput
-						mode="single"
-						items={cards}
-						bind:value={cardNameInput}
-						label="Card name"
-						selectedItem={selectedCard ? cards.find((c) => c.id === selectedCard) || null : null}
-						onSelect={selectCard}
-						onClear={clearCard}
-					/>
-				</div>
-			</div>
-
-			<!-- Results and Reset -->
-			<div class="mt-4 border-t border-gray-600 pt-4">
-				<ResultRow resultsCount={filteredFAQs.length} onReset={resetFilters} {hasActiveFilters} />
-			</div>
-		</Box>
-
-		{#if selectedCard}
-			{@const card = cards.find((c) => c.id === selectedCard)}
-			{#if card}
-				<div class="mb-4">
-					<Card {card} onclick={() => handleCardClick(card.id)} />
-				</div>
-			{/if}
-		{/if}
-
-		<div class="space-y-3">
-			{#each filteredFAQs as item (item.id)}
-				<FAQItem {item} {searchQuery} onCardClick={handleCardClick} />
-			{/each}
+<Box>
+	<!-- Search Bars -->
+	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+		<SearchInput bind:value={searchQuery} label="FAQ text" />
+		<div>
+			<SelectableInput
+				mode="single"
+				items={cards}
+				bind:value={cardNameInput}
+				label="Card name"
+				selectedItem={selectedCard ? cards.find((c) => c.id === selectedCard) || null : null}
+				onSelect={selectCard}
+				onClear={clearCard}
+			/>
 		</div>
 	</div>
 
-	<CardImageModal cardId={selectedCardId} onclose={() => (selectedCardId = null)} />
+	<!-- Results and Reset -->
+	<div class="mt-4 border-t border-gray-600 pt-4">
+		<ResultRow resultsCount={filteredFAQs.length} onReset={resetFilters} {hasActiveFilters} />
+	</div>
+</Box>
+
+{#if selectedCard}
+	{@const card = cards.find((c) => c.id === selectedCard)}
+	{#if card}
+		<div class="mb-4">
+			<Card {card} onclick={() => handleCardClick(card.id)} />
+		</div>
+	{/if}
+{/if}
+
+<div class="space-y-3">
+	{#each filteredFAQs as item (item.id)}
+		<FAQItem {item} {searchQuery} onCardClick={handleCardClick} />
+	{/each}
 </div>
+
+<CardImageModal cardId={selectedCardId} onclose={() => (selectedCardId = null)} />
