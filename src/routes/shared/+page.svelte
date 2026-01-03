@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import type { Card as CardType } from '$lib/data/cards';
+	import { page } from '$app/state';
 	import { cards } from '$lib/data/cards';
 	import DeckBuilder from '$lib/components/DeckBuilder.svelte';
 	import Modal from '$lib/components/Modal.svelte';
+	import Button from '$lib/components/Button.svelte';
 	import { onMount } from 'svelte';
 
 	let deck = $state(new Map<string, number>());
@@ -13,7 +13,7 @@
 
 	// Parse URL parameters on mount
 	onMount(() => {
-		const urlParams = new URLSearchParams($page.url.search);
+		const urlParams = new URLSearchParams(page.url.search);
 
 		const deckParam = urlParams.get('deck');
 		const sideboardParam = urlParams.get('sideboard');
@@ -100,17 +100,7 @@
 	{/snippet}
 
 	{#snippet actions()}
-		<button
-			onclick={cancelOpening}
-			class="rounded-lg bg-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 focus:outline-none"
-		>
-			Go back
-		</button>
-		<button
-			onclick={proceedWithOpening}
-			class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-		>
-			Proceed
-		</button>
+		<Button variant="secondary" onclick={cancelOpening}>Go back</Button>
+		<Button variant="primary" onclick={proceedWithOpening}>Proceed</Button>
 	{/snippet}
 </Modal>

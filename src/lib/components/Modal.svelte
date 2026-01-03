@@ -1,9 +1,11 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	type Props = {
 		show: boolean;
 		title?: string;
-		children?: any;
-		actions?: any;
+		children?: Snippet;
+		actions?: Snippet;
 		size?: 'sm' | 'md' | 'lg' | 'xl';
 		onClose?: () => void;
 	};

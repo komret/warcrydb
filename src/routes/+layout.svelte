@@ -1,13 +1,13 @@
 <script lang="ts">
 	import './layout.css';
 	import logo from '$lib/assets/warcry-logo.png';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	let { children } = $props();
 
 	// Determine current page from route
 	const currentPage = $derived.by(() => {
-		const path = $page.url.pathname;
+		const path = page.url.pathname;
 		if (path === '/') return 'home';
 		if (path === '/faq') return 'faq';
 		if (path === '/errata') return 'errata';

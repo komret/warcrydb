@@ -122,8 +122,6 @@
 	let keywordInput = $state(DEFAULT_FILTERS.keywordInput);
 	let selectedKeywords = $state(DEFAULT_FILTERS.selectedKeywords);
 	let keywordOperators = $state(DEFAULT_FILTERS.keywordOperators); // operators between keywords
-	let showKeywordSuggestions = $state(false);
-	let selectedSuggestionIndex = $state(0);
 
 	// Numerical filter states
 	let costOperator = $state(DEFAULT_FILTERS.costOperator);
@@ -302,15 +300,6 @@
 		};
 	});
 
-	// Filtered keyword suggestions
-	const filteredSuggestions = $derived.by(() => {
-		if (!keywordInput.trim()) return [];
-		const input = keywordInput.toLowerCase();
-		return keywords
-			.filter((k) => !selectedKeywords.includes(k) && k.toLowerCase().includes(input))
-			.slice(0, 10);
-	});
-
 	const hasActiveFilters = $derived(
 		searchQuery !== DEFAULT_FILTERS.searchQuery ||
 			selectedFactions.size !== DEFAULT_FILTERS.selectedFactions.size ||
@@ -429,8 +418,6 @@
 			}
 		}
 		keywordInput = '';
-		showKeywordSuggestions = false;
-		selectedSuggestionIndex = 0;
 	}
 
 	function removeKeyword(keyword: Keyword) {

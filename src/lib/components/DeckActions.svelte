@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import Toast from './Toast.svelte';
+	import Button from './Button.svelte';
 
 	type Props = {
 		onClearDeck?: () => void;
@@ -73,31 +73,26 @@
 
 <div class="flex items-center justify-end gap-2">
 	{#if readOnly}
-		<button
-			onclick={onOpenInDeckBuilder}
-			class="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-none"
-		>
+		<Button variant="primary" onclick={onOpenInDeckBuilder}>
 			<span>Open in Deck Builder</span>
-		</button>
+		</Button>
 	{:else}
-		<button
+		<Button
+			variant="success"
 			onclick={shareDeck}
-			class="flex items-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-none {hasCards
-				? ''
-				: 'invisible'}"
+			class="flex items-center gap-2 {hasCards ? '' : 'invisible'}"
 			title="Copy deck URL"
 		>
 			<span>Share</span>
-		</button>
-		<button
+		</Button>
+		<Button
+			variant="primary"
 			onclick={onClearDeck}
-			class="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-none {hasCards
-				? ''
-				: 'invisible'}"
+			class="flex items-center gap-2 {hasCards ? '' : 'invisible'}"
 			title="Reset deck"
 		>
 			<span>Reset</span>
-		</button>
+		</Button>
 	{/if}
 </div>
 

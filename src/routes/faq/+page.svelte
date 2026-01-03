@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { faq, type FAQ } from '$lib/data/faq';
+	import { faq } from '$lib/data/faq';
 	import { cards } from '$lib/data/cards';
 	import SearchInput from '$lib/components/SearchInput.svelte';
 	import SelectableInput from '$lib/components/SelectableInput.svelte';

@@ -46,7 +46,7 @@
 		// In multi mode, exclude already selected items
 		if (mode === 'multi') {
 			const selectedNames = (rest as MultiSelectionProps).selectedItems;
-			filtered = filtered.filter((item) => !selectedNames.includes(item.name as any));
+			filtered = filtered.filter((item) => !selectedNames.includes(item.name as Keyword));
 		}
 
 		return filtered.slice(0, 10);
