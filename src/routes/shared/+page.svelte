@@ -94,7 +94,7 @@
 </script>
 
 <svelte:head>
-	<title>Shared Deck</title>
+	<title>Shared Deck - Warcry Deck Builder</title>
 </svelte:head>
 
 <div class="min-h-screen bg-gray-900 text-white">

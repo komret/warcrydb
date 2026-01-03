@@ -14,6 +14,10 @@
 	let selectedCardId = $state<string | null>(null);
 </script>
 
+<svelte:head>
+	<title>Errata - Warcry Deck Builder</title>
+</svelte:head>
+
 <div class="min-h-screen bg-gray-900 text-white">
 	<div class="mx-auto max-w-7xl px-4 py-8">
 		<Header currentPage="errata" />
