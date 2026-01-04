@@ -2,6 +2,7 @@
 <script lang="ts">
 	import Button from './Button.svelte';
 	import type { Snippet } from 'svelte';
+	import chevronDownIcon from '../assets/icons/chevron-down.svg?raw';
 
 	type DropdownItem = {
 		key: string;
@@ -60,14 +61,10 @@
 	>
 		{@render children()}
 		Options
-		<svg
-			class="ml-1 h-4 w-4 transition-transform {showDropdown ? 'rotate-180' : ''}"
-			fill="none"
-			stroke="currentColor"
-			viewBox="0 0 24 24"
-		>
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-		</svg>
+		{@html chevronDownIcon.replace(
+			'<svg',
+			`<svg class="ml-1 h-4 w-4 transition-transform ${showDropdown ? 'rotate-180' : ''}"`
+		)}
 	</Button>
 	{#if showDropdown}
 		<div
