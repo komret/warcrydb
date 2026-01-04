@@ -67,7 +67,7 @@
 	</Button>
 	{#if showDropdown}
 		<div
-			class="absolute left-0 z-10 mt-2 w-48 rounded-md border border-gray-600 bg-gray-800 shadow-lg"
+			class="absolute left-0 z-10 mt-2 w-30.5 rounded-md border border-gray-600 bg-gray-800 shadow-lg"
 		>
 			<div class="py-1">
 				{#each items as item}

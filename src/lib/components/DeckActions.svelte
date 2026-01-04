@@ -191,6 +191,8 @@
 	let showDeleteModal = $state(false);
 	let deckNameInput = $state('');
 	let savedDecks = $state<{ id: string; name: string; modifiedTime: string }[]>([]);
+	let saveMode = $state<'new' | 'override'>('new');
+	let selectedDeckToOverride = $state<string | null>(null);
 
 	// Initialize Google API
 	function initGoogleApi() {
@@ -260,11 +262,15 @@
 		}
 
 		if (!isSignedIn || !accessToken) {
-			pendingAction = () => (showSaveModal = true);
+			pendingAction = async () => {
+				await loadDeckListForSave();
+				showSaveModal = true;
+			};
 			signInToGoogle();
 			return;
 		}
 
+		await loadDeckListForSave();
 		showSaveModal = true;
 	}
 
@@ -316,10 +322,57 @@
 
 	// Handle save confirmation from modal
 	async function handleSaveConfirm() {
-		if (!deckNameInput.trim()) return;
-		await performSaveDeck(deckNameInput.trim());
+		if (saveMode === 'new') {
+			if (!deckNameInput.trim()) return;
+			await performSaveDeck(deckNameInput.trim());
+		} else if (saveMode === 'override') {
+			if (!selectedDeckToOverride) return;
+			await performOverrideDeck(selectedDeckToOverride);
+		}
 		showSaveModal = false;
+		resetSaveModal();
+	}
+
+	// Perform override of existing deck
+	async function performOverrideDeck(fileId: string) {
+		try {
+			// Create deck data
+			const deckData = {
+				deck: Array.from(deck.entries()),
+				sideboard: Array.from(sideboard.entries()),
+				timestamp: new Date().toISOString()
+			};
+
+			const fileContent = JSON.stringify(deckData, null, 2);
+
+			const response = await fetch(
+				`https://www.googleapis.com/upload/drive/v3/files/${fileId}?uploadType=media`,
+				{
+					method: 'PATCH',
+					headers: {
+						Authorization: `Bearer ${accessToken}`,
+						'Content-Type': 'application/json'
+					},
+					body: fileContent
+				}
+			);
+
+			if (response.ok) {
+				showToastNotification('Deck saved to Google Drive');
+			} else {
+				throw new Error('Failed to save deck');
+			}
+		} catch (error) {
+			console.error('Error overriding deck:', error);
+			showToastNotification('Failed to save deck to Google Drive');
+		}
+	}
+
+	// Reset save modal state
+	function resetSaveModal() {
 		deckNameInput = '';
+		saveMode = 'new';
+		selectedDeckToOverride = null;
 	}
 
 	// Load deck from Google Drive
@@ -481,6 +534,31 @@
 		}
 	}
 
+	// Load deck list for save modal
+	async function loadDeckListForSave() {
+		try {
+			const listResponse = await fetch(
+				'https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&fields=files(id,name,modifiedTime)&orderBy=modifiedTime%20desc',
+				{
+					method: 'GET',
+					headers: {
+						Authorization: `Bearer ${accessToken}`
+					}
+				}
+			);
+
+			if (!listResponse.ok) {
+				throw new Error('Failed to list files');
+			}
+
+			const listData = await listResponse.json();
+			savedDecks = listData.files || [];
+		} catch (error) {
+			console.error('Error loading deck list for save:', error);
+			showToastNotification('Failed to load deck list from Google Drive');
+		}
+	}
+
 	// Delete deck from Google Drive
 	async function deleteDeckFromDrive() {
 		if (!browser) return;
@@ -617,30 +695,98 @@
 <Modal
 	show={showSaveModal}
 	title="Save Deck to Google Drive"
-	size="md"
-	onClose={() => (showSaveModal = false)}
+	size="lg"
+	onClose={() => {
+		showSaveModal = false;
+		resetSaveModal();
+	}}
 >
 	{#snippet children()}
-		<div class="space-y-4">
-			<label for="deck-name" class="block text-sm font-medium text-gray-700"> Deck Name </label>
-			<input
-				id="deck-name"
-				type="text"
-				bind:value={deckNameInput}
-				placeholder="Enter deck name"
-				class="w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-				onkeydown={(e) => {
-					if (e.key === 'Enter') {
-						handleSaveConfirm();
-					}
-				}}
-			/>
+		<div class="space-y-6">
+			<!-- Mode Selection -->
+			<div class="space-y-3">
+				<div class="space-y-2">
+					<label class="flex items-center">
+						<input type="radio" name="saveMode" value="new" bind:group={saveMode} class="mr-2" />
+						<span class="text-sm">Create new deck</span>
+					</label>
+					<label class="flex items-center">
+						<input
+							type="radio"
+							name="saveMode"
+							value="override"
+							bind:group={saveMode}
+							class="mr-2"
+							disabled={savedDecks.length === 0}
+						/>
+						<span class="text-sm">Override existing deck</span>
+					</label>
+				</div>
+			</div>
+
+			<!-- New Deck Input -->
+			{#if saveMode === 'new'}
+				<div class="space-y-2">
+					<label for="deck-name" class="block text-sm font-medium text-gray-300">Deck Name</label>
+					<input
+						id="deck-name"
+						type="text"
+						bind:value={deckNameInput}
+						class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-2 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+						onkeydown={(e) => {
+							if (e.key === 'Enter') {
+								handleSaveConfirm();
+							}
+						}}
+					/>
+				</div>
+			{/if}
+
+			<!-- Override Existing Deck Selection -->
+			{#if saveMode === 'override'}
+				<div class="space-y-2">
+					{#if savedDecks.length === 0}
+						<p class="py-4 text-sm text-gray-500">No saved decks found</p>
+					{:else}
+						<div class="max-h-48 space-y-2 overflow-y-auto rounded-md border border-gray-700">
+							{#each savedDecks as deck (deck.id)}
+								<label class="flex cursor-pointer items-center p-2 hover:bg-gray-700">
+									<input
+										type="radio"
+										name="selectedDeck"
+										value={deck.id}
+										bind:group={selectedDeckToOverride}
+										class="mr-3"
+									/>
+									<div class="flex-1">
+										<div class="text-sm font-medium">{deck.name.replace('.json', '')}</div>
+										<div class="text-xs text-gray-500">
+											Modified: {new Date(deck.modifiedTime).toLocaleString()}
+										</div>
+									</div>
+								</label>
+							{/each}
+						</div>
+					{/if}
+				</div>
+			{/if}
 		</div>
 	{/snippet}
 	{#snippet actions()}
-		<Button variant="secondary" onclick={() => (showSaveModal = false)}>Cancel</Button>
-		<Button variant="primary" onclick={handleSaveConfirm} disabled={!deckNameInput.trim()}>
-			Save
+		<Button
+			variant="secondary"
+			onclick={() => {
+				showSaveModal = false;
+				resetSaveModal();
+			}}>Cancel</Button
+		>
+		<Button
+			variant="primary"
+			onclick={handleSaveConfirm}
+			disabled={(saveMode === 'new' && !deckNameInput.trim()) ||
+				(saveMode === 'override' && !selectedDeckToOverride)}
+		>
+			{saveMode === 'new' ? 'Save New Deck' : 'Override Deck'}
 		</Button>
 	{/snippet}
 </Modal>
