@@ -34,10 +34,9 @@
 			{@render icon()}
 		</div>
 	{/if}
-	{#each items as item, index (item.key)}
+	{#each items as item}
 		<button
-			class="flex items-center justify-center border-l border-gray-500 bg-gray-600 px-3 py-2 text-sm font-medium text-gray-900 text-white transition-colors hover:bg-gray-700 focus:ring-2 focus:ring-blue-500
-				focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+			class="flex items-center justify-center border-l border-gray-500 bg-gray-600 px-3 py-2 text-sm font-medium text-gray-900 text-white transition-colors hover:bg-gray-700 focus:relative focus:z-10 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-inset disabled:cursor-not-allowed disabled:opacity-50"
 			disabled={typeof item.disabled === 'function' ? item.disabled() : item.disabled}
 			title={item.title}
 			onclick={item.onclick}
