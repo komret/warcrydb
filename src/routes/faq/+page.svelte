@@ -3,7 +3,7 @@
 	import { cards } from '$lib/data/cards';
 	import SearchInput from '$lib/components/SearchInput.svelte';
 	import SelectableInput from '$lib/components/SelectableInput.svelte';
-	import Box from '$lib/components/Box.svelte';
+	import Box from '$lib/components/atoms/Box.svelte';
 	import ResultRow from '$lib/components/ResultRow.svelte';
 	import FAQItem from '$lib/components/FAQItem.svelte';
 	import Card from '$lib/components/Card.svelte';

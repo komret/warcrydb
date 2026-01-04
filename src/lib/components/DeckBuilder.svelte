@@ -2,7 +2,7 @@
 	import type { Card as CardType, Type } from '$lib/data/cards';
 	import DeckSection from './DeckSection.svelte';
 	import DeckActions from './DeckActions.svelte';
-	import Box from './Box.svelte';
+	import Box from './atoms/Box.svelte';
 	import { cardMatchesFormat } from '$lib/utils/cardMatchesFormat';
 
 	type Props = {

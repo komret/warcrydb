@@ -1,4 +1,3 @@
-<!-- DropdownButton.svelte -->
 <script lang="ts">
 	import Button from './Button.svelte';
 	import type { Snippet } from 'svelte';
@@ -91,7 +90,3 @@
 		</div>
 	{/if}
 </div>
-
-<style>
-	/* Additional styles if needed */
-</style>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Keyword } from '$lib/data/cards';
-	import ClearButton from './ClearButton.svelte';
+	import ClearButton from './atoms/ClearButton.svelte';
 
 	type Item = {
 		id: string;

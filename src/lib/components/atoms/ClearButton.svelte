@@ -9,5 +9,5 @@
 </script>
 
 <div class="absolute top-1/2 right-2 -translate-y-1/2">
-	<IconButton svg="×" variant="secondary" size="lg" title="Clear" {onClick} />
+	<IconButton icon="×" variant="secondary" size="lg" title="Clear" {onClick} />
 </div>

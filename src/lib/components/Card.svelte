@@ -2,7 +2,7 @@
 	import type { Card } from '$lib/data/cards';
 	import { highlightSearchTerms } from '$lib/utils/highlightSearchTerms';
 	import { goto } from '$app/navigation';
-	import IconButton from './IconButton.svelte';
+	import IconButton from './atoms/IconButton.svelte';
 
 	type Props = {
 		card: Card;

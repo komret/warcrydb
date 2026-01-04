@@ -3,8 +3,8 @@
 	import { page } from '$app/state';
 	import { cards } from '$lib/data/cards';
 	import DeckBuilder from '$lib/components/DeckBuilder.svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import Button from '$lib/components/Button.svelte';
+	import Modal from '$lib/components/atoms/Modal.svelte';
+	import Button from '$lib/components/atoms/Button.svelte';
 	import { onMount } from 'svelte';
 
 	let deck = $state(new Map<string, number>());

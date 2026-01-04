@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ClearButton from './ClearButton.svelte';
+	import ClearButton from './atoms/ClearButton.svelte';
 	type Props = {
 		value: string;
 		label: string;

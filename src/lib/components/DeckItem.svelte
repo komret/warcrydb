@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Card as CardType } from '$lib/data/cards';
-	import IconButton from './IconButton.svelte';
+	import IconButton from './atoms/IconButton.svelte';
 
 	type Props = {
 		cardId: string;

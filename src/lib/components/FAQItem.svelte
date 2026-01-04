@@ -2,7 +2,7 @@
 	import type { FAQ } from '$lib/data/faq';
 	import { highlightSearchTerms } from '$lib/utils/highlightSearchTerms';
 	import { onMount } from 'svelte';
-	import IconButton from './IconButton.svelte';
+	import IconButton from './atoms/IconButton.svelte';
 	import externalLinkIcon from '../assets/icons/external-link.svg?raw';
 
 	type Props = {

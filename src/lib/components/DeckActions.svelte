@@ -32,12 +32,10 @@
 </script>
 
 <script lang="ts">
-	import Toast from './Toast.svelte';
-	import Button from './Button.svelte';
-	import ButtonGroup from './ButtonGroup.svelte';
-	import ButtonGroupItem from './ButtonGroupItem.svelte';
-	import DropdownButton from './DropdownButton.svelte';
-	import Modal from './Modal.svelte';
+	import Toast from './atoms/Toast.svelte';
+	import Button from './atoms/Button.svelte';
+	import ButtonGroup from './atoms/ButtonGroup.svelte';
+	import Modal from './atoms/Modal.svelte';
 	import { browser } from '$app/environment';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
 	import saveIcon from '../assets/icons/save.svg?raw';
@@ -574,7 +572,7 @@
 						{/if}
 					</div>
 				{:else}
-					<ButtonGroup class="h-9 flex-shrink-0">
+					<ButtonGroup items={googleDriveActions} class="h-9 flex-shrink-0">
 						{#snippet icon()}
 							<svg
 								class="h-6 w-6"
@@ -616,18 +614,6 @@
 								</g>
 							</svg>
 						{/snippet}
-						{#each googleDriveActions as action}
-							<ButtonGroupItem
-								variant="dark"
-								disabled={action.disabled()}
-								onclick={action.onclick}
-								title={action.title}
-								class="h-9"
-							>
-								{@html action.icon}
-								<span class="ml-1">{action.label}</span>
-							</ButtonGroupItem>
-						{/each}
 					</ButtonGroup>
 				{/if}
 			{/if}

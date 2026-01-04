@@ -19,7 +19,7 @@
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
 	import SearchInput from '$lib/components/SearchInput.svelte';
 	import SelectableInput from '$lib/components/SelectableInput.svelte';
-	import Box from '$lib/components/Box.svelte';
+	import Box from '$lib/components/atoms/Box.svelte';
 	import ResultRow from '$lib/components/ResultRow.svelte';
 	import DeckBuilder from '$lib/components/DeckBuilder.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
