@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import type { Snippet } from 'svelte';
 
-	type Variant = 'primary' | 'secondary' | 'success' | 'transparent';
+	type Variant = 'primary' | 'secondary' | 'success' | 'danger' | 'transparent';
 	type Size = 'sm' | 'md' | 'lg';
 
 	type Props = {
@@ -47,6 +47,8 @@
 				return 'bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500';
 			case 'success':
 				return 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500';
+			case 'danger':
+				return 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500';
 			case 'transparent':
 				return 'bg-transparent text-white hover:text-blue-400 focus:ring-blue-500';
 			default:
