@@ -35,6 +35,7 @@
 	import Toast from './atoms/Toast.svelte';
 	import Button from './atoms/Button.svelte';
 	import ButtonGroup from './atoms/ButtonGroup.svelte';
+	import DropdownButton from './atoms/DropdownButton.svelte';
 	import Modal from './atoms/Modal.svelte';
 	import { browser } from '$app/environment';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
@@ -42,7 +43,6 @@
 	import loadIcon from '../assets/icons/load.svg?raw';
 	import deleteIcon from '../assets/icons/delete.svg?raw';
 	import googleDriveIcon from '../assets/icons/google-drive.svg?raw';
-	import chevronDownIcon from '../assets/icons/chevron-down.svg?raw';
 	import shareIcon from '../assets/icons/share.svg?raw';
 	import resetIcon from '../assets/icons/reset.svg?raw';
 
@@ -105,8 +105,6 @@
 			icon: deleteIcon
 		}
 	];
-
-	let showGoogleDropdown = $state(false);
 
 	// Detect small screen
 	let isSmallScreen = $state(false);
@@ -535,42 +533,12 @@
 		{:else}
 			{#if isGoogleDriveAvailable}
 				{#if isSmallScreen}
-					<div class="relative">
-						<Button
-							variant="secondary"
-							onclick={() => (showGoogleDropdown = !showGoogleDropdown)}
-							class="flex items-center gap-2"
-						>
+					<DropdownButton items={googleDriveActions} variant="secondary" class="h-9">
+						{#snippet children()}
 							{@html googleDriveIcon}
 							<span>Drive</span>
-							{@html chevronDownIcon.replace(
-								'<svg',
-								`<svg class="ml-1 h-4 w-4 transition-transform ${showGoogleDropdown ? 'rotate-180' : ''}"`
-							)}
-						</Button>
-						{#if showGoogleDropdown}
-							<div
-								class="absolute left-0 z-10 mt-2 w-48 rounded-md border border-gray-600 bg-gray-800 shadow-lg"
-							>
-								<div class="py-1">
-									{#each googleDriveActions as action}
-										<button
-											class="flex w-full items-center gap-2 px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-700 disabled:opacity-50"
-											disabled={action.disabled()}
-											onclick={() => {
-												action.onclick();
-												showGoogleDropdown = false;
-											}}
-											title={action.title}
-										>
-											{@html action.icon}
-											{action.label}
-										</button>
-									{/each}
-								</div>
-							</div>
-						{/if}
-					</div>
+						{/snippet}
+					</DropdownButton>
 				{:else}
 					<ButtonGroup items={googleDriveActions} class="h-9 flex-shrink-0">
 						{#snippet icon()}

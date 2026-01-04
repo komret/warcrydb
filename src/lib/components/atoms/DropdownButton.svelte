@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from './Button.svelte';
 	import type { Snippet } from 'svelte';
-	import chevronDownIcon from '../assets/icons/chevron-down.svg?raw';
+	import chevronDownIcon from '../../assets/icons/chevron-down.svg?raw';
 
 	type DropdownItem = {
 		key: string;
@@ -31,35 +31,35 @@
 	}: Props = $props();
 
 	let showDropdown = $state(false);
+	let dropdownContainer = $state<HTMLElement>();
 
 	// Handle click outside to close dropdown
 	$effect(() => {
-		if (showDropdown) {
-			const handleClickOutside = (event: MouseEvent) => {
-				const target = event.target as Element;
-				const dropdown = target.closest('.relative');
-				if (!dropdown) {
-					showDropdown = false;
-				}
-			};
+		if (!showDropdown || !dropdownContainer) return;
 
-			document.addEventListener('click', handleClickOutside);
+		const handleClickOutside = (event: MouseEvent) => {
+			if (dropdownContainer && !dropdownContainer.contains(event.target as Node)) {
+				showDropdown = false;
+			}
+		};
 
-			return () => document.removeEventListener('click', handleClickOutside);
-		}
+		document.addEventListener('click', handleClickOutside, { capture: true });
+		return () => document.removeEventListener('click', handleClickOutside, { capture: true });
 	});
 </script>
 
-<div class="relative {className}">
+<div class="relative {className}" bind:this={dropdownContainer}>
 	<Button
 		{variant}
 		{size}
 		{disabled}
-		onclick={() => (showDropdown = !showDropdown)}
+		onclick={(event: MouseEvent) => {
+			event.stopPropagation();
+			showDropdown = !showDropdown;
+		}}
 		class="flex items-center gap-2"
 	>
 		{@render children()}
-		Options
 		{@html chevronDownIcon.replace(
 			'<svg',
 			`<svg class="ml-1 h-4 w-4 transition-transform ${showDropdown ? 'rotate-180' : ''}"`
