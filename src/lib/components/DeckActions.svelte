@@ -34,6 +34,7 @@
 <script lang="ts">
 	import Toast from './Toast.svelte';
 	import Button from './Button.svelte';
+	import Modal from './Modal.svelte';
 	import { browser } from '$app/environment';
 
 	const google = browser ? window.google : null;
@@ -127,6 +128,16 @@
 	let tokenClient: TokenClient | null = $state(null);
 	let accessToken: string | null = $state(null);
 
+	// Pending action after login
+	let pendingAction = $state<(() => void) | null>(null);
+
+	// Deck save/load modals
+	let showSaveModal = $state(false);
+	let showLoadModal = $state(false);
+	let showDeleteModal = $state(false);
+	let deckNameInput = $state('');
+	let savedDecks = $state<{ id: string; name: string; modifiedTime: string }[]>([]);
+
 	// Initialize Google API
 	function initGoogleApi() {
 		if (!browser) return; // Only run on client side
@@ -149,11 +160,19 @@
 				if (tokenResponse.error !== undefined) {
 					console.error('Error during token request:', tokenResponse);
 					showToastNotification('Failed to authenticate with Google');
+					pendingAction = null; // Clear pending action on error
 					return;
 				}
 				accessToken = tokenResponse.access_token;
 				isSignedIn = true;
 				isGoogleApiLoaded = true;
+
+				// Execute pending action if any
+				if (pendingAction) {
+					const action = pendingAction;
+					pendingAction = null;
+					action();
+				}
 			}
 		});
 
@@ -187,10 +206,16 @@
 		}
 
 		if (!isSignedIn || !accessToken) {
+			pendingAction = () => (showSaveModal = true);
 			signInToGoogle();
 			return;
 		}
 
+		showSaveModal = true;
+	}
+
+	// Perform the actual save with the given name
+	async function performSaveDeck(name: string) {
 		try {
 			// Create deck data
 			const deckData = {
@@ -200,7 +225,7 @@
 			};
 
 			const fileContent = JSON.stringify(deckData, null, 2);
-			const fileName = `Warcry Deck - ${new Date().toLocaleDateString()}.json`;
+			const fileName = `${name}.json`;
 
 			const file = new Blob([fileContent], { type: 'application/json' });
 			const metadata = {
@@ -235,6 +260,14 @@
 		}
 	}
 
+	// Handle save confirmation from modal
+	async function handleSaveConfirm() {
+		if (!deckNameInput.trim()) return;
+		await performSaveDeck(deckNameInput.trim());
+		showSaveModal = false;
+		deckNameInput = '';
+	}
+
 	// Load deck from Google Drive
 	async function loadDeckFromDrive() {
 		if (!browser) return;
@@ -245,6 +278,38 @@
 		}
 
 		if (!isSignedIn || !accessToken) {
+			pendingAction = async () => {
+				try {
+					// List files in app data folder
+					const listResponse = await fetch(
+						'https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&fields=files(id,name,modifiedTime)&orderBy=modifiedTime%20desc',
+						{
+							method: 'GET',
+							headers: {
+								Authorization: `Bearer ${accessToken}`
+							}
+						}
+					);
+
+					if (!listResponse.ok) {
+						throw new Error('Failed to list files');
+					}
+
+					const listData = await listResponse.json();
+					const files = listData.files;
+
+					if (!files || files.length === 0) {
+						showToastNotification('No saved decks found');
+						return;
+					}
+
+					savedDecks = files;
+					showLoadModal = true;
+				} catch (error) {
+					console.error('Error loading deck list:', error);
+					showToastNotification('Failed to load deck list from Google Drive');
+				}
+			};
 			signInToGoogle();
 			return;
 		}
@@ -273,11 +338,19 @@
 				return;
 			}
 
-			// For now, load the most recent file
-			const latestFile = files[0];
+			savedDecks = files;
+			showLoadModal = true;
+		} catch (error) {
+			console.error('Error loading deck list:', error);
+			showToastNotification('Failed to load deck list from Google Drive');
+		}
+	}
 
+	// Load a specific deck by file ID
+	async function loadSpecificDeck(fileId: string) {
+		try {
 			const fileResponse = await fetch(
-				`https://www.googleapis.com/drive/v3/files/${latestFile.id}?alt=media`,
+				`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`,
 				{
 					method: 'GET',
 					headers: {
@@ -299,10 +372,85 @@
 				onLoadDeck(loadedDeck, loadedSideboard);
 				showToastNotification('Deck loaded from Google Drive');
 			}
+			showLoadModal = false;
 		} catch (error) {
 			console.error('Error loading deck:', error);
 			showToastNotification('Failed to load deck from Google Drive');
 		}
+	}
+
+	// Delete a specific deck by file ID
+	async function deleteSpecificDeck(fileId: string, fileName: string) {
+		if (!confirm(`Are you sure you want to delete "${fileName.replace('.json', '')}"?`)) {
+			return;
+		}
+
+		try {
+			const deleteResponse = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}`, {
+				method: 'DELETE',
+				headers: {
+					Authorization: `Bearer ${accessToken}`
+				}
+			});
+
+			if (!deleteResponse.ok) {
+				throw new Error('Failed to delete file');
+			}
+
+			showToastNotification('Deck deleted from Google Drive');
+			// Refresh the deck list
+			await loadDeckListForDelete();
+		} catch (error) {
+			console.error('Error deleting deck:', error);
+			showToastNotification('Failed to delete deck from Google Drive');
+		}
+	}
+
+	// Load deck list for delete modal
+	async function loadDeckListForDelete() {
+		try {
+			const listResponse = await fetch(
+				'https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&fields=files(id,name,modifiedTime)&orderBy=modifiedTime%20desc',
+				{
+					method: 'GET',
+					headers: {
+						Authorization: `Bearer ${accessToken}`
+					}
+				}
+			);
+
+			if (!listResponse.ok) {
+				throw new Error('Failed to list files');
+			}
+
+			const listData = await listResponse.json();
+			savedDecks = listData.files || [];
+		} catch (error) {
+			console.error('Error loading deck list for delete:', error);
+			showToastNotification('Failed to load deck list from Google Drive');
+		}
+	}
+
+	// Delete deck from Google Drive
+	async function deleteDeckFromDrive() {
+		if (!browser) return;
+
+		if (!isGoogleDriveAvailable) {
+			showToastNotification('Google Drive integration not configured');
+			return;
+		}
+
+		if (!isSignedIn || !accessToken) {
+			pendingAction = async () => {
+				await loadDeckListForDelete();
+				showDeleteModal = true;
+			};
+			signInToGoogle();
+			return;
+		}
+
+		await loadDeckListForDelete();
+		showDeleteModal = true;
 	}
 
 	// Initialize Google API on mount
@@ -342,7 +490,7 @@
 				class="flex items-center gap-2 {hasCards ? '' : 'invisible'}"
 				title="Save deck to Google Drive"
 			>
-				<span>Save to Drive</span>
+				<span>Save</span>
 			</Button>
 			<Button
 				variant="secondary"
@@ -350,10 +498,116 @@
 				class="flex items-center gap-2"
 				title="Load deck from Google Drive"
 			>
-				<span>Load from Drive</span>
+				<span>Load</span>
+			</Button>
+			<Button
+				variant="secondary"
+				onclick={deleteDeckFromDrive}
+				class="flex items-center gap-2"
+				title="Delete decks from Google Drive"
+			>
+				<span>Delete</span>
 			</Button>
 		{/if}
 	{/if}
 </div>
 
 <Toast message={toastMessage} show={showToast} />
+
+<!-- Save Deck Modal -->
+<Modal
+	show={showSaveModal}
+	title="Save Deck to Google Drive"
+	size="md"
+	onClose={() => (showSaveModal = false)}
+>
+	{#snippet children()}
+		<div class="space-y-4">
+			<label for="deck-name" class="block text-sm font-medium text-gray-700"> Deck Name </label>
+			<input
+				id="deck-name"
+				type="text"
+				bind:value={deckNameInput}
+				placeholder="Enter deck name"
+				class="w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+				onkeydown={(e) => {
+					if (e.key === 'Enter') {
+						handleSaveConfirm();
+					}
+				}}
+			/>
+		</div>
+	{/snippet}
+	{#snippet actions()}
+		<Button variant="secondary" onclick={() => (showSaveModal = false)}>Cancel</Button>
+		<Button variant="primary" onclick={handleSaveConfirm} disabled={!deckNameInput.trim()}>
+			Save
+		</Button>
+	{/snippet}
+</Modal>
+
+<!-- Load Deck Modal -->
+<Modal
+	show={showLoadModal}
+	title="Load Deck from Google Drive"
+	size="lg"
+	onClose={() => (showLoadModal = false)}
+>
+	{#snippet children()}
+		<div class="max-h-96 space-y-2 overflow-y-auto">
+			{#each savedDecks as deck}
+				<div class="flex items-center justify-between rounded-md border border-gray-200 p-3">
+					<div>
+						<div class="font-medium">{deck.name.replace('.json', '')}</div>
+						<div class="text-sm text-gray-500">
+							Modified: {new Date(deck.modifiedTime).toLocaleString()}
+						</div>
+					</div>
+					<Button variant="primary" size="sm" onclick={() => loadSpecificDeck(deck.id)}>
+						Load
+					</Button>
+				</div>
+			{/each}
+		</div>
+	{/snippet}
+	{#snippet actions()}
+		<Button variant="secondary" onclick={() => (showLoadModal = false)}>Cancel</Button>
+	{/snippet}
+</Modal>
+
+<!-- Delete Deck Modal -->
+<Modal
+	show={showDeleteModal}
+	title="Delete Decks from Google Drive"
+	size="lg"
+	onClose={() => (showDeleteModal = false)}
+>
+	{#snippet children()}
+		<div class="max-h-96 space-y-2 overflow-y-auto">
+			{#if savedDecks.length === 0}
+				<p class="py-8 text-center text-gray-500">No saved decks found</p>
+			{:else}
+				{#each savedDecks as deck}
+					<div class="flex items-center justify-between rounded-md border border-gray-200 p-3">
+						<div>
+							<div class="font-medium">{deck.name.replace('.json', '')}</div>
+							<div class="text-sm text-gray-500">
+								Modified: {new Date(deck.modifiedTime).toLocaleString()}
+							</div>
+						</div>
+						<Button
+							variant="secondary"
+							size="sm"
+							onclick={() => deleteSpecificDeck(deck.id, deck.name)}
+						>
+							Delete
+						</Button>
+					</div>
+				{/each}
+			{/if}
+		</div>
+	{/snippet}
+	{#snippet actions()}
+		<Button variant="secondary" onclick={() => (showDeleteModal = false)}>Close</Button>
+	{/snippet}
+</Modal>

@@ -12,7 +12,10 @@ The deck builder supports saving and loading decks to/from Google Drive. To set 
 
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
 2. Create a new project or select an existing one
-3. Enable the Google Drive API
+3. Enable the Google Drive API:
+   - Go to **APIs & Services** → **Library**
+   - Search for "Google Drive API"
+   - Click on **Google Drive API** and enable it
 
 #### Create API Key
 
