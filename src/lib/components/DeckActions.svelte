@@ -36,6 +36,7 @@
 	import Button from './Button.svelte';
 	import ButtonGroup from './ButtonGroup.svelte';
 	import ButtonGroupItem from './ButtonGroupItem.svelte';
+	import DropdownButton from './DropdownButton.svelte';
 	import Modal from './Modal.svelte';
 	import { browser } from '$app/environment';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
@@ -130,22 +131,6 @@
 		checkScreen();
 		window.addEventListener('resize', checkScreen);
 		return () => window.removeEventListener('resize', checkScreen);
-	});
-
-	$effect(() => {
-		if (showGoogleDropdown) {
-			const handleClickOutside = (event: MouseEvent) => {
-				const target = event.target as Element;
-				const dropdown = target.closest('.relative');
-				if (!dropdown) {
-					showGoogleDropdown = false;
-				}
-			};
-
-			document.addEventListener('click', handleClickOutside);
-
-			return () => document.removeEventListener('click', handleClickOutside);
-		}
 	});
 
 	// Check if Google Drive integration is available
