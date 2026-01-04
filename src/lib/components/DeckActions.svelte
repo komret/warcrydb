@@ -556,19 +556,35 @@
 		<!-- Share and Reset buttons - second row on small screens -->
 		<div class="ml-auto flex items-center gap-2 sm:ml-0">
 			<Button
-				variant="success"
+				variant="secondary"
 				onclick={shareDeck}
 				class="flex items-center gap-2 {hasCards ? '' : 'invisible'}"
 				title="Copy deck URL"
 			>
+				<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
+					/>
+				</svg>
 				<span>Share</span>
 			</Button>
 			<Button
-				variant="primary"
+				variant="danger"
 				onclick={onClearDeck}
 				class="flex items-center gap-2 {hasCards ? '' : 'invisible'}"
 				title="Reset deck"
 			>
+				<svg class="h-4 w-4" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="1.5"
+						d="M12 4V2l4 4-4 4V6a8 8 0 1 0 8 8h-2a6 6 0 1 1-6-6z"
+					/>
+				</svg>
 				<span>Reset</span>
 			</Button>
 		</div>

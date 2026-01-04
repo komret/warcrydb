@@ -16,11 +16,18 @@
 		{isFiltering ? 'Loading...' : `${resultsCount} result${resultsCount !== 1 ? 's' : ''}`}
 	</div>
 	<Button
-		variant="primary"
+		variant="danger"
 		onclick={onReset}
 		class="flex items-center gap-2 {hasActiveFilters ? '' : 'invisible'}"
 		title="Reset filters"
 	>
-		<span>Reset</span>
+		<svg class="h-4 w-4" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="1.5"
+				d="M12 4V2l4 4-4 4V6a8 8 0 1 0 8 8h-2a6 6 0 1 1-6-6z"
+			/>
+		</svg> <span>Reset</span>
 	</Button>
 </div>
