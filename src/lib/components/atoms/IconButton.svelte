@@ -37,7 +37,7 @@
 	}));
 
 	const baseClasses =
-		'flex items-center justify-center focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50';
+		'flex items-center justify-center focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:opacity-50 touch-manipulation';
 </script>
 
 <button
