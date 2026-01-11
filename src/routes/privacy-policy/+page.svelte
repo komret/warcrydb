@@ -15,8 +15,4 @@
 	<div class="space-y-4 text-gray-300">
 		<p>There are no obligations for users nor the developer.</p>
 	</div>
-
-	<div class="mt-8">
-		<a href="/about" class="text-blue-500 underline hover:text-blue-400">Back to About</a>
-	</div>
 </section>

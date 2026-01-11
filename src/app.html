@@ -13,5 +13,29 @@
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
+		<footer
+			style="
+				margin-top: auto;
+				padding: 1rem;
+				text-align: right;
+				font-size: 0.875rem;
+				color: #9ca3af;
+				background-color: #111827;
+			"
+		>
+			<a
+				href="/privacy-policy"
+				style="color: #9ca3af; text-decoration: none"
+				onmouseover="
+					this.style.color = '#d1d5db';
+					this.style.textDecoration = 'underline';
+				"
+				onmouseout="
+					this.style.color = '#9ca3af';
+					this.style.textDecoration = 'none';
+				"
+				>Privacy Policy</a
+			>
+		</footer>
 	</body>
 </html>

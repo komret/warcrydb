@@ -1021,9 +1021,4 @@
 	</div>
 {/if}
 
-<!-- Footer -->
-<footer class="mt-auto pt-6 text-right text-sm text-gray-400">
-	<a href="/privacy-policy" class="hover:text-gray-300 hover:underline">Privacy Policy</a>
-</footer>
-
 <CardImageModal cardId={selectedCardId} onclose={() => (selectedCardId = null)} />
