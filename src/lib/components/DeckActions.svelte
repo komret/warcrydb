@@ -94,7 +94,7 @@
 	}
 
 	// Export deck as JSON file
-	function exportDeckToFile() {
+	async function exportDeckToFile() {
 		if (!hasCards) return;
 
 		const deckData: DeckData = {
@@ -104,18 +104,48 @@
 		};
 
 		const dataStr = JSON.stringify(deckData, null, 2);
-		const dataBlob = new Blob([dataStr], { type: 'application/json' });
-		const url = URL.createObjectURL(dataBlob);
+		const defaultName = `warcry-deck-${new Date().toISOString().split('T')[0]}.json`;
 
-		const link = document.createElement('a');
-		link.href = url;
-		link.download = `warcry-deck-${new Date().toISOString().split('T')[0]}.json`;
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
-		URL.revokeObjectURL(url);
+		// Use File System Access API if available (Chrome, Edge, etc.)
+		if ('showSaveFilePicker' in window) {
+			try {
+				const handle = await (window as any).showSaveFilePicker({
+					suggestedName: defaultName,
+					types: [
+						{
+							description: 'JSON Files',
+							accept: { 'application/json': ['.json'] }
+						}
+					]
+				});
 
-		showToastNotification('Deck exported successfully');
+				const writable = await handle.createWritable();
+				await writable.write(dataStr);
+				await writable.close();
+
+				showToastNotification('Deck exported successfully');
+			} catch (err: any) {
+				// User cancelled or error occurred
+				if (err.name !== 'AbortError') {
+					console.error('Error saving file:', err);
+					showToastNotification('Failed to export deck');
+				}
+			}
+		} else {
+			// Fallback for browsers without File System Access API
+			const dataBlob = new Blob([dataStr], { type: 'application/json' });
+			const url = URL.createObjectURL(dataBlob);
+
+			const link = document.createElement('a');
+			link.href = url;
+			link.download = defaultName;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+			URL.revokeObjectURL(url);
+
+			showToastNotification('Deck exported successfully');
+		}
 	}
 
 	// Import deck from JSON file
