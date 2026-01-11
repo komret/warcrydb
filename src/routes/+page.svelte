@@ -579,7 +579,7 @@
 			}
 
 			// Multi-select rarity filter
-			if (selectedRarities.size > 0 && (!card.rarity || !selectedRarities.has(card.rarity))) {
+			if (selectedRarities.size > 0 && !selectedRarities.has(card.rarity)) {
 				return false;
 			}
 

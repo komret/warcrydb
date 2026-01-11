@@ -45,7 +45,7 @@ export type Faction = (typeof factions)[number];
 export const cardTypes = ['Attachment', 'Unit', 'Command', 'Reaction', 'Tactic'] as const;
 export type Type = (typeof cardTypes)[number];
 
-export const rarities = ['Common', 'Uncommon', 'Rare', 'Super rare'] as const;
+export const rarities = ['Common', 'Uncommon', 'Rare', 'Super rare', 'Other'] as const;
 export type Rarity = (typeof rarities)[number];
 
 export const dieValues = [1, 2, 3, 4, 5, 6] as const;
@@ -127,7 +127,7 @@ export type Card = {
 	maxCopies: number;
 	faction: Faction;
 	type: Type;
-	rarity?: Rarity;
+	rarity: Rarity;
 	text: string;
 	releases: { [set in Set]?: number };
 	banned?: boolean;
@@ -11605,6 +11605,7 @@ export const cards: Card[] = [
 		maxCopies: 12,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>You may have up to 12 of this card in your deck.</p>',
 		releases: {
 			CD: 1
@@ -11622,6 +11623,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p>This unit may block infantry.</p><p><b>Combat Tactic</b> Commit or destroy one of your units in your battle line: This unit gets a strength or leadership bonus equal to the committed or destroyed unit's leadership.</p>",
 		releases: {
 			CD: 2
@@ -11639,6 +11641,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 2</p><p>This unit may play <b>Spell WarCry</b> cards as combat tactics.</p><p><b>WarCry</b>: This unit gets +4 strength and "<b>Terror</b>: 2".</p>',
 		releases: {
 			CD: 3
@@ -11656,6 +11659,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: This defending unit gets +3 strength. If this unit wins, rout the enemy unit.Only playable during a follow-up attack.</p>',
 		releases: {
 			CD: 4
@@ -11673,6 +11677,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Support Tactic</b>: Your Skaven unit gets +1 strength, +1 leadership and +1 tactic point. Only playable while you have more units in your battle line than your enemy.</p>',
 		releases: {
 			CD: 5
@@ -11690,6 +11695,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength and +1 leadership. Only playable if your enemy has less than 4 cards in their hand.</p>',
 		releases: {
 			CD: 6
@@ -11707,6 +11713,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p><b>Victory</b>: -2</p>',
 		releases: {
 			CD: 7
@@ -11724,6 +11731,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Reaction</b>: After you muster this unit, each player gets an additional 5 gold to spend during this muster phase <span class="errata">while this unit remains in play</span>. Players who have passed may continue to muster.</p><p><b>Spell Reaction</b> (1): After any roll, that roll gets +1.</p>',
 		releases: {
 			CD: 8
@@ -11739,6 +11747,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>This unit gets "<b>Terror</b>: 2".</p><p><b>WarCry</b>: This unit gets a strength bonus equal to it\'s <b>Terror</b> rating.</p><p>This card may only be attached to a Skaven unit.</p>',
 		releases: {
 			CD: 9
@@ -11754,6 +11763,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Combat Tactic</b> Commit one of your units: This unit gets a strength bonus equal to the committed unit's tactic points up to the committed unit's gold cost +1.</p>",
 		releases: {
 			CD: 10
@@ -11768,6 +11778,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 tactic point for each unit in your reserves.</p>',
 		releases: {
 			CD: 11
@@ -11783,6 +11794,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This Bretonnian unit gets +3 strength.</p><p><b>WarCry</b>: This Bretonnian unit gets +4 strength when attacking from the reserves.</p>',
 		releases: {
 			CD: 12
@@ -11798,6 +11810,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: If this unit passes a leadership test, play a combat tactic or WarCry card from your hand paying no costs.</p>',
 		releases: {
 			CD: 13
@@ -11830,6 +11843,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +2 strength. Only playable if this unit has a weapon attachment.</p>',
 		releases: {
 			CD: 16
@@ -11862,6 +11876,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +1 strength.</p>',
 		releases: {
 			CD: 18
@@ -11893,6 +11908,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets a tactic point bonus equal to the number of units in your battle line with a gold cost greater than 2.</p>',
 		releases: {
 			CD: 22
@@ -11908,6 +11924,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This cavalry unit gets +2 strength. Only playable if you have less units in your battle line than your enemy.</p>',
 		releases: {
 			CD: 23
@@ -11923,6 +11940,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: Draw 2 cards. If you lose this combat destroy one of your other units. You may only play one copy of this card per combat.</p>',
 		releases: {
 			CD: 24
@@ -11938,6 +11956,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This Skaven unit gets +3 strength.</p><p><b>WarCry</b>: This Skaven unit gets a leadership bonus equal to the number of Skaven in your battle line.</p>',
 		releases: {
 			CD: 25,
@@ -11954,6 +11973,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: Your enemy discards 1 random card.</p>',
 		releases: {
 			CD: 27
@@ -11986,6 +12006,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable if you have more units in your battle line than your enemy has in their battle line.</p>',
 		releases: {
 			CD: 29
@@ -12001,6 +12022,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: Draw 2 cards. If you win this combat, return the enemy unit to the battle line committed. You may not make a follow-up attack. You may only play one copy of this card per combat.</p>',
 		releases: {
 			CD: 30
@@ -12051,6 +12073,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b> Discard 2 cards: This unit gets +5 strength.</p>',
 		releases: {
 			CD: 34
@@ -12068,6 +12091,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Ranged Attack</b>: 6</p><p>While this unit is in combat, players subtract their combat rolls instead of adding them.</p>',
 		releases: {
 			CD: 39
@@ -12085,6 +12109,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable if this unit has an attachment.</p>',
 		releases: {
 			CD: 40
@@ -12103,6 +12128,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Faith</b>: 3</p><p>While this unit is ready, your other Bretonnian units get "<b>Faith</b>: 1".</p><p><b>WarCry</b>: This unit gets a strength bonus equal to it\'s <b>Faith</b> rating.</p>',
 		releases: {
 			CD: 41
@@ -12120,6 +12146,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: Search your enemy's discard pile for an attachment and remove it from the game. This unit gets +1 strength.</p>",
 		releases: {
 			CD: 42
@@ -12137,6 +12164,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Support Tactic</b>: Your cavalry unit gets +1 tactic point. If your unit in the combat is a Bretonnian, you may use this ability while this unit is committed.</p>',
 		releases: {
 			CD: 43
@@ -12154,6 +12182,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Faith</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +d6 strength. You do not make a combat roll.</p>',
 		releases: {
 			CD: 44
@@ -12171,6 +12200,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +3 strength if it passes a leadership test.</p>',
 		releases: {
 			CD: 45
@@ -12188,6 +12218,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Faith</b>: 3</p><p><b>Support Tactic</b> Commit this unit: Your unit gets a strength bonus equal to this unit's <b>Faith</b> rating.</p>",
 		releases: {
 			CD: 46
@@ -12206,6 +12237,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 1</p><p>When determining who goes first, you may add the <b>Wizard</b> levels of your units to your total tactic points.</p><p><b>Spell Reaction</b> (1): After any roll, that roll gets -1.</p>',
 		releases: {
 			CD: 47
@@ -12221,6 +12253,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>This unit gets "<b>Faith</b>: 1"."</p><p><b>WarCry</b>: This unit gets +2 strength and "<b>Terror</b>: X". X equals this units <b>Faith</b> rating.</p><p>This card may only be attached to a Bretonnian unit.</p>',
 		releases: {
 			CD: 48
@@ -14304,6 +14337,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 3</p><p><b>Wizard</b>: 3</p><p>All your infantry units get "<b>Victory</b>: +1."</p><p><b>Support Tactic</b>: Roll. Your Chaos unit gets "<b>Terror</b>: X", where X is equal to the roll.</p>',
 		releases: {
 			CC: 1
@@ -14322,6 +14356,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Victory</b>: -2</p><p><b>Support Tactic</b>: Your Dwarf unit gets +2 strength vs. monster and daemon units.</p><p><b>Combat Tactic</b>: This unit gets +2 strength if you have 3 or more cards in your hand.</p>',
 		releases: {
 			CC: 1
@@ -14339,6 +14374,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may only be mustered in the first muster phase.</p><p><b>Support Tactic</b>: Your Chaos unit gets +2 strength if this is the second battle and +4 strength if this is the third battle.</p>',
 		releases: {
 			CC: 2
@@ -14357,6 +14393,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Runesmith</b>: 2 <i>(Counts as Wizard)</i></p><p><b>Spell Support Tactic</b> (1): Your Dwarf unit gets "<b>Terror</b>: 2".</p>',
 		releases: {
 			CC: 2
@@ -14374,6 +14411,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Support Tactic</b>: Your unit with a printed gold cost of 5 or more gets +1 strength.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your other ready Dark Elf units with a printed gold cost of 5 or more.</p>',
 		releases: {
 			CC: 3
@@ -14392,6 +14430,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: If this unit passes a tactic point test, play a combat tactic from your hand paying no costs.</p><p><b>Reaction</b> Discard 1 card: After your enemy plays a Spell card or ability, negate it's effects if this unit passes a tactic point test.</p>",
 		releases: {
 			CC: 3
@@ -14409,6 +14448,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>WarCry</b>: Choose a number and roll from your enemy's deck. If the roll matches the chosen number, destroy both units. If the roll does not match that number this unit gets -1 strength.</p>",
 		releases: {
 			CC: 4
@@ -14427,6 +14467,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Veteran</b>: Valten/Valten, Champion Of Sigmar</p><p>While this unit is ready your Empire units are immune to "<b>Terror</b>".</p><p><b>Reaction</b>: After you muster this unit, search your deck and discard pile for up to three attachments with a gold cost of 4 or less. Play those attachments on Valten, paying no costs.</p>',
 		releases: {
 			CC: 4
@@ -14445,6 +14486,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Victory</b>: -2</p><p><b>Combat Tactic</b>: Place 1 card from either of your discard piles on top of your deck.</p>',
 		releases: {
 			CC: 5,
@@ -14464,6 +14506,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Command</b> Discard 1 card: You get a number of spell points equal to the die number on the discarded card. Only playable once per battle.</p>',
 		releases: {
 			CC: 5
@@ -14482,6 +14525,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Ranged Attack</b>: 5</p><p>All of your Orc <b>Wizard</b>s get +1 to their "<b>Wizard</b>" level.</p><p><b>Support Tactic</b>: Your Orc unit gets "<b>Faith</b>: 3".</p>',
 		releases: {
 			CC: 6
@@ -14500,6 +14544,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Combat Tactic</b>: Destroy the enemy unit. Only playable if you have already played a combat tactic or WarCry this combat, and only if your unit's strength is at least 3 more than the enemy's strength.</p>",
 		releases: {
 			CC: 6
@@ -18652,6 +18697,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Command',
+		rarity: 'Other',
 		text: "<p>All units have their leadership reduced by 1 (minimum 1).</p><p><b>Spell Command</b> Commit one of your Vampire Counts units (0): You gain a number of spell points equal to the committed unit's printed strength.</p>",
 		releases: {
 			DH: 1
@@ -18667,6 +18713,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Spell WarCry</b> (0): You gain a number of spell points equal to this wizard unit's leadership plus it's <b>Wizard</b> rating. Remove this card from the game.</p>",
 		releases: {
 			DH: 2
@@ -18732,6 +18779,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell Combat Tactic</b> (1): The enemy unit may only play 1 more tactic in this combat. You may not play any more combat or support tactics in this combat.</p>',
 		releases: {
 			DH: 6
@@ -18764,6 +18812,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell Combat Tactic</b> (3): Choose a Vampire Counts or Khemri unit with a gold cost less than 4 in your discard pile and attach it to this unit. While attached this unit gets +X strength and "<b>Victory</b>: -X". X equals the attached units strength.</p>',
 		releases: {
 			DH: 8
@@ -18779,6 +18828,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: Play a combat tactic on one of your other units in play with the same keyword as this unit.</p>',
 		releases: {
 			DH: 9
@@ -18810,6 +18860,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: "<p>May only be attached to a Vampire Counts unit.</p><p><b>Spell Reaction</b> (2): After this unit is destroyed, exchange this unit with another of your units. The other unit is destroyed instead. This unit takes on the status of the other unit (committed or ready).</p><p><b>Spell Command</b> (0): Gain 2 spell points. If your enemy's next command is a pass, the battle is over.</p>",
 		releases: {
 			DH: 14
@@ -18828,6 +18879,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Combat Tactic</b> Discard a spell card from your hand: Gain 2 spell points. You may play this ability any number of times per combat.</p><p><b>Spell Combat Tactic</b> (2): This unit gets +3 strength vs. units with a gold cost of 5 or more. You may play this ability any number of times per combat.</p>',
 		releases: {
 			DH: 17
@@ -18845,6 +18897,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 1</p><p><b>Command</b> Commit: Once per battle, all non-Hordes of Darkness units in a battleline must make a leadership and strength test. Any units failing one or more of the tests are committed. Only playable from the battleline.</p>',
 		releases: {
 			DH: 18
@@ -18862,6 +18915,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p><b>Reaction</b>: After this unit routs an enemy unit, gain 2 spell points.</p><p><b>WarCry</b>: If the enemy unit has "<b>Faith</b>", for the duration of this combat, that unit does not have "<b>Faith</b>".</p>',
 		releases: {
 			DH: 19
@@ -18879,6 +18933,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. Grand Alliance units.</p><p><b>Reaction</b>: After this unit plays a WarCry, play another WarCry.</p>',
 		releases: {
 			DH: 20
@@ -18896,6 +18951,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b> Remove this unit from the game: After this unit is destroyed, you gain 3 spell points.</p><p><b>WarCry</b> Discard a card from your hand: Your enemy must discard a card from their hand. This unit gets a strength bonus equal to the die of your enemy's discarded card.</p>",
 		releases: {
 			DH: 21
@@ -18913,6 +18969,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>You may not muster this unit unless you have a wizard in play. If you ever do not have a wizard in play this unit is destroyed.</p>',
 		releases: {
 			DH: 22
@@ -18930,6 +18987,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>Weapons with a gold cost of 2 or less attached to this unit have their gold cost reduced to 0.</p><p><b>WarCry</b>: this unit gets +2 strength vs. Grand Alliance units.</p>',
 		releases: {
 			DH: 23
@@ -18947,6 +19005,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength and "<b>Terror</b>: 1" for each card attached to this unit.</p><p><b>Combat Tactic</b>: You and your enemy each get 1 spell point.</p>',
 		releases: {
 			DH: 24
@@ -18965,6 +19024,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (X): After one of your other Hordes of Darkness units is destroyed as a result of combat, return that unit to the battle line committed. You may use this ability once per command. X equals the target unit's gold cost.</p>",
 		releases: {
 			DH: 25
@@ -18979,6 +19039,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b> Remove this card and one of your units from the game: When one of your units is destroyed by a card effect, that unit is not destroyed.</p><p><b>Reaction</b> Destroy one of your units: After you make a roll, that roll gets +2.</p>',
 		releases: {
 			DH: 26
@@ -19010,6 +19071,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: If this combat ends in a slaughter, this unit and the enemy unit are removed from the game.</p>',
 		releases: {
 			DH: 28
@@ -19058,6 +19120,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>You may put this card into play as a combat tactic for 2 tactic points.</p><p>All of your Empire units without <b>Faith</b> have "<b>Faith</b>: 1".</p>',
 		releases: {
 			DH: 31
@@ -19072,6 +19135,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>You may put this card into play as a combat tactic for 2 tactic points. When this card is removed from play remove it from the game.</p><p><b>Reaction</b>: After your unit with <b>Faith</b> makes a combat roll, make a leadership test. If passed, add 1 to the roll.</p>',
 		releases: {
 			DH: 32
@@ -19139,6 +19203,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 2</p><p>This unit has <b>Faith</b>: 2</p><p><b>Spell WarCry</b> (X): The enemy may not play any spell tactics and spell reactions with a spell point cost less than X during the battle.</p>',
 		releases: {
 			DH: 37
@@ -19157,6 +19222,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Faith</b>: 2</p><p><b>Reaction</b>: Once per battle, before paying the spell cost of a spell action card, reduce that cost to 0.</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. infantry units.</p>',
 		releases: {
 			DH: 40
@@ -19174,6 +19240,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Faith</b>: 1</p><p><b>Combat Tactic</b>: Reduce the enemy unit's leadership by 2. Only playable vs. Hordes of Darkness units.</p>",
 		releases: {
 			DH: 41
@@ -19192,6 +19259,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b>: After one of your Empire units is destroyed, put that card on top of your army deck instead of in your discard pile.</p><p><b>Combat Tactic</b>: Return the enemy unit's strength to it's printed strength. Restore that units tactic points (printed and provided by permanent bonuses).</p>",
 		releases: {
 			DH: 42
@@ -19209,6 +19277,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p>While this unit is in your battle line ready, your Empire infantry units may target units in your enemy's reserves for attacks and may not be blocked by cavalry.</p>",
 		releases: {
 			DH: 43
@@ -19226,6 +19295,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After this unit destroys an enemy unit, your enemy loses 3 spell points.</p><p><b>Combat Tactic</b>: This unit gets +3 strength vs. Hordes of Darkness units.</p>',
 		releases: {
 			DH: 44
@@ -19243,6 +19313,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Faith</b>: 2</p><p><b>Reaction</b> Commit: After a roll, add 1 to the roll for every 2 points of this unit\'s "<b>Faith</b>" rating.</p>',
 		releases: {
 			DH: 45
@@ -19260,6 +19331,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Reaction</b>: After this unit commits a Vampire Counts unit with a ranged attack, draw 1 card.</p>',
 		releases: {
 			DH: 46
@@ -19277,6 +19349,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After a spell is played by an enemy unit or player while this unit is in combat, this unit gets +1 strength and +1 leadership.</p>',
 		releases: {
 			DH: 47
@@ -19294,6 +19367,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Faith</b>: 1</p><p><b>Reaction</b>: After this unit destroys a Hordes of Darkness unit as the defender, if this unit passes a leadership test, this unit does not commit as a result of the combat.</p>',
 		releases: {
 			DH: 48
@@ -21379,6 +21453,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Terror</b>: 4</p><p><b>Combat Tactic</b>: Play the combat tactic or WarCry on any action card in any discard pile, paying all costs. That card is placed at the bottom of the owner's deck.</p><p><b>Reaction</b>: Instead of mustering a unit or attachment, get a Daemon from your deck and add it to your hand. Shuffle your army deck.</p>",
 		releases: {
 			LW: 1
@@ -21397,6 +21472,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: Instead of mustering a unit or attachment get up to one amor, item, standard, and weapon from your army deck and attach those to one of your Dark Elf units (paying all costs). Shuffle your army deck.</p>',
 		releases: {
 			LW: 2
@@ -21415,6 +21491,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b> Discard 2 cards: When this unit is destroyed in combat after losing a combat, return it to your battle line, ready. This unit is not destroyed (you may not use this ability if this unit is committed).</p><p><b>Combat Tactic</b>: This attacking unit gets +3 strength.</p>',
 		releases: {
 			LW: 3
@@ -21433,6 +21510,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Command</b> Commit: One by one, attach the top card of your deck to each of your Dwarf units. Those units have "<b>Victory</b>: +X". X equals the die of the attached card. While this unit remains in play, your units may not declare attacks. Discard all cards attached this way if this unit leaves play or after battle resolution. Only playable as your first command.</p>',
 		releases: {
 			LW: 4
@@ -21451,6 +21529,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Faith</b>: 4</p><p><b>Combat Tactic</b>: Play a WarCry or combat tactic ability on any unit or attachment in play, paying no cost.</p>',
 		releases: {
 			LW: 5
@@ -21469,6 +21548,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>While this unit is committed all of your other High Elf units get +1 strength.</p><p><b>Reaction</b>: When one of your High Elf units is making a rout check, add their unspent tactic points to the roll.</p>',
 		releases: {
 			LW: 6
@@ -21484,6 +21564,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: If you win this combat, draw 3 cards.</p>',
 		releases: {
 			PW: 1
@@ -21501,6 +21582,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b> Destroy this unit: Destroy the enemy unit. Only usable while attacking.</p>',
 		releases: {
 			PW: 2
@@ -21518,6 +21600,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b> Discard your hand: When this combat ends, the result is a slaughter.</p>',
 		releases: {
 			PW: 3
@@ -21535,6 +21618,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: This unit gets +1 strength for each card in your hand.</p>',
 		releases: {
 			PW: 4
@@ -21549,6 +21633,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 tactic points.</p>',
 		releases: {
 			PW: 5
@@ -21563,6 +21648,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: <span class="errata">Play</span> any <span class="errata">combat tactic</span> printed on the enemy unit or <span class="errata">one</span> of it\'s attachments<span class="errata">, paying all costs</span>.</p>',
 		releases: {
 			PW: 6
@@ -21579,6 +21665,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Discard the top card of your action deck until you discard a playable combat tactic or run out of cards. Play that card for free.</p>',
 		releases: {
 			PW: 7
@@ -21597,6 +21684,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 3</p><p>This unit may play WarCry cards as if they were combat tactics.</p>',
 		releases: {
 			PW: 8
@@ -21615,6 +21703,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>After you draw your command hand, whichever player has the highest "<b>Scout</b>" total draws 2 cards.</p>',
 		releases: {
 			PW: 9
@@ -21631,6 +21720,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: Put any number of cards from your hand on top of your deck.</p>',
 		releases: {
 			PW: 10
@@ -21649,6 +21739,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit cannot be blocked.</p><p><b>WarCry</b> this unit gets +4 strength. Only playable while this unit is in combat with the enemy unit with the highest strength.</p>',
 		releases: {
 			PW: 11
@@ -21666,6 +21757,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: Commit any enemy unit in the battle line unless it pases a leadership test. Only usable during this unit's ranged attack.</p>",
 		releases: {
 			PW: 12
@@ -21683,6 +21775,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p>',
 		releases: {
 			PW: 13
@@ -21700,6 +21793,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Support Tactic</b>: Your unit gets +1 tactic point.</p>',
 		releases: {
 			PW: 14
@@ -21715,6 +21809,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: You get 3 spell points.</p>',
 		releases: {
 			PW: 15
@@ -21730,6 +21825,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Spell WarCry</b> (X): Destroy the enemy unit if it has strength X or less. Replace that unit in combat with any unit from your enemy's army discard pile. Only playable while you have a ready Chaos wizard.</p>",
 		releases: {
 			PW: 16
@@ -21745,6 +21841,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell WarCry</b> (2): Commit the enemy unit if it has a strength less than your spell points. Only usable while you have a ready Dark Elf wizard.</p>',
 		releases: {
 			PW: 17
@@ -21759,6 +21856,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Spell Command</b> (2): You and your enemy both roll. If your roll is higher, commit 1 enemy unit. Only playable while you have a ready Orc wizard.</p>',
 		releases: {
 			PW: 18
@@ -21774,6 +21872,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell Combat Tactic</b> (X): Destroy X enemy attachments in this combat. This unit gets +X strength. Only playable while you have a ready Dwarf runesmith.</p>',
 		releases: {
 			PW: 19
@@ -21789,6 +21888,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Spell WarCry</b> (2): This unit gets a strength bonus equal to the enemy unit's gold cost. Only playable if you have a ready Empire wizard.</p>",
 		releases: {
 			PW: 20
@@ -21804,6 +21904,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell WarCry</b> (1): At the end of the tactics phase, this unit gets +1 strength for each combat tactic played this combat. Only playable if you have a ready High Elf wizard.</p>',
 		releases: {
 			PW: 21
@@ -21819,6 +21920,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each of your ready war machine units.</p>',
 		releases: {
 			PW: 22
@@ -21836,6 +21938,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 1</p><p><b>WarCry</b>: This unit gets +1 strength for each of your other daemon units.</p>',
 		releases: {
 			PW: 23
@@ -21853,6 +21956,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Your enemy discards 2 cards.</p>',
 		releases: {
 			PW: 24
@@ -21870,6 +21974,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: If the enemy unit has strength 3 or less, this unit gets +3 strength.</p>',
 		releases: {
 			PW: 25
@@ -21887,6 +21992,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p>The first attachment played on this unit has it's gold cost reduced to 0.</p>",
 		releases: {
 			PW: 26
@@ -21904,6 +22010,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: Copy any combat tactic card played by the enemy paying all costs.</p>',
 		releases: {
 			PW: 27
@@ -21921,6 +22028,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Draw 1 card.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +2 tactic points.</p>',
 		releases: {
 			PW: 28
@@ -21938,6 +22046,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: This unit gets a tactic point bonus equal to the die on the discarded card.</p>',
 		releases: {
 			PW: 29
@@ -21955,6 +22064,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b> Discard 1 card: This unit gets +X or -X strength where X is the die of the discarded card. This combat tactic may be played multiple times. Either player may play this combat tactic.</p>',
 		releases: {
 			PW: 30
@@ -21973,6 +22083,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 2</p><p>This unit gets "<b>Victory</b>: +1" for each of your enemy\'s spell points.</p>',
 		releases: {
 			PW: 31
@@ -21988,6 +22099,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: Play up to 2 combat or support tactics, paying all costs.</p>',
 		releases: {
 			PW: 32
@@ -22002,6 +22114,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After your enemy plays a support tactic, draw 2 cards.</p>',
 		releases: {
 			PW: 33
@@ -22017,6 +22130,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell Combat Tactic</b> (2): Raise this units strength to equal the enemy units strength.</p>',
 		releases: {
 			PW: 34
@@ -22032,6 +22146,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p>You may play this card before the attackers first tactic.</p><p><b>Combat Tactic</b>: This Dark Elf unit gets +2 strength and the enemy unit gets -2 tactic points.</p>',
 		releases: {
 			PW: 35
@@ -22047,6 +22162,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: This Chaos unit gets +4 strength and "<b>Terror</b>: 2".</p>',
 		releases: {
 			PW: 36
@@ -22062,6 +22178,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: If you win this combat rout the enemy unit. Only playable by an Orc unit.</p>',
 		releases: {
 			PW: 37
@@ -22077,6 +22194,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell Combat Tactic</b> (1): This Dwarf unit gets +3 strength if it has an armor attachment.</p>',
 		releases: {
 			PW: 38
@@ -22092,6 +22210,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>WarCry</b>: Your units' support tactics do not require them to commit. Only playable by an Empire unit.</p>",
 		releases: {
 			PW: 39
@@ -22107,6 +22226,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This High Elf unit gets +1 strength. Play 1 strategy card.</p>',
 		releases: {
 			PW: 40
@@ -22122,6 +22242,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This Dogs of War unit gets +2 strength.</p>',
 		releases: {
 			PW: 41
@@ -22140,6 +22261,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>When you muster this unit, search your deck for Vargharn Melkior and add it to your hand.</p><p><b>Reaction</b>: After an enemy unit passes a leadership test, draw 1 card.</p>',
 		releases: {
 			PW: 43
@@ -22158,6 +22280,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>When you muster this unit, search your deck for Naetharion Dhargethen and add it to your hand.</p><p><b>WarCry</b>: If this combat ends in a slaughter, this unit wins instead.</p>',
 		releases: {
 			PW: 44
@@ -22176,6 +22299,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>When you muster this unit search your deck for Big Boss Ghulgar Headsplitter and ad it to your hand.</p><p><b>WarCry</b>: This unit gets +2 strength. Not playable during a follow-up attack.</p>',
 		releases: {
 			PW: 45
@@ -22193,6 +22317,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Long Ranged Attack</b>: 5</p><p><b>Support Tactic</b>: Destroy 1 character attachment on the enemy unit.</p>',
 		releases: {
 			PW: 46
@@ -22210,6 +22335,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: Commit 1 enemy unit in the reserves unless it passes a strength test.</p>',
 		releases: {
 			PW: 47
@@ -22228,6 +22354,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Faith</b>: 2</p><p><b>Combat Tactic</b>: This unit gets +d6 strength if it passes a leadership test.</p>',
 		releases: {
 			PW: 48
@@ -22246,6 +22373,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Faith</b>: 2</p><p><b>WarCry</b>: This unit gets +1 strength for each of it's attachments if it passes a leadership test.</p>",
 		releases: {
 			PW: 49
@@ -22264,6 +22392,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>When you muster this unit, search your deck for Barak Grimjaw and add it to your hand.</p><p><b>WarCry</b>: This unit gets +1 strength for each attachment on the enemy unit.</p>',
 		releases: {
 			PW: 50
@@ -22282,6 +22411,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>When you muster this unit, search your deck for Captain Karl Riemann and add it to your hand.</p><p><b>WarCry</b>: Look at the top 4 cards of your action deck and replace them in any order.</p>',
 		releases: {
 			PW: 51
@@ -22300,6 +22430,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>When you muster this unit, search your deck for Rylanus Evaenarion and add it to your hand.</p><p><b>WarCry</b>: This unit gets +1 strength for each of your strategy cards.</p>',
 		releases: {
 			PW: 52
@@ -22318,6 +22449,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 1</p><p><b>WarCry</b>: The enemy unit must pass a leadership test. If they fail, they may not play combat tactic cards or abilities during this combat.</p>',
 		releases: {
 			PW: 53
@@ -22333,6 +22465,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: If you win this combat, destroy all units that played support tactics on the combat.</p>',
 		releases: {
 			PW: 54
@@ -22348,6 +22481,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Double all bonuses this unit receives this combat.</p><p><b>WarCry</b>: Halve all bonuses the enemy receives this combat, rounding down.</p>',
 		releases: {
 			PW: 55
@@ -22364,6 +22498,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>After you muster this attachment do not draw to replace it.</p>',
 		releases: {
 			PW: 56
@@ -22380,6 +22515,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 leadership.</p>',
 		releases: {
 			PW: 57
@@ -22396,6 +22532,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength, +1 tactic point and +1 leadership.</p>',
 		releases: {
 			PW: 58
@@ -22411,6 +22548,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: "<p><b>Combat Tactic</b>: This unit gets +1 strength for each of it's attachments.</p>",
 		releases: {
 			PW: 59
@@ -22429,6 +22567,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Veteran</b>: Gerhart Brennend, Bright <b>Wizard</b></p><p><b>Wizard</b>: 2</p><p>This unit may use tactic points as spell points.</p>',
 		releases: {
 			PW: 60
@@ -22447,6 +22586,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Ranged Attack</b>: 4</p><p><b>Reaction</b>: After this unit receives a strength bonus increase it's ranged attack by the same amount.</p>",
 		releases: {
 			PW: 61
@@ -22464,6 +22604,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Victory</b>: +2</p><p><b>Reaction</b> Discard 1 card: After one of your units commits a unit with a ranged attack, destroy the committed unit.</p>',
 		releases: {
 			PW: 62
@@ -22481,6 +22622,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After an enemy unit gets a strength bonus while in vombat with this unit, this unit gets +1 strength.</p>',
 		releases: {
 			PW: 63
@@ -22499,6 +22641,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Command</b>: Discard any number of cards from your hand: Once per battle, destroy a committed unit with a gold cost less than the discarded card's total dice.</p>",
 		releases: {
 			PW: 64
@@ -22516,6 +22659,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may not perform follow-up attacks.</p><p><b>Reaction</b>: After this unit destroys an enemy unit in a combat, attach the top card of your action deck to this unit. While attached this unit has a "<b>Victory</b>" bonus equal to the die number on the card.</p>',
 		releases: {
 			PW: 65
@@ -22534,6 +22678,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Veteran</b>: Sigismund, Steam Tank of the Empire</p><p><b>Terror</b>: 2</p><p><b>Ranged Attack</b>: 8</p><p><b>WarCry</b>: At the end of the combat this unit gets +1 strength for each combat tactic played by the enemy.</p>',
 		releases: {
 			PW: 66
@@ -22551,6 +22696,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. Grand Alliance units. If the enemy unit is an Empire unit, this unit gets +3 strength and "<b>Terror</b>: 2" instead.</p>',
 		releases: {
 			PW: 67
@@ -22568,6 +22714,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Ranged Attack</b>: 8</p><p><b>Reaction</b>: After this unit commits a unit with a ranged attack, do not commit this unit. This unit immediately declares a non-ranged attack against that enemy unit.</p>',
 		releases: {
 			PW: 68
@@ -22585,6 +22732,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: If this unit's strength is greater than the enemy unit's strength, play a combat tactic from your hand without paying it's tactic point cost.</p>",
 		releases: {
 			PW: 69
@@ -22603,6 +22751,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Command</b> Discard 1 card and destroy one of your units: Search your discard pile for another Khemri unit with a gold cost equal to or less than the destroyed units gold cost and put it in play. Only playable while the enemy has a ready unit.</p><p><b>Support Tactic</b> Remove X Khemri units in your army discard pile from the game: Your unit gets +X strength.</p>',
 		releases: {
 			PW: 70
@@ -22621,6 +22770,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b>: Once per battle, after a Khemri unit with a gold cost of 3 or less is destroyed, roll. If the roll is greater than the unit's leadership, return the unit to play in your reserves, committed.</p>",
 		releases: {
 			PW: 71
@@ -22638,6 +22788,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: Discard the top card of your army deck. If that card is a Khemri unit, you may remove that card from the game to give this unit +3 strength.</p>',
 		releases: {
 			PW: 72
@@ -22655,6 +22806,7 @@ export const cards: Card[] = [
 		maxCopies: Infinity,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>You may have any number of this card in your deck.</p><p><b>Support Tactic</b>: Your Khemri infantry unit gets +1 strength. Only playable while this unit is in the battle line.</p>',
 		releases: {
 			PW: 73
@@ -22672,6 +22824,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Support WarCry</b>: Your infantry unit gets +2 strength and -1 tactic points. Only playable while this unit is in the battle line.</p>',
 		releases: {
 			PW: 74
@@ -22689,6 +22842,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: The defending unit gets +1 strength. Only playable if you have a <b>Wizard</b> in play.</p>',
 		releases: {
 			PW: 75
@@ -22704,6 +22858,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>May only be attached to a Khemri unit.</p><p><b>Support Tactic</b>: If your attacking Khemri unit loses this combat, the enemy may not make a follow-up attack. If you lose this combat, destroy this card.</p>',
 		releases: {
 			PW: 76
@@ -22720,6 +22875,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: "<p>May only be attached to a Khemri unit.</p><p><b>WarCry</b>: If you win this non-ranged attack combat, remove the defeated unit from the game. Search your enemy's army discard pile for all copies of the defeated unit and remove those from the game.</p>",
 		releases: {
 			PW: 77
@@ -22736,6 +22892,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>May only be attached to a wizard unit.</p><p>All of your Khemri units have "<b>Terror</b>: 1."</p><p><b>Spell Reaction</b> (2): After you rout an enemy unit, do not make a follow-up attack. Choose a Khemri unit in your army discard pile with a gold cost of 3 or less and put that into play.</p>',
 		releases: {
 			PW: 78
@@ -22753,6 +22910,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b>: After your enemy plays a card or ability to draw 1 or more cards or to force you to discard 1 or more cards, negate it's effect. Attach a combat tactic card from your hand to this unit face up.</p><p><b>Combat Tactic</b> Discard 1 attached card: Play that card, paying no costs.</p>",
 		releases: {
 			PW: 79
@@ -22768,6 +22926,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell WarCry</b> (1): At The end of the tactics phase, this unit gets a strength bonus equal to the number of tactic cards played by the enemy unit.</p>',
 		releases: {
 			PW: 80
@@ -22782,6 +22941,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Command</b>: Name a card. Reveal your hand and shuffle all copies of that card in your hand and discard pile into your deck. Draw 1 card.</p>',
 		releases: {
 			PW: 81
@@ -22796,6 +22956,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After routing an enemy unit as a defender. If your unit has a higher printed strength than the enemy unit, return your unit to the battle line ready. You may not make a follow-up attack.</p>',
 		releases: {
 			PW: 82
@@ -22810,6 +22971,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>This card is not destroyed after the battle in which it was brought into play.</p><p><b>Reaction</b> Destroy this card: When you are mustering a "Unique" unit, reduce the unit\'s gold cost by 2.</p>',
 		releases: {
 			PW: 83
@@ -22824,6 +22986,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Command</b>: Place up to 3 cards from your army discard pile on top of your deck.</p>',
 		releases: {
 			PW: 84
@@ -22838,6 +23001,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: Before you make a rout check, rout the enemy unit. You may only play this card if your unit has a printed gold cost of 5 or more.</p>',
 		releases: {
 			PW: 85
@@ -22853,6 +23017,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>You get 1 extra gold during the muster phase.</p><p><b>Combat Tactic</b>: This unit gets +1 leadership.</p>',
 		releases: {
 			PW: 86
@@ -22867,6 +23032,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b>: After this unit plays its first WarCry card in combat, reduce the WarCry's tactic point cost to 0.</p>",
 		releases: {
 			PW: 87
@@ -22882,6 +23048,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Support WarCry</b>: Your unit gets +4 strength. You do not make a combat roll this combat.</p>',
 		releases: {
 			PW: 88
@@ -22899,6 +23066,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b>: Before you muster this unit, you may increase this unit's gold cost by 1 and make a leadership test. If you pass the test, attach the top card of your action deck to this unit. While attached this unit has <b>Scout</b> equal to the die number.</p>",
 		releases: {
 			PW: 89
@@ -22914,6 +23082,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>May only be attached to a Lizardmen unit.</p><p><b>Support Tactic</b>: Your unit in a ranged attack gets +2 strength or your unit in a non-ranged attack gets +1 leadership.</p>',
 		releases: {
 			PW: 90
@@ -22931,6 +23100,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b> Rally an enemy unit: This unit gets +3 strength and "<b>Terror</b>: 2".</p>',
 		releases: {
 			PW: 91
@@ -22948,6 +23118,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b> Destroy this unit: After one of your other units loses a combat, return it to your battle line committed.</p>',
 		releases: {
 			PW: 92
@@ -22965,6 +23136,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 2</p><p>This unit may play spell WarCry cards as normal spell combat tactics.</p><p><b>Combat Tactic</b>: Reveal your hand. If you do not have a spell in your hand, search your deck for a spell and add it to your hand.</p>',
 		releases: {
 			PW: 93
@@ -22982,6 +23154,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p><b>Ranged Attack</b>: 8</p><p><b>Reaction</b>: After this unit commits a unit using its ranged attack, make a leadership test. If this unit passes that test, destroy the committed unit.</p><p><b>Support Tactic</b> Commit: Destroy the enemy unit if the enemy unit has an ability to generate tokens.</p>',
 		releases: {
 			PW: 94
@@ -22999,6 +23172,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Wizard</b>: 2</p><p><b>Spell Reaction</b> (1) Discard 1 card: After your enemy plays a support tactic, negate it's effects.</p>",
 		releases: {
 			PW: 95
@@ -23016,6 +23190,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Victory</b>: +2</p><p>While this unit is ready all of your lizardmen have "<b>Faith</b>: 1".</p><p><b>Spell Support Tactic</b> (1): Play or destroy a terrain card.</p>',
 		releases: {
 			PW: 96
@@ -23033,6 +23208,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b> Commit: After a support tactic is played, destroy the unit that played that support tactic.</p>',
 		releases: {
 			PW: 97
@@ -23050,6 +23226,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This combat ends immediately. No further actions may be taken and no roll is made. Both units are rallied if committed, the enemy unit is returned to the battle line and this unit is returned to the reserves ready.</p><p>Only playable while attacking.</p>',
 		releases: {
 			PW: 98
@@ -23068,6 +23245,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: If a copy of this unit is not in play, after your enemy rolls an unmodified 6, search your army deck (not discard pile) for a copy of this card and put it into your reserves. Shuffle your army deck.</p><p>This ability may be played from your army deck.</p>',
 		releases: {
 			PW: 99
@@ -23085,6 +23263,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Scout</b>: 3</p><p>This unit attacks as cavalry.</p><p><b>Short Ranged Attack</b>: 4</p><p><b>Reaction</b>: After this unit wins a ranged attack destroy the enemy unit.</p>',
 		releases: {
 			PW: 100
@@ -23102,6 +23281,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p><b>Command</b>: Once per battle, this unit may perform a "<b>Ranged Attack</b>: 6" attack without committing.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable during a follow-up attack.</p>',
 		releases: {
 			PW: 101
@@ -23119,6 +23299,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Scout</b>: 2</p><p>This unit attacks as cavalry.</p><p><b>Reaction</b>: After an enemy unit rallies, draw 1 card.</p>',
 		releases: {
 			PW: 102
@@ -23136,6 +23317,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p><b>Command</b>: Once per battle, take the top card of your army deck and put it into play face down adjacent to this unit as a monster cavalry unit with 2 strength, 2 tactic points, 2 leadership, "<b>Terror</b>: 1", and a gold cost of 0. The new unit must immediately declare an attack. Once this command is over, put the new unit into your army discard pile.</p>',
 		releases: {
 			PW: 103
@@ -23153,6 +23335,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit attacks as cavalry.</p><p><b>Combat Tactic</b>: Reveal the top card of your army deck. If that unit is another copy of this card, put that card in your battle line.</p>',
 		releases: {
 			PW: 104
@@ -23170,6 +23353,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Scout</b>: 5</p><p><b>Terror</b>: 2</p>',
 		releases: {
 			PW: 105
@@ -23186,6 +23370,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength vs. Hordes of Darkness units. If the enemy unit is a Chaos unit, this unit gets +3 strength and +2 leadership instead.</p>',
 		releases: {
 			PW: 106
@@ -23201,6 +23386,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Combat Tactic</b>: If you rout the enemy unit, commit the enemy unit instead of destroying it. Choose another unit in the enemy's battle line and commit that unit as well. This unit may still perform a follow-up attack.</p>",
 		releases: {
 			PW: 107
@@ -23216,6 +23402,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b> Remove this card from the game: One of your other ready units may declare an attack. Units already involved in combat may not play abilities or be targeted during this attack. Resolve the new attack and all follow-ups before returning to this combat. If you win the new combat, this unit gets a +2 strength bonus. You may not play another copy of this card for the rest of the battle.</p>',
 		releases: {
 			PW: 108
@@ -23230,6 +23417,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Command</b>: Choose an enemy unit with at least one attached action card. Destroy all attached action cards on the target unit and rally one of your units with a gold cost of 3 or less.</p>',
 		releases: {
 			PW: 109
@@ -23244,6 +23432,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Spell Reaction</b> (2): Choose a reaction printed on one of your cards in play and activate it without paying any costs. The chosen reaction must be one that can be played at this time, but it may be on a committed unit and/</p><p>or a reaction that has already been played.</p>',
 		releases: {
 			PW: 110
@@ -23258,6 +23447,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>After an attack is declared, the defending player chooses the defending unit to be attacked and may ignore infantry, cavalry, and flyer restrictions.</p>',
 		releases: {
 			PW: 111
@@ -23273,6 +23463,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Combat Tactic</b>: Your enemy replaces this unit with any of your other units. You replace your enemy's unit with one of their other units. Ready units remain ready and committed units remain committed.</p><p>All bonuses and effects applied to the previous units are now applied to the new units.</p>",
 		releases: {
 			PW: 112
@@ -23288,6 +23479,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: Name a die number. Your enemy draws and reveals 3 cards. If any of the revealed cards have the named die number, those cards are removed from the game, the others are discarded and your unit gets +2 strength.</p><p>If none of the revealed cards have the named die number, your enemy adds those cards to their hand.</p>',
 		releases: {
 			PW: 113
@@ -23303,6 +23495,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>WarCry</b> Discard two cards from your hand: Rally one of your units with a gold cost less than this unit's gold cost.</p>",
 		releases: {
 			PW: 114
@@ -23317,6 +23510,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: "<p>If attached to a Harbinger this card's gold cost is reduced by 1 (minimum 0).</p><p><b>Reaction</b>: After this unit enters a combat, instead of drawing a card this unit gets +3 strength.</p>",
 		releases: {
 			PW: 115
@@ -23332,6 +23526,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: "<p>If attached to a Harbinger this card's gold cost is reduced by 1 (minimum 0).</p><p><b>Reaction</b>: After this unit gets a strength bonus, that bonus is increased by +1.</p>",
 		releases: {
 			PW: 116
@@ -23348,6 +23543,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: "<p>If attached to a Harbinger this card's gold cost is reduced by 1 (minimum 0).</p><p><b>Combat Tactic</b>: Draw 1 card. You may not use this ability if you have 4 or more cards in your hand.</p>",
 		releases: {
 			PW: 117
@@ -23364,6 +23560,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>If attached to a Harbinger this card\'s gold cost is reduced by 1 (minimum 0).</p><p><b>Combat Tactic</b>: This unit gets +2 leadership. If this takes this unit\'s leadership over 6, this unit gets "<b>Terror</b>: 3".</p>',
 		releases: {
 			PW: 118
@@ -23381,6 +23578,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Command</b> (2): While this unit remains in play all units with ranged attack or long ranged attack have short ranged attack instead.</p><p><b>Spell Command</b> Commit one of your other wizards (0): Gain 3 spell points.</p>',
 		releases: {
 			PW: 119
@@ -23398,6 +23596,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Ranged Attack</b>: 8</p><p><b>WarCry</b>: This unit gets +1 strength or +1 <b>Ranged Attack</b> for each card in your enemy's hand.</p><p><b>Reaction</b>: After you draw a card for this unit entering a combat, discard that card and draw another card.</p>",
 		releases: {
 			PW: 120
@@ -23415,6 +23614,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After this unit has won a combat against an enemy unit with a gold cost of 3 or less, target and destroy another unit with a gold cost of 3 or less. Then, if your enemy has any committed units you must rally an enemy unit.</p>',
 		releases: {
 			PW: 121
@@ -23433,6 +23633,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p>If this unit routs the enemy unit it must make a follow-up attack.</p><p><b>WarCry</b>: No more tactics may be played during this combat.</p>',
 		releases: {
 			PW: 122
@@ -23448,6 +23649,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: If this unit wins this combat, attach this card to this unit. While attached this unit gets the ability "Command Discard this card: Rally this unit. This may be played while the unit is committed."</p>',
 		releases: {
 			PW: 123
@@ -23463,6 +23665,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: "<p>May only be attached to a Lizardmen unit.</p><p><b>Combat Tactic</b> Rally an enemy unit: This unit gets +X strength. X equals this unit's printed strength. If this combat ends in a slaughter, this unit wins instead.</p>",
 		releases: {
 			PW: 124
@@ -23480,6 +23683,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After a Hordes of Darkness unit is destroyed, put a +1 strength token on this unit.</p>',
 		releases: {
 			PW: 125
@@ -23497,6 +23701,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may block any non-ranged attack targeting one of your Lizardmen units.</p><p><b>Combat Tactic</b> Rally an enemy unit: This unit gets +6 strength. Only playable while defending.</p>',
 		releases: {
 			PW: 126
@@ -23514,6 +23719,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit is immune to "<b>Terror</b>".</p><p><b>Combat Tactic</b>: This unit gets +2 leadership. Only playable while attacking.</p>',
 		releases: {
 			PW: 127
@@ -23531,6 +23737,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Command</b> Discard 3 cards: Rally this unit and declare an attack on a committed Hordes of Darkness unit. You may only use this ability while committed. Only playable once per battle.</p>',
 		releases: {
 			PW: 128
@@ -23548,6 +23755,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Command</b> Commit this unit: While this unit remains committed, all of your Lizardmen have the keyword "Infantry" replaced with the keyword "Cavalry".</p>',
 		releases: {
 			PW: 129
@@ -23565,6 +23773,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Victory</b>: -2</p><p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: If you have a wizard in play and this combat ends in a slaughter, this unit wins instead. You may use this ability up to 2 times per combat.</p>',
 		releases: {
 			PW: 130
@@ -23582,6 +23791,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 1</p><p><b>Combat Tactic</b>: This unit gets +1 strength unless the enemy unit passes a leadership test.</p><p><b>Command</b>: Once per battle, exchange an enemy unit in the battle line with an enemy unit in the reserves. You may immediately declare an attack with this unit.</p>',
 		releases: {
 			PW: 131
@@ -23599,6 +23809,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p><b>Combat Tactic</b>: The enemy unit gets -X tactic points. X equals this units level of "<b>Terror</b>".</p><p><b>Reaction</b> Destroy this unit: After an enemy unit uses an ability printed on a unit or attached card to commit one of your units, destroy that enemy unit. You may play this ability while committed.</p>',
 		releases: {
 			PW: 132
@@ -23613,6 +23824,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>This card may be put into play as a combat tactic for 1 point.</p><p><b>Reaction</b>: When your enemy plays a card that removes itself from the game as a cost or effect, they must also discard 1 random card from their hand.</p>',
 		releases: {
 			PW: 133
@@ -23628,6 +23840,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>WarCry</b>: The enemy unit's leadership is reduced by your unit's printed tactic points.</p>",
 		releases: {
 			PW: 134
@@ -23643,6 +23856,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>WarCry</b>: The enemy unit's tactic points are reduced by your unit's printed leadership.</p>",
 		releases: {
 			PW: 135
@@ -23657,6 +23871,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: This ready unit gets +7 strength. If this unit wins the combat, return both units to the battle line ready instead of any units being destroyed; you may not make a follow-up attack. You may not play any other cards in this combat.</p>',
 		releases: {
 			PW: 136
@@ -23672,6 +23887,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +7 strength.</p>',
 		releases: {
 			PW: 137
@@ -23687,6 +23903,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Neither unit may be destroyed nor committed as a result of this combat (card effects in the combat may still destroy or commit units). Units may still be routed and follow-up attacks may be made as normal, as if the loser had been destroyed.</p>',
 		releases: {
 			PW: 138
@@ -23701,6 +23918,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Support Tactic</b>: Players may not play combat tactic cards with a tactic point cost greater than 1.</p>',
 		releases: {
 			PW: 139
@@ -23716,6 +23934,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Attach this card to your unit. While attached this unit may have 2 weapons attached. Get up to 2 weapons from your discard pile and attach them to this unit without cost. Only playable by a unique unit or a unit with a character attachment.</p>',
 		releases: {
 			PW: 140
@@ -23730,6 +23949,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b> Discard 1 card: After your enemy rolls, that roll is negated and your enemy must re-roll from your deck.</p>',
 		releases: {
 			PW: 141
@@ -23745,6 +23965,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +3 strength. If this combat ends in a slaughter this unit wins instead. Only playable if one of your units was destroyed in this command.</p>',
 		releases: {
 			PW: 142
@@ -23760,6 +23981,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>This unit may play non-spell WarCry cards as combat tactics.</p>',
 		releases: {
 			PW: 143
@@ -23774,6 +23996,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: While in combat, when this unit gets a <b>Ranged Attack</b> bonus, this unit gets a strength bonus equal to the <b>Ranged Attack</b> bonus.</p><p><b>Combat Tactic</b>: This unit gets +1 leadership.</p>',
 		releases: {
 			PW: 144
@@ -23788,6 +24011,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Spell Reaction</b> Destroy this item (1): When your enemy plays a spell card or ability, negate its effects.</p>',
 		releases: {
 			PW: 145
@@ -23804,6 +24028,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: If you have fewer cards in your hand than your opponent, draw 1 card.</p>',
 		releases: {
 			PW: 146
@@ -23821,6 +24046,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may block flyers.</p>',
 		releases: {
 			PW: 147
@@ -23838,6 +24064,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b> Remove this unit from the game: After a Grand Alliance war machine is destroyed you may put that war machine into play as your unit until the end of the battle.</p>',
 		releases: {
 			PW: 148
@@ -23855,6 +24082,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p><b>Wizard</b>: 1</p><p><b>Spell Combat Tactic</b> (0): This unit gets +3 strength and +3 leadership. Only playable if this unit has destroyed another unit in combat this battle.</p>',
 		releases: {
 			PW: 149
@@ -23872,6 +24100,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may not be committed with ranged attacks.</p><p><b>Support WarCry</b>: If your unit in the combat has a lower gold cost than this unit, replace your unit in combat with this unit. The loser of this combat is routed. Not playable during a ranged attack.</p>',
 		releases: {
 			PW: 150
@@ -23889,6 +24118,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Faith</b>:1</p><p><b>Victory</b>:-X. X equals the number of action cards attached to this unit.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Attach the top card of your action deck to this unit. Only playable while attacking.</p>',
 		releases: {
 			PW: 151
@@ -23906,6 +24136,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may block cavalry.</p><p><b>Combat Tactic</b>: This unit gets +X leadership. X equals the number of cavalry units in your reserves.</p>',
 		releases: {
 			PW: 152
@@ -23923,6 +24154,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>Rection: After this unit loses a combat, if the combat was lost by 3 or less, this unit is not destroyed and a new combat between this and the enemy unit begins (before rout check is made for the last combat). Only playable once per battle.</p>',
 		releases: {
 			PW: 153
@@ -23940,6 +24172,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>Any WarCry action card played by this unit has its tactic point cost reduced by 2 (minimum 0).</p>',
 		releases: {
 			PW: 154
@@ -23957,6 +24190,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Scout</b>: 4</p><p><b>Reaction</b>: After set-up, if you are the only player with this card in play, you draw 1 additional card. After the battle, remove a copy of this card from the game (either from play, your deck, or discard pile). If you remove this unit from your deck,</p><p>shuffle your deck.</p>',
 		releases: {
 			PW: 155
@@ -23974,6 +24208,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>WarCry</b> Discard 1 card with a die greater than the enemy unit's gold cost: This unit gets a strength bonus equal to the discarded card's die.</p>",
 		releases: {
 			PW: 156
@@ -23991,6 +24226,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Ranged Attack</b>: 8</p><p><b>Command</b>: Move this unit to or from your battle line. You may declare a ranged attack with this unit.</p><p><b>Reaction</b>: When your enemy declares an attack against this unit or this unit blocks an enemy attack, this combat becomes a ranged attack with this unit as the attacker.</p>',
 		releases: {
 			PW: 157
@@ -24008,6 +24244,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Support Tactic</b>: Your Dogs of War unit gets +2 tactic points and "<b>Terror</b>: 2". Only playable in a Hordes of Darkness army.</p><p><b>Support Tactic</b>: Your Dogs of War unit gets +2 strength and "<b>Faith</b>: 2". Only playable in a Grand Alliance army.</p>',
 		releases: {
 			PW: 158
@@ -24025,6 +24262,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b> Discard 1 card: This card gets +X <b>Ranged Attack</b>. X equals the die on the discarded card.</p><p><b>Reaction</b>: After this unit commits a unit with a ranged attack, if this unit passes a leadership test this unit does not commit as a result of the combat.</p>',
 		releases: {
 			PW: 159
@@ -24040,6 +24278,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Until the next command, all units with "<b>Faith</b>" have their "<b>Faith</b>" level reduced to 0.</p>',
 		releases: {
 			PW: 160
@@ -24054,6 +24293,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: When a non-ranged attack is declared against one of your units with ranged attack, immediately resolve a ranged attack between the two units with your unit sa the attacker. You may not play tactics during this combat.</p><p>Continue with the original attack after this effect has resolved.</p>',
 		releases: {
 			PW: 161
@@ -24069,6 +24309,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>WarCry</b>: Choose a unit in this combat. That unit's strength is reduced to 0. That unit gains a tactic point bonus equal to the strength lost and it's controller draws a card for every 2 points of strength lost. Not playable during a ranged attack.</p>",
 		releases: {
 			PW: 162
@@ -24084,6 +24325,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: The enemy unit has it\'s "<b>Faith</b>" level reduced by X. X equals this unit\'s "<b>Terror</b>" level minus 2 (minimum 0).</p>',
 		releases: {
 			PW: 163
@@ -24099,6 +24341,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p>This card may be played before the attacker's first combat tactic is played.</p><p><b>WarCry</b>: Play a combat tactic costing X tactic points or less without paying the card's tactic point cost. X equals this unit's \"<b>Scout</b>\" level. Only playable while defending.</p>",
 		releases: {
 			PW: 164
@@ -26129,6 +26372,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Ranged Attack</b>: X. X equals 3D6. If you roll duplicates or triplicates of a number for this roll, this unit is destroyed. Roll before you draw a card for this combat.</p><p><b>Reaction</b>: If the roll used to determine this unit's <b>Ranged Attack</b> totals 13, destroy the enemy unit. This unit stays ready and this command ends.</p>",
 		releases: {
 			VT: 1
@@ -26147,6 +26391,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may not attack until one of your other units has declared an attack.</p><p><b>WarCry</b>: This unit gets +1 strength and your enemy discards 1 card.</p><p><b>Combat Tactic</b>: This attacking unit gets +2 strength.</p>',
 		releases: {
 			VT: 2
@@ -26164,6 +26409,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>If this unit has a Skaven character attached, it gets +2 strength and +1 leadership.</p><p><b>Reaction</b>: Before this unit would be committed by a card effect or a ranged attack, roll. If the roll is greater than 4, destroy one attachment on this unit instead.</p>',
 		releases: {
 			VT: 3
@@ -26181,6 +26427,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: The enemy unit gets -1 strength. If that unit is a Grand Alliance unit, it also gets -1 leadership.</p>',
 		releases: {
 			VT: 4
@@ -26198,6 +26445,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 1</p><p>If this unit has a Skaven character attachment attached, this unit gets +2 strength and +1 leadership.</p>',
 		releases: {
 			VT: 5
@@ -26215,6 +26463,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may not attack. Any ready unit may block an attack on this unit.</p><p><b>Command</b> Commit: If this unit is in your battle line, one of your Skaven units may declare an attack against an enemy unit in the reserves. This attack may not be blocked.</p>',
 		releases: {
 			VT: 6
@@ -26232,6 +26481,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit costs one less gold for each copy of this unit you have in play.</p><p>This unit must be placed in your battle line. If this unit and/or copies of this unit are the only ready units in your battle line your enemy may attack your reserves.</p>',
 		releases: {
 			VT: 7
@@ -26250,6 +26500,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell WarCry</b> (X): This unit gets X+1 strength. You must spend at least 1 spell point to activate this ability.</p><p><b>Spell Support Tactic</b> (X): Your unit gets X+2 leadership. You must spend at least 1 spell point to activate this ability.</p>',
 		releases: {
 			VT: 8
@@ -26268,6 +26519,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After this unit wins a combat as the defender, it rallies if committed and immediately declares an attack on the unit that attacked it. You may use this ability while committed.</p>',
 		releases: {
 			VT: 9
@@ -26282,6 +26534,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Skaven Only</b></p><p><b>Reaction</b>: After your enemy declares a ranged attack against this unit, they must roll. If the roll is less than 5, they must choose a different unit to be the target of the ranged attack if there is another legal target.</p>',
 		releases: {
 			VT: 10
@@ -26297,6 +26550,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Support Tactic</b> Commit this attachment: Your Skaven unit gets +3 tactic point.</p><p><b>Combat Tactic</b> Commit this attachment: This unit gets +2 strength.</p>',
 		releases: {
 			VT: 11
@@ -26313,6 +26567,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Skaven Only</b></p><p><b>Reaction</b>: After the enemy unit plays a WarCry ability or card <i>(including Spell and Support WarCries)</i>, this unit gets +3 strength.</p>',
 		releases: {
 			VT: 12
@@ -26328,6 +26583,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Spell WarCry</b> (1): If you win this combat, attach this card to this unit. This unit may continue to make rout checks and follow-up attacks. This unit gets a -1 strength token at the start of each follow-up after the first.</p><p><b>Reaction</b>: After this card is rolled, if you have more units in the battle line than your enemy, this card's die is considered to be a 5. Only playable if you have units in your reserves and battle line.</p>",
 		releases: {
 			VT: 13
@@ -26343,6 +26599,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Combat Tactic</b>: This unit gets +2 strength and -3 leadership.</p><p><b>Reaction</b>: After this card is rolled as a test or rout check, it's die is considered to be a 7. Either player may use this ability.</p>",
 		releases: {
 			VT: 14
@@ -26358,6 +26615,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: If this unit loses this combat, return it to the battle line ready instead of being destroyed; then your opponent may rally one of his units in the reserves at the end of this combat.</p>',
 		releases: {
 			VT: 15
@@ -26373,6 +26631,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: If you win this combat, attach this card to one of your unique units in the reserves. While this card is in play, your other units gain +1 strength and +1 leadership.</p><p>Destroy this card if the unit it is attached to enters the battlefield or the battle line.</p>',
 		releases: {
 			VT: 16
@@ -26388,6 +26647,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Combat Tactic</b>: The enemy unit gets -1 strength. If this unit's strength is double the enemy unit's strength, this unit gets <b>Terror</b>: 2.</p>",
 		releases: {
 			VT: 17
@@ -26402,6 +26662,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Command',
+		rarity: 'Other',
 		text: "<p><b>Spell Command</b> (3) Choose one enemy unit. That unit must pass a strength test or be destroyed. Roll.<p>2 or less: Your enemy may choose one of your unit's to make a strength test as above. Roll again.</p><p>3-4: The command ends.</p><p>5+: You may choose another enemy unit and it must make a strength test as above. Roll again.</p>",
 		releases: {
 			VT: 18
@@ -26417,6 +26678,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>This strategy is not discarded after a battle.</p><p><b>Spell Reaction</b> (1): After you make a roll reroll.</p>',
 		releases: {
 			VT: 19
@@ -26432,6 +26694,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>WarCry</b>: This unit gets +1 strength for every unit you have in play with a printed gold cost of less than 3.</p><p><b>Reaction</b>: After this card is rolled, it's a die is considered equal to the number of units you have in play with a gold cost of greater than 3.</p>",
 		releases: {
 			VT: 20
@@ -26447,6 +26710,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: "<p><b>Combat Tactic</b>: This unit gets +2 strength. You may destroy any number of attachments on this unit. This unit gets an additional +2 strength for each attachment destroyed. This unit may not follow-up.</p><p><b>Reaction</b>: After this card is rolled, if you do not have any attachments in play, this card's die is considered to be a 4.</p>",
 		releases: {
 			VT: 21
@@ -26464,6 +26728,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Short Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: The enemy unit gets -1 strength. If the enemy unit is a Hordes of Darkness unit, it also gets -1 tactic point.</p>',
 		releases: {
 			VT: 29
@@ -26482,6 +26747,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p>The following abilities may be played while committed.</p><p><b>WarCry</b>: This unit gets <b>Terror</b>: 1</p><p><b>WarCry</b>: This unit gets +1 strength for each terrain card you have in play.</p><p><b>Combat Tactic</b>: If this unit's combat roll is an unmodified 6, this unit wins the combat instead.</p>",
 		releases: {
 			VT: 30
@@ -26499,6 +26765,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may not attack (however it may declare a ranged attack). Ready infantry units may block an attack on this unit.</p><p><b>Short Ranged Attack</b>: 4</p><p><b>Support Tactic</b> Discard 1 card: Your unit gets +2 ranged attack.</p>',
 		releases: {
 			VT: 31
@@ -26517,6 +26784,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 1</p><p><b>Spell Support WarCry</b> (2): Draw 1 card, then place 1 card in your hand on top of your deck.</p>',
 		releases: {
 			VT: 32
@@ -26535,6 +26803,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 2</p><p><b>Reaction</b>: After setup, put a Terrain card into play.</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your other units with ranged attack.</p>',
 		releases: {
 			VT: 33
@@ -26552,6 +26821,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Ranged Attack</b>: 7</p><p><b>Combat Tactic</b> Discard a terrain card: This unit gets +1 strength or +1 leadership. You may use this any number of times per combat.</p>',
 		releases: {
 			VT: 34
@@ -26569,6 +26839,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>At the end of the muster phase, your opponent may put two +1 strength tokens on one of his units.</p>',
 		releases: {
 			VT: 35
@@ -26586,6 +26857,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: this unit gets +2 strength vs. committed units. If this unit loses the combat, destroy this unit.</p>',
 		releases: {
 			VT: 36
@@ -26603,6 +26875,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Reveal the top 5 cards of your action deck. Put any terrain cards revaled into play and discard the rest.</p>',
 		releases: {
 			VT: 37
@@ -26620,6 +26893,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>X equals the number of other <b>Ranged Attack</b> units you have in play</p>',
 		releases: {
 			VT: 38
@@ -26635,6 +26909,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Wood Elf Only</b></p><p><b>WarCry</b>: This unit gets +d6 strength. If this roll is 5 or higher, destroy this unit at the end of the combat.</p>',
 		releases: {
 			VT: 39
@@ -26650,6 +26925,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Wood Elf Only</b></p><p>This unit has <b>Ranged Attack</b>: 4</p><p><b>Command</b>: Once per battle, this unit may make a ranged attack and does not commit after the combat.</p>',
 		releases: {
 			VT: 40
@@ -26664,6 +26940,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b> Discard 1 card: After your Wood Elf unit wins a ranged attack, destroy the enemy unit.</p>',
 		releases: {
 			VT: 41
@@ -26678,6 +26955,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After your Wood Elf unit gets a ranged attack bonus, raise your strength by double that amount. Only playable while your Wood Elf unit is losing a combat.</p>',
 		releases: {
 			VT: 42
@@ -26692,6 +26970,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Spell Reaction</b> Remove this card from the game (2): After your unit destroys a unit during a <b>Ranged Attack</b>, rally one of your units.</p>',
 		releases: {
 			VT: 43
@@ -26706,6 +26985,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Command</b>: Play 2 strategy cards. If this is your first command play 3 strategy cards.</p>',
 		releases: {
 			VT: 44
@@ -26721,6 +27001,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit with a <b>Ranged Attack</b> gets +2 strength.</p>',
 		releases: {
 			VT: 45
@@ -26736,6 +27017,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength for each terrain card you have in play.</p>',
 		releases: {
 			VT: 46
@@ -26750,6 +27032,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After you pass as a command, draw 1 card. Only playable while you have a ready ranged attack unit.</p>',
 		releases: {
 			VT: 47
@@ -26765,6 +27048,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Your unit gets +1 ranged attack for every unit you have in play. The enemy unit gets +1 strength for every unit they have in play.</p>',
 		releases: {
 			VT: 48
@@ -26779,6 +27063,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Spell Support Tactic</b> (2): Your attacking unit gets +2 strength or +2 ranged attack.</p>',
 		releases: {
 			VT: 49
@@ -34788,6 +35073,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b>: After both players have passed ending the battle, destroy any enemy unit with a gold cost equal to or less than this unit's printed gold cost. Put X -1 strength tokens on this unit. X equals the opposing unit's strength.</p><p>This reaction is playable while committed.</p>",
 		releases: {
 			PA: 1
@@ -34802,6 +35088,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: Remove this card from the game: After one of your units is destroyed in combat, put a number of -1 strength tokens on the enemy unit equal to the printed strength of your unit plus any bonuses or penalties from attached cards and tokens.</p>',
 		releases: {
 			PA: 2
@@ -34816,6 +35103,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>While there are 1 or more copies of this card in play, before each combat, each player discards their hand and draws a new hand of 5 cards.</p>',
 		releases: {
 			PA: 3
@@ -34830,6 +35118,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>When you play this card choose strength, tactic points or leadership.</p><p><b>Spell Command</b> (6): If you and your enemy have the same total of the chosen stat in play, you immediately win the battle.</p>',
 		releases: {
 			PA: 4
@@ -34848,6 +35137,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: Rout the enemy unit if you win this combat (no roll necessary). Only playable while the opposing unit is infantry.</p>',
 		releases: {
 			PA: 5
@@ -34865,6 +35155,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>: 2</p><p><b>Spell Combat Tactic</b> (3): Commit the enemy unit unless it passes a tactic point test.</p>',
 		releases: {
 			PA: 6
@@ -34883,6 +35174,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Your enemy discards 2 cards.</p><p><b>Combat Tactic</b> Discard 1 card: This unit gets +X strength. X equals the die on the card discarded for this ability.</p>',
 		releases: {
 			PA: 7
@@ -34900,6 +35192,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>WarCry</b>: This unit gets +X strength. X equals the number of cards in your hand in excess of the number of cards in your enemy's hand.</p>",
 		releases: {
 			PA: 8
@@ -34918,6 +35211,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Victory</b>: -5</p><p><b>Support WarCry</b>: If your Orc unit wins this combat and it passes a leadership test, it may attempt to rout the enemy unit.</p>',
 		releases: {
 			PA: 9
@@ -34935,6 +35229,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Wizard</b>:3</p><p><b>Spell WarCry</b> (1): Play an evil spell combat tactic card (including WarCries) from your discard pile as though it were in your hand, paying no costs.</p>',
 		releases: {
 			PA: 10
@@ -34952,6 +35247,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After your enemy discards a card this unit gets +1 strength.</p>',
 		releases: {
 			PA: 11
@@ -34969,6 +35265,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After this unit gets a tactic point bonus, the enemy unit gets -1 leadership.</p>',
 		releases: {
 			PA: 12
@@ -34984,6 +35281,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Your unit gets +6 strength. Only playabe while your unit has a higher printed strength and tactic points than the enemy unit.</p>',
 		releases: {
 			PA: 13
@@ -35001,6 +35299,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Victory</b>:-4</p><p><b>Combat Tactic</b> Discard 2 cards: If this unit wins this combat, rout the enemy unit (no roll necessary). Only playable once per command.</p>',
 		releases: {
 			PA: 14
@@ -35015,6 +35314,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Spell Command</b> (2): Destroy an enemy unit. Only playable while your enemy has at least double the number of spell points they started the battle with.</p>',
 		releases: {
 			PA: 15
@@ -35029,6 +35329,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Spell Command</b> (0): One of your <b>Wizard</b> units takes a leadership test. If the test is passed, any one player gets +1 spell point. You must repeat this process until you fail a leadership test or you shuffle your action deck. If you shuffle your action deck during this command, your enemy may destroy any one of your units.</p>',
 		releases: {
 			PA: 16
@@ -35043,6 +35344,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>When this strategy enters play, destroy all other versions of this card in play.</p><p><b>Reaction</b>: After an enemy unit takes a test (whether it passes or fails), place a Doom token on this strategy.</p><p><b>Support Tactic</b> Remove X Doom tokens from this strategy: Your unit gets a strength bonus equal to X.</p>',
 		releases: {
 			PA: 17
@@ -35057,6 +35359,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After you rout a unit, draw two cards.</p>',
 		releases: {
 			PA: 18
@@ -35071,6 +35374,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>During follow-up attacks, the attacking unit gets -1 strength and the defending unit gets +1 strength.</p>',
 		releases: {
 			PA: 19
@@ -35085,6 +35389,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Spell Reaction</b> (0): After one of your attachments gives you a non-permanent bonus (strength, tactic point, etc.), double that bonus. That bonus may not be modified again.</p><p><b>Spell Reaction</b> (0): After one of your attachments is destroyed during a combat, return that attachment to the unit it was attached to.</p>',
 		releases: {
 			PA: 20
@@ -35100,6 +35405,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: This unit gets +2 strength. If this unit wins the combat, draw 2 cards.</p>',
 		releases: {
 			PA: 21
@@ -35115,6 +35421,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +2 strength. Instead of placing this card into your discard pile after you play it, you may discard 1 card from your hand to return this card to your hand.</p>',
 		releases: {
 			PA: 22
@@ -35129,6 +35436,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>This strategy is not discarded after the battle it entered play.</p><p>Units may not be committed with card effects by enemy players.</p>',
 		releases: {
 			PA: 23
@@ -35143,6 +35451,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Command</b>: Choose 5 cards from either your army or action discard pile and then put them on top of their respective decks in any order.</p>',
 		releases: {
 			PA: 24
@@ -35157,6 +35466,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b>: After one of your units has been destroyed in combat, put 1 poison token on the enemy unit and return this card to your hand (you may not react to the same trigger again with any copy of this card).</p><p><b>Reaction</b>: After one of your units enters combat against a unit with at least X poison tokens, rout and destroy that unit. X equals the enemy unit's printed strength plus 1.</p>",
 		releases: {
 			PA: 25
@@ -35171,6 +35481,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b>: After victory is determined for the current battle, target. one of your enemy's units. That unit must be carried over to the next battle or the chosen card may not be carried over (your choice).</p>",
 		releases: {
 			PA: 26
@@ -35186,6 +35497,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: The enemy unit may only play a number of tactics equal to its leadership minus 1. ("<b>Terror</b>" does not affect this)</p>',
 		releases: {
 			PA: 27
@@ -35200,6 +35512,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After victory is determined for the current battle, attach this card to one of your units. While attached, this unit gets +1 strength and +1 tactic point.</p>',
 		releases: {
 			PA: 28
@@ -35214,6 +35527,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: "<p><b>Reaction</b>: After one of your units is committed by an enemy's card effect, rally the committed unit.</p><p><b>Reaction</b>: After an enemy unit gets a strength bonus of 4 or more during a combat, reduce that bonus to 3.</p>",
 		releases: {
 			PA: 29
@@ -35228,6 +35542,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After your enemy plays a spell card or ability, commit any unit unless it passes a leadership test.</p>',
 		releases: {
 			PA: 30
@@ -35242,6 +35557,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Reaction',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After your defending unit in a follow-up attack wins the combat, your unit is not committed.</p>',
 		releases: {
 			PA: 31
@@ -35257,6 +35573,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This combat ends. Your unit wins this combat and no combat roll is made by either player. The enemy unit is routed (no roll necessary). If this card is played for free or for a reduced cost, your unit loses and is routed instead (no roll necessary).</p>',
 		releases: {
 			PA: 32
@@ -35272,6 +35589,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Tactic',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: Your unit gets +4 strength. Only playable while you are attacking and only if this strength bonus gives you a higher total strength than the enemy unit. If you wn this combat rout the opposing unit automatically (no roll necessary).</p>',
 		releases: {
 			PA: 33
@@ -35286,6 +35604,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: If this combat ends in a slaughter, this unit wins instead. Only playable while attacking.</p><p><b>Combat Tactic</b>: This unit gets +3 strength and may not follow-up. Only playable while defending.</p>',
 		releases: {
 			PA: 34
@@ -35300,6 +35619,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength or +1 tactic point. This ability may be played twice per combat.</p>',
 		releases: {
 			PA: 35
@@ -35315,6 +35635,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p><b>Reaction</b>: After any player musters a unit with a lower gold cost than the unit in play with the highest cost, they discard one card. Either player may play this ability.</p>',
 		releases: {
 			PA: 36
@@ -35332,6 +35653,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p>While you have more units in your reserve than your enemy, this unit attacks as a flyer.</p><p><b>Combat Tactic</b>: Move any unit from the reserves to its controller's battle line.</p>",
 		releases: {
 			PA: 37
@@ -35350,6 +35672,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p><b>Ranged Attack</b>: 4</p><p><b>Combat Tactic</b>: Destroy an attachment. This unit gets +X ranged attack. X equals the destroyed attachment's gold cost. Only playable during a ranged attack.</p>",
 		releases: {
 			PA: 38
@@ -35368,6 +35691,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>While ready, this unit gets "<b>Victory</b>: +1" for each other Dwarf unit with a gold cost of 4 or more you have in play.</p><p><b>Support WarCry</b>: Any unit gets +X strength. X equals this unit\'s "<b>Victory</b>" level.</p>',
 		releases: {
 			PA: 39
@@ -35386,6 +35710,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Veteran</b>: Reiksmarshall Kurt Helborg</p><p>Your cavalry units may play WarCry cards as if they were combat tactics (even while this unit is committed).</p><p><b>Combat Tactic</b>: If this unit passes a tactic point test, draw 1 card.</p>',
 		releases: {
 			PA: 40
@@ -35403,6 +35728,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p>When you muster this unit, reveal your hand. If you have more unique cards than non-unique cards, this unit's gold cost is reduced by 2.</p><p><b>Combat Tactic</b>: The Tactic Phase ends. Only playable while your unit's strength is at least double the enemy unit's strength.</p>",
 		releases: {
 			PA: 41
@@ -35421,6 +35747,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p>This unit may not block.</p><p><b>WarCry</b>: Commit the enemy unit unless it passes a leadership test.</p>',
 		releases: {
 			PA: 42
@@ -35439,6 +35766,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: "<p>While this unit is ready, all of your High Elf units get +1 leadership.</p><p><b>Combat Tactic</b>: This unit gets +3 strength. Only playable if your enemy's unit played a WarCry this combat.</p>",
 		releases: {
 			PA: 43
@@ -35456,6 +35784,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'The Grand Alliance',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>WarCry</b>: This unit gets +X strength. X equals one of your other units "<b>Victory</b>" level.</p>',
 		releases: {
 			PA: 44
@@ -35470,6 +35799,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Attachment',
+		rarity: 'Other',
 		text: '<p>You may have any number of copies of this card in your deck.</p><p><b>Combat Tactic</b> Destroy any copy of this card attached to one of your units: This unit gets +2 strength. You may play this ability any number of times per combat.</p>',
 		releases: {
 			PA: 45
@@ -35488,6 +35818,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Terror</b>: 3</p><p><b>Combat Tactic</b>s played by this unit have their tactic point cost reduced to 0.</p>',
 		releases: {
 			PA: 46
@@ -35505,6 +35836,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength and "<b>Faith</b>:2". Only playable while you are playing the Grand Alliance.</p><p><b>Combat Tactic</b>: This unit gets +2 strength and "<b>Terror</b>:1". Only playable while you are playing the Hordes of Darkness.</p>',
 		releases: {
 			PA: 47
@@ -35519,6 +35851,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>You may put this card into play as a combat tactic for 2 tactic points.</p><p><b>Support Tactic</b>: You get spell points equal to the tactic points of your unit in combat. Commit that unit unless it passes a leadership test.</p>',
 		releases: {
 			PA: 48
@@ -35536,6 +35869,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Unit',
+		rarity: 'Other',
 		text: '<p><b>Scout</b>: 3</p><p><b>Reaction</b>: After your enemy plays an ability that destroys one of your strategy cards, negate its effects.</p>',
 		releases: {
 			PA: 49
@@ -35550,6 +35884,7 @@ export const cards: Card[] = [
 		maxCopies: 3,
 		faction: 'Neutral',
 		type: 'Command',
+		rarity: 'Other',
 		text: '<p>If you have won a battle this game, your units get +1 strength.</p><p><b>Command</b> Discard your hand: Destroy this card. Your enemy may play this ability.</p>',
 		releases: {
 			PA: 50
