@@ -83,16 +83,4 @@
 			restrictions may lead to card interactions that break the game.
 		</p>
 	</div>
-
-	<h2 class="mb-4 text-xl font-bold" id="privacy-policy">Privacy Policy</h2>
-	<div class="space-y-4 text-gray-300">
-		<p>
-			WarCryDB can access your deck data if you choose to save or load decks to/from Google Drive.
-			This data is not shared with anyone.
-		</p>
-	</div>
-	<h2 class="mb-4 text-xl font-bold" id="terms-of-service">Terms of Service</h2>
-	<div class="space-y-4 text-gray-300">
-		<p>There are no obligations for users nor the developer.</p>
-	</div>
 </section>

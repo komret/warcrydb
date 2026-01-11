@@ -10,7 +10,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			routes: {
-				include: ['/', '/faq', '/errata', '/about', '/shared/*']
+				include: ['/', '/faq', '/errata', '/about', '/privacy-policy', '/shared/*']
 			}
 		})
 	}
