@@ -16,12 +16,7 @@
 	<div class="text-sm text-gray-400">
 		{isFiltering ? 'Loading...' : `${resultsCount} result${resultsCount !== 1 ? 's' : ''}`}
 	</div>
-	<Button
-		variant="danger"
-		onclick={onReset}
-		class="flex items-center gap-2 {hasActiveFilters ? '' : 'invisible'}"
-		title="Reset filters"
-	>
+	<Button variant="danger" onclick={onReset} disabled={!hasActiveFilters} title="Reset filters">
 		{@html resetIcon} <span>Reset</span>
 	</Button>
 </div>

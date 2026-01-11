@@ -42,11 +42,11 @@
 	let variantClasses = $derived.by(() => {
 		switch (variant) {
 			case 'primary':
-				return 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500';
+				return 'bg-blue-600 text-white hover:enabled:bg-blue-700 focus:ring-blue-500';
 			case 'secondary':
-				return 'bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500';
+				return 'bg-gray-600 text-white hover:enabled:bg-gray-700 focus:ring-gray-500';
 			case 'danger':
-				return 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-600';
+				return 'bg-red-500 text-white hover:enabled:bg-red-600 focus:ring-red-600';
 		}
 	});
 
