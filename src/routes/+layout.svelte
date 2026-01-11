@@ -4,6 +4,7 @@
 	import { page } from '$app/state';
 	import menuIcon from '$lib/assets/icons/menu.svg?raw';
 	import closeIcon from '$lib/assets/icons/close.svg?raw';
+	import { clickOutside } from '$lib/utils/clickOutside';
 
 	let { children } = $props();
 
@@ -66,6 +67,7 @@
 			<!-- Navigation Menu -->
 			{#if showMenu}
 				<nav
+					use:clickOutside={() => (showMenu = false)}
 					class="absolute top-20 right-0 z-50 min-w-[200px] rounded-lg border border-gray-700 bg-gray-950 p-4 shadow-lg"
 				>
 					<div class="flex flex-col gap-2">
@@ -105,11 +107,6 @@
 				</nav>
 			{/if}
 		</header>
-
-		<!-- Menu Backdrop -->
-		{#if showMenu}
-			<div class="fixed inset-0 z-40" onclick={() => (showMenu = false)} aria-hidden="true"></div>
-		{/if}
 
 		{@render children()}
 	</div>

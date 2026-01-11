@@ -1,12 +1,14 @@
 <script lang="ts">
 	import Toast from './atoms/Toast.svelte';
 	import Button from './atoms/Button.svelte';
+	import DropdownButton from './atoms/DropdownButton.svelte';
 	import DeckWarningModal from './DeckWarningModal.svelte';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
 	import saveIcon from '../assets/icons/save.svg?raw';
 	import loadIcon from '../assets/icons/load.svg?raw';
 	import shareIcon from '../assets/icons/share.svg?raw';
 	import resetIcon from '../assets/icons/reset.svg?raw';
+	import { browser } from '$app/environment';
 
 	type DeckData = {
 		deck: [string, number][];
@@ -15,7 +17,7 @@
 	};
 
 	type Props = {
-		onClearDeck?: () => void;
+		onClearDeck: () => void;
 		hasCards: boolean;
 		deck: Map<string, number>;
 		sideboard: Map<string, number>;
@@ -47,6 +49,24 @@
 
 	// Import warning modal state
 	let showImportWarning = $state(false);
+
+	// Screen size detection
+	let isSmallScreen = $state<boolean | undefined>(undefined);
+
+	$effect(() => {
+		if (!browser) return;
+
+		function checkScreenSize() {
+			isSmallScreen = window.innerWidth < 768;
+		}
+
+		checkScreenSize();
+		window.addEventListener('resize', checkScreenSize);
+
+		return () => {
+			window.removeEventListener('resize', checkScreenSize);
+		};
+	});
 
 	function showToastNotification(message: string) {
 		toastMessage = message;
@@ -215,7 +235,7 @@
 	}
 </script>
 
-<div class="mt-2 flex flex-col justify-between gap-2 lg:flex-row">
+<div class="mt-2 flex flex-row items-center justify-between gap-2">
 	{#if faction && format}
 		<div class="flex items-center">
 			<span class="text-sm font-medium text-gray-300">
@@ -229,37 +249,67 @@
 			</span>
 		</div>
 	{/if}
-	<div class="flex items-end justify-end gap-2">
-		{#if readOnly}
-			<Button variant="primary" onclick={onOpenInDeckBuilder}>
-				<span>Open in Deck Builder</span>
+	{#if readOnly}
+		<Button variant="primary" onclick={onOpenInDeckBuilder}>
+			<span>Open in Deck Builder</span>
+		</Button>
+	{:else if isSmallScreen === true}
+		<DropdownButton
+			label="Actions"
+			variant="primary"
+			iconOnly={true}
+			items={[
+				{
+					label: 'Export',
+					icon: saveIcon,
+					onclick: exportDeckToFile,
+					disabled: !hasCards
+				},
+				{
+					label: 'Import',
+					icon: loadIcon,
+					onclick: importDeckFromFile
+				},
+				{
+					label: 'Share',
+					icon: shareIcon,
+					onclick: shareDeck,
+					disabled: !hasCards
+				},
+				{
+					label: 'Reset',
+					icon: resetIcon,
+					onclick: onClearDeck,
+					disabled: !hasCards,
+					variant: 'danger'
+				}
+			]}
+		/>
+	{:else if isSmallScreen === false}
+		<div class="flex gap-2">
+			<Button
+				variant="secondary"
+				onclick={exportDeckToFile}
+				disabled={!hasCards}
+				title="Export deck to JSON file"
+			>
+				{@html saveIcon}
+				<span>Export</span>
 			</Button>
-		{:else}
-			<div class="flex gap-2">
-				<Button
-					variant="secondary"
-					onclick={exportDeckToFile}
-					disabled={!hasCards}
-					title="Export deck to JSON file"
-				>
-					{@html saveIcon}
-					<span>Export</span>
-				</Button>
-				<Button variant="secondary" onclick={importDeckFromFile} title="Import deck from JSON file">
-					{@html loadIcon}
-					<span>Import</span>
-				</Button>
-				<Button variant="secondary" onclick={shareDeck} disabled={!hasCards} title="Copy deck URL">
-					{@html shareIcon}
-					<span>Share</span>
-				</Button>
-				<Button variant="danger" onclick={onClearDeck} disabled={!hasCards} title="Reset deck">
-					{@html resetIcon}
-					<span>Reset</span>
-				</Button>
-			</div>
-		{/if}
-	</div>
+			<Button variant="secondary" onclick={importDeckFromFile} title="Import deck from JSON file">
+				{@html loadIcon}
+				<span>Import</span>
+			</Button>
+			<Button variant="secondary" onclick={shareDeck} disabled={!hasCards} title="Copy deck URL">
+				{@html shareIcon}
+				<span>Share</span>
+			</Button>
+			<Button variant="danger" onclick={onClearDeck} disabled={!hasCards} title="Reset deck">
+				{@html resetIcon}
+				<span>Reset</span>
+			</Button>
+		</div>
+	{/if}
 </div>
 
 <!-- Hidden file input for import -->
