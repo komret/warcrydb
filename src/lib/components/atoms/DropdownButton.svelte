@@ -57,12 +57,11 @@
 			event.stopPropagation();
 			showDropdown = !showDropdown;
 		}}
-		class="flex items-center gap-2"
 	>
 		{@render children()}
 		{@html chevronDownIcon.replace(
 			'<svg',
-			`<svg class="ml-1 h-4 w-4 transition-transform ${showDropdown ? 'rotate-180' : ''}"`
+			`<svg class="h-4 w-4 transition-transform ${showDropdown ? 'rotate-180' : ''}"`
 		)}
 	</Button>
 	{#if showDropdown}

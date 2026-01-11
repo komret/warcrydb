@@ -664,23 +664,11 @@
 				{/if}
 			{/if}
 			<div class="flex gap-2">
-				<Button
-					variant="secondary"
-					onclick={shareDeck}
-					disabled={!hasCards}
-					class="flex items-center gap-2"
-					title="Copy deck URL"
-				>
+				<Button variant="secondary" onclick={shareDeck} disabled={!hasCards} title="Copy deck URL">
 					{@html shareIcon}
 					<span>Share</span>
 				</Button>
-				<Button
-					variant="danger"
-					onclick={onClearDeck}
-					disabled={!hasCards}
-					class="flex items-center gap-2"
-					title="Reset deck"
-				>
+				<Button variant="danger" onclick={onClearDeck} disabled={!hasCards} title="Reset deck">
 					{@html resetIcon}
 					<span>Reset</span>
 				</Button>

@@ -141,6 +141,7 @@
 	// Deck state
 	let deck = $state(new Map<string, number>());
 	let sideboard = $state(new Map<string, number>());
+	let isDeckLoaded = $state(false);
 
 	// Filtered results (updated after debounce)
 	let filteredCards = $state<typeof cards>([]);
@@ -210,6 +211,8 @@
 				}
 			}
 		}
+
+		isDeckLoaded = true;
 	});
 
 	$effect(() => {
@@ -654,17 +657,23 @@
 	}
 </script>
 
-<DeckBuilder
-	{deck}
-	{sideboard}
-	{cards}
-	onRemoveCard={removeFromDeck}
-	onAddCard={addToDeck}
-	onMoveToSideboard={moveToSideboard}
-	onMoveFromSideboard={moveFromSideboard}
-	onClearDeck={clearDeck}
-	onLoadDeck={loadDeck}
-/>
+{#if isDeckLoaded}
+	<DeckBuilder
+		{deck}
+		{sideboard}
+		{cards}
+		onRemoveCard={removeFromDeck}
+		onAddCard={addToDeck}
+		onMoveToSideboard={moveToSideboard}
+		onMoveFromSideboard={moveFromSideboard}
+		onClearDeck={clearDeck}
+		onLoadDeck={loadDeck}
+	/>
+{:else}
+	<div class="flex h-16 items-center justify-center">
+		<div class="text-gray-400">Loading...</div>
+	</div>
+{/if}
 
 <Box>
 	<!-- Search -->
