@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Toast from './atoms/Toast.svelte';
 	import Button from './atoms/Button.svelte';
+	import DeckWarningModal from './DeckWarningModal.svelte';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
 	import saveIcon from '../assets/icons/save.svg?raw';
 	import loadIcon from '../assets/icons/load.svg?raw';
@@ -43,6 +44,9 @@
 
 	// File input reference for import
 	let fileInputRef: HTMLInputElement | null = null;
+
+	// Import warning modal state
+	let showImportWarning = $state(false);
 
 	function showToastNotification(message: string) {
 		toastMessage = message;
@@ -150,8 +154,17 @@
 
 	// Import deck from JSON file
 	function importDeckFromFile() {
-		if (fileInputRef) {
-			fileInputRef.click();
+		// Check if there's an existing deck
+		const hasExistingDeck = deck.size > 0 || sideboard.size > 0;
+
+		if (hasExistingDeck) {
+			// Show warning before opening file picker
+			showImportWarning = true;
+		} else {
+			// No existing deck, open file picker directly
+			if (fileInputRef) {
+				fileInputRef.click();
+			}
 		}
 	}
 
@@ -187,6 +200,18 @@
 		reader.readAsText(file);
 		// Reset input so the same file can be imported again
 		target.value = '';
+	}
+
+	function proceedWithImport() {
+		showImportWarning = false;
+		// Open file picker after user confirms
+		if (fileInputRef) {
+			fileInputRef.click();
+		}
+	}
+
+	function cancelImport() {
+		showImportWarning = false;
 	}
 </script>
 
@@ -247,3 +272,9 @@
 />
 
 <Toast message={toastMessage} show={showToast} />
+
+<DeckWarningModal
+	show={showImportWarning}
+	onCancel={cancelImport}
+	onProceed={() => proceedWithImport()}
+/>

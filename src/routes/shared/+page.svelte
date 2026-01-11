@@ -3,8 +3,7 @@
 	import { page } from '$app/state';
 	import { cards } from '$lib/data/cards';
 	import DeckBuilder from '$lib/components/DeckBuilder.svelte';
-	import Modal from '$lib/components/atoms/Modal.svelte';
-	import Button from '$lib/components/atoms/Button.svelte';
+	import DeckWarningModal from '$lib/components/DeckWarningModal.svelte';
 	import { onMount } from 'svelte';
 
 	let deck = $state(new Map<string, number>());
@@ -94,13 +93,8 @@
 
 <DeckBuilder {deck} {sideboard} {cards} readOnly={true} onOpenInDeckBuilder={openInDeckBuilder} />
 
-<Modal show={showWarningDialog} title="Warning" onClose={cancelOpening}>
-	{#snippet children()}
-		<p class="text-gray-300">This action will override any unsaved deck in the Deck Builder.</p>
-	{/snippet}
-
-	{#snippet actions()}
-		<Button variant="secondary" onclick={cancelOpening}>Go back</Button>
-		<Button variant="primary" onclick={proceedWithOpening}>Proceed</Button>
-	{/snippet}
-</Modal>
+<DeckWarningModal
+	show={showWarningDialog}
+	onCancel={cancelOpening}
+	onProceed={proceedWithOpening}
+/>
