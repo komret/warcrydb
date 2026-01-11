@@ -91,4 +91,8 @@
 			This data is not shared with anyone.
 		</p>
 	</div>
+	<h2 class="mb-4 text-xl font-bold" id="terms-of-service">Terms of Service</h2>
+	<div class="space-y-4 text-gray-300">
+		<p>There are no obligations for users nor the developer.</p>
+	</div>
 </section>
