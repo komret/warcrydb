@@ -260,15 +260,15 @@
 			iconOnly={true}
 			items={[
 				{
+					label: 'Import',
+					icon: loadIcon,
+					onclick: importDeckFromFile
+				},
+				{
 					label: 'Export',
 					icon: saveIcon,
 					onclick: exportDeckToFile,
 					disabled: !hasCards
-				},
-				{
-					label: 'Import',
-					icon: loadIcon,
-					onclick: importDeckFromFile
 				},
 				{
 					label: 'Share',
@@ -287,18 +287,18 @@
 		/>
 	{:else if isSmallScreen === false}
 		<div class="flex gap-2">
+			<Button variant="secondary" onclick={importDeckFromFile} title="Import from file">
+				{@html loadIcon}
+				<span>Import</span>
+			</Button>
 			<Button
 				variant="secondary"
 				onclick={exportDeckToFile}
 				disabled={!hasCards}
-				title="Export deck to JSON file"
+				title="Export to file"
 			>
 				{@html saveIcon}
 				<span>Export</span>
-			</Button>
-			<Button variant="secondary" onclick={importDeckFromFile} title="Import deck from JSON file">
-				{@html loadIcon}
-				<span>Import</span>
 			</Button>
 			<Button variant="secondary" onclick={shareDeck} disabled={!hasCards} title="Copy deck URL">
 				{@html shareIcon}
