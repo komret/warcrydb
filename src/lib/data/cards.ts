@@ -3420,7 +3420,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>Short Ranged Attack</b>: 8</p><p>SpellWarCry (1): Destroy 1 enemy character attachment in this combat.</p>',
+		text: '<p><b>Short Ranged Attack</b>: 8</p><p>Spell WarCry (1): Destroy 1 enemy character attachment in this combat.</p>',
 		releases: {
 			WM: 4,
 			WA: 19
