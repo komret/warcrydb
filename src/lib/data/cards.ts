@@ -21842,7 +21842,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
 		rarity: 'Other',
-		text: '<p><b>Spell WarCry</b> (2): Commit the enemy unit if it has a strength less than your spell points. Only usable while you have a ready Dark Elf wizard.</p>',
+		text: '<p><b>Spell WarCry</b> (2): Commit the enemy unit if it has strength less than your spell points. Only usable while you have a ready Dark Elf wizard.</p>',
 		releases: {
 			PW: 17
 		},
