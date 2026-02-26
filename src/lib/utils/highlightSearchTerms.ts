@@ -40,17 +40,18 @@ export function highlightSearchTerms(html: string, query: string): string {
 	function processTextNodes(node: Node): void {
 		if (node.nodeType === Node.TEXT_NODE) {
 			const textContent = node.textContent || '';
-			let highlightedText = textContent;
 
-			// Apply highlighting to each search term
-			searchTerms.forEach((term) => {
-				const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-				const regex = new RegExp(`(${escapedTerm})`, 'gi');
-				highlightedText = highlightedText.replace(
-					regex,
-					'<mark class="bg-yellow-300 text-gray-900">$1</mark>'
-				);
-			});
+			// Create a single regex pattern that matches all search terms
+			// This ensures we process all terms in one pass, avoiding matching against
+			// HTML markup introduced by previous replacements
+			const escapedTerms = searchTerms.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+			const combinedPattern = escapedTerms.join('|');
+			const regex = new RegExp(`(${combinedPattern})`, 'gi');
+
+			const highlightedText = textContent.replace(
+				regex,
+				'<mark class="bg-yellow-300 text-gray-900">$1</mark>'
+			);
 
 			// If text was modified, replace the node
 			if (highlightedText !== textContent) {
