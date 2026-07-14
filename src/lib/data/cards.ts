@@ -4756,7 +4756,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Super rare',
-		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +4 strength.Only playable while attacking.</p>',
+		text: '<p><b>Spell Combat Tactic</b> (1): This unit gets +4 strength. Only playable while attacking.</p>',
 		releases: {
 			WM: 84
 		},
@@ -9935,7 +9935,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength.Only playable while you have no cards in your hand.</p>',
+		text: '<p><b>Combat Tactic</b>: This unit gets +2 strength. Only playable while you have no cards in your hand.</p>',
 		releases: {
 			PG: 22
 		},
@@ -10174,7 +10174,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><b>WarCry</b>: This unit gets +3 strength.Only playable while you have at least one Grand Alliance or Hordes Of Darkness unit and at least one neutral unit.</p>',
+		text: '<p><b>WarCry</b>: This unit gets +3 strength. Only playable while you have at least one Grand Alliance or Hordes Of Darkness unit and at least one neutral unit.</p>',
 		releases: {
 			PG: 36,
 			WA: 141
@@ -11632,9 +11632,10 @@ export const cards: Card[] = [
 	},
 	{
 		id: 'CD3',
-		name: 'Grey Seer Thanquol Boneripper',
+		name: 'Grey Seer Thanquol and Boneripper',
 		cost: 6,
 		strength: 3,
+		unique: true,
 		tacticPoints: 7,
 		leadership: 3,
 		keywords: ['Skaven', 'Infantry'],
@@ -11660,7 +11661,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Other',
-		text: '<p><b>WarCry</b>: This defending unit gets +3 strength. If this unit wins, rout the enemy unit.Only playable during a follow-up attack.</p>',
+		text: '<p><b>WarCry</b>: This defending unit gets +3 strength. If this unit wins, rout the enemy unit. Only playable during a follow-up attack.</p>',
 		releases: {
 			CD: 4
 		},
@@ -11671,6 +11672,7 @@ export const cards: Card[] = [
 		name: 'Stikstik Bloodbone',
 		cost: 5,
 		strength: 4,
+		unique: true,
 		tacticPoints: 4,
 		leadership: 3,
 		keywords: ['Skaven', 'Infantry'],
@@ -11725,6 +11727,7 @@ export const cards: Card[] = [
 		name: 'Warlock Skriskrivet',
 		cost: 3,
 		strength: 2,
+		unique: true,
 		tacticPoints: 3,
 		leadership: 2,
 		keywords: ['Skaven', 'Infantry'],
@@ -11743,6 +11746,7 @@ export const cards: Card[] = [
 		id: 'CD9',
 		name: 'Sacred Standard of the Horned Rat',
 		cost: 2,
+		unique: true,
 		keywords: ['Skaven', 'Standard'],
 		maxCopies: 3,
 		faction: 'The Hordes of Darkness',
@@ -22843,7 +22847,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Other',
-		text: '<p><b>Combat Tactic</b>: The defending unit gets +1 strength. Only playable if you have a <b>Wizard</b> in play.</p>',
+		text: '<p><b>Combat Tactic</b>: This defending unit gets +1 strength. Only playable if you have a <b>Wizard</b> in play.</p>',
 		releases: {
 			PW: 75
 		},
