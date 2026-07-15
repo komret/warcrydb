@@ -2,6 +2,7 @@
 	import type { Card } from '$lib/data/cards';
 	import { highlightSearchTerms } from '$lib/utils/highlightSearchTerms';
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import IconButton from './atoms/IconButton.svelte';
 
 	type Props = {
@@ -105,7 +106,7 @@
 						? 'text-gray-900'
 						: 'text-gray-300'}"
 				>
-					{#if typeof card.strength !== undefined}
+					{#if card.strength !== undefined}
 						{card.type === 'Attachment' && typeof card.strength === 'string'
 							? '+'
 							: ''}{card.strength}
@@ -118,7 +119,7 @@
 			<div class="flex flex-col gap-1">
 				<div class="flex flex-wrap justify-center gap-1 text-xs text-gray-300">
 					{#if card.keywords.length > 0}
-						{#each card.keywords as keyword, index}
+						{#each card.keywords as keyword, index (keyword + index)}
 							<span>{keyword}</span>
 							{#if index < card.keywords.length - 1}
 								<span class="flex items-center">•</span>
@@ -210,6 +211,7 @@
 		<div class="flex flex-col justify-between text-sm text-gray-300">
 			<div class="space-y-2">
 				{#if card.text}
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -- card.text is trusted content from the card database, not user input -->
 					{@html highlightedText}
 				{/if}
 			</div>
@@ -226,7 +228,10 @@
 						variant="primary"
 						size="lg"
 						title="Show related FAQ"
-						onClick={() => goto(`/faq?card=${card.id}`)}
+						onClick={() => {
+							// eslint-disable-next-line svelte/no-navigation-without-resolve -- resolve() has no way to attach the `card` query param
+							goto(`${resolve('/faq')}?card=${card.id}`);
+						}}
 					/>
 				{/if}
 
