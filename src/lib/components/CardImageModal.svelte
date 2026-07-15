@@ -22,6 +22,8 @@
 	// Mapping of missing WA card images to their alternative filenames from other sets
 	// Remove items from this list as images are added
 	const waCardFallbacks: Record<string, string> = {
+		WA18: 'wm3',
+		WA24: 'bd7',
 		WA124: 'bd36',
 		WA161: 'cd20',
 		WA163: 'vt26',
