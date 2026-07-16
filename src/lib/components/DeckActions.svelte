@@ -17,7 +17,7 @@
 	};
 
 	type Props = {
-		onClearDeck: () => void;
+		onClearDeck?: () => void;
 		hasCards: boolean;
 		deck: Map<string, number>;
 		sideboard: Map<string, number>;
@@ -279,7 +279,7 @@
 				{
 					label: 'Reset',
 					icon: resetIcon,
-					onclick: onClearDeck,
+					onclick: onClearDeck ?? (() => {}),
 					disabled: !hasCards,
 					variant: 'danger'
 				}
