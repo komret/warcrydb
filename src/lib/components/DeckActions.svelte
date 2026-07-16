@@ -127,8 +127,6 @@
 			.catch(() => {
 				// Fallback: show the URL in a prompt
 				prompt('Copy this URL:', window.location.origin + url);
-				// Fallback: show the URL in a prompt
-				prompt('Copy this URL:', window.location.origin + url);
 			});
 	}
 
