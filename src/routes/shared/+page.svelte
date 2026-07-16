@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { cards } from '$lib/data/cards';
 	import DeckBuilder from '$lib/components/DeckBuilder.svelte';
@@ -27,7 +28,7 @@
 	});
 
 	function parseDeckString(deckString: string): Map<string, number> {
-		const deckMap = new Map<string, number>();
+		const entries: [string, number][] = [];
 
 		const parts = deckString.split(',');
 		for (const part of parts) {
@@ -35,11 +36,11 @@
 			if (match) {
 				const count = parseInt(match[1], 10);
 				const cardId = match[2];
-				deckMap.set(cardId, count);
+				entries.push([cardId, count]);
 			}
 		}
 
-		return deckMap;
+		return new Map(entries);
 	}
 
 	function openInDeckBuilder() {
@@ -83,7 +84,7 @@
 			sideboard: Array.from(sideboard.entries())
 		};
 		sessionStorage.setItem('sharedDeck', JSON.stringify(deckData));
-		goto('/');
+		goto(resolve('/'));
 	}
 
 	function cancelOpening() {

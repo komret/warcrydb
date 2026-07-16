@@ -24,6 +24,7 @@
 	import DeckBuilder from '$lib/components/DeckBuilder.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
 	import { onMount } from 'svelte';
+	import { SvelteMap } from 'svelte/reactivity';
 
 	// Type definitions
 	type NumericOperator = 'exact' | 'higher' | 'lower';
@@ -139,9 +140,16 @@
 	let selectedCardId = $state<string | null>(null);
 
 	// Deck state
-	let deck = $state(new Map<string, number>());
-	let sideboard = $state(new Map<string, number>());
+	const deck = new SvelteMap<string, number>();
+	const sideboard = new SvelteMap<string, number>();
 	let isDeckLoaded = $state(false);
+
+	function replaceMapEntries(map: SvelteMap<string, number>, entries: Iterable<[string, number]>) {
+		map.clear();
+		for (const [key, value] of entries) {
+			map.set(key, value);
+		}
+	}
 
 	// Filtered results (updated after debounce)
 	let filteredCards = $state<typeof cards>([]);
@@ -183,8 +191,8 @@
 		if (sharedDeckData) {
 			try {
 				const { deck: sharedDeck, sideboard: sharedSideboard } = JSON.parse(sharedDeckData);
-				deck = new Map(sharedDeck);
-				sideboard = new Map(sharedSideboard);
+				replaceMapEntries(deck, sharedDeck);
+				replaceMapEntries(sideboard, sharedSideboard);
 				sessionStorage.removeItem('sharedDeck'); // Clear it after loading
 			} catch (e) {
 				console.warn('Failed to load shared deck', e);
@@ -195,7 +203,7 @@
 			if (savedDeck) {
 				try {
 					const deckData = JSON.parse(savedDeck);
-					deck = new Map(Object.entries(deckData));
+					replaceMapEntries(deck, Object.entries(deckData));
 				} catch (e) {
 					console.warn('Failed to load saved deck', e);
 				}
@@ -205,7 +213,7 @@
 			if (savedSideboard) {
 				try {
 					const sideboardData = JSON.parse(savedSideboard);
-					sideboard = new Map(Object.entries(sideboardData));
+					replaceMapEntries(sideboard, Object.entries(sideboardData));
 				} catch (e) {
 					console.warn('Failed to load saved sideboard', e);
 				}
@@ -263,25 +271,25 @@
 		}
 
 		// Read all filter values to track changes
-		searchQuery; // Watch for search changes
-		selectedFactions.size;
-		selectedTypes.size;
-		selectedRarities.size;
-		selectedSet;
-		selectedFormat;
-		uniqueFilter;
-		selectedKeywords.length;
-		keywordOperators.length;
-		costOperator;
-		costValue;
-		strengthOperator;
-		strengthValue;
-		tacticPointsOperator;
-		tacticPointsValue;
-		leadershipOperator;
-		leadershipValue;
-		dieOperator;
-		dieValue;
+		void searchQuery; // Watch for search changes
+		void selectedFactions.size;
+		void selectedTypes.size;
+		void selectedRarities.size;
+		void selectedSet;
+		void selectedFormat;
+		void uniqueFilter;
+		void selectedKeywords.length;
+		void keywordOperators.length;
+		void costOperator;
+		void costValue;
+		void strengthOperator;
+		void strengthValue;
+		void tacticPointsOperator;
+		void tacticPointsValue;
+		void leadershipOperator;
+		void leadershipValue;
+		void dieOperator;
+		void dieValue;
 
 		// Set filtering state and reset timer
 		isFiltering = true;
@@ -481,11 +489,6 @@
 		if (totalCount < maxCopies) {
 			// If the card is not in the deck yet, set count to 0, else increment
 			deckMap.set(cardId, rawCurrentDeckCount === undefined ? 0 : currentDeckCount + 1);
-			if (deckMap === deck) {
-				deck = new Map(deck); // Trigger reactivity
-			} else if (deckMap === sideboard) {
-				sideboard = new Map(sideboard); // Trigger reactivity
-			}
 		}
 	}
 
@@ -495,11 +498,6 @@
 			deckMap.set(cardId, currentCount - 1);
 		} else if (currentCount === 0) {
 			deckMap.delete(cardId);
-		}
-		if (deckMap === deck) {
-			deck = new Map(deck); // Trigger reactivity
-		} else if (deckMap === sideboard) {
-			sideboard = new Map(sideboard); // Trigger reactivity
 		}
 	}
 
@@ -522,8 +520,6 @@
 
 			// Add to sideboard
 			sideboard.set(cardId, sideboardCount + 1);
-			deck = new Map(deck); // Trigger reactivity
-			sideboard = new Map(sideboard); // Trigger reactivity
 		}
 	}
 
@@ -545,19 +541,17 @@
 
 			// Add to deck
 			deck.set(cardId, deckCount + 1);
-			deck = new Map(deck); // Trigger reactivity
-			sideboard = new Map(sideboard); // Trigger reactivity
 		}
 	}
 
 	function clearDeck() {
-		deck = new Map();
-		sideboard = new Map();
+		deck.clear();
+		sideboard.clear();
 	}
 
 	function loadDeck(loadedDeck: Map<string, number>, loadedSideboard: Map<string, number>) {
-		deck = loadedDeck;
-		sideboard = loadedSideboard;
+		replaceMapEntries(deck, loadedDeck);
+		replaceMapEntries(sideboard, loadedSideboard);
 	}
 
 	// Compute filtered cards based on current filter state
@@ -704,7 +698,7 @@
 				class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-2 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 			>
 				<option value="any">Any</option>
-				{#each sets as set}
+				{#each sets as set (set)}
 					<option value={set}>{setNames[set]}</option>
 				{/each}
 			</select>
@@ -724,7 +718,7 @@
 							? 'block'
 							: 'hidden'} group-hover:block"
 					>
-						{#each formats as format, index}
+						{#each formats as format, index (format.value)}
 							<div class:mb-2={index < formats.length - 1}>
 								<strong>{format.label}:</strong>
 								{format.description}
@@ -738,7 +732,7 @@
 				bind:value={selectedFormat}
 				class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-2 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 			>
-				{#each formats as format}
+				{#each formats as format (format.value)}
 					<option value={format.value}>{format.label}</option>
 				{/each}
 			</select>
@@ -777,7 +771,7 @@
 					{/if}
 				</button>
 				<div class="space-y-2 md:block {showFactionFilter ? 'block' : 'hidden'}">
-					{#each factions as faction}
+					{#each factions as faction (faction)}
 						<div class="flex items-center space-x-2">
 							<input
 								id="faction-{faction}"
@@ -809,7 +803,7 @@
 					{/if}
 				</button>
 				<div class="space-y-2 md:block {showCardTypeFilter ? 'block' : 'hidden'}">
-					{#each cardTypes as type}
+					{#each cardTypes as type (type)}
 						<div class="flex items-center space-x-2">
 							<input
 								id="type-{type}"
@@ -841,7 +835,7 @@
 					{/if}
 				</button>
 				<div class="space-y-2 md:block {showRarityFilter ? 'block' : 'hidden'}">
-					{#each rarities as rarity}
+					{#each rarities as rarity (rarity)}
 						<div class="flex items-center space-x-2">
 							<input
 								id="rarity-{rarity}"
@@ -879,7 +873,7 @@
 						class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 					>
 						<option value="">Any</option>
-						{#each costValues as value}
+						{#each costValues as value (value)}
 							<option {value}>{value}</option>
 						{/each}
 					</select>
@@ -904,7 +898,7 @@
 						class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 					>
 						<option value="">Any</option>
-						{#each strengthValues as value}
+						{#each strengthValues as value (value)}
 							<option {value}>{value}</option>
 						{/each}
 					</select>
@@ -931,7 +925,7 @@
 						class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 					>
 						<option value="">Any</option>
-						{#each tacticPointsValues as value}
+						{#each tacticPointsValues as value (value)}
 							<option {value}>{value}</option>
 						{/each}
 					</select>
@@ -956,7 +950,7 @@
 						class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 					>
 						<option value="">Any</option>
-						{#each leadershipValues as value}
+						{#each leadershipValues as value (value)}
 							<option {value}>{value}</option>
 						{/each}
 					</select>
@@ -981,7 +975,7 @@
 						class="flex-1 rounded-lg border border-gray-600 bg-gray-700 px-2 py-1 text-sm text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 					>
 						<option value="">Any</option>
-						{#each dieValues as value}
+						{#each dieValues as value (value)}
 							<option {value}>{value}</option>
 						{/each}
 					</select>

@@ -2,6 +2,7 @@
 	import './layout.css';
 	import logo from '$lib/assets/warcry-logo.png';
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 	import menuIcon from '$lib/assets/icons/menu.svg?raw';
 	import closeIcon from '$lib/assets/icons/close.svg?raw';
 	import { clickOutside } from '$lib/utils/clickOutside';
@@ -49,7 +50,7 @@
 	<div class="mx-auto flex min-h-screen max-w-7xl flex-col px-4 py-8">
 		<header class="relative mb-4">
 			<div class="mb-3 flex items-center justify-between">
-				<a href="/" class="block">
+				<a href={resolve('/')} class="block">
 					<img src={logo} alt="WarCry Logo" class="h-16" />
 				</a>
 
@@ -60,6 +61,7 @@
 					aria-label="Toggle menu"
 					aria-expanded={showMenu}
 				>
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -- static SVG asset imported via ?raw, not user input -->
 					{@html showMenu ? closeIcon : menuIcon}
 				</button>
 			</div>
@@ -72,7 +74,7 @@
 				>
 					<div class="flex flex-col gap-2">
 						<a
-							href="/"
+							href={resolve('/')}
 							class="rounded-lg px-4 py-2 transition-colors {currentPage === 'home'
 								? 'bg-gray-700 font-semibold text-white'
 								: 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
@@ -80,7 +82,7 @@
 							Deck Builder
 						</a>
 						<a
-							href="/faq"
+							href={resolve('/faq')}
 							class="rounded-lg px-4 py-2 transition-colors {currentPage === 'faq'
 								? 'bg-gray-700 font-semibold text-white'
 								: 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
@@ -88,7 +90,7 @@
 							FAQ
 						</a>
 						<a
-							href="/errata"
+							href={resolve('/errata')}
 							class="rounded-lg px-4 py-2 transition-colors {currentPage === 'errata'
 								? 'bg-gray-700 font-semibold text-white'
 								: 'text-gray-300 hover:bg-gray-700 hover:text-white'}"
@@ -96,7 +98,7 @@
 							Errata
 						</a>
 						<a
-							href="/about"
+							href={resolve('/about')}
 							class="rounded-lg px-4 py-2 transition-colors {currentPage === 'about'
 								? 'bg-gray-700 font-semibold text-white'
 								: 'text-gray-300 hover:bg-gray-700 hover:text-white'}"

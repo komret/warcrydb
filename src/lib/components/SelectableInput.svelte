@@ -99,7 +99,7 @@
 			class="flex min-h-[36px] flex-wrap items-center rounded-lg border border-gray-600 bg-gray-700 px-3 py-2 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500"
 		>
 			<!-- Selected items and operators as tags -->
-			{#each (rest as MultiSelectionProps).selectedItems as item, index}
+			{#each (rest as MultiSelectionProps).selectedItems as item, index (item)}
 				<button
 					onclick={() => (rest as MultiSelectionProps).onRemoveItem(item)}
 					title="Remove {item}"
@@ -200,7 +200,7 @@
 		<div
 			class="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-gray-600 bg-gray-700 shadow-lg"
 		>
-			{#each filteredSuggestions as suggestion, index}
+			{#each filteredSuggestions as suggestion, index (suggestion.id)}
 				<button
 					type="button"
 					onclick={() => handleSelect(suggestion)}

@@ -16,6 +16,21 @@
 		timestamp: string;
 	};
 
+	type FileSystemFileHandle = {
+		createWritable: () => Promise<{
+			write: (data: string) => Promise<void>;
+			close: () => Promise<void>;
+		}>;
+	};
+
+	type WindowWithFilePicker = Window &
+		typeof globalThis & {
+			showSaveFilePicker: (options: {
+				suggestedName: string;
+				types: { description: string; accept: Record<string, string[]> }[];
+			}) => Promise<FileSystemFileHandle>;
+		};
+
 	type Props = {
 		onClearDeck?: () => void;
 		hasCards: boolean;
@@ -133,7 +148,7 @@
 		// Use File System Access API if available (Chrome, Edge, etc.)
 		if ('showSaveFilePicker' in window) {
 			try {
-				const handle = await (window as any).showSaveFilePicker({
+				const handle = await (window as WindowWithFilePicker).showSaveFilePicker({
 					suggestedName: defaultName,
 					types: [
 						{
@@ -148,9 +163,9 @@
 				await writable.close();
 
 				showToastNotification('Deck exported successfully');
-			} catch (err: any) {
+			} catch (err) {
 				// User cancelled or error occurred
-				if (err.name !== 'AbortError') {
+				if (err instanceof Error && err.name !== 'AbortError') {
 					console.error('Error saving file:', err);
 					showToastNotification('Failed to export deck');
 				}
@@ -288,6 +303,7 @@
 	{:else if isSmallScreen === false}
 		<div class="flex gap-2">
 			<Button variant="secondary" onclick={importDeckFromFile} title="Import from file">
+				<!-- eslint-disable-next-line svelte/no-at-html-tags -- static SVG asset imported via ?raw, not user input -->
 				{@html loadIcon}
 				<span>Import</span>
 			</Button>
@@ -297,14 +313,17 @@
 				disabled={!hasCards}
 				title="Export to file"
 			>
+				<!-- eslint-disable-next-line svelte/no-at-html-tags -- static SVG asset imported via ?raw, not user input -->
 				{@html saveIcon}
 				<span>Export</span>
 			</Button>
 			<Button variant="secondary" onclick={shareDeck} disabled={!hasCards} title="Copy deck URL">
+				<!-- eslint-disable-next-line svelte/no-at-html-tags -- static SVG asset imported via ?raw, not user input -->
 				{@html shareIcon}
 				<span>Share</span>
 			</Button>
 			<Button variant="danger" onclick={onClearDeck} disabled={!hasCards} title="Reset deck">
+				<!-- eslint-disable-next-line svelte/no-at-html-tags -- static SVG asset imported via ?raw, not user input -->
 				{@html resetIcon}
 				<span>Reset</span>
 			</Button>

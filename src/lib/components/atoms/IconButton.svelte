@@ -50,6 +50,7 @@
 	{#if icon}
 		{icon}
 	{:else if svg}
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -- svg is a static SVG asset supplied by trusted callers, not user input -->
 		{@html svg}
 	{/if}
 </button>

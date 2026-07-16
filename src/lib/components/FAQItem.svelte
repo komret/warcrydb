@@ -46,10 +46,12 @@
 
 <article class="rounded-lg border border-gray-700 bg-gray-800 p-4">
 	<h2 bind:this={questionElement} class="mb-2 text-base text-gray-200">
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -- item.question is trusted content from the FAQ database, not user input -->
 		{@html highlightSearchTerms(item.question, searchQuery)}
 	</h2>
 	<div class="flex items-end justify-between gap-4">
 		<p bind:this={answerElement} class=" text-base text-gray-400">
+			<!-- eslint-disable-next-line svelte/no-at-html-tags -- item.answer is trusted content from the FAQ database, not user input -->
 			{@html highlightSearchTerms(item.answer, searchQuery)}
 		</p>
 		<IconButton

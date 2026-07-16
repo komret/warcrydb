@@ -10,6 +10,7 @@
 	import CardImageModal from '$lib/components/CardImageModal.svelte';
 	import { matchesSearch } from '$lib/utils/matchesSearch';
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	// Default filter values for hasActiveFilters logic
@@ -77,19 +78,20 @@
 
 	function selectCard(card: { id: string; name: string }) {
 		selectedCard = card.id;
-		goto(`/faq?card=${card.id}`, { replaceState: true });
+		// eslint-disable-next-line svelte/no-navigation-without-resolve -- resolve() has no way to attach the `card` query param
+		goto(`${resolve('/faq')}?card=${card.id}`, { replaceState: true });
 	}
 
 	function clearCard() {
 		selectedCard = null;
-		goto('/faq', { replaceState: true });
+		goto(resolve('/faq'), { replaceState: true });
 	}
 
 	function resetFilters() {
 		searchQuery = DEFAULT_FILTERS.searchQuery;
 		selectedCard = DEFAULT_FILTERS.selectedCard;
 		cardNameInput = DEFAULT_FILTERS.cardNameInput;
-		goto('/faq', { replaceState: true });
+		goto(resolve('/faq'), { replaceState: true });
 	}
 </script>
 

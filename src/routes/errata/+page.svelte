@@ -18,7 +18,7 @@
 	<h2 class="mb-4 text-2xl font-bold">Errata</h2>
 	{#if errataCards.length > 0}
 		<div class="space-y-4">
-			{#each errataCards as card}
+			{#each errataCards as card (card.id)}
 				<Card
 					{card}
 					showFaqIcon
@@ -35,7 +35,7 @@
 	<h2 class="mb-4 text-2xl font-bold">Banned</h2>
 	{#if bannedCards.length > 0}
 		<div class="space-y-4">
-			{#each bannedCards as card}
+			{#each bannedCards as card (card.id)}
 				<Card {card} onclick={() => (selectedCardId = card.id)} />
 			{/each}
 		</div>

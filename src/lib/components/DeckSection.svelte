@@ -78,7 +78,7 @@
 	{/if}
 
 	<div class="space-y-2">
-		{#each cards as [cardId, count, totalCount]}
+		{#each cards as [cardId, count, totalCount] (cardId)}
 			{@const card = getCard(cardId)}
 			{#if card}
 				<DeckItem

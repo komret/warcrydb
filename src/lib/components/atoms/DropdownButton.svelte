@@ -77,7 +77,7 @@
 		<div
 			class="absolute right-0 z-50 mt-1 rounded-md border border-gray-700 bg-gray-800 py-1 shadow-lg"
 		>
-			{#each items as item}
+			{#each items as item (item.label)}
 				<button
 					type="button"
 					class="flex w-full items-center gap-2 px-4 py-2 text-left text-sm transition-colors {item.disabled
@@ -89,7 +89,10 @@
 					disabled={item.disabled}
 				>
 					{#if item.icon}
-						<span class="h-4 w-4">{@html item.icon}</span>
+						<span class="h-4 w-4">
+							<!-- eslint-disable-next-line svelte/no-at-html-tags -- item.icon is a static SVG asset supplied by trusted callers, not user input -->
+							{@html item.icon}
+						</span>
 					{/if}
 					<span>{item.label}</span>
 				</button>

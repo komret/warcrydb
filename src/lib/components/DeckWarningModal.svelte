@@ -12,9 +12,7 @@
 </script>
 
 <Modal {show} title="Warning" onClose={onCancel}>
-	{#snippet children()}
-		<p class="text-gray-300">This action will override your current deck.</p>
-	{/snippet}
+	<p class="text-gray-300">This action will override your current deck.</p>
 
 	{#snippet actions()}
 		<Button variant="secondary" onclick={onCancel}>Close</Button>

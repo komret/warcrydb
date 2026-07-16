@@ -17,6 +17,7 @@
 		{isFiltering ? 'Loading...' : `${resultsCount} result${resultsCount !== 1 ? 's' : ''}`}
 	</div>
 	<Button variant="danger" onclick={onReset} disabled={!hasActiveFilters} title="Reset filters">
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -- static SVG asset imported via ?raw, not user input -->
 		{@html resetIcon} <span>Reset</span>
 	</Button>
 </div>
