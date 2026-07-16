@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import IconButton from './atoms/IconButton.svelte';
+	import DieFace from './DieFace.svelte';
 
 	type Props = {
 		card: Card;
@@ -142,61 +143,7 @@
 			<!-- Row 3 -->
 			<div class="flex items-center justify-center text-gray-400">
 				{#if card.die !== undefined}
-					{#if card.die === 1}
-						<div class="grid h-8 w-8 place-items-center">
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-						</div>
-					{:else if card.die === 2}
-						<div class="grid h-8 w-8 grid-cols-2 gap-2 p-1">
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-						</div>
-					{:else if card.die === 3}
-						<div class="grid h-8 w-8 grid-cols-3 gap-1 p-1">
-							<div></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div></div>
-						</div>
-					{:else if card.die === 4}
-						<div class="grid h-8 w-8 grid-cols-2 gap-2 p-1">
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-						</div>
-					{:else if card.die === 5}
-						<div class="grid h-8 w-8 grid-cols-3 gap-1 p-1">
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-						</div>
-					{:else if card.die === 6}
-						<div class="grid h-8 w-8 grid-cols-3 gap-1 p-1">
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-							<div></div>
-							<div class="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-						</div>
-					{/if}
+					<DieFace value={card.die} />
 				{/if}
 			</div>
 			<div class="text-center font-bold text-gray-300">

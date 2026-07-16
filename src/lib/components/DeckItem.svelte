@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Card as CardType } from '$lib/data/cards';
 	import IconButton from './atoms/IconButton.svelte';
+	import DieFace from './DieFace.svelte';
 
 	type Props = {
 		cardId: string;
@@ -65,6 +66,14 @@
 
 	const factionBgColor = $derived(getFactionBackgroundColor(card.faction));
 	const borderColor = $derived(getTypeBorderColor(card.type, card.unique));
+
+	// Attachments show a '+' prefix for their 'X' bonuses, matching Card.svelte's display rules
+	function formatStatValue(value: number | 'X' | undefined): string {
+		if (value === undefined) return '–';
+		return card.type === 'Attachment' && typeof value === 'string' ? `+${value}` : `${value}`;
+	}
+
+	const isArmyCard = $derived(card.type === 'Unit' || card.type === 'Attachment');
 </script>
 
 <div
@@ -78,6 +87,19 @@
 		>
 			{card.name}
 		</button>
+	</div>
+	<div class="ml-2 flex shrink-0 items-center justify-end gap-1 text-xs text-gray-400">
+		{#if isArmyCard}
+			<span class="tabular-nums"
+				>{formatStatValue(card.cost)}/{formatStatValue(card.strength)}/{formatStatValue(
+					card.tacticPoints
+				)}/{card.leadership ?? '–'}</span
+			>
+		{:else}
+			{#if card.die !== undefined}
+				<DieFace value={card.die} size="sm" />
+			{/if}
+		{/if}
 	</div>
 	<div class="ml-2 flex items-center">
 		{#if !readOnly}
