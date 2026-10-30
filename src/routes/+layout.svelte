@@ -1,11 +1,11 @@
 <script lang="ts">
 	import './layout.css';
-	import logo from '$lib/assets/warcry-logo.png';
+	import logo from '#lib/assets/warcry-logo.png';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-	import menuIcon from '$lib/assets/icons/menu.svg?raw';
-	import closeIcon from '$lib/assets/icons/close.svg?raw';
-	import { clickOutside } from '$lib/utils/clickOutside';
+	import menuIcon from '#lib/assets/icons/menu.svg?raw';
+	import closeIcon from '#lib/assets/icons/close.svg?raw';
+	import { clickOutside } from '#lib/utils/clickOutside.ts';
 
 	let { children } = $props();
 

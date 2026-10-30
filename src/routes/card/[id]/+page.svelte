@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getCardImageFilename } from '$lib/utils/cardImage';
+	import { getCardImageFilename } from '#lib/utils/cardImage.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();

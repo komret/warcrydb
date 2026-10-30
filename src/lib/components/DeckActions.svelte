@@ -8,7 +8,7 @@
 	import loadIcon from '../assets/icons/load.svg?raw';
 	import shareIcon from '../assets/icons/share.svg?raw';
 	import resetIcon from '../assets/icons/reset.svg?raw';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 
 	type DeckData = {
 		deck: [string, number][];

@@ -2,9 +2,9 @@
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import { cards } from '$lib/data/cards';
-	import DeckBuilder from '$lib/components/DeckBuilder.svelte';
-	import DeckWarningModal from '$lib/components/DeckWarningModal.svelte';
+	import { cards } from '#lib/data/cards.ts';
+	import DeckBuilder from '#lib/components/DeckBuilder.svelte';
+	import DeckWarningModal from '#lib/components/DeckWarningModal.svelte';
 	import { onMount } from 'svelte';
 
 	let deck = $state(new Map<string, number>());

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Card as CardType } from '$lib/data/cards';
+	import type { Card as CardType } from '#lib/data/cards.ts';
 	import IconButton from './atoms/IconButton.svelte';
 	import DieFace from './DieFace.svelte';
 

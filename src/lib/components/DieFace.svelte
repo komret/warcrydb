@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Die } from '$lib/data/cards';
+	import type { Die } from '#lib/data/cards.ts';
 
 	type Props = {
 		value: Die;

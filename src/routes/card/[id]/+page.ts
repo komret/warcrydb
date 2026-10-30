@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { cards } from '$lib/data/cards';
+import { cards } from '#lib/data/cards.ts';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = ({ params }) => {

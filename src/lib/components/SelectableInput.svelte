@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Keyword } from '$lib/data/cards';
+	import type { Keyword } from '#lib/data/cards.ts';
 	import ClearButton from './atoms/ClearButton.svelte';
 
 	type Item = {

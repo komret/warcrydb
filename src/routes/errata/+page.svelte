@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { cards } from '$lib/data/cards';
-	import Card from '$lib/components/Card.svelte';
-	import CardImageModal from '$lib/components/CardImageModal.svelte';
+	import { cards } from '#lib/data/cards.ts';
+	import Card from '#lib/components/Card.svelte';
+	import CardImageModal from '#lib/components/CardImageModal.svelte';
 
 	// Filter cards with errata property set (truthy)
 	const errataCards = cards.filter((card) => !!card.errata);

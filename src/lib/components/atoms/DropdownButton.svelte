@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { clickOutside } from '$lib/utils/clickOutside';
+	import { clickOutside } from '#lib/utils/clickOutside.ts';
 
 	type MenuItem = {
 		label: string;

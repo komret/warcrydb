@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getCardImageFilename } from '$lib/utils/cardImage';
+	import { getCardImageFilename } from '#lib/utils/cardImage.ts';
 	import { resolve } from '$app/paths';
 	import Toast from './atoms/Toast.svelte';
 	import shareIcon from '../assets/icons/share.svg?raw';

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Card } from '$lib/data/cards';
-	import { highlightSearchTerms } from '$lib/utils/highlightSearchTerms';
+	import type { Card } from '#lib/data/cards.ts';
+	import { highlightSearchTerms } from '#lib/utils/highlightSearchTerms.ts';
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import IconButton from './atoms/IconButton.svelte';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Card as CardType } from '$lib/data/cards';
+	import type { Card as CardType } from '#lib/data/cards.ts';
 	import SelectableInput from './SelectableInput.svelte';
 	import CardImageModal from './CardImageModal.svelte';
 	import DeckItem from './DeckItem.svelte';

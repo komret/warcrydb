@@ -1,4 +1,4 @@
-import type { Card, Set } from '$lib/data/cards';
+import type { Card, Set } from '#lib/data/cards.ts';
 
 // Format set definitions
 const warcryFormatSets: Set[] = [

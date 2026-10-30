@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { faq } from '$lib/data/faq';
-	import { cards } from '$lib/data/cards';
-	import SearchInput from '$lib/components/SearchInput.svelte';
-	import SelectableInput from '$lib/components/SelectableInput.svelte';
-	import Box from '$lib/components/atoms/Box.svelte';
-	import ResultRow from '$lib/components/ResultRow.svelte';
-	import FAQItem from '$lib/components/FAQItem.svelte';
-	import Card from '$lib/components/Card.svelte';
-	import CardImageModal from '$lib/components/CardImageModal.svelte';
-	import { matchesSearch } from '$lib/utils/matchesSearch';
+	import { faq } from '#lib/data/faq.ts';
+	import { cards } from '#lib/data/cards.ts';
+	import SearchInput from '#lib/components/SearchInput.svelte';
+	import SelectableInput from '#lib/components/SelectableInput.svelte';
+	import Box from '#lib/components/atoms/Box.svelte';
+	import ResultRow from '#lib/components/ResultRow.svelte';
+	import FAQItem from '#lib/components/FAQItem.svelte';
+	import Card from '#lib/components/Card.svelte';
+	import CardImageModal from '#lib/components/CardImageModal.svelte';
+	import { matchesSearch } from '#lib/utils/matchesSearch.ts';
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';

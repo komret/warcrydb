@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Card as CardType, Type } from '$lib/data/cards';
+	import type { Card as CardType, Type } from '#lib/data/cards.ts';
 	import DeckSection from './DeckSection.svelte';
 	import DeckActions from './DeckActions.svelte';
 	import Box from './atoms/Box.svelte';
-	import { cardMatchesFormat } from '$lib/utils/cardMatchesFormat';
+	import { cardMatchesFormat } from '#lib/utils/cardMatchesFormat.ts';
 
 	type Props = {
 		deck: Map<string, number>;
