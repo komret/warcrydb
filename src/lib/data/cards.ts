@@ -11643,7 +11643,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Other',
-		text: '<p><b>Wizard</b>: 2</p><p>This unit may play <b>Spell WarCry</b> cards as combat tactics.</p><p><b>WarCry</b>: This unit gets +4 strength and "<b>Terror</b>: 2".</p>',
+		text: '<p><b>Wizard</b>: 2</p><p>This unit may play Spell WarCry cards as combat tactics.</p><p><b>WarCry</b>: This unit gets +4 strength and "<b>Terror</b>: 2".</p>',
 		releases: {
 			CD: 3
 		},
@@ -11716,7 +11716,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Other',
-		text: '<p><b>Terror</b>: 2</p><p><b>Victory</b>: -2</p>',
+		text: '<p><b>Terror</b>: 2</p><p><b>Victory</b>: -3</p>',
 		releases: {
 			CD: 7
 		},
@@ -22322,7 +22322,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Other',
-		text: '<p><b>Long Ranged Attack</b>: 5</p><p><b>Support Tactic</b>: Destroy 1 character attachment on the enemy unit.</p>',
+		text: '<p><b>Long Ranged Attack</b>: 6</p><p><b>Support Tactic</b>: Destroy 1 character attachment on the enemy unit.</p>',
 		releases: {
 			PW: 46
 		},
