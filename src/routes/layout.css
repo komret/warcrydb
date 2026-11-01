@@ -12,3 +12,8 @@
 	--color-command: #538db2;
 	--color-reaction: #bd362c;
 }
+
+/* Card name links inside FAQ question/answer HTML */
+span[class^='card-id-'] {
+	@apply cursor-pointer text-blue-400 transition-colors hover:text-blue-300;
+}
