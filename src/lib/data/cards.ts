@@ -409,7 +409,7 @@ export const cards: Card[] = [
 		releases: {
 			WC: 15
 		},
-		faq: [274, 257, 260, 261]
+		faq: [257, 260, 261, 274]
 	},
 	{
 		id: 'WC16',
@@ -498,7 +498,7 @@ export const cards: Card[] = [
 			WC: 20,
 			WA: 33
 		},
-		faq: [195, 145, 148, 133]
+		faq: [133, 145, 148, 195]
 	},
 	{
 		id: 'WC21',
@@ -1541,7 +1541,7 @@ export const cards: Card[] = [
 		releases: {
 			WC: 80
 		},
-		faq: [194, 139]
+		faq: [139, 194]
 	},
 	{
 		id: 'WC81',
@@ -1606,7 +1606,7 @@ export const cards: Card[] = [
 			CD: 26,
 			WA: 185
 		},
-		faq: [122, 53]
+		faq: [53, 122]
 	},
 	{
 		id: 'WA188',
@@ -1740,7 +1740,7 @@ export const cards: Card[] = [
 			WC: 92,
 			WA: 207
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'WA210',
@@ -2067,7 +2067,7 @@ export const cards: Card[] = [
 			WC: 112,
 			WA: 258
 		},
-		faq: [95, 126, 47]
+		faq: [47, 95, 126]
 	},
 	{
 		id: 'WC113',
@@ -2359,7 +2359,7 @@ export const cards: Card[] = [
 		releases: {
 			WC: 130
 		},
-		faq: [194, 140, 32]
+		faq: [32, 140, 194]
 	},
 	{
 		id: 'WC131',
@@ -2781,7 +2781,7 @@ export const cards: Card[] = [
 		releases: {
 			WC: 153
 		},
-		faq: [194, 139]
+		faq: [139, 194]
 	},
 	{
 		id: 'WA330',
@@ -2801,7 +2801,7 @@ export const cards: Card[] = [
 			WC: 154,
 			WA: 330
 		},
-		faq: [92, 95, 68]
+		faq: [68, 92, 95]
 	},
 	{
 		id: 'WC155',
@@ -3462,7 +3462,7 @@ export const cards: Card[] = [
 		releases: {
 			WM: 6
 		},
-		faq: [274, 142, 257, 260, 261]
+		faq: [142, 257, 260, 261, 274]
 	},
 	{
 		id: 'WM7',
@@ -3861,7 +3861,7 @@ export const cards: Card[] = [
 		releases: {
 			WM: 28
 		},
-		faq: [95, 250, 171]
+		faq: [95, 171, 250]
 	},
 	{
 		id: 'WM29',
@@ -3960,7 +3960,7 @@ export const cards: Card[] = [
 		releases: {
 			WM: 34
 		},
-		faq: [82, 83, 68]
+		faq: [68, 82, 83]
 	},
 	{
 		id: 'VT22',
@@ -4090,7 +4090,7 @@ export const cards: Card[] = [
 		releases: {
 			WM: 42
 		},
-		faq: [96, 149, 68]
+		faq: [68, 96, 149]
 	},
 	{
 		id: 'WA142',
@@ -4107,7 +4107,7 @@ export const cards: Card[] = [
 			WM: 43,
 			WA: 142
 		},
-		faq: [93, 98, 75, 76, 77, 78, 84]
+		faq: [75, 76, 77, 78, 84, 93, 98]
 	},
 	{
 		id: 'WM44',
@@ -4329,7 +4329,7 @@ export const cards: Card[] = [
 		releases: {
 			WM: 57
 		},
-		faq: [220, 60]
+		faq: [60, 220]
 	},
 	{
 		id: 'WA189',
@@ -4538,7 +4538,7 @@ export const cards: Card[] = [
 		releases: {
 			WM: 70
 		},
-		faq: [274, 257, 258, 260, 261, 262, 265]
+		faq: [257, 258, 260, 261, 262, 265, 274]
 	},
 	{
 		id: 'WM71',
@@ -4617,7 +4617,7 @@ export const cards: Card[] = [
 		releases: {
 			WM: 75
 		},
-		faq: [242, 243, 138]
+		faq: [138, 242, 243]
 	},
 	{
 		id: 'WM76',
@@ -5349,7 +5349,7 @@ export const cards: Card[] = [
 		releases: {
 			WM: 117
 		},
-		faq: [159, 82]
+		faq: [82, 159]
 	},
 	{
 		id: 'WM118',
@@ -5402,7 +5402,7 @@ export const cards: Card[] = [
 			WM: 120,
 			WA: 381
 		},
-		faq: [92, 68]
+		faq: [68, 92]
 	},
 	{
 		id: 'SD1',
@@ -5551,7 +5551,7 @@ export const cards: Card[] = [
 		releases: {
 			SD: 8
 		},
-		faq: [165, 25]
+		faq: [25, 165]
 	},
 	{
 		id: 'WA25',
@@ -5606,7 +5606,7 @@ export const cards: Card[] = [
 			SD: 11,
 			WA: 32
 		},
-		faq: [240, 268, 244]
+		faq: [240, 244, 268]
 	},
 	{
 		id: 'SD12',
@@ -5915,7 +5915,7 @@ export const cards: Card[] = [
 		releases: {
 			SD: 28
 		},
-		faq: [195, 96, 145, 148]
+		faq: [96, 145, 148, 195]
 	},
 	{
 		id: 'SD29',
@@ -6424,7 +6424,7 @@ export const cards: Card[] = [
 			SD: 59,
 			WA: 176
 		},
-		faq: [228, 125, 252]
+		faq: [125, 228, 252]
 	},
 	{
 		id: 'WA178',
@@ -7350,7 +7350,7 @@ export const cards: Card[] = [
 		releases: {
 			SD: 113
 		},
-		faq: [219, 220, 221, 144, 117, 60]
+		faq: [60, 117, 144, 219, 220, 221]
 	},
 	{
 		id: 'SD114',
@@ -7608,7 +7608,7 @@ export const cards: Card[] = [
 			DW: 7,
 			WA: 31
 		},
-		faq: [225, 58]
+		faq: [58, 225]
 	},
 	{
 		id: 'DW8',
@@ -7646,7 +7646,7 @@ export const cards: Card[] = [
 			DW: 9,
 			WA: 51
 		},
-		faq: [270, 74]
+		faq: [74, 270]
 	},
 	{
 		id: 'DW10',
@@ -7980,7 +7980,7 @@ export const cards: Card[] = [
 			DW: 27,
 			WA: 97
 		},
-		faq: [97, 82]
+		faq: [82, 97]
 	},
 	{
 		id: 'WA98',
@@ -8318,7 +8318,7 @@ export const cards: Card[] = [
 		releases: {
 			DW: 47
 		},
-		faq: [92, 81, 85]
+		faq: [81, 85, 92]
 	},
 	{
 		id: 'WA151',
@@ -8512,7 +8512,7 @@ export const cards: Card[] = [
 		releases: {
 			DW: 59
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'DW60',
@@ -8528,7 +8528,7 @@ export const cards: Card[] = [
 		releases: {
 			DW: 60
 		},
-		faq: [54, 18]
+		faq: [18, 54]
 	},
 	{
 		id: 'DW61',
@@ -8988,7 +8988,7 @@ export const cards: Card[] = [
 		releases: {
 			DW: 89
 		},
-		faq: [194, 121, 293]
+		faq: [121, 194, 293]
 	},
 	{
 		id: 'DW90',
@@ -9036,7 +9036,7 @@ export const cards: Card[] = [
 		releases: {
 			DW: 92
 		},
-		faq: [250, 171, 44]
+		faq: [44, 171, 250]
 	},
 	{
 		id: 'DW93',
@@ -9496,7 +9496,7 @@ export const cards: Card[] = [
 		releases: {
 			DW: 118
 		},
-		faq: [92, 68]
+		faq: [68, 92]
 	},
 	{
 		id: 'DW119',
@@ -9551,7 +9551,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 1
 		},
-		faq: [39, 41, 171, 44]
+		faq: [39, 41, 44, 171]
 	},
 	{
 		id: 'WA4',
@@ -9663,7 +9663,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 7
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'PG8',
@@ -9958,7 +9958,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 23
 		},
-		faq: [203, 204, 96]
+		faq: [96, 203, 204]
 	},
 	{
 		id: 'PG24',
@@ -9977,7 +9977,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 24
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'PG25',
@@ -10309,7 +10309,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 44
 		},
-		faq: [205, 66]
+		faq: [66, 205]
 	},
 	{
 		id: 'PG45',
@@ -10436,7 +10436,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 52
 		},
-		faq: [195, 178, 145, 148]
+		faq: [145, 148, 178, 195]
 	},
 	{
 		id: 'PG53',
@@ -10612,7 +10612,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 63
 		},
-		faq: [39, 4]
+		faq: [4, 39]
 	},
 	{
 		id: 'WA216',
@@ -10659,7 +10659,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 66
 		},
-		faq: [274, 114]
+		faq: [114, 274]
 	},
 	{
 		id: 'PG67',
@@ -11092,7 +11092,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 93
 		},
-		faq: [36, 39, 41, 279, 171, 44]
+		faq: [36, 39, 41, 44, 171, 279]
 	},
 	{
 		id: 'PG94',
@@ -11538,7 +11538,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 117
 		},
-		faq: [268, 149]
+		faq: [149, 268]
 	},
 	{
 		id: 'PG118',
@@ -11556,7 +11556,7 @@ export const cards: Card[] = [
 		releases: {
 			PG: 118
 		},
-		faq: [225, 257, 258, 260, 261, 262, 18]
+		faq: [18, 225, 257, 258, 260, 261, 262]
 	},
 	{
 		id: 'PG119',
@@ -11647,7 +11647,7 @@ export const cards: Card[] = [
 		releases: {
 			CD: 3
 		},
-		faq: [268, 124]
+		faq: [124, 268]
 	},
 	{
 		id: 'CD4',
@@ -12031,7 +12031,7 @@ export const cards: Card[] = [
 		releases: {
 			CD: 30
 		},
-		faq: [220, 60, 66]
+		faq: [60, 66, 220]
 	},
 	{
 		id: 'WA241',
@@ -12523,7 +12523,7 @@ export const cards: Card[] = [
 		releases: {
 			LC: 14
 		},
-		faq: [194, 140, 133]
+		faq: [133, 140, 194]
 	},
 	{
 		id: 'LC15',
@@ -12559,7 +12559,7 @@ export const cards: Card[] = [
 		releases: {
 			LC: 16
 		},
-		faq: [197, 168]
+		faq: [168, 197]
 	},
 	{
 		id: 'LC17',
@@ -12577,7 +12577,7 @@ export const cards: Card[] = [
 		releases: {
 			LC: 17
 		},
-		faq: [92, 69]
+		faq: [69, 92]
 	},
 	{
 		id: 'LC18',
@@ -12632,7 +12632,7 @@ export const cards: Card[] = [
 		releases: {
 			LC: 20
 		},
-		faq: [229, 241, 142, 282]
+		faq: [142, 229, 241, 282]
 	},
 	{
 		id: 'LC21',
@@ -13034,7 +13034,7 @@ export const cards: Card[] = [
 		releases: {
 			LC: 44
 		},
-		faq: [195, 145, 148, 123]
+		faq: [123, 145, 148, 195]
 	},
 	{
 		id: 'WA136',
@@ -13385,7 +13385,7 @@ export const cards: Card[] = [
 		releases: {
 			LC: 66
 		},
-		faq: [274, 112, 116]
+		faq: [112, 116, 274]
 	},
 	{
 		id: 'WA226',
@@ -13719,7 +13719,7 @@ export const cards: Card[] = [
 			LC: 87,
 			WA: 287
 		},
-		faq: [253, 66]
+		faq: [66, 253]
 	},
 	{
 		id: 'WA293',
@@ -13753,7 +13753,7 @@ export const cards: Card[] = [
 		releases: {
 			LC: 89
 		},
-		faq: [196, 247, 45, 255]
+		faq: [45, 196, 247, 255]
 	},
 	{
 		id: 'LC90',
@@ -13902,7 +13902,7 @@ export const cards: Card[] = [
 		releases: {
 			LC: 97
 		},
-		faq: [274, 133]
+		faq: [133, 274]
 	},
 	{
 		id: 'LC98',
@@ -13998,7 +13998,7 @@ export const cards: Card[] = [
 			WA: 334
 		},
 		banned: true,
-		faq: [226, 159]
+		faq: [159, 226]
 	},
 	{
 		id: 'WA337',
@@ -14036,7 +14036,7 @@ export const cards: Card[] = [
 			LC: 104,
 			WA: 339
 		},
-		faq: [194, 140]
+		faq: [140, 194]
 	},
 	{
 		id: 'LC105',
@@ -14111,7 +14111,7 @@ export const cards: Card[] = [
 			LC: 108,
 			WA: 345
 		},
-		faq: [195, 145, 148, 133]
+		faq: [133, 145, 148, 195]
 	},
 	{
 		id: 'LC109',
@@ -14222,7 +14222,7 @@ export const cards: Card[] = [
 			LC: 114,
 			WA: 364
 		},
-		faq: [211, 66]
+		faq: [66, 211]
 	},
 	{
 		id: 'LC115',
@@ -14311,7 +14311,7 @@ export const cards: Card[] = [
 		releases: {
 			LC: 119
 		},
-		faq: [194, 32]
+		faq: [32, 194]
 	},
 	{
 		id: 'LC120',
@@ -14439,7 +14439,7 @@ export const cards: Card[] = [
 		releases: {
 			CC: 3
 		},
-		faq: [92, 159, 270, 68]
+		faq: [68, 92, 159, 270]
 	},
 	{
 		id: 'CC4',
@@ -14609,7 +14609,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 3
 		},
-		faq: [270, 74]
+		faq: [74, 270]
 	},
 	{
 		id: 'SM4',
@@ -14795,7 +14795,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 13
 		},
-		faq: [194, 140, 32]
+		faq: [32, 140, 194]
 	},
 	{
 		id: 'SM14',
@@ -14923,7 +14923,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 20
 		},
-		faq: [194, 208, 140, 32]
+		faq: [32, 140, 194, 208]
 	},
 	{
 		id: 'SM21',
@@ -15053,7 +15053,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 27
 		},
-		faq: [194, 208, 140, 32]
+		faq: [32, 140, 194, 208]
 	},
 	{
 		id: 'SM28',
@@ -15174,7 +15174,7 @@ export const cards: Card[] = [
 			SM: 34,
 			WA: 104
 		},
-		faq: [194, 208, 140, 32]
+		faq: [32, 140, 194, 208]
 	},
 	{
 		id: 'SM35',
@@ -15254,7 +15254,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 39
 		},
-		faq: [289, 189]
+		faq: [189, 289]
 	},
 	{
 		id: 'SM40',
@@ -15271,7 +15271,7 @@ export const cards: Card[] = [
 			SM: 40
 		},
 		errata: true,
-		faq: [180, 13]
+		faq: [13, 180]
 	},
 	{
 		id: 'SM41',
@@ -15337,7 +15337,7 @@ export const cards: Card[] = [
 			SM: 44,
 			WA: 132
 		},
-		faq: [39, 41, 42, 43, 4, 142, 11, 13]
+		faq: [4, 11, 13, 39, 41, 42, 43, 142]
 	},
 	{
 		id: 'SM45',
@@ -15353,7 +15353,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 45
 		},
-		faq: [92, 68]
+		faq: [68, 92]
 	},
 	{
 		id: 'WA137',
@@ -15530,7 +15530,7 @@ export const cards: Card[] = [
 			SM: 56,
 			WA: 168
 		},
-		faq: [270, 74]
+		faq: [74, 270]
 	},
 	{
 		id: 'SM57',
@@ -15594,7 +15594,7 @@ export const cards: Card[] = [
 			SM: 60,
 			WA: 164
 		},
-		faq: [274, 4, 11]
+		faq: [4, 11, 274]
 	},
 	{
 		id: 'WA187',
@@ -15722,7 +15722,7 @@ export const cards: Card[] = [
 			SM: 68
 		},
 		errata: true,
-		faq: [274, 190]
+		faq: [190, 274]
 	},
 	{
 		id: 'SM69',
@@ -16054,7 +16054,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 88
 		},
-		faq: [194, 208, 140, 32]
+		faq: [32, 140, 194, 208]
 	},
 	{
 		id: 'WA305',
@@ -16296,7 +16296,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 101
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'SM102',
@@ -16314,7 +16314,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 102
 		},
-		faq: [85, 17]
+		faq: [17, 85]
 	},
 	{
 		id: 'WA333',
@@ -16556,7 +16556,7 @@ export const cards: Card[] = [
 		releases: {
 			SM: 115
 		},
-		faq: [194, 208, 140, 32]
+		faq: [32, 140, 194, 208]
 	},
 	{
 		id: 'SM116',
@@ -17156,7 +17156,7 @@ export const cards: Card[] = [
 		releases: {
 			HW: 28
 		},
-		faq: [208, 133]
+		faq: [133, 208]
 	},
 	{
 		id: 'WA28',
@@ -17838,7 +17838,7 @@ export const cards: Card[] = [
 			HW: 71,
 			WA: 212
 		},
-		faq: [194, 140, 32]
+		faq: [32, 140, 194]
 	},
 	{
 		id: 'HW72',
@@ -18075,7 +18075,7 @@ export const cards: Card[] = [
 			HW: 86,
 			WA: 266
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'HW87',
@@ -18301,7 +18301,7 @@ export const cards: Card[] = [
 			HW: 99,
 			WA: 307
 		},
-		faq: [208, 133]
+		faq: [133, 208]
 	},
 	{
 		id: 'HW100',
@@ -18360,7 +18360,7 @@ export const cards: Card[] = [
 			HW: 102,
 			WA: 329
 		},
-		faq: [208, 4, 141]
+		faq: [4, 141, 208]
 	},
 	{
 		id: 'HW103',
@@ -18550,7 +18550,7 @@ export const cards: Card[] = [
 			WA: 378
 		},
 		banned: true,
-		faq: [144, 6, 7, 8]
+		faq: [6, 7, 8, 144]
 	},
 	{
 		id: 'HW113',
@@ -18821,7 +18821,7 @@ export const cards: Card[] = [
 		releases: {
 			DH: 8
 		},
-		faq: [106, 20]
+		faq: [20, 106]
 	},
 	{
 		id: 'DH9',
@@ -19033,7 +19033,7 @@ export const cards: Card[] = [
 		releases: {
 			DH: 25
 		},
-		faq: [96, 60, 21]
+		faq: [21, 60, 96]
 	},
 	{
 		id: 'DH26',
@@ -19048,7 +19048,7 @@ export const cards: Card[] = [
 		releases: {
 			DH: 26
 		},
-		faq: [248, 67]
+		faq: [67, 248]
 	},
 	{
 		id: 'WA382',
@@ -19064,7 +19064,7 @@ export const cards: Card[] = [
 			DH: 27,
 			WA: 382
 		},
-		faq: [292, 134]
+		faq: [134, 292]
 	},
 	{
 		id: 'DH28',
@@ -19160,7 +19160,7 @@ export const cards: Card[] = [
 			DH: 33,
 			WA: 385
 		},
-		faq: [147, 134]
+		faq: [134, 147]
 	},
 	{
 		id: 'WA387',
@@ -19432,7 +19432,7 @@ export const cards: Card[] = [
 		releases: {
 			BD: 3
 		},
-		faq: [271, 74]
+		faq: [74, 271]
 	},
 	{
 		id: 'WA23',
@@ -20142,7 +20142,7 @@ export const cards: Card[] = [
 			BD: 43,
 			WA: 133
 		},
-		faq: [195, 145, 148, 133, 136]
+		faq: [133, 136, 145, 148, 195]
 	},
 	{
 		id: 'BD44',
@@ -20330,7 +20330,7 @@ export const cards: Card[] = [
 			BD: 55,
 			WA: 196
 		},
-		faq: [44, 233, 134]
+		faq: [44, 134, 233]
 	},
 	{
 		id: 'BD56',
@@ -20376,7 +20376,7 @@ export const cards: Card[] = [
 			BD: 58,
 			WA: 206
 		},
-		faq: [144, 135]
+		faq: [135, 144]
 	},
 	{
 		id: 'BD59',
@@ -20504,7 +20504,7 @@ export const cards: Card[] = [
 			BD: 66,
 			WA: 234
 		},
-		faq: [194, 60]
+		faq: [60, 194]
 	},
 	{
 		id: 'WA242',
@@ -20520,7 +20520,7 @@ export const cards: Card[] = [
 			BD: 67,
 			WA: 242
 		},
-		faq: [194, 30]
+		faq: [30, 194]
 	},
 	{
 		id: 'WA243',
@@ -20763,7 +20763,7 @@ export const cards: Card[] = [
 		releases: {
 			BD: 82
 		},
-		faq: [196, 247, 144]
+		faq: [144, 196, 247]
 	},
 	{
 		id: 'BD83',
@@ -20827,7 +20827,7 @@ export const cards: Card[] = [
 		releases: {
 			BD: 86
 		},
-		faq: [195, 144, 145, 148]
+		faq: [144, 145, 148, 195]
 	},
 	{
 		id: 'BD87',
@@ -20922,7 +20922,7 @@ export const cards: Card[] = [
 		releases: {
 			BD: 92
 		},
-		faq: [194, 140, 32]
+		faq: [32, 140, 194]
 	},
 	{
 		id: 'BD93',
@@ -21500,7 +21500,7 @@ export const cards: Card[] = [
 		releases: {
 			LW: 3
 		},
-		faq: [142, 60]
+		faq: [60, 142]
 	},
 	{
 		id: 'LW4',
@@ -21519,7 +21519,7 @@ export const cards: Card[] = [
 		releases: {
 			LW: 4
 		},
-		faq: [194, 140]
+		faq: [140, 194]
 	},
 	{
 		id: 'LW5',
@@ -21658,7 +21658,7 @@ export const cards: Card[] = [
 			PW: 6
 		},
 		errata: true,
-		faq: [82, 68]
+		faq: [68, 82]
 	},
 	{
 		id: 'PW7',
@@ -21674,7 +21674,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 7
 		},
-		faq: [92, 94, 95, 68]
+		faq: [68, 92, 94, 95]
 	},
 	{
 		id: 'PW8',
@@ -22019,7 +22019,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 27
 		},
-		faq: [93, 75, 76]
+		faq: [75, 76, 93]
 	},
 	{
 		id: 'PW28',
@@ -22108,7 +22108,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 32
 		},
-		faq: [80, 68]
+		faq: [68, 80]
 	},
 	{
 		id: 'PW33',
@@ -22155,7 +22155,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 35
 		},
-		faq: [168, 69]
+		faq: [69, 168]
 	},
 	{
 		id: 'PW36',
@@ -22187,7 +22187,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 37
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'PW38',
@@ -22289,7 +22289,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 44
 		},
-		faq: [196, 247, 113, 115]
+		faq: [113, 115, 196, 247]
 	},
 	{
 		id: 'PW45',
@@ -22344,7 +22344,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 47
 		},
-		faq: [270, 74]
+		faq: [74, 270]
 	},
 	{
 		id: 'PW48',
@@ -22474,7 +22474,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 54
 		},
-		faq: [4, 81, 10]
+		faq: [4, 10, 81]
 	},
 	{
 		id: 'PW55',
@@ -22919,7 +22919,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 79
 		},
-		faq: [157, 179, 15, 16, 135, 252, 161, 162]
+		faq: [15, 16, 135, 157, 161, 162, 179, 252]
 	},
 	{
 		id: 'PW80',
@@ -23411,7 +23411,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 108
 		},
-		faq: [194, 4]
+		faq: [4, 194]
 	},
 	{
 		id: 'PW109',
@@ -23456,7 +23456,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 111
 		},
-		faq: [194, 31]
+		faq: [31, 194]
 	},
 	{
 		id: 'PW112',
@@ -23535,7 +23535,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 116
 		},
-		faq: [35, 36, 39, 41, 99, 101, 102, 44]
+		faq: [35, 36, 39, 41, 44, 99, 101, 102]
 	},
 	{
 		id: 'PW117',
@@ -23913,7 +23913,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 138
 		},
-		faq: [248, 66]
+		faq: [66, 248]
 	},
 	{
 		id: 'PW139',
@@ -23975,7 +23975,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 142
 		},
-		faq: [196, 247, 143]
+		faq: [143, 196, 247]
 	},
 	{
 		id: 'PW143',
@@ -24254,7 +24254,7 @@ export const cards: Card[] = [
 		releases: {
 			PW: 158
 		},
-		faq: [268, 121]
+		faq: [121, 268]
 	},
 	{
 		id: 'PW159',
@@ -24591,7 +24591,7 @@ export const cards: Card[] = [
 		releases: {
 			BR: 13
 		},
-		faq: [35, 36, 39, 41, 23, 44]
+		faq: [23, 35, 36, 39, 41, 44]
 	},
 	{
 		id: 'BR14',
@@ -24736,7 +24736,7 @@ export const cards: Card[] = [
 		releases: {
 			BR: 21
 		},
-		faq: [268, 244]
+		faq: [244, 268]
 	},
 	{
 		id: 'BR22',
@@ -24754,7 +24754,7 @@ export const cards: Card[] = [
 		releases: {
 			BR: 22
 		},
-		faq: [157, 123]
+		faq: [123, 157]
 	},
 	{
 		id: 'BR23',
@@ -25147,7 +25147,7 @@ export const cards: Card[] = [
 		releases: {
 			BR: 46
 		},
-		faq: [228, 135]
+		faq: [135, 228]
 	},
 	{
 		id: 'BR47',
@@ -25177,7 +25177,7 @@ export const cards: Card[] = [
 		releases: {
 			BR: 48
 		},
-		faq: [39, 171, 44, 134]
+		faq: [39, 44, 134, 171]
 	},
 	{
 		id: 'BR49',
@@ -25382,7 +25382,7 @@ export const cards: Card[] = [
 		releases: {
 			BR: 61
 		},
-		faq: [268, 168]
+		faq: [168, 268]
 	},
 	{
 		id: 'BR62',
@@ -25461,7 +25461,7 @@ export const cards: Card[] = [
 			BR: 66
 		},
 		errata: true,
-		faq: [132, 87, 18, 19]
+		faq: [18, 19, 87, 132]
 	},
 	{
 		id: 'BR67',
@@ -25601,7 +25601,7 @@ export const cards: Card[] = [
 		releases: {
 			BR: 75
 		},
-		faq: [194, 276, 132, 29, 86]
+		faq: [29, 86, 132, 194, 276]
 	},
 	{
 		id: 'BR76',
@@ -25754,7 +25754,7 @@ export const cards: Card[] = [
 			BR: 85
 		},
 		banned: true,
-		faq: [194, 140]
+		faq: [140, 194]
 	},
 	{
 		id: 'BR86',
@@ -26401,7 +26401,7 @@ export const cards: Card[] = [
 		releases: {
 			VT: 2
 		},
-		faq: [194, 140, 142, 32]
+		faq: [32, 140, 142, 194]
 	},
 	{
 		id: 'VT3',
@@ -26473,7 +26473,7 @@ export const cards: Card[] = [
 		releases: {
 			VT: 6
 		},
-		faq: [194, 208, 140, 32]
+		faq: [32, 140, 194, 208]
 	},
 	{
 		id: 'VT7',
@@ -26775,7 +26775,7 @@ export const cards: Card[] = [
 		releases: {
 			VT: 31
 		},
-		faq: [208, 140, 32]
+		faq: [32, 140, 208]
 	},
 	{
 		id: 'VT32',
@@ -26965,7 +26965,7 @@ export const cards: Card[] = [
 		releases: {
 			VT: 42
 		},
-		faq: [197, 44]
+		faq: [44, 197]
 	},
 	{
 		id: 'VT43',
@@ -27232,7 +27232,7 @@ export const cards: Card[] = [
 		releases: {
 			SR: 9
 		},
-		faq: [195, 236, 145, 148]
+		faq: [145, 148, 195, 236]
 	},
 	{
 		id: 'SR10',
@@ -27342,7 +27342,7 @@ export const cards: Card[] = [
 		releases: {
 			SR: 15
 		},
-		faq: [195, 100, 102, 164, 144, 145]
+		faq: [100, 102, 144, 145, 164, 195]
 	},
 	{
 		id: 'SR16',
@@ -27539,7 +27539,7 @@ export const cards: Card[] = [
 		releases: {
 			SR: 26
 		},
-		faq: [195, 145, 149]
+		faq: [145, 149, 195]
 	},
 	{
 		id: 'SR27',
@@ -27774,7 +27774,7 @@ export const cards: Card[] = [
 		releases: {
 			SR: 41
 		},
-		faq: [35, 195, 145, 148]
+		faq: [35, 145, 148, 195]
 	},
 	{
 		id: 'SR42',
@@ -27911,7 +27911,7 @@ export const cards: Card[] = [
 		releases: {
 			SR: 50
 		},
-		faq: [163, 149]
+		faq: [149, 163]
 	},
 	{
 		id: 'SR51',
@@ -28466,7 +28466,7 @@ export const cards: Card[] = [
 			SR: 86
 		},
 		errata: true,
-		faq: [194, 97]
+		faq: [97, 194]
 	},
 	{
 		id: 'SR87',
@@ -28484,7 +28484,7 @@ export const cards: Card[] = [
 		releases: {
 			SR: 87
 		},
-		faq: [194, 208, 140, 32]
+		faq: [32, 140, 194, 208]
 	},
 	{
 		id: 'SR88',
@@ -28521,7 +28521,7 @@ export const cards: Card[] = [
 		releases: {
 			SR: 89
 		},
-		faq: [194, 140, 32]
+		faq: [32, 140, 194]
 	},
 	{
 		id: 'SR90',
@@ -28827,7 +28827,7 @@ export const cards: Card[] = [
 		releases: {
 			SR: 106
 		},
-		faq: [270, 186, 9]
+		faq: [9, 186, 270]
 	},
 	{
 		id: 'SR107',
@@ -28931,7 +28931,7 @@ export const cards: Card[] = [
 		releases: {
 			SR: 112
 		},
-		faq: [194, 133]
+		faq: [133, 194]
 	},
 	{
 		id: 'SR113',
@@ -29198,7 +29198,7 @@ export const cards: Card[] = [
 		releases: {
 			HF: 7
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'HF8',
@@ -29325,7 +29325,7 @@ export const cards: Card[] = [
 		releases: {
 			HF: 14
 		},
-		faq: [270, 74]
+		faq: [74, 270]
 	},
 	{
 		id: 'HF15',
@@ -29718,7 +29718,7 @@ export const cards: Card[] = [
 		releases: {
 			HF: 37
 		},
-		faq: [4, 142, 268, 168]
+		faq: [4, 142, 168, 268]
 	},
 	{
 		id: 'HF38',
@@ -30018,7 +30018,7 @@ export const cards: Card[] = [
 		releases: {
 			HF: 56
 		},
-		faq: [198, 168]
+		faq: [168, 198]
 	},
 	{
 		id: 'HF57',
@@ -30557,7 +30557,7 @@ export const cards: Card[] = [
 		releases: {
 			HF: 90
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'HF91',
@@ -31901,7 +31901,7 @@ export const cards: Card[] = [
 		releases: {
 			MP: 50
 		},
-		faq: [194, 131]
+		faq: [131, 194]
 	},
 	{
 		id: 'MP51',
@@ -31978,7 +31978,7 @@ export const cards: Card[] = [
 		releases: {
 			MP: 55
 		},
-		faq: [194, 131, 134]
+		faq: [131, 134, 194]
 	},
 	{
 		id: 'MP56',
@@ -31993,7 +31993,7 @@ export const cards: Card[] = [
 		releases: {
 			MP: 56
 		},
-		faq: [208, 132]
+		faq: [132, 208]
 	},
 	{
 		id: 'MP57',
@@ -32273,7 +32273,7 @@ export const cards: Card[] = [
 		releases: {
 			MP: 74
 		},
-		faq: [194, 140, 32]
+		faq: [32, 140, 194]
 	},
 	{
 		id: 'MP75',
@@ -32318,7 +32318,7 @@ export const cards: Card[] = [
 		releases: {
 			MP: 77
 		},
-		faq: [194, 184]
+		faq: [184, 194]
 	},
 	{
 		id: 'MP78',
@@ -32697,7 +32697,7 @@ export const cards: Card[] = [
 		releases: {
 			MP: 99
 		},
-		faq: [194, 4, 60]
+		faq: [4, 60, 194]
 	},
 	{
 		id: 'MP100',
@@ -32853,7 +32853,7 @@ export const cards: Card[] = [
 		releases: {
 			MP: 108
 		},
-		faq: [194, 208, 140]
+		faq: [140, 194, 208]
 	},
 	{
 		id: 'MP109',
@@ -33343,7 +33343,7 @@ export const cards: Card[] = [
 		releases: {
 			VB: 16
 		},
-		faq: [142, 60, 186]
+		faq: [60, 142, 186]
 	},
 	{
 		id: 'VB17',
@@ -33537,7 +33537,7 @@ export const cards: Card[] = [
 		releases: {
 			VB: 27
 		},
-		faq: [147, 18]
+		faq: [18, 147]
 	},
 	{
 		id: 'VB28',
@@ -33662,7 +33662,7 @@ export const cards: Card[] = [
 		releases: {
 			VB: 35
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'VB36',
@@ -35147,7 +35147,7 @@ export const cards: Card[] = [
 		releases: {
 			PA: 5
 		},
-		faq: [195, 145, 148]
+		faq: [145, 148, 195]
 	},
 	{
 		id: 'PA6',
@@ -35165,7 +35165,7 @@ export const cards: Card[] = [
 		releases: {
 			PA: 6
 		},
-		faq: [270, 74]
+		faq: [74, 270]
 	},
 	{
 		id: 'PA7',
@@ -35221,7 +35221,7 @@ export const cards: Card[] = [
 		releases: {
 			PA: 9
 		},
-		faq: [195, 145, 272]
+		faq: [145, 195, 272]
 	},
 	{
 		id: 'PA10',
@@ -35309,7 +35309,7 @@ export const cards: Card[] = [
 		releases: {
 			PA: 14
 		},
-		faq: [195, 145, 148, 133]
+		faq: [133, 145, 148, 195]
 	},
 	{
 		id: 'PA15',
@@ -35399,7 +35399,7 @@ export const cards: Card[] = [
 		releases: {
 			PA: 20
 		},
-		faq: [122, 53, 44]
+		faq: [44, 53, 122]
 	},
 	{
 		id: 'PA21',
@@ -35583,7 +35583,7 @@ export const cards: Card[] = [
 		releases: {
 			PA: 32
 		},
-		faq: [195, 94, 145, 148, 186]
+		faq: [94, 145, 148, 186, 195]
 	},
 	{
 		id: 'PA33',
@@ -35599,7 +35599,7 @@ export const cards: Card[] = [
 		releases: {
 			PA: 33
 		},
-		faq: [195, 142, 145, 148]
+		faq: [142, 145, 148, 195]
 	},
 	{
 		id: 'PA34',
@@ -35614,7 +35614,7 @@ export const cards: Card[] = [
 		releases: {
 			PA: 34
 		},
-		faq: [196, 247, 142]
+		faq: [142, 196, 247]
 	},
 	{
 		id: 'PA35',
@@ -35720,7 +35720,7 @@ export const cards: Card[] = [
 		releases: {
 			PA: 40
 		},
-		faq: [270, 124]
+		faq: [124, 270]
 	},
 	{
 		id: 'PA41',
