@@ -44,7 +44,7 @@ export const faq: FAQ[] = [
 	{
 		id: 6,
 		question:
-			'What happens if I play <span class="card-id-DW55">Leitdorf Maneuver</span> while <span class="card-id-WA378">Whitestar\'s Guardians of the Sky</span> are in combat?',
+			'What happens if I play <span class="card-id-WA182">Leitdorf Maneuver</span> while <span class="card-id-WA378">Whitestar\'s Guardians of the Sky</span> are in combat?',
 		answer: 'You cannot play the support tactic as the Guardians are not in any line.',
 		source:
 			'https://web.archive.org/web/20050418163844/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2890&PN=1'
@@ -1320,9 +1320,9 @@ export const faq: FAQ[] = [
 	{
 		id: 182,
 		question:
-			'Does <span class="card-id-LC71">Strike When They are Weak</span> take effect before or after the winning unit is committed during Combat Clean-up?',
+			'Does <span class="card-id-LC71">Strike When They Are Weak</span> take effect before or after the winning unit is committed during Combat Clean-up?',
 		answer:
-			'Before. <span class="card-id-LC71">Strike When They are Weak</span> should read "at the end of the tactics phase".',
+			'Before. <span class="card-id-LC71">Strike When They Are Weak</span> should read "at the end of the tactics phase".',
 		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
 	},
 	{
@@ -1616,7 +1616,7 @@ export const faq: FAQ[] = [
 	{
 		id: 221,
 		question:
-			'If <span class="card-id-SD113">Tyrion, Defender of Ulthuan</span> loses a combat and uses his reaction in a "Ties are for the Weak" tie-breaker, can the enemy make a follow-up attack? Can it be into <span class="card-id-WA373">Tyrion</span> again?',
+			'If <span class="card-id-SD113">Tyrion, Defender of Ulthuan</span> loses a combat and uses his reaction in a "Ties are for the Weak" tie-breaker, can the enemy make a follow-up attack? Can it be into <span class="card-id-SD113">Tyrion</span> again?',
 		answer: 'Yes to both questions.',
 		source: 'https://web.archive.org/web/20071015175836/http://sabertoothgames.com/warcry/faq.asp'
 	},
@@ -1839,7 +1839,7 @@ export const faq: FAQ[] = [
 	{
 		id: 251,
 		question:
-			'If I use a card effect to play a combat tactic card while <span class="card-id-LW38">Confusion in Command</span> is in play, is the combat tactic affected by <span class="card-id-LW38">Confusion in Command</span>?',
+			'If I use a card effect to play a combat tactic card while <span class="card-id-BD38">Confusion in Command</span> is in play, is the combat tactic affected by <span class="card-id-BD38">Confusion in Command</span>?',
 		answer: 'Yes.',
 		source:
 			'https://web.archive.org/web/20051226100030/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4910&PN=1'
@@ -1849,7 +1849,7 @@ export const faq: FAQ[] = [
 		question:
 			"What kind of reactions can I trigger when I discard cards or when my opponent draws cards as a result of an opponent's static ability?",
 		answer:
-			'Because static abilities are not played, you can only play reactions to cards being discarded by an enemy card effect, but not reactions to an enemy playing an ability to discard cards. For example, when the ability on <span class="card-id-HW32">A Fortunate Wind</span> triggers, you can use  <span class="card-id-WA337">Leitdorf\'s Blood-oathed</span>, but not <span class="card-id-PW79">The Birdmen of Catrazza</span>.',
+			'Because static abilities are not played, you can only play reactions to cards being discarded by an enemy card effect, but not reactions to an enemy playing an ability to discard cards. For example, when the ability on <span class="card-id-HW32">A Fortunate Wind</span> triggers, you can use  <span class="card-id-WA337">Leitdorf\'s Blood-Oathed</span>, but not <span class="card-id-PW79">The Birdmen of Catrazza</span>.',
 		source:
 			'https://web.archive.org/web/20050418163922/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2894&PN=1'
 	},
@@ -1872,7 +1872,7 @@ export const faq: FAQ[] = [
 	{
 		id: 255,
 		question:
-			'How does <span class="card-id-LC89">Brotherhood of Grimnir</span> interact with effects modifying strength at the end of the tactics phase, e.g. Flames of the Phonenix?',
+			'How does <span class="card-id-LC89">Brotherhood of Grimnir</span> interact with effects modifying strength at the end of the tactics phase, e.g. Flames of the Phoenix?',
 		answer: 'The attacker triggers their effects before the defender triggers theirs.',
 		source:
 			'https://web.archive.org/web/20050128033008/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=995&PN=1'
@@ -2045,7 +2045,7 @@ export const faq: FAQ[] = [
 	{
 		id: 278,
 		question:
-			'What happens when <span class="card-id-LW1">Anelia, Harridan of Slaanesh</span> enters play while <span class="card-id-WA28">Anelia, Mistress of Slaanesh</span> is in play?',
+			'What happens when <span class="card-id-BD1">Anelia, Harridan of Slaanesh</span> enters play while <span class="card-id-WA28">Anelia, Mistress of Slaanesh</span> is in play?',
 		answer:
 			'Nothing happens because <span class="card-id-WA28">Anelia, Mistress of Slaanesh</span> is not Unique, and thus the Veteran rule does not affect her.',
 		source:
@@ -2124,7 +2124,7 @@ export const faq: FAQ[] = [
 		id: 288,
 		question:
 			'Can <span class="card-id-PW71">Liche Priest Ahkaten</span>\'s reaction target enemy Khemri units?',
-		answer: 'No, because an enemy unit cannot enter your your reserves.',
+		answer: 'No, because an enemy unit cannot enter your reserves.',
 		source:
 			'https://web.archive.org/web/20050505233447/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=2869&PN=2'
 	},
@@ -2165,7 +2165,7 @@ export const faq: FAQ[] = [
 	{
 		id: 293,
 		question:
-			'What hapens if I play <span class="card-id-DW89">Unexpected Quarter</span> followed by a card effect forcing the enemy to dicard and draw cards, e.g. <span class="card-id-WA374">Warriors of the Fallen Tree</span>?',
+			'What happens if I play <span class="card-id-DW89">Unexpected Quarter</span> followed by a card effect forcing the enemy to discard and draw cards, e.g. <span class="card-id-WA374">Warriors of the Fallen Tree</span>?',
 		answer: 'They discard and do not draw.',
 		source:
 			'https://web.archive.org/web/20051020092141/http://www.sabertoothgames.com/forum/forum_posts.asp?TID=4545&PN=1'

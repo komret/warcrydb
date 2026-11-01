@@ -1498,7 +1498,7 @@ export const cards: Card[] = [
 	},
 	{
 		id: 'WC78',
-		name: 'Hasty Maneuever',
+		name: 'Hasty Maneuver',
 		cost: 3,
 		die: 1,
 		keywords: [],
@@ -3439,7 +3439,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p>While you have 0 spell points, this unt gets "<b>Victory</b>: +2".</p>',
+		text: '<p>While you have 0 spell points, this unit gets "<b>Victory</b>: +2".</p>',
 		releases: {
 			WM: 5
 		},
@@ -4821,7 +4821,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Super rare',
-		text: '<p><b>Spell WarCry</b> (1): When this unit makes a combat roll, roll 3 times instead of once. Your enemy picks 2 of those rollsand adds both die numbers together. This total is your combat roll.</p>',
+		text: '<p><b>Spell WarCry</b> (1): When this unit makes a combat roll, roll 3 times instead of once. Your enemy picks 2 of those rolls and adds both die numbers together. This total is your combat roll.</p>',
 		releases: {
 			WM: 88,
 			WA: 278
@@ -5363,7 +5363,7 @@ export const cards: Card[] = [
 		faction: 'The Grand Alliance',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p>Cambat Tactic: This unit gets +1 strength and +1 leadership. Only playable while this unit has a character attachment.</p>',
+		text: '<p><b>Combat Tactic</b>: This unit gets +1 strength and +1 leadership. Only playable while this unit has a character attachment.</p>',
 		releases: {
 			WM: 118
 		},
@@ -8089,7 +8089,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Wizard</b>: 2</p><p>Spel <b>Support Tactic</b> (1): Your unit gets +2 ranged attack.</p>',
+		text: '<p><b>Wizard</b>: 2</p><p>Spell <b>Support Tactic</b> (1): Your unit gets +2 ranged attack.</p>',
 		releases: {
 			DW: 33,
 			WA: 100
@@ -8436,7 +8436,7 @@ export const cards: Card[] = [
 	},
 	{
 		id: 'WA182',
-		name: 'Leittdorf Maneuver',
+		name: 'Leitdorf Maneuver',
 		cost: 1,
 		die: 3,
 		keywords: [],
@@ -11288,7 +11288,7 @@ export const cards: Card[] = [
 		faction: 'The Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Short Ranged Attack</b>: 8</p><p><b>Support Tactic</b>: Both units in the combet get -3 tactic points.</p>',
+		text: '<p><b>Short Ranged Attack</b>: 8</p><p><b>Support Tactic</b>: Both units in the combat get -3 tactic points.</p>',
 		releases: {
 			PG: 104,
 			WA: 316
@@ -11460,7 +11460,7 @@ export const cards: Card[] = [
 		faction: 'The Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p>This unit gets +2 leadership while you have Allarielle the Everqueen in play.</p><p><b>Combat Tactic</b>: Look at your enemy's hand and choose one card. Your enemy places that card on top of their deck.</p>",
+		text: "<p>This unit gets +2 leadership while you have Alarielle the Everqueen in play.</p><p><b>Combat Tactic</b>: Look at your enemy's hand and choose one card. Your enemy places that card on top of their deck.</p>",
 		releases: {
 			PG: 113,
 			WA: 354
@@ -12628,7 +12628,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Command</b>: Replace this unit\'s "Infantry" keyword with "Cavalry."</p><p><b>Reaction</b>: This attacking unit roll 3d6 for it\'s combat roll. Replace this units "Cavalry" keyword with "Infantry." Only playable while this unt has the "Cavalry" keyword.</p>',
+		text: '<p><b>Command</b>: Replace this unit\'s "Infantry" keyword with "Cavalry."</p><p><b>Reaction</b>: This attacking unit roll 3d6 for it\'s combat roll. Replace this units "Cavalry" keyword with "Infantry." Only playable while this unit has the "Cavalry" keyword.</p>',
 		releases: {
 			LC: 20
 		},
@@ -12777,7 +12777,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p>While this unit is ready all of your other Skaven units gets +1 leadership.</p><p><b>Reaction</b> Discard 1 card: When this unit gets a strength bonus of 4 or less, incresae that bonus by 2.</p>',
+		text: '<p>While this unit is ready all of your other Skaven units gets +1 leadership.</p><p><b>Reaction</b> Discard 1 card: When this unit gets a strength bonus of 4 or less, increase that bonus by 2.</p>',
 		releases: {
 			LC: 28
 		},
@@ -13935,7 +13935,7 @@ export const cards: Card[] = [
 		faction: 'The Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the number of your infantry nuits in the battle line. Only playable while attacking or defending from the battle line.</p>',
+		text: '<p><b>Combat Tactic</b>: This unit gets +X strength. X equals the number of your infantry units in the battle line. Only playable while attacking or defending from the battle line.</p>',
 		releases: {
 			LC: 99
 		},
@@ -16442,7 +16442,7 @@ export const cards: Card[] = [
 		faction: 'The Grand Alliance',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Victory</b>: +4</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your spell points. Only playable if you have Teclis, High Loremaster inplay.</p>',
+		text: '<p><b>Victory</b>: +4</p><p><b>Combat Tactic</b>: This unit gets +1 strength for each of your spell points. Only playable if you have Teclis, High Loremaster in play.</p>',
 		releases: {
 			SM: 109
 		},
@@ -19483,7 +19483,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Scout</b>: 2</p><p><b>Support WarCry</b>: Your unit wih the "<b>Scout</b>" ability gets a strength bonus equal to its printed "<b>Scout</b>" rating. Not playable during a follow-up attack.</p>',
+		text: '<p><b>Scout</b>: 2</p><p><b>Support WarCry</b>: Your unit with the "<b>Scout</b>" ability gets a strength bonus equal to its printed "<b>Scout</b>" rating. Not playable during a follow-up attack.</p>',
 		releases: {
 			BD: 6
 		},
@@ -19650,7 +19650,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: "<p><b>Reaction</b>: After this unit routs an enemy unit, before a follow-up attack begins, move up to 2 units in your enemy's batle line to their reserves.</p>",
+		text: "<p><b>Reaction</b>: After this unit routs an enemy unit, before a follow-up attack begins, move up to 2 units in your enemy's battle line to their reserves.</p>",
 		releases: {
 			BD: 15,
 			WA: 54
@@ -19688,7 +19688,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Uncommon',
-		text: '<p><b>WarCry</b>: Choose a number. Youre enemy may not play cards that have a printed tactic point cost of that number.</p>',
+		text: '<p><b>WarCry</b>: Choose a number. Your enemy may not play cards that have a printed tactic point cost of that number.</p>',
 		releases: {
 			BD: 17
 		},
@@ -20711,7 +20711,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>3 or less: The enemy must roll. If the roll is 2 or less, when this combat ands the result is a slaughter.</p><p>4: No effect.</p><p>5+: Destroy this unit. The enemy may make a follow-up attack.</p></p>',
+		text: '<p><b>Combat Tactic</b>: Roll.</p><p>3 or less: The enemy must roll. If the roll is 2 or less, when this combat ends the result is a slaughter.</p><p>4: No effect.</p><p>5+: Destroy this unit. The enemy may make a follow-up attack.</p>',
 		releases: {
 			BD: 79
 		},
@@ -20727,7 +20727,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>1 or less: The enemy unit gets -3 strength.</p><p>2: The enemy unit gets -2 strength.</p><p>3: The enemy unit gets -1 strength.</p><p>4: The enemy unit gets +1 strength.</p><p>5: Commit this unit.</p><p>6+: Destroy this unit.</p></p>',
+		text: '<p><b>Combat Tactic</b>: Roll.</p><p>1 or less: The enemy unit gets -3 strength.</p><p>2: The enemy unit gets -2 strength.</p><p>3: The enemy unit gets -1 strength.</p><p>4: The enemy unit gets +1 strength.</p><p>5: Commit this unit.</p><p>6+: Destroy this unit.</p>',
 		releases: {
 			BD: 80
 		},
@@ -20743,7 +20743,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>1 or less: When this combat ends the result is a slaughter.</p><p>2: Commit both units.</p><p>3: Both units get a strength bonus equal to their gold cost.</p><p>4: Both units get +4 tactic points.</p><p>5+: Destroy this unit.</p><p>The enemy unit may make a follow-up attack.</p></p>',
+		text: '<p><b>Combat Tactic</b>: Roll.</p><p>1 or less: When this combat ends the result is a slaughter.</p><p>2: Commit both units.</p><p>3: Both units get a strength bonus equal to their gold cost.</p><p>4: Both units get +4 tactic points.</p><p>5+: Destroy this unit.</p><p>The enemy unit may make a follow-up attack.</p>',
 		releases: {
 			BD: 81
 		},
@@ -20759,7 +20759,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>3 or less: This unit gets +3 strength. If this combat ends in a slaughter this unit wins instead.</p><p>4+: Destroy this unit. The enemy unit may make a follow-up attack.</p></p>',
+		text: '<p><b>Combat Tactic</b>: Roll.</p><p>3 or less: This unit gets +3 strength. If this combat ends in a slaughter this unit wins instead.</p><p>4+: Destroy this unit. The enemy unit may make a follow-up attack.</p>',
 		releases: {
 			BD: 82
 		},
@@ -20775,7 +20775,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>2 or less: Draw 2 cards.</p><p>3: Both players draw 1 card.</p><p>4: Your enemy may draw 1 card.</p><p>5+: Discard your hand.</p></p>',
+		text: '<p><b>Combat Tactic</b>: Roll.</p><p>2 or less: Draw 2 cards.</p><p>3: Both players draw 1 card.</p><p>4: Your enemy may draw 1 card.</p><p>5+: Discard your hand.</p>',
 		releases: {
 			BD: 83
 		},
@@ -20791,7 +20791,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>1 or less: This unit gets +3 strength.</p><p>2: This unit gets +2 strength.</p><p>3: This unit gets +1 strength.</p><p>4: This unit gets -1 strength.</p><p>5: Commit this unit.</p><p>6+: Destroy this unit. The enemy unit may make a follow-up attack.</p></p>',
+		text: '<p><b>Combat Tactic</b>: Roll.</p><p>1 or less: This unit gets +3 strength.</p><p>2: This unit gets +2 strength.</p><p>3: This unit gets +1 strength.</p><p>4: This unit gets -1 strength.</p><p>5: Commit this unit.</p><p>6+: Destroy this unit. The enemy unit may make a follow-up attack.</p>',
 		releases: {
 			BD: 84
 		},
@@ -20807,7 +20807,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>2 or less: Both players may put the top card of their army deck into play without cost (if the card is an attachment it may be attached to any legal unit). Remove this card from the game.</p><p>3+: This unit gets -3 strength.</p></p>',
+		text: '<p><b>Combat Tactic</b>: Roll.</p><p>2 or less: Both players may put the top card of their army deck into play without cost (if the card is an attachment it may be attached to any legal unit). Remove this card from the game.</p><p>3+: This unit gets -3 strength.</p>',
 		releases: {
 			BD: 85
 		},
@@ -20823,7 +20823,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><p><b>Combat Tactic</b>: Roll.</p><p>2 or less: if you win this combat the enemy unit is routed (no roll necessary).</p><p>3: If you win this combat you may not make a follow-up attack.</p><p>4: If you lose this combat your unit is routed (no roll necessary).</p><p>5+: Destroy this unit.</p><p>The enemy unit may make a follow-up attack.</p></p>',
+		text: '<p><b>Combat Tactic</b>: Roll.</p><p>2 or less: if you win this combat the enemy unit is routed (no roll necessary).</p><p>3: If you win this combat you may not make a follow-up attack.</p><p>4: If you lose this combat your unit is routed (no roll necessary).</p><p>5+: Destroy this unit.</p><p>The enemy unit may make a follow-up attack.</p>',
 		releases: {
 			BD: 86
 		},
@@ -20839,7 +20839,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><p><b>WarCry</b>: Roll.</p><p>1 or less: Commit the enemy unit.</p><p>2: The enemy unit gets -2 strength.</p><p>3: The enemy unit gets -2 tactic points.</p><p>4: The enemy unit gets -2 leadership.</p><p>5+: Destroy this unit. The enemy unit may make a follow-up attack.</p></p>',
+		text: '<p><b>WarCry</b>: Roll.</p><p>1 or less: Commit the enemy unit.</p><p>2: The enemy unit gets -2 strength.</p><p>3: The enemy unit gets -2 tactic points.</p><p>4: The enemy unit gets -2 leadership.</p><p>5+: Destroy this unit. The enemy unit may make a follow-up attack.</p>',
 		releases: {
 			BD: 87
 		},
@@ -21762,7 +21762,7 @@ export const cards: Card[] = [
 		faction: 'The Grand Alliance',
 		type: 'Unit',
 		rarity: 'Other',
-		text: "<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: Commit any enemy unit in the battle line unless it pases a leadership test. Only usable during this unit's ranged attack.</p>",
+		text: "<p><b>Ranged Attack</b>: 6</p><p><b>Combat Tactic</b>: Commit any enemy unit in the battle line unless it passes a leadership test. Only usable during this unit's ranged attack.</p>",
 		releases: {
 			PW: 12
 		},
@@ -22627,7 +22627,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Other',
-		text: '<p><b>Reaction</b>: After an enemy unit gets a strength bonus while in vombat with this unit, this unit gets +1 strength.</p>',
+		text: '<p><b>Reaction</b>: After an enemy unit gets a strength bonus while in combat with this unit, this unit gets +1 strength.</p>',
 		releases: {
 			PW: 63
 		},
@@ -24204,7 +24204,7 @@ export const cards: Card[] = [
 	},
 	{
 		id: 'PW156',
-		name: 'Borgio the Beseiger',
+		name: 'Borgio the Besieger',
 		cost: 4,
 		strength: 3,
 		tacticPoints: 4,
@@ -25268,7 +25268,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p>Combat Tacitc: Your enemy may play any number of consecutive tactics (paying all costs). That player may not play any more tactics this combat. Only playable while attacking.</p>',
+		text: '<p><b>Combat Tactic</b>: Your enemy may play any number of consecutive tactics (paying all costs). That player may not play any more tactics this combat. Only playable while attacking.</p>',
 		releases: {
 			BR: 54
 		},
@@ -25394,7 +25394,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Common',
-		text: '<p><b>Combat Tactic</b>: Combat rolls for this combat are substracted instead of added.</p><p><b>Combat Tactic</b>: This unit gets +d6 strength. If this bonus is 4 or more, this unit is destroyed after the combat.</p>',
+		text: '<p><b>Combat Tactic</b>: Combat rolls for this combat are subtracted instead of added.</p><p><b>Combat Tactic</b>: This unit gets +d6 strength. If this bonus is 4 or more, this unit is destroyed after the combat.</p>',
 		releases: {
 			BR: 62
 		},
@@ -26881,7 +26881,7 @@ export const cards: Card[] = [
 		faction: 'The Grand Alliance',
 		type: 'Unit',
 		rarity: 'Other',
-		text: '<p><b>WarCry</b>: Reveal the top 5 cards of your action deck. Put any terrain cards revaled into play and discard the rest.</p>',
+		text: '<p><b>WarCry</b>: Reveal the top 5 cards of your action deck. Put any terrain cards revealed into play and discard the rest.</p>',
 		releases: {
 			VT: 37
 		},
@@ -30928,7 +30928,7 @@ export const cards: Card[] = [
 		faction: 'The Grand Alliance',
 		type: 'Unit',
 		rarity: 'Common',
-		text: '<p><b>Wizard</b>: 1</p><p>Spell Raction (1): Before you make a ranged attack, you may target any enemy unit, regardless of range.</p>',
+		text: '<p><b>Wizard</b>: 1</p><p>Spell Reaction (1): Before you make a ranged attack, you may target any enemy unit, regardless of range.</p>',
 		releases: {
 			HF: 112
 		},
@@ -32177,7 +32177,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p><b>Combat Tactic</b>: Your unit gets +1 strength. Until the end of this combat, whenever a spell card or ability is played your unit gets gets an additional +1 strength.</p>',
+		text: '<p><b>Combat Tactic</b>: Your unit gets +1 strength. Until the end of this combat, whenever a spell card or ability is played your unit gets an additional +1 strength.</p>',
 		releases: {
 			MP: 68
 		},
@@ -32675,7 +32675,7 @@ export const cards: Card[] = [
 		faction: 'The Grand Alliance',
 		type: 'Unit',
 		rarity: 'Rare',
-		text: '<p><b>Spell Combat Tactic</b> (3): If you win this combat, take a spell point test. If you pass this test, rout the enemy unit (no roll necesssary). Only playable during a follow-up attack.</p>',
+		text: '<p><b>Spell Combat Tactic</b> (3): If you win this combat, take a spell point test. If you pass this test, rout the enemy unit (no roll necessary). Only playable during a follow-up attack.</p>',
 		releases: {
 			MP: 98
 		},
@@ -33086,7 +33086,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Unit',
 		rarity: 'Super rare',
-		text: '<p><b>Veteran</b>: Korvin, Champion of Khorne/Korvin The Sentinel</p><p>You start the battle with 0 spell points and may not gain any spell points while this unit is in play.</p><p><b>Support WarCry</b>: Your enemy must either discard their hand or lose all therir spell points. Your unit gets +1 strength.</p>',
+		text: '<p><b>Veteran</b>: Korvin, Champion of Khorne/Korvin The Sentinel</p><p>You start the battle with 0 spell points and may not gain any spell points while this unit is in play.</p><p><b>Support WarCry</b>: Your enemy must either discard their hand or lose all their spell points. Your unit gets +1 strength.</p>',
 		releases: {
 			VB: 2
 		},
@@ -34389,7 +34389,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Rare',
-		text: '<p><b>Combat Tactic</b>: If this unit has had its strength modified by an abiity printed on an attachment this combat, it gets +2d6 strength. This unit does not roll for combat.</p>',
+		text: '<p><b>Combat Tactic</b>: If this unit has had its strength modified by an ability printed on an attachment this combat, it gets +2d6 strength. This unit does not roll for combat.</p>',
 		releases: {
 			VB: 81
 		},
@@ -35287,7 +35287,7 @@ export const cards: Card[] = [
 		faction: 'The Hordes of Darkness',
 		type: 'Tactic',
 		rarity: 'Other',
-		text: '<p><b>WarCry</b>: Your unit gets +6 strength. Only playabe while your unit has a higher printed strength and tactic points than the enemy unit.</p>',
+		text: '<p><b>WarCry</b>: Your unit gets +6 strength. Only playable while your unit has a higher printed strength and tactic points than the enemy unit.</p>',
 		releases: {
 			PA: 13
 		},
@@ -35595,7 +35595,7 @@ export const cards: Card[] = [
 		faction: 'Neutral',
 		type: 'Tactic',
 		rarity: 'Other',
-		text: '<p><b>WarCry</b>: Your unit gets +4 strength. Only playable while you are attacking and only if this strength bonus gives you a higher total strength than the enemy unit. If you wn this combat rout the opposing unit automatically (no roll necessary).</p>',
+		text: '<p><b>WarCry</b>: Your unit gets +4 strength. Only playable while you are attacking and only if this strength bonus gives you a higher total strength than the enemy unit. If you win this combat rout the opposing unit automatically (no roll necessary).</p>',
 		releases: {
 			PA: 33
 		},
